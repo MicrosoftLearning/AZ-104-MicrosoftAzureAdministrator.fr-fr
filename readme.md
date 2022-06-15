@@ -1,35 +1,53 @@
-# INF99X: Sample Course
+---
+ms.openlocfilehash: 3a6d97b55de3c7521ccc4df57f952992a47848bf
+ms.sourcegitcommit: 7bee317d45512510f9d6eb9b05c4ee6ef6c4ada0
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "145198156"
+---
+# <a name="az-104-microsoft-azure-administrator"></a>AZ-104 : administrateur Microsoft Azure
 
-- **[Download Latest Student Handbook and AllFiles Content](../../releases/latest)**
-- **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
-- **Need to manually build the lab instructions?** - Instructions are available in the [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) repository
+## <a name="welcome"></a>Bienvenue
 
-## What are we doing?
+Ce référentiel est destiné aux instructeurs qui animent des cours Microsoft. Si vous êtes en cours, demandez de l’aide à votre instructeur. 
 
-- To support this course, we will need to make frequent updates to the course content to keep it current with the Azure services used in the course.  We are publishing the lab instructions and lab files on GitHub to allow for open contributions between the course authors and MCTs to keep the content current with changes in the Azure platform.
+- **[Lien vers les labos (format HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
+- **Êtes-vous un MCT ?** - Consultez notre [Guide de l’utilisateur GitHub pour MCT](https://microsoftlearning.github.io/MCT-User-Guide/)
 
-- We hope that this brings a sense of collaboration to the labs like we've never had before - when Azure changes and you find it first during a live delivery, go ahead and make an enhancement right in the lab source.  Help your fellow MCTs.
+## <a name="security-issue---february-2022"></a>Problème de sécurité - Février 2022
 
-## How should I use these files relative to the released MOC files?
+Certains laboratoires de formation Azure demandent à l’étudiant d’utiliser un nom d’utilisateur et un mot de passe spécifiques. Des intervenants mal intentionnés analysent constamment les machines virtuelles et essaient de se connecter à l’aide de ces informations d’identification.
+Une fois qu’ils sont connectés, les machines peuvent être utilisées pour le cryptominage ou pour d’autres activités sans lien avec la classe.
 
-- The instructor handbook and PowerPoints are still going to be your primary source for teaching the course content.
+**Correction** : Les étudiants devraient être invités à utiliser un mot de passe de leur choix. Ils ne devraient pas utiliser de mot de passe donné dans les instructions de laboratoire. 
 
-- These files on GitHub are designed to be used in conjunction with the student handbook, but are in GitHub as a central repository so MCTs and course authors can have a shared source for the latest lab files.
+## <a name="what-are-we-doing"></a>Que faisons-nous ?
 
-- It will be recommended that for every delivery, trainers check GitHub for any changes that may have been made to support the latest Azure services, and get the latest files for their delivery.
+- Pour assurer le support de ce cours, nous devrons effectuer des mises à jour fréquentes du contenu de la formation pour maintenir à jour les services Azure qui y sont utilisés.  Nous publions les instructions de labo sur GitHub pour permettre des contributions ouvertes entre les auteurs du cours et les MCT afin de maintenir le contenu à jour avec les modifications de la plateforme Azure.
 
-## What about changes to the student handbook?
+- Nous espérons que cela vous apportera un sentiment de collaboration aux labos sans précédent. Si Azure change et que vous le découvrez le premier lors d’une livraison en direct, apportez une amélioration directement dans la source du labo.  Aidez vos collègues MCT.
 
-- We will review the student handbook on a quarterly basis and update through the normal MOC release channels as needed.
+## <a name="how-should-i-use-these-files-relative-to-the-released-moc-files"></a>Comment dois-je utiliser ces fichiers par rapport aux fichiers MOC publiés ?
 
-## How do I contribute?
+- Le manuel de l’instructeur et les fichiers PowerPoint seront toujours votre principale source d’enseignement du contenu du cours.
 
-- Any MCT can submit a pull request to the code or content in the GitHub repro, Microsoft and the course author will triage and include content and lab code changes as needed.
+- Ces fichiers sur GitHub sont conçus pour être utilisés conjointement avec le manuel du participant, mais sont dans GitHub en tant que référentiel central afin que les MCT et les auteurs de cours puissent avoir une source partagée pour les derniers fichiers de labo.
 
-- You can submit bugs, changes, improvement and ideas.  Find a new Azure feature before we have?  Submit a new demo!
+- Pour chaque prestation, il est demandé aux formateurs de vérifier dans GitHub les modifications qui ont pu être apportées afin de prendre en charge les derniers services Azure et afin de garantir que ce sont bien les tout derniers fichiers qui seront utilisés dans la cadre de la formation.
 
-## Notes
+## <a name="how-do-i-contribute"></a>Comment puis-je contribuer ?
 
-### Classroom Materials
+- L’instructeur MCT peut soumettre une demande de tirage (pull request) au code ou au contenu dans GitHub. Microsoft et l’auteur du cours trieront et incluront alors le contenu et les modifications du code de labo en fonction des besoins.
 
-It is strongly recommended that MCTs and Partners access these materials and in turn, provide them separately to students.  Pointing students directly to GitHub to access Lab steps as part of an ongoing class will require them to access yet another UI as part of the course, contributing to a confusing experience for the student. An explanation to the student regarding why they are receiving separate Lab instructions can highlight the nature of an always-changing cloud-based interface and platform. Microsoft Learning support for accessing files on GitHub and support for navigation of the GitHub site is limited to MCTs teaching this course only.
+- Vous pouvez soumettre des bogues, des changements, des améliorations et des idées.  Vous avez découvert une nouvelle fonctionnalité Azure avant nous ?  Envoyez une nouvelle démonstration !
+
+## <a name="what-about-changes-to-the-student-handbook"></a>Qu’en est-il des modifications apportées au manuel du participant ?
+
+- Ce référentiel ne concerne que les problèmes liés aux labos de cours. Les commentaires sur le contenu du cours doivent être publiés sur le MCT Courseware Forum. 
+
+## <a name="notes"></a>Notes
+
+### <a name="classroom-materials"></a>Documents de classe
+
+Il est fortement recommandé que les MCT et les partenaires accèdent à ces documents et, à leur tour, les fournissent séparément aux participants.  Diriger les participants directement vers GitHub pour accéder aux étapes du labo pendant un cours leur ferait accéder à une autre interface utilisateur dans le cadre du cours, ce qui pourrait les dérouter. Une explication au participant concernant la raison pour laquelle il reçoit des instructions de labo distinctes peut mettre en évidence la nature d’une interface et d’une plateforme cloud en constante évolution. La prise en charge de Microsoft Learning pour l’accès aux fichiers sur GitHub et la prise en charge de la navigation sur le site GitHub sont limitées aux instructeurs MCT qui enseignent ce cours.
