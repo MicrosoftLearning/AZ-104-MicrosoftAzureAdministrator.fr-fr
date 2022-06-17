@@ -2,12 +2,12 @@
 lab:
   title: '10 : Implémenter la protection des données'
   module: Module 10 - Data Protection
-ms.openlocfilehash: 28884df63a3efefa1d426a6fbec194e113cb203b
-ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
+ms.openlocfilehash: f4e79a18ee68068147de54a2bca65e0e879f0419
+ms.sourcegitcommit: e8161696e61bdf61f6fac5641cdf6d5ba65f4739
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "145198143"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "146066370"
 ---
 # <a name="lab-10---backup-virtual-machines"></a>Labo 10 : Sauvegarder des machines virtuelles
 # <a name="student-lab-manual"></a>Manuel de labo pour étudiant
@@ -88,8 +88,8 @@ Dans cette tâche, vous allez créer un coffre Recovery Services.
 
     | Paramètres | Valeur |
     | --- | --- |
-    | Abonnement | nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | nom d’un nouveau groupe de ressources **az104-10-rg1** |
+    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
+    | Groupe de ressources | nom d’un nouveau groupe de ressources **az104-10-rg1** |
     | Nom du coffre | **az104-10-rsv1** |
     | Région | nom d’une région où vous avez déployé les deux machines virtuelles dans la tâche précédente |
 
@@ -370,6 +370,8 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 1. Dans le volet **Éléments de sauvegarde (Sauvegarde Azure Agent)** , cliquez sur l’entrée représentant la sauvegarde de **az104-10-vm1**.
 
 1. Dans le volet **C:\\ on az104-10-vm1.** , sélectionnez **Afficher les détails** en regard de **az104-10-vm1.** .
+
+1. Dans le panneau Détail, cliquez sur **az104-10-vm1**.
 
 1. Dans le volet **az104-10-vm1.** Serveurs protégés, cliquez sur **Supprimer**.
 
