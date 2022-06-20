@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3a6d97b55de3c7521ccc4df57f952992a47848bf
-ms.sourcegitcommit: 7bee317d45512510f9d6eb9b05c4ee6ef6c4ada0
+ms.openlocfilehash: a106aae9e7c3de7b5154ce5e889ee057a1b9dff3
+ms.sourcegitcommit: 69083589fed0a226499b3067222e444d3fe0bac8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "145198156"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "146458130"
 ---
 # <a name="az-104-microsoft-azure-administrator"></a>AZ-104 : administrateur Microsoft Azure
 
@@ -44,7 +44,7 @@ Une fois qu’ils sont connectés, les machines peuvent être utilisées pour le
 
 ## <a name="what-about-changes-to-the-student-handbook"></a>Qu’en est-il des modifications apportées au manuel du participant ?
 
-- Ce référentiel ne concerne que les problèmes liés aux labos de cours. Les commentaires sur le contenu du cours doivent être publiés sur le MCT Courseware Forum. 
+- Ce référentiel ne concerne que les problèmes liés aux labos de cours. Vous pouvez envoyer des commentaires ou des corrections sur le [contenu du cours](https://docs.microsoft.com/learn/certifications/courses/az-104t00). Utilisez le lien pour _signaler un problème_ en bas de chaque page de contenu.
 
 ## <a name="notes"></a>Notes
 
