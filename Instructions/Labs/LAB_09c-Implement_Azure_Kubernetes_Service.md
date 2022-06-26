@@ -2,12 +2,12 @@
 lab:
   title: '09c : Implémenter Azure Kubernetes Service'
   module: Module 09 - Serverless Computing
-ms.openlocfilehash: 42e43fa916e61988df87b3188fba59ab7b57652e
-ms.sourcegitcommit: dd61587ee547d5efa09ad0a63c0b2af272ee1e55
+ms.openlocfilehash: 929e2dfa4aba9df613e8d5ac594d903ede2f9934
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/31/2022
-ms.locfileid: "145198154"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587473"
 ---
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Labo 09c : Implémenter Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Manuel de labo pour étudiant
@@ -178,11 +178,6 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 1. À partir du volet **Cloud Shell**, exécutez les opérations suivantes pour mettre à l’échelle le déploiement en augmentant le nombre de pods à 2 :
 
     ```sh
-
-    RESOURCE_GROUP='az104-09c-rg1'
-
-    AKS_CLUSTER='az104-9c-aks1'
-
     kubectl scale --replicas=2 deployment/nginx-deployment
     ```
 
@@ -197,6 +192,10 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 1. Dans le volet **Cloud Shell**, exécutez la commande suivante pour effectuer un scale-out du cluster en augmentant le nombre de nœuds à 2 :
 
     ```sh
+    RESOURCE_GROUP='az104-09c-rg1'
+
+    AKS_CLUSTER='az104-9c-aks1'
+
     az aks scale --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER --node-count 2
     ```
 

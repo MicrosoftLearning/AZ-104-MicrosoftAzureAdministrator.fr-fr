@@ -2,12 +2,12 @@
 lab:
   title: '06 : Implémenter la gestion du trafic'
   module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 9b2a379c1c01645b0b7998d8eb463f95ab7825d2
-ms.sourcegitcommit: 4efd79c7aa4b4ba9b1f91d0b69eb64a8326b75e4
+ms.openlocfilehash: 81fd0fefc28cbf9eb59935e93bb548c69d677cf5
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "145985693"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587455"
 ---
 # <a name="lab-06---implement-traffic-management"></a>Labo 06 : Implémenter la gestion du trafic
 # <a name="student-lab-manual"></a>Manuel de labo pour étudiant
@@ -327,7 +327,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | --- | --- |
     | Nom de l’itinéraire | **az104-06-route-vnet2-to-vnet3** |
     | Destination du préfixe d’adresse | **Adresses IP** |
-    | Plages d’adresses IP/CIDR sources | **10.63.0.0/20** |
+    | Plages d’adresses IP/CIDR de destination | **10.63.0.0/20** |
     | Type de tronçon suivant | **Appliance virtuelle** |
     | adresse de tronçon suivant | **10.60.0.4** |
 
@@ -370,7 +370,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | --- | --- |
     | Nom de l’itinéraire | **az104-06-route-vnet3-to-vnet2** |
     | Destination du préfixe d’adresse | **Adresses IP** |
-    | Plages d’adresses IP/CIDR sources | **10.62.0.0/20** |    
+    | Plages d’adresses IP/CIDR de destination | **10.62.0.0/20** |
     | Type de tronçon suivant | **Appliance virtuelle** |
     | adresse de tronçon suivant | **10.60.0.4** |
 
