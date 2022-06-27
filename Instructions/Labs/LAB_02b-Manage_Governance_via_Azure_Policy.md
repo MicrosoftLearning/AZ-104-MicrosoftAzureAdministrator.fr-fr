@@ -2,12 +2,12 @@
 lab:
   title: 02b - Gérer la gouvernance via Azure Policy
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 4e61ed82921b3d069646b2de131d765fed23f3d2
-ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
+ms.openlocfilehash: fad481d30818aaea390ed1357c223f3686671383
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2022
-ms.locfileid: "145198160"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587428"
 ---
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Labo 02b - Gérer la gouvernance via Azure Policy
 # <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
@@ -149,7 +149,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Dans la section **Création**, cliquez sur **Affectations**. 
 
-1. Dans la liste des affectations, cliquez avec le bouton droit sur l’icône Points de suspension dans la ligne représentant l’affectation de stratégie **Exiger une balise de rôle avec une valeur Infra** et utilisez l’élément de menu **Supprimer l’affectation** pour supprimer l’affectation. 
+1. Dans la liste des affectations, cliquez sur l’icône Points de suspension dans la ligne représentant l’affectation de stratégie **Exiger une étiquette de rôle avec une valeur Infra** et utilisez l’élément de menu **Supprimer l’affectation** pour supprimer l’affectation.
 
 1. Cliquez sur **Affecter une stratégie** et spécifiez **l’étendue** en cliquant sur le bouton Points de suspension et en sélectionnant les valeurs suivantes :
 
@@ -158,7 +158,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Groupe de ressources | nom du groupe de ressources contenant le compte Cloud Shell que vous avez identifié dans la première tâche |
 
-1. Pour spécifier la **définition de stratégie**, cliquez sur le bouton Points de suspension, puis recherchez et sélectionnez **Hériter d’une balise dans le groupe de ressources s’il est manquant**.
+1. Pour spécifier la **définition de stratégie**, cliquez sur le bouton Points de suspension, puis recherchez et sélectionnez **Hériter d’une étiquette du groupe de ressources si elle est manquante**.
 
 1. Configurez les propriétés **de base** restantes de l’affectation en spécifiant les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 

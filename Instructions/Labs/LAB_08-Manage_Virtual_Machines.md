@@ -2,12 +2,12 @@
 lab:
   title: '08 : Gérer des machines virtuelles'
   module: Module 08 - Virtual Machines
-ms.openlocfilehash: ee57d0d4dad96e694ca1315b2e0986b57698c08b
-ms.sourcegitcommit: dc0edbf407335d48b9a98636f4119b335d7426e8
+ms.openlocfilehash: a710fbaf4ea888651012bad592d34667a190c68f
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2022
-ms.locfileid: "145198167"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587446"
 ---
 # <a name="lab-08---manage-virtual-machines"></a>Labo 08 : Gérer des machines virtuelles
 # <a name="student-lab-manual"></a>Manuel de labo pour étudiant
@@ -45,13 +45,13 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
 1. Connectez-vous au [portail Azure](http://portal.azure.com).
 
-1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **+ Créer**, puis sur **+ Machine virtuelle**.
+1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **+ Créer**, puis sur **+ Machine virtuelle Azure**.
 
-1. Sous l’onglet **Informations de base** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+1. Sous l’onglet **Informations de base** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
+    | Abonnement | Nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
@@ -528,7 +528,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
     | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
     | Opérateur | **Supérieur à** |
-    | Seuil de métrique pour déclencher l'action de mise à l'échelle | **10** |
+    | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
     | Durée (en minutes) | **1** |
     | Statistique de fragment de temps | **Average** |
     | Opération | **Augmenter le nombre de** |

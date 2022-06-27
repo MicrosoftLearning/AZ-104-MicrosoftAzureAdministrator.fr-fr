@@ -2,12 +2,12 @@
 lab:
   title: '07 : Gérer le stockage Azure'
   module: Module 07 - Azure Storage
-ms.openlocfilehash: 9703d6543f6b3cf7791352a4ee0ba84cda3b5934
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
+ms.openlocfilehash: 34b6dba73d87731df935f80a1b5909e44075e871
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198149"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587464"
 ---
 # <a name="lab-07---manage-azure-storage"></a>Labo 07 : Gérer le Stockage Azure
 # <a name="student-lab-manual"></a>Manuel de labo pour étudiant
@@ -111,7 +111,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
 1. Cliquez sur **Suivant : Avancé >** , sous l’onglet **Avancé** du volet **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >** .
 
-1. Sous l’onglet **Mise en réseau** du volet **Créer un compte de stockage**, passez en revue les options disponibles, acceptez l’option par défaut **Point de terminaison public (tous les réseaux}** et cliquez sur **Suivant : Protection des données >** .
+1. Sous l’onglet **Mise en réseau** du volet **Créer un compte de stockage**, passez en revue les options disponibles, acceptez l’option par défaut **Activer l’accès public de tous les réseaux** et cliquez sur **Suivant : Protection des données >** .
 
 1. Sous l’onglet **Protection des données** du volet **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, cliquez sur **Vérifier + Créer**, attendez que le processus de validation se termine et cliquez sur **Créer**.
 
@@ -334,7 +334,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
 #### <a name="review"></a>Révision
 
-Dans ce labo, vous avez :
+Dans cet exercice, vous avez :
 
 - Approvisionné l’environnement lab
 - Créé et configuré des comptes de Stockage Azure

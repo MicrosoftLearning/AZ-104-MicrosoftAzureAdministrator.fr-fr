@@ -2,12 +2,12 @@
 lab:
   title: 02a - Gérer les abonnements et RBAC
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 8318d90573a04b60e4b1cfd79ed2daa621e8401f
-ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
+ms.openlocfilehash: 14b37fcd923ad1b45c83c3a6c41889db3869ed40
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/19/2022
-ms.locfileid: "145198136"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587437"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Labo 02a - Gérer les abonnements et RBAC
 # <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
@@ -205,7 +205,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
    
 1. Sélectionnez **Actualiser** pour vérifier que l’abonnement a été déplacé vers le **groupe d’administration racine du locataire**.
 
-1. Revenez au panneau **Groupes d’administration**, cliquez avec le bouton droit sur l’icône **Points de suspension** à droite du groupe d’administration **az104-02-mg1**, puis cliquez sur **Supprimer**.
+1. Revenez au panneau **Groupes d’administration**, cliquez sur l’icône **Points de suspension** à droite du groupe d’administration **az104-02-mg1**, puis cliquez sur **Supprimer**.
 
 #### <a name="review"></a>Révision
 
