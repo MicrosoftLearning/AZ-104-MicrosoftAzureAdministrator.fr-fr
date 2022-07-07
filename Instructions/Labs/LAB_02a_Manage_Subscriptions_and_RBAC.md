@@ -2,12 +2,12 @@
 lab:
   title: 02a - Gérer les abonnements et RBAC
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 14b37fcd923ad1b45c83c3a6c41889db3869ed40
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
+ms.openlocfilehash: e8b6f60a421222db74d93715ed63860e3ca3c78d
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587437"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973682"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Labo 02a - Gérer les abonnements et RBAC
 # <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
@@ -146,7 +146,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 1. Dans le portail Azure, revenez au groupe d’administration **az104-02-mg1** et affichez ses **détails**.
 
-1. Cliquez sur **Contrôle d’accès (IAM),** cliquez sur **+ Ajouter** suivi de **Ajouter une attribution de rôle**, puis attribuez le rôle **Contributeur de demande de support (personnalisé)** au compte d’utilisateur nouvellement créé.
+1. Cliquez sur **Contrôle d’accès (IAM)** , sur **+ Ajouter**, puis sur **Ajouter une attribution de rôle**. Faites votre sélection sous **Membres**, entrez **Vérifier + attribuer**, puis attribuez le rôle **Contributeur de demande de support (personnalisé)** au compte d’utilisateur qui vient d’être créé.
 
 1. Ouvrez une fenêtre de navigateur **InPrivate** et connectez-vous au [portail Azure](https://portal.azure.com) à l’aide du compte utilisateur que vous venez de créer. Lorsque vous êtes invité à mettre à jour le mot de passe, modifiez le mot de passe de l’utilisateur.
 
@@ -206,6 +206,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 1. Sélectionnez **Actualiser** pour vérifier que l’abonnement a été déplacé vers le **groupe d’administration racine du locataire**.
 
 1. Revenez au panneau **Groupes d’administration**, cliquez sur l’icône **Points de suspension** à droite du groupe d’administration **az104-02-mg1**, puis cliquez sur **Supprimer**.
+  >**Remarque** : Si vous ne parvenez pas à supprimer le **groupe d’administration racine du locataire**, il est probable que l’abonnement **Azure** se trouve sous le groupe de ressources. Vous devez déplacer l’**abonnement Azure** hors du **groupe d’administration racine du locataire**, puis supprimer le groupe.
 
 #### <a name="review"></a>Révision
 

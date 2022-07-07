@@ -2,12 +2,12 @@
 lab:
   title: 01 - Gérer les identités Azure Active Directory
   module: Module 01 - Identity
-ms.openlocfilehash: de59a0e8c7634ee756fc66301b90f73233a9cf8a
-ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
+ms.openlocfilehash: 589e423af0901c93ef685905e4a01a7246e3c791
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2022
-ms.locfileid: "145198164"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973691"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Labo 01 - Gérer les identités Azure Active Directory
 
@@ -23,8 +23,8 @@ Dans ce labo, vous allez :
 
 + Tâche 1 : Créer et configurer des utilisateurs Azure AD
 + Tâche 2 : Créer des groupes Azure AD avec une adhésion attribuée et dynamique
-+ Tâche 3 : Créer un locataire Azure Active Directory (AD)
-+ Tâche 4 : Gérer des utilisateurs invités Azure AD 
++ Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
++ Tâche 4 : Gérer des utilisateurs invités Azure AD (facultatif - problème d'environnement lab)
 
 ## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
 
@@ -186,9 +186,11 @@ Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l�
 
 1. Retournez dans le panneau **Groupes - Tous les groupes**, cliquez sur l’entrée représentant le groupe **Administrateurs du cloud système**, puis affichez son panneau **Membres**. Vérifiez que **az104-01a-aaduser2** apparaît dans la liste des membres du groupe.
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant"></a>Tâche 3 : Créer un locataire Azure Active Directory (AD)
+#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
 
 Dans cette tâche, vous allez créer un locataire Azure AD.
+
+   >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous rencontrez ce problème, ignorez cette tâche et la suivante. Nous travaillons actuellement à résoudre le problème.
 
 1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
 
