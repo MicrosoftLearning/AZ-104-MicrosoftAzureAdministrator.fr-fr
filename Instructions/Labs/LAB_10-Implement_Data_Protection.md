@@ -10,7 +10,7 @@ ms.lasthandoff: 06/03/2022
 ms.locfileid: "146066370"
 ---
 # <a name="lab-10---backup-virtual-machines"></a>Labo 10 : Sauvegarder des machines virtuelles
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
@@ -46,9 +46,9 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** et **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** dans le répertoire d'origine de Cloud Shell.
+1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et chargez les fichiers **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** et **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** dans le répertoire d'origine de Cloud Shell.
 
-1. Modifiez le fichier de paramètres que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Comme meilleure pratique, les secrets, comme les mots de passe, doivent être stockés de manière plus sécurisée dans le Key Vault. 
+1. Modifiez le fichier de paramètres que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé `[Azure_region]` par le nom d’une région Azure dans laquelle vous envisagez de déployer des machines virtuelles Azure). Tapez chaque ligne de commande séparément et exécutez-les une à une :
 
@@ -123,18 +123,18 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
 1. Dans le volet du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**, puis sur **+ Sauvegarde**.
 
-1. Dans le volet **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
+1. Dans le panneau **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
 
     | Paramètres | Valeur |
     | --- | --- |
     | Où s'exécute votre charge de travail ? | **Microsoft Azure** |
-    | Qu'est-ce que vous voulez sauvegarder? | **Machine virtuelle** |
+    | Que souhaitez-vous sauvegarder ? | **Machine virtuelle** |
 
 1. Dans le volet **Objectif de la sauvegarde**, cliquez sur **Sauvegarde**.
 
 1. Dans **Stratégie de sauvegarde**, vérifiez les paramètres **DefaultPolicy** et sélectionnez **Créer une stratégie**.
 
-1. Définissez une nouvelle stratégie de sauvegarde avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Définissez une nouvelle stratégie de sauvegarde avec les paramètres suivants (laissez les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | ---- | ---- |
@@ -185,7 +185,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
     | Paramètres | Valeur |
     | --- | --- |
     | Où s'exécute votre charge de travail ? | **Local** |
-    | Qu'est-ce que vous voulez sauvegarder? | **Fichiers et dossiers** |
+    | Que souhaitez-vous sauvegarder ? | **Fichiers et dossiers** |
 
     >**Remarque** : Même si la machine virtuelle que vous utilisez dans cette tâche s’exécute dans Azure, vous pouvez l’utiliser pour évaluer les fonctionnalités de sauvegarde applicables à n’importe quel ordinateur local exécutant le système d’exploitation Windows Server.
 
@@ -195,9 +195,9 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Lorsque vous y êtes invité, cliquez sur **Exécuter** pour démarrer l’installation de **MARSAgentInstaller.exe** avec les paramètres par défaut.
 
-    >**Remarque** : Sur la page **Abonnement à Microsoft Update** de l’**Assistant Installation de l’agent Microsoft Azure Recovery Services**, sélectionnez l’option d’installation **Je ne souhaite pas utiliser Microsoft Update**.
+    >**Remarque** : Sur la page **Abonnement à Microsoft Update** de l’**Assistant Installation de Microsoft Azure Recovery Services Agent**, sélectionnez l’option d’installation **Je ne souhaite pas utiliser Microsoft Update**.
 
-1. Sur la page **Installation** de l’**Assistant Installation de l’agent Microsoft Azure Recovery Services**, cliquez sur **Procéder à l’enregistrement**. L’**Assistant Inscrire un serveur** s’ouvre.
+1. Sur la page **Installation** de l’**Assistant Installation de Microsoft Azure Recovery Services Agent**, cliquez sur **Procéder à l’enregistrement**. L’**Assistant Inscrire un serveur** s’ouvre.
 
 1. Basculez vers la fenêtre du navigateur web affichant le portail Azure. Dans le volet **Préparer l’infrastructure**, cochez la case **J'ai déjà téléchargé ou j'utilise déjà la dernière version de l'agent Recovery Services**, puis cliquez sur **Télécharger**.
 
@@ -445,7 +445,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources lab ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -469,7 +469,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement lab
++ Approvisionné l’environnement de labo
 + Créé un coffre Recovery Services
 + Implémenté une sauvegarde au niveau d’une machine virtuelle Azure
 + Implémenté une sauvegarde de fichiers et de dossiers

@@ -10,7 +10,7 @@ ms.lasthandoff: 02/09/2022
 ms.locfileid: "145198125"
 ---
 # <a name="lab-09b---implement-azure-container-instances"></a>Labo 09b : Implémenter Azure Container Instances
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
@@ -39,14 +39,14 @@ Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l�
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 
-1. Dans le Portail Azure, recherchez des **instances de conteneur** puis, dans le panneau **Instances de conteneur**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez **instances de conteneur** puis, dans le panneau **Instances de conteneur**, cliquez sur **+ Créer**.
 
 1. Sous l’onglet **Informations de base** du volet **Créer une instance de conteneur**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-09b-rg1** |
+    | Groupe de ressouces | le nom d’un nouveau groupe de ressources **az104-09b-rg1** |
     | Nom du conteneur | **az104-9b-c1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner des instances de conteneur Azure |
     | Source d’image | **Images du guide de démarrage rapide** |
@@ -86,7 +86,7 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois,les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 

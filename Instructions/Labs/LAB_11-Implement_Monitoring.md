@@ -10,7 +10,7 @@ ms.lasthandoff: 05/11/2022
 ms.locfileid: "145198130"
 ---
 # <a name="lab-11---implement-monitoring"></a>Labo 11 : Implémenter la supervision
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
@@ -46,7 +46,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** et **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** dans le répertoire d'origine de Cloud Shell.
+1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et hargez les fichiers **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** et **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** dans le répertoire d'origine de Cloud Shell.
 
 1. Modifiez le fichier de paramètres que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Comme meilleure pratique, les secrets, comme les mots de passe, doivent être stockés de manière plus sécurisée dans le Key Vault. 
 
@@ -97,7 +97,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
     | Paramètres | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-11-rg1** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-11-rg1** |
     | Espace de travail Log Analytics | tout nom unique |
     | Région | le nom de la région Azure dans laquelle vous avez déployé la machine virtuelle dans la tâche précédente |
 
@@ -105,7 +105,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
 
     >**Remarque** : Attendez la fin du déploiement. Le déploiement doit prendre environ 1 minute.
 
-1. Dans le Portail Azure, recherchez et sélectionnez **Comptes Automation** puis, dans le volet **Comptes Automation**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez **Comptes Automation** puis, dans le volet **Comptes Automation**, cliquez sur **+ Créer**.
 
 1. Dans le volet **Créer un compte Automation**, spécifiez les paramètres suivants, cliquez sur **Vérifier + Créer** lors de la validation, puis cliquez sur **Créer** :
 
@@ -113,7 +113,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
     | --- | --- |
     | Nom du compte Automation | tout nom unique |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | **az104-11-rg1** |
+    | Groupe de ressources | **az104-11-rg1** |
     | Région | le nom de la région Azure déterminée en fonction de la [documentation sur les mappages d’espace de travail](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings) |
 
     >**Remarque** : Vérifiez que vous spécifiez la région Azure en fonction de la [documentation sur les mappages d’espace de travail](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
@@ -142,9 +142,9 @@ Dans cette tâche, vous allez passer en revue les paramètres de supervision par
 
 1. Dans le volet **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Métriques**.
 
-1. Dans le volet **az104-11-vm0 \| Métriques**, dans le graphique par défaut, notez que le seul **espace de noms Métriques** disponible est **Hôte de machine virtuelle**.
+1. Dans le volet **az104-11-vm0 \| Métriques**, dans le graphique par défaut, notez que le seul **Espace de noms de métriques** disponible est **Hôte de machine virtuelle**.
 
-    >**Remarque** : Cela est attendu, car aucun paramètre de diagnostic au niveau de l’invité n’a encore été configuré. Toutefois, vous avez la possibilité d’activer les métriques de mémoire invité directement à partir de la liste déroulante **Espace de noms Métriques**. Vous l’activerez plus tard dans cet exercice.
+    >**Remarque** : Cela est attendu, car aucun paramètre de diagnostic au niveau de l’invité n’a encore été configuré. Toutefois, vous avez la possibilité d’activer les métriques de mémoire d'invité directement à partir de la liste déroulante **Espace de noms Métriques**. Vous l’activerez plus tard dans cet exercice.
 
 1. Dans la liste déroulante **Métriques**, passez en revue la liste des métriques disponibles.
 
@@ -170,7 +170,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : Par défaut, la collecte des journaux inclut les entrées critiques, d’erreur et d’avertissement du journal des applications et du journal système, ainsi que les entrées d’échec d’audit du journal de sécurité. Vous pouvez également basculer vers l’affichage **Personnalisé** pour obtenir des paramètres de configuration plus détaillés.
 
-1. Dans le volet **az104-11-vm0** , dans la section **Supervision**, cliquez sur **Journaux**, puis sur **Activer**.
+1. Dans le panneau **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Journaux**, puis sur **Activer**.
 
 1. Dans le volet **az104-11-vm0 - Journaux**, vérifiez que l’espace de travail Log Analytics que vous avez créé précédemment dans ce labo est sélectionné dans la liste déroulante **Choisir un espace de travail Log Analytics**, puis cliquez sur **Activer**.
 
@@ -224,7 +224,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
     | Paramètres | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | **az104-11-rg1** |
+    | Groupe de ressources | **az104-11-rg1** |
     | Nom du groupe d’actions | **az104-11-ag1** |
     | Nom d’affichage | **az104-11-ag1** |
 
@@ -242,7 +242,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
     | --- | --- |
     | Nom de la règle d’alerte | **Pourcentage d’UC supérieur au seuil de test** |
     | Description de la règle d'alerte | **Pourcentage d’UC supérieur au seuil de test** |
-    | severity | **Gravité 3** |
+    | gravité | **Gravité 3** |
     | Activer à la création | **Oui** |
 
 1. Cliquez sur **Vérifier + créer** puis, dans le volet **Vérifier + créer**, cliquez sur **Créer**.
@@ -318,7 +318,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources lab ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -340,7 +340,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 Dans ce labo, vous avez :
 
-+ Approvisionné l’environnement lab
++ Approvisionné l’environnement de labo
 + Créé et configuré un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
 + Passé en revue les paramètres de supervision par défaut des machines virtuelles Azure
 + Configuré les paramètres de diagnostic des machines virtuelles Azure

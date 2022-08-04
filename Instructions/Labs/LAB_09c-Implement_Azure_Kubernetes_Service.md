@@ -10,11 +10,11 @@ ms.lasthandoff: 06/26/2022
 ms.locfileid: "146587473"
 ---
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Labo 09c : Implémenter Azure Kubernetes Service
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
-Contoso dispose d’un certain nombre d’applications multiniveau qu’il n’est pas possible d’exécuter à l’aide d’Azure Container Instances. Pour déterminer s’ils peuvent être exécutés sous la forme de charges de travail conteneurisées, vous devez envisager d’utiliser Kubernetes comme orchestrateur de conteneurs. Pour réduire encore la charge de gestion, vous allez tester Azure Kubernetes Service, notamment son expérience de déploiement simplifiée et ses fonctionnalités de montée en charge.
+Contoso dispose d’un certain nombre d’applications multiniveau qu’il n’est pas possible d’exécuter à l’aide d’Azure Container Instances. Pour déterminer si elles peuvent être exécutées sous la forme de charges de travail conteneurisées,vous devez envisager d’utiliser Kubernetes comme orchestrateur de conteneurs. Pour réduire encore la charge de gestion, vous allez tester Azure Kubernetes Service, notamment son expérience de déploiement simplifiée et ses fonctionnalités de montée en charge.
 
 ## <a name="objectives"></a>Objectifs
 
@@ -59,22 +59,22 @@ Dans cette tâche, vous allez inscrire les fournisseurs de ressources nécessair
 
 #### <a name="task-2-deploy-an-azure-kubernetes-service-cluster"></a>Tâche 2 : Déployer un cluster Azure Kubernetes Service
 
-Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à l’aide du Portail Azure.
+Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à l’aide du portail Azure.
 
-1. Dans le Portail Azure, recherchez les **services Kubernetes**, puis, dans le volet **Services Kubernetes**, cliquez sur **+ Créer**, puis cliquez sur **+ Créer un cluster Kubernetes**.
+1. Dans le portail Azure, recherchez **Services Kubernetes**, puis, dans le panneau **Services Kubernetes**, cliquez sur **+ Créer**, puis cliquez sur **+ Créer un cluster Kubernetes**.
 
 1. Sous l’onglet **De base** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
     | Nom du cluster Kubernetes | **az104-9c-aks1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner un cluster Kubernetes |
     | Zones de disponibilité | **Aucune** (décochez toutes les cases) |
     | Version de Kubernetes | accepter la valeur par défaut |
     | Taille du nœud | accepter la valeur par défaut |
-    | Méthode de mise à l’échelle | **Manuel** |
+    | Méthode de mise à l’échelle | **Manuelle** |
     | Nombre de nœuds | **1** |
 
 1. Cliquez sur **Suivant : Pools de noeuds >** , puis sous l’onglet **Pools de noeuds** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
@@ -88,7 +88,7 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Méthode d'authentification | **Identité managée affectée par le système** (valeur par défaut - aucune modification) | 
-    | Contrôle d’accès en fonction du rôle | **Enabled** |
+    | Contrôle d’accès en fonction du rôle | **Activé** |
 
 1. Cliquez sur **Suivant : Mise en réseau >** , puis, dans l’onglet **Mise en réseau** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
@@ -97,7 +97,7 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | Configuration réseau | **Kubenet** |
     | Préfixe du nom DNS | tout nom d’hôte DNS unique valide et global |
 
-1. Cliquez sur **Suivant : Intégrations >** , sous l’onglet **Intégrations** du volet **Créer un cluster Kubernetes**, définissez **Supervision de conteneur** sur **Désactivé**, cliquez sur **Vérifier + créer**, vérifiez que la validation a été effectuée et cliquez sur **Créer**.
+1. Cliquez sur **Suivant : Intégrations >**, sous l’onglet **Intégrations** du panneau **Créer un cluster Kubernetes**, définissez **Supervision de conteneurs** sur **Désactivée**, cliquez sur **Vérifier + créer**, vérifiez que la validation a été effectuée et cliquez sur **Créer**.
 
     >**Remarque** : Dans les scénarios de production, il est préférable d’activer la supervision. En l’occurrence, la supervision est désactivée parce qu’elle n’est pas couverte dans le labo.
 
@@ -127,7 +127,7 @@ Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes 
     az aks get-credentials --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER
     ```
 
-1. Dans le volet **Cloud Shell**, exécutez les opérations suivantes pour vérifier la connectivité au cluster AKS :
+1. Dans le volet **Cloud Shell**, exécutez la commande suivante pour vérifier la connectivité au cluster AKS :
 
     ```sh
     kubectl get nodes
@@ -175,7 +175,7 @@ Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes 
 
 Dans cette tâche, vous allez effectuer une montée en charge horizontale du nombre de pods, puis du nombre de nœuds de cluster.
 
-1. À partir du volet **Cloud Shell**, exécutez les opérations suivantes pour mettre à l’échelle le déploiement en augmentant le nombre de pods à 2 :
+1. Dans le volet **Cloud Shell**, eexécutez la commande suivante pour mettre à l’échelle le déploiement en augmentant le nombre de pods à 2 :
 
     ```sh
     kubectl scale --replicas=2 deployment/nginx-deployment
@@ -243,7 +243,7 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le Portail Azure, ouvrez la session shell **Bash** dans le volet **Cloud Shell**.
 
