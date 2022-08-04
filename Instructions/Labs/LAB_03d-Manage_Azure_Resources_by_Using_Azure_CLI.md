@@ -10,11 +10,11 @@ ms.lasthandoff: 02/09/2022
 ms.locfileid: "145198144"
 ---
 # <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Labo 03d - Gérer des ressources Azure à l’aide d’Azure CLI
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
-Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et en les organisant en fonction de groupes de ressources à l’aide des modèles Portail Azure, d’Azure Resource Manager et de Azure PowerShell, vous devez effectuer la tâche équivalente à l’aide d’Azure CLI. Pour éviter d’installer Azure CLI, vous allez tirer parti de l’environnement Bash disponible dans Azure Cloud Shell.
+Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure, des modèles Azure Resource Manager et d’Azure PowerShell, vous devez effectuer la tâche équivalente à l’aide d’Azure CLI. Pour éviter d’installer Azure CLI, vous allez tirer parti de l’environnement Bash disponible dans Azure Cloud Shell.
 
 ## <a name="objectives"></a>Objectifs
 
@@ -85,7 +85,7 @@ Dans cette tâche, vous allez créer un groupe de ressources et un disque manag�
 
 Dans cette tâche, vous allez gérer la configuration du disque managé Azure à l’aide d’une session Azure CLI dans Cloud Shell. 
 
-1. Pour augmenter la taille du disque managé Azure à **64 Go**, à partir de la session Bash au sein de Cloud Shell, exécutez les opérations suivantes :
+1. Pour augmenter la taille du disque managé Azure à **64 Go**, à partir de la session Bash au sein de Cloud Shell, exécutez les commandes suivantes :
 
    ```sh
    az disk update --resource-group $RGNAME --name $DISKNAME --size-gb 64
@@ -113,9 +113,9 @@ Dans cette tâche, vous allez gérer la configuration du disque managé Azure à
 
  > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
- > **Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+ > **Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le Portail Azure, ouvrez la session shell **Bash** dans le volet **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session shell **Bash** dans le volet **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

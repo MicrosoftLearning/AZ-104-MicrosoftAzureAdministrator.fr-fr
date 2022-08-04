@@ -10,10 +10,10 @@ ms.lasthandoff: 04/19/2022
 ms.locfileid: "145198131"
 ---
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Labo 03b : Gérer les ressources Azure à l’aide de modèles ARM
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
-Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et en les organisant en fonction de groupes de ressources à l’aide du Portail Azure, vous devez effectuer la tâche équivalente à l’aide de modèles Azure Resource Manager.
+Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure, vous devez effectuer la tâche équivalente à l’aide des modèles Azure Resource Manager.
 
 ## <a name="objectives"></a>Objectifs
 
@@ -45,7 +45,7 @@ Dans cette tâche, vous allez créer une ressource de disque Azure à l’aide d
 
 1. Dans le volet du groupe de ressources **az104-03a-rg1**, dans la section **Paramètres**, cliquez sur **Déploiements**.
 
-1. Dans le volet **az104-03a-rg1 - Déploiements**, cliquez sur la première entrée dans la liste des déploiements.
+1. Dans le panneau **az104-03a-rg1 - Déploiements**, cliquez sur la première entrée dans la liste des déploiements.
 
 1. Dans le volet **Microsoft.ManagedDisk-* XXXXXXXXX* \| Vue d’ensemble**, cliquez sur **Modèle**.
 
@@ -131,7 +131,7 @@ Dans cette tâche, vous allez créer une ressource de disque Azure à l’aide d
 
 1. Dans le volet du groupe de ressources **az104-03b-rg1**, dans la section **Paramètres**, cliquez sur **Déploiements**.
 
-1. Dans le volet **az104-03b-rg1 - Déploiements** , cliquez sur la première entrée dans la liste des déploiements et passez en revue le contenu des volets **Entrée** et **Modèle**.
+1. Dans le panneau **az104-03b-rg1 - Déploiements** ,cliquez sur la première entrée dans la liste des déploiements et passez en revue le contenu des panneaux **Entrée** et **Modèle**.
 
 #### <a name="clean-up-resources"></a>Nettoyer les ressources
 

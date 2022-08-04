@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 05 - Implémenter une connectivité intersites
+  title: 05 - Implémenter une connectivité intersite
   module: Module 05 - Intersite Connectivity
 ms.openlocfilehash: 6254f1b47aacdb2b0e01f090ca182feacba5e076
 ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
@@ -9,19 +9,19 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 05/11/2022
 ms.locfileid: "145198163"
 ---
-# <a name="lab-05---implement-intersite-connectivity"></a>Labo 05 - Implémenter une connectivité intersites
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# <a name="lab-05---implement-intersite-connectivity"></a>Labo 05 - Implémenter une connectivité intersite
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
-Contoso dispose de ses centres de données à Boston, à New York et aux bureaux de Seattle connectés par le biais d’une liaison réseau à grande zone de maillage, avec une connectivité complète entre eux. Vous devez implémenter un environnement de laboratoire qui reflète la topologie des réseaux locaux de Contoso et vérifie ses fonctionnalités.
+Contoso a ses centres de données à Boston, à New York et dans les bureaux de Seattle. Ils sont connectés par le biais de liaison de réseau étendu maillé, avec une connectivité complète entre eux. Vous devez implémenter un environnement de laboratoire qui reflète la topologie des réseaux locaux de Contoso et vérifie ses fonctionnalités.
 
 ## <a name="objectives"></a>Objectifs
 
 Dans ce labo, vous allez :
 
 + Tâche 1 : Approvisionner l’environnement de laboratoire
-+ Tâche 2 : Configurer le peering de réseaux virtuels locaux et globaux
++ Tâche 2 : Configurer le peering local et global des réseaux virtuels
 + Tâche 3 : Tester la connectivité intersite
 
 ## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
@@ -44,11 +44,11 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\05\\az104-05-vms-loop-template.json** and **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
+1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\05\\az104-05-vms-loop-template.json** et **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
 
-1. Modifiez le fichier **Paramètres** que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Comme meilleure pratique, les secrets, comme les mots de passe, doivent être stockés de manière plus sécurisée dans le Key Vault. 
+1. Modifiez le fichier **Paramètres** que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera l’environnement lab. Les deux premiers réseaux virtuels et une paire de machines virtuelles seront déployés dans [Azure_region_1]. Le troisième réseau virtuel et la troisième machine virtuelle seront déployés dans le même groupe de ressources, mais un autre région [Azure_region_2]. (remplacez l’espace réservé [Azure_region_1] et [Azure_region_2], y compris les crochets, par les noms de deux régions Azure différentes où vous envisagez de déployer ces machines virtuelles Azure. Par exemple, $location 1 = 'eastus'. Vous pouvez utiliser Get-AzLocation pour répertorier tous les emplacements.) :
+1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera l’environnement de labo. Les deux premiers réseaux virtuels et une paire de machines virtuelles seront déployés dans [Azure_region_1]. Le troisième réseau virtuel et la troisième machine virtuelle seront déployés dans le même groupe de ressources, mais dans une autre région [Azure_region_2]. (Remplacez les espaces réservés [Azure_region_1] et [Azure_region_2], y compris les crochets, par les noms de deux régions Azure différentes dans lesquelles vous envisagez de déployer ces machines virtuelles Azure. Par exemple, $location 1 = 'eastus'. Vous pouvez utiliser Get-AzLocation pour répertorier tous les emplacements.) :
 
    ```powershell
    $location1 = 'eastus'
@@ -64,7 +64,7 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
    >
    >Pour identifier les régions Azure, à partir d’une session PowerShell dans Cloud Shell, exécutez **(Get-AzLocation).Location**
    >
-   >Une fois que vous avez identifié deux régions que vous souhaitez utiliser, exécutez la commande ci-dessous dans le Cloud Shell pour chaque région pour confirmer que vous pouvez déployer des machines virtuelles Standard D2Sv3
+   >Une fois que vous avez identifié deux régions que vous souhaitez utiliser, exécutez la commande ci-dessous dans Cloud Shell pour chaque région pour confirmer que vous pouvez déployer des machines virtuelles Standard D2Sv3.
    >
    >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
    >
@@ -85,13 +85,13 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>Tâche 2 : Configurer le peering de réseaux virtuels locaux et globaux
+#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>Tâche 2 : Configurer le peering local et global des réseaux virtuels
 
 Dans cette tâche, vous allez configurer le peering local et global entre les réseaux virtuels que vous avez déployés dans les tâches précédentes.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Réseaux virtuels**.
 
-1. Passez en revue les réseaux virtuels que vous avez créés dans la tâche précédente et vérifiez que les deux premières se trouvent dans la même région Azure et la troisième dans une autre région Azure.
+1. Passez en revue les réseaux virtuels que vous avez créés dans la tâche précédente et vérifiez que les deux premiers se trouvent dans la même région Azure et le troisième dans une région Azure différente.
 
     >**Remarque** : Le modèle que vous avez utilisé pour le déploiement des trois réseaux virtuels garantit que les plages d’adresses IP des trois réseaux virtuels ne se chevauchent pas.
 
@@ -103,18 +103,18 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
 
     | Paramètre | Valeur|
     | --- | --- |
-    | Ce réseau virtuel : nom du lien d’homologation | **az104-05-vnet0_to_az104-05-vnet1** |
+    | Ce réseau virtuel : Nom du lien de peering | **az104-05-vnet0_to_az104-05-vnet1** |
     | Ce réseau virtuel : Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Ce réseau virtuel : Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
-    | Réseau virtuel distant : nom du lien d’homologation | **az104-05-vnet1_to_az104-05-vnet0** |
+    | Passerelle de réseau virtuel | **Aucune** |
+    | Réseau virtuel distant : Nom du lien de peering | **az104-05-vnet1_to_az104-05-vnet0** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | non sélectionné |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Réseau virtuel | **az104-05-vnet1** |
     | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Passerelle de réseau virtuel | **Aucune** |
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-05-vnet0 à az104-05-vnet1 et l’autre d’az104-05-vnet1 à az104-05-vnet0.
 
@@ -138,18 +138,18 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
 
     | Paramètre | Valeur|
     | --- | --- |
-    | Ce réseau virtuel : nom du lien d’homologation | **az104-05-vnet0_to_az104-05-vnet2** |
+    | Ce réseau virtuel : Nom du lien de peering | **az104-05-vnet0_to_az104-05-vnet2** |
     | Ce réseau virtuel : Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Ce réseau virtuel : Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
-    | Réseau virtuel distant : nom du lien d’homologation | **az104-05-vnet2_to_az104-05-vnet0** |
+    | Passerelle de réseau virtuel | **Aucune** |
+    | Réseau virtuel distant : Nom du lien de peering | **az104-05-vnet2_to_az104-05-vnet0** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | non sélectionné |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Réseau virtuel | **az104-05-vnet2** |
     | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Passerelle de réseau virtuel | **Aucune** |
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-05-vnet0 à az104-05-vnet2 et l’autre d’az104-05-vnet2 à az104-05-vnet0.
 
@@ -175,18 +175,18 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
 
     | Paramètre | Valeur|
     | --- | --- |
-    | Ce réseau virtuel : nom du lien d’homologation | **az104-05-vnet1_to_az104-05-vnet2** |
+    | Ce réseau virtuel : Nom du lien de peering | **az104-05-vnet1_to_az104-05-vnet2** |
     | Ce réseau virtuel : Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Ce réseau virtuel : Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
-    | Réseau virtuel distant : nom du lien d’homologation | **az104-05-vnet2_to_az104-05-vnet1** |
+    | Passerelle de réseau virtuel | **Aucune** |
+    | Réseau virtuel distant : Nom du lien de peering | **az104-05-vnet2_to_az104-05-vnet1** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | non sélectionné |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Réseau virtuel | **az104-05-vnet2** |
     | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Passerelle de réseau virtuel | **Aucune** |
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-05-vnet1 à az104-05-vnet2 et l’autre d’az104-05-vnet2 à az104-05-vnet1.
 
@@ -222,7 +222,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Dans la session Bureau à distance vers **az104-05-vm0**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)** .
 
-1. Dans la fenêtre de console Windows PowerShell, exécutez les opérations suivantes pour tester la connectivité à **az104-05-vm1** (qui a l’adresse IP privée de **10.51.0.4**) sur le port TCP 3389 :
+1. Dans la fenêtre de console Windows PowerShell, exécutez la commande suivante pour tester la connectivité à **az104-05-vm1** (qui a l’adresse IP privée de **10.51.0.4**) sur le port TCP 3389 :
 
    ```powershell
    Test-NetConnection -ComputerName 10.51.0.4 -Port 3389 -InformationLevel 'Detailed'
@@ -232,13 +232,13 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Examinez la sortie de la commande et vérifiez que la connexion a réussi.
 
-1. Dans la fenêtre de console Windows PowerShell, exécutez les opérations suivantes pour tester la connectivité à **az104-05-vm2** (qui a l’adresse IP privée de **10.52.0.4**) sur le port TCP 3389 :
+1. Dans la fenêtre de console Windows PowerShell, exécutez la commande suivante pour tester la connectivité à **az104-05-vm2** (qui a l’adresse IP privée de **10.52.0.4**) sur le port TCP 3389 :
 
    ```powershell
    Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
    ```
 
-1. Revenez au portail Azure sur votre ordinateur lab et revenez au panneau **Machines virtuelles**.
+1. Revenez au portail Azure sur votre ordinateur de labo et retournez dans le panneau **Machines virtuelles**.
 
 1. Dans la liste des machines virtuelles, cliquez sur **az104-05-vm1**.
 
@@ -252,7 +252,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Dans la session Bureau à distance vers **az104-05-vm1**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)** .
 
-1. Dans la fenêtre de console Windows PowerShell, exécutez les opérations suivantes pour tester la connectivité à **az104-05-vm2** (qui a l’adresse IP privée **10.52.0.4**) sur le port TCP 3389 :
+1. Dans la fenêtre de console Windows PowerShell, exécutez la commande suivante pour tester la connectivité à **az104-05-vm2** (qui a l’adresse IP privée **10.52.0.4**) sur le port TCP 3389 :
 
    ```powershell
    Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
@@ -266,7 +266,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -288,6 +288,6 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement lab
++ Approvisionné l’environnement de labo
 + Configuré le peering de réseaux virtuels locaux et globaux
 + Testé la connectivité intersite

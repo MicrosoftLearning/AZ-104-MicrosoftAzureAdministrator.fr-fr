@@ -55,9 +55,9 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
 1. Recherchez et sélectionnez **Groupes d’administration** pour accéder au panneau **Groupes d’administration**.
 
-1. Passez en revue les messages en haut du panneau **Groupes d’administration**. Si vous voyez le message indiquant que **vous êtes inscrit en tant qu’administrateur de répertoire, mais que vous n’avez pas les autorisations nécessaires pour accéder au groupe d’administration racine**, suivez la séquence d’étapes suivante :
+1. Passez en revue les messages en haut du panneau **Groupes d’administration**. Si vous voyez le message **Vous êtes inscrit en tant qu’administrateur d’annuaire, mais ne disposez pas des autorisations nécessaires pour accéder au groupe d’administration racine**, suivez la séquence d’étapes suivante :
 
-    1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+    1. Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**.
     
     1.  Dans le volet qui affiche les propriétés de votre locataire Azure Active Directory, accédez au menu vertical sur le côté gauche, et sélectionnez **Propriétés** parmi les sections dans **Gérer**.
     
@@ -146,11 +146,11 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 1. Dans le portail Azure, revenez au groupe d’administration **az104-02-mg1** et affichez ses **détails**.
 
-1. Cliquez sur **Contrôle d’accès (IAM)** , sur **+ Ajouter**, puis sur **Ajouter une attribution de rôle**. Faites votre sélection sous **Membres**, entrez **Vérifier + attribuer**, puis attribuez le rôle **Contributeur de demande de support (personnalisé)** au compte d’utilisateur qui vient d’être créé.
+1. Cliquez sur **Contrôle d’accès (IAM)** , sur **+ Ajouter**, puis sur **Ajouter une attribution de rôle**. Faites votre sélection sous **Membres**, entrez **Vérifier + attribuer**, puis attribuez le rôle **Collaborateur de la demande de support (personnalisé)** au compte d’utilisateur qui vient d’être créé.
 
 1. Ouvrez une fenêtre de navigateur **InPrivate** et connectez-vous au [portail Azure](https://portal.azure.com) à l’aide du compte utilisateur que vous venez de créer. Lorsque vous êtes invité à mettre à jour le mot de passe, modifiez le mot de passe de l’utilisateur.
 
-    >**Remarque** : Au lieu de taper le nom d’utilisateur (y compris le nom de domaine), vous pouvez coller le contenu du presse-papiers.
+    >**Remarque** : Au lieu de taper le nom d’utilisateur (y compris le nom de domaine), vous pouvez coller le contenu du Presse-papiers.
 
 1. Dans la fenêtre du navigateur **InPrivate**, dans le Portail Azure, recherchez et sélectionnez **Groupes de ressources** pour vérifier que l’utilisateur az104-02-aaduser1 peut voir tous les groupes de ressources.
 
@@ -168,9 +168,9 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 #### <a name="task-4-clean-up-resources"></a>Tâche 4 : Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression de ressources inutilisées garantit que vous ne verrez pas de frais inattendus, mais les ressources créées dans ce labo n’engendrent pas de coûts supplémentaires.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous permet d'éviter des frais inattendus, mais n'oubliez pas que les stratégies d'Azure n'entraînent pas de frais supplémentaires.
 
-   >**Remarque** : Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage.
+   >**Remarque** : Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**, dans le panneau Azure Active Directory, cliquez sur **Utilisateurs**.
 
@@ -199,7 +199,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 1. Dans le portail Azure, revenez au panneau **Groupes d’administration**. 
 
-1. Dans le panneau **Groupes d’administration**, sélectionnez l’icône **Points de suspension** en regard de votre abonnement sous le groupe d’administration **az104-02-mg1**, puis sélectionnez **Déplacer** pour l’abonnement vers le **groupe d’administration racine du locataire**.
+1. Dans le panneau **Groupes d’administration**, sélectionnez l’icône **Points de suspension** en regard de votre abonnement sous le groupe d’administration **az104-02-mg1**, puis sélectionnez **Déplacer** pour déplacer l’abonnement vers le **groupe d’administration racine du locataire**.
 
    >**Remarque** : Il est probable que le groupe d’administration cible soit le **groupe d’administration racine du locataire**, sauf si vous avez créé une hiérarchie de groupe d’administration personnalisée avant d’exécuter ce labo.
    

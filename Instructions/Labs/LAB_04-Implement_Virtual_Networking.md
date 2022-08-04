@@ -11,7 +11,7 @@ ms.locfileid: "145198172"
 ---
 # <a name="lab-04---implement-virtual-networking"></a>Labo 04 : Implémenter des réseaux virtuels
 
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
@@ -44,7 +44,7 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 
-1. Dans le portail Azure, recherchez et sélectionnez **Réseaux virtuels**, puis, dans le volet **Réseaux virtuels**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez **Réseaux virtuels**, puis, dans le panneau **Réseaux virtuels**, cliquez sur **+ Créer**.
 
 1. Créez un réseau virtuel avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -74,7 +74,7 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
 
 1. Cliquez sur **Accéder à la ressource**
 
-1. Dans le volet de réseau virtuel **az104-04-vnet1**, cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**.
+1. Dans le panneau de réseau virtuel **az104-04-vnet1**, cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**.
 
 1. Créez un sous-réseau avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -82,7 +82,7 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
     | --- | --- |
     | Nom | **subnet1** |
     | Plage d’adresses (bloc CIDR) | **10.40.1.0/24** |
-    | Un groupe de sécurité réseau | **Aucun** |
+    | Groupe de sécurité réseau | **Aucun** |
     | Table de routage | **Aucun** |
 
 1. Cliquez sur **Enregistrer**.
@@ -97,13 +97,13 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** and **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
+1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** et **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
 
     >**Remarque** : Vous devrez peut-être charger chaque fichier séparément.
 
-1. Modifiez le fichier Paramètres et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Comme meilleure pratique, les secrets, comme les mots de passe, doivent être stockés de manière plus sécurisée dans le Key Vault. 
+1. Modifiez le fichier Paramètres et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour déployer deux machines virtuelles à l’aide des fichiers de modèle et de paramètres :
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour déployer deux machines virtuelles à l’aide des fichiers de modèle et de paramètres :
 
    ```powershell
    $rgName = 'az104-04-rg1'
@@ -114,7 +114,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
 
-    >**Remarque** : Cette méthode de déploiement de modèles ARM utilise Azure PowerShell. Vous pouvez effectuer la même tâche en exécutant la commande Azure CLI équivalente **az deployment create** (pour plus d’informations, consultez [Déployer des ressources avec des modèles Resource Manager et Azure CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
+    >**Remarque** : Cette méthode de déploiement de modèles ARM utilise Azure PowerShell. Vous pouvez effectuer la même tâche en exécutant la commande Azure CLI équivalente **az deployment create** (pour plus d’informations, voir [Déployer des ressources avec des modèles Resource Manager et Azure CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)).
 
     >**Remarque** : Attendez que le déploiement se termine avant de passer à la tâche suivante. Ce processus prend environ 2 minutes.
 
@@ -123,9 +123,9 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     > 1. Vérifiez l’emplacement dans lequel le groupe de ressources « az104-04-rg1 » est déployé. Vous pouvez exécuter `az group show -n az104-04-rg1 --query location` dans votre CloudShell pour l’obtenir.
     > 1. Exécutez `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` dans votre CloudShell. S’il n’y a pas de références SKU répertoriées (c’est-à-dire qu’il n’y a aucun résultat), vous ne pouvez pas déployer de machines virtuelles D2S dans cette région. Vous devez trouver une région qui vous permettra de déployer des machines virtuelles D2S. Une fois que vous avez choisi un emplacement approprié, supprimez le groupe de ressources AZ104-04-rg1 et redémarrez le labo.
     > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter.
-    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton en haut quelques fois, ce qui amènerait la dernière commande exécutée.
+    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton haut plusieurs fois, ce qui affichera la dernière commande exécutée.
 
-1. Fermez le volet Cloud Shell.
+1. Fermez le panneau Cloud Shell.
 
 #### <a name="task-3-configure-private-and-public-ip-addresses-of-azure-vms"></a>Tâche 3 : Configurer les adresses IP privées et publiques des machines virtuelles Azure
 
@@ -133,51 +133,51 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
    >**Remarque** : Les adresses IP privées et publiques sont réellement affectées aux interfaces réseau, qui, à leur tour, sont attachées aux machines virtuelles Azure, mais il est assez courant de faire référence aux adresses IP affectées aux machines virtuelles Azure.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Groupes de ressources**, puis, dans le volet **Groupes de ressources**, cliquez sur **az104-04-rg1**.
+1. Dans le portail Azure, recherchez et sélectionnez **Groupes de ressources**, , puis, dans le panneau **Groupes de ressources**, cliquez sur **az104-04-rg1**.
 
 1. Dans l’onglet du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vnet1**.
 
-1. Dans le volet du réseau virtuel **az104-04-vnet1**, passez en revue la section **Appareils connectés** et vérifiez qu’il existe deux interfaces réseau **az104-04-nic0** et **az104-04-nic1** attachées au réseau virtuel.
+1. Dans le panneau du réseau virtuel **az104-04-vnet1**, passez en revue la section **Appareils connectés** et vérifiez qu’il existe deux interfaces réseau **az104-04-nic0** et **az104-04-nic1** attachées au réseau virtuel.
 
-1. Cliquez sur **az104-04-nic0** et, dans le volet **az104-04-nic0**, cliquez sur **Configurations IP**.
+1. Cliquez sur **az104-04-nic0** et, dans le panneau **az104-04-nic0**, cliquez sur **Configurations IP**.
 
     >**Remarque** : Vérifiez que **ipconfig1** est actuellement configuré avec une adresse IP privée dynamique.
 
 1. Dans la liste des configurations IP, cliquez sur **ipconfig1**.
 
-1. Dans le volet **ipconfig1**, dans la section **Paramètres d’adresse IP publique**, sélectionnez **Associer**, cliquez sur **+ Créer**, spécifiez les paramètres suivants, puis cliquez sur **OK** :
+1. Dans le panneau **ipconfig1**, dans la section **Paramètres d’adresse IP publique**, sélectionnez **Associer**, cliquez sur **+ Créer**, spécifiez les paramètres suivants, puis cliquez sur **OK** :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-04-pip0** |
     | Référence SKU | **Standard** |
 
-1. Dans le volet **ipconfig1**, définissez l’**Affectation** sur **Statique**, laissez la valeur par défaut de l’**Adresse IP** définie sur **10.40.0.4**.
+1. Dans le panneau **ipconfig1**, définissez l’**Affectation** sur **Statique**, laissez la valeur par défaut de l’**Adresse IP** définie sur **10.40.0.4**.
 
-1. Dans le volet **ipconfig1**, enregistrez les modifications. Veillez à attendre la fin de l’opération d’enregistrement avant de passer à l’étape suivante.
+1. Dans le panneau **ipconfig1**, enregistrez les modifications. Veillez à attendre la fin de l’opération d’enregistrement avant de passer à l’étape suivante.
 
-1. Revenir au volet **az104-04-vnet1**
+1. Retournez dans le panneau **az104-04-vnet1**
 
-1. Cliquez sur **az104-04-nic1** et, dans le volet **az104-04-nic1**, cliquez sur **Configurations IP**.
+1. Cliquez sur **az104-04-nic1** et, dans le panneau **az104-04-nic1**, cliquez sur **Configurations IP**.
 
     >**Remarque** : Vérifiez que **ipconfig1** est actuellement configuré avec une adresse IP privée dynamique.
 
 1. Dans la liste des configurations IP, cliquez sur **ipconfig1**.
 
-1. Dans le volet **ipconfig1**, dans la section **Paramètres d’adresse IP publique**, sélectionnez **Associer**, cliquez sur **+ Créer**, spécifiez les paramètres suivants, puis cliquez sur **OK** :
+1. Dans le panneau **ipconfig1**, dans la section **Paramètres d’adresse IP publique**, sélectionnez **Associer**, cliquez sur **+ Créer**, spécifiez les paramètres suivants, puis cliquez sur **OK** :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-04-pip1** |
     | Référence SKU | **Standard** |
 
-1. Dans le volet **ipconfig1**, définissez l’**Affectation** sur **Statique**, laissez la valeur par défaut de l’**Adresse IP** définie sur **10.40.1.4**.
+1. Dans le panneau **ipconfig1**, définissez l’**Affectation** sur **Statique**, laissez la valeur par défaut de l’**Adresse IP** définie sur **10.40.1.4**.
 
-1. Dans le volet **ipconfig1**, enregistrez les modifications.
+1. Dans le panneau **ipconfig1**, enregistrez les modifications.
 
-1. Revenez au volet du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vm0** et à partir du volet de machine virtuelle **az104-04-vm0**, notez l’entrée d’adresse IP publique.
+1. Revenez au panneau du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vm0** et à partir du panneau de machine virtuelle **az104-04-vm0**, notez l’entrée d’adresse IP publique.
 
-1. Revenez au volet du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vm1** et à partir du volet de machine virtuelle **az104-04-vm1**, notez l’entrée d’adresse IP publique.
+1. Revenez au panneau du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vm1** et à partir du panneau de machine virtuelle **az104-04-vm1**, notez l’entrée d’adresse IP publique.
 
     >**Remarque** : Vous aurez besoin des deux adresses IP dans la dernière tâche de ce laboratoire.
 
@@ -185,19 +185,19 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
 Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin d’autoriser la connectivité restreinte aux machines virtuelles Azure.
 
-1. Dans le portail Azure, revenez au volet du groupe de ressources **az104-04-rg1**, puis, dans la liste de ses ressources, cliquez sur **az104-04-vm0**.
+1. Dans le portail Azure, revenez au panneau du groupe de ressources **az104-04-rg1**, puis, dans la liste de ses ressources, cliquez sur **az104-04-vm0**.
 
-1. Dans le volet de vue d’ensemble **az104-04-vm0**, cliquez sur **Connecter**, puis sur **RDP** dans le menu déroulant, dans le volet **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** à l’aide de l’adresse IP publique et suivez les invites pour démarrer la session Bureau à distance.
+1. Dans le panneau de vue d’ensemble **az104-04-vm0**, cliquez sur **Connecter**, puis sur **RDP** dans le menu déroulant, dans le panneau **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** à l’aide de l’adresse IP publique et suivez les invites pour démarrer la session Bureau à distance.
 
 1. Notez que la tentative de connexion échoue.
 
-    >**Remarque** : Cela est attendu, car les adresses IP publiques de la référence SKU Standard, par défaut, nécessitent que les interfaces réseau auxquelles elles sont affectées soient protégées par un groupe de sécurité réseau. Pour autoriser les connexions Bureau à distance, vous allez créer un groupe de sécurité réseau explicitement permettant le trafic RDP entrant à partir d’Internet et l’affecter aux interfaces réseau des deux machines virtuelles.
+    >**Remarque** : Cet échec est normal, car les adresses IP publiques de la référence SKU Standard, par défaut,nécessitent que les interfaces réseau auxquelles elles sont affectées soient protégées par un groupe de sécurité réseau. Pour autoriser les connexions Bureau à distance, vous allez créer un groupe de sécurité réseau explicitement permettant le trafic RDP entrant à partir d’Internet et l’affecter aux interfaces réseau des deux machines virtuelles.
 
 1. Arrêtez les machines virtuelles **az104-04-vm0** et **az104-04-vm1**.
 
-    >**Remarque** : Ceci est fait pour des raisons de commodité de labo. Si les machines virtuelles s’exécutent lorsqu’un groupe de sécurité réseau est attaché à leur interface réseau, il peut prendre plus de 30 minutes pour que l’attachement prenne effet. Une fois le groupe de sécurité réseau créé et attaché, les machines virtuelles seront redémarrées et l’attachement sera immédiatement appliqué.
+    >**Remarque** : Ceci est fait pour des raisons de commodité de labo. Si les machines virtuelles s’exécutent lorsqu’un groupe de sécurité réseau est attaché à leur interface réseau, il peut prendre plus de 30 minutes pour que la pièce jointe prenne effet. Une fois le groupe de sécurité réseau créé et attaché, les machines virtuelles seront redémarrées et l’attachement sera immédiatement appliqué.
 
-1. Dans le portail Azure, recherchez et sélectionnez les **Groupes de sécurité réseau**, puis, dans le volet **Groupes de sécurité réseau**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez les **Groupes de sécurité réseau**, puis, dans le panneau **Groupes de sécurité réseau**, cliquez sur **+ Créer**.
 
 1. Créez un groupe de sécurité réseau avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -212,7 +212,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
     >**Remarque** : Attendez la fin du déploiement. Ce processus prend environ 2 minutes.
 
-1. Dans le volet de déploiement, cliquez sur **Accéder à la ressource** pour ouvrir l’onglet du groupe de sécurité réseau **az104-04-nsg01**.
+1. Dans le panneau de déploiement, cliquez sur **Accéder à la ressource** pour ouvrir l’onglet du groupe de sécurité réseau **az104-04-nsg01**.
 
 1. Dans l’onglet du groupe de sécurité réseau **az104-04-nsg01**, dans la section **Paramètres**, cliquez sur **Règles de sécurité entrantes**.
 
@@ -236,11 +236,11 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
 1. Arrêtez les machines virtuelles **az104-04-vm0** et **az104-04-vm1**.
 
-1. Revenez au volet de machine virtuelle **az104-04-vm0**.
+1. Revenez au panneau de machine virtuelle **az104-04-vm0**.
 
     >**Remarque** : Dans les étapes suivantes, vous allez vérifier que vous pouvez vous connecter avec succès à la machine virtuelle cible.
 
-1. Dans le volet de vue d’ensemble **az104-04-vm0**, cliquez sur **Connecter**, puis sur **RDP**, dans le volet **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** à l’aide de l’adresse IP publique et suivez les invites pour démarrer la session Bureau à distance.
+1. Dans le panneau de vue d’ensemble **az104-04-vm0**, cliquez sur **Connecter**, puis sur **RDP**, dans le panneau **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** à l’aide de l’adresse IP publique et suivez les invites pour démarrer la session Bureau à distance.
 
     >**Remarque** : Cette étape fait référence à la connexion via le Bureau à distance à partir d’un ordinateur Windows. Sur un Mac, vous pouvez utiliser le client Bureau à distance disponible sur le Mac App Store. Sur un ordinateur Linux, vous pouvez utiliser un logiciel client RDP open source.
 
@@ -254,7 +254,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
 Dans cette tâche, vous allez configurer la résolution de noms DNS dans un réseau virtuel à l’aide de zones DNS privées Azure.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Zones DNS privées**, puis, dans le volet **Zones DNS privées**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez **Zones DNS privées**, puis, dans le panneau **Zones DNS privées**, cliquez sur **+ Créer**.
 
 1. Créez une zone DNS privée avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -270,9 +270,9 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
 1. Cliquez sur **Accéder à la ressource** pour ouvrir l’onglet de zone privée DNS **contoso.org**.
 
-1. Dans le volet de zone DNS privée **contoso.org**, dans la section **Paramètres**, cliquez sur **Liens de réseau virtuel**
+1. Dans le panneau de zone DNS privée **contoso.org**, dans la section **Paramètres**, cliquez sur **Liens de réseau virtuel**.
 
-1. Cliquez sur **+ Ajouter** pour crée un lien de réseau virtuel avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Cliquez sur **+ Ajouter** pour créer un lien de réseau virtuel avec les paramètres suivants (laissez les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -285,7 +285,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
     >**Remarque :** Attendez que le lien du réseau virtuel soit créé. Cela devrait prendre moins d’une minute.
 
-1. Dans le volet de zone DNS privée **contoso.org**, dans la barre latérale, cliquez sur **Vue d’ensemble**
+1. Dans le panneau de zone DNS privée **contoso.org**, dans la barre latérale, cliquez sur **Vue d’ensemble**
 
 1. Vérifiez que les enregistrements DNS pour **az104-04-vm0** et **az104-04-vm1** apparaissent dans la liste des jeux d’enregistrements **Inscrits automatiquement**.
 
@@ -293,7 +293,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
 1. Basculez vers la session Bureau à distance vers **az104-04-vm0**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)** .
 
-1. Dans la fenêtre de console Windows PowerShell, exécutez les opérations suivantes pour tester la résolution de noms interne dans la zone DNS privée nouvellement créée :
+1. Dans la fenêtre de console Windows PowerShell, exécutez la commande suivante pour tester la résolution de noms interne dans la zone DNS privée nouvellement créée :
 
    ```powershell
    nslookup az104-04-vm0.contoso.org
@@ -310,7 +310,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Utilisez la recherche de noms de domaine pour identifier un nom de domaine qui n’est pas utilisé.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Zones DNS privées**, puis, dans le volet **Zones DNS privées**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez **Zones DNS privées**, puis, dans le panneau **Zones DNS privées**, cliquez sur **+ Créer**.
 
 1. Créez une zone DNS avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -324,9 +324,9 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
     >**Remarque** : Attendez que la zone DNS soit créée. Ce processus prend environ 2 minutes.
 
-1. Cliquez sur **Accéder à la ressource** pour ouvrir le volet de la zone DNS nouvellement créée.
+1. Cliquez sur **Accéder à la ressource** pour ouvrir le panneau de la zone DNS nouvellement créée.
 
-1. Sur le volet de la zone DNS, cliquez sur **+ Jeu d’enregistrements**.
+1. Sur le panneau de la zone DNS, cliquez sur **+ Jeu d’enregistrements**.
 
 1. Créez un jeu d’enregistrements avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -341,7 +341,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Cliquez sur **OK**
 
-1. Sur le volet de la zone DNS, cliquez sur **+ Jeu d’enregistrements**.
+1. Sur le panneau de la zone DNS, cliquez sur **+ Jeu d’enregistrements**.
 
 1. Créez un jeu d’enregistrements avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -360,7 +360,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Dans le portail Azure, ouvrez une session **PowerShell** dans **Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externe du jeu d’enregistrements DNS **az104-04-vm0** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externe du jeu d’enregistrements DNS **az104-04-vm0** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
 
    ```powershell
    nslookup az104-04-vm0.[domain name] [Name server 1]
@@ -368,7 +368,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Vérifiez que la sortie de la commande inclut l’adresse IP publique **az104-04-vm0**.
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externe du jeu d’enregistrements DNS **az104-04-vm1** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externe du jeu d’enregistrements DNS **az104-04-vm1** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
 
    ```powershell
    nslookup az104-04-vm1.[domain name] [Name server 1]
@@ -380,9 +380,9 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
  > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
- > **Remarque** :  Ne vous inquiétez pas si les ressources lab ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+ > **Remarque** :  Ne vous inquiétez pas si les ressources lab ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

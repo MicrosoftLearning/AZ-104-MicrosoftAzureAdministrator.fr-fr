@@ -11,18 +11,18 @@ ms.locfileid: "146973691"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Labo 01 - Gérer les identités Azure Active Directory
 
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
-Pour permettre aux utilisateurs de Contoso de s’authentifier à l’aide d’Azure AD, vous avez été chargé de provisionner des utilisateurs et des comptes de groupe. L’appartenance aux groupes doit être mise à jour automatiquement en fonction du poste de l’utilisateur. Vous devez également créer un locataire Azure AD test avec un compte d’utilisateur test et accorder à ce compte des autorisations limitées aux ressources de l’abonnement Contoso Azure.
+Pour permettre aux utilisateurs de Contoso de s’authentifier à l’aide d’Azure AD, vous avez été chargé d’approvisionner des utilisateurs et des comptes de groupe. L’appartenance aux groupes doit être mise à jour automatiquement en fonction du poste de l’utilisateur. Vous devez également créer un locataire Azure AD test avec un compte d’utilisateur test et accorder à ce compte des autorisations limitées aux ressources de l’abonnement Contoso Azure.
 
 ## <a name="objectives"></a>Objectifs
 
 Dans ce labo, vous allez :
 
 + Tâche 1 : Créer et configurer des utilisateurs Azure AD
-+ Tâche 2 : Créer des groupes Azure AD avec une adhésion attribuée et dynamique
++ Tâche 2 : Créer des groupes Azure AD avec une appartenance dynamique et attribuée
 + Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
 + Tâche 4 : Gérer des utilisateurs invités Azure AD (facultatif - problème d'environnement lab)
 
@@ -39,11 +39,11 @@ Dans ce labo, vous allez :
 
 Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
->**Remarque** : Si vous avez déjà utilisé la licence d’évaluation pour Azure AD Premium sur ce locataire Azure AD, vous aurez besoin d’un nouveau locataire Azure AD et effectuez la tâche 2 après la tâche 3 dans ce nouveau locataire Azure AD.
+>**Remarque** : Si vous avez déjà utilisé la licence d’évaluation pour Azure AD Premium sur ce locataire Azure AD, vous aurez besoin d’un nouveau locataire Azure AD et devrez effectuer la tâche 2 après la tâche 3 dans ce nouveau locataire Azure AD
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 
-1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+1. Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**.
 
 1. Dans le panneau Azure Active Directory, faites défiler jusqu’à la section **Gérer**, cliquez sur **Paramètres utilisateur** et passez en revue les options de configuration disponibles.
 
@@ -79,11 +79,11 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
 1. Ouvrez une fenêtre de navigateur **InPrivate** et connectez-vous au [portail Azure](https://portal.azure.com) à l’aide du compte utilisateur que vous venez de créer. Lorsque vous êtes invité à mettre à jour le mot de passe, remplacez le mot de passe par un mot de passe sécurisé de votre choix. 
 
-    >**Remarque** : Au lieu de taper le nom d’utilisateur (y compris le nom de domaine), vous pouvez coller le contenu du presse-papiers.
+    >**Remarque** : Au lieu de taper le nom d’utilisateur (y compris le nom de domaine), vous pouvez coller le contenu du Presse-papiers.
 
-1. Dans la fenêtre du navigateur **InPrivate**, dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+1. Dans la fenêtre du navigateur **InPrivate**, Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**.
 
-    >**Remarque** : Bien que ce compte d’utilisateur puisse accéder au locataire Azure Active Directory, il n’a pas accès aux ressources Azure. Cela est attendu, étant donné que ce type d’accès doit être accordé explicitement à l’aide du contrôle d’accès en fonction du rôle (RBAC) d’Azure. 
+    >**Remarque** : Bien que ce compte d’utilisateur puisse accéder au locataire Azure Active Directory, il n’a pas accès aux ressources Azure. Cela est normal, car ce type d’accès doit être accordé explicitement à l’aide du contrôle d’accès en fonction du rôle (RBAC) d’Azure. 
 
 1. Dans la fenêtre du navigateur **InPrivate**, dans le panneau Azure AD, faites défiler jusqu’à la section **Gérer**, cliquez sur **Paramètres utilisateur** et notez que vous n’avez pas d’autorisations pour modifier les options de configuration.
 
@@ -103,7 +103,7 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
 1. Déconnectez-vous du compteur utilisateur az104-01a-aaduser1 à partir du Portail Azure et fermez la fenêtre de navigateur InPrivate.
 
-#### <a name="task-2-create-azure-ad-groups-with-assigned-and-dynamic-membership"></a>Tâche 2 : Créer des groupes Azure AD avec une adhésion attribuée et dynamique
+#### <a name="task-2-create-azure-ad-groups-with-assigned-and-dynamic-membership"></a>Tâche 2 : Créer des groupes Azure AD avec une appartenance dynamique et attribuée
 
 Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l’appartenance affectée et dynamique.
 
@@ -192,7 +192,7 @@ Dans cette tâche, vous allez créer un locataire Azure AD.
 
    >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous rencontrez ce problème, ignorez cette tâche et la suivante. Nous travaillons actuellement à résoudre le problème.
 
-1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+1. Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**.
 
 1. Cliquez sur **Gérer les locataires**, puis sur l’écran suivant, cliquez sur **+ Créer**, puis spécifiez le paramètre suivant :
 
@@ -262,7 +262,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
 > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées garantit que vous n’encourrez pas de coûts imprévus. Bien que, dans ce cas, il n’y ait pas de frais supplémentaires associés aux locataires Azure Active Directory et à leurs objets, vous pouvez envisager de supprimer les comptes d’utilisateur, les comptes de groupe et le locataire Azure Active Directory que vous avez créé dans ce laboratoire.
 
- > **Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+ > **Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le **portail Azure**, recherchez et sélectionnez **Azure Active Directory** dans la barre de recherche. Dans **Azure Active Directory** sous **Gérer** sélectionnez **Licences**. Une fois dans **Licences** sous **Gérer**, sélectionnez **Tous les produits**, puis l’élément **Azure Active Directory Premium P2** dans la liste. Passez ensuite à la sélection des **utilisateurs sous licence**. Sélectionnez les comptes d’utilisateur **az104-01a-aaduser1** et **az104-01a-aaduser2** auxquels vous avez attribué des licences dans ce laboratoire, cliquez sur **Supprimer la licence**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
@@ -276,7 +276,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
 1. Accédez au volet **Utilisateurs - Tous les utilisateurs**, cliquez sur l’entrée représentant le compte d’utilisateur **az104-01b-aaduser1**, dans le volet **az104-01b-aaduser1 - Profil**, cliquez sur **Supprimer**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Ok**.
 
-1. Accédez au panneau **Contoso Lab - Vue d’ensemble** du locataire Azure AD Contoso Lab, cliquez sur **Gérer les locataires**, puis, dans l’écran suivant, sélectionnez la case en regard de **Labo Contoso**, cliquez sur **Supprimer**, sur le panneau **Supprimer le locataire « Labo Contoso » ?** , cliquez sur le lien **Obtenir l’autorisation pour supprimer des ressources Azure**, dans le panneau **Propriétés** de Azure Active Directory, définissez **Gestion des accès pour les ressources Azure** sur **Oui**, puis cliquez sur **Enregistrer**.
+1. Accédez au panneau **Contoso Lab - Vue d’ensemble** du locataire Azure AD Contoso Lab, cliquez sur **Gérer les locataires**, puis, dans l’écran suivant, sélectionnez la case en regard de **Labo Contoso**, cliquez sur **Supprimer**, sur le panneau **Supprimer le locataire « Labo Contoso » ?** , cliquez sur le lien **Obtenir l’autorisation pour supprimer des ressources Azure**. Dans le panneau **Propriétés** de Azure Active Directory, définissez **Gestion des accès pour les ressources Azure** sur **Oui**, puis cliquez sur **Enregistrer**.
 
 1. Revenez au panneau **Supprimer le locataire « Labo Contoso »,** puis cliquez sur **Actualiser** puis **Supprimer**.
 

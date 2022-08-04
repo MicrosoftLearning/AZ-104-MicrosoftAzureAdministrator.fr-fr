@@ -10,11 +10,11 @@ ms.lasthandoff: 02/08/2022
 ms.locfileid: "145198129"
 ---
 # <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Labo 03c : Gérer des ressources Azure à l’aide d’Azure PowerShell
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
-Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et en les organisant en fonction de groupes de ressources à l’aide du Portail Azure et des modèles Azure Resource Manager, vous devez effectuer la tâche équivalente à l’aide d’Azure PowerShell. Pour éviter d’installer les modules Azure PowerShell, vous utiliserez l’environnement PowerShell disponible dans Azure Cloud Shell.
+Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure et des modèles Azure Resource Manager, vous devez effectuer la tâche équivalente à l’aide d’Azure PowerShell. Pour éviter d’installer les modules Azure PowerShell, vous utiliserez l’environnement PowerShell disponible dans Azure Cloud Shell.
 
 ## <a name="objectives"></a>Objectifs
 
@@ -95,7 +95,7 @@ Dans cette tâche, vous allez créer un groupe de ressources et un disque manag�
 
 Dans cette tâche, vous allez gérer la configuration du disque managé Azure à l’aide d’une session Azure PowerShell dans Cloud Shell. 
 
-1. Pour augmenter la taille du disque managé Azure à **64 Go**, à partir de la session PowerShell dans Cloud Shell, exécutez les opérations suivantes :
+1. Pour augmenter la taille du disque managé Azure à **64 Go**, à partir de la session PowerShell dans Cloud Shell, exécutez les commandes suivantes :
 
    ```powershell
    New-AzDiskUpdateConfig -DiskSizeGB 64 | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName

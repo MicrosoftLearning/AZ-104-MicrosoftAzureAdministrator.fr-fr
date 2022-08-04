@@ -16,7 +16,7 @@ ms.locfileid: "146973673"
 
 Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été chargé d’implémenter les fonctionnalités suivantes :
 
-- marquage de groupes de ressources qui incluent uniquement des ressources d’infrastructure (telles que des comptes de stockage Cloud Shell)
+- étiqueter des groupes de ressources qui incluent uniquement des ressources d’infrastructure (telles que des comptes de stockage Cloud Shell)
 
 - s’assurer que seules les ressources d’infrastructure correctement étiquetées peuvent être ajoutées aux groupes de ressources d’infrastructure
 
@@ -26,9 +26,9 @@ Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été ch
 
 Dans ce labo, nous allons :
 
-+ Tâche 1 : Créer et attribuer des balises via le portail Azure
-+ Tâche 2 : Mettre en œuvre le balisage via une stratégie Azure
-+ Tâche 3 : Appliquer le balisage via une stratégie Azure
++ Tâche 1 : Créer et attribuer des étiquettes via le portail Azure
++ Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
++ Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 
 ## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
 
@@ -42,9 +42,9 @@ Dans ce labo, nous allons :
 
 #### <a name="task-1-assign-tags-via-the-azure-portal"></a>Tâche 1 : Attribuer des balises via le portail Azure
 
-Dans cette tâche, vous allez créer et affecter une balise à un groupe de ressources Azure via le portail Azure.
+Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de ressources Azure via le portail Azure.
 
-1. Dans le Portail Azure, démarrez une session **PowerShell** dans **Cloud Shell**.
+1. Dans le portail Azure, démarrez une session **PowerShell** dans **Cloud Shell**.
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**. 
 
@@ -60,34 +60,34 @@ Dans cette tâche, vous allez créer et affecter une balise à un groupe de ress
    //xxxxxxxxxxxxxx.file.core.windows.net/cloudshell   (..)  /usr/csuser/clouddrive
    ```
 
-1. Dans le Portail Azure, recherchez et sélectionnez **Stockage comptes** et, dans la liste des comptes de stockage, cliquez sur l’entrée représentant le compte de stockage que vous avez identifié à l’étape précédente.
+1. Dans le portail Azure, recherchez et sélectionnez **Comptes de stockage** et, dans la liste des comptes de stockage, cliquez sur l’entrée représentant le compte de stockage que vous avez identifié à l’étape précédente.
 
 1. Dans le panneau du compte de stockage, cliquez sur le lien représentant le nom du groupe de ressources contenant le compte de stockage.
 
-    **Remarque** : notez le groupe de ressources dans lequel se trouve le compte de stockage, vous en aurez besoin plus tard dans le labo.
+    **Remarque** : Notez le groupe de ressources dans lequel se trouve le compte de stockage, vous en aurez besoin plus tard dans le labo.
 
-1. Dans le panneau du groupe de ressources, cliquez sur **Modifier** en regard des **balises** pour créer de nouvelles balises.
+1. Dans le panneau du groupe de ressources, cliquez sur **Modifier** en regard de l’option **Étiquettes** pour créer de nouvelles étiquettes.
 
-1. Créez une balise avec les paramètres suivants et appliquez votre modification :
+1. Créez une étiquette avec les paramètres suivants et appliquez votre modification :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **Rôle** |
     | Valeur | **Infra** |
 
-1. Retournez au volet de compte de stockage. Passez en revue les informations **Vue d’ensemble** et notez que la nouvelle balise n’a pas été automatiquement affectée au compte de stockage. 
+1. Retournez dans le panneau de compte de stockage. Passez en revue les informations **Vue d’ensemble** et notez que la nouvelle balise n’a pas été automatiquement affectée au compte de stockage. 
 
-#### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>Tâche 2 : Mettre en œuvre le balisage via une stratégie Azure
+#### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
 
-Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une balise et sa valeur sur les ressources* au groupe de ressources et évaluer le résultat. 
+Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une étiquette et sa valeur sur les ressources* au groupe de ressources et évaluer le résultat. 
 
 1. Dans le portail Azure, recherchez et sélectionnez **Stratégie**. 
 
-1. Dans la section **Création**, cliquez sur **Définitions**. Prenez un moment pour parcourir la liste des définitions de stratégie intégrées qui sont disponibles pour vous permettre d’utiliser. Répertoriez toutes les stratégies intégrées qui impliquent l’utilisation de balises en sélectionnant l’entrée **Balises** (et en désélectionnant toutes les autres entrées) dans la liste déroulante **Catégorie**. 
+1. Dans la section **Création**, cliquez sur **Définitions**. Prenez le temps de parcourir la liste des définitions de stratégies intégrées que vous pouvez utiliser. Répertoriez toutes les stratégies intégrées qui impliquent l’utilisation de balises en sélectionnant l’entrée **Balises** (et en désélectionnant toutes les autres entrées) dans la liste déroulante **Catégorie**. 
 
-1. Cliquez sur l’entrée représentant la stratégie intégré **Exiger une balise et sa valeur sur les ressources** et passez en revue sa définition.
+1. Cliquez sur l’entrée représentant la stratégie intégré **Exiger une étiquette et sa valeur sur les ressources** et passez en revue sa définition.
 
-1. Dans le panneau de définition de la stratégie intégrée **Exiger une balise et sa valeur sur les ressources**, cliquez sur **Affecter**.
+1. Dans le panneau de définition de la stratégie intégrée **Exiger une étiquette et sa valeur sur les ressources**, cliquez sur **Affecter**.
 
 1. Spécifiez **l’étendue** en cliquant sur le bouton Points de suspension et en sélectionnant les valeurs suivantes :
 
@@ -125,7 +125,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une bali
     
     >**Remarque** : La mise en œuvre de la stratégie peut prendre entre 5 et 15 minutes.
 
-1. Revenez au panneau du groupe de ressources hébergeant le compte de stockage utilisé pour le lecteur d’accueil Cloud Shell, que vous avez identifié dans la tâche précédente.
+1. Revenez au panneau du groupe de ressources hébergeant le compte de stockage utilisé pour le lecteur de base Cloud Shell, que vous avez identifié dans la tâche précédente.
 
 1. Dans le panneau du groupe de ressources, cliquez sur **+ Créer**, puis recherchez **Compte de stockage**, puis cliquez sur **+ Créer**. 
 
@@ -139,9 +139,9 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une bali
 
     >**Remarque** : Vérifiez si le message d’erreur indique que le déploiement de ressources a été interdit par la stratégie. 
 
-    >**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise de rôle avec la valeur Infra**. Le déploiement a échoué, car le compte de stockage que vous avez tenté de créer n’a pas de balise nommée **Role** avec sa valeur définie sur **Infra**.
+    >**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise de rôle avec la valeur Infra**. Le déploiement a échoué, car le compte de stockage que vous avez tenté de créer n’a pas d’étiquette nommée **Role** avec sa valeur définie sur **Infra**.
 
-#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>Tâche 3 : Appliquer le balisage via une stratégie Azure
+#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 
 Dans cette tâche, nous allons utiliser une définition de stratégie différente pour corriger toutes les ressources non conformes. 
 
@@ -205,9 +205,9 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 #### <a name="task-4-clean-up-resources"></a>Tâche 4 : Nettoyer les ressources
 
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression de ressources inutilisées garantit que vous ne verrez pas de frais inattendus, mais gardez à l’esprit que les stratégies Azure n’entraînent pas de coûts supplémentaires.
+   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous permet d'éviter des frais inattendus, mais n'oubliez pas que les stratégies d'Azure n'entraînent pas de frais supplémentaires.
    
-   >**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+   >**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail, recherchez et sélectionnez **Stratégie**.
 
@@ -215,7 +215,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Dans le portail, recherchez et sélectionnez **Comptes de stockage**.
 
-1. Dans la liste des comptes de stockage, sélectionnez le groupe de ressources correspondant au compte de stockage que vous avez créé dans la dernière tâche de ce laboratoire. Sélectionnez **Balises**, puis cliquez sur **Supprimer** (Corbeille à droite) sur la balise **Role:Infra**, puis appuyez sur **Appliquer**. 
+1. Dans la liste des comptes de stockage, sélectionnez le groupe de ressources correspondant au compte de stockage que vous avez créé dans la dernière tâche de ce laboratoire. Sélectionnez **Étiquettes**, cliquez sur **Supprimer** (Corbeille à droite) l’étiquette **Role:Infra**, puis appuyez sur **Appliquer**. 
 
 1. Cliquez sur **Vue d’ensemble**, puis cliquez sur **Supprimer** en haut du panneau du compte de stockage. Lorsque vous y êtes invité, dans le panneau **Supprimer le compte de stockage**, tapez le nom du compte de stockage pour confirmer et cliquer sur **Supprimer**. 
 

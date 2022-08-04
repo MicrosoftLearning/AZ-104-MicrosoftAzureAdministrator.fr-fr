@@ -10,7 +10,7 @@ ms.lasthandoff: 05/11/2022
 ms.locfileid: "145198134"
 ---
 # <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Labo 03a : Gérer les ressources Azure en utilisant le portail Azure
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
