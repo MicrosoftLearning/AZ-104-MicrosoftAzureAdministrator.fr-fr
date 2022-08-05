@@ -10,7 +10,7 @@ ms.lasthandoff: 06/26/2022
 ms.locfileid: "146587446"
 ---
 # <a name="lab-08---manage-virtual-machines"></a>Labo 08 : Gérer des machines virtuelles
-# <a name="student-lab-manual"></a>Manuel de labo pour étudiant
+# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
@@ -20,12 +20,12 @@ Vous avez été chargé d’identifier différentes options pour déployer et co
 
 Dans ce labo, vous allez :
 
-+ Tâche 1 : Déployer des machines virtuelles Azure résilientes aux zones à l’aide des Portail Azure et d’un modèle Azure Resource Manager
++ Tâche 1 : Déployer des machines virtuelles Azure résilientes aux zones à l’aide du portail Azure et d’un modèle Azure Resource Manager
 + Tâche 2 : Configurer des machines virtuelles Azure à l’aide d’extensions de machine virtuelle
 + Tâche 3 : Mettre à l'échelle le calcul et le stockage des machines virtuelles Azure
 + Tâche 4 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement
-+ Tâche 5 : Déployer des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide de la Portail Azure
-+ Tâche 6 : Configurer des groupe de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
++ Tâche 5 : Déployer des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide du portail Azure
++ Tâche 6 : Configurer des groupes de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
 + Tâche 7 : Mettre à l’échelle le calcul et le stockage pour les groupes de machines virtuelles identiques Azure (facultatif)
 
 ## <a name="estimated-timing-50-minutes"></a>Durée estimée : 50 minutes
@@ -39,7 +39,7 @@ Dans ce labo, vous allez :
 
 ### <a name="exercise-1"></a>Exercice 1
 
-#### <a name="task-1-deploy-zone-resilient-azure-virtual-machines-by-using-the-azure-portal-and-an-azure-resource-manager-template"></a>Tâche 1 : Déployer des machines virtuelles Azure résilientes aux zones à l’aide des Portail Azure et d’un modèle Azure Resource Manager
+#### <a name="task-1-deploy-zone-resilient-azure-virtual-machines-by-using-the-azure-portal-and-an-azure-resource-manager-template"></a>Tâche 1 : Déployer des machines virtuelles Azure résilientes aux zones à l’aide du portail Azure et d’un modèle Azure Resource Manager
 
 Dans cette tâche, vous allez déployer des machines virtuelles Azure dans différentes zones de disponibilité à l’aide du portail Azure et d’un modèle Azure Resource Manager.
 
@@ -47,12 +47,12 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **+ Créer**, puis sur **+ Machine virtuelle Azure**.
 
-1. Sous l’onglet **Informations de base** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Sous l’onglet **Informations de base** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | Nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
@@ -62,19 +62,19 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Taille | **Standard D2s v3** |
     | Nom d’utilisateur | **Étudiant** |
     | Mot de passe | **Choisissez un mot de passe sécurisé** |
-    | Aucun port d’entrée public | **Aucun** |
+    | Ports d'entrée publics | **Aucun** |
     | Souhaitez-vous utiliser une licence Windows Server existante ? | **Décoché** |
 
-1. Cliquez sur **Suivant : Disques >** et dans l’onglet **Disques** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+1. Cliquez sur **Suivant : Disques >** et dans l’onglet **Disques** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
     | Paramètre | Value |
     | --- | --- |
     | Type de disque du système d’exploitation | **SSD Premium** |
     | Activer la compatibilité avec les disques Ultra | **Décoché** |
 
-1. Cliquez sur **Suivant : Réseau >** et, dans l’onglet **Réseau** du volet **Créer une machine virtuelle**, cliquez sur **Créer** sous la zone de texte **Réseau virtuel**.
+1. Cliquez sur **Suivant : Réseau >** et, dans l’onglet **Réseau** du panneau **Créer une machine virtuelle**, cliquez sur **Créer** sous la zone de texte **Réseau virtuel**.
 
-1. Dans le panneau **Créer un réseau virtuel**, spécifiez les paramètres suivants (en laissant les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **Créer un réseau virtuel**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -83,18 +83,18 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Nom du sous-réseau | **subnet0** |
     | Plage de sous-réseau | **10.80.0.0/24** |
 
-1. Cliquez sur **OK** et, de retour dans l’onglet **Réseau** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+1. Cliquez sur **OK** et, de retour dans l’onglet **Réseau** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Subnet | **subnet0** |
-    | Adresse IP publique | **default** |
-    | Groupe de sécurité réseau de la carte réseau | **bases** |
+    | Sous-réseau | **subnet0** |
+    | Adresse IP publique | **par défaut** |
+    | Groupe de sécurité réseau de la carte réseau | **basic** |
     | Ports d’entrée publics | **Aucun** |
     | Mise en réseau accélérée | **Désactivé**
     | Placer cette machine virtuelle derrière une solution d’équilibrage de charge existante ? | **Décoché** |
 
-1. Cliquez sur **Suivant : Gestion >** et sous l’onglet **Gestion** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+1. Cliquez sur **Suivant : Gestion >** et sous l’onglet **Gestion** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -114,7 +114,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     >**Remarque** : Vous allez utiliser cette option pour déployer la deuxième machine virtuelle avec la configuration correspondante, à l’exception de la zone de disponibilité.
 
-1. Dans le panneau **Déploiement personnalisé**, spécifiez les paramètres suivants (en laissant les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **Déploiement personnalisé**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) :
 
     | Paramètre | Value |
     | --- | --- |
@@ -142,7 +142,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
 1. Dans le panneau du compte de stockage, dans la section **Stockage de données**, cliquez sur **Conteneurs**, puis sur **+ Conteneur**.
 
-1. Dans le panneau **Nouveau conteneur**, spécifiez les paramètres suivants (en laissant les autres avec leurs valeurs par défaut) puis cliquez sur **Créer** :
+1. Dans le panneau **Nouveau conteneur**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) puis cliquez sur **Créer** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -153,7 +153,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
 1. Dans le panneau **scripts**, cliquez sur **Télécharger**.
 
-1. Dans le panneau **Télécharger blob**, cliquez sur l’icône de dossier, dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Télécharger blob**, cliquez sur **Télécharger**.
+1. Dans le panneau **Charger l'objet blob**, cliquez sur l’icône de dossier, dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Charger l'objet blob**, cliquez sur **Télécharger**.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-08-vm0**.
 
@@ -169,7 +169,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-08-vm1**.
 
-1. Dans le panneau **az104-08-vm1** , dans la section **Automation** , cliquez sur **Exporter le modèle**.
+1. Dans le panneau **az104-08-vm1**, dans la section **Automation**, cliquez sur **Exporter le modèle**.
 
 1. Dans le panneau **az104-08-vm1 - Exporter le modèle**, cliquez sur **Déployer**.
 
@@ -209,9 +209,9 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
     >**Remarque** : Attendez la fin du déploiement du modèle. Vous pouvez surveiller sa progression à partir du panneau **Extensions** des machines virtuelles **az104-08-vm0** et **az104-08-vm1**. Cette opération ne doit pas prendre plus de 3 minutes.
 
-1. Pour vérifier que la configuration basée sur l’extension de script personnalisé a réussi, revenez dans le panneau **az104-08-vm1**, dans la section **Opérations**, cliquez sur **Exécuter la commande**, puis, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
+1. Pour vérifier que la configuration basée sur l’extension de script personnalisé a réussi, revenez dans le panneau **az104-08-vm1**, dans la section **Opérations**, cliquez sur **Run command**, puis, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
 
-1. Dans le panneau **Exécuter le script de commande**, tapez ce qui suit, puis cliquez sur **Exécuter** pour accéder au site web hébergé sur **az104-08-vm0** :
+1. Dans le panneau **Script Run Command**, tapez ce qui suit, puis cliquez sur **Exécuter** pour accéder au site web hébergé sur **az104-08-vm0** :
 
    ```powershell
    Invoke-WebRequest -URI http://10.80.0.4 -UseBasicParsing
@@ -223,7 +223,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
 #### <a name="task-3-scale-compute-and-storage-for-azure-virtual-machines"></a>Tâche 3 : Mettre à l'échelle le calcul et le stockage des machines virtuelles Azure
 
-Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines virtuelles Azure en modifiant leur taille et en mettant à l’échelle leur stockage en attachant et en configurant leurs disques de données.
+Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtuelles Azure en modifiant leur taille et mettre à l'échelle leur stockage en attachant et en configurant leurs disques de données.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-08-vm0**.
 
@@ -239,9 +239,9 @@ Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines
     | --- | --- |
     | Nom du disque | **az104-08-vm0-datadisk-0** |
     | Type de stockage | **SSD Premium** |
-    | Taille (Gio| **1024** |
+    | Taille (Gio)| **1,024** |
 
-1. De retour dans le panneau **az104-08-vm0 - Disques**, sous **Disques de données**, cliquez sur **+ Créer et attachez un nouveau disque**.
+1. De retour dans le panneau **az104-08-vm0 - Disques**, sous **Disques de données**, cliquez sur **+ Créer un disque et l'attacher**.
 
 1. Créez un disque managé avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) et enregistrez les modifications :
 
@@ -249,13 +249,13 @@ Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines
     | --- | --- |
     | Nom du disque | **az104-08-vm0-datadisk-1** |
     | Type de stockage | **SSD Premium** |
-    | Taille (Gio)| **1024 Gio** |
+    | Taille (Gio)| **1,024 Gio** |
 
 1. De retour dans le panneau **az104-08-vm0 - Disques**, cliquez sur **Enregistrer**.
 
-1. Dans le panneau **az104-08-vm0**, dans la section **Opérations**, cliquez sur **Exécuter la commande** et, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
+1. Dans le panneau **az104-08-vm0**, dans la section **Opérations**, cliquez sur **Run command** et, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
 
-1. Dans le panneau **Exécuter le script de commande**, tapez ce qui suit, puis cliquez sur **Exécuter** pour créer un lecteur Z : constitué des deux disques nouvellement attachés avec la disposition simple et l’approvisionnement fixe :
+1. Dans le panneau **Script Run Command**, tapez ce qui suit, puis cliquez sur **Exécuter** pour créer un lecteur Z : constitué des deux disques nouvellement attachés avec la disposition simple et l’approvisionnement fixe :
 
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
@@ -271,7 +271,7 @@ Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-08-vm1**.
 
-1. Dans le panneau **az104-08-vm1** , dans la section **Automation** , cliquez sur **Exporter le modèle**.
+1. Dans le panneau **az104-08-vm1**, dans la section **Automation**, cliquez sur **Exporter le modèle**.
 
 1. Dans le panneau **az104-08-vm1 - Exporter le modèle**, cliquez sur **Déployer**.
 
@@ -318,9 +318,9 @@ Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines
 
     >**Remarque** : Attendez la fin du déploiement du modèle. Vous pouvez surveiller sa progression à partir du panneau **Disques** de la machine virtuelle **az104-08-vm1**. Cette opération ne doit pas prendre plus de 3 minutes.
 
-1. De retour sur le panneau **az104-08-vm1**, dans la section **Opérations**, cliquez sur **Exécuter la commande** et, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
+1. De retour sur le panneau **az104-08-vm1**, dans la section **Opérations**, cliquez sur **Run command** et, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
 
-1. Dans le panneau **Exécuter le script de commande**, tapez ce qui suit, puis cliquez sur **Exécuter** pour créer un lecteur Z : constitué des deux disques nouvellement attachés avec la disposition simple et l’approvisionnement fixe :
+1. Dans le panneau **Script Run Command**, tapez ce qui suit, puis cliquez sur **Exécuter** pour créer un lecteur Z : constitué des deux disques nouvellement attachés avec la disposition simple et l’approvisionnement fixe :
 
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
@@ -342,7 +342,7 @@ Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
+1. Dans le panneau Cloud Shell, exécutez la commande suivante pour inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
 
    ```powershell
    Register-AzResourceProvider -ProviderNamespace Microsoft.Insights
@@ -350,18 +350,18 @@ Dans cette tâche, vous allez mettre à l’échelle le calcul pour les machines
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>Tâche 5 : Déployer des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide de la Portail Azure
+#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>Tâche 5 : Déployer des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide du portail Azure
 
 Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiques Azure sur des zones de disponibilité à l’aide du portail Azure.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Groupes de machines virtuelles identiques** et, dans le panneau **Groupes de machines virtuelles identiques**, cliquez sur **+ Ajouter** (ou **+ Créer**).
 
-1. Sous l’onglet **Informations de base** du volet **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Disques >**  :
+1. Sous l’onglet **Informations de base** du panneau **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Disques >**  :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
     | Nom du groupe de machines virtuelles identiques | **az10408vmss0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez provisionner des machines virtuelles Azure différentes de celles que vous avez utilisées pour déployer des machines virtuelles précédemment dans ce laboratoire |
     | Zone de disponibilité | **Zones 1, 2, 3** |
@@ -389,9 +389,9 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Revenez sous l’onglet **Mise en réseau** du panneau **Créer un groupe de machines virtuelles identiques**, cliquez sur l’icône **Modifier l’interface réseau** à droite de l’entrée d’interface réseau.
 
-1. Dans le panneau **Modifier l’interface réseau** , dans la section **Groupe de sécurité réseau NIC**, cliquez sur **Avancé**, puis sur **Créer** sous la liste déroulante **Configurer le groupe de sécurité réseau**.
+1. Dans le panneau **Modifier l’interface réseau**, dans la section **Groupe de sécurité réseau de la carte réseau**, cliquez sur **Avancé**, puis sur **Créer** sous la liste déroulante **Configurer le groupe de sécurité réseau**.
 
-1. Dans le panneau **Créer un groupe de sécurité réseau**, spécifiez les paramètres suivants (en laissant les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **Créer un groupe de sécurité réseau**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -401,13 +401,13 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Source | **Any** |
-    | Source port ranges | **\*** |
-    | Destination | **Any** |
+    | Source | **Aucune** |
+    | Plages de ports sources | **\*** |
+    | Destination | **Aucune** |
     | Plages de ports de destination | **80** |
-    | Protocol | **TCP** |
+    | Protocole | **TCP** |
     | Action | **Autoriser** |
-    | Priority | **1010** |
+    | Priorité | **1010** |
     | Nom | **custom-allow-http** |
 
 1. Cliquez sur **Ajouter** et, dans le panneau **Créer un groupe de sécurité réseau**, cliquez sur **OK**.
@@ -422,14 +422,14 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Sélectionnez un équilibreur de charge | **(nouveau) az10408vmss0-lb** |
     | Sélectionnez un pool principal | **(nouveau) bepool** |
 
-1. Sous l’onglet **Mise à l'échelle** du volet **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Gestion >**  :
+1. Sous l’onglet **Mise à l'échelle** du panneau **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Gestion >**  :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nombre initial d’instances | **2** |
     | Stratégie de mise à l’échelle | **Manuel** |
 
-1. Sous l’onglet **Gestion** du volet **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+1. Sous l’onglet **Gestion** du panneau **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -442,19 +442,19 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Sous l’onglet **Intégrité** du panneau **Créer un groupe de machines virtuelles identiques**, passez en revue les paramètres par défaut sans apporter de modifications et cliquez sur **Suivant : Avancé >** .
 
-1. Sous l’onglet **Avancé** du volet **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Vérifier + créer**.
+1. Sous l’onglet **Avancé** du panneau **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Vérifier + créer**.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Algorithme de diffusion | **Diffusion fixe (non recommandée avec des zones)** |
 
-    >**Remarque** : Le paramètre de **Propagation maximale** n’est actuellement pas fonctionnel.
+    >**Remarque** : Le paramètre de **Diffusion maximale** n’est actuellement pas fonctionnel.
 
 1. Sous l’onglet **Vérifier + créer** du panneau **Créer un groupe de machines virtuelles identiques** , vérifiez que la validation a réussi et cliquez sur **Créer**.
 
     >**Remarque** : Attendez que le déploiement du groupe de machines virtuelles identiques soit terminé. Ce processus prend environ 5 minutes.
 
-#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tâche 6 : Configurer des groupe de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
+#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tâche 6 : Configurer des groupes de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
 
 Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les instances du groupe de machines virtuelles identiques Azure que vous avez déployées dans la tâche précédente à l’aide de l’extension de machine virtuelle de script personnalisé.
 
@@ -462,7 +462,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les ins
 
 1. Dans le panneau du compte de stockage, dans la section **Stockage de données**, cliquez sur **Conteneurs**, puis sur **+ Conteneur**.
 
-1. Dans le panneau **Nouveau conteneur**, spécifiez les paramètres suivants (en laissant les autres avec leurs valeurs par défaut) puis cliquez sur **Créer** :
+1. Dans le panneau **Nouveau conteneur**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) puis cliquez sur **Créer** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -473,7 +473,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les ins
 
 1. Dans le panneau **scripts**, cliquez sur **Télécharger**.
 
-1. Dans le panneau **Télécharger blob**, cliquez sur l’icône de dossier, dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Télécharger blob**, cliquez sur **Télécharger**.
+1. Dans le panneau **Charger l'objet blob**, cliquez sur l’icône de dossier, dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Charger l'objet blob**, cliquez sur **Télécharger**.
 
 1. Dans le portail Azure, revenez au panneau **Groupes identiques de machines virtuelles**, puis cliquez sur **az10408vms0**.
 
@@ -509,35 +509,35 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
 1. Dans la liste des instances, cliquez sur l’entrée représentant la première instance et, dans le panneau de l’instance de groupe identique, notez son **Emplacement** (il doit s’agir de l’une des zones de la région Azure cible dans laquelle vous avez déployé le groupe de machines virtuelles identiques Azure).
 
-1. Revenez au volet **az10408vmss0 - Instances**, cliquez sur l’entrée représentant la deuxième instance et, dans le panneau de l’instance de groupe identique, notez son **Emplacement** (il doit s’agir de l’une des zones de la région Azure cible dans laquelle vous avez déployé le groupe de machines virtuelles identiques Azure).
+1. Revenez au panneau **az10408vmss0 - Instances**, cliquez sur l’entrée représentant la deuxième instance et, dans le panneau de l’instance de groupe identique, notez son **Emplacement** (il doit s’agir de l’une des zones de la région Azure cible dans laquelle vous avez déployé le groupe de machines virtuelles identiques Azure).
 
-1. Revenez au volet **az10408vmss0 - Instances**, puis, dans la section **Paramètres**, cliquez sur **Mise à l’échelle**.
+1. Revenez au panneau **az10408vmss0 - Instances**, puis, dans la section **Paramètres**, cliquez sur **Mise à l’échelle**.
 
-1. Dans le volet **az10408vms0 - Mise à l’échelle**, sélectionnez l’option **Mise à l’échelle automatique personnalisée** et configurez la mise à l’échelle automatique avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- |--- |
-    | Mode de mise à l’échelle | **Mettre à l’échelle selon une métrique** |
-
-1. Cliquez sur le lien **+ Ajouter une règle** et, dans le volet **Mettre à l’échelle la règle**, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **az10408vms0 - Mise à l’échelle**, sélectionnez l’option **Mise à l’échelle automatique personnalisée** et configurez la mise à l’échelle automatique avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- |--- |
-    | Source de la métrique | **Ressource actuelle (az10480vmss0)** |
-    | Agrégation du temps | **Average** |
-    | Espace de noms de la métrique | **Hôte de machine virtuelle** |
+    | Mode de mise à l’échelle | **Mettre à l'échelle selon une mesure** |
+
+1. Cliquez sur le lien **+ Ajouter une règle** et, dans le panneau **Règle de mise à l'échelle**, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+
+    | Paramètre | Valeur |
+    | --- |--- |
+    | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
+    | Agrégation du temps | **Moyenne** |
+    | Espace de noms de métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
     | Opérateur | **Supérieur à** |
     | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
     | Durée (en minutes) | **1** |
-    | Statistique de fragment de temps | **Average** |
+    | Statistique de fragment de temps | **Moyenne** |
     | Opération | **Augmenter le nombre de** |
     | Nombre d’instances | **1** |
     | Refroidissement (minutes) | **5** |
 
     >**Remarque** : Évidemment, ces valeurs ne représentent pas une configuration réaliste, car leur objectif est de déclencher la mise à l’échelle automatique dès que possible, sans période d’attente prolongée.
 
-1. Cliquez sur **Ajouter** et, dans le volet  **az10408vmss0 - Mise à l’échelle**, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Cliquez sur **Ajouter** et, dans le panneau  **az10408vmss0 - Mise à l’échelle**, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- |--- |
@@ -551,7 +551,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
 1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour identifier l’adresse IP publique de l’équilibreur de charge devant le groupe de machines virtuelles identiques Azure **az10408vms0**.
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour identifier l’adresse IP publique de l’équilibreur de charge devant le groupe de machines virtuelles identiques Azure **az10408vms0**.
 
    ```powershell
    $rgName = 'az104-08-rg02'
@@ -561,21 +561,21 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
    $pip = (Get-AzPublicIpAddress -ResourceGroupName $rgName -Name $lbpipName).IpAddress
    ```
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour démarrer une boucle infinie qui envoie les requêtes HTTP aux sites web hébergés sur les instances du groupe de machines virtuelles identiques Azure **az10408vmss0.**
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour démarrer une boucle infinie qui envoie les requêtes HTTP aux sites web hébergés sur les instances du groupe de machines virtuelles identiques Azure **az10408vmss0.**
 
    ```powershell
    while ($true) { Invoke-WebRequest -Uri "http://$pip" }
    ```
 
-1. Réduisez le volet Cloud Shell, mais ne le fermez pas, revenez au panneau **az10408vmss0 - Instances** et surveillez le nombre d’instances.
+1. Réduisez le panneau Cloud Shell, mais ne le fermez pas, revenez au panneau **az10408vmss0 - Instances** et surveillez le nombre d’instances.
 
     >**Remarque** : Vous devrez peut-être attendre quelques minutes et cliquer sur **Actualiser**.
 
-1. Une fois la troisième instance approvisionnée, accédez à son volet pour déterminer son **Emplacement** (il doit être différent des deux premières zones que vous avez identifiées précédemment dans cette tâche.
+1. Une fois la troisième instance approvisionnée, accédez à son panneau pour déterminer son **Emplacement** (il doit être différent des deux premières zones que vous avez identifiées précédemment dans cette tâche.
 
-1. Fermez le volet Cloud Shell.
+1. Fermez le panneau Cloud Shell.
 
-1. Dans le volet **az10408vmss0**, dans la section **Paramètres**, cliquez sur **Disques**, puis sur **+ Créer et attacher un nouveau disque**, et attachez un nouveau disque managé avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **az10408vmss0**, dans la section **Paramètres**, cliquez sur **Disques**, puis sur **+ Créer un disque et l'attacher**, puis attachez un nouveau disque managé avec les paramètres suivants (laissez les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -583,7 +583,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
     | Type de stockage | **HDD Standard** |
     | Taille (Gio) | **32** |
 
-1. Dans la section **Paramètres** du volet **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des deux instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
+1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des deux instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
     >**Remarque** : Le disque attaché à l’étape précédente est un disque brut. Avant de pouvoir être utilisé, il est nécessaire de créer une partition, de créer un système de fichiers et de le monter. Pour ce faire, vous allez utiliser l’extension de script personnalisé de machine virtuelle Azure. Tout d’abord, vous devez supprimer l’extension de script personnalisé existante.
 
@@ -595,9 +595,9 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
 1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez le fichier **\\Allfiles\\Labs\\08\\az104-08-configure_VMSS_disks.ps1** dans le répertoire d'origine de Cloud Shell.
+1. Dans la barre d'outils du panneau Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et chargez le fichier **\\Allfiles\\Labs\\08\\az104-08-configure_VMSS_disks.ps1** dans le répertoire d'origine de Cloud Shell.
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour afficher le contenu du script :
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour afficher le contenu du script :
 
    ```powershell
    Set-Location -Path $HOME
@@ -607,13 +607,13 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     >**Remarque** : Le script installe une extension de script personnalisée qui configure le disque attaché.
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour exécuter le script et configurer les disques du groupe de machines virtuelles identiques Azure :
+1. Dans le panneau Cloud Shell, exécutez ce qui suit pour exécuter le script et configurer les disques du groupe de machines virtuelles identiques Azure :
 
    ```powershell
    ./az104-08-configure_VMSS_disks.ps1
    ```
 
-1. Fermez le volet Cloud Shell.
+1. Fermez le panneau Cloud Shell.
 
 1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
@@ -621,8 +621,8 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources lab ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+>**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
 
 1. Supprimez az104-08-configure_VMSS_disks.ps1 en exécutant la commande suivante :
 
@@ -652,5 +652,5 @@ Dans cet exercice, vous avez :
 + Configuré des machines virtuelles Azure à l’aide d’extensions de machine virtuelle
 + Mis à l'échelle le calcul et le stockage des machines virtuelles Azure
 + Déployé des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide du portail Azure
-+ Configuré des groupe de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
++ Configuré des groupes de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
 + Mis à l’échelle le calcul et le stockage pour les groupes de machines virtuelles identiques Azure
