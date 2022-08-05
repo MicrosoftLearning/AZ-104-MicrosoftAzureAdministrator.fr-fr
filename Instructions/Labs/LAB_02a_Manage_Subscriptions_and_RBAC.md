@@ -199,7 +199,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 1. Dans le portail Azure, revenez au panneau **Groupes d’administration**. 
 
-1. Dans le panneau **Groupes d’administration**, sélectionnez l’icône **Points de suspension** en regard de votre abonnement sous le groupe d’administration **az104-02-mg1**, puis sélectionnez **Déplacer** pour déplacer l’abonnement vers le **groupe d’administration racine du locataire**.
+1. Dans le panneau **Groupes d’administration**, sélectionnez l’icône représentant des **Points de suspension** en regard de votre abonnement sous le groupe d’administration **az104-02-mg1**, puis sélectionnez **Déplacer** pour déplacer l’abonnement vers le **groupe d’administration racine du locataire**.
 
    >**Remarque** : Il est probable que le groupe d’administration cible soit le **groupe d’administration racine du locataire**, sauf si vous avez créé une hiérarchie de groupe d’administration personnalisée avant d’exécuter ce labo.
    

@@ -85,7 +85,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
 1. Dans la section **Création**, cliquez sur **Définitions**. Prenez le temps de parcourir la liste des définitions de stratégies intégrées que vous pouvez utiliser. Répertoriez toutes les stratégies intégrées qui impliquent l’utilisation de balises en sélectionnant l’entrée **Balises** (et en désélectionnant toutes les autres entrées) dans la liste déroulante **Catégorie**. 
 
-1. Cliquez sur l’entrée représentant la stratégie intégré **Exiger une étiquette et sa valeur sur les ressources** et passez en revue sa définition.
+1. Cliquez sur l’entrée représentant la stratégie intégrée **Exiger une étiquette et sa valeur sur les ressources** et passez en revue sa définition.
 
 1. Dans le panneau de définition de la stratégie intégrée **Exiger une étiquette et sa valeur sur les ressources**, cliquez sur **Affecter**.
 

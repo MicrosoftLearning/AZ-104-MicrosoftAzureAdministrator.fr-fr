@@ -276,7 +276,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
 1. Accédez au volet **Utilisateurs - Tous les utilisateurs**, cliquez sur l’entrée représentant le compte d’utilisateur **az104-01b-aaduser1**, dans le volet **az104-01b-aaduser1 - Profil**, cliquez sur **Supprimer**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Ok**.
 
-1. Accédez au panneau **Contoso Lab - Vue d’ensemble** du locataire Azure AD Contoso Lab, cliquez sur **Gérer les locataires**, puis, dans l’écran suivant, sélectionnez la case en regard de **Labo Contoso**, cliquez sur **Supprimer**, sur le panneau **Supprimer le locataire « Labo Contoso » ?** , cliquez sur le lien **Obtenir l’autorisation pour supprimer des ressources Azure**. Dans le panneau **Propriétés** de Azure Active Directory, définissez **Gestion des accès pour les ressources Azure** sur **Oui**, puis cliquez sur **Enregistrer**.
+1. Accédez au panneau **Contoso Lab - Vue d’ensemble** du locataire Azure AD Contoso Lab, cliquez sur **Gérer les locataires**, puis, dans l’écran suivant, sélectionnez la case en regard de **Labo Contoso**, cliquez sur **Supprimer**, sur le panneau **Supprimer le locataire « Labo Contoso » ?** , puis sur le lien **Obtenir l’autorisation pour supprimer des ressources Azure**. Dans le panneau **Propriétés** de Azure Active Directory, définissez **Gestion des accès pour les ressources Azure** sur **Oui**, puis cliquez sur **Enregistrer**.
 
 1. Revenez au panneau **Supprimer le locataire « Labo Contoso »,** puis cliquez sur **Actualiser** puis **Supprimer**.
 

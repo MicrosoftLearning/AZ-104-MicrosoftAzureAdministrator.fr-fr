@@ -133,7 +133,7 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
    >**Remarque** : Les adresses IP privées et publiques sont réellement affectées aux interfaces réseau, qui, à leur tour, sont attachées aux machines virtuelles Azure, mais il est assez courant de faire référence aux adresses IP affectées aux machines virtuelles Azure.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Groupes de ressources**, , puis, dans le panneau **Groupes de ressources**, cliquez sur **az104-04-rg1**.
+1. Dans le portail Azure, recherchez et sélectionnez **Groupes de ressources**, puis, dans le panneau **Groupes de ressources**, cliquez sur **az104-04-rg1**.
 
 1. Dans l’onglet du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vnet1**.
 
@@ -191,7 +191,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
 1. Notez que la tentative de connexion échoue.
 
-    >**Remarque** : Cet échec est normal, car les adresses IP publiques de la référence SKU Standard, par défaut,nécessitent que les interfaces réseau auxquelles elles sont affectées soient protégées par un groupe de sécurité réseau. Pour autoriser les connexions Bureau à distance, vous allez créer un groupe de sécurité réseau explicitement permettant le trafic RDP entrant à partir d’Internet et l’affecter aux interfaces réseau des deux machines virtuelles.
+    >**Remarque** : Cet échec est normal, car les adresses IP publiques de la référence SKU Standard, par défaut,nécessitent que les interfaces réseau auxquelles elles sont affectées soient protégées par Groupe de sécurité réseau. Pour autoriser les connexions Bureau à distance, vous allez créer Groupe de sécurité réseau explicitement permettant le trafic RDP entrant à partir d’Internet et l’affecter aux interfaces réseau des deux machines virtuelles.
 
 1. Arrêtez les machines virtuelles **az104-04-vm0** et **az104-04-vm1**.
 
@@ -199,7 +199,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
 1. Dans le portail Azure, recherchez et sélectionnez les **Groupes de sécurité réseau**, puis, dans le panneau **Groupes de sécurité réseau**, cliquez sur **+ Créer**.
 
-1. Créez un groupe de sécurité réseau avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Créez Groupe de sécurité réseau avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
