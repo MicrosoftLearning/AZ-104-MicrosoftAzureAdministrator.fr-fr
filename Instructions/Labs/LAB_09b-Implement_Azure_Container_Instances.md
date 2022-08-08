@@ -78,7 +78,7 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
 1. Vérifiez que la page **Bienvenue dans Azure Container Instances** s’affiche.
 
-1. Fermez le nouvel onglet du navigateur, revenez dans le Portail Azure, dans la section **Paramètres** du volet d’instance de conteneur, cliquez sur **Conteneurs**, puis sur **Journaux**.
+1. Fermez le nouvel onglet du navigateur, revenez Dans le portail Azure, dans la section **Paramètres** du volet d’instance de conteneur, cliquez sur **Conteneurs**, puis sur **Journaux**.
 
 1. Vérifiez que les entrées de journal représentant la requête HTTP GET générée en affichant l’application dans le navigateur apparaissent.
 
@@ -86,7 +86,7 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois,les ressources ont des dépendances et prennent plus de temps à supprimer. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 

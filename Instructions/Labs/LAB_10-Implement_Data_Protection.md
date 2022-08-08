@@ -50,7 +50,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
 
 1. Modifiez le fichier de paramètres que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé `[Azure_region]` par le nom d’une région Azure dans laquelle vous envisagez de déployer des machines virtuelles Azure). Tapez chaque ligne de commande séparément et exécutez-les une à une :
+1. Dans le panneau Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé `[Azure_region]` par le nom d’une région Azure dans laquelle vous envisagez de déployer des machines virtuelles Azure). Tapez chaque ligne de commande séparément et exécutez-les une à une :
 
    ```powershell
    $location = '[Azure_region]'
@@ -64,7 +64,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
    New-AzResourceGroup -Name $rgName -Location $location
    ```
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le premier réseau virtuel et déployer une machine virtuelle dans celui-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
+1. Dans le panneau Cloud Shell, exécutez la commande suivante pour créer le premier réseau virtuel et déployer une machine virtuelle dans celui-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -82,9 +82,9 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
 
 Dans cette tâche, vous allez créer un coffre Recovery Services.
 
-1. Dans le Portail Azure, recherchez et sélectionnez **Coffres Recovery Services** puis, dans le volet **Coffres Recovery Services**, cliquez sur **+ Créer**.
+1. Dans le Portail Azure, recherchez et sélectionnez **Coffres Recovery Services** puis, dans le panneau **Coffres Recovery Services**, cliquez sur **+ Créer**.
 
-1. Dans le volet **Créer un coffre Recovery Services**, spécifiez les paramètres suivants :
+1. Dans le panneau **Créer un coffre Recovery Services**, spécifiez les paramètres suivants :
 
     | Paramètres | Valeur |
     | --- | --- |
@@ -101,19 +101,19 @@ Dans cette tâche, vous allez créer un coffre Recovery Services.
 
 1. Une fois le déploiement terminé, cliquez sur **Accéder à la ressource**.
 
-1. Dans le volet du coffre Recovery Services **az104-10-rsv1**, dans la section **Paramètres**, cliquez sur **Propriétés**.
+1. Dans le panneau du coffre Recovery Services **az104-10-rsv1**, dans la section **Paramètres**, cliquez sur **Propriétés**.
 
-1. Dans le volet **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Configuration de la sauvegarde**.
+1. Dans le panneau **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Configuration de la sauvegarde**.
 
-1. Dans le volet **Configuration de la sauvegarde**, notez que vous pouvez définir le **Type de réplication de stockage** sur **Localement redondant** ou **Géoredondant**. Conservez le paramètre **Géoredondant** par défaut et fermez le volet.
+1. Dans le panneau **Configuration de la sauvegarde**, notez que vous pouvez définir le **Type de réplication de stockage** sur **Localement redondant** ou **Géoredondant**. Conservez le paramètre **Géoredondant** par défaut et fermez le volet.
 
     >**Remarque** : Ce paramètre peut être configuré uniquement s’il n’existe aucun élément de sauvegarde existant.
 
-1. Revenez dans le volet **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Paramètres de sécurité**.
+1. Revenez dans le panneau **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Paramètres de sécurité**.
 
-1. Dans le volet **Paramètres de sécurité**, notez que l’option **Suppression réversible (pour les charges de travail s’exécutant dans Azure)** est **activée**.
+1. Dans le panneau **Paramètres de sécurité**, notez que l’option **Suppression réversible (pour les charges de travail s’exécutant dans Azure)** est **activée**.
 
-1. Fermez le volet **Paramètres de sécurité** et, dans le volet du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**.
+1. Fermez le volet **Paramètres de sécurité** et, dans le panneau du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**.
 
 #### <a name="task-3-implement-azure-virtual-machine-level-backup"></a>Tâche 3 : Implémenter une sauvegarde au niveau d’une machine virtuelle Azure
 
@@ -121,7 +121,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
    >**Remarque** : Avant de commencer cette tâche, assurez-vous que le déploiement que vous avez lancé dans la première tâche de ce laboratoire a réussi.
 
-1. Dans le volet du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**, puis sur **+ Sauvegarde**.
+1. Dans le panneau du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**, puis sur **+ Sauvegarde**.
 
 1. Dans le panneau **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
 
@@ -130,7 +130,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
     | Où s'exécute votre charge de travail ? | **Microsoft Azure** |
     | Que souhaitez-vous sauvegarder ? | **Machine virtuelle** |
 
-1. Dans le volet **Objectif de la sauvegarde**, cliquez sur **Sauvegarde**.
+1. Dans le panneau **Objectif de la sauvegarde**, cliquez sur **Sauvegarde**.
 
 1. Dans **Stratégie de sauvegarde**, vérifiez les paramètres **DefaultPolicy** et sélectionnez **Créer une stratégie**.
 
@@ -146,15 +146,15 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
 1. Cliquez sur **OK** pour créer la stratégie, puis, dans la section **Machines virtuelles**, sélectionnez **Ajouter**.
 
-1. Dans le volet **Sélectionner des machines virtuelles**, sélectionnez **az-104-10-vm0**, cliquez sur **OK**, puis, dans le volet **Sauvegarde**, cliquez sur **Activer la sauvegarde**.
+1. Dans le panneau **Sélectionner des machines virtuelles**, sélectionnez **az-104-10-vm0**, cliquez sur **OK**, puis, dans le panneau **Sauvegarde**, cliquez sur **Activer la sauvegarde**.
 
     >**Remarque** : Attendez que la sauvegarde soit activée. Ce processus prend environ 2 minutes.
 
-1. De nouveau dans le volet du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**, puis sur l’entrée **Machine virtuelle Azure**.
+1. De nouveau dans le panneau du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**, puis sur l’entrée **Machine virtuelle Azure**.
 
-1. Dans le volet **Éléments de sauvegarde (machine virtuelle Azure)** , sélectionnez le lien **Afficher les détails** en regard de **az104-10-vm0**, puis passez en revue les valeurs des entrées **Prévérification de sauvegarde** et **État de la dernière sauvegarde**.
+1. Dans le panneau **Éléments de sauvegarde (machine virtuelle Azure)** , sélectionnez le lien **Afficher les détails** en regard de **az104-10-vm0**, puis passez en revue les valeurs des entrées **Prévérification de sauvegarde** et **État de la dernière sauvegarde**.
 
-1. Dans le volet Élément de sauvegarde **az104-10-vm0**, cliquez sur **Sauvegarder maintenant**, acceptez la valeur par défaut dans la liste déroulante **Conserver la sauvegarde jusqu’au**, puis cliquez sur **OK**.
+1. Dans le panneau Élément de sauvegarde **az104-10-vm0**, cliquez sur **Sauvegarder maintenant**, acceptez la valeur par défaut dans la liste déroulante **Conserver la sauvegarde jusqu’au**, puis cliquez sur **OK**.
 
     >**Remarque** : N’attendez pas que la sauvegarde se termine. Passez à la tâche suivante.
 
@@ -162,9 +162,9 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
 Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de dossiers à l’aide d’Azure Recovery Services.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le volet **Machines virtuelles**, cliquez sur **az104-10-vm1**.
+1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-10-vm1**.
 
-1. Dans le volet **az104-10-vm1**, cliquez sur **Connecter**, dans la liste déroulante, cliquez sur **RDP**, dans le volet **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** et suivez les invites pour démarrer la session Bureau à distance.
+1. Dans le panneau **az104-10-vm1**, cliquez sur **Connecter**, dans la liste déroulante, cliquez sur **RDP**, dans le panneau **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** et suivez les invites pour démarrer la session Bureau à distance.
 
     >**Remarque** : Cette étape fait référence à la connexion via le Bureau à distance à partir d’un ordinateur Windows. Sur un Mac, vous pouvez utiliser le client Bureau à distance disponible sur le Mac App Store. Sur un ordinateur Linux, vous pouvez utiliser un logiciel client RDP open source.
 
@@ -176,11 +176,11 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Dans la session Bureau à distance sur la machine virtuelle Azure **az104-10-vm1**, démarrez un navigateur web Edge, accédez au [Portail Azure](https://portal.azure.com) et connectez-vous à l’aide de vos informations d’identification.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le volet **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
+1. Dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le panneau **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
 
-1. Dans le volet du coffre Recovery Services **az104-10-rsv1**, cliquez sur **+ Sauvegarde**.
+1. Dans le panneau du coffre Recovery Services **az104-10-rsv1**, cliquez sur **+ Sauvegarde**.
 
-1. Dans le volet **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
+1. Dans le panneau **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
 
     | Paramètres | Valeur |
     | --- | --- |
@@ -189,9 +189,9 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
     >**Remarque** : Même si la machine virtuelle que vous utilisez dans cette tâche s’exécute dans Azure, vous pouvez l’utiliser pour évaluer les fonctionnalités de sauvegarde applicables à n’importe quel ordinateur local exécutant le système d’exploitation Windows Server.
 
-1. Dans le volet **Objectif de la sauvegarde**, cliquez sur **Préparer l’infrastructure**.
+1. Dans le panneau **Objectif de la sauvegarde**, cliquez sur **Préparer l’infrastructure**.
 
-1. Dans le volet **Préparer l’infrastructure**, cliquez sur le lien **Télécharger l’agent pour Windows Server ou pour le client Windows**.
+1. Dans le panneau **Préparer l’infrastructure**, cliquez sur le lien **Télécharger l’agent pour Windows Server ou pour le client Windows**.
 
 1. Lorsque vous y êtes invité, cliquez sur **Exécuter** pour démarrer l’installation de **MARSAgentInstaller.exe** avec les paramètres par défaut.
 
@@ -199,7 +199,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Sur la page **Installation** de l’**Assistant Installation de Microsoft Azure Recovery Services Agent**, cliquez sur **Procéder à l’enregistrement**. L’**Assistant Inscrire un serveur** s’ouvre.
 
-1. Basculez vers la fenêtre du navigateur web affichant le portail Azure. Dans le volet **Préparer l’infrastructure**, cochez la case **J'ai déjà téléchargé ou j'utilise déjà la dernière version de l'agent Recovery Services**, puis cliquez sur **Télécharger**.
+1. Basculez vers la fenêtre du navigateur web affichant le portail Azure. Dans le panneau **Préparer l’infrastructure**, cochez la case **J'ai déjà téléchargé ou j'utilise déjà la dernière version de l'agent Recovery Services**, puis cliquez sur **Télécharger**.
 
 1. Lorsque vous y êtes invité, si vous souhaitez ouvrir ou enregistrer le fichier d’informations d’identification du coffre, cliquez sur **Enregistrer**. Le fichier d’informations d’identification du coffre est alors enregistré dans le dossier local Téléchargements.
 
@@ -221,7 +221,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Sur la page **Inscription du serveur** de l’**Assistant Inscrire un serveur**, passez en revue l’avertissement concernant l’emplacement du fichier de phrase secrète, vérifiez que la case **Démarrer Microsoft Azure Recovery Services Agent** est activée et cliquez sur **Fermer**. La console **Sauvegarde Microsoft Azure** s’ouvre alors automatiquement.
 
-1. Dans la console **Sauvegarde Microsoft Azure**, dans le volet **Actions**, cliquez sur **Planifier une sauvegarde**.
+1. Dans la console **Sauvegarde Microsoft Azure**, dans le panneau **Actions**, cliquez sur **Planifier une sauvegarde**.
 
 1. Sur la page **Mise en route** de l’**Assistant Planifier la sauvegarde**, cliquez sur **Suivant**.
 
@@ -239,7 +239,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Sur la page **Confirmation**, cliquez sur **Terminer**. Une fois la planification de sauvegarde créée, cliquez sur **Fermer**.
 
-1. Dans le volet Actions de la console **Sauvegarde Microsoft Azure**, cliquez sur **Sauvegarder maintenant**.
+1. Dans le panneau Actions de la console **Sauvegarde Microsoft Azure**, cliquez sur **Sauvegarder maintenant**.
 
     >**Remarque** : L’option permettant d’exécuter la sauvegarde à la demande devient disponible une fois que vous créez une sauvegarde planifiée.
 
@@ -253,9 +253,9 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Basculez vers la fenêtre du navigateur web affichant le portail Azure, revenez au volet **Coffre Recovery Services**, puis, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
 
-1. Dans le volet **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Agent de sauvegarde Azure**.
+1. Dans le panneau **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Agent de sauvegarde Azure**.
 
-1. Dans le volet **Éléments de sauvegarde (agent de sauvegarde Azure)** , vérifiez qu’il existe une entrée faisant référence au lecteur **C:\\** de **az104-10-vm1**.
+1. Dans le panneau **Éléments de sauvegarde (agent de sauvegarde Azure)** , vérifiez qu’il existe une entrée faisant référence au lecteur **C:\\** de **az104-10-vm1**.
 
 #### <a name="task-5-perform-file-recovery-by-using-azure-recovery-services-agent-optional"></a>Tâche 5 : Récupérer des fichiers à l’aide de l’agent Azure Recovery Services (facultatif)
 
@@ -263,7 +263,7 @@ Dans cette tâche, vous allez restaurer des fichiers à l’aide de l’agent Az
 
 1. Dans la session Bureau à distance vers **az104-10-vm1**, ouvrez l’Explorateur de fichiers, accédez au dossier **C:\\Windows\\ System32\\,\\etc\\** et supprimez le fichier **hosts**.
 
-1. Ouvrez Sauvegarde Microsoft Azure, puis cliquez sur **Récupérer des données** dans le volet **Actions**. L’**Assistant Récupérer des données** s’ouvre.
+1. Ouvrez Sauvegarde Microsoft Azure, puis cliquez sur **Récupérer des données** dans le panneau **Actions**. L’**Assistant Récupérer des données** s’ouvre.
 
 1. Sur la page **Prise en main** de **l’Assistant Récupérer des données**, vérifiez que l’option **Ce serveur (az104-10-vm1.)** est sélectionnée et cliquez sur **Suivant**.
 
@@ -293,9 +293,9 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 1. Basculez vers la fenêtre du navigateur exécutée sur votre ordinateur de labo et affichez le portail Azure.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le volet **Machines virtuelles**, cliquez sur **az104-10-vm0**.
+1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-10-vm0**.
 
-1. Dans le volet **az104-10-vm0**, cliquez sur **Connecter**, dans la liste déroulante, cliquez sur **RDP**, dans le volet **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** et suivez les invites pour démarrer la session Bureau à distance.
+1. Dans le panneau **az104-10-vm0**, cliquez sur **Connecter**, dans la liste déroulante, cliquez sur **RDP**, dans le panneau **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** et suivez les invites pour démarrer la session Bureau à distance.
 
     >**Remarque** : Cette étape fait référence à la connexion via le Bureau à distance à partir d’un ordinateur Windows. Sur un Mac, vous pouvez utiliser le client Bureau à distance disponible sur le Mac App Store. Sur un ordinateur Linux, vous pouvez utiliser un logiciel client RDP open source.
 
@@ -317,19 +317,19 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 1. Dans la session Bureau à distance sur la machine virtuelle Azure **az104-10-vm0**, démarrez un navigateur web Edge, accédez au [Portail Azure](https://portal.azure.com) et connectez-vous à l’aide de vos informations d’identification.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le volet **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
+1. Dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le panneau **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
 
-1. Dans le volet du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
+1. Dans le panneau du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
 
-1. Dans le volet **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Machine virtuelle Azure**.
+1. Dans le panneau **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Machine virtuelle Azure**.
 
-1. Dans le volet **Éléments de sauvegarde (Machine virtuelle Azure),** sélectionnez **Afficher les détails** en regard de **az104-10-vm0**.
+1. Dans le panneau **Éléments de sauvegarde (Machine virtuelle Azure),** sélectionnez **Afficher les détails** en regard de **az104-10-vm0**.
 
-1. Dans le volet Élément de sauvegarde **az104-10-vm0**, cliquez sur **Récupération de fichier**.
+1. Dans le panneau Élément de sauvegarde **az104-10-vm0**, cliquez sur **Récupération de fichier**.
 
     >**Remarque** : Vous avez la possibilité d’exécuter la récupération peu après le démarrage de la sauvegarde en fonction de l’instantané cohérent de l’application.
 
-1. Dans le volet **Récupération de fichiers**, acceptez le point de récupération par défaut et cliquez sur **Télécharger l’exécutable**.
+1. Dans le panneau **Récupération de fichiers**, acceptez le point de récupération par défaut et cliquez sur **Télécharger l’exécutable**.
 
     >**Remarque** : Le script monte les disques à partir du point de récupération sélectionné en tant que lecteurs locaux dans le système d’exploitation à partir duquel le script est exécuté.
 
@@ -361,21 +361,21 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 #### <a name="task-7-review-the-azure-recovery-services-soft-delete-functionality"></a>Tâche 7 : Passer en revue la fonctionnalité de suppression réversible Azure Recovery Services
 
-1. Sur l’ordinateur de labo, dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le volet **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
+1. Sur l’ordinateur de labo, dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le panneau **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
 
-1. Dans le volet du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
+1. Dans le panneau du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
 
-1. Dans le volet **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Agent de sauvegarde Azure**.
+1. Dans le panneau **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Agent de sauvegarde Azure**.
 
-1. Dans le volet **Éléments de sauvegarde (Sauvegarde Azure Agent)** , cliquez sur l’entrée représentant la sauvegarde de **az104-10-vm1**.
+1. Dans le panneau **Éléments de sauvegarde (Sauvegarde Azure Agent)** , cliquez sur l’entrée représentant la sauvegarde de **az104-10-vm1**.
 
-1. Dans le volet **C:\\ on az104-10-vm1.** , sélectionnez **Afficher les détails** en regard de **az104-10-vm1.** .
+1. Dans le panneau **C:\\ on az104-10-vm1.** , sélectionnez **Afficher les détails** en regard de **az104-10-vm1.** .
 
 1. Dans le panneau Détail, cliquez sur **az104-10-vm1**.
 
-1. Dans le volet **az104-10-vm1.** Serveurs protégés, cliquez sur **Supprimer**.
+1. Dans le panneau **az104-10-vm1.** Serveurs protégés, cliquez sur **Supprimer**.
 
-1. Dans le volet **Supprimer**, spécifiez les paramètres suivants.
+1. Dans le panneau **Supprimer**, spécifiez les paramètres suivants.
 
     | Paramètres | Valeur |
     | --- | --- |
@@ -391,13 +391,13 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 1. Revenez au panneau **az104-10-rsv1 - Éléments de sauvegarde**, puis cliquez sur **Machines virtuelles Azure**.
 
-1. Dans le volet **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Machine virtuelle Azure**.
+1. Dans le panneau **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Machine virtuelle Azure**.
 
-1. Dans le volet **Éléments de sauvegarde (Machine virtuelle Azure),** sélectionnez **Afficher les détails** en regard de **az104-10-vm0**.
+1. Dans le panneau **Éléments de sauvegarde (Machine virtuelle Azure),** sélectionnez **Afficher les détails** en regard de **az104-10-vm0**.
 
-1. Dans le volet **az104-10-vm0** Élément de sauvegarde, cliquez sur **Arrêter la sauvegarde**.
+1. Dans le panneau **az104-10-vm0** Élément de sauvegarde, cliquez sur **Arrêter la sauvegarde**.
 
-1. Dans le volet **Arrêter la sauvegarde**, sélectionnez **Supprimer les données de sauvegarde**, spécifiez les paramètres suivants, puis cliquez sur **Arrêter la sauvegarde** :
+1. Dans le panneau **Arrêter la sauvegarde**, sélectionnez **Supprimer les données de sauvegarde**, spécifiez les paramètres suivants, puis cliquez sur **Arrêter la sauvegarde** :
 
     | Paramètres | Valeur |
     | --- | --- |
@@ -409,29 +409,29 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
     >**Remarque** : L’entrée **Machine virtuelle Azure** répertorie toujours **1** élément de sauvegarde.
 
-1. Cliquez sur l’entrée **Machine virtuelle Azure** et, dans le volet **Éléments de sauvegarde (machine virtuelle Azure)** , cliquez sur l’entrée **az104-10-vm0**.
+1. Cliquez sur l’entrée **Machine virtuelle Azure** et, dans le panneau **Éléments de sauvegarde (machine virtuelle Azure)** , cliquez sur l’entrée **az104-10-vm0**.
 
-1. Dans le volet Élément de sauvegarde de **az104-10-vm0**, notez que vous avez la possibilité **d’annuler la suppression** de la sauvegarde.
+1. Dans le panneau Élément de sauvegarde de **az104-10-vm0**, notez que vous avez la possibilité **d’annuler la suppression** de la sauvegarde.
 
     >**Remarque** : Cette fonctionnalité est fournie par la fonctionnalité de suppression réversible, qui est activée par défaut pour les sauvegardes de machines virtuelles Azure.
 
-1. Revenez dans le volet du coffre Recovery Services **az104-10-rsv1**, puis, dans la section **Paramètres**, cliquez sur **Propriétés**.
+1. Revenez dans le panneau du coffre Recovery Services **az104-10-rsv1**, puis, dans la section **Paramètres**, cliquez sur **Propriétés**.
 
-1. Dans le volet **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Paramètres de sécurité**.
+1. Dans le panneau **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Paramètres de sécurité**.
 
-1. Dans le volet **Paramètres de sécurité**, désactivez **Suppression réversible (pour les charges de travail s’exécutant dans Azure)** et **Fonctionnalités de sécurité (pour les charges de travail s’exécutant localement)** , puis cliquez sur **Enregistrer**.
+1. Dans le panneau **Paramètres de sécurité**, désactivez **Suppression réversible (pour les charges de travail s’exécutant dans Azure)** et **Fonctionnalités de sécurité (pour les charges de travail s’exécutant localement)** , puis cliquez sur **Enregistrer**.
 
     >**Remarque** : Cela n’affecte pas les éléments déjà à l’état de suppression réversible.
 
-1. Fermez le volet **Paramètres de sécurité** et, dans le volet du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**.
+1. Fermez le volet **Paramètres de sécurité** et, dans le panneau du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**.
 
 1. Revenez au volet Élément de sauvegarde de **az104-10-vm0** et cliquez sur **Annuler la suppression**.
 
-1. Dans le volet **Annuler la suppression de az104-10-vm0**, cliquez sur **Annuler la suppression**.
+1. Dans le panneau **Annuler la suppression de az104-10-vm0**, cliquez sur **Annuler la suppression**.
 
 1. Attendez que l’opération de suppression soit terminée, actualisez la page du navigateur web, si nécessaire, revenez au volet Élément de sauvegarde de **az104-10-vm0**, puis cliquez sur **Supprimer les données de sauvegarde**.
 
-1. Dans le volet **Supprimer les données de sauvegarde**, spécifiez les paramètres suivants et cliquez sur **Supprimer** :
+1. Dans le panneau **Supprimer les données de sauvegarde**, spécifiez les paramètres suivants et cliquez sur **Supprimer** :
 
     | Paramètres | Valeur |
     | --- | --- |
@@ -447,7 +447,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 >**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

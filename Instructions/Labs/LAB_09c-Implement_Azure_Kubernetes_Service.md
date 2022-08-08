@@ -175,7 +175,7 @@ Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes 
 
 Dans cette tâche, vous allez effectuer une montée en charge horizontale du nombre de pods, puis du nombre de nœuds de cluster.
 
-1. Dans le volet **Cloud Shell**, eexécutez la commande suivante pour mettre à l’échelle le déploiement en augmentant le nombre de pods à 2 :
+1. Dans le volet **Cloud Shell**, exécutez la commande suivante pour mettre à l’échelle le déploiement en augmentant le nombre de pods à 2 :
 
     ```sh
     kubectl scale --replicas=2 deployment/nginx-deployment

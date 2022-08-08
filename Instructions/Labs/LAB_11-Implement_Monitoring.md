@@ -105,7 +105,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
 
     >**Remarque** : Attendez la fin du déploiement. Le déploiement doit prendre environ 1 minute.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Comptes Automation** puis, dans le volet **Comptes Automation**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez **Comptes Automation** puis, dans le panneau **Comptes Automation**, cliquez sur **+ Créer**.
 
 1. Dans le volet **Créer un compte Automation**, spécifiez les paramètres suivants, cliquez sur **Vérifier + Créer** lors de la validation, puis cliquez sur **Créer** :
 
@@ -144,7 +144,7 @@ Dans cette tâche, vous allez passer en revue les paramètres de supervision par
 
 1. Dans le volet **az104-11-vm0 \| Métriques**, dans le graphique par défaut, notez que le seul **Espace de noms de métriques** disponible est **Hôte de machine virtuelle**.
 
-    >**Remarque** : Cela est attendu, car aucun paramètre de diagnostic au niveau de l’invité n’a encore été configuré. Toutefois, vous avez la possibilité d’activer les métriques de mémoire d'invité directement à partir de la liste déroulante **Espace de noms Métriques**. Vous l’activerez plus tard dans cet exercice.
+    >**Remarque** : Cela est attendu, car aucun paramètre de diagnostic au niveau de l’invité n’a encore été configuré. Toutefois, vous avez la possibilité d’activer les métriques de mémoire d'invité directement à partir de la liste déroulante **Espace de noms de métriques**. Vous l’activerez plus tard dans cet exercice.
 
 1. Dans la liste déroulante **Métriques**, passez en revue la liste des métriques disponibles.
 

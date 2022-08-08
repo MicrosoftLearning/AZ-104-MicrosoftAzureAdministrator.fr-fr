@@ -153,7 +153,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
 1. Dans le panneau **scripts**, cliquez sur **Télécharger**.
 
-1. Dans le panneau **Charger l'objet blob**, cliquez sur l’icône de dossier, dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Charger l'objet blob**, cliquez sur **Télécharger**.
+1. Dans le panneau **Charger l'objet blob**, cliquez sur l’icône représentant un dossier, Dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Charger l'objet blob**, cliquez sur **Télécharger**.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-08-vm0**.
 
@@ -473,7 +473,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les ins
 
 1. Dans le panneau **scripts**, cliquez sur **Télécharger**.
 
-1. Dans le panneau **Charger l'objet blob**, cliquez sur l’icône de dossier, dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Charger l'objet blob**, cliquez sur **Télécharger**.
+1. Dans le panneau **Charger l'objet blob**, cliquez sur l’icône représentant un dossier, Dans la boîte de dialogue **Ouvrir**, accédez au dossier **\\Allfiles\\Labs\\08**, sélectionnez **az104-08-install_IIS.ps1**, cliquez sur **Ouvrir**, puis revenez dans le panneau **Charger l'objet blob**, cliquez sur **Télécharger**.
 
 1. Dans le portail Azure, revenez au panneau **Groupes identiques de machines virtuelles**, puis cliquez sur **az10408vms0**.
 
