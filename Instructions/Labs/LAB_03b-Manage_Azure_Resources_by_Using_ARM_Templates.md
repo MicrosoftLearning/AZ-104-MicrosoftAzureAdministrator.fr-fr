@@ -1,19 +1,16 @@
 ---
 lab:
-  title: '03b : Gérer les ressources Azure à l’aide de modèles ARM'
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 602da542fdf20f6b1be637e792ec47daaa0de04b
-ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 04/19/2022
-ms.locfileid: "145198131"
+  title: "03b : Gérer les ressources Azure à l’aide de modèles\_ARM"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Labo 03b : Gérer les ressources Azure à l’aide de modèles ARM
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure, vous devez effectuer la tâche équivalente à l’aide des modèles Azure Resource Manager.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -34,8 +31,6 @@ Dans ce labo, vous allez :
 ### <a name="exercise-1"></a>Exercice 1
 
 #### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tâche 1 : Passer en revue un modèle ARM pour le déploiement d’un disque managé Azure
-
-Dans cette tâche, vous allez créer une ressource de disque Azure à l’aide d’un modèle Azure Resource Manager.
 
 1. Connectez-vous au [**portail Azure**](http://portal.azure.com).
 
@@ -77,12 +72,6 @@ Dans cette tâche, vous allez créer une ressource de disque Azure à l’aide d
    "sourceResourceId": {
        "type": "String"
    },
-   "sourceUri": {
-       "type": "String"
-   },
-   "osType": {
-       "type": "String"
-   },
    ```
 
    ```json
@@ -90,10 +79,6 @@ Dans cette tâche, vous allez créer une ressource de disque Azure à l’aide d
        "defaultValue": "V1",
        "type": "String"
    },      
-   ```
-
-   ```json
-   "osType": "[parameters('osType')]",
    ```
 
     >**Remarque** : Ces paramètres sont supprimés, car ils ne sont pas applicables au déploiement actuel. Plus particulièrement, les paramètres sourceResourceId, sourceUri, osType et hyperVGeneration s’appliquent à la création d’un disque Azure à partir d’un fichier VHD existant.

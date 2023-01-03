@@ -1,21 +1,18 @@
 ---
 lab:
   title: 01 - Gérer les identités Azure Active Directory
-  module: Module 01 - Identity
-ms.openlocfilehash: 589e423af0901c93ef685905e4a01a7246e3c791
-ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "146973691"
+  module: Administer Identity
 ---
+
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Labo 01 - Gérer les identités Azure Active Directory
 
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Pour permettre aux utilisateurs de Contoso de s’authentifier à l’aide d’Azure AD, vous avez été chargé d’approvisionner des utilisateurs et des comptes de groupe. L’appartenance aux groupes doit être mise à jour automatiquement en fonction du poste de l’utilisateur. Vous devez également créer un locataire Azure AD test avec un compte d’utilisateur test et accorder à ce compte des autorisations limitées aux ressources de l’abonnement Contoso Azure.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ## <a name="objectives"></a>Objectifs
 
@@ -43,7 +40,7 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 
-1. Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
 
 1. Dans le panneau Azure Active Directory, faites défiler jusqu’à la section **Gérer**, cliquez sur **Paramètres utilisateur** et passez en revue les options de configuration disponibles.
 
@@ -192,7 +189,7 @@ Dans cette tâche, vous allez créer un locataire Azure AD.
 
    >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous rencontrez ce problème, ignorez cette tâche et la suivante. Nous travaillons actuellement à résoudre le problème.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
 
 1. Cliquez sur **Gérer les locataires**, puis sur l’écran suivant, cliquez sur **+ Créer**, puis spécifiez le paramètre suivant :
 
@@ -237,7 +234,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
 1. Revenez à votre locataire Azure AD par défaut à l’aide du bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d’outils du portail Azure.
 
-1. Revenez au panneau **Utilisateurs - Tous les utilisateurs**, puis cliquez sur **+ Nouvel utilisateur invité**.
+1. Revenez au panneau **Utilisateurs - Tous les utilisateurs**, puis cliquez sur **+ Inviter un utilisateur externe**.
 
 1. Invitez un nouvel utilisateur invité avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
