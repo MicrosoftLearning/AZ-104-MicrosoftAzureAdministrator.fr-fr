@@ -1,20 +1,17 @@
 ---
 lab:
-  title: '09a : Implémenter Web Apps'
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: af243b0cfa2b011dd419516139b5200ba349bcb4
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "145198147"
+  title: "09a\_: Implémenter Web Apps"
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09a---implement-web-apps"></a>Labo 09a : Implémenter Web Apps
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous devez évaluer l’utilisation d’applications web Azure pour héberger les sites web de Contoso, qui sont actuellement hébergés dans les centres de données locaux de l’entreprise. Les sites web s’exécutent sur des serveurs Windows à l’aide de la pile de runtime PHP. Vous devez également déterminer comment implémenter des pratiques DevOps en tirant parti des emplacements de déploiement des applications web Azure.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -53,8 +50,8 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
-    | Pile d’exécution | **PHP 7.4** |
-    | Système d’exploitation | **Windows** |
+    | Pile d’exécution | **PHP 8.0** |
+    | Système d’exploitation | **Linux** |
     | Région | le nom d’une région Azure dans laquelle vous pouvez approvisionner des applications web Azure |
     | Plan App Service | acceptez la configuration par défaut |
 
@@ -108,8 +105,6 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement de l’
     | Nom d’utilisateur | n’importe quel nom global unique (ne doit pas contenir de caractère `@`) |
     | Mot de passe | tout mot de passe répondant aux exigences de complexité|
 
-    >**Remarque :** Le mot de passe doit comporter au moins huit caractères et inclure deux des trois éléments suivants : lettres, chiffres et caractères non alphanumériques.
-
     >**Remarque :** Vous aurez besoin de ces informations d’identification dans la tâche suivante de ce labo.
 
 #### <a name="task-4-deploy-code-to-the-staging-deployment-slot"></a>Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
@@ -150,7 +145,7 @@ Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiem
 
 1. Si vous êtes invité à vous authentifier, tapez `[deployment_user_name]` et le mot de passe correspondant (que vous avez défini dans la tâche précédente).
 
-1. Fermez le panneau Cloud Shell.
+1. Fermez le volet Cloud Shell.
 
 1. Dans le panneau de l’emplacement de préproduction, cliquez sur **Vue d’ensemble**, puis cliquez sur le lien **URL** pour afficher la page web par défaut dans un nouvel onglet de navigateur.
 
@@ -180,20 +175,20 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
     >**Remarque** : Vous avez également la possibilité de mettre à l’échelle l’application web manuellement.
 
-1. Laissez l’option par défaut **Mettre à l’échelle selon une mesure** sélectionnée, puis cliquez sur **+ Ajouter une règle**
+1. Sélectionnez **Mettre à l’échelle selon une métrique** et cliquez sur **+ Ajouter une règle**.
 
 1. Dans le panneau **Règle de mise à l’échelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- |--- |
     | Source de la métrique | **Ressource actuelle** |
-    | Agrégation du temps | **Maximum** |
-    | Espace de noms de la métrique | **Métriques standard des plans App Service** |
+    | Espace de noms de la métrique | **Métriques standard** |
     | Nom de métrique | **Pourcentage UC** |
     | Opérateur | **Supérieur à** |
     | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
     | Durée (en minutes) | **1** |
     | Statistique de fragment de temps | **Maximum** |
+    | Agrégation du temps | **Maximum** |
     | Opération | **Augmenter le nombre de** |
     | Nombre d’instances | **1** |
     | Refroidissement (minutes) | **5** |
@@ -230,17 +225,17 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
    while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
    ```
 
-1. Réduisez le panneau Cloud Shell (sans le fermer) et, dans le panneau de l’application web, dans la section **Surveillance**, cliquez sur **Explorateur de processus**.
+1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)** .
 
-    >**Remarque** : L’Explorateur de processus facilite la surveillance du nombre d’instances et de leur utilisation des ressources.
+1. Sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
 
-1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes.
+1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes. 
 
     >**Remarque** : Il peut être nécessaire de cliquer sur **Actualiser** pour actualiser la page.
 
 1. Une fois que vous avez remarqué que le nombre d’instances est passé à 2, rouvrez le panneau Cloud Shell et terminez le script en appuyant sur **Ctrl+C**.
 
-1. Fermez le panneau Cloud Shell.
+1. Fermez le volet Cloud Shell.
 
 #### <a name="clean-up-resources"></a>Nettoyer les ressources
 
@@ -248,7 +243,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 >**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

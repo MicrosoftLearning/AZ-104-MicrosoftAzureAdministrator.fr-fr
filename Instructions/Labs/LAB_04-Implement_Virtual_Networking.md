@@ -1,21 +1,18 @@
 ---
 lab:
-  title: '04 : Implémenter des réseaux virtuels'
-  module: Module 04 - Virtual Networking
-ms.openlocfilehash: 383f88f2dddb48d498efb3d868330e4bba15c92b
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198172"
+  title: "04\_: Implémenter des réseaux virtuels"
+  module: Administer Virtual Networking
 ---
+
 # <a name="lab-04---implement-virtual-networking"></a>Labo 04 : Implémenter des réseaux virtuels
 
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous devez explorer les fonctionnalités de mise en réseau virtuelle Azure. Pour commencer, vous envisagez de créer un réseau virtuel dans Azure qui hébergera deux machines virtuelles Azure. Étant donné que vous envisagez d’implémenter la segmentation basée sur le réseau, vous les déployez dans différents sous-réseaux du réseau virtuel. Vous souhaitez également vous assurer que leurs adresses IP privées et publiques ne changeront pas au fil du temps. Pour respecter les exigences de sécurité de Contoso, vous devez protéger les points de terminaison publics des machines virtuelles Azure accessibles à partir d’Internet. Enfin, vous devez implémenter la résolution de noms DNS pour les machines virtuelles Azure à la fois au sein du réseau virtuel et à partir d’Internet.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -55,13 +52,9 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
     | Nom | **az104-04-vnet1** |
     | Région | nom de n’importe quelle région Azure disponible dans l’abonnement que vous utiliserez dans ce labo |
 
-1. Cliquez sur **Suivant : Adresses IP** et entrez les valeurs suivantes
+1. Cliquez sur **Suivant : Adresses IP** et supprimez l’**espace d’adressage IPv4** existant. Dans la zone de texte **Espace d’adressage IPv4**, tapez **10.40.0.0/20**.
 
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Espace d’adressage IPv4 | **10.40.0.0/20** |
-
-1. Cliquez sur **+ Ajouter un sous-réseau**, entrez les valeurs suivantes, puis cliquez sur **Ajouter**
+1. Cliquez sur **+ Ajouter un sous-réseau**, entrez les valeurs suivantes et cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -97,9 +90,9 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** et **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
+1. Dans la barre d’outils du volet Cloud Shell, cliquez sur l'icône **Charger/télécharger des fichiers**, et dans le menu déroulant, cliquez sur **Charger**. Chargez **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** et **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** dans le répertoire de base de Cloud Shell.
 
-    >**Remarque** : Vous devrez peut-être charger chaque fichier séparément.
+    >**Remarque** : Vous devez charger chaque fichier séparément. Après le chargement, utilisez **dir** pour vous assurer que les deux fichiers ont été correctement chargés.
 
 1. Modifiez le fichier Paramètres et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
@@ -125,7 +118,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter.
     > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton haut plusieurs fois, ce qui affichera la dernière commande exécutée.
 
-1. Fermez le panneau Cloud Shell.
+1. Fermez le volet Cloud Shell.
 
 #### <a name="task-3-configure-private-and-public-ip-addresses-of-azure-vms"></a>Tâche 3 : Configurer les adresses IP privées et publiques des machines virtuelles Azure
 
@@ -220,7 +213,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Source | **Any** |
+    | Source | **Aucune** |
     | Source port ranges | * |
     | Destination | **Any** |
     | Service | **RDP** |
@@ -270,7 +263,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
 1. Cliquez sur **Accéder à la ressource** pour ouvrir l’onglet de zone privée DNS **contoso.org**.
 
-1. Dans le panneau de zone DNS privée **contoso.org**, dans la section **Paramètres**, cliquez sur **Liens de réseau virtuel**.
+1. Dans le panneau de zone DNS privée**contoso.org**, dans la section **Paramètres**, cliquez sur **Liens de réseau virtuel**.
 
 1. Cliquez sur **+ Ajouter** pour créer un lien de réseau virtuel avec les paramètres suivants (laissez les autres avec leur valeur par défaut) :
 
@@ -380,9 +373,9 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
  > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
- > **Remarque** :  Ne vous inquiétez pas si les ressources lab ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+ > **Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

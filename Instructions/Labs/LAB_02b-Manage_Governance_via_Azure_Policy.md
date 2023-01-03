@@ -1,14 +1,9 @@
 ---
 lab:
   title: 02b - Gérer la gouvernance via Azure Policy
-  module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 2bf92c914983a28dc2d3f85abed917a95e88c04f
-ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "146973673"
+  module: Administer Governance and Compliance
 ---
+
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Labo 02b - Gérer la gouvernance via Azure Policy
 # <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
 
@@ -20,7 +15,9 @@ Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été ch
 
 - s’assurer que seules les ressources d’infrastructure correctement étiquetées peuvent être ajoutées aux groupes de ressources d’infrastructure
 
-- corriger toutes les ressources non conformes 
+- corriger toutes les ressources non conformes
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -179,7 +176,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
     | Paramètre | Valeur |
     | --- | --- |
     | Créer une tâche de correction | enabled |
-    | Stratégie à corriger | **Hériter une étiquette de l’abonnement si elle est manquante** |
+    | Stratégie à corriger | **Hériter d’une étiquette du groupe de ressources en cas d’absence** |
 
     >**Remarque** : Cette définition de stratégie inclut l’effet **Modifier**.
 

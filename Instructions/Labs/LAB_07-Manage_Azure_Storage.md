@@ -1,20 +1,17 @@
 ---
 lab:
   title: '07 : Gérer le stockage Azure'
-  module: Module 07 - Azure Storage
-ms.openlocfilehash: 34b6dba73d87731df935f80a1b5909e44075e871
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587464"
+  module: Administer Azure Storage
 ---
+
 # <a name="lab-07---manage-azure-storage"></a>Labo 07 : Gérer le Stockage Azure
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous devez évaluer l’utilisation du stockage Azure pour stocker des fichiers résidant actuellement dans des magasins de données locaux. Bien que la majorité de ces fichiers ne soient pas consultés fréquemment, il y a des exceptions. Vous voulez réduire le coût du stockage en plaçant les fichiers moins fréquemment consultés dans des niveaux de stockage moins chers. Vous voulez également explorer différents mécanismes de protection offerts par le Stockage Azure, notamment l’accès réseau, l’authentification, l’autorisation et la réplication. Enfin, vous voulez déterminer si le service Azure Files peut convenir pour héberger vos partages de fichiers locaux.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -90,7 +87,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous uti
     > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter.
     > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton haut plusieurs fois, ce qui affichera la dernière commande exécutée.
 
-1. Fermez le panneau Cloud Shell.
+1. Fermez le volet Cloud Shell.
 
 #### <a name="task-2-create-and-configure-azure-storage-accounts"></a>Tâche 2 : Créer et configurer des comptes de Stockage Azure
 
@@ -98,7 +95,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Comptes de stockage**, puis cliquez sur **+ Créer**.
 
-1. Sous l’onglet **Options de base** du panneau **Créer un compte de stockage**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Sous l’onglet **Options de base** du volet **Créer un compte de stockage**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -119,13 +116,11 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
 1. Dans le panneau de déploiement, cliquez sur **Accéder à la ressource** pour afficher le panneau du compte de Stockage Azure.
 
-1. Dans le panneau Compte de stockage, dans la section **Gestion des données**, cliquez sur **Géoréplication** et prenez note de l’emplacement secondaire. 
+1. Dans le volet Compte de stockage, dans la section **Gestion des données**, cliquez sur **Redondance** et prenez note de l’emplacement secondaire. 
 
-1. Dans le panneau Compte de stockage, dans la section **Paramètres**, sélectionnez **Configuration**, dans la liste déroulante **Réplication**, sélectionnez **Stockage localement redondant (LRS)** et enregistrez la modification.
+1. Dans la liste déroulante **Redondance**, sélectionnez **Stockage localement redondant (LRS)** et enregistrez la modification. Notez que, à ce stade, le compte de stockage n’a que l’emplacement principal.
 
-1. Revenez au panneau **Géoréplication** et notez que, à ce stade, le compte de stockage n’a que l’emplacement principal.
-
-1. Affichez à nouveau le panneau **Configuration** du compte de stockage, définissez le **Niveau d’accès aux blobs (par défaut)** sur **Froid** et enregistrez la modification.
+1. Dans le volet Compte de stockage, dans la section **Paramètres**, sélectionnez **Configuration**. Définissez le **Niveau d’accès aux blobs (par défaut)** sur **Froid** et enregistrez la modification.
 
     > **Remarque** : Le niveau d’accès froid est optimal pour les données qui ne sont pas utilisées fréquemment.
 
@@ -148,7 +143,7 @@ Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d�
 
 1. Dans le panneau **Charger l’objet blob**, développez la section **Avancé** et spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Type d'authentification | **Clé de compte**  |
     | Type d’objet blob | **Objet blob de blocs** |
@@ -215,7 +210,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
     > **Remarque** : À ce stade, vous n’avez pas d’autorisations pour modifier la méthode d’authentification.
 
-1. Dans le panneau **az104-07-container**, cliquez sur **Contrôle d'accès (IAM)** .
+1. Dans le volet **az104-07-container**, cliquez sur **Access Control (IAM)** .
 
 1. Sous l’onglet **Vérifier l’accès**, cliquez sur **Ajouter une attribution de rôle**.
 
@@ -247,7 +242,7 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Cliquez sur le partage de fichiers nouvellement créé, puis sur **Connecter**.
 
-1. Dans le panneau **Connecter**, vérifiez que l’onglet **Windows** est sélectionné. Vous trouverez en dessous une zone de texte grise avec un script. Dans le coin inférieur droit de cette zone, pointez sur l’icône représentant des pages, puis cliquez sur **Copier dans le Presse-papiers**.
+1. Dans le panneau **Connecter**, vérifiez que l’onglet **Windows** est sélectionné. Vous trouverez ci-dessous un bouton avec l’étiquette **Afficher le script**. Cliquez sur le bouton et vous trouverez une zone de texte grise avec un script, dans le coin inférieur droit de cette zone. Pointez sur l’icône de pages, puis cliquez sur **Copier dans le Presse-papiers**.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles** puis, dans la liste des machines virtuelles, cliquez sur **az104-07-vm0**.
 
@@ -308,7 +303,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
     > **Remarque** : Vous devez recevoir le message indiquant **AuthorizationFailure: Cette requête n’est pas autorisée à effectuer cette opération**. Cela est attendu, car vous vous connectez à partir de l’adresse IP attribuée à une machine virtuelle Azure hébergeant l’instance Cloud Shell.
 
-1. Fermez le panneau Cloud Shell.
+1. Fermez le volet Cloud Shell.
 
 #### <a name="clean-up-resources"></a>Nettoyer les ressources
 
@@ -316,7 +311,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
 >**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. Vous pouvez également essayer de supprimer le groupe de ressources où résident les ressources. Il s’agit d’un raccourci administrateur rapide. Si vous rencontrez des difficultés, parlez à votre instructeur.
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

@@ -1,20 +1,17 @@
 ---
 lab:
-  title: '08 : Gérer des machines virtuelles'
-  module: Module 08 - Virtual Machines
-ms.openlocfilehash: a710fbaf4ea888651012bad592d34667a190c68f
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587446"
+  title: "08\_: Gérer des machines virtuelles"
+  module: Administer Virtual Machines
 ---
+
 # <a name="lab-08---manage-virtual-machines"></a>Labo 08 : Gérer des machines virtuelles
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous avez été chargé d’identifier différentes options pour déployer et configurer des machines virtuelles Azure. Tout d’abord, vous devez déterminer différentes options de résilience et de scalabilité du calcul et du stockage que vous pouvez implémenter lors de l’utilisation de machines virtuelles Azure. Ensuite, vous devez examiner les options de résilience et de scalabilité du calcul et du stockage disponibles lors de l’utilisation de groupes de machines virtuelles identiques Azure. Vous souhaitez également explorer la possibilité de configurer automatiquement des machines virtuelles et des groupes de machines virtuelles identiques à l’aide de l’extension de script personnalisé de machine virtuelle Azure.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -47,7 +44,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **+ Créer**, puis sur **+ Machine virtuelle Azure**.
 
-1. Sous l’onglet **Informations de base** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Sous l’onglet **Informations de base** du volet **Créer une machine virtuelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -62,7 +59,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Taille | **Standard D2s v3** |
     | Nom d’utilisateur | **Étudiant** |
     | Mot de passe | **Choisissez un mot de passe sécurisé** |
-    | Ports d'entrée publics | **Aucun** |
+    | Aucun port d’entrée public | **Aucun** |
     | Souhaitez-vous utiliser une licence Windows Server existante ? | **Décoché** |
 
 1. Cliquez sur **Suivant : Disques >** et dans l’onglet **Disques** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
@@ -87,8 +84,8 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Sous-réseau | **subnet0** |
-    | Adresse IP publique | **par défaut** |
+    | Subnet | **subnet0** |
+    | Adresse IP publique | **default** |
     | Groupe de sécurité réseau de la carte réseau | **basic** |
     | Ports d’entrée publics | **Aucun** |
     | Mise en réseau accélérée | **Désactivé**
@@ -98,9 +95,14 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Diagnostics de démarrage | **Activer avec un compte de stockage personnalisé** |
-    | Compte de stockage de diagnostics | accepter la valeur par défaut |
     | Options d'orchestration de patch | **Mises à jour manuelles** |  
+
+1. Cliquez sur **Suivant : Surveillance >** et sous l’onglet **Surveillance** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Diagnostics de démarrage | **Activer avec un compte de stockage personnalisé** |
+    | Compte de stockage de diagnostics | **accepter la valeur par défaut** |
 
     >**Remarque** : Si nécessaire, sélectionnez un compte de stockage existant dans la liste déroulante ou créez un compte de stockage. Enregistrez le nom du compte de stockage. Vous l’utiliserez à la tâche suivante.
 
@@ -239,7 +241,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
     | --- | --- |
     | Nom du disque | **az104-08-vm0-datadisk-0** |
     | Type de stockage | **SSD Premium** |
-    | Taille (Gio)| **1,024** |
+    | Taille (Gio)| **1024** |
 
 1. De retour dans le panneau **az104-08-vm0 - Disques**, sous **Disques de données**, cliquez sur **+ Créer un disque et l'attacher**.
 
@@ -402,10 +404,10 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Source | **Aucune** |
-    | Plages de ports sources | **\*** |
+    | Source port ranges | **\*** |
     | Destination | **Aucune** |
     | Plages de ports de destination | **80** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Action | **Autoriser** |
     | Priorité | **1010** |
     | Nom | **custom-allow-http** |
@@ -525,7 +527,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
     | --- |--- |
     | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
     | Agrégation du temps | **Moyenne** |
-    | Espace de noms de métrique | **Hôte de machine virtuelle** |
+    | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
     | Opérateur | **Supérieur à** |
     | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
@@ -613,7 +615,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
    ./az104-08-configure_VMSS_disks.ps1
    ```
 
-1. Fermez le panneau Cloud Shell.
+1. Fermez le volet Cloud Shell.
 
 1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
@@ -621,8 +623,8 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
 1. Supprimez az104-08-configure_VMSS_disks.ps1 en exécutant la commande suivante :
 

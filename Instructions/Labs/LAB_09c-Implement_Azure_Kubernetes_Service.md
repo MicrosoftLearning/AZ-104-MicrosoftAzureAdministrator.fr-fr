@@ -1,20 +1,17 @@
 ---
 lab:
-  title: '09c : Implémenter Azure Kubernetes Service'
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: 929e2dfa4aba9df613e8d5ac594d903ede2f9934
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587473"
+  title: "09c\_: Implémenter Azure Kubernetes Service"
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Labo 09c : Implémenter Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Contoso dispose d’un certain nombre d’applications multiniveau qu’il n’est pas possible d’exécuter à l’aide d’Azure Container Instances. Pour déterminer si elles peuvent être exécutées sous la forme de charges de travail conteneurisées,vous devez envisager d’utiliser Kubernetes comme orchestrateur de conteneurs. Pour réduire encore la charge de gestion, vous allez tester Azure Kubernetes Service, notamment son expérience de déploiement simplifiée et ses fonctionnalités de montée en charge.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -69,12 +66,14 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
+    | Configuration prédéfinie du cluster | **Dev/Test ($)** |
     | Nom du cluster Kubernetes | **az104-9c-aks1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner un cluster Kubernetes |
     | Zones de disponibilité | **Aucune** (décochez toutes les cases) |
     | Version de Kubernetes | accepter la valeur par défaut |
+    | Disponibilité du serveur d’API | accepter la valeur par défaut |
     | Taille du nœud | accepter la valeur par défaut |
-    | Méthode de mise à l’échelle | **Manuelle** |
+    | Méthode de mise à l’échelle | **Manuel** |
     | Nombre de nœuds | **1** |
 
 1. Cliquez sur **Suivant : Pools de noeuds >** , puis sous l’onglet **Pools de noeuds** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
@@ -83,19 +82,19 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | ---- | ---- |
     | Activer les nœuds virtuels | **Désactivé** (valeur par défaut) |
 
-1. Cliquez sur **Suivant : Accès >** , puis, dans l’onglet **Accès** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Cliquez sur **Suivant : Accès >** , puis, sous l’onglet **Accès** du volet **Créer un cluster Kubernetes**, laissez les paramètres avec leurs valeurs par défaut :
 
     | Paramètre | Valeur |
     | ---- | ---- |
-    | Méthode d'authentification | **Identité managée affectée par le système** (valeur par défaut - aucune modification) | 
-    | Contrôle d’accès en fonction du rôle | **Activé** |
+    | Identité des ressources | **Identité managée affectée par le système** |
+    | Méthode d'authentification | **Comptes locaux avec RBAC Kubernetes** |
 
 1. Cliquez sur **Suivant : Mise en réseau >** , puis, dans l’onglet **Mise en réseau** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Configuration réseau | **Kubenet** |
-    | Préfixe du nom DNS | tout nom d’hôte DNS unique valide et global |
+    | Préfixe du nom DNS | n’importe quel préfixe DNS global unique valide|
 
 1. Cliquez sur **Suivant : Intégrations >**, sous l’onglet **Intégrations** du panneau **Créer un cluster Kubernetes**, définissez **Supervision de conteneurs** sur **Désactivée**, cliquez sur **Vérifier + créer**, vérifiez que la validation a été effectuée et cliquez sur **Créer**.
 
