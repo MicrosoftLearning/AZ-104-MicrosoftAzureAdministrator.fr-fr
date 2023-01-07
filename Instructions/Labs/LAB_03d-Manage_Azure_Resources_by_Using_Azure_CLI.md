@@ -1,20 +1,17 @@
 ---
 lab:
   title: 03d - Gérer des ressources Azure à l’aide d’Azure CLI
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: e673423e49d49629c72f1b28a234d82eb776190f
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "145198144"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Labo 03d - Gérer des ressources Azure à l’aide d’Azure CLI
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
-Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure, des modèles Azure Resource Manager et d’Azure PowerShell, vous devez effectuer la tâche équivalente à l’aide d’Azure CLI. Pour éviter d’installer Azure CLI, vous allez tirer parti de l’environnement Bash disponible dans Azure Cloud Shell.
+Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et en les organisant en fonction de groupes de ressources à l’aide des modèles Portail Azure, d’Azure Resource Manager et de Azure PowerShell, vous devez effectuer la tâche équivalente à l’aide d’Azure CLI. Pour éviter d’installer Azure CLI, vous allez tirer parti de l’environnement Bash disponible dans Azure Cloud Shell.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -25,6 +22,10 @@ Dans ce labo, vous allez :
 + Tâche 3 : Configurer le disque managé à l’aide d’Azure CLI
 
 ## <a name="estimated-timing-20-minutes"></a>Durée estimée : 20 minutes
+
+## <a name="architecture-diagram"></a>Diagramme de l'architecture
+
+![image](../media/lab03d.png)
 
 ## <a name="instructions"></a>Instructions
 
@@ -115,7 +116,7 @@ Dans cette tâche, vous allez gérer la configuration du disque managé Azure à
 
  > **Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le portail Azure, ouvrez la session shell **Bash** dans le volet **Cloud Shell**.
+1. Dans le Portail Azure, ouvrez la session shell **Bash** dans le volet **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 

@@ -1,20 +1,17 @@
 ---
 lab:
-  title: '06 : Implémenter la gestion du trafic'
-  module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 81fd0fefc28cbf9eb59935e93bb548c69d677cf5
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587455"
+  title: "06\_: Implémenter la gestion du trafic"
+  module: Administer Network Traffic Management
 ---
+
 # <a name="lab-06---implement-traffic-management"></a>Labo 06 : Implémenter la gestion du trafic
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous avez été chargé de tester la gestion du trafic réseau ciblant les machines virtuelles Azure dans la topologie de réseau hub and spoke, que Contoso compte implémenter dans son environnement Azure (au lieu de créer la topologie de maillage, que vous avez testée dans le labo précédent). Ce test doit inclure l’implémentation de la connectivité entre les spokes en s’appuyant sur des itinéraires définis par l’utilisateur qui forcent le trafic à circuler via le hub, ainsi que la distribution du trafic entre les machines virtuelles à l’aide des équilibreurs de charge de couche 4 et de couche 7. À cet effet, vous avez l’intention d’utiliser Azure Load Balancer (couche 4) et Azure Application Gateway (couche 7).
+
+**Remarque :** une **[simulation de labo interactif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation de labo interactif et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 >**Remarque** : Ce labo, par défaut, nécessite un total de 8 processeurs virtuels disponibles dans la série Standard_Dsv3 dans la région que vous choisissez pour le déploiement, car il implique le déploiement de quatre machines virtuelles Azure de Standard_D2s_v3 référence SKU. Si vos étudiants utilisent des comptes d’évaluation, avec la limite de 4 processeurs virtuels, vous pouvez utiliser une taille de machine virtuelle qui ne nécessite qu’un seul processeur virtuel (par exemple, Standard_B1s).
 
@@ -150,11 +147,11 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Ce réseau virtuel : Nom du lien de peering | **az104-06-vnet01_to_az104-06-vnet2** |
+    | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet2** |
     | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
     | Passerelle de réseau virtuel | **Aucune (par défaut)** |
-    | Réseau virtuel distant : Nom du lien de peering | **az104-06-vnet2_to_az104-06-vnet01** |
+    | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet2_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
     | ID de ressource | valeur du paramètre resourceID **az104-06-vnet2** que vous avez enregistrée précédemment dans cette tâche |
@@ -174,11 +171,11 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Ce réseau virtuel : Nom du lien de peering | **az104-06-vnet01_to_az104-06-vnet3** |
+    | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet3** |
     | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
     | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
     | Passerelle de réseau virtuel | **Aucune (par défaut)** |
-    | Réseau virtuel distant : Nom du lien de peering | **az104-06-vnet3_to_az104-06-vnet01** |
+    | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet3_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
     | ID de ressource | valeur du paramètre resourceID **az104-06-vnet3** que vous avez enregistrée précédemment dans cette tâche |
@@ -202,6 +199,8 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
 1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
+    > **Remarque** : il peut être nécessaire de patienter quelques minutes avant que le groupe de ressources soit répertorié. Si vous ne souhaitez pas attendre, essayez d’effectuer cette action : supprimez le Network Watcher, créez un Network Watcher, puis réessayez la résolution des problèmes de connexion. 
+
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
@@ -210,7 +209,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm0** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.62.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
     > **Remarque** : **10.62.0.4** représente l’adresse IP privée **d’az104-06-vm2**
@@ -229,7 +228,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm0** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
@@ -248,7 +247,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm2** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
 1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que le statut doit être **Accessible**.
@@ -329,7 +328,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Destination du préfixe d’adresse | **Adresses IP** |
     | Plages d’adresses IP/CIDR de destination | **10.63.0.0/20** |
     | Type de tronçon suivant | **Appliance virtuelle** |
-    | Adresse du tronçon | **10.60.0.4** |
+    | adresse de tronçon suivant | **10.60.0.4** |
 
 1. Cliquez sur **OK**
 
@@ -340,7 +339,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Paramètre | Valeur |
     | --- | --- |
     | Réseau virtuel | **az104-06-vnet2** |
-    | Sous-réseau | **subnet0** |
+    | Subnet | **subnet0** |
 
 1. Cliquez sur **OK**
 
@@ -372,7 +371,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Destination du préfixe d’adresse | **Adresses IP** |
     | Plages d’adresses IP/CIDR de destination | **10.62.0.0/20** |
     | Type de tronçon suivant | **Appliance virtuelle** |
-    | Adresse du tronçon | **10.60.0.4** |
+    | adresse de tronçon suivant | **10.60.0.4** |
 
 1. Cliquez sur **OK**
 
@@ -383,7 +382,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Paramètre | Valeur |
     | --- | --- |
     | Réseau virtuel | **az104-06-vnet3** |
-    | Sous-réseau | **subnet0** |
+    | Subnet | **subnet0** |
 
 1. Cliquez sur **OK**
 
@@ -399,7 +398,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Machine virtuelle | **az104-06-vm2** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
 1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **inaccessible**, vous devez arrêter, puis démarrer az104-06-vm0.
@@ -410,95 +409,80 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
 
 #### <a name="task-5-implement-azure-load-balancer"></a>Tâche 5 : Mettre en oeuvre Azure Load Balancer
 
-Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deux machines virtuelles Azure dans le réseau virtuel hub
+Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deux machines virtuelles Azure dans le réseau virtuel hub.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Équilibreurs de charge** et, dans le panneau **Équilibreurs de charge**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez **Équilibreurs de charge**. Dans le panneau **Équilibreurs de charge**, cliquez sur **+ Créer**.
 
 1. Créez un équilibreur de charge avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) puis cliquez sur **Suivant : Configuration IP front-end** :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
+    | Resource group | **az104-06-rg4** |
     | Nom | **az104-06-lb4** |
-    | Région| nom de la région Azure dans laquelle vous avez déployé toutes les autres ressources dans ce laboratoire |
-    | Référence SKU | **Standard** |
+    | Région | nom de la région Azure dans laquelle vous avez déployé toutes les autres ressources dans ce laboratoire |
+    | Référence SKU  | **Standard** |
     | Type | **Public** |
+    | Niveau | **Regional** |
     
-1. Sous l’onglet **Configuration IP frontale**, cliquez sur **Ajouter une configuration IP frontale** et utilisez le paramètre suivant avant de cliquer sur **Ajouter**.   
+1. Dans l’onglet **Configuration IP front-end**, cliquez sur **Ajouter une configuration IP front-end** et utilisez le paramètre suivant avant de cliquer sur **OK**, puis **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : pools back-end**. 
      
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | tout nom unique |
+    | Nom | **az104-06-pip4** |
+    | Version de l’adresse IP | IPv4 |
+    | Type IP | Adresse IP |
     | Adresse IP publique | **Création** |
-    | Nom de l’adresse IP publique | **az104-06-pip4** |
+    | Zone de disponibilité | **Aucune zone** | 
 
-1. Cliquez sur **Examiner et créer**. Laissez la validation se produire, puis appuyez sur **Créer** à nouveau pour envoyer votre déploiement.
-
-    > **Remarque** : Attendez que l’équilibreur de charge Azure soit provisionné. Ce processus prend environ 2 minutes.
-
-1. Dans le volet de déploiement, cliquez sur **Accéder à la ressource**.
-
-1. Dans le panneau de l’équilibreur de charge **az104-06-lb4**, dans la section **Paramètres**, cliquez sur **Pools principaux**, puis cliquez sur **+ Ajouter**.
-
-1. Créez un pool back-end avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans l’onglet **Pools back-end**, cliquez sur **Ajouter un pool back-end** avec les paramètres suivants (conservez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis cliquez sur **Suivant : règles de trafic entrant**. 
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-06-lb4-be1** |
     | Réseau virtuel | **az104-06-vnet01** |
+    | Configuration d’un pool de back-ends | **Carte d’interface réseau** | 
     | Version de l’adresse IP | **IPv4** |
-    | Machine virtuelle | **az104-06-vm0** |
-    | Adresse IP des machines virtuelles | **ipconfig1 (10.60.0.4)** |
-    | Machine virtuelle | **az104-06-vm1** |
-    | Adresse IP des machines virtuelles | **ipconfig1 (10.60.1.4)** |
+    | Cliquer sur **Ajouter** pour ajouter une machine virtuelle |  |
+    | az104-06-vm0 | **Cocher la case** |
+    | az104-06-vm1 | **Cocher la case** |
 
-1. Cliquez sur **Ajouter**
 
-1. Attendez que le pool principal soit créé, dans la section **Paramètres**, cliquez sur **Sondes d’intégrité**, puis cliquez sur **+ Ajouter**.
-
-1. Ajoutez une sonde d’intégrité avec les paramètres suivants :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom | **az104-06-lb4-hp1** |
-    | Protocole | **TCP** |
-    | Port | **80** |
-    | Intervalle | **5** |
-    | Seuil de défaillance sur le plan de l’intégrité | **2** |
-
-1. Cliquez sur **Ajouter**
-
-1. Attendez que la sonde d’intégrité soit créée, dans la section **Paramètres**, cliquez sur **Règles d’équilibrage de charge**, puis cliquez sur **+ Ajouter**.
-
-1. Ajoutez un équilibrage de charge entrante avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans l’onglet **Règles de trafic entrant**, cliquez sur **Ajouter une règle d’équilibrage de charge**. Ajoutez un équilibrage de charge entrante avec les paramètres suivants (conservez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-06-lb4-lbrule1** |
     | Version de l’adresse IP | **IPv4** |
-    | Adresse IP du front-end | **sélectionnez LoadBalancerFrontEnd dans la liste déroulante**
-    | Protocole | **TCP** |
+    | Adresse IP du front-end | **az104-06-pip4** |
+    | Pool principal | **az104-06-lb4-be1** |    
+    | Protocol | **TCP** |
     | Port | **80** |
     | Port principal | **80** |
-    | Pool principal | **az104-06-lb4-be1** |
-    | Sonde d’intégrité | **az104-06-lb4-hp1** |
+    | Sonde d’intégrité | **Création** |
+    | Nom | **az104-06-lb4-hp1** |
+    | Protocol | **TCP** |
+    | Port | **80** |
+    | Intervalle | **5** |
+    | Seuil de défaillance sur le plan de l’intégrité | **2** |
+    | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
     | Persistance de session | **Aucun** |
     | Délai d’inactivité (minutes) | **4** |
     | Réinitialisation du protocole TCP | **Désactivé** |
-    | Adresse IP flottante (retour direct du serveur) | **Désactivé** |
+    | IP flottante | **Désactivé** |
+    | Traduction d’adresses réseau (SNAT) sources sortante | **Recommandé** |
 
-1. Cliquez sur **Ajouter**
+1. Si vous avez le temps, passez en revue les autres onglets, puis cliquez sur **Vérifier et créer**. Vérifiez qu’il n’existe aucune erreur de validation, puis cliquez sur **Créer**. 
 
-1. Attendez que la règle d’équilibrage de charge soit créée, dans la section **Paramètres**, cliquez sur **Configuration IP frontale** et notez la valeur de l’adresse **IP publique**.
+1. Patientez jusqu’à ce que l’équilibreur de charge soit déployé, puis cliquez sur **Accéder à la ressource**.  
 
-1. Démarrez une autre fenêtre de navigateur et naviguez vers l'adresse IP que vous avez identifiée à l'étape précédente.
+1. Sélectionnez **Configuration d’adresses IP front-end** dans la page de ressources Load Balancer. Copiez l’adresse IP.
 
-1. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm0** ou **Hello World à partir d’az104-06-vm1**.
+1. Ouvrez un autre onglet de navigateur et accédez à l’adresse IP. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm0** ou **Hello World à partir d’az104-06-vm1**.
 
-1. Ouvrez une autre fenêtre de navigateur, mais cette fois en utilisant le mode InPrivate et vérifiez si la machine virtuelle cible change (comme indiqué par le message).
+1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. Cela montre la rotation de l’équilibreur de charge au sein des machines virtuelles.
 
-    > **Remarque** : Vous devrez peut-être actualiser la fenêtre du navigateur ou l’ouvrir à nouveau à l’aide du mode InPrivate.
+    > **Remarque** : il peut être nécessaire d’actualiser plusieurs fois ou d’ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
 #### <a name="task-6-implement-azure-application-gateway"></a>Tâche 6 : Implémenter Azure Application Gateway
 
@@ -523,43 +507,43 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 1. Dans le portail Azure, recherchez et sélectionnez **Passerelles d'application**, puis, dans le panneau **Passerelles d'application**, cliquez sur **+ Créer**.
 
-1. Sous l’onglet **Informations de base** du volet **Créer une passerelle d'application**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Dans l’onglet **De base**, spécifiez les paramètres suivants (conservez les autres valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Nom de la passerelle d'application | **az104-06-appgw5** |
+    | Resource group | **az104-06-rg5** (créer) |
+    | Nom de passerelle applicative | **az104-06-appgw5** |
     | Région | nom de la région Azure dans laquelle vous avez déployé toutes les autres ressources dans ce laboratoire |
     | Niveau | **Standard V2** |
     | Activer la mise à l’échelle automatique | **Non** |
+    | Nombre d’instances | **2** |
+    | Zone de disponibilité | **Aucun** |
     | HTTP2 | **Désactivé** |
     | Réseau virtuel | **az104-06-vnet01** |
-    | Sous-réseau | **subnet-appgw** |
+    | Subnet | **subnet-appgw (10.60.3.224/27)** |
 
-1. Cliquez sur **Suivant : Serveurs frontaux >**  et, dans l'onglet **Serveurs frontaux** du panneau **Créer une passerelle d'application**, cliquez sur **Ajouter un nouveau**, et spécifiez les paramètres suivants (laissez les autres avec leur valeur par défaut) :
+1. Cliquez sur **Suivant : front-ends >** et spécifiez les paramètres suivants (conservez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**. 
 
     | Paramètre | Valeur |
     | --- | --- |
     | Type d'adresse IP de front-end | **Public** |
-    | Adresse IP publique| nom d’une nouvelle adresse IP publique **az104-06-pip5** |
+    | Adresse IP publique| **Ajouter nouveau** | 
+    | Nom | **az104-06-pip5** |
+    | Zone de disponibilité | **Aucun** |
 
-1. Cliquez sur **Suivant : Back-ends >** , sous l’onglet **Back-ends** du panneau **Créer une passerelle d’application**, cliquez sur **Ajouter un pool de back-ends** et, dans le panneau **Ajouter un pool de back-ends**, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Cliquez sur **Suivant : back-ends >** , puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (conservez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-06-appgw5-be1** |
     | Ajouter un pool back-end sans cible | **Non** |
-    | Type cible | **Adresse IP ou nom de domaine complet** |
-    | Cible | **10.62.0.4** |
-    | Type cible | **Adresse IP ou nom de domaine complet** |
-    | Cible | **10.63.0.4** |
+    | Adresse IP ou nom de domaine complet | **10.62.0.4** | 
+    | Adresse IP ou nom de domaine complet | **10.63.0.4** |
 
     > **Remarque** : Les cibles représentent les adresses IP privées des machines virtuelles dans les réseaux virtuels spoke **az104-06-vm2** et **az104-06-vm3**.
 
-1. Cliquez sur **Ajouter**, cliquez sur **Suivant : Configuration >** et, dans l'onglet **Configuration** du panneau **Créer une passerelle d'application**, cliquez sur **+ Ajouter une règle de routage**.
-
-1. Dans le panneau **Ajouter une règle de routage**, sous l’onglet **Écouteur**, spécifiez les paramètres suivants :
+1. Cliquez sur **Suivant : configuration >** , puis sur **+ Ajouter une règle d’acheminement**. Spécifiez les paramètres suivants :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -567,30 +551,23 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Priorité | **10** |
     | Nom de l’écouteur | **az104-06-appgw5-rl1l1** |
     | Adresse IP du front-end | **Public** |
-    | Protocole | **HTTP** |
+    | Protocol | **HTTP** |
     | Port | **80** |
     | Type d’écouteur | **De base** |
     | URL de page d’erreur | **Non** |
 
-1. Basculez vers l’onglet **Cibles principales** du panneau **Ajouter une règle de routage** et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Basculez vers l’onglet **Cibles de back-end** et spécifiez les paramètres suivants (conservez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter** (deux fois).  
 
     | Paramètre | Valeur |
     | --- | --- |
     | Type cible | **Pool back-end** |
     | Cible de back-end | **az104-06-appgw5-be1** |
-
-1. Cliquez sur **Ajouter** sous la zone de texte **Paramètres de back-end**, puis, dans le panneau **Ajouter un paramètre de back-end**, spécifiez les paramètres suivants (laissez les autres avec leur valeur par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom des paramètres HTTP | **az104-06-appgw5-http1** |
+    | Paramètres du back-end | **Ajouter nouveau** |
+    | Nom des paramètres du back-end | **az104-06-appgw5-http1** |
     | Protocole de back-end | **HTTP** |
     | Port principal | **80** |
-    | Affinité basée sur les cookies | **Désactiver** |
-    | Drainage des connexions | **Désactiver** |
-    | Délai d'expiration de la demande (secondes) | **20** |
-
-1. Cliquez sur **Ajouter** dans le panneau **Ajouter un paramètre HTTP**, puis de nouveau dans le panneau **Ajouter une règle de routage**, cliquez sur **Ajouter**.
+    | Paramètres supplémentaires | **utiliser les valeurs par défaut** |
+    | Nom de l’hôte | **utiliser les valeurs par défaut** |
 
 1. Cliquez sur **Suivant : Balises >** , suivi de **Suivant : Vérifier + créer**, puis sur **Créer**.
 
@@ -598,15 +575,15 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 1. Dans le portail Azure, recherchez et sélectionnez **Passerelles d'application**, puis, dans le panneau **Passerelles d'application**, cliquez sur **az104-06-appgw5**.
 
-1. Dans le panneau Passerelle d'application **az104-06-appgw5**, notez la valeur de **l’adresse IP publique front-end**.
+1. Dans le panneau Application Gateway **az104-06-appgw5**, copiez la valeur de **l’adresse IP publique front-end**.
 
 1. Démarrez une autre fenêtre de navigateur et naviguez vers l'adresse IP que vous avez identifiée à l'étape précédente.
 
 1. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm2** ou **Hello World à partir d’az104-06-vm3**.
 
-1. Ouvrez une autre fenêtre de navigateur, mais cette fois en utilisant le mode InPrivate et vérifiez si la machine virtuelle cible change (comme indiqué par le message affiché sur la page web).
+1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. 
 
-    > **Remarque** : Vous devrez peut-être actualiser la fenêtre du navigateur ou l’ouvrir à nouveau à l’aide du mode InPrivate.
+    > **Remarque** : il peut être nécessaire d’actualiser plusieurs fois ou d’ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
     > **Remarque** : Le ciblage des machines virtuelles sur plusieurs réseaux virtuels n'est pas une configuration courante, mais elle vise à illustrer le fait qu’Application Gateway est capable de cibler des machines virtuelles sur plusieurs réseaux virtuels (ainsi que des points d'extrémité dans d'autres régions Azure ou même en dehors d'Azure), contrairement à Azure Load Balancer, qui équilibre la charge entre les machines virtuelles du même réseau virtuel.
 
@@ -614,7 +591,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -639,6 +616,6 @@ Dans cet exercice, vous avez :
 + Approvisionné l’environnement de labo
 + Configuré la topologie de réseau hub-and-spoke
 + Testé la transitivité du peering de réseaux virtuels testée
-+ Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
-+ Tâche 5 : Mettre en oeuvre Azure Load Balancer
-+ Tâche 6 : Implémenter Azure Application Gateway
++ Configurer le routage dans la topologie hub-and-spoke
++ Azure Load Balancer implémenté
++ Azure Application Gateway implémenté

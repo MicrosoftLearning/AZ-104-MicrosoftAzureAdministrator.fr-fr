@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: a106aae9e7c3de7b5154ce5e889ee057a1b9dff3
-ms.sourcegitcommit: 69083589fed0a226499b3067222e444d3fe0bac8
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "146458130"
----
 # <a name="az-104-microsoft-azure-administrator"></a>AZ-104 : administrateur Microsoft Azure
 
 ## <a name="welcome"></a>Bienvenue
@@ -14,6 +6,7 @@ Ce référentiel est destiné aux instructeurs qui animent des cours Microsoft. 
 
 - **[Lien vers les labos (format HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
 - **Êtes-vous un MCT ?** - Consultez notre [Guide de l’utilisateur GitHub pour MCT](https://microsoftlearning.github.io/MCT-User-Guide/)
+- Pour voir un aperçu de ce cours dans un format auto-rythmé, consultez nos **[simulations de labo interactives](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)** . Il peut exister de légères différences entre les simulations interactives et les labos hébergés. Toutefois, les concepts et idées de base présentés sont identiques.
 
 ## <a name="security-issue---february-2022"></a>Problème de sécurité - Février 2022
 
@@ -24,15 +17,15 @@ Une fois qu’ils sont connectés, les machines peuvent être utilisées pour le
 
 ## <a name="what-are-we-doing"></a>Que faisons-nous ?
 
-- Pour assurer le support de ce cours, nous devrons effectuer des mises à jour fréquentes du contenu de la formation pour maintenir à jour les services Azure qui y sont utilisés.  Nous publions les instructions de labo sur GitHub pour permettre des contributions ouvertes entre les auteurs du cours et les MCT afin de maintenir le contenu à jour avec les modifications de la plateforme Azure.
+- Pour assurer le support de cette formation, nous devrons effectuer des mises à jour fréquentes du contenu de la formation pour maintenir à jour les services Azure qui y sont utilisés.  Nous publions les instructions de labo sur GitHub pour permettre des contributions ouvertes entre les auteurs du cours et les MCT afin de maintenir le contenu à jour avec les modifications de la plateforme Azure.
 
-- Nous espérons que cela vous apportera un sentiment de collaboration aux labos sans précédent. Si Azure change et que vous le découvrez le premier lors d’une livraison en direct, apportez une amélioration directement dans la source du labo.  Aidez vos collègues MCT.
+- Nous espérons que cela optimisera votre expérience de collaboration aux labos. Si vous êtes le premier à découvrir une modification apportée dans Azure lors d’une prestation en ligne, vous pourrez directement y apporter une amélioration dans la source du labo.  Aidez vos collègues MCT.
 
 ## <a name="how-should-i-use-these-files-relative-to-the-released-moc-files"></a>Comment dois-je utiliser ces fichiers par rapport aux fichiers MOC publiés ?
 
 - Le manuel de l’instructeur et les fichiers PowerPoint seront toujours votre principale source d’enseignement du contenu du cours.
 
-- Ces fichiers sur GitHub sont conçus pour être utilisés conjointement avec le manuel du participant, mais sont dans GitHub en tant que référentiel central afin que les MCT et les auteurs de cours puissent avoir une source partagée pour les derniers fichiers de labo.
+- Ces fichiers sur GitHub sont conçus pour être utilisés conjointement avec le manuel de l'étudiant. Gardez à l’esprit qu’ils ne sont présents dans GitHub qu’en tant que référentiel central afin que les MCT et les auteurs de cours puissent avoir une source partagée pour les derniers fichiers de labo.
 
 - Pour chaque prestation, il est demandé aux formateurs de vérifier dans GitHub les modifications qui ont pu être apportées afin de prendre en charge les derniers services Azure et afin de garantir que ce sont bien les tout derniers fichiers qui seront utilisés dans la cadre de la formation.
 
@@ -48,6 +41,6 @@ Une fois qu’ils sont connectés, les machines peuvent être utilisées pour le
 
 ## <a name="notes"></a>Notes
 
-### <a name="classroom-materials"></a>Documents de classe
+### <a name="classroom-materials"></a>Documents de cours
 
 Il est fortement recommandé que les MCT et les partenaires accèdent à ces documents et, à leur tour, les fournissent séparément aux participants.  Diriger les participants directement vers GitHub pour accéder aux étapes du labo pendant un cours leur ferait accéder à une autre interface utilisateur dans le cadre du cours, ce qui pourrait les dérouter. Une explication au participant concernant la raison pour laquelle il reçoit des instructions de labo distinctes peut mettre en évidence la nature d’une interface et d’une plateforme cloud en constante évolution. La prise en charge de Microsoft Learning pour l’accès aux fichiers sur GitHub et la prise en charge de la navigation sur le site GitHub sont limitées aux instructeurs MCT qui enseignent ce cours.

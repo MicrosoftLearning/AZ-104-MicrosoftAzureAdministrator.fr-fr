@@ -1,20 +1,17 @@
 ---
 lab:
-  title: '03a : Gérer les ressources Azure en utilisant le portail Azure'
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 020f28742779dab36777e2ae7b8bddb43ebb46be
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198134"
+  title: "03a\_: Gérer les ressources Azure en utilisant le portail Azure"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Labo 03a : Gérer les ressources Azure en utilisant le portail Azure
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous devez explorer les fonctionnalités d’administration Azure de base servant à approvisionner des ressources et à les organiser en groupes de ressources, notamment en déplaçant des ressources entre des groupes de ressources. Vous devez également explorer les options permettant de protéger les ressources de disque contre les risques de suppression accidentelle, tout en permettant de modifier leurs caractéristiques de performances et leur taille.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -117,7 +114,7 @@ Dans cette tâche, vous allez appliquer un verrou de ressource sur un groupe de 
 
 1. Revenez à la liste des ressources du groupe de ressources **az104-03a-rg3**, puis cliquez sur l’entrée représentant la ressource **az104-03a-disk2**. 
 
-1. Dans le volet **az104-03a-disk2**, dans la section **Paramètres**, cliquez sur **Taille + performances**, définissez le type de disque et la taille sur **SSD Premium** et **64 Gio**, respectivement, puis cliquez sur **Redimensionner** pour appliquer la modification. Vérifiez que la modification a été prise en compte.
+1. Dans le volet **az104-03a-disk2**, dans la section **Paramètres**, cliquez sur **Taille + performances**, définissez le type de disque et la taille sur **SSD Premium** et **64 Gio**, respectivement, puis cliquez sur **Enregistrer** pour appliquer la modification. Vérifiez que la modification a été prise en compte.
 
     >**Remarque** : Ce comportement est attendu, étant donné que le verrou au niveau du groupe de ressources s’applique uniquement aux opérations de suppression. 
 

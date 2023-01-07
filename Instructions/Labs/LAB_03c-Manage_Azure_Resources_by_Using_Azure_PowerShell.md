@@ -1,20 +1,17 @@
 ---
 lab:
   title: '03c : Gérer des ressources Azure à l’aide d’Azure PowerShell'
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 4210a06af5b873e1031e2224239dd8738e97f23d
-ms.sourcegitcommit: a8c7d995806dcf8eaad35b204e87bde178f28443
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2022
-ms.locfileid: "145198129"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Labo 03c : Gérer des ressources Azure à l’aide d’Azure PowerShell
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure et des modèles Azure Resource Manager, vous devez effectuer la tâche équivalente à l’aide d’Azure PowerShell. Pour éviter d’installer les modules Azure PowerShell, vous utiliserez l’environnement PowerShell disponible dans Azure Cloud Shell.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 

@@ -1,20 +1,17 @@
 ---
 lab:
   title: '11 : Implémenter la supervision'
-  module: Module 11 - Monitoring
-ms.openlocfilehash: 10c3fe049aaf037892a34299c21dfd8213ce40b2
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198130"
+  module: Administer Monitoring
 ---
+
 # <a name="lab-11---implement-monitoring"></a>Labo 11 : Implémenter la supervision
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Vous devez évaluer les fonctionnalités Azure qui fournissent des insights sur les performances et la configuration des ressources Azure, et plus particulièrement les machines virtuelles Azure. Pour ce faire, vous voulez examiner les fonctionnalités d’Azure Monitor, y compris Log Analytics.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -29,6 +26,10 @@ Dans ce labo, vous allez :
 + Tâche 7 : Passer en revue les fonctionnalités d’Azure Log Analytics
 
 ## <a name="estimated-timing-45-minutes"></a>Durée estimée : 45 minutes
+
+## <a name="architecture-diagram"></a>Diagramme de l'architecture
+
+![image](../media/lab11.png)
 
 ## <a name="instructions"></a>Instructions
 
@@ -170,7 +171,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : Par défaut, la collecte des journaux inclut les entrées critiques, d’erreur et d’avertissement du journal des applications et du journal système, ainsi que les entrées d’échec d’audit du journal de sécurité. Vous pouvez également basculer vers l’affichage **Personnalisé** pour obtenir des paramètres de configuration plus détaillés.
 
-1. Dans le panneau **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Journaux**, puis sur **Activer**.
+1. Dans le volet **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Agent Log Analytics**, puis sur **Activer**.
 
 1. Dans le volet **az104-11-vm0 - Journaux**, vérifiez que l’espace de travail Log Analytics que vous avez créé précédemment dans ce labo est sélectionné dans la liste déroulante **Choisir un espace de travail Log Analytics**, puis cliquez sur **Activer**.
 
@@ -242,7 +243,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
     | --- | --- |
     | Nom de la règle d’alerte | **Pourcentage d’UC supérieur au seuil de test** |
     | Description de la règle d'alerte | **Pourcentage d’UC supérieur au seuil de test** |
-    | gravité | **Gravité 3** |
+    | severity | **Gravité 3** |
     | Activer à la création | **Oui** |
 
 1. Cliquez sur **Vérifier + créer** puis, dans le volet **Vérifier + créer**, cliquez sur **Créer**.
@@ -318,7 +319,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
@@ -338,7 +339,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 #### <a name="review"></a>Révision
 
-Dans ce labo, vous avez :
+Dans cet exercice, vous avez :
 
 + Approvisionné l’environnement de labo
 + Créé et configuré un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation

@@ -1,20 +1,17 @@
 ---
 lab:
   title: '09b : Implémenter Azure Container Instances'
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: 603b8b0b4777e3879c00f95771e519a5843ccbac
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "145198125"
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09b---implement-azure-container-instances"></a>Labo 09b : Implémenter Azure Container Instances
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Contoso souhaite trouver une nouvelle plateforme pour ses charges de travail virtualisées. Vous avez identifié différentes images conteneur qui peuvent être exploitées pour atteindre cet objectif. Étant donné que vous souhaitez réduire la charge de gestion des conteneurs, vous prévoyez d’évaluer l’utilisation d’Azure Container Instances pour le déploiement d’images Docker.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -46,7 +43,7 @@ Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l�
     | Paramètre | Valeur |
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressouces | le nom d’un nouveau groupe de ressources **az104-09b-rg1** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-09b-rg1** |
     | Nom du conteneur | **az104-9b-c1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner des instances de conteneur Azure |
     | Source d’image | **Images du guide de démarrage rapide** |

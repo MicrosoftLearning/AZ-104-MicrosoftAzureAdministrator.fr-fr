@@ -1,20 +1,17 @@
 ---
 lab:
-  title: '10 : Implémenter la protection des données'
-  module: Module 10 - Data Protection
-ms.openlocfilehash: f4e79a18ee68068147de54a2bca65e0e879f0419
-ms.sourcegitcommit: e8161696e61bdf61f6fac5641cdf6d5ba65f4739
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "146066370"
+  title: "10\_: Implémenter la protection des données"
+  module: Administer Data Protection
 ---
+
 # <a name="lab-10---backup-virtual-machines"></a>Labo 10 : Sauvegarder des machines virtuelles
 # <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
 
 ## <a name="lab-scenario"></a>Scénario du labo
 
 Il vous a été confié la tâche d’évaluer l’utilisation d’Azure Recovery Services pour la sauvegarde et la restauration de fichiers hébergés sur des machines virtuelles Azure et sur des ordinateurs locaux. Vous devez par ailleurs identifier des moyens de protéger les données stockées dans le coffre Recovery Services contre les risques de perte de données de nature accidentelle ou malveillante.
+
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -29,6 +26,10 @@ Dans ce labo, vous allez :
 + Tâche 7 : Passer en revue la fonctionnalité de suppression réversible Azure Recovery Services (facultatif)
 
 ## <a name="estimated-timing-50-minutes"></a>Durée estimée : 50 minutes
+
+## <a name="architecture-diagram"></a>Diagramme de l'architecture
+
+![image](../media/lab10.png)
 
 ## <a name="instructions"></a>Instructions
 
@@ -152,7 +153,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
 1. De nouveau dans le panneau du coffre Recovery Services **az104-10-rsv1**, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**, puis sur l’entrée **Machine virtuelle Azure**.
 
-1. Dans le panneau **Éléments de sauvegarde (machine virtuelle Azure)** , sélectionnez le lien **Afficher les détails** en regard de **az104-10-vm0**, puis passez en revue les valeurs des entrées **Prévérification de sauvegarde** et **État de la dernière sauvegarde**.
+1. Dans le panneau**Éléments de sauvegarde (machine virtuelle Azure)** , sélectionnez le lien **Afficher les détails** en regard de **az104-10-vm0**, puis passez en revue les valeurs des entrées **Prévérification de sauvegarde** et **État de la dernière sauvegarde**.
 
 1. Dans le panneau Élément de sauvegarde **az104-10-vm0**, cliquez sur **Sauvegarder maintenant**, acceptez la valeur par défaut dans la liste déroulante **Conserver la sauvegarde jusqu’au**, puis cliquez sur **OK**.
 
@@ -251,7 +252,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Une fois la sauvegarde terminée, cliquez sur **Fermer**, puis fermez Sauvegarde Microsoft Azure.
 
-1. Basculez vers la fenêtre du navigateur web affichant le portail Azure, revenez au volet **Coffre Recovery Services**, puis, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
+1. Basculez vers la fenêtre du navigateur web affichant le portail Azure, revenez au volet**Coffre Recovery Services**, puis, dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**.
 
 1. Dans le panneau **az104-10-rsv1 - Éléments de sauvegarde**, cliquez sur **Agent de sauvegarde Azure**.
 
@@ -295,7 +296,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles**, puis, dans le panneau **Machines virtuelles**, cliquez sur **az104-10-vm0**.
 
-1. Dans le panneau **az104-10-vm0**, cliquez sur **Connecter**, dans la liste déroulante, cliquez sur **RDP**, dans le panneau **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** et suivez les invites pour démarrer la session Bureau à distance.
+1. Dans le panneau**az104-10-vm0**, cliquez sur **Connecter**, dans la liste déroulante, cliquez sur **RDP**, dans le panneau **Connecter avec RDP**, cliquez sur **Télécharger le fichier RDP** et suivez les invites pour démarrer la session Bureau à distance.
 
     >**Remarque** : Cette étape fait référence à la connexion via le Bureau à distance à partir d’un ordinateur Windows. Sur un Mac, vous pouvez utiliser le client Bureau à distance disponible sur le Mac App Store. Sur un ordinateur Linux, vous pouvez utiliser un logiciel client RDP open source.
 
@@ -445,9 +446,9 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de labo ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+>**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le panneau **Cloud Shell**.
+1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 
