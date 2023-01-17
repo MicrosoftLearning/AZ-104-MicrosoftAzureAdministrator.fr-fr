@@ -49,7 +49,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | Nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
@@ -290,7 +290,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
     >**Remarque** : Cette section du modèle définit la même taille de machine virtuelle Azure que celle que vous avez spécifiée pour la première machine virtuelle via le portail Azure.
 
-1. Dans le panneau **Modifier le modèle**, dans la section affichant le contenu du modèle, remplacez la ligne **51** (ligne `"dataDisks": [ ]`) par le code suivant :
+1. Dans le panneau **Modifier le modèle**, dans la section affichant le contenu du modèle, remplacez la ligne (ligne `"dataDisks": [ ]`) par le code suivant :
 
    ```json
                     "dataDisks": [
@@ -344,7 +344,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
+1. Dans le volet Cloud Shell, exécutez la commande suivante pour inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
 
    ```powershell
    Register-AzResourceProvider -ProviderNamespace Microsoft.Insights
@@ -363,7 +363,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
     | Nom du groupe de machines virtuelles identiques | **az10408vmss0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez provisionner des machines virtuelles Azure différentes de celles que vous avez utilisées pour déployer des machines virtuelles précédemment dans ce laboratoire |
     | Zone de disponibilité | **Zones 1, 2, 3** |
@@ -479,7 +479,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les ins
 
 1. Dans le portail Azure, revenez au panneau **Groupes identiques de machines virtuelles**, puis cliquez sur **az10408vms0**.
 
-1. Dans le panneau **az10408vmss0**, dans la section **Paramètres**, cliquez sur **Extensions**, puis sur **+ Ajouter**.
+1. Dans le panneau **az10408vmss0**, dans la section **Paramètres**, cliquez sur **Extensions et applications**, puis sur **+ Ajouter**.
 
 1. Dans le panneau **Nouvelle ressource**, cliquez sur **Extension de script personnalisé**, puis sur **Suivant**.
 
@@ -525,14 +525,14 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     | Paramètre | Valeur |
     | --- |--- |
-    | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
-    | Agrégation du temps | **Moyenne** |
+    | Source de la métrique | **Ressource actuelle (az10480vmss0)** |
+    | Agrégation du temps | **Average** |
     | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
     | Opérateur | **Supérieur à** |
     | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
     | Durée (en minutes) | **1** |
-    | Statistique de fragment de temps | **Moyenne** |
+    | Statistique de fragment de temps | **Average** |
     | Opération | **Augmenter le nombre de** |
     | Nombre d’instances | **1** |
     | Refroidissement (minutes) | **5** |
@@ -589,7 +589,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     >**Remarque** : Le disque attaché à l’étape précédente est un disque brut. Avant de pouvoir être utilisé, il est nécessaire de créer une partition, de créer un système de fichiers et de le monter. Pour ce faire, vous allez utiliser l’extension de script personnalisé de machine virtuelle Azure. Tout d’abord, vous devez supprimer l’extension de script personnalisé existante.
 
-1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Extensions**, cliquez sur **CustomScriptExtension**, puis sur **Désinstaller**.
+1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Extensions et applications**, sur **CustomScriptExtension**, puis sur **Désinstaller**.
 
     >**Remarque** : Attendez la fin de l’installation.
 
