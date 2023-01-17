@@ -11,7 +11,7 @@ lab:
 
 Vous avez été chargé de tester la gestion du trafic réseau ciblant les machines virtuelles Azure dans la topologie de réseau hub and spoke, que Contoso compte implémenter dans son environnement Azure (au lieu de créer la topologie de maillage, que vous avez testée dans le labo précédent). Ce test doit inclure l’implémentation de la connectivité entre les spokes en s’appuyant sur des itinéraires définis par l’utilisateur qui forcent le trafic à circuler via le hub, ainsi que la distribution du trafic entre les machines virtuelles à l’aide des équilibreurs de charge de couche 4 et de couche 7. À cet effet, vous avez l’intention d’utiliser Azure Load Balancer (couche 4) et Azure Application Gateway (couche 7).
 
-**Remarque :** une **[simulation de labo interactif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation de labo interactif et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
+**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
 >**Remarque** : Ce labo, par défaut, nécessite un total de 8 processeurs virtuels disponibles dans la série Standard_Dsv3 dans la région que vous choisissez pour le déploiement, car il implique le déploiement de quatre machines virtuelles Azure de Standard_D2s_v3 référence SKU. Si vos étudiants utilisent des comptes d’évaluation, avec la limite de 4 processeurs virtuels, vous pouvez utiliser une taille de machine virtuelle qui ne nécessite qu’un seul processeur virtuel (par exemple, Standard_B1s).
 
@@ -199,7 +199,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
 1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
-    > **Remarque** : il peut être nécessaire de patienter quelques minutes avant que le groupe de ressources soit répertorié. Si vous ne souhaitez pas attendre, essayez d’effectuer cette action : supprimez le Network Watcher, créez un Network Watcher, puis réessayez la résolution des problèmes de connexion. 
+    > **Remarque** : Quelques minutes peuvent être nécessaires avant que le groupe de ressources ne soit listé. Si vous ne souhaitez pas attendre, essayez d’effectuer cette action : supprimez le Network Watcher, créez un Network Watcher, puis réessayez la résolution des problèmes de connexion. 
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -330,7 +330,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Type de tronçon suivant | **Appliance virtuelle** |
     | adresse de tronçon suivant | **10.60.0.4** |
 
-1. Cliquez sur **OK**
+1. Cliquez sur **Ajouter**
 
 1. Revenez dans le panneau de la table de routage **az104-06-rt23**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Associer**.
 
@@ -341,7 +341,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Réseau virtuel | **az104-06-vnet2** |
     | Subnet | **subnet0** |
 
-1. Cliquez sur **OK**
+1. Cliquez sur **Ajouter**
 
 1. Revenez au panneau **Tables de routage**, puis cliquez sur **+ Créer**.
 
@@ -409,7 +409,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
 
 #### <a name="task-5-implement-azure-load-balancer"></a>Tâche 5 : Mettre en oeuvre Azure Load Balancer
 
-Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deux machines virtuelles Azure dans le réseau virtuel hub.
+Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devant les deux machines virtuelles Azure dans le réseau virtuel hub.
 
 1. Dans le portail Azure, recherchez et sélectionnez **Équilibreurs de charge**. Dans le panneau **Équilibreurs de charge**, cliquez sur **+ Créer**.
 
@@ -425,7 +425,7 @@ Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deu
     | Type | **Public** |
     | Niveau | **Regional** |
     
-1. Dans l’onglet **Configuration IP front-end**, cliquez sur **Ajouter une configuration IP front-end** et utilisez le paramètre suivant avant de cliquer sur **OK**, puis **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : pools back-end**. 
+1. Sous l’onglet **Configuration IP front-end**, cliquez sur **Ajouter une configuration IP front-end** et utilisez le paramètre suivant avant de cliquer sur **OK**, puis **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**. 
      
     | Paramètre | Valeur |
     | --- | --- |
@@ -435,7 +435,7 @@ Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deu
     | Adresse IP publique | **Création** |
     | Zone de disponibilité | **Aucune zone** | 
 
-1. Dans l’onglet **Pools back-end**, cliquez sur **Ajouter un pool back-end** avec les paramètres suivants (conservez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis cliquez sur **Suivant : règles de trafic entrant**. 
+1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis sur **Suivant : Règles de trafic entrant**. 
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -448,7 +448,7 @@ Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deu
     | az104-06-vm1 | **Cocher la case** |
 
 
-1. Dans l’onglet **Règles de trafic entrant**, cliquez sur **Ajouter une règle d’équilibrage de charge**. Ajoutez un équilibrage de charge entrante avec les paramètres suivants (conservez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
+1. Sous l’onglet **Règles de trafic entrant**, cliquez sur **Ajouter une règle d’équilibrage de charge**. Ajoutez une règle d’équilibrage de charge avec les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -480,9 +480,9 @@ Dans cette tâche, vous allez implémenter un Azure Load Balancer devant les deu
 
 1. Ouvrez un autre onglet de navigateur et accédez à l’adresse IP. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm0** ou **Hello World à partir d’az104-06-vm1**.
 
-1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. Cela montre la rotation de l’équilibreur de charge au sein des machines virtuelles.
+1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. Cela montre la rotation de l’équilibreur de charge entre les machines virtuelles.
 
-    > **Remarque** : il peut être nécessaire d’actualiser plusieurs fois ou d’ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
+    > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
 #### <a name="task-6-implement-azure-application-gateway"></a>Tâche 6 : Implémenter Azure Application Gateway
 
@@ -507,7 +507,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 1. Dans le portail Azure, recherchez et sélectionnez **Passerelles d'application**, puis, dans le panneau **Passerelles d'application**, cliquez sur **+ Créer**.
 
-1. Dans l’onglet **De base**, spécifiez les paramètres suivants (conservez les autres valeurs par défaut) :
+1. Sous l’onglet **Informations de base**, spécifiez les paramètres suivants (laissez les autres valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -523,7 +523,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Réseau virtuel | **az104-06-vnet01** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
 
-1. Cliquez sur **Suivant : front-ends >** et spécifiez les paramètres suivants (conservez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**. 
+1. Cliquez sur **Suivant : Front-ends >** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**. 
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -532,7 +532,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Nom | **az104-06-pip5** |
     | Zone de disponibilité | **Aucun** |
 
-1. Cliquez sur **Suivant : back-ends >** , puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (conservez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
+1. Cliquez sur **Suivant : Back-ends >** , puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -543,7 +543,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
     > **Remarque** : Les cibles représentent les adresses IP privées des machines virtuelles dans les réseaux virtuels spoke **az104-06-vm2** et **az104-06-vm3**.
 
-1. Cliquez sur **Suivant : configuration >** , puis sur **+ Ajouter une règle d’acheminement**. Spécifiez les paramètres suivants :
+1. Cliquez sur **Suivant : Configuration >** , puis sur **+ Ajouter une règle de routage**. Spécifiez les paramètres suivants :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -556,7 +556,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Type d’écouteur | **De base** |
     | URL de page d’erreur | **Non** |
 
-1. Basculez vers l’onglet **Cibles de back-end** et spécifiez les paramètres suivants (conservez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter** (deux fois).  
+1. Basculez vers l’onglet **Cibles de back-end** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter** (deux fois).  
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -583,7 +583,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. 
 
-    > **Remarque** : il peut être nécessaire d’actualiser plusieurs fois ou d’ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
+    > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
     > **Remarque** : Le ciblage des machines virtuelles sur plusieurs réseaux virtuels n'est pas une configuration courante, mais elle vise à illustrer le fait qu’Application Gateway est capable de cibler des machines virtuelles sur plusieurs réseaux virtuels (ainsi que des points d'extrémité dans d'autres régions Azure ou même en dehors d'Azure), contrairement à Azure Load Balancer, qui équilibre la charge entre les machines virtuelles du même réseau virtuel.
 
