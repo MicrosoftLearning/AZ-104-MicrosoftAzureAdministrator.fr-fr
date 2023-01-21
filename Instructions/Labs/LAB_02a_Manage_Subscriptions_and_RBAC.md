@@ -147,7 +147,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
     >**Remarque** : Si votre rôle personnalisé n’est pas visible, sachez qu’il peut prendre jusqu’à 10 minutes avant de s’afficher après sa création.
 
-1. Sélectionnez le **Rôle** et cliquez sur **Suivant**. Sous l’onglet **Membres**, cliquez sur **+ Sélectionner des membres** et **sélectionnez** votre compte d’utilisateur az104-***********************.**********.onmicrosoft.com. Cliquez sur **Suivant**, puis sur **Vérifier et affecter**.
+1. Sélectionnez le **Rôle** et cliquez sur **Suivant**. Sous l’onglet **Membres**, cliquez sur **+ Sélectionner des membres**, puis **sélectionnez** le compte d’utilisateur az104-***********************.**********.onmicrosoft.com. Cliquez sur **Suivant**, puis sur **Vérifier et affecter**.
 
 1. Ouvrez une fenêtre de navigateur **InPrivate** et connectez-vous au [portail Azure](https://portal.azure.com) à l’aide du compte utilisateur que vous venez de créer. Lorsque vous êtes invité à mettre à jour le mot de passe, modifiez le mot de passe de l’utilisateur.
 
@@ -159,7 +159,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 1. Dans la fenêtre du navigateur **InPrivate**, dans le portail Azure, recherchez et sélectionnez **Aide + support**, puis cliquez sur **+ Créer une demande de support**. 
 
-1. Dans la fenêtre du navigateur **InPrivate**, sous l’onglet **Problèmes desription/Résumé** du panneau **Aide + support - Nouvelle demande de support**, tapez **Limites de service et d’abonnement** dans le champ Résumé, puis sélectionnez le type de problème **Limites de service et d’abonnement (quotas).** Notez que l’abonnement que vous utilisez dans ce labo est répertorié dans la liste déroulante **Abonnement**.
+1. Dans la fenêtre du navigateur **InPrivate**, sous l’onglet **Description/Résumé du problème** du panneau **Aide et support - Nouvelle demande de support**, tapez **Limites de service et d’abonnement** dans le champ Résumé, puis sélectionnez le type de problème **Limites de service et d’abonnement (quotas)** . Notez que l’abonnement que vous utilisez dans ce labo est répertorié dans la liste déroulante **Abonnement**.
 
     >**Remarque** : La présence de l’abonnement que vous utilisez dans ce labo dans la liste déroulante **Abonnement** indique que le compte que vous utilisez dispose des autorisations requises pour créer la demande de support spécifique à l’abonnement.
 
@@ -185,9 +185,9 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
    ```powershell
    
-   $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes[0]
-
-   Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
+    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
+    
+    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
    ```
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer la définition de rôle personnalisée :
