@@ -106,9 +106,9 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
     | Performances | **Standard** |
     | Redondance | **Stockage géo-redondant (GRS)** |
 
-1. Cliquez sur **Suivant : Avancé >** , sous l’onglet **Avancé** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >** .
+1. Cliquez sur **Suivant : Avancé >** , sous l’onglet **Avancé** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >**.
 
-1. Sous l’onglet **Mise en réseau** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez l’option par défaut **Activer l’accès public de tous les réseaux** et cliquez sur **Suivant : Protection des données >** .
+1. Sous l’onglet **Mise en réseau** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez l’option par défaut **Activer l’accès public de tous les réseaux** et cliquez sur **Suivant : Protection des données >**.
 
 1. Sous l’onglet **Protection des données** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, cliquez sur **Vérifier + Créer**, attendez que le processus de validation se termine et cliquez sur **Créer**.
 
@@ -173,7 +173,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
 1. Un message au format XML indiquant **ResourceNotFound** ou **PublicAccessNotPermitted** doit vous être présenté.
 
-    > **Remarque** : Ceci est attendu, étant donné que le conteneur que vous avez créé a le niveau d’accès public défini sur **Privé (aucun accès anonyme)** .
+    > **Remarque** : Ceci est attendu, étant donné que le conteneur que vous avez créé a le niveau d’accès public défini sur **Privé (aucun accès anonyme)**.
 
 1. Fermez la fenêtre du navigateur en mode InPrivate, revenez à la fenêtre du navigateur montrant le panneau **licenses/LICENSE** du conteneur Stockage Azure, puis basculez vers l’onglet **Générer une SAP**.
 
@@ -210,7 +210,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
     > **Remarque** : À ce stade, vous n’avez pas d’autorisations pour modifier la méthode d’authentification.
 
-1. Dans le volet **az104-07-container**, cliquez sur **Access Control (IAM)** .
+1. Dans le volet **az104-07-container**, cliquez sur **Access Control (IAM)**.
 
 1. Sous l’onglet **Vérifier l’accès**, cliquez sur **Ajouter une attribution de rôle**.
 

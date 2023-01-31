@@ -163,7 +163,7 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Cliquez sur **Vue d’ensemble** dans le panneau de l’emplacement de production de l’application web, puis cliquez sur le lien **URL** pour afficher la page d’accueil du site web dans un nouvel onglet de navigateur.
 
-1. Vérifiez que la page web par défaut a été remplacée par la page **Hello World !** .
+1. Vérifiez que la page web par défaut a été remplacée par la page **Hello World !** page.
 
 #### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
@@ -225,7 +225,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
    while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
    ```
 
-1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)** .
+1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)**.
 
 1. Sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
 

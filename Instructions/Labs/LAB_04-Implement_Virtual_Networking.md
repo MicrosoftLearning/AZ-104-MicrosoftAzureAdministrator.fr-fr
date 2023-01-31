@@ -332,7 +332,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
     | Unité de durée de vie | **Heures** |
     | Adresse IP | l’adresse IP publique d’**az104-04-vm0** que vous avez identifiée dans le troisième exercice de ce laboratoire |
 
-1. Cliquez sur **OK**
+1. Cliquez sur **OK**.
 
 1. Sur le panneau de la zone DNS, cliquez sur **+ Jeu d’enregistrements**.
 
@@ -347,7 +347,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
     | Unité de durée de vie | **Heures** |
     | Adresse IP | l’adresse IP publique d’**az104-04-vm1** que vous avez identifiée dans le troisième exercice de ce laboratoire |
 
-1. Cliquez sur **OK**
+1. Cliquez sur **OK**.
 
 1. Dans l’onglet de zone DNS, notez le nom de l’entrée **Serveur de noms 1**.
 

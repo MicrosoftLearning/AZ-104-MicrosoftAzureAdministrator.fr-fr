@@ -11,11 +11,11 @@ lab:
 
 Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été chargé d’implémenter les fonctionnalités suivantes :
 
-- étiqueter des groupes de ressources qui incluent uniquement des ressources d’infrastructure (telles que des comptes de stockage Cloud Shell)
+- Étiqueter des groupes de ressources qui incluent uniquement des ressources d’infrastructure (telles que des comptes de stockage Cloud Shell)
 
-- s’assurer que seules les ressources d’infrastructure correctement étiquetées peuvent être ajoutées aux groupes de ressources d’infrastructure
+- S’assurer que seules les ressources d’infrastructure correctement étiquetées peuvent être ajoutées aux groupes de ressources d’infrastructure
 
-- corriger toutes les ressources non conformes
+- Corriger toutes les ressources non conformes
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 

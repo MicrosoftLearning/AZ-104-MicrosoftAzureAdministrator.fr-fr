@@ -102,7 +102,7 @@ Dans cette tâche, vous allez appliquer un verrou de ressource sur un groupe de 
     |Nom du verrou| **az104-03a-delete-lock** |
     |Type de verrou| **Supprimer** |
     
-1. Cliquez sur **OK**    
+1. Cliquez sur **OK**.    
 
 1. Dans le volet du groupe de ressources **az104-03a-rg3**, cliquez sur **Vue d’ensemble**. Dans la liste des ressources du groupe de ressources, sélectionnez l’entrée représentant le disque que vous avez créé précédemment dans cette tâche, puis cliquez sur **Supprimer** dans la barre d’outils. 
 

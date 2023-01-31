@@ -106,7 +106,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     >**Remarque** : Si nécessaire, sélectionnez un compte de stockage existant dans la liste déroulante ou créez un compte de stockage. Enregistrez le nom du compte de stockage. Vous l’utiliserez à la tâche suivante.
 
-1. Cliquez sur **Suivant : Avancé >** , sous l’onglet **Avancé** du panneau **Créer une machine virtuelle**, passez en revue les paramètres disponibles sans les modifier, puis cliquez sur **Vérifier + Créer**.
+1. Cliquez sur **Suivant : Avancé >**, sous l’onglet **Avancé** du panneau **Créer une machine virtuelle**, passez en revue les paramètres disponibles sans les modifier, puis cliquez sur **Vérifier + Créer**.
 
 1. Dans le panneau **Vérifier + créer**, cliquez sur **Créer**.
 
@@ -376,7 +376,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
     >**Remarque** : Pour obtenir la liste des régions Azure qui prennent en charge le déploiement de machines virtuelles Windows vers des zones de disponibilité, consultez [Qu’est-ce que Zones de disponibilité dans Azure ?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
-1. Sous l’onglet **Disques** du panneau **Créer un groupe de machines virtuelles identiques**, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >** .
+1. Sous l’onglet **Disques** du panneau **Créer un groupe de machines virtuelles identiques**, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >**.
 
 1. Sous l’onglet **Mise en réseau** du panneau **Créer un groupe de machines virtuelles identiques**, cliquez sur le lien **Créer un réseau virtuel** sous la zone de texte **Réseau virtuel** et créez un réseau virtuel avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -442,7 +442,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
    Cliquez sur **Suivant : Intégrité >**  :
 
-1. Sous l’onglet **Intégrité** du panneau **Créer un groupe de machines virtuelles identiques**, passez en revue les paramètres par défaut sans apporter de modifications et cliquez sur **Suivant : Avancé >** .
+1. Sous l’onglet **Intégrité** du panneau **Créer un groupe de machines virtuelles identiques**, passez en revue les paramètres par défaut sans apporter de modifications et cliquez sur **Suivant : Avancé >**.
 
 1. Sous l’onglet **Avancé** du panneau **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Vérifier + créer**.
 
