@@ -179,11 +179,11 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 1. Dans le volet **az104-11-vm0 \| Journaux**, dans la section **Supervision**, cliquez sur **Métriques**.
 
-1. Dans le volet **az104-11-vm0 \| Métriques**, dans le graphique par défaut, notez qu’à ce stade la liste déroulante **Espace de noms de métriques**, en plus de l’entrée **Hôte de machine virtuelle**, inclut également l’entrée **Invité (classique)** .
+1. Dans le volet **az104-11-vm0 \| Métriques**, dans le graphique par défaut, notez qu’à ce stade la liste déroulante **Espace de noms de métriques**, en plus de l’entrée **Hôte de machine virtuelle**, inclut également l’entrée **Invité (classique)**.
 
     >**Remarque** : Cela est attendu, étant donné que vous avez activé les paramètres de diagnostic au niveau de l’invité. Vous avez également la possibilité d’**activer de nouvelles métriques de la mémoire invité**.
 
-1. Dans la liste déroulante **Espace de noms de métriques**, sélectionnez l’entrée **Invité (classique)** .
+1. Dans la liste déroulante **Espace de noms de métriques**, sélectionnez l’entrée **Invité (classique)**.
 
 1. Dans la liste déroulante **Métriques**, passez en revue la liste des métriques disponibles.
 
@@ -218,7 +218,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
     | Précision d’agrégation (période) | **1 minute** |
     | Fréquence d’évaluation | **Toutes les minutes** |
 
-1. Cliquez sur **Suivant : Actions >** , dans le volet **Créer une règle d’alerte**, dans la section **Groupe d’actions**, cliquez sur le bouton **+ Créer un groupe d’actions**.
+1. Cliquez sur **Suivant : Actions >**, dans le volet **Créer une règle d’alerte**, dans la section **Groupe d’actions**, cliquez sur le bouton **+ Créer un groupe d’actions**.
 
 1. Sous l’onglet **Informations de base**, dans le volet **Créer un groupe d’actions**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres), puis sélectionnez **Suivant : Notifications >** :
 
@@ -231,7 +231,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 1. Sous l’onglet **Notifications** du volet **Créer un groupe d’actions**, dans la liste déroulante **Type de notification**, sélectionnez **E-mail/SMS/Push/Voice**. Dans la zone de texte **Nom**, tapez **adresse e-mail administrateur**. Cliquez sur l’icône **Modifier les détails** (crayon).
 
-1. Dans le volet **E-mail/SMS/Push/Voice**, cochez la case **E-mail**, tapez votre adresse e-mail dans la zone de texte **E-mail**, conservez les valeurs par défaut pour les autres personnes, cliquez sur **OK**. Revenez sous l’onglet **Notifications** du volet **Créer un groupe d’actions** et sélectionnez **Suivant : Actions  >** .
+1. Dans le volet **E-mail/SMS/Push/Voice**, cochez la case **E-mail**, tapez votre adresse e-mail dans la zone de texte **E-mail**, conservez les valeurs par défaut pour les autres personnes, cliquez sur **OK**. Revenez sous l’onglet **Notifications** du volet **Créer un groupe d’actions** et sélectionnez **Suivant : Actions  >**.
 
 1. Sous l’onglet **Actions** du volet **Créer un groupe d’actions**, passez en revue les éléments disponibles dans la liste déroulante **Type d’action** sans apporter de modifications, puis sélectionnez **Vérifier + créer**.
 

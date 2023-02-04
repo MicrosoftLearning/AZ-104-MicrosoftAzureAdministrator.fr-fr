@@ -15,12 +15,12 @@ Ce labo nécessite des autorisations pour créer des utilisateurs Azure Active D
 
 Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été chargé d’implémenter les fonctionnalités suivantes :
 
-- création d’un groupe d’administration qui inclurait tous les abonnements Azure de Contoso
+- Création d’un groupe d’administration qui inclurait tous les abonnements Azure de Contoso
 
-- octroi d’autorisations pour envoyer des demandes de support pour tous les abonnements du groupe d’administration à un utilisateur Azure Active Directory désigné. Les autorisations de cet utilisateur doivent être limitées uniquement aux éléments suivants : 
+- Octroi d’autorisations pour envoyer des demandes de support pour tous les abonnements du groupe d’administration à un utilisateur Azure Active Directory désigné. Les autorisations de cet utilisateur doivent être limitées uniquement aux éléments suivants : 
 
-    - création de tickets de demande de support
-    - affichage des groupes de ressources
+    - Création de tickets de demande de support
+    - Affichage des groupes de ressources
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 

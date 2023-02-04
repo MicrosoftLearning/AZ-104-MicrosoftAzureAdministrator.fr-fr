@@ -217,7 +217,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Lorsque vous y êtes invité, connectez-vous à l’aide du nom d’utilisateur **étudiant** et du mot de passe de votre fichier de paramètres. 
 
-1. Dans la session Bureau à distance vers **az104-05-vm0**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)** .
+1. Dans la session Bureau à distance vers **az104-05-vm0**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)**.
 
 1. Dans la fenêtre de console Windows PowerShell, exécutez la commande suivante pour tester la connectivité à **az104-05-vm1** (qui a l’adresse IP privée de **10.51.0.4**) sur le port TCP 3389 :
 
@@ -247,7 +247,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Lorsque vous y êtes invité, connectez-vous à l’aide du nom d’utilisateur **étudiant** et du mot de passe de votre fichier de paramètres. 
 
-1. Dans la session Bureau à distance vers **az104-05-vm1**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)** .
+1. Dans la session Bureau à distance vers **az104-05-vm1**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)**.
 
 1. Dans la fenêtre de console Windows PowerShell, exécutez la commande suivante pour tester la connectivité à **az104-05-vm2** (qui a l’adresse IP privée **10.52.0.4**) sur le port TCP 3389 :
 

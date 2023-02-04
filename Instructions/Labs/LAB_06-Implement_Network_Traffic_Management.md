@@ -373,7 +373,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Type de tronçon suivant | **Appliance virtuelle** |
     | adresse de tronçon suivant | **10.60.0.4** |
 
-1. Cliquez sur **OK**
+1. Cliquez sur **OK**.
 
 1. Revenez dans le panneau de la table de routage **az104-06-rt32**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Associer**.
 
@@ -384,7 +384,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Réseau virtuel | **az104-06-vnet3** |
     | Subnet | **subnet0** |
 
-1. Cliquez sur **OK**
+1. Cliquez sur **OK**.
 
 1. Dans le portail Azure, revenez au panneau **Network Watcher - Résolution des problèmes de connexion**.
 
@@ -465,7 +465,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Port | **80** |
     | Intervalle | **5** |
     | Seuil de défaillance sur le plan de l’intégrité | **2** |
-    | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
+    | Fermer la fenêtre de création d’une sonde d’intégrité | **OK**. | 
     | Persistance de session | **Aucun** |
     | Délai d’inactivité (minutes) | **4** |
     | Réinitialisation du protocole TCP | **Désactivé** |
