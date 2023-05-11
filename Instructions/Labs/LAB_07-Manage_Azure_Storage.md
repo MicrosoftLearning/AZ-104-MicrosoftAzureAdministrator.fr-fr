@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Storage
 ---
 
-# <a name="lab-07---manage-azure-storage"></a>Labo 07 : Gérer le Stockage Azure
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 07 : Gérer le Stockage Azure
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Vous devez évaluer l’utilisation du stockage Azure pour stocker des fichiers résidant actuellement dans des magasins de données locaux. Bien que la majorité de ces fichiers ne soient pas consultés fréquemment, il y a des exceptions. Vous voulez réduire le coût du stockage en plaçant les fichiers moins fréquemment consultés dans des niveaux de stockage moins chers. Vous voulez également explorer différents mécanismes de protection offerts par le Stockage Azure, notamment l’accès réseau, l’authentification, l’autorisation et la réplication. Enfin, vous voulez déterminer si le service Azure Files peut convenir pour héberger vos partages de fichiers locaux.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -24,18 +24,18 @@ Dans ce labo, vous allez :
 + Tâche 5 : Créer et configurer un partage de fichiers Azure Files
 + Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
 
-## <a name="estimated-timing-40-minutes"></a>Durée estimée : 40 minutes
+## Durée estimée : 40 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab07.png)
 
 
-## <a name="instructions"></a>Instructions
+## Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+### Exercice 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tâche 1 : Approvisionner l’environnement de laboratoire
+#### Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous utiliserez plus tard dans ce labo.
 
@@ -48,8 +48,6 @@ Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous uti
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
 1. Dans la barre d'outils du panneau Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** et **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** dans le répertoire d'origine de Cloud Shell.
-
-1. Modifiez le fichier **Paramètres** que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
 1. Dans le panneau Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé [Azure_region] par le nom d’une région Azure dans laquelle vous envisagez de déployer la machine virtuelle Azure)
 
@@ -70,6 +68,8 @@ Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous uti
     
 1. Dans le panneau Cloud Shell, exécutez ce qui suit pour déployer la machine virtuelle à l’aide des fichiers de modèle et de paramètres chargés :
 
+    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -85,11 +85,11 @@ Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous uti
     > 1. Vérifiez l’emplacement dans lequel le groupe de ressources « az104-04-rg1 » est déployé. Vous pouvez exécuter `az group show -n az104-04-rg1 --query location` dans votre CloudShell pour l’obtenir.
     > 1. Exécutez `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` dans votre CloudShell.
     > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter.
-    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton haut plusieurs fois, ce qui affichera la dernière commande exécutée.
+    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton en haut quelques fois, ce qui amènerait la dernière commande exécutée.
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-2-create-and-configure-azure-storage-accounts"></a>Tâche 2 : Créer et configurer des comptes de Stockage Azure
+#### Tâche 2 : Créer et configurer des comptes de Stockage Azure
 
 Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
@@ -100,7 +100,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
+    | Resource group | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
     | Nom du compte de stockage | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
     | Région | le nom d’une région Azure dans laquelle vous pouvez créer un compte de Stockage Azure  |
     | Performances | **Standard** |
@@ -124,7 +124,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
     > **Remarque** : Le niveau d’accès froid est optimal pour les données qui ne sont pas utilisées fréquemment.
 
-#### <a name="task-3-manage-blob-storage"></a>Tâche 3 : Gérer le stockage d’objets blob
+#### Tâche 3 : Gérer le stockage d’objets blob
 
 Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d’objets blob dans celui-ci.
 
@@ -145,7 +145,6 @@ Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d�
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Type d'authentification | **Clé de compte**  |
     | Type d’objet blob | **Objet blob de blocs** |
     | Taille de bloc | **4 Mo** |
     | Niveau d’accès | **Chaud** |
@@ -163,7 +162,7 @@ Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d�
 
     > **Remarque** : Vous avez la possibilité de télécharger l’objet blob, de modifier son niveau d’accès (il est actuellement défini sur **Chaud**), d’acquérir un bail, qui changerait son statut de bail en **Verrouillé** (il est actuellement défini sur **Déverrouillé**) et de protéger l’objet blob contre la modification ou la suppression, ainsi que l’attribution de métadonnées personnalisées (en spécifiant une clé arbitraire et des paires de valeurs). Vous avez également la possibilité de **modifier** le fichier directement dans l’interface du Portail Azure, sans le télécharger au préalable. Vous pouvez également créer des instantanés, ainsi que générer un jeton SAP (vous allez découvrir cette option dans la tâche suivante).
 
-#### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>Tâche 4 : Gérer l’authentification et l’autorisation pour le Stockage Azure
+#### Tâche 4 : Gérer l’authentification et l’autorisation pour le Stockage Azure
 
 Dans cette tâche, vous allez configurer l’authentification et l’autorisation pour le Stockage Azure.
 
@@ -226,7 +225,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
     > **Remarque** : La modification peut prendre environ 5 minutes.
 
-#### <a name="task-5-create-and-configure-an-azure-files-shares"></a>Tâche 5 : Créer et configurer un partage de fichiers Azure Files
+#### Tâche 5 : Créer et configurer un partage de fichiers Azure Files
 
 Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
@@ -268,7 +267,7 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Cliquez sur **az104-07-folder** et vérifiez que **az104-07-file.txt** apparaît dans la liste des fichiers.
 
-#### <a name="task-6-manage-network-access-for-azure-storage"></a>Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
+#### Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
 
 Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azure.
 
@@ -305,7 +304,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+#### Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -327,7 +326,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+#### Révision
 
 Dans cet exercice, vous avez :
 

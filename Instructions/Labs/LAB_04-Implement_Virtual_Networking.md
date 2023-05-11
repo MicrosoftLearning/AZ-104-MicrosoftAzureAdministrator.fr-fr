@@ -4,17 +4,17 @@ lab:
   module: Administer Virtual Networking
 ---
 
-# <a name="lab-04---implement-virtual-networking"></a>Labo 04 : Implémenter des réseaux virtuels
+# Labo 04 : Implémenter des réseaux virtuels
 
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Vous devez explorer les fonctionnalités de mise en réseau virtuelle Azure. Pour commencer, vous envisagez de créer un réseau virtuel dans Azure qui hébergera deux machines virtuelles Azure. Étant donné que vous envisagez d’implémenter la segmentation basée sur le réseau, vous les déployez dans différents sous-réseaux du réseau virtuel. Vous souhaitez également vous assurer que leurs adresses IP privées et publiques ne changeront pas au fil du temps. Pour respecter les exigences de sécurité de Contoso, vous devez protéger les points de terminaison publics des machines virtuelles Azure accessibles à partir d’Internet. Enfin, vous devez implémenter la résolution de noms DNS pour les machines virtuelles Azure à la fois au sein du réseau virtuel et à partir d’Internet.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -25,17 +25,17 @@ Dans ce labo, vous allez :
 + Tâche 5 : Configurer Azure DNS pour la résolution de noms interne
 + Tâche 6 : Configurer Azure DNS pour la résolution de noms externe
 
-## <a name="estimated-timing-40-minutes"></a>Durée estimée : 40 minutes
+## Durée estimée : 40 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab04.png)
 
-## <a name="instructions"></a>Instructions
+## Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+### Exercice 1
 
-#### <a name="task-1-create-and-configure-a-virtual-network"></a>Tâche 1 : Créer et configurer un réseau virtuel
+#### Tâche 1 : Créer et configurer un réseau virtuel
 
 Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-réseaux à l’aide du portail Azure
 
@@ -52,14 +52,15 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
     | Nom | **az104-04-vnet1** |
     | Région | nom de n’importe quelle région Azure disponible dans l’abonnement que vous utiliserez dans ce labo |
 
-1. Cliquez sur **Suivant : Adresses IP** et supprimez l’**espace d’adressage IPv4** existant. Dans la zone de texte **Espace d’adressage IPv4**, tapez **10.40.0.0/20**.
+1. Cliquez sur **Suivant : Adresses IP**. L’**adresse de début** est **10.40.0.0**. La **Taille de l’espace d’adressage** est **/20**. Veillez à cliquer sur **Ajouter**. 
 
 1. Cliquez sur **+ Ajouter un sous-réseau**, entrez les valeurs suivantes et cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom du sous-réseau | **subnet0** |
-    | Plage d’adresses de sous-réseau | **10.40.0.0/24** |
+    | Adresse de début | **10.40.0.0/24** |
+    | Adresse de début | **/24 (256 adresses)** |
 
 1. Acceptez les autres valeurs par défaut et cliquez sur **Vérifier + créer**. Laissez la validation se produire, puis appuyez sur **Créer** à nouveau pour envoyer votre déploiement.
 
@@ -75,12 +76,12 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
     | --- | --- |
     | Nom | **subnet1** |
     | Plage d’adresses (bloc CIDR) | **10.40.1.0/24** |
-    | Groupe de sécurité réseau | **Aucun** |
+    | Un groupe de sécurité réseau | **Aucun** |
     | Table de routage | **Aucun** |
 
 1. Cliquez sur **Enregistrer**.
 
-#### <a name="task-2-deploy-virtual-machines-into-the-virtual-network"></a>Tâche 2 : Déployer des machines virtuelles dans le réseau virtuel
+#### Tâche 2 : Déployer des machines virtuelles dans le réseau virtuel
 
 Dans cette tâche, vous allez déployer des machines virtuelles Azure dans différents sous-réseaux du réseau virtuel à l’aide d’un modèle ARM
 
@@ -94,10 +95,9 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     >**Remarque** : Vous devez charger chaque fichier séparément. Après le chargement, utilisez **dir** pour vous assurer que les deux fichiers ont été correctement chargés.
 
-1. Modifiez le fichier Paramètres et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
-
 1. Dans le panneau Cloud Shell, exécutez ce qui suit pour déployer deux machines virtuelles à l’aide des fichiers de modèle et de paramètres :
-
+    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+    
    ```powershell
    $rgName = 'az104-04-rg1'
 
@@ -106,7 +106,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
       -TemplateFile $HOME/az104-04-vms-loop-template.json `
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
-
+   
     >**Remarque** : Cette méthode de déploiement de modèles ARM utilise Azure PowerShell. Vous pouvez effectuer la même tâche en exécutant la commande Azure CLI équivalente **az deployment create** (pour plus d’informations, voir [Déployer des ressources avec des modèles Resource Manager et Azure CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)).
 
     >**Remarque** : Attendez que le déploiement se termine avant de passer à la tâche suivante. Ce processus prend environ 2 minutes.
@@ -116,11 +116,11 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     > 1. Vérifiez l’emplacement dans lequel le groupe de ressources « az104-04-rg1 » est déployé. Vous pouvez exécuter `az group show -n az104-04-rg1 --query location` dans votre CloudShell pour l’obtenir.
     > 1. Exécutez `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` dans votre CloudShell. S’il n’y a pas de références SKU répertoriées (c’est-à-dire qu’il n’y a aucun résultat), vous ne pouvez pas déployer de machines virtuelles D2S dans cette région. Vous devez trouver une région qui vous permettra de déployer des machines virtuelles D2S. Une fois que vous avez choisi un emplacement approprié, supprimez le groupe de ressources AZ104-04-rg1 et redémarrez le labo.
     > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter.
-    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton haut plusieurs fois, ce qui affichera la dernière commande exécutée.
+    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton en haut quelques fois, ce qui amènerait la dernière commande exécutée.
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-3-configure-private-and-public-ip-addresses-of-azure-vms"></a>Tâche 3 : Configurer les adresses IP privées et publiques des machines virtuelles Azure
+#### Tâche 3 : Configurer les adresses IP privées et publiques des machines virtuelles Azure
 
 Dans cette tâche, vous allez configurer l’affectation statique d’adresses IP publiques et privées affectées aux interfaces réseau des machines virtuelles Azure.
 
@@ -174,7 +174,7 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
     >**Remarque** : Vous aurez besoin des deux adresses IP dans la dernière tâche de ce laboratoire.
 
-#### <a name="task-4-configure-network-security-groups"></a>Tâche 4 : Configurer des groupes de sécurité réseau
+#### Tâche 4 : Configurer des groupes de sécurité réseau
 
 Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin d’autoriser la connectivité restreinte aux machines virtuelles Azure.
 
@@ -213,7 +213,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Source | **Aucune** |
+    | Source | **Any** |
     | Source port ranges | * |
     | Destination | **Any** |
     | Service | **RDP** |
@@ -243,7 +243,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
     >**Remarque** : Gardez cette session Bureau à distance ouverte. Vous en aurez besoin dans la prochaine tâche.
 
-#### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>Tâche 5 : Configurer Azure DNS pour la résolution de noms interne
+#### Tâche 5 : Configurer Azure DNS pour la résolution de noms interne
 
 Dans cette tâche, vous allez configurer la résolution de noms DNS dans un réseau virtuel à l’aide de zones DNS privées Azure.
 
@@ -295,7 +295,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
 1. Vérifiez que la sortie de la commande inclut l’adresse IP privée **az104-04-vm1** (**10.40.1.4).**
 
-#### <a name="task-6-configure-azure-dns-for-external-name-resolution"></a>Tâche 6 : Configurer Azure DNS pour la résolution de noms externe
+#### Tâche 6 : Configurer Azure DNS pour la résolution de noms externe
 
 Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l’aide de zones DNS publiques Azure.
 
@@ -332,7 +332,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
     | Unité de durée de vie | **Heures** |
     | Adresse IP | l’adresse IP publique d’**az104-04-vm0** que vous avez identifiée dans le troisième exercice de ce laboratoire |
 
-1. Cliquez sur **OK**.
+1. Cliquez sur **OK**
 
 1. Sur le panneau de la zone DNS, cliquez sur **+ Jeu d’enregistrements**.
 
@@ -347,7 +347,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
     | Unité de durée de vie | **Heures** |
     | Adresse IP | l’adresse IP publique d’**az104-04-vm1** que vous avez identifiée dans le troisième exercice de ce laboratoire |
 
-1. Cliquez sur **OK**.
+1. Cliquez sur **OK**
 
 1. Dans l’onglet de zone DNS, notez le nom de l’entrée **Serveur de noms 1**.
 
@@ -369,7 +369,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Vérifiez que la sortie de la commande inclut l’adresse IP publique d’**az104-04-vm1**.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+#### Nettoyer les ressources
 
  > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -391,7 +391,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+#### Révision
 
 Dans cet exercice, vous avez :
 

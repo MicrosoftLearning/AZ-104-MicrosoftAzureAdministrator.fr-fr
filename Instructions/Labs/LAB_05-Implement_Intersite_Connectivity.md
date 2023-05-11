@@ -4,16 +4,16 @@ lab:
   module: Administer Intersite Connectivity
 ---
 
-# <a name="lab-05---implement-intersite-connectivity"></a>Labo 05 - Implémenter une connectivité intersites
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# Labo 05 - Implémenter une connectivité intersites
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Contoso dispose de ses centres de données à Boston, à New York et aux bureaux de Seattle connectés par le biais d’une liaison réseau à grande zone de maillage, avec une connectivité complète entre eux. Vous devez implémenter un environnement de laboratoire qui reflète la topologie des réseaux locaux de Contoso et vérifie ses fonctionnalités.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -21,15 +21,15 @@ Dans ce labo, vous allez :
 + Tâche 2 : Configurer le peering local et global des réseaux virtuels
 + Tâche 3 : Tester la connectivité intersite
 
-## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab05.png)
 
-### <a name="instructions"></a>Instructions
+### Instructions
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tâche 1 : Approvisionner l’environnement de laboratoire
+#### Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans un réseau virtuel distinct, deux d’entre elles étant dans la même région Azure et la troisième étant dans une autre région.
 
@@ -41,9 +41,7 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
 
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\05\\az104-05-vms-loop-template.json** et **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
-
-1. Modifiez le fichier **Paramètres** que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
+1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\05\\az104-05-vms-loop-template.json** et **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** dans le répertoire d'origine de Cloud Shell. 
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera l’environnement de labo. Les deux premiers réseaux virtuels et une paire de machines virtuelles seront déployés dans [Azure_region_1]. Le troisième réseau virtuel et la troisième machine virtuelle seront déployés dans le même groupe de ressources, mais dans une autre région [Azure_region_2]. (Remplacez les espaces réservés [Azure_region_1] et [Azure_region_2], y compris les crochets, par les noms de deux régions Azure différentes dans lesquelles vous envisagez de déployer ces machines virtuelles Azure. Par exemple, $location 1 = 'eastus'. Vous pouvez utiliser Get-AzLocation pour répertorier tous les emplacements.) :
 
@@ -68,6 +66,8 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
    >Si la commande ne retourne aucun résultat, vous devez choisir une autre région. Une fois que vous avez identifié deux régions appropriées, vous pouvez ajuster les régions dans le bloc de code ci-dessus.
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer les trois réseaux virtuels et déployer des machines virtuelles dans celles-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
+    
+    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -82,7 +82,7 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>Tâche 2 : Configurer le peering local et global des réseaux virtuels
+#### Tâche 2 : Configurer le peering local et global des réseaux virtuels
 
 Dans cette tâche, vous allez configurer le peering local et global entre les réseaux virtuels que vous avez déployés dans les tâches précédentes.
 
@@ -201,7 +201,7 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### <a name="task-3-test-intersite-connectivity"></a>Tâche 3 : Tester la connectivité intersite
+#### Tâche 3 : Tester la connectivité intersite
 
 Dans cette tâche, vous allez tester la connectivité entre les machines virtuelles sur les trois réseaux virtuels que vous avez connectés via le peering local et global dans la tâche précédente.
 
@@ -259,7 +259,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Examinez la sortie de la commande et vérifiez que la connexion a réussi.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+#### Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -281,7 +281,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+#### Révision
 
 Dans cet exercice, vous avez :
 
