@@ -33,11 +33,11 @@ Dans ce labo, nous allons :
 
 ![image](../media/lab02b.png)
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Attribuer des balises via le portail Azure
+## Tâche 1 : Attribuer des balises via le portail Azure
 
 Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de ressources Azure via le portail Azure.
 
@@ -74,7 +74,7 @@ Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de 
 
 1. Cliquez sur **Appliquer**, puis fermez la fenêtre d’édition d’étiquette pour revenir au volet du compte de stockage. Cliquez sur les points de suspension dans le compte de stockage, puis sélectionnez **Modifier les étiquettes** pour noter que la nouvelle étiquette n’a pas été automatiquement attribuée au compte de stockage. 
 
-#### Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
+## Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
 
 Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une étiquette et sa valeur sur les ressources* au groupe de ressources et évaluer le résultat. 
 
@@ -140,7 +140,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     >**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise de rôle avec la valeur Infra**. Le déploiement a échoué, car le compte de stockage que vous avez tenté de créer n’a pas d’étiquette nommée **Role** avec sa valeur définie sur **Infra**.
 
-#### Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
+## Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 
 Dans cette tâche, nous allons utiliser une définition de stratégie différente pour corriger toutes les ressources non conformes. 
 
@@ -202,7 +202,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Une fois le nouveau compte de stockage configuré, cliquez sur le bouton **Accéder à la ressource** et, dans le panneau **Vue d’ensemble** du compte de stockage nouvellement créé, notez que la balise **Rôle** avec la valeur **Infra** a été automatiquement affectée à la ressource.
 
-#### Tâche 4 : Nettoyer les ressources
+## Tâche 4 : Nettoyer les ressources
 
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous permet d'éviter des frais inattendus, mais n'oubliez pas que les stratégies d'Azure n'entraînent pas de frais supplémentaires.
    
@@ -218,7 +218,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Cliquez sur **Vue d’ensemble**, puis cliquez sur **Supprimer** en haut du panneau du compte de stockage. Lorsque vous y êtes invité, dans le panneau **Supprimer le compte de stockage**, tapez le nom du compte de stockage pour confirmer et cliquer sur **Supprimer**. 
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

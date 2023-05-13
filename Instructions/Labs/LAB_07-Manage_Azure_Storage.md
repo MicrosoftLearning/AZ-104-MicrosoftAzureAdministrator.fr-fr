@@ -31,11 +31,11 @@ Dans ce labo, vous allez :
 ![image](../media/lab07.png)
 
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Approvisionner l’environnement de laboratoire
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous utiliserez plus tard dans ce labo.
 
@@ -89,7 +89,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous uti
 
 1. Fermez le volet Cloud Shell.
 
-#### Tâche 2 : Créer et configurer des comptes de Stockage Azure
+## Tâche 2 : Créer et configurer des comptes de Stockage Azure
 
 Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
@@ -124,7 +124,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
 
     > **Remarque** : Le niveau d’accès froid est optimal pour les données qui ne sont pas utilisées fréquemment.
 
-#### Tâche 3 : Gérer le stockage d’objets blob
+## Tâche 3 : Gérer le stockage d’objets blob
 
 Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d’objets blob dans celui-ci.
 
@@ -162,7 +162,7 @@ Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d�
 
     > **Remarque** : Vous avez la possibilité de télécharger l’objet blob, de modifier son niveau d’accès (il est actuellement défini sur **Chaud**), d’acquérir un bail, qui changerait son statut de bail en **Verrouillé** (il est actuellement défini sur **Déverrouillé**) et de protéger l’objet blob contre la modification ou la suppression, ainsi que l’attribution de métadonnées personnalisées (en spécifiant une clé arbitraire et des paires de valeurs). Vous avez également la possibilité de **modifier** le fichier directement dans l’interface du Portail Azure, sans le télécharger au préalable. Vous pouvez également créer des instantanés, ainsi que générer un jeton SAP (vous allez découvrir cette option dans la tâche suivante).
 
-#### Tâche 4 : Gérer l’authentification et l’autorisation pour le Stockage Azure
+## Tâche 4 : Gérer l’authentification et l’autorisation pour le Stockage Azure
 
 Dans cette tâche, vous allez configurer l’authentification et l’autorisation pour le Stockage Azure.
 
@@ -225,7 +225,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
     > **Remarque** : La modification peut prendre environ 5 minutes.
 
-#### Tâche 5 : Créer et configurer un partage de fichiers Azure Files
+## Tâche 5 : Créer et configurer un partage de fichiers Azure Files
 
 Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
@@ -267,7 +267,7 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Cliquez sur **az104-07-folder** et vérifiez que **az104-07-file.txt** apparaît dans la liste des fichiers.
 
-#### Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
+## Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
 
 Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azure.
 
@@ -304,7 +304,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
 1. Fermez le volet Cloud Shell.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -326,7 +326,7 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

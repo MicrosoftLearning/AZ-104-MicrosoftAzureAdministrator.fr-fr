@@ -31,11 +31,11 @@ Dans ce labo, vous allez :
 
 ![image](../media/lab11.png)
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Approvisionner l’environnement de laboratoire
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée pour tester les scénarios de supervision.
 
@@ -75,7 +75,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
     >**Remarque** : N’attendez pas que le déploiement se termine, mais passez à la tâche suivante. Le déploiement doit prendre environ 3 minutes.
 
-#### Tâche 2 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
+## Tâche 2 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
 
@@ -87,7 +87,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. Réduisez le volet Cloud Shell (mais sans le fermer).
 
-#### Tâche 3 : Créer et configurer un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
+## Tâche 3 : Créer et configurer un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
 
 Dans cette tâche, vous allez créer et configurer un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
 
@@ -135,7 +135,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
 
     >**Remarque** : Attendez que l’installation se termine. Ceci peut prendre environ 5 minutes.
 
-#### Tâche 4 : Passer en revue les paramètres de supervision par défaut des machines virtuelles Azure
+## Tâche 4 : Passer en revue les paramètres de supervision par défaut des machines virtuelles Azure
 
 Dans cette tâche, vous allez passer en revue les paramètres de supervision par défaut des machines virtuelles Azure
 
@@ -153,7 +153,7 @@ Dans cette tâche, vous allez passer en revue les paramètres de supervision par
 
 1. Dans la liste déroulante **Métriques**, sélectionnez **Pourcentage d’UC**, dans la liste déroulante **Agrégation**, sélectionnez **Moy** et examinez le graphique obtenu.
 
-#### Tâche 5 : Configurer les paramètres de diagnostic des machines virtuelles Azure
+## Tâche 5 : Configurer les paramètres de diagnostic des machines virtuelles Azure
 
 Dans cette tâche, vous allez configurer les paramètres de diagnostic des machines virtuelles Azure.
 
@@ -191,7 +191,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 1. Dans la liste déroulante **Métriques**, sélectionnez **Mémoire\\Octets disponibles**, dans la liste déroulante **Agrégation**, sélectionnez **Max** et examinez le graphique obtenu.
 
-#### Tâche 6 : Passer en revue les fonctionnalités d’Azure Monitor
+## Tâche 6 : Passer en revue les fonctionnalités d’Azure Monitor
 
 1. Dans le Portail Azure, recherchez et sélectionnez **Superviser** puis, dans le volet **Superviser \| Vue d’ensemble**, cliquez sur **Métriques**.
 
@@ -280,7 +280,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 1. Dans le volet **Toutes les alertes**, passez en revue les alertes générées.
 
-#### Tâche 7 : Passer en revue les fonctionnalités d’Azure Log Analytics
+## Tâche 7 : Passer en revue les fonctionnalités d’Azure Log Analytics
 
 1. Dans le Portail Azure, revenez au volet **Superviser**, puis cliquez sur **Journaux**.
 
@@ -315,7 +315,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : Vous devrez peut-être attendre quelques minutes avant que les données de mise à jour ne soient disponibles.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -337,7 +337,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

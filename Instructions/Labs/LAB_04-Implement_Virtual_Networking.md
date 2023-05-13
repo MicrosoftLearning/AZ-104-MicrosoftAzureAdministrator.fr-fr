@@ -31,11 +31,11 @@ Dans ce labo, vous allez :
 
 ![image](../media/lab04.png)
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Créer et configurer un réseau virtuel
+## Tâche 1 : Créer et configurer un réseau virtuel
 
 Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-réseaux à l’aide du portail Azure
 
@@ -81,7 +81,7 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
 
 1. Cliquez sur **Enregistrer**.
 
-#### Tâche 2 : Déployer des machines virtuelles dans le réseau virtuel
+## Tâche 2 : Déployer des machines virtuelles dans le réseau virtuel
 
 Dans cette tâche, vous allez déployer des machines virtuelles Azure dans différents sous-réseaux du réseau virtuel à l’aide d’un modèle ARM
 
@@ -174,7 +174,7 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
     >**Remarque** : Vous aurez besoin des deux adresses IP dans la dernière tâche de ce laboratoire.
 
-#### Tâche 4 : Configurer des groupes de sécurité réseau
+## Tâche 4 : Configurer des groupes de sécurité réseau
 
 Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin d’autoriser la connectivité restreinte aux machines virtuelles Azure.
 
@@ -295,7 +295,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
 1. Vérifiez que la sortie de la commande inclut l’adresse IP privée **az104-04-vm1** (**10.40.1.4).**
 
-#### Tâche 6 : Configurer Azure DNS pour la résolution de noms externe
+## Tâche 6 : Configurer Azure DNS pour la résolution de noms externe
 
 Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l’aide de zones DNS publiques Azure.
 
@@ -369,7 +369,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Vérifiez que la sortie de la commande inclut l’adresse IP publique d’**az104-04-vm1**.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
  > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -391,7 +391,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

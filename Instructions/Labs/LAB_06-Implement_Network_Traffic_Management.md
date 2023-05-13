@@ -33,11 +33,11 @@ Dans ce labo, vous allez :
 ![image](../media/lab06.png)
 
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Approvisionner l’environnement de laboratoire
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même région Azure. Les deux premières résideront dans un réseau virtuel hub, tandis que chacune des deux restantes résidera dans un réseau virtuel spoke distinct.
 
@@ -113,7 +113,7 @@ Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même
 
 1. Fermez le volet Cloud Shell.
 
-#### Tâche 2 : Configurer une topologie de réseau hub-and-spoke
+## Tâche 2 : Configurer une topologie de réseau hub-and-spoke
 
 Dans cette tâche, vous allez configurer le peering local entre les réseaux virtuels que vous avez déployés dans les tâches précédentes afin de créer une topologie de réseau hub and spoke.
 
@@ -187,7 +187,7 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
 
     >**Remarque** : **Autoriser le trafic transféré** doit être activé afin de faciliter le routage entre les réseaux virtuels spoke, que vous allez implémenter plus loin dans ce labo.
 
-#### Tâche 3 : Tester la transitivité du peering de réseaux virtuels
+## Tâche 3 : Tester la transitivité du peering de réseaux virtuels
 
 Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux virtuels à l’aide de Network Watcher.
 
@@ -254,7 +254,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : Cela est attendu, étant donné que les deux réseaux virtuels spoke ne sont pas appairés les uns avec les autres (le peering de réseaux virtuels n’est pas transitif).
 
-#### Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
+## Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
 
 Dans cette tâche, vous allez configurer et tester le routage entre les deux réseaux virtuels spoke en activant le transfert IP sur l’interface réseau de la machine virtuelle **az104-06-vm0**, en activant le routage au sein de son système d’exploitation et en configurant des itinéraires définis par l’utilisateur sur le réseau virtuel spoke.
 
@@ -407,7 +407,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
 
     > **Remarque** : Vous pouvez utiliser **Network Watcher** pour afficher la topologie du réseau.
 
-#### Tâche 5 : Mettre en oeuvre Azure Load Balancer
+## Tâche 5 : Mettre en oeuvre Azure Load Balancer
 
 Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devant les deux machines virtuelles Azure dans le réseau virtuel hub.
 
@@ -482,7 +482,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
 
     > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
-#### Tâche 6 : Implémenter Azure Application Gateway
+## Tâche 6 : Implémenter Azure Application Gateway
 
 Dans cette tâche, vous allez implémenter Azure Application Gateway devant les deux machines virtuelles Azure dans les réseaux virtuels spoke.
 
@@ -585,7 +585,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
     > **Remarque** : Le ciblage des machines virtuelles sur plusieurs réseaux virtuels n'est pas une configuration courante, mais elle vise à illustrer le fait qu’Application Gateway est capable de cibler des machines virtuelles sur plusieurs réseaux virtuels (ainsi que des points d'extrémité dans d'autres régions Azure ou même en dehors d'Azure), contrairement à Azure Load Balancer, qui équilibre la charge entre les machines virtuelles du même réseau virtuel.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -607,7 +607,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

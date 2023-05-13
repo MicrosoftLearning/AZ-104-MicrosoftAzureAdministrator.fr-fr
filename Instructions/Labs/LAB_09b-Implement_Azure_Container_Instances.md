@@ -26,11 +26,11 @@ Dans ce labo, vous allez :
 
 ![image](../media/lab09b.png)
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
+## Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
 
 Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l’application web.
 
@@ -63,7 +63,7 @@ Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l�
 
     >**Remarque** : Pendant que vous attendez, regardez l’[exemple de code derrière l’application simple](https://github.com/Azure-Samples/aci-helloworld). Pour l’afficher, parcourez le dossier de l’application \\.
 
-#### Tâche 2 : Passer en revue les fonctionnalités d’Azure Container Instances
+## Tâche 2 : Passer en revue les fonctionnalités d’Azure Container Instances
 
 Dans cette tâche, vous allez examiner le déploiement de l’instance de conteneur.
 
@@ -79,7 +79,7 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
 1. Vérifiez que les entrées de journal représentant la requête HTTP GET générée en affichant l’application dans le navigateur apparaissent.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -103,7 +103,7 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans ce labo, vous avez :
 

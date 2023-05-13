@@ -32,11 +32,11 @@ Dans ce labo, vous allez :
 ![image](../media/lab08.png)
 
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Déployer des machines virtuelles Azure résilientes aux zones à l’aide du portail Azure et d’un modèle Azure Resource Manager
+## Tâche 1 : Déployer des machines virtuelles Azure résilientes aux zones à l’aide du portail Azure et d’un modèle Azure Resource Manager
 
 Dans cette tâche, vous allez déployer des machines virtuelles Azure dans différentes zones de disponibilité à l’aide du portail Azure et d’un modèle Azure Resource Manager.
 
@@ -136,7 +136,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     >**Remarque** : Attendez que les deux déploiements se terminent avant de passer à la tâche suivante. Ceci peut prendre environ 5 minutes.
 
-#### Tâche 2 : Configurer des machines virtuelles Azure à l’aide d’extensions de machine virtuelle
+## Tâche 2 : Configurer des machines virtuelles Azure à l’aide d’extensions de machine virtuelle
 
 Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deux machines virtuelles Azure que vous avez déployées dans la tâche précédente à l’aide de l’extension de machine virtuelle de script personnalisé.
 
@@ -223,7 +223,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
     >**Remarque** : Vous pouvez également vous connecter à **az104-08-vm0** et exécuter `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` pour accéder au site web hébergé sur **az104-08-vm1**.
 
-#### Tâche 3 : Mettre à l'échelle le calcul et le stockage des machines virtuelles Azure
+## Tâche 3 : Mettre à l'échelle le calcul et le stockage des machines virtuelles Azure
 
 Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtuelles Azure en modifiant leur taille et mettre à l'échelle leur stockage en attachant et en configurant leurs disques de données.
 
@@ -336,7 +336,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
     > **Remarque** : Attendez la confirmation que les commandes se sont terminées correctement.
 
-#### Tâche 4 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement
+## Tâche 4 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement
 
 1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
 
@@ -352,7 +352,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### Tâche 5 : Déployer des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide du portail Azure
+## Tâche 5 : Déployer des groupes de machines virtuelles identiques Azure résilients aux zones à l’aide du portail Azure
 
 Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiques Azure sur des zones de disponibilité à l’aide du portail Azure.
 
@@ -456,7 +456,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
     >**Remarque** : Attendez que le déploiement du groupe de machines virtuelles identiques soit terminé. Ce processus prend environ 5 minutes.
 
-#### Tâche 6 : Configurer des groupes de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
+## Tâche 6 : Configurer des groupes de machines virtuelles identiques Azure à l’aide d’extensions de machine virtuelle
 
 Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les instances du groupe de machines virtuelles identiques Azure que vous avez déployées dans la tâche précédente à l’aide de l’extension de machine virtuelle de script personnalisé.
 
@@ -497,7 +497,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les ins
 
     >**Remarque** : Vérifiez que la page du navigateur affiche le nom de l’une des instances du groupe de machines virtuelles identiques Azure **az10408vms0**.
 
-#### Tâche 7 : Mettre à l’échelle le calcul et le stockage pour les groupes de machines virtuelles identiques Azure
+## Tâche 7 : Mettre à l’échelle le calcul et le stockage pour les groupes de machines virtuelles identiques Azure
 
 Dans cette tâche, vous allez modifier la taille des instances de groupes de machines virtuelles identiques, configurer leurs paramètres de mise à l’échelle automatique et y attacher des disques.
 
@@ -619,7 +619,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
 1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -646,7 +646,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 
