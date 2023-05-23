@@ -4,15 +4,15 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Labo 03b : Gérer les ressources Azure à l’aide de modèles ARM
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 03b : Gérer les ressources Azure à l’aide de modèles ARM
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure, vous devez effectuer la tâche équivalente à l’aide des modèles Azure Resource Manager.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -20,17 +20,17 @@ Dans ce labo, vous allez :
 + Tâche 2 : Créer un disque managé Azure à l’aide d’un modèle ARM
 + Tâche 3 : Passer en revue le déploiement basé sur le modèle ARM du disque managé
 
-## <a name="estimated-timing-20-minutes"></a>Durée estimée : 20 minutes
+## Durée estimée : 20 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab03b.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tâche 1 : Passer en revue un modèle ARM pour le déploiement d’un disque managé Azure
+## Tâche 1 : Passer en revue un modèle ARM pour le déploiement d’un disque managé Azure
 
 1. Connectez-vous au [**portail Azure**](http://portal.azure.com).
 
@@ -58,7 +58,7 @@ Dans ce labo, vous allez :
     
 1. Fermez toutes les fenêtres de l’**Explorateur de fichiers**.
 
-#### <a name="task-2-create-an-azure-managed-disk-by-using-an-arm-template"></a>Tâche 2 : Créer un disque managé Azure à l’aide d’un modèle ARM
+## Tâche 2 : Créer un disque managé Azure à l’aide d’un modèle ARM
 
 1. Dans le portail Azure, recherchez et sélectionnez **Déployer un modèle personnalisé**.
 
@@ -108,7 +108,7 @@ Dans ce labo, vous allez :
 
 1. Vérifiez que le déploiement a abouti.
 
-#### <a name="task-3-review-the-arm-template-based-deployment-of-the-managed-disk"></a>Tâche 3 : Passer en revue le déploiement basé sur le modèle ARM du disque managé
+## Tâche 3 : Passer en revue le déploiement basé sur le modèle ARM du disque managé
 
 1. Depuis le portail Azure, recherchez et sélectionnez **Groupes de ressources**. 
 
@@ -118,11 +118,11 @@ Dans ce labo, vous allez :
 
 1. Dans le panneau **az104-03b-rg1 - Déploiements** ,cliquez sur la première entrée dans la liste des déploiements et passez en revue le contenu des panneaux **Entrée** et **Modèle**.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
    >**Remarque** : Ne supprimez pas les ressources que vous avez déployées dans ce labo. Vous en aurez besoin dans le labo suivant de ce module.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans ce labo, vous avez :
 

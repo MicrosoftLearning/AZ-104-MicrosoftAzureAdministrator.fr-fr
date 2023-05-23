@@ -28,11 +28,11 @@ Dans ce labo, vous allez :
 
 ![image](../media/lab09c.png)
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Inscrire les fournisseurs de ressources Microsoft.Kubernetes et Microsoft.KubernetesConfiguration
+## Tâche 1 : Inscrire les fournisseurs de ressources Microsoft.Kubernetes et Microsoft.KubernetesConfiguration
 
 Dans cette tâche, vous allez inscrire les fournisseurs de ressources nécessaires pour déployer un cluster Azure Kubernetes Services.
 
@@ -54,7 +54,7 @@ Dans cette tâche, vous allez inscrire les fournisseurs de ressources nécessair
 
 1. Fermez le volet Cloud Shell.
 
-#### Tâche 2 : Déployer un cluster Azure Kubernetes Service
+## Tâche 2 : Déployer un cluster Azure Kubernetes Service
 
 Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à l’aide du portail Azure.
 
@@ -65,7 +65,7 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
     | Configuration prédéfinie du cluster | **Dev/Test ($)** |
     | Nom du cluster Kubernetes | **az104-9c-aks1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner un cluster Kubernetes |
@@ -109,7 +109,7 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
 
     >**Remarque** : Attendez la fin du déploiement. Cela devrait prendre environ 10 minutes.
 
-#### Tâche 3 : Déployer des pods dans le cluster Azure Kubernetes Service
+## Tâche 3 : Déployer des pods dans le cluster Azure Kubernetes Service
 
 Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes Service.
 
@@ -177,7 +177,7 @@ Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes 
 
 1. Ouvrez une fenêtre de navigateur et accédez à l’adresse IP que vous avez obtenue à l’étape précédente. Vérifiez que la page du navigateur affiche le message **Bienvenue dans nginx !** « Hello World ! ».
 
-#### Tâche 4 : Mettre à l’échelle des charges de travail conteneurisées dans le cluster de service Azure Kubernetes
+## Tâche 4 : Mettre à l’échelle des charges de travail conteneurisées dans le cluster de service Azure Kubernetes
 
 Dans cette tâche, vous allez effectuer une montée en charge horizontale du nombre de pods, puis du nombre de nœuds de cluster.
 
@@ -245,7 +245,7 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 
 1. Fermez le volet **Cloud Shell**.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -267,7 +267,7 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 
     >**Remarque** : La commande s’exécute de façon asynchrone (comme déterminé par le paramètre --no-wait). Par conséquent, vous serez en mesure d’exécuter une autre commande Azure CLI immédiatement après au cours de la même session Bash, mais la suppression réelle du groupe de ressources prendra quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

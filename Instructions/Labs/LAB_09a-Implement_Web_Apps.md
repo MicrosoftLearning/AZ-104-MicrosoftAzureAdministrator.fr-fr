@@ -4,37 +4,37 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09a---implement-web-apps"></a>Labo 09a : Implémenter Web Apps
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 09a : Implémenter Web Apps
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Vous devez évaluer l’utilisation d’applications web Azure pour héberger les sites web de Contoso, qui sont actuellement hébergés dans les centres de données locaux de l’entreprise. Les sites web s’exécutent sur des serveurs Windows à l’aide de la pile de runtime PHP. Vous devez également déterminer comment implémenter des pratiques DevOps en tirant parti des emplacements de déploiement des applications web Azure.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
 + Tâche 1 : Créer une application web Azure
 + Tâche 2 : Créer un emplacement de déploiement de préproduction
 + Tâche 3 : Configurer les paramètres de déploiement de l’application web
-+ Tâche 4 : Déployer du code sur l’emplacement de déploiement de préproduction
++ Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
 + Tâche 5 : Remplacer les emplacements de préproduction
 + Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
-## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab09a.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-create-an-azure-web-app"></a>Tâche 1 : Créer une application web Azure
+## Tâche 1 : Créer une application web Azure
 
 Dans cette tâche, vous allez créer une application web Azure.
 
@@ -61,7 +61,7 @@ Dans cette tâche, vous allez créer une application web Azure.
 
 1. Dans le panneau de déploiement, cliquez sur **Accéder à la ressource**.
 
-#### <a name="task-2-create-a-staging-deployment-slot"></a>Tâche 2 : Créer un emplacement de déploiement de préproduction
+## Tâche 2 : Créer un emplacement de déploiement de préproduction
 
 Dans cette tâche, vous allez créer un emplacement de déploiement de transit.
 
@@ -84,7 +84,7 @@ Dans cette tâche, vous allez créer un emplacement de déploiement de transit.
 
 1. Passez en revue le panneau de l’emplacement de préproduction et notez que son URL diffère de celle affectée à l’emplacement de production.
 
-#### <a name="task-3-configure-web-app-deployment-settings"></a>Tâche 3 : Configurer les paramètres de déploiement de l’application web
+## Tâche 3 : Configurer les paramètres de déploiement de l’application web
 
 Dans cette tâche, vous allez configurer les paramètres de déploiement de l’application web.
 
@@ -107,7 +107,7 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement de l’
 
     >**Remarque :** Vous aurez besoin de ces informations d’identification dans la tâche suivante de ce labo.
 
-#### <a name="task-4-deploy-code-to-the-staging-deployment-slot"></a>Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
+## Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
 
 Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiement de préproduction.
 
@@ -151,7 +151,7 @@ Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiem
 
 1. Vérifiez que la page du navigateur affiche le message **Hello World !** et fermez le nouvel onglet.
 
-#### <a name="task-5-swap-the-staging-slots"></a>Tâche 5 : Remplacer les emplacements de préproduction
+## Tâche 5 : Remplacer les emplacements de préproduction
 
 Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l’emplacement de production.
 
@@ -163,9 +163,9 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Cliquez sur **Vue d’ensemble** dans le panneau de l’emplacement de production de l’application web, puis cliquez sur le lien **URL** pour afficher la page d’accueil du site web dans un nouvel onglet de navigateur.
 
-1. Vérifiez que la page web par défaut a été remplacée par la page **Hello World !** page.
+1. Vérifiez que la page web par défaut a été remplacée par la page **Hello World !** .
 
-#### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
+## Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
 Dans cette tâche, vous allez configurer et tester la mise à l’échelle automatique de l’application web Azure.
 
@@ -237,7 +237,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -259,7 +259,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

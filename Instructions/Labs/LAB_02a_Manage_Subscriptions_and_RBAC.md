@@ -4,14 +4,14 @@ lab:
   module: Administer Governance and Compliance
 ---
 
-# <a name="lab-02a---manage-subscriptions-and-rbac"></a>Labo 02a - Gérer les abonnements et RBAC
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# Labo 02a - Gérer les abonnements et RBAC
+# Manuel de labo pour l’étudiant
 
-## <a name="lab-requirements"></a>Configuration de laboratoire requise
+## Configuration de laboratoire requise
 
 Ce labo nécessite des autorisations pour créer des utilisateurs Azure Active Directory (Azure AD), créer des rôles Contrôle d’accès en fonction du rôle (RBAC) personnalisés et attribuer ces rôles aux utilisateurs Azure AD. Tous les hôtes de laboratoire ne peuvent pas fournir cette fonctionnalité. Demandez à votre formateur la disponibilité de ce laboratoire.
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été chargé d’implémenter les fonctionnalités suivantes :
 
@@ -24,7 +24,7 @@ Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été ch
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -33,18 +33,18 @@ Dans ce labo, vous allez :
 + Tâche 3 : Attribuer des rôles RBAC
 
 
-## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-implement-management-groups"></a>Tâche 1 : Implémenter des groupes d’administration
+## Tâche 1 : Implémenter des groupes d’administration
 
 Dans cette tâche, vous allez créer et configurer des groupes d’administration. 
 
@@ -81,7 +81,7 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
     >**Remarque** : Dans le panneau **Abonnements az104-02-mg1\|** , copiez l’ID de votre abonnement Azure dans le Presse-papiers. Vous en aurez besoin dans la prochaine tâche.
 
-#### <a name="task-2-create-custom-rbac-roles"></a>Tâche 2 : Créer des rôles RBAC personnalisés
+## Tâche 2 : Créer des rôles RBAC personnalisés
 
 Dans cette tâche, vous allez créer une définition d’un rôle RBAC personnalisé.
 
@@ -124,7 +124,7 @@ Dans cette tâche, vous allez créer une définition d’un rôle RBAC personnal
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-3-assign-rbac-roles"></a>Tâche 3 : Attribuer des rôles RBAC
+## Tâche 3 : Attribuer des rôles RBAC
 
 Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attribuer le rôle RBAC que vous avez créé dans la tâche précédente à cet utilisateur et vérifier que l’utilisateur peut effectuer la tâche spécifiée dans la définition de rôle RBAC.
 
@@ -167,7 +167,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 
 1. Ne poursuivez pas la création de la demande de support. À la place, déconnectez-vous du compteur utilisateur az104-02-aaduser1 à partir du portail Azure et fermez la fenêtre de navigateur InPrivate.
 
-#### <a name="task-4-clean-up-resources"></a>Tâche 4 : Nettoyer les ressources
+## Tâche 4 : Nettoyer les ressources
 
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous permet d'éviter des frais inattendus, mais n'oubliez pas que les stratégies d'Azure n'entraînent pas de frais supplémentaires.
 
@@ -209,7 +209,7 @@ Dans cette tâche, vous allez créer un utilisateur Azure Active Directory, attr
 1. Revenez au panneau **Groupes d’administration**, cliquez sur l’icône **Points de suspension** à droite du groupe d’administration **az104-02-mg1**, puis cliquez sur **Supprimer**.
   >**Remarque** : Si vous ne parvenez pas à supprimer le **groupe d’administration racine du locataire**, il est probable que l’**Abonnement Azure** se trouve sous le groupe d’administration. Vous devez déplacer l’**abonnement Azure** hors du **groupe d’administration racine du locataire**, puis supprimer le groupe.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 
