@@ -214,7 +214,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : **10.62.0.4** représente l’adresse IP privée **d’az104-06-vm2**
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussi**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le premier réseau virtuel spoke.
 
@@ -233,7 +233,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le deuxième réseau virtuel spoke.
 
@@ -250,7 +250,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Protocol | **TCP** |
     | Port de destination | **3389** |
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que le statut doit être **Accessible**.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que l’état est **Échec**.
 
     > **Remarque** : Cela est attendu, étant donné que les deux réseaux virtuels spoke ne sont pas appairés les uns avec les autres (le peering de réseaux virtuels n’est pas transitif).
 
@@ -388,7 +388,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
 
 1. Dans le portail Azure, revenez au panneau **Network Watcher - Résolution des problèmes de connexion**.
 
-1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, utilisez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -401,7 +401,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Protocol | **TCP** |
     | Port de destination | **3389** |
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **inaccessible**, vous devez arrêter, puis démarrer az104-06-vm0.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **Échec**, vous devez arrêter, puis démarrer az104-06-vm0.
 
     > **Remarque** : Cela est attendu, car le trafic entre les réseaux virtuels spoke est désormais routé via la machine virtuelle située dans le réseau virtuel hub, qui fonctionne comme un routeur.
 
@@ -425,13 +425,24 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Type | **Public** |
     | Niveau | **Regional** |
     
-1. Sous l’onglet **Configuration IP front-end**, cliquez sur **Ajouter une configuration IP front-end** et utilisez le paramètre suivant avant de cliquer sur **OK**, puis **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**. 
+1. Sous l’onglet **Configuration IP frontale**, cliquez sur **Ajouter une configuration IP frontale** et utilisez les paramètres suivants :  
+     
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Name | **az104-06-fe4** |
+    | Type IP | Adresse IP |
+    | Adresse IP publique | Sélectionnez **Créer** |
+    | Équilibreur de charge de passerelle | None |
+    
+1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**. 
      
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-06-pip4** |
-    | Version de l’adresse IP | IPv4 |
-    | Adresse IP publique | **Création** |
+    | Référence SKU | standard |
+    | Niveau | Régionale |
+    | Affectation | statique |
+    | Préférence de routage | **Réseau Microsoft** |
 
 1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis sur **Suivant : Règles de trafic entrant**. 
 

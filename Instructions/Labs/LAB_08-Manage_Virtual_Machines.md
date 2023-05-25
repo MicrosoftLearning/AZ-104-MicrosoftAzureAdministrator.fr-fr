@@ -48,8 +48,8 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Abonnement | Nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
+    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
@@ -363,12 +363,13 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
     | Nom du groupe de machines virtuelles identiques | **az10408vmss0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez provisionner des machines virtuelles Azure différentes de celles que vous avez utilisées pour déployer des machines virtuelles précédemment dans ce laboratoire |
     | Zone de disponibilité | **Zones 1, 2, 3** |
+    | Mode d’orchestration | **Uniforme** |
     | Image | **Windows Server 2019 Datacenter - Gen2** |
-    | Instance Azure Spot | **Non** |
+    | Exécuter avec la remise Azure Spot | **Non** |
     | Taille | **D2s_v3 standard** |
     | Nom d’utilisateur | **Étudiant** |
     | Mot de passe | **Choisissez un mot de passe sécurisé**  |
@@ -378,7 +379,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Sous l’onglet **Disques** du panneau **Créer un groupe de machines virtuelles identiques**, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >**.
 
-1. Sous l’onglet **Mise en réseau** du panneau **Créer un groupe de machines virtuelles identiques**, cliquez sur le lien **Créer un réseau virtuel** sous la zone de texte **Réseau virtuel** et créez un réseau virtuel avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Sous l’onglet **Réseau** du panneau **Créer un groupe de machines virtuelles identiques**, cliquez sur le lien **Créer un réseau virtuel** sous la zone de texte **Réseau virtuel** et créez un réseau virtuel avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut). 
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -416,13 +417,18 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Revenez dans le panneau **Modifier l’interface réseau**, dans la section **Adresse IP publique**, cliquez sur **Activé**, puis sur **OK**.
 
-1. Dans l’onglet **Mise en réseau** du panneau **Créer un groupe de machines virtuelles identiques**, sous la section **Équilibrage de charge**, vérifiez que l’entrée **Utiliser un équilibreur de charge** est sélectionnée et spécifiez les paramètres d’équilibrage **de** charge suivants (laissez les autres avec leurs valeurs par défaut) et cliquez sur **Suivant : Mise à l’échelle >**  :
+1. Sous l’onglet **Réseau** du panneau **Créer un groupe de machines virtuelles identiques**, sous la section **Équilibrage de charge**, spécifiez ce qui suit (laissez le reste avec les valeurs par défaut).
 
     | Paramètre | Valeur |
     | --- | --- |
     | Options d’équilibrage de charge | **Équilibreur de charge Azure** |
-    | Sélectionnez un équilibreur de charge | **(nouveau) az10408vmss0-lb** |
-    | Sélectionnez un pool principal | **(nouveau) bepool** |
+    | Sélectionnez un équilibreur de charge | **Créer un équilibreur de charge** |
+    
+1.  Dans la page **Créer un équilibreur de charge**, spécifiez le nom de l’équilibreur de charge et prenez les valeurs par défaut. Cliquez sur **Créer** lorsque vous avez terminé, puis sur **Suivant : Mise à l’échelle >** .
+    
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Nom de l’équilibreur de charge | **az10408vmss0-lb** |
 
 1. Sous l’onglet **Mise à l'échelle** du panneau **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Gestion >**  :
 
@@ -525,7 +531,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     | Paramètre | Valeur |
     | --- |--- |
-    | Source de la métrique | **Ressource actuelle (az10480vmss0)** |
+    | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
     | Agrégation du temps | **Average** |
     | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
