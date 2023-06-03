@@ -4,10 +4,10 @@ lab:
   module: Administer Network Traffic Management
 ---
 
-# <a name="lab-06---implement-traffic-management"></a>Labo 06 : Implémenter la gestion du trafic
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 06 : Implémenter la gestion du trafic
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Vous avez été chargé de tester la gestion du trafic réseau ciblant les machines virtuelles Azure dans la topologie de réseau hub and spoke, que Contoso compte implémenter dans son environnement Azure (au lieu de créer la topologie de maillage, que vous avez testée dans le labo précédent). Ce test doit inclure l’implémentation de la connectivité entre les spokes en s’appuyant sur des itinéraires définis par l’utilisateur qui forcent le trafic à circuler via le hub, ainsi que la distribution du trafic entre les machines virtuelles à l’aide des équilibreurs de charge de couche 4 et de couche 7. À cet effet, vous avez l’intention d’utiliser Azure Load Balancer (couche 4) et Azure Application Gateway (couche 7).
 
@@ -15,7 +15,7 @@ Vous avez été chargé de tester la gestion du trafic réseau ciblant les machi
 
 >**Remarque** : Ce labo, par défaut, nécessite un total de 8 processeurs virtuels disponibles dans la série Standard_Dsv3 dans la région que vous choisissez pour le déploiement, car il implique le déploiement de quatre machines virtuelles Azure de Standard_D2s_v3 référence SKU. Si vos étudiants utilisent des comptes d’évaluation, avec la limite de 4 processeurs virtuels, vous pouvez utiliser une taille de machine virtuelle qui ne nécessite qu’un seul processeur virtuel (par exemple, Standard_B1s).
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -26,18 +26,18 @@ Dans ce labo, vous allez :
 + Tâche 5 : Mettre en oeuvre Azure Load Balancer
 + Tâche 6 : Implémenter Azure Application Gateway
 
-## <a name="estimated-timing-60-minutes"></a>Durée estimée : 60 minutes
+## Durée estimée : 60 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tâche 1 : Approvisionner l’environnement de laboratoire
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même région Azure. Les deux premières résideront dans un réseau virtuel hub, tandis que chacune des deux restantes résidera dans un réseau virtuel spoke distinct.
 
@@ -50,8 +50,6 @@ Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
 1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** et **\\Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
-
-1. Modifiez le fichier **Paramètres** que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Comme meilleure pratique, les secrets, comme les mots de passe, doivent être stockés de manière plus sécurisée dans le Key Vault. 
 
 1. Dans le volet Cloud Shell, exécutez ce qui suit pour créer le premier groupe de ressources qui hébergera l’environnement du labo (remplacez l’espace réservé « [Azure_region] » par le nom d’une région Azure où vous envisagez de déployer des machines virtuelles Azure)(vous pouvez utiliser la cmdlet « (Get-AzLocation).Location » pour obtenir la liste des régions) :
 
@@ -71,6 +69,8 @@ Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même
 
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer les trois réseaux virtuels et quatre machines virtuelles Azure dans celles-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
+
+    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -113,7 +113,7 @@ Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-2-configure-the-hub-and-spoke-network-topology"></a>Tâche 2 : Configurer une topologie de réseau hub-and-spoke
+## Tâche 2 : Configurer une topologie de réseau hub-and-spoke
 
 Dans cette tâche, vous allez configurer le peering local entre les réseaux virtuels que vous avez déployés dans les tâches précédentes afin de créer une topologie de réseau hub and spoke.
 
@@ -187,7 +187,7 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
 
     >**Remarque** : **Autoriser le trafic transféré** doit être activé afin de faciliter le routage entre les réseaux virtuels spoke, que vous allez implémenter plus loin dans ce labo.
 
-#### <a name="task-3-test-transitivity-of-virtual-network-peering"></a>Tâche 3 : Tester la transitivité du peering de réseaux virtuels
+## Tâche 3 : Tester la transitivité du peering de réseaux virtuels
 
 Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux virtuels à l’aide de Network Watcher.
 
@@ -214,7 +214,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : **10.62.0.4** représente l’adresse IP privée **d’az104-06-vm2**
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussi**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le premier réseau virtuel spoke.
 
@@ -233,7 +233,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le deuxième réseau virtuel spoke.
 
@@ -250,11 +250,11 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Protocol | **TCP** |
     | Port de destination | **3389** |
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que le statut doit être **Accessible**.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que l’état est **Échec**.
 
     > **Remarque** : Cela est attendu, étant donné que les deux réseaux virtuels spoke ne sont pas appairés les uns avec les autres (le peering de réseaux virtuels n’est pas transitif).
 
-#### <a name="task-4-configure-routing-in-the-hub-and-spoke-topology"></a>Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
+## Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
 
 Dans cette tâche, vous allez configurer et tester le routage entre les deux réseaux virtuels spoke en activant le transfert IP sur l’interface réseau de la machine virtuelle **az104-06-vm0**, en activant le routage au sein de son système d’exploitation et en configurant des itinéraires définis par l’utilisateur sur le réseau virtuel spoke.
 
@@ -373,7 +373,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Type de tronçon suivant | **Appliance virtuelle** |
     | adresse de tronçon suivant | **10.60.0.4** |
 
-1. Cliquez sur **OK**.
+1. Cliquez sur **OK**
 
 1. Revenez dans le panneau de la table de routage **az104-06-rt32**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Associer**.
 
@@ -384,11 +384,11 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Réseau virtuel | **az104-06-vnet3** |
     | Subnet | **subnet0** |
 
-1. Cliquez sur **OK**.
+1. Cliquez sur **OK**
 
 1. Dans le portail Azure, revenez au panneau **Network Watcher - Résolution des problèmes de connexion**.
 
-1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, utilisez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -401,13 +401,13 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Protocol | **TCP** |
     | Port de destination | **3389** |
 
-1. Cliquez sur **Vérifier** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Accessible**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **inaccessible**, vous devez arrêter, puis démarrer az104-06-vm0.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **Échec**, vous devez arrêter, puis démarrer az104-06-vm0.
 
     > **Remarque** : Cela est attendu, car le trafic entre les réseaux virtuels spoke est désormais routé via la machine virtuelle située dans le réseau virtuel hub, qui fonctionne comme un routeur.
 
     > **Remarque** : Vous pouvez utiliser **Network Watcher** pour afficher la topologie du réseau.
 
-#### <a name="task-5-implement-azure-load-balancer"></a>Tâche 5 : Mettre en oeuvre Azure Load Balancer
+## Tâche 5 : Mettre en oeuvre Azure Load Balancer
 
 Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devant les deux machines virtuelles Azure dans le réseau virtuel hub.
 
@@ -418,22 +418,31 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | **az104-06-rg4** |
+    | Resource group | **az104-06-rg4** (si nécessaire, créez-le) |
     | Nom | **az104-06-lb4** |
     | Région | nom de la région Azure dans laquelle vous avez déployé toutes les autres ressources dans ce laboratoire |
     | Référence SKU  | **Standard** |
     | Type | **Public** |
     | Niveau | **Regional** |
     
-1. Sous l’onglet **Configuration IP front-end**, cliquez sur **Ajouter une configuration IP front-end** et utilisez le paramètre suivant avant de cliquer sur **OK**, puis **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**. 
+1. Sous l’onglet **Configuration IP frontale**, cliquez sur **Ajouter une configuration IP frontale** et utilisez les paramètres suivants :  
+     
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Name | **az104-06-fe4** |
+    | Type IP | Adresse IP |
+    | Adresse IP publique | Sélectionnez **Créer** |
+    | Équilibreur de charge de passerelle | None |
+    
+1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**. 
      
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-06-pip4** |
-    | Version de l’adresse IP | IPv4 |
-    | Type IP | Adresse IP |
-    | Adresse IP publique | **Création** |
-    | Zone de disponibilité | **Aucune zone** | 
+    | Référence SKU | standard |
+    | Niveau | Régionale |
+    | Affectation | statique |
+    | Préférence de routage | **Réseau Microsoft** |
 
 1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis sur **Suivant : Règles de trafic entrant**. 
 
@@ -465,7 +474,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Port | **80** |
     | Intervalle | **5** |
     | Seuil de défaillance sur le plan de l’intégrité | **2** |
-    | Fermer la fenêtre de création d’une sonde d’intégrité | **OK**. | 
+    | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
     | Persistance de session | **Aucun** |
     | Délai d’inactivité (minutes) | **4** |
     | Réinitialisation du protocole TCP | **Désactivé** |
@@ -484,7 +493,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
 
     > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
-#### <a name="task-6-implement-azure-application-gateway"></a>Tâche 6 : Implémenter Azure Application Gateway
+## Tâche 6 : Implémenter Azure Application Gateway
 
 Dans cette tâche, vous allez implémenter Azure Application Gateway devant les deux machines virtuelles Azure dans les réseaux virtuels spoke.
 
@@ -587,7 +596,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
     > **Remarque** : Le ciblage des machines virtuelles sur plusieurs réseaux virtuels n'est pas une configuration courante, mais elle vise à illustrer le fait qu’Application Gateway est capable de cibler des machines virtuelles sur plusieurs réseaux virtuels (ainsi que des points d'extrémité dans d'autres régions Azure ou même en dehors d'Azure), contrairement à Azure Load Balancer, qui équilibre la charge entre les machines virtuelles du même réseau virtuel.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -609,7 +618,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

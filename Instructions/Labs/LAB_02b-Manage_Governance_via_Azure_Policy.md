@@ -4,10 +4,10 @@ lab:
   module: Administer Governance and Compliance
 ---
 
-# <a name="lab-02b---manage-governance-via-azure-policy"></a>Labo 02b - Gérer la gouvernance via Azure Policy
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# Labo 02b - Gérer la gouvernance via Azure Policy
+# Manuel de labo pour l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été chargé d’implémenter les fonctionnalités suivantes :
 
@@ -19,7 +19,7 @@ Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été ch
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, nous allons :
 
@@ -27,17 +27,17 @@ Dans ce labo, nous allons :
 + Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
 + Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 
-## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab02b.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-assign-tags-via-the-azure-portal"></a>Tâche 1 : Attribuer des balises via le portail Azure
+## Tâche 1 : Attribuer des balises via le portail Azure
 
 Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de ressources Azure via le portail Azure.
 
@@ -63,7 +63,7 @@ Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de 
 
     **Remarque** : Notez le groupe de ressources dans lequel se trouve le compte de stockage, vous en aurez besoin plus tard dans le labo.
 
-1. Dans le panneau du groupe de ressources, cliquez sur **Modifier** en regard de l’option **Étiquettes** pour créer de nouvelles étiquettes.
+1. Dans le panneau du groupe de ressources, cliquez sur **Étiquettes** dans le menu de gauche, puis créez une étiquette.
 
 1. Créez une étiquette avec les paramètres suivants et appliquez votre modification :
 
@@ -72,9 +72,9 @@ Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de 
     | Nom | **Rôle** |
     | Valeur | **Infra** |
 
-1. Retournez dans le panneau de compte de stockage. Passez en revue les informations **Vue d’ensemble** et notez que la nouvelle balise n’a pas été automatiquement affectée au compte de stockage. 
+1. Cliquez sur **Appliquer**, puis fermez la fenêtre d’édition d’étiquette pour revenir au volet du compte de stockage. Cliquez sur les points de suspension dans le compte de stockage, puis sélectionnez **Modifier les étiquettes** pour noter que la nouvelle étiquette n’a pas été automatiquement attribuée au compte de stockage. 
 
-#### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
+## Tâche 2 : Mettre en oeuvre l’étiquetage via une stratégie Azure
 
 Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une étiquette et sa valeur sur les ressources* au groupe de ressources et évaluer le résultat. 
 
@@ -105,7 +105,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     >**Remarque** : Le **Nom de l’attribution** est automatiquement rempli avec le nom de stratégie que vous avez sélectionné, mais vous pouvez le modifier. Vous pouvez également ajouter une **Description** (facultatif). **Affecté par** est automatiquement renseigné en fonction du nom d’utilisateur qui crée l’affectation. 
 
-1. Cliquez sur **Suivant** et définissez **Paramètres** sur les valeurs suivantes :
+1. Cliquez deux fois sur **Suivant**, puis définissez **Paramètres** sur les valeurs suivantes :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -126,11 +126,13 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
 1. Dans le panneau du groupe de ressources, cliquez sur **+ Créer**, puis recherchez **Compte de stockage**, puis cliquez sur **+ Créer**. 
 
-1. Sous l’onglet **Informations de base** du panneau **Créer un compte de stockage**, vérifiez que vous utilisez le groupe de ressources auquel la stratégie a été appliquée et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut), cliquez sur **Vérifier + créer**, puis sur **Créer** :
+1. Sous l’onglet **Informations de base** du volet **Créer un compte de stockage**, vérifiez que vous utilisez le groupe de ressources auquel la stratégie a été appliquée, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut), et cliquez sur **Vérifier**, puis sur **Créer** :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom du compte de stockage | toute combinaison globale unique entre 3 et 24 lettres minuscules et chiffres, en commençant par une lettre |
+
+    >**Remarque** : Il est possible que vous receviez une erreur **Échec de validation. Cliquez ici pour plus d’informations**. Dans ce cas, cliquez sur le message d’erreur pour identifier la raison de l’échec et ignorer l’étape suivante. 
 
 1. Une fois le déploiement créé, vous devez voir le message **Échec du déploiement** dans la liste **Notifications** du portail. Dans la liste **Notifications**, accédez à la vue d'ensemble du déploiement et cliquez sur le message **Échec du déploiement. Cliquez ici pour obtenir des détails** pour identifier la raison de l'échec. 
 
@@ -138,7 +140,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     >**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise de rôle avec la valeur Infra**. Le déploiement a échoué, car le compte de stockage que vous avez tenté de créer n’a pas d’étiquette nommée **Role** avec sa valeur définie sur **Infra**.
 
-#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
+## Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 
 Dans cette tâche, nous allons utiliser une définition de stratégie différente pour corriger toutes les ressources non conformes. 
 
@@ -165,7 +167,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
     | Description | **Hériter de la balise Role et de sa valeur Infra du groupe de ressources Cloud Shell si elles manquent**|
     | Application de stratégies | activé |
 
-1. Cliquez sur **Suivant** et définissez **Paramètres** sur les valeurs suivantes :
+1. Cliquez deux fois sur **Suivant**, puis définissez **Paramètres** sur les valeurs suivantes :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -190,7 +192,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Dans le panneau du groupe de ressources, cliquez sur **+ Créer**, puis recherchez **Compte de stockage**, puis cliquez sur **+ Créer**. 
 
-1. Sous l’onglet **Informations de base** du panneau **Créer un compte de stockage**, vérifiez que vous utilisez le groupe de ressources auquel la stratégie a été appliquée et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut), et cliquez sur **Vérifier + créer** :
+1. Sous l’onglet **Informations de base** du volet **Créer un compte de stockage**, vérifiez que vous utilisez le groupe de ressources auquel la stratégie a été appliquée et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut), puis cliquez sur **Vérifier** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -200,7 +202,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Une fois le nouveau compte de stockage configuré, cliquez sur le bouton **Accéder à la ressource** et, dans le panneau **Vue d’ensemble** du compte de stockage nouvellement créé, notez que la balise **Rôle** avec la valeur **Infra** a été automatiquement affectée à la ressource.
 
-#### <a name="task-4-clean-up-resources"></a>Tâche 4 : Nettoyer les ressources
+## Tâche 4 : Nettoyer les ressources
 
    >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous permet d'éviter des frais inattendus, mais n'oubliez pas que les stratégies d'Azure n'entraînent pas de frais supplémentaires.
    
@@ -216,7 +218,7 @@ Dans cette tâche, nous allons utiliser une définition de stratégie différent
 
 1. Cliquez sur **Vue d’ensemble**, puis cliquez sur **Supprimer** en haut du panneau du compte de stockage. Lorsque vous y êtes invité, dans le panneau **Supprimer le compte de stockage**, tapez le nom du compte de stockage pour confirmer et cliquer sur **Supprimer**. 
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

@@ -4,16 +4,16 @@ lab:
   module: Administer Monitoring
 ---
 
-# <a name="lab-11---implement-monitoring"></a>Labo 11 : Implémenter la supervision
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 11 : Implémenter la supervision
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Vous devez évaluer les fonctionnalités Azure qui fournissent des insights sur les performances et la configuration des ressources Azure, et plus particulièrement les machines virtuelles Azure. Pour ce faire, vous voulez examiner les fonctionnalités d’Azure Monitor, y compris Log Analytics.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -25,17 +25,17 @@ Dans ce labo, vous allez :
 + Tâche 6 : Passer en revue les fonctionnalités d’Azure Monitor
 + Tâche 7 : Passer en revue les fonctionnalités d’Azure Log Analytics
 
-## <a name="estimated-timing-45-minutes"></a>Durée estimée : 45 minutes
+## Durée estimée : 45 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab11.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tâche 1 : Approvisionner l’environnement de laboratoire
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée pour tester les scénarios de supervision.
 
@@ -48,8 +48,6 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
 1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et hargez les fichiers **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** et **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** dans le répertoire d'origine de Cloud Shell.
-
-1. Modifiez le fichier de paramètres que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Comme meilleure pratique, les secrets, comme les mots de passe, doivent être stockés de manière plus sécurisée dans le Key Vault. 
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé `[Azure_region]` par le nom d’une région Azure dans laquelle vous envisagez de déployer des machines virtuelles Azure) :
 
@@ -65,6 +63,8 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le premier réseau virtuel et déployer une machine virtuelle dans celui-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
 
+    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -75,7 +75,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
     >**Remarque** : N’attendez pas que le déploiement se termine, mais passez à la tâche suivante. Le déploiement doit prendre environ 3 minutes.
 
-#### <a name="task-2-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tâche 2 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
+## Tâche 2 : Inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
 
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour inscrire les fournisseurs de ressources Microsoft.Insights et Microsoft.AlertsManagement.
 
@@ -87,7 +87,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. Réduisez le volet Cloud Shell (mais sans le fermer).
 
-#### <a name="task-3-create-and-configure-an-azure-log-analytics-workspace-and-azure-automation-based-solutions"></a>Tâche 3 : Créer et configurer un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
+## Tâche 3 : Créer et configurer un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
 
 Dans cette tâche, vous allez créer et configurer un espace de travail Azure Log Analytics et des solutions basées sur Azure Automation
 
@@ -98,7 +98,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
     | Paramètres | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-11-rg1** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-11-rg1** |
     | Espace de travail Log Analytics | tout nom unique |
     | Région | le nom de la région Azure dans laquelle vous avez déployé la machine virtuelle dans la tâche précédente |
 
@@ -114,7 +114,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
     | --- | --- |
     | Nom du compte Automation | tout nom unique |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-11-rg1** |
+    | Resource group | **az104-11-rg1** |
     | Région | le nom de la région Azure déterminée en fonction de la [documentation sur les mappages d’espace de travail](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings) |
 
     >**Remarque** : Vérifiez que vous spécifiez la région Azure en fonction de la [documentation sur les mappages d’espace de travail](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
@@ -135,7 +135,7 @@ Dans cette tâche, vous allez créer et configurer un espace de travail Azure Lo
 
     >**Remarque** : Attendez que l’installation se termine. Ceci peut prendre environ 5 minutes.
 
-#### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>Tâche 4 : Passer en revue les paramètres de supervision par défaut des machines virtuelles Azure
+## Tâche 4 : Passer en revue les paramètres de supervision par défaut des machines virtuelles Azure
 
 Dans cette tâche, vous allez passer en revue les paramètres de supervision par défaut des machines virtuelles Azure
 
@@ -153,15 +153,15 @@ Dans cette tâche, vous allez passer en revue les paramètres de supervision par
 
 1. Dans la liste déroulante **Métriques**, sélectionnez **Pourcentage d’UC**, dans la liste déroulante **Agrégation**, sélectionnez **Moy** et examinez le graphique obtenu.
 
-#### <a name="task-5-configure-azure-virtual-machine-diagnostic-settings"></a>Tâche 5 : Configurer les paramètres de diagnostic des machines virtuelles Azure
+## Tâche 5 : Configurer les paramètres de diagnostic des machines virtuelles Azure
 
 Dans cette tâche, vous allez configurer les paramètres de diagnostic des machines virtuelles Azure.
 
 1. Dans le volet **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Paramètres de diagnostic**.
 
-1. Sous l’onglet **Vue d’ensemble** du volet **az104-11-vm0 \| Paramètres de diagnostic**, cliquez sur **Activer la supervision d’invités**.
+1. Sous l’onglet **Vue d’ensemble** du volet **az104-11-vm0 \| Paramètres de diagnostic**, sélectionnez un **Compte de stockage de diagnostic**, puis cliquez sur **Activer le monitoring au niveau des invités**.
 
-    >**Remarque** : Attendez que l’opération s’applique. Ceci peut prendre environ 3 minutes.
+    >**Remarque**  : Attendez que l’extension des paramètres de diagnostic soit installée. Ceci peut prendre environ 3 minutes.
 
 1. Basculez vers l’onglet **Compteurs de performances** du volet **az104-11-vm0 \| Paramètres de diagnostic** et passez en revue les compteurs disponibles.
 
@@ -171,11 +171,11 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : Par défaut, la collecte des journaux inclut les entrées critiques, d’erreur et d’avertissement du journal des applications et du journal système, ainsi que les entrées d’échec d’audit du journal de sécurité. Vous pouvez également basculer vers l’affichage **Personnalisé** pour obtenir des paramètres de configuration plus détaillés.
 
-1. Dans le volet **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Agent Log Analytics**, puis sur **Activer**.
+1. Dans le panneau **az104-11-vm0**, dans la section **Supervision**, cliquez sur **Journaux**, puis sur **Activer**.
 
-1. Dans le volet **az104-11-vm0 - Journaux**, vérifiez que l’espace de travail Log Analytics que vous avez créé précédemment dans ce labo est sélectionné dans la liste déroulante **Choisir un espace de travail Log Analytics**, puis cliquez sur **Activer**.
+1. Dans le volet **az104-11-vm0 - Journaux**, vérifiez que l’option **Agent Azure Monitor (Recommandé)** est sélectionnée, puis cliquez sur **Configurer**.  
 
-    >**Remarque** : N’attendez pas que l’opération se termine, mais passez à la tâche suivante. L’opération peut prendre environ 5 minutes.
+    >**Remarque** : N’attendez pas que l’opération soit terminée. Passez à l’étape suivante. L’opération peut prendre environ 5 minutes.
 
 1. Dans le volet **az104-11-vm0 \| Journaux**, dans la section **Supervision**, cliquez sur **Métriques**.
 
@@ -191,7 +191,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 1. Dans la liste déroulante **Métriques**, sélectionnez **Mémoire\\Octets disponibles**, dans la liste déroulante **Agrégation**, sélectionnez **Max** et examinez le graphique obtenu.
 
-#### <a name="task-6-review-azure-monitor-functionality"></a>Tâche 6 : Passer en revue les fonctionnalités d’Azure Monitor
+## Tâche 6 : Passer en revue les fonctionnalités d’Azure Monitor
 
 1. Dans le Portail Azure, recherchez et sélectionnez **Superviser** puis, dans le volet **Superviser \| Vue d’ensemble**, cliquez sur **Métriques**.
 
@@ -225,7 +225,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
     | Paramètres | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-11-rg1** |
+    | Resource group | **az104-11-rg1** |
     | Nom du groupe d’actions | **az104-11-ag1** |
     | Nom d’affichage | **az104-11-ag1** |
 
@@ -280,7 +280,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
 1. Dans le volet **Toutes les alertes**, passez en revue les alertes générées.
 
-#### <a name="task-7-review-azure-log-analytics-functionality"></a>Tâche 7 : Passer en revue les fonctionnalités d’Azure Log Analytics
+## Tâche 7 : Passer en revue les fonctionnalités d’Azure Log Analytics
 
 1. Dans le Portail Azure, revenez au volet **Superviser**, puis cliquez sur **Journaux**.
 
@@ -315,7 +315,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : Vous devrez peut-être attendre quelques minutes avant que les données de mise à jour ne soient disponibles.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -337,7 +337,7 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

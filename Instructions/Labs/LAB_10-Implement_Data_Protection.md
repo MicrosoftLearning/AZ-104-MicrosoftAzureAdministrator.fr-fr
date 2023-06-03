@@ -4,16 +4,16 @@ lab:
   module: Administer Data Protection
 ---
 
-# <a name="lab-10---backup-virtual-machines"></a>Labo 10 : Sauvegarder des machines virtuelles
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 10 : Sauvegarder des machines virtuelles
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Il vous a été confié la tâche d’évaluer l’utilisation d’Azure Recovery Services pour la sauvegarde et la restauration de fichiers hébergés sur des machines virtuelles Azure et sur des ordinateurs locaux. Vous devez par ailleurs identifier des moyens de protéger les données stockées dans le coffre Recovery Services contre les risques de perte de données de nature accidentelle ou malveillante.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -25,17 +25,17 @@ Dans ce labo, vous allez :
 + Tâche 6 : Effectuer une récupération de fichiers à l’aide de captures instantanées de machines virtuelles Azure (facultatif)
 + Tâche 7 : Passer en revue la fonctionnalité de suppression réversible Azure Recovery Services (facultatif)
 
-## <a name="estimated-timing-50-minutes"></a>Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab10.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tâche 1 : Approvisionner l’environnement de laboratoire
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer deux machines virtuelles qui seront utilisées pour tester différents scénarios de sauvegarde.
 
@@ -48,8 +48,6 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
     >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
 
 1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et chargez les fichiers **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** et **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** dans le répertoire d'origine de Cloud Shell.
-
-1. Modifiez le fichier de paramètres que vous venez de charger et modifiez le mot de passe. Si vous avez besoin d’aide pour modifier le fichier dans Shell, demandez à votre instructeur de l’aide. Il est recommandé que les secrets, comme les mots de passe, soient stockés de manière plus sécurisée dans Key Vault. 
 
 1. Dans le panneau Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé `[Azure_region]` par le nom d’une région Azure dans laquelle vous envisagez de déployer des machines virtuelles Azure). Tapez chaque ligne de commande séparément et exécutez-les une à une :
 
@@ -65,8 +63,9 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
    New-AzResourceGroup -Name $rgName -Location $location
    ```
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour créer le premier réseau virtuel et déployer une machine virtuelle dans celui-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
-
+1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer le premier réseau virtuel et déployer une machine virtuelle dans celui-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
+    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -79,7 +78,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles qui seront util
 
     >**Remarque** : N’attendez pas que le déploiement se termine, mais passez à la tâche suivante. Le déploiement doit prendre environ 5 minutes.
 
-#### <a name="task-2-create-a-recovery-services-vault"></a>Tâche 2 : Créer un coffre Recovery Services
+## Tâche 2 : Créer un coffre Recovery Services
 
 Dans cette tâche, vous allez créer un coffre Recovery Services.
 
@@ -90,7 +89,7 @@ Dans cette tâche, vous allez créer un coffre Recovery Services.
     | Paramètres | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | nom d’un nouveau groupe de ressources **az104-10-rg1** |
+    | Resource group | nom d’un nouveau groupe de ressources **az104-10-rg1** |
     | Nom du coffre | **az104-10-rsv1** |
     | Région | nom d’une région où vous avez déployé les deux machines virtuelles dans la tâche précédente |
 
@@ -116,7 +115,7 @@ Dans cette tâche, vous allez créer un coffre Recovery Services.
 
 1. Fermez le volet **Paramètres de sécurité** et, dans le panneau du coffre Recovery Services **az104-10-rsv1**, cliquez sur **Vue d’ensemble**.
 
-#### <a name="task-3-implement-azure-virtual-machine-level-backup"></a>Tâche 3 : Implémenter une sauvegarde au niveau d’une machine virtuelle Azure
+## Tâche 3 : Implémenter une sauvegarde au niveau d’une machine virtuelle Azure
 
 Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machine virtuelle Azure.
 
@@ -159,7 +158,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
     >**Remarque** : N’attendez pas que la sauvegarde se termine. Passez à la tâche suivante.
 
-#### <a name="task-4-implement-file-and-folder-backup"></a>Tâche 4 : Implémenter une sauvegarde de fichiers et de dossiers
+## Tâche 4 : Implémenter une sauvegarde de fichiers et de dossiers
 
 Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de dossiers à l’aide d’Azure Recovery Services.
 
@@ -258,7 +257,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Dans le panneau **Éléments de sauvegarde (agent de sauvegarde Azure)** , vérifiez qu’il existe une entrée faisant référence au lecteur **C:\\** de **az104-10-vm1**.
 
-#### <a name="task-5-perform-file-recovery-by-using-azure-recovery-services-agent-optional"></a>Tâche 5 : Récupérer des fichiers à l’aide de l’agent Azure Recovery Services (facultatif)
+## Tâche 5 : Récupérer des fichiers à l’aide de l’agent Azure Recovery Services (facultatif)
 
 Dans cette tâche, vous allez restaurer des fichiers à l’aide de l’agent Azure Recovery Services.
 
@@ -288,7 +287,7 @@ Dans cette tâche, vous allez restaurer des fichiers à l’aide de l’agent Az
 
 1. Terminez la session Bureau à distance.
 
-#### <a name="task-6-perform-file-recovery-by-using-azure-virtual-machine-snapshots-optional"></a>Tâche 6 : Effectuer une récupération de fichiers à l’aide de captures instantanées de machines virtuelles Azure (facultatif)
+## Tâche 6 : Effectuer une récupération de fichiers à l’aide de captures instantanées de machines virtuelles Azure (facultatif)
 
 Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde basée sur des captures instantanées au niveau de la machine virtuelle Azure.
 
@@ -360,7 +359,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 1. Terminez la session Bureau à distance.
 
-#### <a name="task-7-review-the-azure-recovery-services-soft-delete-functionality"></a>Tâche 7 : Passer en revue la fonctionnalité de suppression réversible Azure Recovery Services
+## Tâche 7 : Passer en revue la fonctionnalité de suppression réversible Azure Recovery Services
 
 1. Sur l’ordinateur de labo, dans le portail Azure, recherchez et sélectionnez **Coffres Recovery Services**, puis, dans le panneau **Coffres Recovery Services**, cliquez sur **az104-10-rsv1**.
 
@@ -442,7 +441,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 1. Répétez les étapes au début de cette tâche pour supprimer les éléments de sauvegarde pour **az104-10-vm1**.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -466,7 +465,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

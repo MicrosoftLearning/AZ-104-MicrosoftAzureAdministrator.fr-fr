@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Labo 03a : Gérer les ressources Azure en utilisant le portail Azure
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 03a : Gérer les ressources Azure en utilisant le portail Azure
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Vous devez explorer les fonctionnalités d’administration Azure de base servant à approvisionner des ressources et à les organiser en groupes de ressources, notamment en déplaçant des ressources entre des groupes de ressources. Vous devez également explorer les options permettant de protéger les ressources de disque contre les risques de suppression accidentelle, tout en permettant de modifier leurs caractéristiques de performances et leur taille.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, nous allons :
 
@@ -21,17 +21,17 @@ Dans ce labo, nous allons :
 + Tâche 2 : Déplacer des ressources entre des groupes de ressources
 + Tâche 3 : Implémenter et tester des verrous de ressources
 
-## <a name="estimated-timing-20-minutes"></a>Durée estimée : 20 minutes
+## Durée estimée : 20 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab03a.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-create-resource-groups-and-deploy-resources-to-resource-groups"></a>Tâche 1 : Créer des groupes de ressources et y déployer des ressources
+## Tâche 1 : Créer des groupes de ressources et y déployer des ressources
 
 Dans cette tâche, vous allez utiliser le portail Azure pour créer des groupes de ressources et créer un disque dans ce groupe de ressources.
 
@@ -56,7 +56,7 @@ Dans cette tâche, vous allez utiliser le portail Azure pour créer des groupes 
 
     >**Remarque** : Attendez que le disque soit créé. L’opération doit prendre moins d’une minute.
 
-#### <a name="task-2-move-resources-between-resource-groups"></a>Tâche 2 : Déplacer des ressources entre des groupes de ressources 
+## Tâche 2 : Déplacer des ressources entre des groupes de ressources 
 
 Dans cette tâche, nous allons déplacer la ressource de disque que vous avez créée dans la tâche précédente vers un nouveau groupe de ressources. 
 
@@ -72,7 +72,7 @@ Dans cette tâche, nous allons déplacer la ressource de disque que vous avez cr
 
     >**Remarque** : N’attendez pas que le déploiement se termine. Passez à l’exercice suivant. Le déplacement peut prendre environ 10 minutes. Pour savoir si l’opération est terminée, surveillez les entrées du journal d’activité du groupe de ressources source ou cible. Revenez à cette étape une fois que vous aurez terminé la tâche suivante.
 
-#### <a name="task-3-implement-resource-locks"></a>Tâche 3 : Implémenter des verrous de ressources
+## Tâche 3 : Implémenter des verrous de ressources
 
 Dans cette tâche, vous allez appliquer un verrou de ressource sur un groupe de ressources Azure contenant une ressource de disque.
 
@@ -102,7 +102,7 @@ Dans cette tâche, vous allez appliquer un verrou de ressource sur un groupe de 
     |Nom du verrou| **az104-03a-delete-lock** |
     |Type de verrou| **Supprimer** |
     
-1. Cliquez sur **OK**.    
+1. Cliquez sur **OK**    
 
 1. Dans le volet du groupe de ressources **az104-03a-rg3**, cliquez sur **Vue d’ensemble**. Dans la liste des ressources du groupe de ressources, sélectionnez l’entrée représentant le disque que vous avez créé précédemment dans cette tâche, puis cliquez sur **Supprimer** dans la barre d’outils. 
 
@@ -118,13 +118,13 @@ Dans cette tâche, vous allez appliquer un verrou de ressource sur un groupe de 
 
     >**Remarque** : Ce comportement est attendu, étant donné que le verrou au niveau du groupe de ressources s’applique uniquement aux opérations de suppression. 
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
    >**Remarque** : Ne supprimez pas les ressources que vous avez déployées dans ce labo. Vous les utiliserez dans le labo suivant de ce module. Supprimez uniquement le verrou de ressource que vous avez créé dans ce labo.
 
 1. Accédez au volet du groupe de ressources **az104-03a-rg3**, affichez son volet **Verrous** et supprimez le verrou **az104-03a-delete-lock** en cliquant sur le lien **Supprimer** à droite de l’entrée du verrou **Supprimer**.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

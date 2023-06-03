@@ -4,33 +4,33 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09b---implement-azure-container-instances"></a>Labo 09b : Implémenter Azure Container Instances
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 09b : Implémenter Azure Container Instances
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Contoso souhaite trouver une nouvelle plateforme pour ses charges de travail virtualisées. Vous avez identifié différentes images conteneur qui peuvent être exploitées pour atteindre cet objectif. Étant donné que vous souhaitez réduire la charge de gestion des conteneurs, vous prévoyez d’évaluer l’utilisation d’Azure Container Instances pour le déploiement d’images Docker.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
 - Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
 - Tâche 2 : Passer en revue les fonctionnalités d’Azure Container Instances
 
-## <a name="estimated-timing-20-minutes"></a>Durée estimée : 20 minutes
+## Durée estimée : 20 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab09b.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-deploy-a-docker-image-by-using-the-azure-container-instance"></a>Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
+## Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
 
 Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l’application web.
 
@@ -63,7 +63,7 @@ Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l�
 
     >**Remarque** : Pendant que vous attendez, regardez l’[exemple de code derrière l’application simple](https://github.com/Azure-Samples/aci-helloworld). Pour l’afficher, parcourez le dossier de l’application \\.
 
-#### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>Tâche 2 : Passer en revue les fonctionnalités d’Azure Container Instances
+## Tâche 2 : Passer en revue les fonctionnalités d’Azure Container Instances
 
 Dans cette tâche, vous allez examiner le déploiement de l’instance de conteneur.
 
@@ -79,13 +79,15 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
 1. Vérifiez que les entrées de journal représentant la requête HTTP GET générée en affichant l’application dans le navigateur apparaissent.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
 >**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
 
 1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+
+    >**Remarque** : le stockage Cloud Shell doit être créé pour que ces commandes fonctionnent. 
 
 1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
 
@@ -101,7 +103,7 @@ Dans cette tâche, vous allez examiner le déploiement de l’instance de conten
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans ce labo, vous avez :
 

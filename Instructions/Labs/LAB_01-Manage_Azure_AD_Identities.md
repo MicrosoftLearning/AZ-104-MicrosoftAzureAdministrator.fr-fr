@@ -4,17 +4,17 @@ lab:
   module: Administer Identity
 ---
 
-# <a name="lab-01---manage-azure-active-directory-identities"></a>Labo 01 - Gérer les identités Azure Active Directory
+# Labo 01 - Gérer les identités Azure Active Directory
 
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Pour permettre aux utilisateurs de Contoso de s’authentifier à l’aide d’Azure AD, vous avez été chargé d’approvisionner des utilisateurs et des comptes de groupe. L’appartenance aux groupes doit être mise à jour automatiquement en fonction du poste de l’utilisateur. Vous devez également créer un locataire Azure AD test avec un compte d’utilisateur test et accorder à ce compte des autorisations limitées aux ressources de l’abonnement Contoso Azure.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -23,16 +23,16 @@ Dans ce labo, vous allez :
 + Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
 + Tâche 4 : Gérer des utilisateurs invités Azure AD (facultatif - problème d'environnement lab)
 
-## <a name="estimated-timing-30-minutes"></a>Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 ![image](../media/lab01.png)
 
-## <a name="instructions"></a>Instructions
+## Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+### Exercice 1
 
-#### <a name="task-1-create-and-configure-azure-ad-users"></a>Tâche 1 : Créer et configurer des utilisateurs Azure AD
+#### Tâche 1 : Créer et configurer des utilisateurs Azure AD
 
 Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
@@ -46,7 +46,7 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
 1. Dans le panneau Azure Active Directory, dans la section **Gérer**, cliquez sur **Utilisateurs**, puis sur votre compte d’utilisateur pour afficher ses paramètres **Profil**. 
 
-1. Cliquez sur **Modifier**, dans la section **Paramètres**, définissez **l’emplacement d’utilisation** sur **États-Unis**, puis cliquez sur **Enregistrer** pour appliquer la modification.
+1. Cliquez sur **Modifier les propriétés** et, sous l’onglet **Paramètres**, définissez **Lieu d’utilisation** sur **États-Unis**, puis cliquez sur **Enregistrer** pour appliquer le changement.
 
     >**Remarque** : Cela est nécessaire pour attribuer une licence Azure AD Premium P2 à votre compte d’utilisateur plus loin dans ce laboratoire.
 
@@ -100,7 +100,7 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
 1. Déconnectez-vous du compteur utilisateur az104-01a-aaduser1 à partir du Portail Azure et fermez la fenêtre de navigateur InPrivate.
 
-#### <a name="task-2-create-azure-ad-groups-with-assigned-and-dynamic-membership"></a>Tâche 2 : Créer des groupes Azure AD avec une appartenance dynamique et attribuée
+#### Tâche 2 : Créer des groupes Azure AD avec une appartenance dynamique et attribuée
 
 Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l’appartenance affectée et dynamique.
 
@@ -183,13 +183,18 @@ Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l�
 
 1. Retournez dans le panneau **Groupes - Tous les groupes**, cliquez sur l’entrée représentant le groupe **Administrateurs du cloud système**, puis affichez son panneau **Membres**. Vérifiez que **az104-01a-aaduser2** apparaît dans la liste des membres du groupe.
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
+#### Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
 
 Dans cette tâche, vous allez créer un locataire Azure AD.
-
-   >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous rencontrez ce problème, ignorez cette tâche et la suivante. Nous travaillons actuellement à résoudre le problème.
-
+    
 1. Dans le Portail Azure, recherchez et sélectionnez **Azure Active Directory**.
+
+    >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous recevez l’erreur **Échec de la création. Trop de demandes. Veuillez essayer ultérieurement.** , effectuez les actions suivantes :<br>
+    - Essayez la création plusieurs fois.<br>
+    - Consultez la section **Gérer le locataire** pour garantir que le locataire n’a pas été créé en arrière-plan. <br>
+    - Ouvrez une nouvelle fenêtre **InPrivate**, puis, à l’aide du portail Azure, essayez de créer le locataire à partir de là.<br>
+     Soulevez le problème avec le formateur, puis utilisez la **[simulation de labo interactif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** pour afficher les étapes. <br>
+    - Vous pouvez essayer cette tâche ultérieurement, mais la création d’un locataire n’est pas nécessaire dans d’autres labos. 
 
 1. Cliquez sur **Gérer les locataires**, puis sur l’écran suivant, cliquez sur **+ Créer**, puis spécifiez le paramètre suivant :
 
@@ -211,7 +216,7 @@ Dans cette tâche, vous allez créer un locataire Azure AD.
 
 1. Affichez le panneau du locataire Azure AD nouvellement créé à l'aide du lien **Cliquez ici pour accéder à votre nouveau locataire : Labo Contoso** ou du bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d'outils du portail Azure.
 
-#### <a name="task-4-manage-azure-ad-guest-users"></a>Tâche 4 : Gérer des utilisateurs invités Azure AD.
+#### Tâche 4 : Gérer des utilisateurs invités Azure AD.
 
 Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur accorder l’accès aux ressources dans un abonnement Azure.
 
@@ -255,7 +260,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 1. Cliquez sur **+ Ajouter l’appartenance** et ajoutez le compte d’utilisateur invité au groupe **Administrateurs de laboratoire informatique**.
 
 
-#### <a name="task-5-clean-up-resources"></a>Tâche 5 : Nettoyer les ressources
+#### Tâche 5 : Nettoyer les ressources
 
 > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées garantit que vous n’encourrez pas de coûts imprévus. Bien que, dans ce cas, il n’y ait pas de frais supplémentaires associés aux locataires Azure Active Directory et à leurs objets, vous pouvez envisager de supprimer les comptes d’utilisateur, les comptes de groupe et le locataire Azure Active Directory que vous avez créé dans ce laboratoire.
 
@@ -279,7 +284,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
 > **Remarque** : Si un locataire dispose d’une licence d’évaluation, vous devez attendre l’expiration de la licence d’évaluation avant de pouvoir supprimer le locataire. Cela n’entraînerait aucun coût supplémentaire.
 
-#### <a name="review"></a>Révision
+#### Révision
 
 Dans cet exercice, vous avez :
 

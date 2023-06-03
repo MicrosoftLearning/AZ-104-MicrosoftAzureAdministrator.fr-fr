@@ -4,16 +4,16 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09c---implement-azure-kubernetes-service"></a>Labo 09c : Implémenter Azure Kubernetes Service
-# <a name="student-lab-manual"></a>Manuel de labo de l’étudiant
+# Labo 09c : Implémenter Azure Kubernetes Service
+# Manuel de labo de l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Contoso dispose d’un certain nombre d’applications multiniveau qu’il n’est pas possible d’exécuter à l’aide d’Azure Container Instances. Pour déterminer si elles peuvent être exécutées sous la forme de charges de travail conteneurisées,vous devez envisager d’utiliser Kubernetes comme orchestrateur de conteneurs. Pour réduire encore la charge de gestion, vous allez tester Azure Kubernetes Service, notamment son expérience de déploiement simplifiée et ses fonctionnalités de montée en charge.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -22,17 +22,17 @@ Dans ce labo, vous allez :
 + Tâche 3 : Déployer des pods dans le cluster Azure Kubernetes Service
 + Tâche 4 : Mettre à l’échelle des charges de travail conteneurisées dans le cluster de service Azure Kubernetes
 
-## <a name="estimated-timing-40-minutes"></a>Durée estimée : 40 minutes
+## Durée estimée : 40 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab09c.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-register-the-microsoftkubernetes-and-microsoftkubernetesconfiguration-resource-providers"></a>Tâche 1 : Inscrire les fournisseurs de ressources Microsoft.Kubernetes et Microsoft.KubernetesConfiguration
+## Tâche 1 : Inscrire les fournisseurs de ressources Microsoft.Kubernetes et Microsoft.KubernetesConfiguration
 
 Dans cette tâche, vous allez inscrire les fournisseurs de ressources nécessaires pour déployer un cluster Azure Kubernetes Services.
 
@@ -54,7 +54,7 @@ Dans cette tâche, vous allez inscrire les fournisseurs de ressources nécessair
 
 1. Fermez le volet Cloud Shell.
 
-#### <a name="task-2-deploy-an-azure-kubernetes-service-cluster"></a>Tâche 2 : Déployer un cluster Azure Kubernetes Service
+## Tâche 2 : Déployer un cluster Azure Kubernetes Service
 
 Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à l’aide du portail Azure.
 
@@ -94,15 +94,22 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Configuration réseau | **Kubenet** |
-    | Préfixe du nom DNS | n’importe quel préfixe DNS global unique valide|
+    | Préfixe du nom DNS | **n’importe quel préfixe DNS global unique valide** |
 
-1. Cliquez sur **Suivant : Intégrations >**, sous l’onglet **Intégrations** du panneau **Créer un cluster Kubernetes**, définissez **Supervision de conteneurs** sur **Désactivée**, cliquez sur **Vérifier + créer**, vérifiez que la validation a été effectuée et cliquez sur **Créer**.
+1. Cliquez sur **Suivant : Intégrations >** , puis, sous l’onglet **Intégrations** du volet **Créer un cluster Kubernetes**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+
+    | Paramètre | Valeur |
+    | ---- | ---- |
+    | Supervision de conteneur | **Désactiver** |
+    | Activer les règles d’alerte recommandées | **Décochez la case** |
+    
+1.  Cliquez sur **Vérifier + Créer**, vérifiez que la validation a réussi, puis cliquez sur **Créer**.
 
     >**Remarque** : Dans les scénarios de production, il est préférable d’activer la supervision. En l’occurrence, la supervision est désactivée parce qu’elle n’est pas couverte dans le labo.
 
     >**Remarque** : Attendez la fin du déploiement. Cela devrait prendre environ 10 minutes.
 
-#### <a name="task-3-deploy-pods-into-the-azure-kubernetes-service-cluster"></a>Tâche 3 : Déployer des pods dans le cluster Azure Kubernetes Service
+## Tâche 3 : Déployer des pods dans le cluster Azure Kubernetes Service
 
 Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes Service.
 
@@ -170,7 +177,7 @@ Dans cette tâche, vous allez déployer un pod dans le cluster Azure Kubernetes 
 
 1. Ouvrez une fenêtre de navigateur et accédez à l’adresse IP que vous avez obtenue à l’étape précédente. Vérifiez que la page du navigateur affiche le message **Bienvenue dans nginx !** « Hello World ! ».
 
-#### <a name="task-4-scale-containerized-workloads-in-the-azure-kubernetes-service-cluster"></a>Tâche 4 : Mettre à l’échelle des charges de travail conteneurisées dans le cluster de service Azure Kubernetes
+## Tâche 4 : Mettre à l’échelle des charges de travail conteneurisées dans le cluster de service Azure Kubernetes
 
 Dans cette tâche, vous allez effectuer une montée en charge horizontale du nombre de pods, puis du nombre de nœuds de cluster.
 
@@ -238,7 +245,7 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 
 1. Fermez le volet **Cloud Shell**.
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -260,7 +267,7 @@ Dans cette tâche, vous allez effectuer une montée en charge horizontale du nom
 
     >**Remarque** : La commande s’exécute de façon asynchrone (comme déterminé par le paramètre --no-wait). Par conséquent, vous serez en mesure d’exécuter une autre commande Azure CLI immédiatement après au cours de la même session Bash, mais la suppression réelle du groupe de ressources prendra quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 
