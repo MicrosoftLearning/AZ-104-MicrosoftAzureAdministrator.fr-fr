@@ -1,12 +1,12 @@
 ---
 lab:
-  title: 01 - Gérer les identités Azure Active Directory
+  title: "Labo\_01\_: Gérer les identités Azure Active Directory"
   module: Administer Identity
 ---
 
 # Labo 01 - Gérer les identités Azure Active Directory
 
-# Manuel de labo de l’étudiant
+# Manuel de labo pour l’étudiant
 
 ## Scénario du labo
 
@@ -28,11 +28,11 @@ Dans ce labo, vous allez :
 ## Diagramme de l'architecture
 ![image](../media/lab01.png)
 
-## Instructions
+### Instructions
 
-### Exercice 1
+## Exercice 1
 
-#### Tâche 1 : Créer et configurer des utilisateurs Azure AD
+## Tâche 1 : Créer et configurer des utilisateurs Azure AD
 
 Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
@@ -56,13 +56,13 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom d’utilisateur | **az104-01a-aaduser1** |
-    | Nom | **az104-01a-aaduser1** |
-    | Création du mot de passe | enabled |
+    | Nom d’utilisateur principal | **az104-01a-aaduser1** |
+    | Nom complet | **az104-01a-aaduser1** |
+    | Générer automatiquement le mot de passe | désélectionné |
     | Mot de passe initial | **Choisissez un mot de passe sécurisé** |
-    | Emplacement d’utilisation | **États-Unis** |
-    | Fonction | **Administrateur cloud** |
-    | department | **INFORMATIQUE** |
+    | Intitulé du poste (onglet Propriétés) | **Administrateur cloud** |
+    | Département (onglet Propriétés) | **INFORMATIQUE** |
+    | Emplacement d’utilisation (onglet Propriétés) | **États-Unis** |
 
     >**Remarque** : **Copiez dans le Presse-papiers** le **nom d’utilisateur principal** complet (nom d’utilisateur plus domaine). Vous en aurez besoin plus tard dans cette tâche.
 
@@ -90,17 +90,17 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs Azure AD.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom d’utilisateur | **az104-01a-aaduser2** |
-    | Nom | **az104-01a-aaduser2** |
-    | Création du mot de passe | enabled |
+    | Nom d’utilisateur principal | **az104-01a-aaduser2** |
+    | Nom complet | **az104-01a-aaduser2** |
+    | Générer automatiquement le mot de passe | désélectionné  |
     | Mot de passe initial | **Choisissez un mot de passe sécurisé** |
-    | Emplacement d’utilisation | **États-Unis** |
     | Fonction | **Administrateur système** |
     | department | **INFORMATIQUE** |
-
+    | Emplacement d’utilisation | **États-Unis** |
+    
 1. Déconnectez-vous du compteur utilisateur az104-01a-aaduser1 à partir du Portail Azure et fermez la fenêtre de navigateur InPrivate.
 
-#### Tâche 2 : Créer des groupes Azure AD avec une appartenance dynamique et attribuée
+## Tâche 2 : Créer des groupes Azure AD avec une appartenance dynamique et attribuée
 
 Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l’appartenance affectée et dynamique.
 
@@ -183,7 +183,7 @@ Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l�
 
 1. Retournez dans le panneau **Groupes - Tous les groupes**, cliquez sur l’entrée représentant le groupe **Administrateurs du cloud système**, puis affichez son panneau **Membres**. Vérifiez que **az104-01a-aaduser2** apparaît dans la liste des membres du groupe.
 
-#### Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
+## Tâche 3 : Créer un locataire Azure Active Directory (AD) (facultatif - problème d’environnement lab)
 
 Dans cette tâche, vous allez créer un locataire Azure AD.
     
@@ -216,7 +216,7 @@ Dans cette tâche, vous allez créer un locataire Azure AD.
 
 1. Affichez le panneau du locataire Azure AD nouvellement créé à l'aide du lien **Cliquez ici pour accéder à votre nouveau locataire : Labo Contoso** ou du bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d'outils du portail Azure.
 
-#### Tâche 4 : Gérer des utilisateurs invités Azure AD.
+## Tâche 4 : Gérer des utilisateurs invités Azure AD.
 
 Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur accorder l’accès aux ressources dans un abonnement Azure.
 
@@ -226,9 +226,9 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom d’utilisateur | **az104-01b-aaduser1** |
-    | Nom | **az104-01b-aaduser1** |
-    | Création du mot de passe | enabled |
+    | Nom d’utilisateur principal | **az104-01b-aaduser1** |
+    | Nom complet | **az104-01b-aaduser1** |
+    | Générer automatiquement le mot de passe | désélectionné  |
     | Mot de passe initial | **Choisissez un mot de passe sécurisé** |
     | Fonction | **Administrateur système** |
     | department | **INFORMATIQUE** |
@@ -237,7 +237,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
     >**Remarque** : **Copiez dans le Presse-papiers** le **nom d’utilisateur principal** complet (nom d’utilisateur plus domaine). Vous en aurez besoin plus tard dans cette tâche.
 
-1. Revenez à votre locataire Azure AD par défaut à l’aide du bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d’outils du portail Azure.
+1. Revenez à votre (premier) locataire Azure AD par défaut à l’aide du bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d’outils du portail Azure.
 
 1. Revenez au panneau **Utilisateurs - Tous les utilisateurs**, puis cliquez sur **+ Inviter un utilisateur externe**.
 
@@ -245,11 +245,11 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-01b-aaduser1** |
-    | Adresse de messagerie | Nom d’utilisateur principal que vous avez copié précédemment dans cette tâche |
-    | Emplacement d’utilisation | **États-Unis** |
-    | Fonction | **Administrateur labo** |
-    | department | **INFORMATIQUE** |
+    | E-mail | Nom d’utilisateur principal que vous avez copié précédemment dans cette tâche |
+    | Nom d’affichage (onglet Propriétés)  | **az104-01b-aaduser1** |
+    | Intitulé du poste (onglet Propriétés) | **Administrateur labo** |
+    | Département (onglet Propriétés) | **INFORMATIQUE** |
+    | Emplacement d’utilisation (onglet Propriétés) | **États-Unis** |
 
 1. Cliquez sur **Invite**. 
 
@@ -260,7 +260,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 1. Cliquez sur **+ Ajouter l’appartenance** et ajoutez le compte d’utilisateur invité au groupe **Administrateurs de laboratoire informatique**.
 
 
-#### Tâche 5 : Nettoyer les ressources
+## Tâche 5 : Nettoyer les ressources
 
 > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées garantit que vous n’encourrez pas de coûts imprévus. Bien que, dans ce cas, il n’y ait pas de frais supplémentaires associés aux locataires Azure Active Directory et à leurs objets, vous pouvez envisager de supprimer les comptes d’utilisateur, les comptes de groupe et le locataire Azure Active Directory que vous avez créé dans ce laboratoire.
 
