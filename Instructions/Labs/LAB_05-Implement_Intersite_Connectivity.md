@@ -1,11 +1,11 @@
 ---
 lab:
-  title: 05 - Implémenter une connectivité intersite
+  title: "Labo\_05\_: Implémenter une connectivité intersites"
   module: Administer Intersite Connectivity
 ---
 
 # Labo 05 - Implémenter une connectivité intersites
-# Manuel de labo de l’étudiant
+# Manuel de labo pour l’étudiant
 
 ## Scénario du labo
 
@@ -29,7 +29,9 @@ Dans ce labo, vous allez :
 
 ### Instructions
 
-#### Tâche 1 : Approvisionner l’environnement de laboratoire
+## Exercice 1
+
+## Tâche 1 : Approvisionner l’environnement de laboratoire
 
 Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans un réseau virtuel distinct, deux d’entre elles étant dans la même région Azure et la troisième étant dans une autre région.
 
@@ -82,7 +84,7 @@ Dans cette tâche, vous allez déployer trois machines virtuelles, chacune dans 
 
 1. Fermez le volet Cloud Shell.
 
-#### Tâche 2 : Configurer le peering local et global des réseaux virtuels
+## Tâche 2 : Configurer le peering local et global des réseaux virtuels
 
 Dans cette tâche, vous allez configurer le peering local et global entre les réseaux virtuels que vous avez déployés dans les tâches précédentes.
 
@@ -201,7 +203,7 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### Tâche 3 : Tester la connectivité intersite
+## Tâche 3 : Tester la connectivité intersite
 
 Dans cette tâche, vous allez tester la connectivité entre les machines virtuelles sur les trois réseaux virtuels que vous avez connectés via le peering local et global dans la tâche précédente.
 
@@ -215,7 +217,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
     >**Remarque** : Vous pouvez ignorer toutes les invites d’avertissement lors de la connexion aux machines virtuelles cibles.
 
-1. Lorsque vous y êtes invité, connectez-vous à l’aide du nom d’utilisateur **étudiant** et du mot de passe de votre fichier de paramètres. 
+1. Lorsque vous y êtes invité, connectez-vous avec le nom d’utilisateur **Student** et le mot de passe que vous avez configuré lors du déploiement de vos machines virtuelles via CloudShell. 
 
 1. Dans la session Bureau à distance vers **az104-05-vm0**, cliquez avec le bouton droit de la souris sur le bouton **Démarrer** et, dans le menu contextuel, cliquez sur **Windows PowerShell (Admin)**.
 
@@ -259,7 +261,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 1. Examinez la sortie de la commande et vérifiez que la connexion a réussi.
 
-#### Nettoyer les ressources
+## Nettoyer les ressources
 
 >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -281,7 +283,7 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
     >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
 
-#### Révision
+## Révision
 
 Dans cet exercice, vous avez :
 
