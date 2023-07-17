@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "06\_: Implémenter la gestion du trafic"
+  title: "Labo\_06\_: Implémenter la gestion du trafic"
   module: Administer Network Traffic Management
 ---
 
@@ -233,7 +233,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
 
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussi**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le deuxième réseau virtuel spoke.
 
@@ -463,7 +463,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | --- | --- |
     | Nom | **az104-06-lb4-lbrule1** |
     | Version de l’adresse IP | **IPv4** |
-    | Adresse IP du front-end | **az104-06-pip4** |
+    | Adresse IP du front-end | **az104-06-fe4** |
     | Pool principal | **az104-06-lb4-be1** |    
     | Protocol | **TCP** |
     | Port | **80** |

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "09a\_: Implémenter Web Apps"
+  title: "Labo\_09a\_: Implémenter Web Apps"
   module: Administer Serverless Computing
 ---
 
@@ -20,7 +20,7 @@ Dans ce labo, vous allez :
 + Tâche 1 : Créer une application web Azure
 + Tâche 2 : Créer un emplacement de déploiement de préproduction
 + Tâche 3 : Configurer les paramètres de déploiement de l’application web
-+ Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
++ Tâche 4 : Déployer du code sur l’emplacement de déploiement de préproduction
 + Tâche 5 : Remplacer les emplacements de préproduction
 + Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
@@ -47,7 +47,7 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Paramètre | Valeur |
     | --- | ---|
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
     | Pile d’exécution | **PHP 8.0** |
@@ -170,6 +170,8 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 Dans cette tâche, vous allez configurer et tester la mise à l’échelle automatique de l’application web Azure.
 
 1. Dans le panneau affichant l’emplacement de production de l’application web, dans la section **Paramètres**, cliquez sur **Monter en charge (plan App Service)**.
+
+1. Dans la **section Mise à l’échelle**, sélectionnez l’option **Basé sur des règles**, puis cliquez sur le lien **Gérer la mise à l’échelle basée sur des règles**.
 
 1. Cliquez sur **Mise à l’échelle automatique personnalisée**.
 

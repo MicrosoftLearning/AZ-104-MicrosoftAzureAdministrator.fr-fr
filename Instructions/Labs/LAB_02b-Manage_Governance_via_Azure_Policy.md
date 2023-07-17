@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 02b - Gérer la gouvernance via Azure Policy
+  title: "Labo 02b\_: Gérer la gouvernance via Azure Policy"
   module: Administer Governance and Compliance
 ---
 
