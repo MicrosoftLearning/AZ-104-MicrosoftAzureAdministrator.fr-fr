@@ -237,7 +237,7 @@ Dans cette tâche, vous allez créer des utilisateurs invités Azure AD et leur 
 
     >**Remarque** : **Copiez dans le Presse-papiers** le **nom d’utilisateur principal** complet (nom d’utilisateur plus domaine). Vous en aurez besoin plus tard dans cette tâche.
 
-1. Revenez à votre (premier) locataire Azure AD par défaut à l’aide du bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d’outils du portail Azure.
+1. Revenez au premier locataire que vous avez créé précédemment. Pour ce faire, utilisez le bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d’outils du portail Azure.
 
 1. Revenez au panneau **Utilisateurs - Tous les utilisateurs**, puis cliquez sur **+ Inviter un utilisateur externe**.
 
