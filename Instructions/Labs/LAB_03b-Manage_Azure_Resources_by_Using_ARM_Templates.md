@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "03b : Gérer les ressources Azure à l’aide de modèles\_ARM"
+  title: "Labo\_03b\_: Gérer les ressources Azure en utilisant des modèles ARM"
   module: Administer Azure Resources
 ---
 
@@ -102,7 +102,9 @@ Dans ce labo, vous allez :
     | Taille de disque en Go | **32** |
     | Créer une option | **empty** |
     | Type de jeu de chiffrement de disque | **EncryptionAtRestWithPlatformKey** |
+    | Mode d’authentification d’accès aux données | None |
     | Stratégie d'accès réseau | **AllowAll** |
+    | Accès réseau public | Désactivé |
 
 1. Sélectionnez **Vérifier + créer**, puis sélectionnez **Créer**.
 

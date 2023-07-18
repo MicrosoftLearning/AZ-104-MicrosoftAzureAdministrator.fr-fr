@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "03a\_: Gérer les ressources Azure en utilisant le portail Azure"
+  title: "Labo\_03a\_: Gérer les ressources Azure en utilisant le portail Azure"
   module: Administer Azure Resources
 ---
 

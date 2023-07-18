@@ -1,12 +1,12 @@
 ---
 lab:
-  title: "04\_: Implémenter des réseaux virtuels"
+  title: "Labo\_04\_: Implémenter des réseaux virtuels"
   module: Administer Virtual Networking
 ---
 
 # Labo 04 : Implémenter des réseaux virtuels
 
-# Manuel de labo de l’étudiant
+# Manuel de labo pour l’étudiant
 
 ## Scénario du labo
 
@@ -126,6 +126,24 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
    >**Remarque** : Les adresses IP privées et publiques sont réellement affectées aux interfaces réseau, qui, à leur tour, sont attachées aux machines virtuelles Azure, mais il est assez courant de faire référence aux adresses IP affectées aux machines virtuelles Azure.
 
+   >**Remarque** : Vous aurez besoin de **deux** adresses IP publiques pour effectuer ce labo. 
+
+1. Dans le portail Azure, recherchez et sélectionnez **Adresses IP publiques**, puis sélectionnez **+ Créer**.
+
+1. Vérifiez que le **groupe de ressources** est **az104-04-rg1**.
+
+1. Dans les **Détails de la configuration**, vérifiez que le **nom** est **az104-04-pip0**.
+
+1. Sélectionnez **Vérifier et créer**, puis **Créer**.
+
+1. Dans le portail Azure, recherchez et sélectionnez **Adresses IP publiques**, puis sélectionnez **+ Créer**.
+
+1. Vérifiez que le **groupe de ressources** est **az104-04-rg1**.
+
+1. Dans les **Détails de la configuration**, vérifiez que le **nom** est **az104-04-pip1**.
+
+1. Sélectionnez **Vérifier et créer**, puis **Créer**.
+
 1. Dans le portail Azure, recherchez et sélectionnez **Groupes de ressources**, puis, dans le panneau **Groupes de ressources**, cliquez sur **az104-04-rg1**.
 
 1. Dans l’onglet du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vnet1**.
@@ -138,18 +156,13 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
 1. Dans la liste des configurations IP, cliquez sur **ipconfig1**.
 
-1. Dans le panneau **ipconfig1**, dans la section **Paramètres d’adresse IP publique**, sélectionnez **Associer**, cliquez sur **+ Créer**, spécifiez les paramètres suivants, puis cliquez sur **OK** :
+1. Vérifiez que **Allocation** est **Statique**.
 
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom | **az104-04-pip0** |
-    | Référence SKU | **Standard** |
+1. Sélectionnez **Associer une adresse IP publique** puis, dans la liste déroulante **Adresse IP publique**, sélectionnez **az104-04-pip0**.
 
-1. Dans le panneau **ipconfig1**, définissez l’**Affectation** sur **Statique**, laissez la valeur par défaut de l’**Adresse IP** définie sur **10.40.0.4**.
+1. Sélectionnez **Enregistrer**.
 
-1. Dans le panneau **ipconfig1**, enregistrez les modifications. Veillez à attendre la fin de l’opération d’enregistrement avant de passer à l’étape suivante.
-
-1. Retournez dans le panneau **az104-04-vnet1**
+1. Revenir au volet **az104-04-vnet1**.
 
 1. Cliquez sur **az104-04-nic1** et, dans le panneau **az104-04-nic1**, cliquez sur **Configurations IP**.
 
@@ -157,17 +170,12 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
 1. Dans la liste des configurations IP, cliquez sur **ipconfig1**.
 
-1. Dans le panneau **ipconfig1**, dans la section **Paramètres d’adresse IP publique**, sélectionnez **Associer**, cliquez sur **+ Créer**, spécifiez les paramètres suivants, puis cliquez sur **OK** :
+1. Vérifiez que **Allocation** est **Statique**.
 
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom | **az104-04-pip1** |
-    | Référence SKU | **Standard** |
+1. Sélectionnez **Associer une adresse IP publique** puis, dans la liste déroulante **Adresse IP publique**, sélectionnez **az104-04-pip1**.
 
-1. Dans le panneau **ipconfig1**, définissez l’**Affectation** sur **Statique**, laissez la valeur par défaut de l’**Adresse IP** définie sur **10.40.1.4**.
-
-1. Dans le panneau **ipconfig1**, enregistrez les modifications.
-
+1. Sélectionnez **Enregistrer**.
+   
 1. Revenez au panneau du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vm0** et à partir du panneau de machine virtuelle **az104-04-vm0**, notez l’entrée d’adresse IP publique.
 
 1. Revenez au panneau du groupe de ressources **az104-04-rg1**, dans la liste de ses ressources, cliquez sur **az104-04-vm1** et à partir du panneau de machine virtuelle **az104-04-vm1**, notez l’entrée d’adresse IP publique.
@@ -353,7 +361,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Dans le portail Azure, ouvrez une session **PowerShell** dans **Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
 
-1. Dans le panneau Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externe du jeu d’enregistrements DNS **az104-04-vm0** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
+1. Dans le volet Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externes du jeu d’enregistrements DNS **az104-04-vm0** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
 
    ```powershell
    nslookup az104-04-vm0.[domain name] [Name server 1]
@@ -361,7 +369,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Vérifiez que la sortie de la commande inclut l’adresse IP publique **az104-04-vm0**.
 
-1. Dans le panneau Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externe du jeu d’enregistrements DNS **az104-04-vm1** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
+1. Dans le volet Cloud Shell, exécutez ce qui suit pour tester la résolution de noms externes du jeu d’enregistrements DNS **az104-04-vm1** dans la zone DNS nouvellement créée (remplacez l’espace réservé `[Name server 1]` par le nom du **Serveur de noms 1** que vous avez noté précédemment dans cette tâche et l’espace réservé `[domain name]` par le nom du domaine DNS que vous avez créé précédemment dans cette tâche) :
 
    ```powershell
    nslookup az104-04-vm1.[domain name] [Name server 1]

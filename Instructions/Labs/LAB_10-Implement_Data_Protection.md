@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "10\_: Implémenter la protection des données"
+  title: "Labo\_10 : Implémenter la protection des données"
   module: Administer Data Protection
 ---
 
