@@ -209,7 +209,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm0** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.62.0.4** |
-    | Protocol | **TCP** |
+    | Protocole | **TCP** |
     | Port de destination | **3389** |
 
     > **Remarque** : **10.62.0.4** représente l’adresse IP privée **d’az104-06-vm2**
@@ -228,7 +228,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm0** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocol | **TCP** |
+    | Protocole | **TCP** |
     | Port de destination | **3389** |
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
@@ -247,7 +247,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm2** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocol | **TCP** |
+    | Protocole | **TCP** |
     | Port de destination | **3389** |
 
 1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que l’état est **Échec**.
@@ -398,7 +398,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Machine virtuelle | **az104-06-vm2** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocol | **TCP** |
+    | Protocole | **TCP** |
     | Port de destination | **3389** |
 
 1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **Échec**, vous devez arrêter, puis démarrer az104-06-vm0.
@@ -470,10 +470,9 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Port principal | **80** |
     | Sonde d’intégrité | **Création** |
     | Nom | **az104-06-lb4-hp1** |
-    | Protocol | **TCP** |
+    | Protocole | **TCP** |
     | Port | **80** |
     | Intervalle | **5** |
-    | Seuil de défaillance sur le plan de l’intégrité | **2** |
     | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
     | Persistance de session | **Aucun** |
     | Délai d’inactivité (minutes) | **4** |
@@ -560,7 +559,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Priorité | **10** |
     | Nom de l’écouteur | **az104-06-appgw5-rl1l1** |
     | Adresse IP du front-end | **Public** |
-    | Protocol | **HTTP** |
+    | Protocole | **HTTP** |
     | Port | **80** |
     | Type d’écouteur | **De base** |
     | URL de page d’erreur | **Non** |
@@ -573,7 +572,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Cible de back-end | **az104-06-appgw5-be1** |
     | Paramètres du back-end | **Ajouter nouveau** |
     | Nom des paramètres du back-end | **az104-06-appgw5-http1** |
-    | Protocole de back-end | **HTTP** |
+    | Protocole back-end | **HTTP** |
     | Port principal | **80** |
     | Paramètres supplémentaires | **utiliser les valeurs par défaut** |
     | Nom de l’hôte | **utiliser les valeurs par défaut** |
