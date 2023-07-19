@@ -20,7 +20,7 @@ Dans ce labo, vous allez :
 + Tâche 1 : Créer une application web Azure
 + Tâche 2 : Créer un emplacement de déploiement de préproduction
 + Tâche 3 : Configurer les paramètres de déploiement de l’application web
-+ Tâche 4 : Déployer du code sur l’emplacement de déploiement de préproduction
++ Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
 + Tâche 5 : Remplacer les emplacements de préproduction
 + Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
@@ -229,7 +229,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)**.
 
-1. Sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
+1. Sélectionnez **Paramètres de mise à l’échelle automatique**, sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
 
 1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes. 
 

@@ -1,18 +1,27 @@
 ---
 lab:
-  title: "Labo 09c\_: Déployer une application conteneur dans le portail"
+  title: "Lab 09c\_: Implémenter Azure Container Apps"
   module: Administer PaaS Compute Options
 ---
 
-# Labo 09c : Déployer une application conteneur dans le portail
+# Lab 09c : Implémenter Azure Container Apps
+# Manuel de labo pour l’étudiant
 
+## Scénario du labo
 Azure Container Apps vous permet d’exécuter des microservices et des applications conteneurisées sur une plateforme serverless. Avec Container Apps, vous bénéficiez des avantages de l’exécution de conteneurs tout en évitant les soucis de configuration manuelle de l’infrastructure cloud et des orchestrateurs de conteneurs complexes.
 
-Dans ce labo, vous créez un environnement Container Apps sécurisé et déployez votre première application conteneur en utilisant le portail Azure.
+## Objectifs
+
+Dans ce labo, nous allons :
+- Tâche 1 : Créer une application conteneur et un environnement
+- Tâche 2 : Déployer l’application conteneur
+- Tâche 3 : Tester et vérifier le déploiement de l’application conteneur
 
 Commencez par vous connecter au [portail Azure](https://portal.azure.com).
 
-## Créer une application de conteneur
+## Durée estimée : 20 minutes
+
+## Tâche 1 : Créer une application conteneur et un environnement
 
 Pour créer votre application conteneur, commencez sur la page d’accueil du portail Azure.
 
@@ -62,7 +71,7 @@ Ensuite, créez un environnement pour votre application conteneur.
 1. Sélectionnez **OK**.
 
 
-### Déployer l’application de conteneur
+## Tâche 2 : Déployer l’application conteneur
 
 1. Sélectionnez le bouton **Vérifier et créer** au bas de la page.  
 
@@ -74,7 +83,7 @@ Ensuite, créez un environnement pour votre application conteneur.
 
     Une page contenant le message *Le déploiement est en cours* s’affiche.  Une fois le déploiement terminé, le message *Votre déploiement est terminé* s’affiche.
    
-### Vérifier le déploiement
+## Tâche 3 : Tester et vérifier le déploiement de l’application conteneur
 
 Sélectionnez **Accéder à la ressource** pour afficher votre nouvelle application conteneur.  Sélectionnez le lien en regard d’*URL de l’application* pour afficher votre application. Vérifiez que vous avez le message *Bienvenue dans Azure Container Apps*.
 
