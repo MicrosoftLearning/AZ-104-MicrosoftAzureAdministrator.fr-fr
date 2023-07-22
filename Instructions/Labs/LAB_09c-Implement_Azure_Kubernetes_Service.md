@@ -1,7 +1,7 @@
 ---
 lab:
   title: "Labo\_09c\_: Implémenter Azure Kubernetes Service"
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # Labo 09c : Implémenter Azure Kubernetes Service

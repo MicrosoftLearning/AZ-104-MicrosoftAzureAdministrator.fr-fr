@@ -1,7 +1,7 @@
 ---
 lab:
   title: "Labo\_09a\_: Implémenter Web Apps"
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # Labo 09a : Implémenter Web Apps
