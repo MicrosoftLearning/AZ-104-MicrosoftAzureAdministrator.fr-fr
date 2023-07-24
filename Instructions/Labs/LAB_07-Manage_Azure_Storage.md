@@ -217,7 +217,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Rôle | **Propriétaire des données Blob du stockage** |
+    | Role | **Propriétaire des données Blob du stockage** |
     | Attribuer l’accès à | **Utilisateur, groupe ou principal de service** |
     | Membres | le nom de votre compte d’utilisateur |
 
@@ -233,11 +233,11 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Dans le portail Azure, revenez au panneau du compte de stockage que vous avez créé dans la première tâche de ce labo puis, dans la section **Stockage de données**, cliquez sur **Partages de fichiers**.
 
-1. Cliquez sur **+ Partage de fichiers** et créez un partage de fichiers avec les paramètres suivants :
+1. Cliquez sur **+ Partage de fichiers**, puis sous l’onglet **Informations de base**, donnez un nom au partage de fichiers, **az104-07-share**. Passez en revue les autres paramètres de cet onglet. 
 
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom | **az104-07-share** |
+1. Accédez à l’onglet **Sauvegarde** et vérifiez que la case **Activer la sauvegarde** n’est **pas** cochée.
+
+1. Cliquez sur **Vérifier et créer**, puis sur **Créer**. Attendez que le partage de fichiers soit déployé. 
 
 1. Cliquez sur le partage de fichiers nouvellement créé, puis sur **Connecter**.
 
