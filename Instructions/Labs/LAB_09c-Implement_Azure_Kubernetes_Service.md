@@ -1,7 +1,7 @@
 ---
 lab:
-  title: "09c\_: Implémenter Azure Kubernetes Service"
-  module: Administer Serverless Computing
+  title: "Labo\_09c\_: Implémenter Azure Kubernetes Service"
+  module: Administer PaaS Compute Options
 ---
 
 # Labo 09c : Implémenter Azure Kubernetes Service
@@ -65,7 +65,7 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
     | Configuration prédéfinie du cluster | **Dev/Test ($)** |
     | Nom du cluster Kubernetes | **az104-9c-aks1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner un cluster Kubernetes |

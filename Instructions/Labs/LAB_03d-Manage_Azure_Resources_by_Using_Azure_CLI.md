@@ -1,19 +1,19 @@
 ---
 lab:
-  title: 03d - Gérer des ressources Azure à l’aide d’Azure CLI
+  title: "Labo 03d\_: Gérer des ressources Azure en utilisant Azure CLI"
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Labo 03d - Gérer des ressources Azure à l’aide d’Azure CLI
-# <a name="student-lab-manual"></a>Manuel de labo pour l’étudiant
+# Labo 03d - Gérer des ressources Azure à l’aide d’Azure CLI
+# Manuel de labo pour l’étudiant
 
-## <a name="lab-scenario"></a>Scénario du labo
+## Scénario du labo
 
 Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et en les organisant en fonction de groupes de ressources à l’aide des modèles Portail Azure, d’Azure Resource Manager et de Azure PowerShell, vous devez effectuer la tâche équivalente à l’aide d’Azure CLI. Pour éviter d’installer Azure CLI, vous allez tirer parti de l’environnement Bash disponible dans Azure Cloud Shell.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
-## <a name="objectives"></a>Objectifs
+## Objectifs
 
 Dans ce labo, vous allez :
 
@@ -21,17 +21,17 @@ Dans ce labo, vous allez :
 + Tâche 2 : Créer un groupe de ressources et un disque managé Azure à l’aide d’Azure CLI
 + Tâche 3 : Configurer le disque managé à l’aide d’Azure CLI
 
-## <a name="estimated-timing-20-minutes"></a>Durée estimée : 20 minutes
+## Durée estimée : 20 minutes
 
-## <a name="architecture-diagram"></a>Diagramme de l'architecture
+## Diagramme de l'architecture
 
 ![image](../media/lab03d.png)
 
-## <a name="instructions"></a>Instructions
+### Instructions
 
-### <a name="exercise-1"></a>Exercice 1
+## Exercice 1
 
-#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>Tâche 1 : Démarrer une session Bash dans Azure Cloud Shell
+## Tâche 1 : Démarrer une session Bash dans Azure Cloud Shell
 
 Dans cette tâche, vous allez ouvrir une session Bash dans Cloud Shell. 
 
@@ -45,7 +45,7 @@ Dans cette tâche, vous allez ouvrir une session Bash dans Cloud Shell.
 
 1. Vérifiez que **Bash** apparaît dans le menu déroulant en haut à gauche du volet Cloud Shell.
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>Tâche 2 : Créer un groupe de ressources et un disque managé Azure à l’aide d’Azure CLI
+## Tâche 2 : Créer un groupe de ressources et un disque managé Azure à l’aide d’Azure CLI
 
 Dans cette tâche, vous allez créer un groupe de ressources et un disque managé Azure à l’aide d’une session Azure CLI dans Cloud Shell.
 
@@ -82,7 +82,7 @@ Dans cette tâche, vous allez créer un groupe de ressources et un disque manag�
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>Tâche 3 : Configurer le disque managé à l’aide d’Azure CLI
+## Tâche 3 : Configurer le disque managé à l’aide d’Azure CLI
 
 Dans cette tâche, vous allez gérer la configuration du disque managé Azure à l’aide d’une session Azure CLI dans Cloud Shell. 
 
@@ -110,7 +110,7 @@ Dans cette tâche, vous allez gérer la configuration du disque managé Azure à
    az disk show --resource-group $RGNAME --name $DISKNAME --query sku
    ```
 
-#### <a name="clean-up-resources"></a>Nettoyer les ressources
+## Nettoyer les ressources
 
  > **Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
 
@@ -132,7 +132,7 @@ Dans cette tâche, vous allez gérer la configuration du disque managé Azure à
 
     >**Remarque** : La commande s’exécute de façon asynchrone (comme déterminé par le paramètre --no-wait). Par conséquent, vous serez en mesure d’exécuter une autre commande Azure CLI immédiatement après au cours de la même session Bash, mais la suppression réelle du groupe de ressources prendra quelques minutes.
 
-#### <a name="review"></a>Révision
+## Révision
 
 Dans cet exercice, vous avez :
 

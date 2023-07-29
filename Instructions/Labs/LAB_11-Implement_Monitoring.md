@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '11 : Implémenter la supervision'
+  title: "Labo\_11\_: Implémenter le monitoring"
   module: Administer Monitoring
 ---
 

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 02a - Gérer les abonnements et RBAC
+  title: "Labo 02a\_: Gérer les abonnements et RBAC"
   module: Administer Governance and Compliance
 ---
 

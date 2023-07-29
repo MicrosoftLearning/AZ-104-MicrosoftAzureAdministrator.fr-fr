@@ -1,7 +1,7 @@
 ---
 lab:
-  title: '09b : Implémenter Azure Container Instances'
-  module: Administer Serverless Computing
+  title: "Labo\_09b\_: Implémenter Azure Container Instances"
+  module: Administer PaaS Compute Options
 ---
 
 # Labo 09b : Implémenter Azure Container Instances
@@ -17,7 +17,7 @@ Contoso souhaite trouver une nouvelle plateforme pour ses charges de travail vir
 
 Dans ce labo, vous allez :
 
-- Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
+- Tâche 1 : Déployer une instance Azure Container Instances en utilisant une image Docker
 - Tâche 2 : Passer en revue les fonctionnalités d’Azure Container Instances
 
 ## Durée estimée : 20 minutes
@@ -30,7 +30,7 @@ Dans ce labo, vous allez :
 
 ## Exercice 1
 
-## Tâche 1 : Déployer une image Docker à l’aide d’Azure Container Instances
+## Tâche 1 : Déployer une instance Azure Container Instances en utilisant une image Docker
 
 Dans cette tâche, vous allez créer une nouvelle instance de conteneur pour l’application web.
 

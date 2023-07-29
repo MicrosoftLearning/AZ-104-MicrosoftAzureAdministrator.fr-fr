@@ -1,7 +1,7 @@
 ---
 lab:
-  title: "09a\_: Implémenter Web Apps"
-  module: Administer Serverless Computing
+  title: "Labo\_09a\_: Implémenter Web Apps"
+  module: Administer PaaS Compute Options
 ---
 
 # Labo 09a : Implémenter Web Apps
@@ -47,7 +47,7 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Paramètre | Valeur |
     | --- | ---|
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
     | Pile d’exécution | **PHP 8.0** |
@@ -171,6 +171,8 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 1. Dans le panneau affichant l’emplacement de production de l’application web, dans la section **Paramètres**, cliquez sur **Monter en charge (plan App Service)**.
 
+1. Dans la **section Mise à l’échelle**, sélectionnez l’option **Basé sur des règles**, puis cliquez sur le lien **Gérer la mise à l’échelle basée sur des règles**.
+
 1. Cliquez sur **Mise à l’échelle automatique personnalisée**.
 
     >**Remarque** : Vous avez également la possibilité de mettre à l’échelle l’application web manuellement.
@@ -227,7 +229,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)**.
 
-1. Sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
+1. Sélectionnez **Paramètres de mise à l’échelle automatique**, sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
 
 1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes. 
 
