@@ -62,7 +62,7 @@ Ensuite, créez un environnement pour votre application conteneur.
 1. Sélectionnez **Supervision** pour créer un espace de travail Log Analytics.
 1. Sélectionnez le lien **Créer** dans le champ *Espace de travail Log Analytics* et entrez les valeurs suivantes.
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     |--|--|
     | Nom | Entrez `my-container-apps-logs` |
   
@@ -90,7 +90,7 @@ Ensuite, créez un environnement pour votre application conteneur.
 
 1. Sélectionnez le lien en regard d’*URL de l’application* pour afficher votre application.
 
-1. Vérifiez que vous recevez le message *Votre application Azure Container Apps est publiée**.
+1. Vérifiez que vous recevez le message **Votre application Azure Container Apps est publiée**.
 
 ## Nettoyer les ressources
 
