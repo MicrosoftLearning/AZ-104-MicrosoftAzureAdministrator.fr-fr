@@ -68,14 +68,15 @@ Ensuite, créez un environnement pour votre application conteneur.
   
     Le champ *Emplacement* est prérempli avec votre région.
 
-1. Sélectionnez **OK**.
+1. Sélectionnez **OK**, puis **Créer**. 
 
+1. Cliquez sur **Suivant : Conteneur**.
 
-## Tâche 2 : Déployer l’application conteneur
+1. Cochez la case à côté de **Utiliser l’image de démarrage rapide**.
 
-1. Sélectionnez le bouton **Vérifier et créer** au bas de la page.  
+1. Sélectionnez le bouton **Vérifier et créer** au bas de la page. Cette étape peut prendre quelques minutes. 
 
-    Ensuite, les paramètres de l’application conteneur sont vérifiés. Si aucune erreur n’est rencontrée, le bouton *Créer* est activé.  
+    Les paramètres de l’application conteneur sont vérifiés. Si aucune erreur n’est rencontrée, le bouton *Créer* est activé.  
 
     En cas d’erreur, tout onglet contenant des erreurs est marqué d’un point rouge.  Accédez à l’onglet approprié. Les champs contenant une erreur sont mis en évidence en rouge.  Une fois toutes les erreurs résolues, resélectionnez **Vérifier et créer**.
 
@@ -83,9 +84,13 @@ Ensuite, créez un environnement pour votre application conteneur.
 
     Une page contenant le message *Le déploiement est en cours* s’affiche.  Une fois le déploiement terminé, le message *Votre déploiement est terminé* s’affiche.
    
-## Tâche 3 : Tester et vérifier le déploiement de l’application conteneur
+## Tâche 2 : Tester et vérifier le déploiement de l’application conteneur
 
-Sélectionnez **Accéder à la ressource** pour afficher votre nouvelle application conteneur.  Sélectionnez le lien en regard d’*URL de l’application* pour afficher votre application. Vérifiez que vous avez le message *Bienvenue dans Azure Container Apps*.
+1. Sélectionnez **Accéder à la ressource** pour afficher votre nouvelle application conteneur.
+
+1. Sélectionnez le lien en regard d’*URL de l’application* pour afficher votre application.
+
+1. Vérifiez que vous recevez le message **Votre application Azure Container Apps est publiée**.
 
 ## Nettoyer les ressources
 
