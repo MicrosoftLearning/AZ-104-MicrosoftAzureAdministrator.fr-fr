@@ -102,11 +102,13 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement de l’
 
     | Paramètre | Valeur |
     | --- | ---|
-    | Nom d’utilisateur | n’importe quel nom global unique (ne doit pas contenir de caractère `@`) |
-    | Mot de passe | tout mot de passe répondant aux exigences de complexité|
+    | Nom d’utilisateur | tout nom global unique (voir la note)  |
+    | Mot de passe | tout mot de passe répondant aux exigences de complexité (voir la note) |
 
-    >**Remarque :** Vous aurez besoin de ces informations d’identification dans la tâche suivante de ce labo.
-
+    >**Note :** copiez ces informations d’identification dans le Bloc-notes. Vous en aurez besoin ultérieurement.
+    
+    >**Note :** ces informations d’identification sont transmises via l’URI. N’insérez pas de caractères spéciaux qui influencent l’interprétation de l’URI. Par exemple, @, $, ou #. Un astérisque ou signe plus (au milieu de la chaîne) fonctionne.
+    
 ## Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
 
 Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiement de préproduction.
@@ -140,10 +142,8 @@ Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiem
 1. Dans le panneau Cloud Shell, exécutez la commande suivante pour envoyer (en mode push) l’exemple de code d’application web du référentiel local à l’emplacement de déploiement de transit de l’application web Azure (veillez à remplacer l’espace `[deployment_user_name]` réservé par la valeur du nom d’utilisateur des **Informations d’identification de déploiement**, que vous avez identifiée lors de la tâche précédente) :
 
    ```powershell
-   git push [deployment_user_name] master
+    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
    ```
-
-1. Si vous êtes invité à vous authentifier, tapez `[deployment_user_name]` et le mot de passe correspondant (que vous avez défini dans la tâche précédente).
 
 1. Fermez le volet Cloud Shell.
 
