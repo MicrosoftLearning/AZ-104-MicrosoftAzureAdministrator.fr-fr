@@ -21,9 +21,15 @@ Dans cette démonstration, nous allons explorer le portail Azure.
 
 1. Sélectionnez l’icône **Paramètres** dans la bannière supérieure.  Passez en revue les paramètres **Apparence + Vues de démarrage**. 
 
-1. Utilisez le menu de gauche et sélectionnez **Tableau de bord**. **Modifiez** le tableau de bord en utilisant la **Galerie de vignettes**. Expliquez les options de personnalisation. 
+1. Utilisez le menu de gauche et sélectionnez **Tableau de bord**. **Modifiez** le tableau de bord en utilisant la **Galerie de vignettes**. Expliquez les options de personnalisation.
 
-1. Demandez aux étudiants s’ils ont des questions sur l’utilisation du portail Azure. 
+1. Montrez comment rechercher, puis localiser des ressources.
+
+1. Utilisez le menu supérieur gauche pour localiser **Tous les services**. 
+
+1. Quand vous en avez le temps, passez en revue les autres fonctionnalités.
+   
+1. Demandez aux élèves s’ils ont des questions.
 
 ## Démonstration -- Cloud Shell
 

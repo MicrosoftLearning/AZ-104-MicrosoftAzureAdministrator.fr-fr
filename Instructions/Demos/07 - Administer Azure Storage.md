@@ -48,6 +48,21 @@ Dans cette démonstration, vous allez explorer le stockage d’objets blob.
 
 1. Chargez un objet blob dans le conteneur. Quand vous en avez le temps, passez en revue les paramètres avancés. Par exemple, le type d’objet blob et la taille de l’objet blob. 
 
+## Configurer la sécurité du stockage
+
+Dans cette démonstration, nous allons créer une signature d’accès partagé.
+
+**Remarque :**  Cette démonstration nécessite un compte de stockage, un conteneur d’objets blob et un fichier chargé.
+
+**Informations de référence** : [Créer des jetons SAS pour des conteneurs de stockage](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
+
+1. Sélectionnez un objet blob ou un fichier que vous voulez sécuriser. 
+
+1. Générer une signature d’accès partagé (SAS). Passez en revue les autorisations, les dates/heures de début et d’expiration, et les protocoles autorisés.
+
+1. Utilisez l’URL SAS pour être sûr que la ressource s’affiche. 
+
+
 ## Configurer Azure Files 
 
 Dans cette démonstration, nous allons travailler avec des partages de fichiers et des instantanés.
@@ -62,22 +77,7 @@ Dans cette démonstration, nous allons travailler avec des partages de fichiers 
 
 1. Créer un partage de fichiers. Passez en revue les quotas, le chargement de fichiers et l’ajout de répertoires pour organiser les informations. 
 
-1. Créez un instantané de partage de fichiers. Expliquez quand utiliser des instantanés et en quoi ils diffèrent des sauvegardes. Quand vous en avez le temps, chargez un fichier, prenez un instantané, supprimez le fichier et restaurez l’instantané. 
-
-
-## Configurer la sécurité du stockage
-
-Dans cette démonstration, nous allons créer une signature d’accès partagé.
-
-**Remarque :**  Cette démonstration nécessite un compte de stockage, un conteneur d’objets blob et un fichier chargé.
-
-**Informations de référence** : [Créer des jetons SAS pour des conteneurs de stockage](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
-
-1. Sélectionnez un objet blob ou un fichier que vous voulez sécuriser. 
-
-1. Générer une signature d’accès partagé (SAS). Passez en revue les autorisations, les dates/heures de début et d’expiration, et les protocoles autorisés.
-
-1. Utilisez l’URL SAS pour être sûr que la ressource s’affiche. 
+1. Créez un instantané de partage de fichiers. Expliquez quand utiliser des instantanés et en quoi ils diffèrent des sauvegardes. Quand vous en avez le temps, chargez un fichier, prenez un instantané, supprimez le fichier et restaurez l’instantané.
 
 
 ## Outils de stockage (facultatif)

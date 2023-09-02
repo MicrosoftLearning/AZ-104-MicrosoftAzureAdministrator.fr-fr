@@ -6,7 +6,7 @@ lab:
 
 # Labo 04 : Implémenter des réseaux virtuels
 
-# Manuel de labo de l’étudiant
+# Manuel de labo pour l’étudiant
 
 ## Scénario du labo
 
@@ -120,7 +120,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
 1. Fermez le volet Cloud Shell.
 
-#### Tâche 3 : Configurer les adresses IP privées et publiques des machines virtuelles Azure
+## Tâche 3 : Configurer les adresses IP privées et publiques des machines virtuelles Azure
 
 Dans cette tâche, vous allez configurer l’affectation statique d’adresses IP publiques et privées affectées aux interfaces réseau des machines virtuelles Azure.
 
@@ -202,7 +202,7 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
 1. Créez Groupe de sécurité réseau avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Groupe de ressources | **az104-04-rg1** |
@@ -247,11 +247,11 @@ Dans cette tâche, vous allez configurer des groupes de sécurité réseau afin 
 
     >**Remarque** : Vous pouvez ignorer toutes les invites d’avertissement lors de la connexion aux machines virtuelles cibles.
 
-1. Lorsque vous y êtes invité, connectez-vous avec l’utilisateur et le mot de passe dans le fichier de paramètres.
+1. Lorsque vous y êtes invité, connectez-vous avec l’utilisateur et le mot de passe.
 
     >**Remarque** : Gardez cette session Bureau à distance ouverte. Vous en aurez besoin dans la prochaine tâche.
 
-#### Tâche 5 : Configurer Azure DNS pour la résolution de noms interne
+## Tâche 5 : Configurer Azure DNS pour la résolution de noms interne
 
 Dans cette tâche, vous allez configurer la résolution de noms DNS dans un réseau virtuel à l’aide de zones DNS privées Azure.
 
@@ -259,7 +259,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS dans un rés
 
 1. Créez une zone DNS privée avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Groupe de ressources | **az104-04-rg1** |
@@ -315,7 +315,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Créez une zone DNS avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Groupe de ressources | **az104-04-rg1** |
@@ -331,7 +331,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Créez un jeu d’enregistrements avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-04-vm0** |
     | Type | **A** |
@@ -346,7 +346,7 @@ Dans cette tâche, vous allez configurer la résolution de noms DNS externe à l
 
 1. Créez un jeu d’enregistrements avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-04-vm1** |
     | Type | **A** |
