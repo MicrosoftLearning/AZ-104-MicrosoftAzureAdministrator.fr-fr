@@ -6,7 +6,7 @@ lab:
 
 # Labo 01 - Gérer les identités Azure Active Directory
 
-# Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
 ## Scénario du labo
 
@@ -116,7 +116,7 @@ Dans cette tâche, vous allez créer des groupes Azure Active Directory avec l�
 
     >**Remarque** : L’activation d’une licence peut prendre jusqu’à 10 minutes. Continuez à actualiser la page jusqu’à ce qu’elle apparaisse. Ne continuez pas tant que les licences n’ont pas été activées.
 
-1. Dans le panneau **Licences - Tous les produits**, sélectionnez l’entrée **Azure Active Directory Premium P2**, puis attribuez toutes les options de licence de Azure AD Premium P2 à votre compte d’utilisateur et les deux comptes d’utilisateur nouvellement créés.
+1. Dans le panneau **Licences - Tous les produits**, sélectionnez l’entrée **Microsoft Entra ID P2**, puis attribuez toutes les options de licence à votre compte d’utilisateur et aux deux comptes d’utilisateur nouvellement créés.
 
 1. Dans le portail Azure, revenez au panneau du locataire Azure AD, puis cliquez sur **Groupes**.
 
