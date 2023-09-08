@@ -5,13 +5,15 @@ lab:
 ---
 
 # Labo 03d - Gérer des ressources Azure à l’aide d’Azure CLI
-# Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
 ## Scénario du labo
 
 Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et en les organisant en fonction de groupes de ressources à l’aide des modèles Portail Azure, d’Azure Resource Manager et de Azure PowerShell, vous devez effectuer la tâche équivalente à l’aide d’Azure CLI. Pour éviter d’installer Azure CLI, vous allez tirer parti de l’environnement Bash disponible dans Azure Cloud Shell.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
+
+>**Note :** Ce labo nécessite l’exécution du labo 03b.
 
 ## Objectifs
 
@@ -95,7 +97,7 @@ Dans cette tâche, vous allez gérer la configuration du disque managé Azure à
 1. Pour vérifier que la modification a pris effet, exécutez ce qui suit :
 
    ```sh
-   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
+   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGB
    ```
 
 1. Pour remplacer la référence SKU des performances du disque par **Premium_LRS**, à partir de la session Bash dans Cloud Shell, exécutez les commandes suivantes :
