@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo 03d\_: Gérer des ressources Azure en utilisant Azure CLI"
+  title: "Labo\_03d\_: Gérer les ressources Azure à l’aide d’Azure\_CLI (facultatif)"
   module: Administer Azure Resources
 ---
 
