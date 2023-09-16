@@ -148,22 +148,18 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
     | Paramètre | Valeur |
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucune (par défaut)** |
+    | Autoriser l’accès au réseau virtuel distant | **Vérifiez que la case est cochée (par défaut)** |
+    | Autoriser le trafic vers le réseau virtuel distant | **Vérifiez que la case est cochée** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet2_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
-    | ID de ressource | valeur du paramètre resourceID **az104-06-vnet2** que vous avez enregistrée précédemment dans cette tâche |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Autoriser (par défaut)** |
-    | Passerelle de réseau virtuel | **Aucune (par défaut)** |
+    | ID de ressource | La valeur du paramètre resourceID **az104-06-vnet2** que vous avez enregistrée précédemment dans cette tâche. |
+    | Autorisez l’accès au réseau virtuel actuel | **Vérifiez que la case est cochée (par défaut)** |
+    
 
     >**Remarque** : Attendez que l’opération se termine.
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-06-vnet01 d’az104-06-vnet2 et l’autre d’az104-06-vnet2 d’az104-06-vnet01.
-
-    >**Remarque** : **Autoriser le trafic transféré** doit être activé afin de faciliter le routage entre les réseaux virtuels spoke, que vous allez implémenter plus loin dans ce labo.
 
 1. Dans le panneau de réseau virtuel **az104-06-vnet01**, dans la section **Paramètres**, cliquez sur **Peerings**, puis sur **+ Ajouter**.
 
@@ -172,20 +168,17 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
     | Paramètre | Valeur |
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucune (par défaut)** |
+    | Autoriser l’accès au réseau virtuel distant | **Vérifiez que la case est cochée (par défaut)** |
+    | Autoriser le trafic vers le réseau virtuel distant | **Vérifiez que la case est cochée** | 
     | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet3_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
     | ID de ressource | valeur du paramètre resourceID **az104-06-vnet3** que vous avez enregistrée précédemment dans cette tâche |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Autoriser (par défaut)** |
-    | Passerelle de réseau virtuel | **Aucune (par défaut)** |
+    | Autorisez l’accès au réseau virtuel actuel | **Vérifiez que la case est cochée (par défaut)** |
 
+    >**Remarque** : Attendez que l’opération se termine.
+    
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-06-vnet01 d’az104-06-vnet3 et l’autre d’az104-06-vnet3 d’az104-06-vnet01. Cette opération termine la configuration de la topologie hub-and-spoke (avec deux réseaux virtuels spoke).
-
-    >**Remarque** : **Autoriser le trafic transféré** doit être activé afin de faciliter le routage entre les réseaux virtuels spoke, que vous allez implémenter plus loin dans ce labo.
 
 ## Tâche 3 : Tester la transitivité du peering de réseaux virtuels
 
@@ -228,7 +221,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm0** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
@@ -247,7 +240,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm2** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
 1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que l’état est **Échec**.
@@ -470,7 +463,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Port principal | **80** |
     | Sonde d’intégrité | **Création** |
     | Nom | **az104-06-lb4-hp1** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port | **80** |
     | Intervalle | **5** |
     | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
@@ -621,7 +614,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement de labo
++ Approvisionné l’environnement lab
 + Configuré la topologie de réseau hub-and-spoke
 + Testé la transitivité du peering de réseaux virtuels testée
 + Configurer le routage dans la topologie hub-and-spoke

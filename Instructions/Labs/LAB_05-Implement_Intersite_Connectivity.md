@@ -5,7 +5,7 @@ lab:
 ---
 
 # Labo 05 - Implémenter une connectivité intersites
-# Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
 ## Scénario du labo
 
@@ -103,17 +103,14 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
     | Paramètre | Valeur|
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Ce réseau virtuel : Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Ce réseau virtuel : Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Autoriser l’accès au réseau virtuel distant | **Vérifiez que la case est cochée (par défaut)** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-05-vnet1_to_az104-05-vnet0** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | non sélectionné |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Réseau virtuel | **az104-05-vnet1** |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Autorisez l’accès au réseau virtuel actuel |  **Vérifiez que la case est cochée (par défaut)** |
+
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-05-vnet0 à az104-05-vnet1 et l’autre d’az104-05-vnet1 à az104-05-vnet0.
 
@@ -138,17 +135,13 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
     | Paramètre | Valeur|
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-05-vnet0_to_az104-05-vnet2** |
-    | Ce réseau virtuel : Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Ce réseau virtuel : Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Autoriser l’accès au réseau virtuel distant |**Vérifiez que la case est cochée (par défaut)** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-05-vnet2_to_az104-05-vnet0** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | non sélectionné |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Réseau virtuel | **az104-05-vnet2** |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Autorisez l’accès au réseau virtuel actuel |**Vérifiez que la case est cochée (par défaut)** |
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-05-vnet0 à az104-05-vnet2 et l’autre d’az104-05-vnet2 à az104-05-vnet0.
 
@@ -175,17 +168,13 @@ Dans cette tâche, vous allez configurer le peering local et global entre les r�
     | Paramètre | Valeur|
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-05-vnet1_to_az104-05-vnet2** |
-    | Ce réseau virtuel : Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Ce réseau virtuel : Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Autoriser l’accès au réseau virtuel distant | **Vérifiez que la case est cochée (par défaut)** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-05-vnet2_to_az104-05-vnet1** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | non sélectionné |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
     | Réseau virtuel | **az104-05-vnet2** |
-    | Trafic vers le réseau virtuel distant | **Autoriser (par défaut)** |
-    | Trafic transféré à partir du réseau virtuel distant | **Bloquer le trafic provenant de l’extérieur de ce réseau virtuel** |
-    | Passerelle de réseau virtuel | **Aucun** |
+    | Autorisez l’accès au réseau virtuel actuel | **Vérifiez que la case est cochée (par défaut)** |
 
     >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-05-vnet1 à az104-05-vnet2 et l’autre d’az104-05-vnet2 à az104-05-vnet1.
 
@@ -287,6 +276,6 @@ Dans cette tâche, vous allez tester la connectivité entre les machines virtuel
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement de labo
++ Approvisionné l’environnement lab
 + Configuré le peering de réseaux virtuels locaux et globaux
 + Testé la connectivité intersite

@@ -45,7 +45,7 @@ Dans cette tâche, vous allez utiliser le portail Azure pour créer des groupes 
     |Groupe de ressources| nom d’un nouveau groupe de ressources **az104-03a-rg1** |
     |Nom du disque| **az104-03a-disk1** |
     |Région| **(États-Unis) USA Est** |
-    |Zone de disponibilité| **Aucun** |
+    |Zone de disponibilité| **Aucune redondance de l’infrastructure requise** |
     |Type de source| **Aucun** |
 
     >**Remarque** : Lors de la création d’une ressource, vous avez la possibilité de créer un groupe de ressources ou d’en utiliser un existant.
@@ -84,7 +84,7 @@ Dans cette tâche, vous allez appliquer un verrou de ressource sur un groupe de 
     |Groupe de ressources| cliquez sur **Créer** un groupe de ressources et nommez-le **az104-03a-rg3** |
     |Nom du disque| **az104-03a-disk2** |
     |Région| nom de la région Azure dans laquelle vous avez créé les autres groupes de ressources dans ce labo |
-    |Zone de disponibilité| **Aucun** |
+    |Zone de disponibilité| **Aucune redondance de l’infrastructure requise** |
     |Type de source| **Aucun** |
 
 1. Définissez respectivement le type et la taille du disque par **HDD Standard** et **32 Gio**.

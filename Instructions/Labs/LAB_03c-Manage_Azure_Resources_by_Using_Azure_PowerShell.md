@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo 03c\_: Gérer les ressources Azure en utilisant Azure PowerShell"
+  title: "Labo\_03c\_: Gérer les ressources Azure à l’aide d’Azure PowerShell (facultatif)"
   module: Administer Azure Resources
 ---
 
@@ -12,6 +12,8 @@ lab:
 Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure et des modèles Azure Resource Manager, vous devez effectuer la tâche équivalente à l’aide d’Azure PowerShell. Pour éviter d’installer les modules Azure PowerShell, vous utiliserez l’environnement PowerShell disponible dans Azure Cloud Shell.
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
+
+>**Note :** ce labo nécessite d’avoir terminé le labo 03b. 
 
 ## Objectifs
 
@@ -72,7 +74,7 @@ Dans cette tâche, vous allez créer un groupe de ressources et un disque manag�
     -Location $location `
     -CreateOption Empty `
     -DiskSizeGB 32 `
-    -Sku Standard_LRS
+    -SkuName Standard_LRS
 
    $diskName = 'az104-03c-disk1'
 
@@ -113,7 +115,7 @@ Dans cette tâche, vous allez gérer la configuration du disque managé Azure à
 1. Pour remplacer la référence SKU des performances du disque par **Premium_LRS**, à partir de la session PowerShell dans Cloud Shell, exécutez les commandes suivantes :
 
    ```powershell
-   New-AzDiskUpdateConfig -Sku Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
+   New-AzDiskUpdateConfig -SkuName Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
    ```
 
 1. Pour vérifier que la modification a pris effet, exécutez ce qui suit :

@@ -209,6 +209,8 @@ Dans cette tâche, vous allez implémenter une sauvegarde de fichiers et de doss
 
 1. Revenez à la page **Identification du coffre**, puis cliquez sur **Suivant**.
 
+1. Vérifiez que la case **Enregistrer la phrase secrète de manière sécurisée dans Azure Key Vault** n’est pas cochée. 
+
 1. Sur la page **Paramètre de chiffrement** de l’**Assistant Inscrire un serveur**, cliquez sur **Générer une phrase secrète**.
 
 1. Sur la page **Paramètre de chiffrement** de l’**Assistant Inscrire un serveur**, cliquez sur le bouton **Parcourir** en regard de l’option **Définir un emplacement pour enregistrer la phrase secrète**.
@@ -469,7 +471,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement de labo
++ Approvisionné l’environnement lab
 + Créé un coffre Recovery Services
 + Implémenté une sauvegarde au niveau d’une machine virtuelle Azure
 + Implémenté une sauvegarde de fichiers et de dossiers
