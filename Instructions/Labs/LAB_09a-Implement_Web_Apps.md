@@ -50,7 +50,7 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Resource group | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
-    | Pile d’exécution | **PHP 8.0** |
+    | Pile d’exécution | **PHP 8.2** |
     | Système d’exploitation | **Linux** |
     | Région | le nom d’une région Azure dans laquelle vous pouvez approvisionner des applications web Azure |
     | Plan App Service | acceptez la configuration par défaut |
@@ -94,9 +94,9 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement de l’
     
 1. Sous l’onglet **Paramètres**, dans la liste déroulante **Source**, sélectionnez **Git local**, puis cliquez sur le bouton **Enregistrer**
 
-1. Dans le panneau **Centre de déploiement**, copiez l’entrée **URL Git Clone** dans le Bloc-notes.
+1. Dans le volet **Centre de déploiement**, copiez l’entrée **URI clone Git** dans un Bloc-notes.
 
-    >**Remarque :** Vous aurez besoin de la valeur d’URL Git Clone dans la tâche suivante de ce labo.
+    >**Remarque :** Vous aurez besoin de la valeur de l’URI clone Git dans la prochaine tâche de ce labo.
 
 1. Dans le panneau **Centre de déploiement**, sélectionnez l’onglet **Informations d’identification Git/FTPS local**. Dans la section **Étendue utilisateur**, spécifiez les paramètres suivants, puis cliquez sur **Enregistrer**.
 
@@ -131,10 +131,10 @@ Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiem
    Set-Location -Path $HOME/php-docs-hello-world/
    ```
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour ajouter le git distant (veillez à remplacer les espaces réservés `[deployment_user_name]` et `[git_clone_url]` par la valeur du nom d’utilisateur des **Informations d’identification de déploiement** et de l’**URL Git Clone**, respectivement, que vous avez identifiée dans la tâche précédente) :
+1. Dans le volet Cloud Shell, exécutez la commande suivante pour ajouter le Git distant (assurez-vous de remplacer les espaces réservés `[deployment_user_name]` et `[git_clone_uri]` respectivement par la valeur nom d’utilisateur des **Informations d’identification du déploiement** et de l’**URI clone Git** que vous avez identifiée dans la tâche précédente) :
 
    ```powershell
-   git remote add [deployment_user_name] [git_clone_url]
+   git remote add [deployment_user_name] [git_clone_uri]
    ```
 
     >**Remarque** : La valeur qui suit `git remote add` n’a pas besoin de correspondre au nom d’utilisateur des **Informations d’identification de déploiement**, mais doit être unique
