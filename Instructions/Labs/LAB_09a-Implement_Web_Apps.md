@@ -47,13 +47,13 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Paramètre | Valeur |
     | --- | ---|
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
     | Pile d’exécution | **PHP 8.2** |
     | Système d’exploitation | **Linux** |
     | Région | le nom d’une région Azure dans laquelle vous pouvez approvisionner des applications web Azure |
-    | Plan App Service | acceptez la configuration par défaut |
+    | Plans tarifaires | acceptez la configuration par défaut |
 
 1. Cliquez sur **Vérifier + créer**. Sous l’onglet **Vérifier + créer** du panneau **Créer une application web**, vérifiez que la validation a réussi et cliquez sur **Créer**.
 
