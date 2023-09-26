@@ -139,7 +139,7 @@ Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiem
 
     >**Remarque** : La valeur qui suit `git remote add` n’a pas besoin de correspondre au nom d’utilisateur des **Informations d’identification de déploiement**, mais doit être unique
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour envoyer (en mode push) l’exemple de code d’application web du référentiel local à l’emplacement de déploiement de transit de l’application web Azure (veillez à remplacer l’espace `[deployment_user_name]` réservé par la valeur du nom d’utilisateur des **Informations d’identification de déploiement**, que vous avez identifiée lors de la tâche précédente) :
+1. Dans le volet Cloud Shell, exécutez la commande suivante pour envoyer (en mode push) l’exemple de code d’application web du référentiel local à l’emplacement de déploiement de transit de l’application web Azure (veillez à remplacer l’espace réservé par les valeurs des noms d’utilisateur et des mots de passes ainsi que le nom de l’application des **Informations d’identification de déploiement**, que vous avez identifiée lors de la tâche précédente) :
 
    ```powershell
     git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
