@@ -39,7 +39,7 @@ Dans ce labo, vous allez :
 
 Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous utiliserez plus tard dans ce labo.
 
-1. Connectez-vous au [portail Azure](https://portal.azure.com).
+1. Connectez-vous au **[portail Azure](https://portal.azure.com)**.
 
 1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
 
@@ -100,7 +100,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
+    | Groupe de ressources | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
     | Nom du compte de stockage | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
     | Région | le nom d’une région Azure dans laquelle vous pouvez créer un compte de Stockage Azure  |
     | Performances | **Standard** |
@@ -239,7 +239,9 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Cliquez sur **Vérifier et créer**, puis sur **Créer**. Attendez que le partage de fichiers soit déployé. 
 
-1. Cliquez sur le partage de fichiers nouvellement créé, puis sur **Connecter**.
+1. Cliquez sur le partage de fichiers nouvellement créé et notez les informations disponibles dans le panneau **az104-07-share** .
+
+1. Cliquez sur **Parcourir** et notez qu’il n’y a aucun fichier ou dossier dans le nouveau partage de fichiers. Cliquez sur **Connecter**.
 
 1. Dans le panneau **Connecter**, vérifiez que l’onglet **Windows** est sélectionné. Vous trouverez ci-dessous un bouton avec l’étiquette **Afficher le script**. Cliquez sur le bouton et vous trouverez une zone de texte grise avec un script, dans le coin inférieur droit de cette zone. Pointez sur l’icône de pages, puis cliquez sur **Copier dans le Presse-papiers**.
 
@@ -263,7 +265,7 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Vérifiez que le script s’est correctement exécuté.
 
-1. Revenez au panneau du partage de fichiers **az104-07-share**, cliquez sur **Actualiser**, puis vérifiez que **az104-07-folder** apparaît dans la liste des dossiers.
+1. Revenez au volet du partage de fichiers **az104-07-share\|, Naviguez** volet de partage de fichiers, cliquez sur **Actualiser**, puis vérifiez que **az104-07-folder** apparaît dans la liste des dossiers.
 
 1. Cliquez sur **az104-07-folder** et vérifiez que **az104-07-file.txt** apparaît dans la liste des fichiers.
 
