@@ -105,7 +105,7 @@ Dans cette tâche, vous allez créer un coffre Recovery Services.
 
 1. Dans le panneau **az104-10-rsv1 - Propriétés**, cliquez sur le lien **Mettre à jour** sous l’étiquette **Configuration de la sauvegarde**.
 
-1. Dans le panneau **Configuration de la sauvegarde**, notez que vous pouvez définir le **Type de réplication de stockage** sur **Localement redondant** ou **Géoredondant**. Conservez le paramètre **Géoredondant** par défaut et fermez le volet.
+1. Dans le panneau **Configuration de la sauvegarde** , passez en revue les choix pour le **type de réplication stockage**. Conservez le paramètre **Géoredondant** par défaut et fermez le volet.
 
     >**Remarque** : Ce paramètre peut être configuré uniquement s’il n’existe aucun élément de sauvegarde existant.
 

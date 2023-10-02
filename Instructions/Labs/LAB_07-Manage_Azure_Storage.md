@@ -100,7 +100,7 @@ Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
+    | Resource group | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
     | Nom du compte de stockage | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
     | Région | le nom d’une région Azure dans laquelle vous pouvez créer un compte de Stockage Azure  |
     | Performances | **Standard** |
@@ -195,7 +195,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
 1. Ouvrez une autre fenêtre de navigateur en mode InPrivate et accédez à l’URL que vous avez copiée dans l’étape précédente.
 
-    > **Remarque** : Si vous utilisez Microsoft Edge, la page **Licence MIT (MIT)** doit vous être présentée. Si vous utilisez Chrome, Microsoft Edge (Chromium) ou Firefox, vous devez être en mesure d’afficher le contenu du fichier en le téléchargeant et en l’ouvrant avec le Bloc-notes.
+    > **Note** : Vous devriez pouvoir visualiser le contenu du fichier en le téléchargeant et en l'ouvrant avec le Bloc-notes.
 
     > **Remarque** : Ceci est attendu, car maintenant votre accès est autorisé en fonction du jeton SAP nouvellement généré.
 
