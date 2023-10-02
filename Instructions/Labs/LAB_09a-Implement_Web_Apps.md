@@ -47,7 +47,7 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Paramètre | Valeur |
     | --- | ---|
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
     | Pile d’exécution | **PHP 8.2** |
@@ -65,7 +65,7 @@ Dans cette tâche, vous allez créer une application web Azure.
 
 Dans cette tâche, vous allez créer un emplacement de déploiement de transit.
 
-1. Dans le panneau de l’application web que vous venez de déployer, cliquez sur le lien **URL** pour afficher la page web par défaut dans un nouvel onglet de navigateur.
+1. Dans le volet de l’application web nouvellement déployée, cliquez sur le lien **Domaine par défaut** pour afficher la page web par défaut dans un nouvel onglet du navigateur.
 
 1. Fermez le nouvel onglet du navigateur puis, dans le portail Azure, dans la section **Déploiement** du panneau de l’application web, cliquez sur **Emplacements de déploiement**.
 
@@ -142,12 +142,12 @@ Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiem
 1. Dans le volet Cloud Shell, exécutez la commande suivante pour envoyer (en mode push) l’exemple de code d’application web du référentiel local à l’emplacement de déploiement de transit de l’application web Azure (veillez à remplacer l’espace réservé par les valeurs des noms d’utilisateur et des mots de passes ainsi que le nom de l’application des **Informations d’identification de déploiement**, que vous avez identifiée lors de la tâche précédente) :
 
    ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
+    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
    ```
 
 1. Fermez le volet Cloud Shell.
 
-1. Dans le panneau de l’emplacement de préproduction, cliquez sur **Vue d’ensemble**, puis cliquez sur le lien **URL** pour afficher la page web par défaut dans un nouvel onglet de navigateur.
+1. Dans le volet emplacement de préproduction, cliquez sur **Vue d’ensemble**, puis cliquez sur le lien **Domaine par défaut** pour afficher la page web par défaut dans un nouvel onglet du navigateur.
 
 1. Vérifiez que la page du navigateur affiche le message **Hello World !** et fermez le nouvel onglet.
 
@@ -161,7 +161,7 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Dans le panneau **Permuter**, passez en revue les paramètres par défaut, puis cliquez sur **Permuter**.
 
-1. Cliquez sur **Vue d’ensemble** dans le panneau de l’emplacement de production de l’application web, puis cliquez sur le lien **URL** pour afficher la page d’accueil du site web dans un nouvel onglet de navigateur.
+1. Cliquez sur **Vue d’ensemble** dans le volet emplacement de production de l’application web, puis cliquez sur le lien **Domaine par défaut** pour afficher la page d’accueil du site web dans un nouvel onglet du navigateur.
 
 1. Vérifiez que la page web par défaut a été remplacée par la page **Hello World !** .
 
@@ -229,7 +229,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)**.
 
-1. Sélectionnez **Paramètres de mise à l’échelle automatique**, sélectionnez l’onglet **Historique des exécutions** et vérifiez le **Nombre d’instances de ressources observées**.
+1. Sélectionnez **Paramètres de mise à l’échelle automatique**, puis l’onglet **Historique des exécutions**. Sous **Afficher les données du dernier**, sélectionnez **1 heure** et vérifiez le **nombre d’instances de la ressource observée**.
 
 1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes. 
 
