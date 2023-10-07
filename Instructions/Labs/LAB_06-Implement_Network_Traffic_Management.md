@@ -148,13 +148,12 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
     | Paramètre | Valeur |
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Autoriser l’accès au réseau virtuel distant | **Vérifiez que la case est cochée (par défaut)** |
-    | Autoriser le trafic vers le réseau virtuel distant | **Vérifiez que la case est cochée** |
+    | Paramètres permettant d’autoriser l’accès, le trafic transféré et la passerelle | **Vérifier que toutes les cases sont cochées** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet2_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
     | ID de ressource | La valeur du paramètre resourceID **az104-06-vnet2** que vous avez enregistrée précédemment dans cette tâche. |
-    | Autorisez l’accès au réseau virtuel actuel | **Vérifiez que la case est cochée (par défaut)** |
+    | Paramètres permettant d’autoriser l’accès, le trafic transféré et la passerelle | **Vérifier que toutes les cases sont cochées** |
     
 
     >**Remarque** : Attendez que l’opération se termine.
@@ -168,13 +167,12 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
     | Paramètre | Valeur |
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Autoriser l’accès au réseau virtuel distant | **Vérifiez que la case est cochée (par défaut)** |
-    | Autoriser le trafic vers le réseau virtuel distant | **Vérifiez que la case est cochée** | 
+    | Paramètres permettant d’autoriser l’accès, le trafic transféré et la passerelle | **Vérifier que toutes les cases sont cochées** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet3_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
     | ID de ressource | valeur du paramètre resourceID **az104-06-vnet3** que vous avez enregistrée précédemment dans cette tâche |
-    | Autorisez l’accès au réseau virtuel actuel | **Vérifiez que la case est cochée (par défaut)** |
+    | Paramètres permettant d’autoriser l’accès, le trafic transféré et la passerelle | **Vérifier que toutes les cases sont cochées** |
 
     >**Remarque** : Attendez que l’opération se termine.
     
@@ -202,12 +200,12 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
     | Machine virtuelle | **az104-06-vm0** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.62.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
     > **Remarque** : **10.62.0.4** représente l’adresse IP privée **d’az104-06-vm2**
 
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussi**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le premier réseau virtuel spoke.
 
@@ -226,7 +224,7 @@ Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux 
 
     > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
 
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussi**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
+1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
 
     > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le deuxième réseau virtuel spoke.
 
@@ -391,7 +389,7 @@ Dans cette tâche, vous allez configurer et tester le routage entre les deux ré
     | Machine virtuelle | **az104-06-vm2** |
     | Destination | **Spécifier manuellement** |
     | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocole | **TCP** |
+    | Protocol | **TCP** |
     | Port de destination | **3389** |
 
 1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **Échec**, vous devez arrêter, puis démarrer az104-06-vm0.
@@ -552,7 +550,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Priorité | **10** |
     | Nom de l’écouteur | **az104-06-appgw5-rl1l1** |
     | Adresse IP du front-end | **Public** |
-    | Protocole | **HTTP** |
+    | Protocol | **HTTP** |
     | Port | **80** |
     | Type d’écouteur | **De base** |
     | URL de page d’erreur | **Non** |

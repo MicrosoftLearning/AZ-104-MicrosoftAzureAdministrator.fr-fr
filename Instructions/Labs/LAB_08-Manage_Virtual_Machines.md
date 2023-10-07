@@ -75,7 +75,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-08-rg01-vnet** |
+    | Nom | **az104-08-vnet01** |
     | Plage d’adresses | **10.80.0.0/20** |
     | Nom du sous-réseau | **subnet0** |
     | Plage de sous-réseau | **10.80.0.0/24** |
@@ -290,7 +290,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
     >**Remarque** : Cette section du modèle définit la même taille de machine virtuelle Azure que celle que vous avez spécifiée pour la première machine virtuelle via le portail Azure.
 
-1. Dans le panneau **Modifier le modèle**, dans la section affichant le contenu du modèle, remplacez la ligne (ligne `"dataDisks": [ ]`) par le code suivant :
+1. Dans le panneau **Modifier le modèle**, dans la section affichant le contenu du modèle, remplacez la ligne **51** (`"dataDisks": [ ],`) par le code suivant :
 
    ```json
                     "dataDisks": [
@@ -308,7 +308,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
                         "caching": "ReadOnly",
                         "createOption": "Empty"
                       }
-                    ]
+                    ],
    ```
 
     >**Remarque** : Si vous utilisez un outil qui colle le code en ligne par ligne IntelliSense peut ajouter des crochets supplémentaires à l’origine d’erreurs de validation. Vous pouvez d’abord coller le code dans le bloc-notes, puis le coller à la ligne 49.
@@ -410,7 +410,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Plages de ports de destination | **80** |
     | Protocol | **TCP** |
     | Action | **Autoriser** |
-    | Priorité | **1010** |
+    | Priority | **1010** |
     | Nom | **custom-allow-http** |
 
 1. Cliquez sur **Ajouter** et, dans le panneau **Créer un groupe de sécurité réseau**, cliquez sur **OK**.
@@ -531,7 +531,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     | Paramètre | Valeur |
     | --- |--- |
-    | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
+    | Source de la métrique | **Ressource actuelle (az10480vmss0)** |
     | Agrégation du temps | **Average** |
     | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
