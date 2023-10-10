@@ -149,7 +149,7 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet2** |
     | Autorisez « az104-06-vnet01 » à accéder au réseau virtuel appairé | **Vérifiez que la case est cochée (par défaut)** |
-    | Autorisez la passerelle dans « az104-06-vnet01 » à transférer le trafic vers le réseau virtuel appairé | **Vérifiez que la case est cochée** 
+    | Autorisez la passerelle dans « az104-06-vnet01 » à transférer le trafic vers le réseau virtuel appairé | **Vérifiez que la case est cochée** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet2_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
@@ -168,12 +168,15 @@ Dans cette tâche, vous allez configurer le peering local entre les réseaux vir
     | Paramètre | Valeur |
     | --- | --- |
     | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Paramètres permettant d’autoriser l’accès, le trafic transféré et la passerelle | **Vérifier que toutes les cases sont cochées** |
+    | Autorisez « az104-06-vnet01 » à accéder au réseau virtuel appairé | **Vérifiez que la case est cochée (par défaut)** |
+    | Autorisez la passerelle dans « az104-06-vnet01 » à transférer le trafic vers le réseau virtuel appairé | **Vérifiez que la case est cochée** |
     | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet3_to_az104-06-vnet01** |
     | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
     | Je connais mon ID de ressource | enabled |
-    | ID de ressource | valeur du paramètre resourceID **az104-06-vnet3** que vous avez enregistrée précédemment dans cette tâche |
-    | Paramètres permettant d’autoriser l’accès, le trafic transféré et la passerelle | **Vérifier que toutes les cases sont cochées** |
+    | ID de ressource | Valeur du paramètre resourceID **az104-06-vnet3** que vous avez enregistrée précédemment dans cette tâche. |
+    | Autoriser az104-06-vnet3 à accéder à az104-06-vnet01 | **Vérifiez que la case est cochée (par défaut)** |
+    | Autoriser az104-06-vnet3 à recevoir le trafic transféré à partir d’az104-06-vnet01 | **Vérifiez que la case est cochée** |
+
 
     >**Remarque** : Attendez que l’opération se termine.
     
