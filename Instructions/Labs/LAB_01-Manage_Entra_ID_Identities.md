@@ -1,12 +1,12 @@
 ---
 lab:
-  title: "Lab\_01\_: Gérer les identités Microsoft\_Entra\_ID (test de changement de nom)"
+  title: "Labo\_01\_- Gérer les identités Microsoft\_Entra\_ID"
   module: Administer Identity
 ---
 
-# Lab 01 – Gérer les identités Microsoft Entra ID (test de changement de nom)
+# Labo 01 - Gérer les identités Microsoft Entra ID
 
-# Manuel de labo de l’étudiant
+# Manuel de labo pour l’étudiant
 
 ## Scénario du labo
 
