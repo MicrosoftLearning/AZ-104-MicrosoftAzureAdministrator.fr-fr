@@ -80,7 +80,7 @@ Dans cette démonstration, nous créer, nous configurons et nous déployons un c
 
 1. Attendez que la ressource soit déployée.
 
-1. Dans la page **Vue d’ensemble** pour la ressource, vérifiez que l’**État** est **En cours d’exécution**.
+1. Sur la page **Vue d’ensemble** de la ressource, assurez-vous que l’**État** est **En cours d’exécution**.
 
 1. Accédez au **Nom de domaine complet** de l’instance de conteneur et vérifiez que la page d’accueil s’affiche. 
 

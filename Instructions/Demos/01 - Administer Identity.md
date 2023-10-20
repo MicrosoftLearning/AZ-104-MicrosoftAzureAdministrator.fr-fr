@@ -8,7 +8,7 @@ demo:
 
 ## Configurer des identités Entra ID
 
-Cette zone n’a pas de démonstration formelle. Envisagez de parcourir la simulation de labo interactive pour l’étudiant Lab 01. 
+Cette zone n’a pas de démonstration formelle. Envisagez de parcourir la simulation interactive pour l'étudiant du Lab 01. 
 
 [Simulation de labo interactive Lab 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
 

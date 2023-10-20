@@ -102,7 +102,7 @@ Dans cette démonstration, nous allons découvrir les attributions de rôles.
 
 1.  Créez un utilisateur ou sélectionnez un utilisateur existant.
 
-1.  Sélectionnez **Ajouter une attribution de rôle**, puis sélectionnez un rôle. Par exemple, *Propriétaire*.
+1.  Sélectionnez **Ajouter une attribution de rôle**, puis sélectionnez un rôle. Par exemple, *propriétaire*.
 
 1.  Sélectionnez **Vérifier l’accès**.
 
