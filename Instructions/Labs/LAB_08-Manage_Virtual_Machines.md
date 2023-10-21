@@ -49,7 +49,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
@@ -213,13 +213,15 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les deu
 
 1. Pour vérifier que la configuration basée sur l’extension de script personnalisé a réussi, revenez dans le panneau **az104-08-vm1**, dans la section **Opérations**, cliquez sur **Run command**, puis, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
 
-1. Dans le panneau **Script Run Command**, tapez ce qui suit, puis cliquez sur **Exécuter** pour accéder au site web hébergé sur **az104-08-vm0** :
+1. Dans le panneau **Exécuter le script de commande**, saisissez ce qui suit, puis cliquez sur **Exécuter** pour accéder au site web hébergé sur **az104-08-vm1** :
 
    ```powershell
    Invoke-WebRequest -URI http://10.80.0.4 -UseBasicParsing
    ```
 
     >**Remarque** : Le paramètre **-UseBasicParsing** est nécessaire pour éliminer la dépendance vis-à-vis d’Internet Explorer pour terminer l’exécution de l’applet de commande
+
+    >**Remarque** : Le paramètre **-URI** est l’**adresse IP privée** de la machine virtuelle. Accédez au panneau **az104-08-vm1**, dans la section **Mise en réseau**, puis cliquez sur **Paramètres réseau**
 
     >**Remarque** : Vous pouvez également vous connecter à **az104-08-vm0** et exécuter `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` pour accéder au site web hébergé sur **az104-08-vm1**.
 
@@ -363,7 +365,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg02** |
     | Nom du groupe de machines virtuelles identiques | **az10408vmss0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez provisionner des machines virtuelles Azure différentes de celles que vous avez utilisées pour déployer des machines virtuelles précédemment dans ce laboratoire |
     | Zone de disponibilité | **Zones 1, 2, 3** |
@@ -410,7 +412,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Plages de ports de destination | **80** |
     | Protocol | **TCP** |
     | Action | **Autoriser** |
-    | Priority | **1010** |
+    | Priorité | **1010** |
     | Nom | **custom-allow-http** |
 
 1. Cliquez sur **Ajouter** et, dans le panneau **Créer un groupe de sécurité réseau**, cliquez sur **OK**.
