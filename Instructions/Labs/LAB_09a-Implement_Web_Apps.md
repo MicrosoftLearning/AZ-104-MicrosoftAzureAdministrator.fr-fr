@@ -47,7 +47,7 @@ Dans cette tâche, vous allez créer une application web Azure.
     | Paramètre | Valeur |
     | --- | ---|
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
     | Pile d’exécution | **PHP 8.2** |
@@ -107,7 +107,7 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement de l’
 
     >**Note :** copiez ces informations d’identification dans le Bloc-notes. Vous en aurez besoin ultérieurement.
     
-    >**Note :** ces informations d’identification sont transmises via l’URI. N’insérez pas de caractères spéciaux qui influencent l’interprétation de l’URI. Par exemple, @, $, ou #. Un astérisque ou signe plus (au milieu de la chaîne) fonctionne.
+    >**Note :** ces informations d’identification sont transmises via l’URI. N’incluez pas de caractères spéciaux qui affecteraient l’interprétation de l’URI. Par exemple, @, $, ou #. Un astérisque ou signe plus (au milieu de la chaîne) fonctionne.
     
 ## Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
 

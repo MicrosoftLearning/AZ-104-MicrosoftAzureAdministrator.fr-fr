@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo 02a\_: Gérer les abonnements et RBAC (test de changement de nom)"
+  title: "Labo 02a\_: Gérer les abonnements et RBAC"
   module: Administer Governance and Compliance
 ---
 
@@ -52,7 +52,7 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
 1. Recherchez et sélectionnez **Groupes d’administration** pour accéder au panneau **Groupes d’administration**.
 
-1. Passez en revue les messages en haut du panneau **Groupes d’administration**. Si vous voyez le message **Vous êtes inscrit en tant qu’administrateur d’annuaire, mais ne disposez pas des autorisations nécessaires pour accéder au groupe d’administration racine**, suivez la séquence d’étapes suivante :
+1. Passez en revue les messages en haut du panneau **Groupes d’administration**. Si le message suivant s’affiche **Vous êtes enregistré en tant qu’administrateur de répertoire mais vous ne disposez pas des autorisations nécessaires pour accéder au groupe d’administration racine**, suivez la séquence d’étapes suivante :
 
     1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
     
