@@ -49,7 +49,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
+    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
@@ -617,7 +617,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     >**Remarque** : Le script installe une extension de script personnalisée qui configure le disque attaché.
 
-1. Dans le panneau Cloud Shell, exécutez ce qui suit pour exécuter le script et configurer les disques du groupe de machines virtuelles identiques Azure :
+1. Dans le volet Cloud Shell, exécutez ce qui suit pour exécuter le script et configurer les disques du groupe de machines virtuelles identiques Azure :
 
    ```powershell
    ./az104-08-configure_VMSS_disks.ps1
