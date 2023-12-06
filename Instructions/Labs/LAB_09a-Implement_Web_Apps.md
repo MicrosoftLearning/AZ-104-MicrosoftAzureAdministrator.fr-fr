@@ -102,7 +102,7 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement de l’
 
     | Paramètre | Valeur |
     | --- | ---|
-    | Nom d’utilisateur | tout nom global unique (voir la note)  |
+    | Nom d'utilisateur | tout nom global unique (voir la note)  |
     | Mot de passe | tout mot de passe répondant aux exigences de complexité (voir la note) |
 
     >**Note :** copiez ces informations d’identification dans le Bloc-notes. Vous en aurez besoin ultérieurement.

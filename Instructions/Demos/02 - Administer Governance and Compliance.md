@@ -80,7 +80,7 @@ Dans cette démonstration, nous allons découvrir les attributions de rôles.
 
 **Localiser le volet Contrôle d’accès**
 
-1.  Accédez au portail Azure et sélectionnez un groupe de ressources.  Notez le groupe de ressources que vous utilisez.
+1.  Accédez au portail Azure et sélectionnez un groupe de ressources. Notez le groupe de ressources que vous utilisez.
 
 2.  Sélectionnez le volet **Contrôle d’accès (IAM)** .
 

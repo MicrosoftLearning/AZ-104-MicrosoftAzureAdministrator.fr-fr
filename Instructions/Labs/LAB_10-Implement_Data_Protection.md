@@ -471,7 +471,7 @@ Dans cette tâche, vous allez restaurer un fichier à partir de la sauvegarde ba
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement lab
++ Approvisionné l’environnement de labo
 + Créé un coffre Recovery Services
 + Implémenté une sauvegarde au niveau d’une machine virtuelle Azure
 + Implémenté une sauvegarde de fichiers et de dossiers

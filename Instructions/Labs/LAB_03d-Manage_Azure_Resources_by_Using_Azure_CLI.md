@@ -13,8 +13,6 @@ Maintenant que vous avez exploré les fonctionnalités d’administration Azure 
 
 **Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
 
->**Note :** Ce labo nécessite l’exécution du labo 03b.
-
 ## Objectifs
 
 Dans ce labo, vous allez :

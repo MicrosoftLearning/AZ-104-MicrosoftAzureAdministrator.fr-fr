@@ -21,7 +21,7 @@ Dans cette démonstration, nous allons créer une machine virtuelle Windows et y
 
 **Créer la machine virtuelle**
 
-**Remarque :**  Ces étapes couvrent seulement quelques paramètres de machine virtuelle. N’hésitez pas à explorer et à couvrir d’autres domaines.  Vous pouvez créer une machine virtuelle Windows ou Linux, en fonction de votre public.
+**Remarque :**  Ces étapes couvrent seulement quelques paramètres de machine virtuelle. N’hésitez pas à explorer et à couvrir d’autres domaines. Vous pouvez créer une machine virtuelle Windows ou Linux, en fonction de votre public.
 
 1. Utilisez le portail Azure.
 

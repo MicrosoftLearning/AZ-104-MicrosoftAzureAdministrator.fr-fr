@@ -65,7 +65,7 @@ Dans cette tâche, vous allez déployer un cluster Azure Kubernetes Services à 
     | Paramètre | Valeur |
     | ---- | ---- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09c-rg1** |
     | Configuration prédéfinie du cluster | **Dev/Test ($)** |
     | Nom du cluster Kubernetes | **az104-9c-aks1** |
     | Région | le nom d’une région dans laquelle vous pouvez approvisionner un cluster Kubernetes |

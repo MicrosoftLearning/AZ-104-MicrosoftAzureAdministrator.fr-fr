@@ -49,7 +49,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Paramètre | Valeur |
     | --- | --- |
     | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
+    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-08-rg01** |
     | Nom de la machine virtuelle | **az104-08-vm0** |
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
@@ -118,7 +118,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
 
 1. Dans le panneau **Déploiement personnalisé**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Groupe de ressources | **az104-08-rg01** |
     | Nom de l'interface réseau | **az104-08-vm1-nic1** |
@@ -533,7 +533,7 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
 
     | Paramètre | Valeur |
     | --- |--- |
-    | Source de la métrique | **Ressource actuelle (az10480vmss0)** |
+    | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
     | Agrégation du temps | **Average** |
     | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |

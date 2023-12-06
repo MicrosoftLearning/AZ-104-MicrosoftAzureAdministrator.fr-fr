@@ -217,7 +217,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Role | **Propriétaire des données Blob du stockage** |
+    | Rôle | **Propriétaire des données Blob du stockage** |
     | Attribuer l’accès à | **Utilisateur, groupe ou principal de service** |
     | Membres | le nom de votre compte d’utilisateur |
 
@@ -241,7 +241,7 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Cliquez sur le partage de fichiers nouvellement créé et notez les informations disponibles dans le panneau **az104-07-share** .
 
-1. Cliquez sur **Parcourir** et notez qu’il n’y a aucun fichier ou dossier dans le nouveau partage de fichiers. Cliquez sur **Connecter**.
+1. Cliquez sur **Parcourir** et notez qu’il n’y a aucun fichier ou dossier dans le nouveau partage de fichiers. Cliquez sur **Connexion**.
 
 1. Dans le panneau **Connecter**, vérifiez que l’onglet **Windows** est sélectionné. Vous trouverez ci-dessous un bouton avec l’étiquette **Afficher le script**. Cliquez sur le bouton et vous trouverez une zone de texte grise avec un script, dans le coin inférieur droit de cette zone. Pointez sur l’icône de pages, puis cliquez sur **Copier dans le Presse-papiers**.
 

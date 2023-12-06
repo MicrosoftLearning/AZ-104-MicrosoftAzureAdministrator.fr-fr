@@ -1,14 +1,14 @@
 ---
 lab:
-  title: "Labo\_01\_- Gérer les identités Microsoft\_Entra\_ID"
+  title: "Lab\_01\_: Gérer les identités Microsoft\_Entra\_ID"
   module: Administer Identity
 ---
 
-# Labo 01 - Gérer les identités Microsoft Entra ID
+# Lab 01 - Gérer les identités Microsoft Entra ID
 
-# Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
-## Scénario du labo
+## Scénario de l’exercice
 
 Vous devez approvisionner les utilisateurs et les comptes de groupe de sorte que les utilisateurs Contoso puissent s’authentifier avec Azure AD. L’appartenance aux groupes doit être mise à jour automatiquement en fonction du poste de l’utilisateur. Vous devez également créer un locataire test avec un compte d’utilisateur test, puis accorder à ce compte des autorisations limitées aux ressources de l’abonnement Contoso Azure.
 
@@ -40,7 +40,7 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs.
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
+1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
 
 1. Dans le volet Microsoft Entra ID, faites défiler jusqu’à la section **Gérer**, cliquez sur **Paramètres utilisateur** et passez en revue les options de configuration disponibles.
 
@@ -187,7 +187,7 @@ Dans cette tâche, vous allez créer des groupes avec une appartenance attribué
 
 Dans cette tâche, vous allez créer un locataire.
     
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
+1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
 
     >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous recevez l’erreur **Échec de la création. Trop de demandes. Veuillez essayer ultérieurement.** , effectuez les actions suivantes :<br>
     - Essayez la création plusieurs fois.<br>

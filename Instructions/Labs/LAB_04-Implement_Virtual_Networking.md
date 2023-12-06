@@ -6,7 +6,7 @@ lab:
 
 # Labo 04 : Implémenter des réseaux virtuels
 
-# Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
 ## Scénario du labo
 
@@ -76,7 +76,7 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
     | --- | --- |
     | Nom | **subnet1** |
     | Plage d’adresses (bloc CIDR) | **10.40.1.0/24** |
-    | Groupe de sécurité réseau | **Aucun** |
+    | Un groupe de sécurité réseau | **Aucun** |
     | Table de routage | **Aucun** |
 
 1. Cliquez sur **Enregistrer**.
