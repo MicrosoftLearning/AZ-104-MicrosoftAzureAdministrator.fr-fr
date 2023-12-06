@@ -171,7 +171,7 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
 
 1. Dans le panneau affichant l’emplacement de production de l’application web, dans la section **Paramètres**, cliquez sur **Monter en charge (plan App Service)**.
 
-1. Dans la **section Mise à l’échelle**, sélectionnez l’option **Basé sur des règles**, puis cliquez sur le lien **Gérer la mise à l’échelle basée sur des règles**.
+1. Dans la section **Mise à l’échelle**, sélectionnez l’option **Basé sur des règles**, puis cliquez sur le lien **Gérer la mise à l’échelle basée sur des règles**.
 
 1. Cliquez sur **Mise à l’échelle automatique personnalisée**.
 
@@ -228,8 +228,6 @@ Dans cette tâche, vous allez configurer et tester la mise à l’échelle autom
    ```
 
 1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)**.
-
-1. Sélectionnez **Paramètres de mise à l’échelle automatique**, puis l’onglet **Historique des exécutions**. Sous **Afficher les données du dernier**, sélectionnez **1 heure** et vérifiez le **nombre d’instances de la ressource observée**.
 
 1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes. 
 
