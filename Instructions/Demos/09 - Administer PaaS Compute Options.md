@@ -30,7 +30,7 @@ Dans cette démonstration, nous allons créer et travailler avec des plans Azure
 
 ## Configurer Azure App Services
 
-Dans cette démonstration, nous allons créer une nouvelle application web qui exécute un conteneur Docker.  Le conteneur affiche un message de bienvenue.
+Dans cette démonstration, nous allons créer une nouvelle application web qui exécute un conteneur Docker. Le conteneur affiche un message de bienvenue.
 
 **Informations de référence** : [Créer une application web](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
 

@@ -434,7 +434,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **az104-06-pip4** |
-    | Référence SKU | standard |
+    | Référence SKU | Standard |
     | Niveau | Régionale |
     | Affectation | statique |
     | Préférence de routage | **Réseau Microsoft** |
@@ -470,7 +470,7 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
     | Intervalle | **5** |
     | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
     | Persistance de session | **Aucun** |
-    | Délai d’inactivité (minutes) | **4** |
+    | Délai d’inactivité (minutes). | **4** |
     | Réinitialisation du protocole TCP | **Désactivé** |
     | IP flottante | **Désactivé** |
     | Traduction d’adresses réseau (SNAT) sources sortante | **Recommandé** |
@@ -567,7 +567,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
     | Cible de back-end | **az104-06-appgw5-be1** |
     | Paramètres du back-end | **Ajouter nouveau** |
     | Nom des paramètres du back-end | **az104-06-appgw5-http1** |
-    | Protocole back-end | **HTTP** |
+    | Protocole de back-end | **HTTP** |
     | Port principal | **80** |
     | Paramètres supplémentaires | **utiliser les valeurs par défaut** |
     | Nom de l’hôte | **utiliser les valeurs par défaut** |
@@ -616,7 +616,7 @@ Dans cette tâche, vous allez implémenter Azure Application Gateway devant les 
 
 Dans cet exercice, vous avez :
 
-+ Approvisionné l’environnement lab
++ Approvisionné l’environnement de labo
 + Configuré la topologie de réseau hub-and-spoke
 + Testé la transitivité du peering de réseaux virtuels testée
 + Configurer le routage dans la topologie hub-and-spoke

@@ -9,7 +9,7 @@ lab:
 
 ## Configuration de laboratoire requise
 
-Ce labo nécessite des autorisations pour créer des utilisateurs, créer des rôles Contrôle d’accès en fonction du rôle (RBAC) Azure personnalisés et attribuer ces rôles aux utilisateurs. Tous les hôtes de laboratoire ne peuvent pas fournir cette fonctionnalité. Demandez à votre formateur la disponibilité de ce laboratoire.
+Ce labo nécessite des autorisations pour créer des utilisateurs et des rôles Contrôle d’accès en fonction du rôle (RBAC) Azure personnalisés, ainsi que pour attribuer ces rôles aux utilisateurs. Tous les hôtes de laboratoire ne peuvent pas fournir cette fonctionnalité. Demandez à votre formateur la disponibilité de ce laboratoire.
 
 ## Scénario du labo
 
@@ -17,7 +17,7 @@ Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été ch
 
 - Création d’un groupe d’administration qui inclurait tous les abonnements Azure de Contoso
 
-- octroi d’autorisations pour envoyer des demandes de support pour tous les abonnements du groupe d’administration à un utilisateur désigné. Les autorisations de cet utilisateur doivent être limitées uniquement aux éléments suivants : 
+- Octroi d’autorisations pour envoyer des demandes de support pour tous les abonnements du groupe d’administration à un utilisateur désigné. Les autorisations de cet utilisateur doivent être limitées uniquement aux éléments suivants : 
 
     - Création de tickets de demande de support
     - Affichage des groupes de ressources
@@ -54,9 +54,9 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
 1. Passez en revue les messages en haut du panneau **Groupes d’administration**. Si le message suivant s’affiche **Vous êtes enregistré en tant qu’administrateur de répertoire mais vous ne disposez pas des autorisations nécessaires pour accéder au groupe d’administration racine**, suivez la séquence d’étapes suivante :
 
-    1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
+    1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
     
-    1.  Dans le volet qui affiche les propriétés de votre locataire, dans le menu vertical à gauche, dans la section **Gérer**, sélectionnez **Propriétés**.
+    1.  Dans le volet qui affiche les propriétés de votre locataire, accédez au menu vertical sur le côté gauche, allez à la section **Gérer** et sélectionnez **Propriétés**.
     
     1.  Dans le panneau **Propriétés** de votre locataire, dans la section **Gestion des accès pour les ressources Azure**, sélectionnez **Oui**, puis **Enregistrer**.
     
@@ -126,9 +126,9 @@ Dans cette tâche, vous allez créer une définition d’un rôle RBAC personnal
 
 ## Tâche 3 : Attribuer des rôles RBAC
 
-Dans cette tâche, vous allez créer un utilisateur, attribuer le rôle RBAC que vous avez créé dans la tâche précédente à cet utilisateur et vérifier que l’utilisateur peut effectuer la tâche spécifiée dans la définition de rôle RBAC.
+Dans cette tâche, vous allez créer un utilisateur, attribuer le rôle RBAC que vous avez créé dans la tâche précédente à cet utilisateur et vérifier qu’il peut effectuer la tâche spécifiée dans la définition de rôle RBAC.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**, cliquez sur **Utilisateurs**, puis sur **+ Nouvel utilisateur**.
+1. Dans le Portail Azure, recherchez et sélectionnez **Microsoft Entra ID**, cliquez sur **Utilisateurs**, puis sur **+ Nouvel utilisateur**.
 
 1. Créez un nouvel utilisateur avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
@@ -173,7 +173,7 @@ Dans cette tâche, vous allez créer un utilisateur, attribuer le rôle RBAC que
 
    >**Remarque** : Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID** et cliquez sur **Utilisateurs**.
+1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**, puis cliquez sur **Utilisateurs**.
 
 1. Dans le panneau **Utilisateurs - Tous les utilisateurs**, cliquez sur **az104-02-aaduser1**.
 
@@ -181,7 +181,7 @@ Dans cette tâche, vous allez créer un utilisateur, attribuer le rôle RBAC que
 
 1. Dans le portail Azure, démarrez une session **PowerShell** dans **Cloud Shell**.
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour supprimer l’attribution de la définition de rôle personnalisé (remplacez l’espace réservé `[object_ID]` par la valeur de l’attribut **ID d’objet** du compte d'utilisateur **az104-02-aaduser1** que vous avez copiée précédemment dans cette tâche) :
+1. Dans le volet Cloud Shell, exécutez la commande suivante pour supprimer l’attribution de la définition de rôle personnalisé (remplacez l’espace réservé `[object_ID]` par la valeur de l’attribut **ID d’objet** du compte d’utilisateur **az104-02-aaduser1** que vous avez copié précédemment dans cette tâche) :
 
    ```powershell
    
@@ -196,7 +196,7 @@ Dans cette tâche, vous allez créer un utilisateur, attribuer le rôle RBAC que
    Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
    ```
 
-1. Dans le portail Azure, revenez au panneau **Utilisateurs - Tous les utilisateurs** de **Microsoft Entra ID**, puis supprimez le compte d’utilisateur **az104-02-aaduser1**.
+1. Dans le portail Azure, revenez au panneau **Utilisateurs - Tous les utilisateurs** de **Microsoft Entra ID**, puis supprimez le compte d’utilisateur **az104-02-aaduser1**.
 
 1. Dans le portail Azure, revenez au panneau **Groupes d’administration**. 
 

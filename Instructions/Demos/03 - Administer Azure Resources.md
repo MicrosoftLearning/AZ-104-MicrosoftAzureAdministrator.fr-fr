@@ -19,7 +19,7 @@ Dans cette démonstration, nous allons explorer le portail Azure.
 
 1. Sélectionnez l’icône **Support et Résolution des problèmes** dans la bannière du haut. Passez en revue les liens **Ressources de support**. 
 
-1. Sélectionnez l’icône **Paramètres** dans la bannière supérieure.  Passez en revue les paramètres **Apparence + Vues de démarrage**. 
+1. Sélectionnez l’icône **Paramètres** dans la bannière supérieure. Passez en revue les paramètres **Apparence + Vues de démarrage**. 
 
 1. Utilisez le menu de gauche et sélectionnez **Tableau de bord**. **Modifiez** le tableau de bord en utilisant la **Galerie de vignettes**. Expliquez les options de personnalisation.
 
@@ -43,7 +43,7 @@ Dans cette démonstration, nous allons expérimenter avec Cloud Shell.
 
 1.  Cliquez sur l’icône **Cloud Shell** sur la bannière du haut.
 
-1.  Dans la page Bienvenue dans l’interpréteur de commandes, notez vos sélections pour Bash ou PowerShell.  Sélectionnez **PowerShell**.
+1.  Dans la page Bienvenue dans l’interpréteur de commandes, notez vos sélections pour Bash ou PowerShell. Sélectionnez **PowerShell**.
 
 1.  Expliquez pourquoi Azure Cloud Shell nécessite un partage de fichiers Azure pour conserver les fichiers. Si nécessaire, configurez le partage du stockage. 
 
@@ -61,7 +61,7 @@ Dans cette démonstration, nous allons expérimenter avec Cloud Shell.
 
 1. Pour utiliser l’éditeur cloud, sélectionnez l’icône avec des **accolades**.
 
-1. Sélectionnez un fichier dans le volet de navigation gauche.  Par exemple, **.profile**.
+1. Sélectionnez un fichier dans le volet de navigation gauche. Par exemple, **.profile**.
 
 1. Notez sur la bannière supérieure de l’éditeur les sélections pour Paramètres (taille de texte et police) et Charger/Télécharger les fichiers.
 

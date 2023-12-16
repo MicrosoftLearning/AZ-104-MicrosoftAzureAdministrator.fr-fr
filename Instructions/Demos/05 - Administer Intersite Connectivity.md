@@ -28,7 +28,7 @@ demo:
 
 1. Sous **Paramètres**, sélectionnez **Peerings**.
 
-1. Notez qu’un appairage a été créé automatiquement.  Notez que **l’état du peering** est **Connecté**.
+1. Notez qu’un appairage a été créé automatiquement. Notez que **l’état du peering** est **Connecté**.
 
 1. Dans le labo, les étudiants vont créer un peering et tester la connexion entre les machines virtuelles. 
 

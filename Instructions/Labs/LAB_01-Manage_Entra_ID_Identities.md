@@ -1,12 +1,12 @@
 ---
 lab:
-  title: "Labo\_01\_- Gérer les identités Microsoft\_Entra\_ID"
+  title: "Lab\_01\_: Gérer les identités Microsoft\_Entra\_ID"
   module: Administer Identity
 ---
 
-# Labo 01 - Gérer les identités Microsoft Entra ID
+# Lab 01 - Gérer les identités Microsoft Entra ID
 
-# Manuel de labo pour l’étudiant
+# Manuel de labo de l’étudiant
 
 ## Scénario du labo
 
@@ -40,7 +40,7 @@ Dans cette tâche, vous allez créer et configurer des utilisateurs.
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
+1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
 
 1. Dans le volet Microsoft Entra ID, faites défiler jusqu’à la section **Gérer**, cliquez sur **Paramètres utilisateur** et passez en revue les options de configuration disponibles.
 
@@ -183,13 +183,13 @@ Dans cette tâche, vous allez créer des groupes avec une appartenance attribué
 
 1. Retournez dans le panneau **Groupes - Tous les groupes**, cliquez sur l’entrée représentant le groupe **Administrateurs du cloud système**, puis affichez son panneau **Membres**. Vérifiez que **az104-01a-aaduser2** apparaît dans la liste des membres du groupe.
 
-## Tâche 3 : Créer un locataire (facultatif – problème d'environnement lab)
+## Tâche 3 : créer un locataire (facultatif - Problèmes de captcha possibles, abonnement payant requis)
 
 Dans cette tâche, vous allez créer un locataire.
     
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
+1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
 
-    >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous recevez l’erreur **Échec de la création. Trop de demandes. Veuillez essayer ultérieurement.** , effectuez les actions suivantes :<br>
+    >**Remarque** : Il existe un problème connu avec la vérification Captcha dans l’environnement lab. Si vous recevez l’erreur **Échec de la création. Trop de demandes. Veuillez essayer ultérieurement.** , effectuez les actions suivantes :
     - Essayez la création plusieurs fois.<br>
     - Consultez la section **Gérer le locataire** pour garantir que le locataire n’a pas été créé en arrière-plan. <br>
     - Ouvrez une nouvelle fenêtre **InPrivate**, puis, à l’aide du portail Azure, essayez de créer le locataire à partir de là.<br>
@@ -237,7 +237,10 @@ Dans cette tâche, vous allez créer des utilisateurs invités et leur accorder 
 
     >**Remarque** : **Copiez dans le Presse-papiers** le **nom d’utilisateur principal** complet (nom d’utilisateur plus domaine). Vous en aurez besoin plus tard dans cette tâche.
 
-1. Revenez au premier locataire que vous avez créé précédemment. Pour ce faire, utilisez le bouton **Répertoire + Abonnement** (directement à droite du bouton Cloud Shell) dans la barre d’outils du portail Azure.
+1. Revenez au premier locataire que vous avez créé précédemment.
+2. Cliquez sur **Vue d’ensemble** dans le volet de navigation.
+3. Cliquez sur **Gérer les locataires**.
+4. Cochez la case en regard du premier locataire que vous avez créé précédemment, puis sélectionnez **Basculer**.
 
 1. Revenez au panneau **Utilisateurs - Tous les utilisateurs**, puis cliquez sur **+ Inviter un utilisateur externe**.
 

@@ -212,11 +212,11 @@ Dans cette tâche, vous allez configurer les paramètres de diagnostic des machi
     | Paramètres | Valeur |
     | --- | --- |
     | Seuil | **Statique** |
+    | Type d’agrégation | **Moyenne** |
     | Opérateur | **Supérieur à** |
-    | Type d’agrégation | **Average** |
     | Valeur du seuil | **2** |
-    | Précision d’agrégation (période) | **1 minute** |
-    | Fréquence d’évaluation | **Toutes les minutes** |
+    | Vérifier chaque | **1 minute** |
+    | Période de recherche arrière| **1 minute** |
 
 1. Cliquez sur **Suivant : Actions >**, dans le volet **Créer une règle d’alerte**, dans la section **Groupe d’actions**, cliquez sur le bouton **+ Créer un groupe d’actions**.
 
