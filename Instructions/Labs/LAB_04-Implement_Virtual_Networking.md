@@ -160,6 +160,8 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
 1. Sélectionnez **Associer une adresse IP publique** puis, dans la liste déroulante **Adresse IP publique**, sélectionnez **az104-04-pip0**.
 
+>**Remarque :** Si vous recevez une erreur, *le nom de domaine est déjà utilisé*, il s’agit d’un problème connu. Vous devez localiser l’adresse IP publique et l’associer à la carte réseau séparément. 
+
 1. Sélectionnez **Enregistrer**.
 
 1. Revenir au volet **az104-04-vnet1**.
@@ -173,6 +175,8 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 1. Vérifiez que **Allocation** est **Statique**.
 
 1. Sélectionnez **Associer une adresse IP publique** puis, dans la liste déroulante **Adresse IP publique**, sélectionnez **az104-04-pip1**.
+
+>**Remarque :** Si vous recevez une erreur, *le nom de domaine est déjà utilisé*, il s’agit d’un problème connu. Vous devez localiser l’adresse IP publique et l’associer à la carte réseau séparément. 
 
 1. Sélectionnez **Enregistrer**.
    
