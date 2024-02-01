@@ -52,9 +52,9 @@ Dans cette tâche, vous allez créer un réseau virtuel avec plusieurs sous-rés
     | Nom | **az104-04-vnet1** |
     | Région | nom de n’importe quelle région Azure disponible dans l’abonnement que vous utiliserez dans ce labo |
 
-1. Cliquez sur **Suivant : Adresses IP**. L’**adresse de début** est **10.40.0.0**. La **Taille de l’espace d’adressage** est **/20**. Veillez à cliquer sur **Ajouter**. 
+1. Cliquez sur **Suivant : Adresses IP**. L’**adresse de début** est **10.40.0.0**. La **Taille de l’espace d’adressage** est **/20**. 
 
-1. Cliquez sur **+ Ajouter un sous-réseau**, entrez les valeurs suivantes et cliquez sur **Ajouter**.
+1. Cliquez sur **+ Ajouter un sous-réseau**. Supprimez le sous-réseau **par défaut** existant. Saisissez les valeurs suivantes et cliquez sur **Ajouter**. 
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -160,7 +160,14 @@ Dans cette tâche, vous allez configurer l’affectation statique d’adresses I
 
 1. Sélectionnez **Associer une adresse IP publique** puis, dans la liste déroulante **Adresse IP publique**, sélectionnez **az104-04-pip0**.
 
->**Remarque :** Si vous recevez une erreur, *le nom de domaine est déjà utilisé*, il s’agit d’un problème connu. Vous devez localiser l’adresse IP publique et l’associer à la carte réseau séparément. 
+    >**Remarque :** Si vous recevez une erreur, *le nom de domaine est déjà utilisé*, il s’agit d’un problème connu. Vous devez localiser l’adresse IP publique et l’associer à la carte réseau séparément.
+    >
+    > + Accédez à **Adresses IP publiques**
+    > + Cliquez sur **az104-04-pip0**
+    > + Dans le volet **Vue d’ensemble**, cliquez sur **Associer l’adresse IP**
+    > + Définissez **Type de ressource** sur **Interface réseau**
+    > + Définissez **Interface réseau **sur **az104-04-nic0**
+    > + Répétez **az104-04-pip1** et **az104-04-nic1**
 
 1. Sélectionnez **Enregistrer**.
 
