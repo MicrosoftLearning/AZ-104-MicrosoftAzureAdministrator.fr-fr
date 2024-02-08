@@ -20,8 +20,8 @@ Dans ce labo, vous allez :
 + Tâche 1 : Approvisionner l’environnement de laboratoire
 + Tâche 2 : Créer et configurer des comptes de Stockage Azure
 + Tâche 3 : Gérer le stockage d’objets blob
-+ Tâche 4 : Gérer l’authentification et l’autorisation pour le Stockage Azure
-+ Tâche 5 : Créer et configurer un partage de fichiers Azure Files
++ Tâche 4 : Gérer l’authentification et les autorisations pour le service Stockage Azure
++ Tâche 5 : Créer et configurer un partage Azure Files
 + Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
 
 ## Durée estimée : 40 minutes
@@ -203,9 +203,9 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
 
 1. Fermez la fenêtre du navigateur en mode InPrivate, revenez à la fenêtre du navigateur montrant le panneau **licenses/LICENSE** du conteneur Stockage Azure, puis revenez au panneau **az104-07-container**.
 
-1. Cliquez sur le lien **Basculer vers le lien Compte d’utilisateur Azure AD** en regard de l’étiquette **Méthode d’authentification**.
+1. Cliquez sur le lien **Basculer vers le lien Compte d’utilisateur Microsoft Entra** en regard de l’étiquette **Méthode d’authentification**.
 
-    > **Remarque** : Vous pouvez voir une erreur lorsque vous modifiez la méthode d’authentification (l’erreur est *« Vous n’avez pas d’autorisations pour répertorier les données à l’aide de votre compte d’utilisateur avec Azure AD »* ). Ceci est normal.  
+    > **Remarque** : Vous pouvez voir une erreur lorsque vous modifiez la méthode d’authentification (l’erreur est *« Vous n’avez pas d’autorisations pour répertorier les données à l’aide de votre compte d’utilisateur avec Microsoft Entra »*). Ceci est normal.  
 
     > **Remarque** : À ce stade, vous n’avez pas d’autorisations pour modifier la méthode d’authentification.
 
@@ -221,7 +221,7 @@ Dans cette tâche, vous allez configurer l’authentification et l’autorisatio
     | Attribuer l’accès à | **Utilisateur, groupe ou principal de service** |
     | Membres | le nom de votre compte d’utilisateur |
 
-1. Cliquez sur **Vérifier + Attribuer**, sur **Vérifier + attribuer**, puis revenez au panneau **Vue d’ensemble** du conteneur **az104-07-container** et vérifiez que vous pouvez définir la méthode d’authentification sur (Basculer vers le Compte d’utilisateur Azure AD).
+1. Cliquez sur **Vérifier + Attribuer**, sur **Vérifier + attribuer**, puis revenez au volet **Vue d’ensemble** du conteneur **az104-07-container** et vérifiez que vous pouvez définir la méthode d’authentification sur (Basculer vers le Compte d’utilisateur Microsoft Entra).
 
     > **Remarque** : La modification peut prendre environ 5 minutes.
 
@@ -241,7 +241,7 @@ Dans cette tâche, vous allez créer et configurer des partages Azure Files.
 
 1. Cliquez sur le partage de fichiers nouvellement créé et notez les informations disponibles dans le panneau **az104-07-share** .
 
-1. Cliquez sur **Parcourir** et notez qu’il n’y a aucun fichier ou dossier dans le nouveau partage de fichiers. Cliquez sur **Connexion**.
+1. Cliquez sur **Parcourir** et notez qu’il n’y a aucun fichier ou dossier dans le nouveau partage de fichiers. Cliquez sur **Connecter**.
 
 1. Dans le panneau **Connecter**, vérifiez que l’onglet **Windows** est sélectionné. Vous trouverez ci-dessous un bouton avec l’étiquette **Afficher le script**. Cliquez sur le bouton et vous trouverez une zone de texte grise avec un script, dans le coin inférieur droit de cette zone. Pointez sur l’icône de pages, puis cliquez sur **Copier dans le Presse-papiers**.
 
