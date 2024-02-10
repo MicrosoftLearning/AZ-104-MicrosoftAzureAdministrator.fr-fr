@@ -54,11 +54,11 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Région | sélectionnez l’une des régions qui prennent en charge les zones de disponibilité et où vous pouvez approvisionner des machines virtuelles Azure |
     | Options de disponibilité | **Zone de disponibilité** |
     | Zone de disponibilité | **Zone 1** |
-    | Image | **Windows Server 2019 Datacenter - Gen1/Gen2** |
+    | Image | **Windows Server 2019 Datacenter - Gen2** |
     | Instance Azure Spot | **Non** |
     | Taille | **Standard D2s v3** |
     | Nom d’utilisateur | **Étudiant** |
-    | Mot de passe | **Choisissez un mot de passe sécurisé** |
+    | Mot de passe | **Fournir un mot de passe sécurisé, 12 caractères minimum** |
     | Aucun port d’entrée public | **Aucun** |
     | Souhaitez-vous utiliser une licence Windows Server existante ? | **Décoché** |
 
@@ -89,7 +89,7 @@ Dans cette tâche, vous allez déployer des machines virtuelles Azure dans diff�
     | Groupe de sécurité réseau de la carte réseau | **basic** |
     | Ports d’entrée publics | **Aucun** |
     | Mise en réseau accélérée | **Désactivé**
-    | Placer cette machine virtuelle derrière une solution d’équilibrage de charge existante ? | **Décoché** |
+    | Options d’équilibrage de charge | **Aucun** |
 
 1. Cliquez sur **Suivant : Gestion >** et sous l’onglet **Gestion** du panneau **Créer une machine virtuelle**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
@@ -237,7 +237,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
 1. Dans le panneau de la machine virtuelle **az104-08-vm0**, cliquez sur **Disques**, sous **Disques de données**, cliquez sur **+ Créer et attacher un nouveau disque**.
 
-1. Créez un disque managé avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Créez un disque managé avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) et cliquez sur **Appliquer** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -247,7 +247,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
 1. De retour dans le panneau **az104-08-vm0 - Disques**, sous **Disques de données**, cliquez sur **+ Créer un disque et l'attacher**.
 
-1. Créez un disque managé avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) et enregistrez les modifications :
+1. Créez un disque managé avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) et cliquez sur **Appliquer** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -255,7 +255,6 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
     | Type de stockage | **SSD Premium** |
     | Taille (Gio)| **1,024 Gio** |
 
-1. De retour dans le panneau **az104-08-vm0 - Disques**, cliquez sur **Enregistrer**.
 
 1. Dans le panneau **az104-08-vm0**, dans la section **Opérations**, cliquez sur **Run command** et, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
 
@@ -292,7 +291,7 @@ Dans cette tâche, vous allez mettre à l'échelle le calcul des machines virtue
 
     >**Remarque** : Cette section du modèle définit la même taille de machine virtuelle Azure que celle que vous avez spécifiée pour la première machine virtuelle via le portail Azure.
 
-1. Dans le panneau **Modifier le modèle**, dans la section affichant le contenu du modèle, remplacez la ligne **51** (`"dataDisks": [ ],`) par le code suivant :
+1. Dans le panneau **Modifier le modèle**, dans la section affichant le contenu du modèle, remplacez la ligne **54** (`"dataDisks": [ ],`) par le code suivant :
 
    ```json
                     "dataDisks": [
@@ -495,7 +494,7 @@ Dans cette tâche, vous allez installer le rôle serveur Windows Web sur les ins
 
     >**Remarque** : Attendez que l’installation de l’extension se termine avant de passer à l’étape suivante.
 
-1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des deux instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
+1. Dans la section **Vue d’ensemble** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des deux instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
     >**Remarque** : Attendez que la mise à niveau se termine avant de passer à l’étape suivante.
 
@@ -534,13 +533,13 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
     | Paramètre | Valeur |
     | --- |--- |
     | Source de la mesure | **Ressource actuelle (az10480vmss0)** |
-    | Agrégation du temps | **Average** |
     | Espace de noms de la métrique | **Hôte de machine virtuelle** |
     | Nom de métrique | **Octets entrants réseau totaux** |
     | Opérateur | **Supérieur à** |
     | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
     | Durée (en minutes) | **1** |
-    | Statistique de fragment de temps | **Average** |
+    | Statistique de fragment de temps | **Moyenne** |
+    | Agrégation du temps | **Moyenne** |
     | Opération | **Augmenter le nombre de** |
     | Nombre d’instances | **1** |
     | Refroidissement (minutes) | **5** |
@@ -593,7 +592,9 @@ Dans cette tâche, vous allez modifier la taille des instances de groupes de mac
     | Type de stockage | **HDD Standard** |
     | Taille (Gio) | **32** |
 
-1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des deux instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
+1. Appliquer la modification
+
+1. Dans la section **Paramètres** du panneau **az10408vmss0**, cliquez sur **Instances**, cochez les cases en regard des instances du groupe de machines virtuelles identiques, cliquez sur **Mettre à niveau**, puis, lorsque vous êtes invité à confirmer, cliquez sur **Oui**.
 
     >**Remarque** : Le disque attaché à l’étape précédente est un disque brut. Avant de pouvoir être utilisé, il est nécessaire de créer une partition, de créer un système de fichiers et de le monter. Pour ce faire, vous allez utiliser l’extension de script personnalisé de machine virtuelle Azure. Tout d’abord, vous devez supprimer l’extension de script personnalisé existante.
 
