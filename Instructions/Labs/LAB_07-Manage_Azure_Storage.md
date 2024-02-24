@@ -285,17 +285,17 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 
     > **Remarque** : Si vous n’avez pas enregistré l’URL SAP de la tâche 4, vous devez en générer une nouvelle avec la même configuration. Utilisez les étapes 4 à 6 de la Tâche 4 comme guide pour générer une nouvelle URL SAP blob. 
 
-1. Le contenu de la page **Licence MIT (MIT)** doit vous être présenté.
+1. Vous devez pouvoir télécharger le fichier LICENSE.txt.
 
     > **Remarque** : Ceci est attendu, car vous vous connectez à partir de votre adresse IP du client.
 
 1. Fermez la fenêtre du navigateur en mode InPrivate, revenez à la fenêtre du navigateur montrant le panneau **Mise en réseau** du compte de Stockage Azure.
 
-1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
+1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles** puis, dans la liste des machines virtuelles, cliquez sur **az104-07-vm0**.
 
-1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
+1. Dans le panneau **az104-07-vm0**, dans la section **Opérations**, cliquez sur **Exécuter la commande**.
 
-1. Dans le panneau Cloud Shell, exécutez ce qui suit pour tenter de télécharger l’objet blob LICENSE à partir du conteneur **az104-07-container** du compte de stockage (remplacez l’espace réservé `[blob SAS URL]` par l’URL SAP blob que vous avez générée dans la tâche précédente) :
+1. Dans le panneau **Exécuter le script de commande**, exécutez ce qui suit dans le volet **Script PowerShell** pour tenter de télécharger l'objet blob LICENSE à partir du conteneur **az104-07-container** du compte de stockage (remplacez l'espace réservé `[blob SAS URL]` par l'URL SAP d'objet blob que vous avez générée dans la tâche précédente) :
 
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
@@ -303,8 +303,6 @@ Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azu
 1. Vérifiez que la tentative de téléchargement a échoué.
 
     > **Remarque** : Vous devez recevoir le message indiquant **AuthorizationFailure: Cette requête n’est pas autorisée à effectuer cette opération**. Cela est attendu, car vous vous connectez à partir de l’adresse IP attribuée à une machine virtuelle Azure hébergeant l’instance Cloud Shell.
-
-1. Fermez le volet Cloud Shell.
 
 ## Nettoyer les ressources
 
