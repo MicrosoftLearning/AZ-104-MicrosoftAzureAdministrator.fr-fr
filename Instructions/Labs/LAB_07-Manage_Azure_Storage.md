@@ -5,334 +5,257 @@ lab:
 ---
 
 # Labo 07 : Gérer le Stockage Azure
-# Manuel de labo de l’étudiant
+
+## Présentation du labo
+
+Dans ce labo, vous découvrez comment créer des comptes de stockage pour des blobs Azure et des fichiers Azure. Vous découvrez comment configurer et sécuriser des conteneurs de blobs. Vous découvrez aussi comment utiliser le navigateur de stockage pour configurer et sécuriser des partages de fichiers Azure. 
+
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
+
+## Durée estimée : 50 minutes
 
 ## Scénario du labo
 
-Vous devez évaluer l’utilisation du stockage Azure pour stocker des fichiers résidant actuellement dans des magasins de données locaux. Bien que la majorité de ces fichiers ne soient pas consultés fréquemment, il y a des exceptions. Vous voulez réduire le coût du stockage en plaçant les fichiers moins fréquemment consultés dans des niveaux de stockage moins chers. Vous voulez également explorer différents mécanismes de protection offerts par le Stockage Azure, notamment l’accès réseau, l’authentification, l’autorisation et la réplication. Enfin, vous voulez déterminer si le service Azure Files peut convenir pour héberger vos partages de fichiers locaux.
+Votre organisation stocke actuellement des données dans des magasins de données locaux. La plupart de ces fichiers ne sont pas consultés fréquemment. Vous voulez réduire le coût du stockage en plaçant les fichiers qui ne sont pas consultés fréquemment dans des niveaux de stockage moins chers. Vous voulez également explorer différents mécanismes de protection offerts par le Stockage Azure, notamment l’accès réseau, l’authentification, l’autorisation et la réplication. Enfin, vous voulez déterminer dans quelle mesure Azure Files est adapté à l’hébergement de vos partages de fichiers locaux.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
+## Simulations de labo interactives
 
-## Objectifs
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
-Dans ce labo, vous allez :
-
-+ Tâche 1 : Approvisionner l’environnement de laboratoire
-+ Tâche 2 : Créer et configurer des comptes de Stockage Azure
-+ Tâche 3 : Gérer le stockage d’objets blob
-+ Tâche 4 : Gérer l’authentification et les autorisations pour le service Stockage Azure
-+ Tâche 5 : Créer et configurer un partage Azure Files
-+ Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
-
-## Durée estimée : 40 minutes
++ [Créer un stockage blob](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Créer un compte de stockage, gérez le stockage blob et surveillez les activités de stockage. 
+  
++ [Gérer Stockage Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011). Créer un compte de stockage et passer en revue la configuration. Gère les conteneurs d’objets blob de stockage. Configurer la mise en réseau du stockage. 
 
 ## Diagramme de l'architecture
 
-![image](../media/lab07.png)
+![Diagramme des tâches.](../media/az104-lab07-architecture.png)
 
+## Compétences de tâche
 
-### Instructions
++ Tâche 1 : Créer et configurer un compte de stockage. 
++ Tâche 2 : Créer et configurer un stockage blob sécurisé.
++ Tâche 3 : Créer et configurer un stockage de fichiers Azure sécurisé.
 
-## Exercice 1
+## Tâche 1 : Créer et configurer un compte de stockage. 
 
-## Tâche 1 : Approvisionner l’environnement de laboratoire
+Dans cette tâche, vous allez créer et configurer un compte de stockage. Le compte de stockage utilisera un stockage géoredondant et n’aura pas d’accès public. 
 
-Dans cette tâche, vous allez déployer une machine virtuelle Azure que vous utiliserez plus tard dans ce labo.
+1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-1. Connectez-vous au **[portail Azure](https://portal.azure.com)**.
+1. Recherchez et sélectionnez `Storage accounts`, puis cliquez sur **+ Créer**.
 
-1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
+1. Sous l’onglet **Informations de base** du volet **Créer un compte de stockage**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
-1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Abonnement          | nom de votre abonnement Azure  |
+    | Resource group        | **az104-rg7** (créer un nouveau) |
+    | Nom du compte de stockage  | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
+    | Région                | **(États-Unis) USA Est**  |
+    | Performances           | **Standard** (notez l’option Premium) |
+    | Redondance            | **Stockage géoredondant** (notez les autres options)|
+    | Permettre l’accès en lecture aux données en cas d’indisponibilité régionale | Activer la case |
 
-    >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
+>**Le saviez-vous ?** Vous devez utiliser le niveau de performances Standard pour la plupart des applications. Utilisez le niveau de performances Premium pour les applications d’entreprise ou hautes performances. 
 
-1. Dans la barre d'outils du panneau Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** et **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** dans le répertoire d'origine de Cloud Shell.
+1. Sous l’onglet **Avancé**, utilisez les icônes d’information pour en savoir plus sur les choix. Utilisez les valeurs par défaut. 
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour créer le groupe de ressources qui hébergera les machines virtuelles (remplacez l’espace réservé [Azure_region] par le nom d’une région Azure dans laquelle vous envisagez de déployer la machine virtuelle Azure)
+1. Sous l’onglet **Mise en réseau**, passez en revue les options disponibles, puis sélectionnez **Désactiver l’accès public et utiliser l’accès privé**.
 
-    >**Remarque** : Pour répertorier les noms des régions Azure, exécutez `(Get-AzLocation).Location`.
-    >**Remarque** : Chaque commande ci-dessous doit être tapée séparément
+1. Passez en revue l’onglet **Protection des données**. Notez que la stratégie de rétention pour la suppression réversible est par défaut de 7 jours. Notez que vous pouvez activer le contrôle de version des blobs. Acceptez les valeurs par défaut.
 
-    ```powershell
-    $location = '[Azure_region]'
-    ```
+1. Passez en revue l’onglet **Chiffrement**. Notez les options de sécurité supplémentaires. Acceptez les valeurs par défaut.
+
+1. Sous l’onglet **Vérifier**, attendez que le processus de validation se termine, puis sélectionnez **Créer**.
+
+1. Une fois le compte de stockage déployé, sélectionnez **Accéder à la ressource**.
+
+1. Passez en revue le panneau **Vue d’ensemble** et les configurations supplémentaires qui peuvent être modifiées. Il s’agit de paramètres globaux pour le compte de stockage. Notez que le compte de stockage peut être utilisé pour des conteneurs d’objets blob, des partages de fichiers, des files d’attente et des tables.
+
+1. Dans la section **Sécurité + Mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’accès au réseau public est désactivé.
+
+    + Changez le **niveau d’accès public** en **Activé à partir des réseaux virtuels et adresses IP sélectionnés**.
+    + Dans la section **Pare-feu**, cochez la case pour **Ajouter l’adresse IP de votre client**.
+    + Veillez à **Enregistrer** vos modifications. 
   
-    ```powershell
-     $rgName = 'az104-07-rg0'
-    ```
+1. Dans la section **Gestion des données**, affichez le panneau **Redondance**. Notez les informations sur les emplacements de votre centre de données principal et de votre centre de données secondaire.
 
-    ```powershell
-    New-AzResourceGroup -Name $rgName -Location $location
-    ```
+1. Dans la section **Gestion des données**, sélectionnez **Gestion du cycle de vie**, puis **Ajouter une règle**.
+
+    + **Nommez la règle **`Movetocool`. Notez vos options pour limiter l’étendue de la règle.
     
-1. Dans le panneau Cloud Shell, exécutez ce qui suit pour déployer la machine virtuelle à l’aide des fichiers de modèle et de paramètres chargés :
+    + Sous l’onglet **Objets blob de base**, *si* des objets blob de base ont été modifiés plus de `30 days` auparavant, *alors* **passez au stockage froid**. Notez vos autres choix. 
+    
+    + Notez que vous pouvez configurer d’autres conditions. Sélectionnez **Ajouter** quand vous avez terminé l’exploration.
 
-    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+    ![Capture d’écran – Conditions de la règle Déplacer vers le niveau froid.](../media/az104-lab07-movetocool.png)
 
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-07-vm-template.json `
-      -TemplateParameterFile $HOME/az104-07-vm-parameters.json `
-      -AsJob
-   ```
+## Tâche 2 : Créer et configurer un stockage blob sécurisé
 
-    >**Remarque** : N’attendez pas que le déploiement se termine, mais passez à la tâche suivante.
+Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une image. Les conteneurs d’objets blob sont des structures de type répertoire qui stockent des données non structurées.
 
-    >**Remarque** : Si vous avez reçu une erreur indiquant que la taille de machine virtuelle n’est pas disponible, demandez à votre instructeur de l’aide et essayez ces étapes.
-    > 1. Cliquez sur le bouton `{}` dans votre CloudShell, sélectionnez le fichier **az104-07-vm-parameters.json** dans la barre latérale gauche et prenez note de la valeur de paramètre `vmSize`.
-    > 1. Vérifiez l’emplacement dans lequel le groupe de ressources « az104-04-rg1 » est déployé. Vous pouvez exécuter `az group show -n az104-04-rg1 --query location` dans votre CloudShell pour l’obtenir.
-    > 1. Exécutez `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` dans votre CloudShell.
-    > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter.
-    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton en haut quelques fois, ce qui amènerait la dernière commande exécutée.
+### Créer un conteneur d’objets blob et une stratégie de rétention basée sur le temps
 
-1. Fermez le volet Cloud Shell.
+1. Continuez dans le portail Azure, en utilisant votre compte de stockage.
 
-## Tâche 2 : Créer et configurer des comptes de Stockage Azure
+1. Dans la section **Stockage des données**, cliquez sur **Conteneurs**. 
 
-Dans cette tâche, vous allez créer et configurer un compte de Stockage Azure.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Comptes de stockage**, puis cliquez sur **+ Créer**.
-
-1. Sous l’onglet **Options de base** du volet **Créer un compte de stockage**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Cliquez sur **+ Conteneur**, puis sur **Créer un conteneur** avec les paramètres suivants :
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | le nom d’un **nouveau** groupe de ressources **az104-07-rg1** |
-    | Nom du compte de stockage | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
-    | Région | le nom d’une région Azure dans laquelle vous pouvez créer un compte de Stockage Azure  |
-    | Performances | **Standard** |
-    | Redondance | **Stockage géo-redondant (GRS)** |
+    | Nom | `data`  |
+    | Niveau d'accès public | Notez que le niveau d’accès est défini sur privé. |
 
-1. Cliquez sur **Suivant : Avancé >** , sous l’onglet **Avancé** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, puis cliquez sur **Suivant : Mise en réseau >**.
+    ![Capture d’écran de la création d’un conteneur](../media/az104-lab07-create-container.png)
 
-1. Sous l’onglet **Mise en réseau** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez l’option par défaut **Activer l’accès public de tous les réseaux** et cliquez sur **Suivant : Protection des données >**.
+1. Sur votre conteneur, faites défiler jusqu’aux points de suspension (...) tout à droite, puis sélectionnez **Stratégie d’accès**.
 
-1. Sous l’onglet **Protection des données** du panneau **Créer un compte de stockage**, passez en revue les options disponibles, acceptez les valeurs par défaut, cliquez sur **Vérifier + Créer**, attendez que le processus de validation se termine et cliquez sur **Créer**.
-
-    >**Remarque** : attendez que le compte de stockage soit créé. Ce processus prend environ 2 minutes.
-
-1. Dans le panneau de déploiement, cliquez sur **Accéder à la ressource** pour afficher le panneau du compte de Stockage Azure.
-
-1. Dans le volet Compte de stockage, dans la section **Gestion des données**, cliquez sur **Redondance** et prenez note de l’emplacement secondaire. 
-
-1. Dans la liste déroulante **Redondance**, sélectionnez **Stockage localement redondant (LRS)** et enregistrez la modification. Notez que, à ce stade, le compte de stockage n’a que l’emplacement principal.
-
-1. Dans le volet Compte de stockage, dans la section **Paramètres**, sélectionnez **Configuration**. Définissez le **Niveau d’accès aux blobs (par défaut)** sur **Froid** et enregistrez la modification.
-
-    > **Remarque** : Le niveau d’accès froid est optimal pour les données qui ne sont pas utilisées fréquemment.
-
-## Tâche 3 : Gérer le stockage d’objets blob
-
-Dans cette tâche, vous allez créer un conteneur blob et charger un fichier d’objets blob dans celui-ci.
-
-1. Dans le panneau Compte de stockage, dans la section **Stockage des données**, cliquez sur **Conteneurs**.
-
-1. Cliquez sur **+ Conteneur** et créez un conteneur avec les paramètres suivants :
+1. Dans la zone **Stockage blob non modifiable**, sélectionnez **Ajouter une stratégie**.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-07-container**  |
-    | Niveau d'accès public | **Privé (aucun accès anonyme)** |
+    | Type de stratégie | **Rétention basée sur le temps**  |
+    | Définir la période de rétention sur | `180` jours |
 
-1. Dans la liste des conteneurs, cliquez sur **az104-07-container**, puis sur **Charger**.
+1. Sélectionnez **Enregistrer**.
 
-1. Accédez à **\\Allfiles\\Labs\\07\\LICENSE** sur votre ordinateur de labo, puis cliquez sur **Ouvrir**.
+### Gérer les chargements de blobs
 
-1. Dans le panneau **Charger l’objet blob**, développez la section **Avancé** et spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Revenez à la page des conteneurs, sélectionnez votre conteneur **de données**, puis cliquez sur **Charger**.
+
+1. Dans le panneau **Charger l’objet blob**, développez la section **Avancé**.
+
+    >**Remarque** : Recherchez un fichier à charger. Il peut s’agir de n’importe quel type de fichier, mais un petit fichier est préférable. Un exemple de fichier peut être téléchargé à partir du répertoire AllFiles. 
 
     | Paramètre | Valeur |
     | --- | --- |
+    | Parcourez les fichiers. | Ajoutez le fichier que vous avez sélectionné pour le chargement. |
+    | Sélectionnez **Avancé** | |
     | Type d’objet blob | **Objet blob de blocs** |
-    | Taille de bloc | **4 Mo** |
-    | Niveau d’accès | **Chaud** |
-    | Charger dans le dossier | **licences** |
-
-    > **Remarque** : Le niveau d’accès peut être défini pour des objets blob individuels.
+    | Taille de bloc | **4 Mio** |
+    | Niveau d’accès | **Chaud**  (notez les autres options) |
+    | Charger dans le dossier | `securitytest` |
+    | Étendue de chiffrement | Utiliser l’étendue de conteneur par défaut existante |
 
 1. Cliquez sur **Télécharger**.
 
-    > **Remarque** : Notez que le chargement a créé automatiquement un sous-dossier nommé **licenses**.
+1. Vérifiez que vous avez un nouveau dossier et que votre fichier a été chargé. 
 
-1. Revenez dans le panneau **az104-07-container**, cliquez sur **licenses**, puis sur **LICENSE**.
+1. Sélectionnez votre fichier chargé, puis passez en revue les options, notamment **Télécharger**, **Supprimer**, **Changer le niveau** et **Acquérir le bail**.
 
-1. Dans le panneau **licenses/LICENSE**, passez en revue les options disponibles.
-
-    > **Remarque** : Vous avez la possibilité de télécharger l’objet blob, de modifier son niveau d’accès (il est actuellement défini sur **Chaud**), d’acquérir un bail, qui changerait son statut de bail en **Verrouillé** (il est actuellement défini sur **Déverrouillé**) et de protéger l’objet blob contre la modification ou la suppression, ainsi que l’attribution de métadonnées personnalisées (en spécifiant une clé arbitraire et des paires de valeurs). Vous avez également la possibilité de **modifier** le fichier directement dans l’interface du Portail Azure, sans le télécharger au préalable. Vous pouvez également créer des instantanés, ainsi que générer un jeton SAP (vous allez découvrir cette option dans la tâche suivante).
-
-## Tâche 4 : Gérer l’authentification et l’autorisation pour le Stockage Azure
-
-Dans cette tâche, vous allez configurer l’authentification et l’autorisation pour le Stockage Azure.
-
-1. Dans le panneau **licenses/LICENSE**, sous l’onglet **Vue d’ensemble**, cliquez sur le bouton **Copier dans le Presse-papiers** en regard de l’entrée **URL**.
-
-1. Ouvrez une autre fenêtre de navigateur en mode InPrivate et accédez à l’URL que vous avez copiée dans l’étape précédente.
+1. Copiez l’**URL** du fichier et collez-la dans une nouvelle fenêtre de navigation **InPrivate**.
 
 1. Un message au format XML indiquant **ResourceNotFound** ou **PublicAccessNotPermitted** doit vous être présenté.
 
     > **Remarque** : Ceci est attendu, étant donné que le conteneur que vous avez créé a le niveau d’accès public défini sur **Privé (aucun accès anonyme)**.
 
-1. Fermez la fenêtre du navigateur en mode InPrivate, revenez à la fenêtre du navigateur montrant le panneau **licenses/LICENSE** du conteneur Stockage Azure, puis basculez vers l’onglet **Générer une SAP**.
+### Configurer un accès limité au stockage d’objets blob
 
-1. Sous l’onglet **Générer une SAP** du panneau **licenses/LICENSE**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Sélectionnez votre fichier chargé, puis passez à l’onglet **Générer une signature d’accès partagé**. Vous pouvez également utiliser les points de suspension (...) tout à droite. Spécifiez les paramètres suivants (laissez les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Clé de signature | **Clé 1** |
-    | Autorisations | **Lire** |
+    | Autorisations | **Lire** (notez vos autres choix) |
     | Date de début | date d’hier |
     | Heure de début | heure actuelle |
     | Date d'expiration | date de demain |
     | Heure d’expiration | heure actuelle |
     | Adresses IP autorisées | laisser vide |
-    
 
 1. Cliquez sur **Générer une URL et un jeton SAS**.
 
-1. Cliquez sur **Copier dans le Presse-papiers** en regard de l’entrée **URL SAP blob**.
+1. Copiez l’entrée **URL SAP d’objet blob** dans le Presse-papiers.
 
-1. Ouvrez une autre fenêtre de navigateur en mode InPrivate et accédez à l’URL que vous avez copiée dans l’étape précédente.
+1. Ouvrez une autre fenêtre de navigateur InPrivate et accédez à l’URL SAP d’objet blob que vous avez copiée à l’étape précédente.
 
-    > **Note** : Vous devriez pouvoir visualiser le contenu du fichier en le téléchargeant et en l'ouvrant avec le Bloc-notes.
+    >**Remarque** : Vous devez être en mesure de voir le contenu du fichier. 
 
-    > **Remarque** : Ceci est attendu, car maintenant votre accès est autorisé en fonction du jeton SAP nouvellement généré.
+## Tâche 3 : Créer et configurer un partage de fichiers Azure
 
-    > **Remarque** : Enregistrez l’URL SAP blob. Vous en aurez besoin plus tard dans ce labo.
+Dans cette tâche, vous allez créer et configurer des partages des fichiers Azure. Vous allez utiliser le navigateur de stockage pour gérer le partage de fichiers. 
 
-1. Fermez la fenêtre du navigateur en mode InPrivate, revenez à la fenêtre du navigateur montrant le panneau **licenses/LICENSE** du conteneur Stockage Azure, puis revenez au panneau **az104-07-container**.
+### Créer un partage de fichiers et charger un fichier
 
-1. Cliquez sur le lien **Basculer vers le lien Compte d’utilisateur Microsoft Entra** en regard de l’étiquette **Méthode d’authentification**.
+1. Dans le portail Azure, revenez à votre compte de stockage et, dans la section **Stockage de données**, cliquez sur **Partages de fichiers**.
 
-    > **Remarque** : Vous pouvez voir une erreur lorsque vous modifiez la méthode d’authentification (l’erreur est *« Vous n’avez pas d’autorisations pour répertorier les données à l’aide de votre compte d’utilisateur avec Microsoft Entra »*). Ceci est normal.  
+1. Cliquez sur **+ Partage de fichiers** puis, sous l’onglet **Informations de base**, donnez un nom au partage de fichiers, `share1`. 
 
-    > **Remarque** : À ce stade, vous n’avez pas d’autorisations pour modifier la méthode d’authentification.
+1. Notez les options de **Niveau**. Conservez la **Transaction optimisée** par défaut.
+   
+1. Accédez à l’onglet **Sauvegarde** et vérifiez que la case **Activer la sauvegarde** n’est **pas** cochée. Nous désactivons la sauvegarde pour simplifier la configuration du labo.
 
-1. Dans le volet **az104-07-container**, cliquez sur **Access Control (IAM)**.
+1. Cliquez sur **Vérifier + créer**, puis sur **Créer**. Attendez que le partage de fichiers soit déployé.
 
-1. Sous l’onglet **Vérifier l’accès**, cliquez sur **Ajouter une attribution de rôle**.
+    ![Capture d’écran de la page Créer un partage de fichiers.](../media/az104-lab07-create-share.png)
 
-1. Dans le panneau **Ajouter une attribution de rôle**, spécifiez les paramètres suivants :
+### Explorer le navigateur de stockage et charger un fichier
 
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Rôle | **Propriétaire des données Blob du stockage** |
-    | Attribuer l’accès à | **Utilisateur, groupe ou principal de service** |
-    | Membres | le nom de votre compte d’utilisateur |
+1. Revenez à votre compte de stockage et sélectionnez **Navigateur de stockage**. Le navigateur de stockage Azure est un outil du portail qui vous permet de voir rapidement tous les services de stockage existant sous votre compte.
 
-1. Cliquez sur **Vérifier + Attribuer**, sur **Vérifier + attribuer**, puis revenez au volet **Vue d’ensemble** du conteneur **az104-07-container** et vérifiez que vous pouvez définir la méthode d’authentification sur (Basculer vers le Compte d’utilisateur Microsoft Entra).
+1. Sélectionnez **Partages de fichiers** et vérifiez que votre répertoire **share1** est bien présent.
 
-    > **Remarque** : La modification peut prendre environ 5 minutes.
+1. Sélectionnez votre répertoire **share1** et notez que vous pouvez **+ Ajouter un répertoire**. Ceci vous permet de créer une structure de dossiers.
 
-## Tâche 5 : Créer et configurer un partage de fichiers Azure Files
+1. Sélectionnez **Télécharger**. Accédez à un fichier de votre choix, puis cliquez sur **Charger**.
 
-Dans cette tâche, vous allez créer et configurer des partages Azure Files.
+    >**Remarque** : Vous pouvez voir des partages de fichiers et gérer ces partages dans le navigateur de stockage. Il n’existe actuellement aucune restriction.
 
-> **Remarque** : Avant de démarrer cette tâche, vérifiez que la machine virtuelle que vous avez approvisionnée dans la première tâche de ce labo est en cours d’exécution.
+### Restreindre l’accès réseau au compte de stockage
 
-1. Dans le portail Azure, revenez au panneau du compte de stockage que vous avez créé dans la première tâche de ce labo puis, dans la section **Stockage de données**, cliquez sur **Partages de fichiers**.
+1. Dans le portail, recherchez et sélectionnez **Réseaux virtuels**.
 
-1. Cliquez sur **+ Partage de fichiers**, puis sous l’onglet **Informations de base**, donnez un nom au partage de fichiers, **az104-07-share**. Passez en revue les autres paramètres de cet onglet. 
+1. Sélectionnez **+ Créer**. Sélectionnez votre groupe de ressources. Donnez un **nom** au réseau virtuel, `vnet1`.
 
-1. Accédez à l’onglet **Sauvegarde** et vérifiez que la case **Activer la sauvegarde** n’est **pas** cochée.
+1. Utilisez les valeurs par défaut pour d’autres paramètres, sélectionnez **Vérifier + créer**, puis **Créer**.
 
-1. Cliquez sur **Vérifier et créer**, puis sur **Créer**. Attendez que le partage de fichiers soit déployé. 
+1. Attendez que le réseau virtuel soit déployé, puis sélectionnez **Accéder à la ressource**.
 
-1. Cliquez sur le partage de fichiers nouvellement créé et notez les informations disponibles dans le panneau **az104-07-share** .
+1. Dans la section **Paramètres**, sélectionnez le panneau **Sous-réseaux**.
+    + Sélectionnez le sous-réseau **par défaut**.
+    + Dans la section **Points de terminaison de service**, choisissez **Microsoft.Storage** dans la liste déroulante **Services**.
+    + N’apportez aucune autre modification.    
+    + Veillez à **Enregistrer** vos modifications. 
 
-1. Cliquez sur **Parcourir** et notez qu’il n’y a aucun fichier ou dossier dans le nouveau partage de fichiers. Cliquez sur **Connecter**.
+1. Revenez à votre compte de stockage.
 
-1. Dans le panneau **Connecter**, vérifiez que l’onglet **Windows** est sélectionné. Vous trouverez ci-dessous un bouton avec l’étiquette **Afficher le script**. Cliquez sur le bouton et vous trouverez une zone de texte grise avec un script, dans le coin inférieur droit de cette zone. Pointez sur l’icône de pages, puis cliquez sur **Copier dans le Presse-papiers**.
+1. Dans la section **Sécurité + mise en réseau**, sélectionnez le panneau **Mise en réseau**.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles** puis, dans la liste des machines virtuelles, cliquez sur **az104-07-vm0**.
+1. Sélectionnez **Ajouter un réseau virtuel existant**, sélectionnez **vnet1** et le sous-réseau **par défaut**, puis sélectionnez **Ajouter**.
 
-1. Dans le panneau **az104-07-vm0**, dans la section **Opérations**, cliquez sur **Exécuter la commande**.
+1. Dans la section **Pare-feu**, **supprimez** l’adresse IP de votre machine. Le trafic autorisé doit provenir seulement du réseau virtuel. 
 
-1. Dans le panneau **az104-07-vm0 - Exécuter la commande**, cliquez sur **RunPowerShellScript**.
+1. Veillez à **Enregistrer** vos modifications.
 
-1. Dans le panneau **Exécuter le script de commande**, collez le script que vous avez copié précédemment dans cette tâche dans le panneau **Script PowerShell**, puis cliquez sur **Exécuter**.
+    >**Remarque :** Le compte de stockage doit maintenant être accessible seulement depuis le réseau virtuel que vous venez de créer. 
 
-1. Vérifiez que le script s’est correctement exécuté.
+1. Sélectionnez le **navigateur de stockage**, puis **actualisez** la page. Accédez au contenu de votre partage de fichiers ou de votre blob.  
 
-1. Remplacez le contenu du panneau **Script PowerShell** par le script suivant, puis cliquez sur **Exécuter** :
+    >**Remarque :** Vous devez recevoir un message *Vous n’êtes pas autorisé à effectuer cette opération.*. Vous ne vous connectez pas à partir du réseau virtuel. Quelques minutes peuvent être nécessaires pour que ceci soit pris en compte.
 
-   ```powershell
-   New-Item -Type Directory -Path 'Z:\az104-07-folder'
 
-   New-Item -Type File -Path 'Z:\az104-07-folder\az-104-07-file.txt'
-   ```
+![Capture d’écran d’un accès non autorisé.](../media/az104-lab07-notauthorized.png)
 
-1. Vérifiez que le script s’est correctement exécuté.
+## Nettoyage de vos ressources
 
-1. Revenez au volet du partage de fichiers **az104-07-share\|, Naviguez** volet de partage de fichiers, cliquez sur **Actualiser**, puis vérifiez que **az104-07-folder** apparaît dans la liste des dossiers.
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-1. Cliquez sur **az104-07-folder** et vérifiez que **az104-07-file.txt** apparaît dans la liste des fichiers.
++ Dans le portail Azure, sélectionnez le groupe de ressources, sélectionnez **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Avec l’interface CLI, `az group delete --name resourceGroupName`.
 
-## Tâche 6 : Gérer l’accès réseau pour le Stockage Azure
+## Points clés
 
-Dans cette tâche, vous allez configurer l’accès réseau pour le Stockage Azure.
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir pour ce labo. 
 
-1. Dans le portail Azure, revenez au panneau du compte de stockage que vous avez créé dans la première tâche de ce labo puis, dans la section **Sécurité + Mise en réseau**, cliquez sur **Mise en réseau**, puis sur **Pare-feu et réseaux virtuels**.
++ Un compte de stockage Azure contient tous vos objets de données Stockage Azure : les blobs, les fichiers, les files d’attente et les tables. Le compte de stockage fournit pour vos données de stockage Azure un espace de noms unique, accessible de n’importe où dans le monde via HTTP ou HTTPS.
++ Stockage Azure fournit plusieurs modèles de redondance, notamment le stockage localement redondant (LRS), le stockage redondant interzone (ZRS) et le stockage géoredondant (GRS). 
++ Stockage blob Azure vous permet de stocker de grandes quantités de données non structurées sur la plateforme de stockage de données de Microsoft. Blob signifie Binary Large Object. Il contient des objets tels que des images et des fichiers multimédias.
++ Stockage Azure Files fournit un stockage partagé pour les données structurées. Les données peuvent être organisées dans des dossiers.
++ Le stockage immuable vous permet de stocker des données dans un état WORM (Write Once, Read Many). Les stratégies de stockage immuable peuvent être basées sur le temps ou sur la durée de conservation légale.
 
-1. Cliquez sur l’option **Activé à partir des réseaux virtuels et adresses IP sélectionnés** et passez en revue les paramètres de configuration qui deviennent disponibles une fois que cette option est activée.
+## En savoir plus grâce à l’apprentissage auto-rythmé
 
-    > **Remarque** : Vous pouvez utiliser ces paramètres pour configurer la connectivité directe entre les machines virtuelles Azure sur des sous-réseaux désignés de réseaux virtuels et le compte de stockage à l’aide de points de terminaison de service.
-
-1. Cliquez sur la case à cocher **Ajouter votre adresse IP du client** et enregistrez la modification.
-
-1. Ouvrez une autre fenêtre de navigateur en mode InPrivate et accédez à l’URL SAP blob que vous avez générée dans la tâche précédente.
-
-    > **Remarque** : Si vous n’avez pas enregistré l’URL SAP de la tâche 4, vous devez en générer une nouvelle avec la même configuration. Utilisez les étapes 4 à 6 de la Tâche 4 comme guide pour générer une nouvelle URL SAP blob. 
-
-1. Vous devez pouvoir télécharger le fichier LICENSE.txt.
-
-    > **Remarque** : Ceci est attendu, car vous vous connectez à partir de votre adresse IP du client.
-
-1. Fermez la fenêtre du navigateur en mode InPrivate, revenez à la fenêtre du navigateur montrant le panneau **Mise en réseau** du compte de Stockage Azure.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Machines virtuelles** puis, dans la liste des machines virtuelles, cliquez sur **az104-07-vm0**.
-
-1. Dans le panneau **az104-07-vm0**, dans la section **Opérations**, cliquez sur **Exécuter la commande**.
-
-1. Dans le panneau **Exécuter le script de commande**, exécutez ce qui suit dans le volet **Script PowerShell** pour tenter de télécharger l'objet blob LICENSE à partir du conteneur **az104-07-container** du compte de stockage (remplacez l'espace réservé `[blob SAS URL]` par l'URL SAP d'objet blob que vous avez générée dans la tâche précédente) :
-
-   ```powershell
-   Invoke-WebRequest -URI '[blob SAS URL]'
-   ```
-1. Vérifiez que la tentative de téléchargement a échoué.
-
-    > **Remarque** : Vous devez recevoir le message indiquant **AuthorizationFailure: Cette requête n’est pas autorisée à effectuer cette opération**. Cela est attendu, car vous vous connectez à partir de l’adresse IP attribuée à une machine virtuelle Azure hébergeant l’instance Cloud Shell.
-
-## Nettoyer les ressources
-
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
-
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. Vous pouvez également essayer de supprimer le groupe de ressources où résident les ressources. Il s’agit d’un raccourci administrateur rapide. Si vous rencontrez des difficultés, parlez à votre instructeur.
-
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
-
-1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*'
-   ```
-
-1. Supprimez tous les groupes de ressources que vous avez créés dans les labos de ce module en exécutant la commande suivante :
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
-
-## Révision
-
-Dans cet exercice, vous avez :
-
-- Approvisionné l’environnement lab
-- Créé et configuré des comptes de Stockage Azure
-- Géré le stockage d’objets blob
-- Géré l’authentification et l’autorisation pour le Stockage Azure
-- Créé et configuré un partage de fichiers Azure Files
-- Géré l’accès réseau pour le Stockage Azure
++ [Optimiser vos coûts avec Stockage Blob Azure.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Découvrez comment optimiser votre coût avec Stockage Blob Azure.
++ [Contrôler l’accès à Stockage Azure avec des signatures d’accès partagé](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Accorder l’accès aux données stockées dans vos comptes de stockage Azure en utilisant des signatures d’accès partagé.
