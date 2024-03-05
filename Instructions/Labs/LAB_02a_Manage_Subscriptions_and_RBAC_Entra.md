@@ -5,214 +5,175 @@ lab:
 ---
 
 # Labo 02a - Gérer les abonnements et RBAC
-# Manuel de labo pour l’étudiant
 
-## Configuration de laboratoire requise
+## Présentation du labo
 
-Ce labo nécessite des autorisations pour créer des utilisateurs et des rôles Contrôle d’accès en fonction du rôle (RBAC) Azure personnalisés, ainsi que pour attribuer ces rôles aux utilisateurs. Tous les hôtes de laboratoire ne peuvent pas fournir cette fonctionnalité. Demandez à votre formateur la disponibilité de ce laboratoire.
+Dans ce labo, vous découvrez le contrôle d’accès en fonction du rôle. Vous découvrez la manière d’utiliser des autorisations et des étendues pour contrôler les actions que les identités peuvent et ne peuvent pas effectuer. Vous découvrez également comment faciliter la gestion des abonnements en utilisant des groupes d’administration. 
 
-## Scénario du labo
-
-Pour améliorer la gestion des ressources Azure dans Contoso, vous avez été chargé d’implémenter les fonctionnalités suivantes :
-
-- Création d’un groupe d’administration qui inclurait tous les abonnements Azure de Contoso
-
-- Octroi d’autorisations pour envoyer des demandes de support pour tous les abonnements du groupe d’administration à un utilisateur désigné. Les autorisations de cet utilisateur doivent être limitées uniquement aux éléments suivants : 
-
-    - Création de tickets de demande de support
-    - Affichage des groupes de ressources
-
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques.
-
-## Objectifs
-
-Dans ce labo, vous allez :
-
-+ Tâche 1 : Implémenter des groupes d’administration
-+ Tâche 2 : Créer des rôles RBAC personnalisés 
-+ Tâche 3 : Attribuer des rôles RBAC
-
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
 ## Durée estimée : 30 minutes
 
+## Scénario du labo
+
+Pour simplifier la gestion des ressources Azure dans votre organisation, vous êtes chargé d’implémenter les fonctionnalités suivantes :
+
+- Création d’un groupe d’administration qui inclut tous vos abonnements Azure.
+
+- Octroi d’autorisations pour envoyer des demandes de support pour tous les abonnements du groupe d’administration. Les autorisations doivent être limitées uniquement aux éléments suivants : 
+
+    - Créer et gérer des machines virtuelles
+    - Créer des tickets de demande de support (ne pas inclure l’ajout de fournisseurs Azure)
+
+
+## Simulations de labo interactives
+
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+
++ [Gérez l’accès avec RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Attribuez un rôle intégré à un utilisateur et surveillez les journaux d’activité. 
+
++ [Gérez les abonnements et RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202). Implémentez un groupe d’administration, puis créez et attribuez un rôle RBAC personnalisé.
+
++ [Ouvrez une demande de support](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022). Passez en revue les options du plan de support, puis créez et surveillez une demande de support, technique ou de facturation.
+
 ## Diagramme de l'architecture
 
-![image](../media/lab02aentra.png)
+![Diagramme des tâches de labo.](../media/az104-lab02a-architecture.png)
 
+## Compétences de tâche
 
-### Instructions
-
-## Exercice 1
++ Tâche 1 : Implémentez des groupes d’administration.
++ Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
++ Tâche 3 : Créez un rôle RBAC personnalisé.
++ Tâche 4 : Surveillez des attributions de rôle avec le journal d’activité.
 
 ## Tâche 1 : Implémenter des groupes d’administration
 
-Dans cette tâche, vous allez créer et configurer des groupes d’administration. 
+Dans cette tâche, vous allez créer et configurer des groupes d’administration. Vous utilisez des groupes d’administration pour organiser logiquement des abonnements. Les abonnements doivent être segmentés et autoriser RBAC et Azure Policy à être attribués et hérités par d’autres groupes d’administration et abonnements. Par exemple, si votre organisation dispose d’une équipe de support technique dédiée pour l’Europe, vous pouvez organiser des abonnements européens en groupe d’administration pour fournir au personnel de support l’accès à ces abonnements (sans fournir d’accès individuel à tous les abonnements). Dans notre scénario, tous les membres du support technique devront créer une demande de support sur tous les abonnements. 
 
-1. Connectez-vous au [**portail Azure**](http://portal.azure.com).
+1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-1. Recherchez et sélectionnez **Groupes d’administration** pour accéder au panneau **Groupes d’administration**.
+1. Recherchez et sélectionnez `Microsoft Entra ID`.
 
-1. Passez en revue les messages en haut du panneau **Groupes d’administration**. Si le message suivant s’affiche **Vous êtes enregistré en tant qu’administrateur de répertoire mais vous ne disposez pas des autorisations nécessaires pour accéder au groupe d’administration racine**, suivez la séquence d’étapes suivante :
+1. Dans le panneau **Gérer**, sélectionnez **Propriétés**.
 
-    1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**.
-    
-    1.  Dans le volet qui affiche les propriétés de votre locataire, accédez au menu vertical sur le côté gauche, allez à la section **Gérer** et sélectionnez **Propriétés**.
-    
-    1.  Dans le panneau **Propriétés** de votre locataire, dans la section **Gestion des accès pour les ressources Azure**, sélectionnez **Oui**, puis **Enregistrer**.
-    
-    1.  Revenez au panneau **Groupes d’administration**, puis sélectionnez **Actualiser**.
+1. Passez en revue la zone **Gestion de l’accès pour les ressources Azure**. Vérifiez que vous pouvez gérer l’accès à tous les abonnements Azure et à tous les groupes d’administration de ce tenant.
+   
+1. Recherchez et sélectionnez `Management groups`.
 
 1. Dans le panneau **Groupes d’administration**, cliquez sur **+ Créer**.
 
-    >**Remarque** : Si vous n’avez pas encore créé de groupes d’administration, sélectionnez **Commencer à utiliser des groupes d’administration**
-
-1. Créez un groupe d'administration avec les paramètres suivants :
+1. Créez un groupe d’administration avec les paramètres suivants. Cliquez sur **Soumettre** lorsque vous avez terminé. 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | ID du groupe d'administration | **az104-02-mg1** |
-    | Nom d’affichage du groupe d’administration | **az104-02-mg1** |
+    | ID du groupe d'administration | `az104-mg1` (doit être unique dans le répertoire) |
+    | Nom d’affichage du groupe d’administration | `az104-mg1` |
 
-1. Dans la liste des groupes d’administration, cliquez sur l’entrée représentant le groupe d’administration nouvellement créé.
+1. **Actualisez** la page du groupe d’administration pour veiller à ce que votre nouveau groupe d’administration s’affiche. Cela peut prendre une minute. 
 
-1. Dans le panneau **az104-02-mg1**, cliquez sur **Abonnements**. 
+   >**Remarque :** Avez-vous remarqué le groupe d’administration racine ? Le groupe d’administration racine est intégré à la hiérarchie et contient tous les groupes d’administration et abonnements. Il permet d’appliquer des stratégies globales et des affectations de rôles Azure au niveau de l’annuaire. Une fois le groupe d’administration créé, vous devez ajouter tous les abonnements qui doivent être inclus dans le groupe. 
 
-1. Dans le panneau **Abonnements az104-02-mg1\|** , cliquez sur **+ Ajouter**, dans le panneau **Ajouter un abonnement**, dans la liste déroulante **Abonnement**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis cliquez sur **Enregistrer**.
+## Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
 
-    >**Remarque** : Dans le panneau **Abonnements az104-02-mg1\|** , copiez l’ID de votre abonnement Azure dans le Presse-papiers. Vous en aurez besoin dans la prochaine tâche.
+Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer le rôle Contributeur de machine virtuelle à un membre du support technique. Azure propose un grand nombre de [rôles intégrés](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
-## Tâche 2 : Créer des rôles RBAC personnalisés
+1. Sélectionnez le groupe d’administration **az104-mg1**.
 
-Dans cette tâche, vous allez créer une définition d’un rôle RBAC personnalisé.
+1. Sélectionnez le panneau **Contrôle d’accès (IAM)**, puis l’onglet **Rôles**.
 
-1. À partir de l’ordinateur de labo, ouvrez le fichier **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** dans Bloc-notes et passez en revue son contenu :
+1. Faites défiler les définitions de rôle intégrées disponibles. **Affichez** un rôle pour obtenir des informations détaillées sur les **Autorisations**, **JSON** et les **Attributions**. Vous allez souvent utiliser *propriétaire*, *contributeur* et *lecteur*. 
 
-   ```json
-   {
-      "Name": "Support Request Contributor (Custom)",
-      "IsCustom": true,
-      "Description": "Allows to create support requests",
-      "Actions": [
-          "Microsoft.Resources/subscriptions/resourceGroups/read",
-          "Microsoft.Support/*"
-      ],
-      "NotActions": [
-      ],
-      "AssignableScopes": [
-          "/providers/Microsoft.Management/managementGroups/az104-02-mg1",
-          "/subscriptions/SUBSCRIPTION_ID"
-      ]
-   }
-   ```
-    > **Remarque** : Si vous ne savez pas où les fichiers sont stockés localement dans votre environnement de laboratoire, demandez à votre instructeur.
+1. Sélectionnez **+ Ajouter** dans le menu déroulant, puis **Ajouter une attribution de rôle**. 
 
-1. Remplacez l’espace réservé `SUBSCRIPTION_ID` dans le fichier JSON par l’ID d’abonnement que vous avez copié dans le Presse-papiers et enregistrez la modification.
+1. Sur le panneau **Ajouter une attribution de rôle**, recherchez et sélectionnez le rôle **Contributeur de machine virtuelle**. Le rôle de contributeur de machine virtuelle permet de gérer des machines virtuelles, mais pas d’accéder à leur système d’exploitation ni de gérer le réseau virtuel et le compte de stockage auxquels ils sont connectés. Il constitue un bon rôle pour le support technique. Cliquez sur **Suivant**.
 
-1. Dans le portail Azure, ouvrez le volet **Cloud Shell** en cliquant sur l’icône de barre d’outils juste à droite de la zone de texte de recherche.
+    >**Le saviez-vous ?** À l’origine, Azure fournissait uniquement le modèle de déploiement **Classique**. Il a été remplacé par le modèle de déploiement **Azure Resource Manager**. En tant que meilleure pratique, n’utilisez aucune ressource classique. 
 
-1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**. 
+1. Sous l’onglet **Membres**, **Sélectionner des membres**.
 
-    >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**. 
+    >**Remarque :** L’étape suivante attribue le rôle au groupe du **support technique**. Si vous ne disposez pas de groupe de support technique, prenez une minute pour le créer.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez le fichier **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** dans le répertoire d'origine de Cloud Shell.
+1. Recherchez et sélectionnez le groupe `helpdesk`. Cliquez sur **Sélectionner**. 
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer la définition de rôle personnalisée :
+1. Cliquez sur **Vérifier + attribuer** à deux reprises pour créer l’attribution de rôle.
 
-   ```powershell
-   New-AzRoleDefinition -InputFile $HOME/az104-02a-customRoleDefinition.json
-   ```
+1. Passez au panneau **Contrôle d’accès (IAM)**. Sous l’onglet **Attributions de rôles**, vérifiez que le groupe de **support technique** a le rôle **Contributeur de machine virtuelle**. 
 
-1. Fermez le volet Cloud Shell.
+    >**Remarque :** En tant que meilleure pratique, attribuez toujours des rôles à des groupes et non à des personnes. 
 
-## Tâche 3 : Attribuer des rôles RBAC
-
-Dans cette tâche, vous allez créer un utilisateur, attribuer le rôle RBAC que vous avez créé dans la tâche précédente à cet utilisateur et vérifier qu’il peut effectuer la tâche spécifiée dans la définition de rôle RBAC.
-
-1. Dans le Portail Azure, recherchez et sélectionnez **Microsoft Entra ID**, cliquez sur **Utilisateurs**, puis sur **+ Nouvel utilisateur**.
-
-1. Créez un nouvel utilisateur avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom d’utilisateur | **az104-02-aaduser1**|
-    | Nom | **az104-02-aaduser1**|
-    | Création du mot de passe | enabled |
-    | Mot de passe initial | **Choisissez un mot de passe sécurisé** |
-
-    >**Remarque** : **Copiez dans le presse-papier** le **nom d'utilisateur** complet. Vous en aurez besoin plus tard dans ce laboratoire.
-
-1. Dans le portail Azure, revenez au groupe d’administration **az104-02-mg1** et affichez ses **détails**.
-
-1. Cliquez sur **Contrôle d’accès (IAM)** , sur **+ Ajouter**, puis sur **Ajouter une attribution de rôle**. Sous l’onglet **Rôle**, recherchez **Contributeur de demande de support (personnalisé)** . 
-
-    >**Remarque** : Si votre rôle personnalisé n’est pas visible, sachez qu’il peut prendre jusqu’à 10 minutes avant de s’afficher après sa création.
-
-1. Sélectionnez le **Rôle** et cliquez sur **Suivant**. Sous l’onglet **Membres**, cliquez sur **+ Sélectionner des membres**, puis **sélectionnez** le compte d’utilisateur az104-***********************.**********.onmicrosoft.com. Cliquez sur **Suivant**, puis sur **Vérifier et affecter**.
-
-1. Ouvrez une fenêtre de navigateur **InPrivate** et connectez-vous au [portail Azure](https://portal.azure.com) à l’aide du compte utilisateur que vous venez de créer. Lorsque vous êtes invité à mettre à jour le mot de passe, modifiez le mot de passe de l’utilisateur.
-
-    >**Remarque** : Au lieu de taper le nom d’utilisateur (y compris le nom de domaine), vous pouvez coller le contenu du Presse-papiers.
-
-1. Dans la fenêtre du navigateur **InPrivate**, dans le Portail Azure, recherchez et sélectionnez **Groupes de ressources** pour vérifier que l’utilisateur az104-02-aaduser1 peut voir tous les groupes de ressources.
-
-1. Dans la fenêtre du navigateur **InPrivate**, dans le portail Azure, recherchez et sélectionnez **Toutes les ressources** pour vérifier que l’utilisateur az104-02-aaduser1 ne peut pas voir de ressources.
-
-1. Dans la fenêtre du navigateur **InPrivate**, dans le portail Azure, recherchez et sélectionnez **Aide + support**, puis cliquez sur **+ Créer une demande de support**. 
-
-1. Dans la fenêtre du navigateur **InPrivate**, sous l’onglet **Description/Résumé du problème** du panneau **Aide et support - Nouvelle demande de support**, tapez **Limites de service et d’abonnement** dans le champ Résumé, puis sélectionnez le type de problème **Limites de service et d’abonnement (quotas)** . Notez que l’abonnement que vous utilisez dans ce labo est répertorié dans la liste déroulante **Abonnement**.
-
-    >**Remarque** : La présence de l’abonnement que vous utilisez dans ce labo dans la liste déroulante **Abonnement** indique que le compte que vous utilisez dispose des autorisations requises pour créer la demande de support spécifique à l’abonnement.
-
-    >**Remarque** : Si vous ne voyez pas l’option **Limites de service et d’abonnement (quotas),** déconnectez-vous du portail Azure et reconnectez-vous.
-
-1. Ne poursuivez pas la création de la demande de support. À la place, déconnectez-vous du compteur utilisateur az104-02-aaduser1 à partir du portail Azure et fermez la fenêtre de navigateur InPrivate.
-
-## Tâche 4 : Nettoyer les ressources
-
-   >**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous permet d'éviter des frais inattendus, mais n'oubliez pas que les stratégies d'Azure n'entraînent pas de frais supplémentaires.
-
-   >**Remarque** : Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Microsoft Entra ID**, puis cliquez sur **Utilisateurs**.
-
-1. Dans le panneau **Utilisateurs - Tous les utilisateurs**, cliquez sur **az104-02-aaduser1**.
-
-1. Dans le panneau **az104-02-aaduser1 - Profil**, copiez la valeur de l’attribut **ID d’objet**.
-
-1. Dans le portail Azure, démarrez une session **PowerShell** dans **Cloud Shell**.
-
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour supprimer l’attribution de la définition de rôle personnalisé (remplacez l’espace réservé `[object_ID]` par la valeur de l’attribut **ID d’objet** du compte d’utilisateur **az104-02-aaduser1** que vous avez copié précédemment dans cette tâche) :
-
-   ```powershell
-   
-    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
+    >**Le saviez-vous ?** Il est possible que cette attribution ne vous accorde aucun privilège supplémentaire. Si vous avez déjà le rôle Propriétaire, ce rôle inclut toutes les autorisations associées au rôle Contributeur de machine virtuelle.
     
-    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
-   ```
+## Tâche 3 : Créez un rôle RBAC personnalisé.
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer la définition de rôle personnalisée :
+Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles personnalisés font partie intégrante de l’implémentation du principe du privilège minimum d’un environnement. Il est possible que les rôles intégrés aient trop d’autorisations pour votre scénario. Dans cette tâche, nous allons créer un rôle et supprimer les autorisations inutiles. Avez-vous un plan pour gérer des autorisations qui se chevauchent ?
 
-   ```powershell
-   Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
-   ```
+1. Continuez à travailler sur votre groupe d’administration. Sur le panneau **Contrôle d’accès(IAM)**, sélectionnez l’onglet **Vérifier l’accès**.
 
-1. Dans le portail Azure, revenez au panneau **Utilisateurs - Tous les utilisateurs** de **Microsoft Entra ID**, puis supprimez le compte d’utilisateur **az104-02-aaduser1**.
+1. Dans la zone **Créer un rôle personnalisé**, sélectionnez **Ajouter**.
 
-1. Dans le portail Azure, revenez au panneau **Groupes d’administration**. 
+1. Sous l’onglet Informations de base, terminez la configuration.
 
-1. Dans le panneau **Groupes d’administration**, sélectionnez l’icône représentant des **Points de suspension** en regard de votre abonnement sous le groupe d’administration **az104-02-mg1**, puis sélectionnez **Déplacer** pour déplacer l’abonnement vers le **groupe d’administration racine du locataire**.
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Nom du rôle personnalisé | `Custom Support Request` |
+    | Description | ``Rôle de contributeur personnalisé pour les demandes de support.` |
 
-   >**Remarque** : Il est probable que le groupe d’administration cible soit le **groupe d’administration racine du locataire**, sauf si vous avez créé une hiérarchie de groupe d’administration personnalisée avant d’exécuter ce labo.
-   
-1. Sélectionnez **Actualiser** pour vérifier que l’abonnement a été déplacé vers le **groupe d’administration racine du locataire**.
+1. Pour les **Autorisations de base**, sélectionnez **Cloner un rôle**. Dans le menu déroulant **Rôle à cloner**, sélectionnez **Contributeur de demande de support**.
 
-1. Revenez au panneau **Groupes d’administration**, cliquez sur l’icône **Points de suspension** à droite du groupe d’administration **az104-02-mg1**, puis cliquez sur **Supprimer**.
-  >**Remarque** : Si vous ne parvenez pas à supprimer le **groupe d’administration racine du locataire**, il est probable que l’**Abonnement Azure** se trouve sous le groupe d’administration. Vous devez déplacer l’**abonnement Azure** hors du **groupe d’administration racine du locataire**, puis supprimer le groupe.
+    ![Capture d’écran du clonage de rôle.](../media/az104-lab02a-clone-role.png)
 
-## Révision
+1. Sélectionnez **Suivant** pour accéder à l’onglet **Autorisations**, puis sélectionnez **+ Exclure les autorisations**.
 
-Dans cet exercice, vous avez :
+1. Dans le champ de recherche du fournisseur de ressources, entrez `.Support` et sélectionnez **Microsoft.Support**.
 
-- Implémenté des groupes d’administration
-- Créé des rôles RBAC personnalisés 
-- Attribué des rôles RBAC
+1. Dans la liste des autorisations, placez une case à cocher à côté de **Autres : Inscrit le fournisseur de ressources de support**, puis sélectionnez **Ajouter**. Le rôle doit être mis à jour pour inclure cette autorisation en tant que *NotAction*.
+
+    >**Remarque :** Un fournisseur de ressources Azure est un ensemble d’opérations REST qui active une fonctionnalité pour un service Azure spécifique. Nous ne voulons pas que le support technique puisse disposer de cette fonctionnalité. Elle est donc supprimée du rôle cloné. Vous pouvez également supprimer et ajouter d’autres fonctionnalités au nouveau rôle. 
+
+1. Sous l’onglet **Étendues attribuables**, vérifiez que votre groupe d’administration est répertorié, puis cliquez sur **Suivant**.
+
+1. Passez en revue le JSON pour les *Actions*, *NotActions* et *AssignableScopes* personnalisés dans le rôle. 
+
+1. Sélectionnez **Vérifier + créer**, puis **Créer**.
+
+    >**Remarque :** À ce stade, vous avez créé un rôle personnalisé et vous l’avez affecté au groupe d’administration.  
+
+## Tâche 4 : Surveillez des attributions de rôle avec le journal d’activité.
+
+Dans cette tâche, vous affichez le journal d’activité pour déterminer si une personne a créé un rôle. 
+
+1. Dans le portail, recherchez la ressource **az104-mg1** et sélectionnez **Journal d’activité**. Le journal d’activité fournit des insights sur les événements au niveau de l’abonnement. 
+
+1. Passez en revue les activités pour les attributions de rôles. Vous pouvez filtrer le journal d’activité pour des opérations spécifiques. 
+
+    ![Capture d’écran de la page Journal d’activité avec un filtre configuré.](../media/az104-lab02a-searchactivitylog.png)
+
+## Nettoyage de vos ressources
+
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
+
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
+  
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Vous utilisez des groupes d’administration pour organiser logiquement des abonnements.
++ Le groupe d’administration racine intégré contient tous les groupes d’administration et les abonnements.
++ Azure dispose de plusieurs rôles intégrés. Vous pouvez attribuer ces rôles pour contrôler l’accès aux ressources.
++ Vous pouvez créer des rôles ou personnaliser des rôles existants.
++ Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
++ Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles. 
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Sécurisez vos ressources Azure avec le contrôle d’accès en fonction du rôle Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Utilisez Azure RBAC pour gérer l’accès aux ressources dans Azure.
++ [Créez des rôles personnalisés pour des ressources Azure avec le contrôle d’accès en fonction du rôle (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenez la structure des définitions de rôle pour le contrôle d’accès. Identifiez les propriétés de rôle à utiliser pour définir vos autorisations de rôle personnalisées. Créez un rôle Azure personnalisé et attribuez-le à un utilisateur.
+
+
+
+
+

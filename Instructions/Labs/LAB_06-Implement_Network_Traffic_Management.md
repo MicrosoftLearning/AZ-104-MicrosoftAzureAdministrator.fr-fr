@@ -5,481 +5,161 @@ lab:
 ---
 
 # Labo 06 : Implémenter la gestion du trafic
-# Manuel de labo de l’étudiant
+
+## Présentation du labo
+
+Dans ce labo, vous découvrez comment configurer et tester un équilibreur de charge public et une passerelle applicative.
+
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
+
+## Durée estimée : 50 minutes
 
 ## Scénario du labo
 
-Vous avez été chargé de tester la gestion du trafic réseau ciblant les machines virtuelles Azure dans la topologie de réseau hub and spoke, que Contoso compte implémenter dans son environnement Azure (au lieu de créer la topologie de maillage, que vous avez testée dans le labo précédent). Ce test doit inclure l’implémentation de la connectivité entre les spokes en s’appuyant sur des itinéraires définis par l’utilisateur qui forcent le trafic à circuler via le hub, ainsi que la distribution du trafic entre les machines virtuelles à l’aide des équilibreurs de charge de couche 4 et de couche 7. À cet effet, vous avez l’intention d’utiliser Azure Load Balancer (couche 4) et Azure Application Gateway (couche 7).
+Votre organisation a un site web public. Vous devez équilibrer la charge des requêtes publiques entrantes sur différentes machines virtuelles. Vous devez également fournir des images et des vidéos depuis différentes machines virtuelles. Vous prévoyez d’implémenter un équilibreur de charge Azure et une passerelle applicative Azure. Toutes les ressources se trouvent dans la même région.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
+## Simulations de labo interactives
 
->**Remarque** : Ce labo, par défaut, nécessite un total de 8 processeurs virtuels disponibles dans la série Standard_Dsv3 dans la région que vous choisissez pour le déploiement, car il implique le déploiement de quatre machines virtuelles Azure de Standard_D2s_v3 référence SKU. Si vos étudiants utilisent des comptes d’évaluation, avec la limite de 4 processeurs virtuels, vous pouvez utiliser une taille de machine virtuelle qui ne nécessite qu’un seul processeur virtuel (par exemple, Standard_B1s).
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
-## Objectifs
++ [Créer et configurer un équilibreur de charge Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Créer un réseau virtuel, des serveurs back-ends, un équilibreur de charge, puis tester l’équilibreur de charge.
++ [Déployer une passerelle applicative Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Créer une passerelle applicative, créer des machines virtuelles, créer le pool de back-ends et tester la passerelle.
++ [Implémenter la gestion du trafic](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010). Implémenter un réseau hub-and-spoke complet, y compris les machines virtuelles, les réseaux virtuels, le peering, l’équilibreur de charge et la passerelle applicative.
 
-Dans ce labo, vous allez :
+## Compétences de tâche
 
-+ Tâche 1 : Approvisionner l’environnement de laboratoire
-+ Tâche 2 : Configurer une topologie de réseau hub-and-spoke
-+ Tâche 3 : Tester la transitivité du peering de réseaux virtuels
-+ Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
-+ Tâche 5 : Mettre en oeuvre Azure Load Balancer
-+ Tâche 6 : Implémenter Azure Application Gateway
++ Tâche 1 : Utiliser un modèle pour provisionner une infrastructure.
++ Tâche 2 : Configurer un équilibreur de charge Azure.
++ Tâche 3 : Configurer une passerelle applicative Azure.
 
-## Durée estimée : 60 minutes
+## Tâche 1 : Utiliser un modèle pour provisionner une infrastructure
 
-## Diagramme de l'architecture
+Dans cette tâche, vous allez utiliser un modèle pour déployer un réseau virtuel, un groupe de sécurité réseau et deux machines virtuelles.
 
-![image](../media/lab06.png)
+1. Téléchargez les fichiers du labo **\\Allfiles\\Lab06** (modèles et paramètres).
 
+1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-### Instructions
+1. Recherchez et sélectionnez `Deploy a custom template`.
 
-## Exercice 1
+1. Dans la page du déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
 
-## Tâche 1 : Approvisionner l’environnement de laboratoire
+1. Dans le volet Modifier le modèle, sélectionnez **Charger le fichier**.
 
-Dans cette tâche, vous allez déployer quatre machines virtuelles dans la même région Azure. Les deux premières résideront dans un réseau virtuel hub, tandis que chacune des deux restantes résidera dans un réseau virtuel spoke distinct.
+1. Recherchez et sélectionnez le fichier **\\Allfiles\\Lab06\\az104-06-vms-template.json**, puis sélectionnez **Ouvrir**.
 
-1. Connectez-vous au [portail Azure](https://portal.azure.com).
+1. Sélectionnez **Enregistrer**.
 
-1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
+1. Sélectionnez **Modifier les paramètres**, puis chargez le fichier **\\Allfiles\\Lab06\\az104-06-vms-parameters.json**.
 
-1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
+1. Sélectionnez **Enregistrer**.
 
-    >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
+1. Utilisez les informations suivantes pour compléter les champs de la page du déploiement personnalisé, en laissant tous les autres champs avec leur valeur par défaut.
 
-1. Dans la barre d'outils du volet Cloud Shell, cliquez sur l'icône **Charger/Télécharger des fichiers**, dans le menu déroulant, cliquez sur **Charger** et téléchargez les fichiers **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** et **\\Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** dans le répertoire d'origine de Cloud Shell.
+    | Paramètre       | Valeur         |
+    | ---           | ---           |
+    | Abonnement  | votre abonnement Azure |
+    | Resource group | `az104-rg6` (Si nécessaire, sélectionnez **Créer nouveau**x) |
+    | Mot de passe      | Choisissez un mot de passe sécurisé |
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour créer le premier groupe de ressources qui hébergera l’environnement du labo (remplacez l’espace réservé « [Azure_region] » par le nom d’une région Azure où vous envisagez de déployer des machines virtuelles Azure)(vous pouvez utiliser la cmdlet « (Get-AzLocation).Location » pour obtenir la liste des régions) :
+    >**Remarque** : Si vous recevez une erreur indiquant que la taille de la machine virtuelle n’est pas disponible, sélectionnez une référence SKU disponible dans votre abonnement et qui comporte au moins 2 cœurs.
 
-    ```powershell 
-    $location = '[Azure_region]'
-    ```
-    
-    Maintenant le nom du groupe de ressources :
-    ```powershell
-    $rgName = 'az104-06-rg1'
-    ```
-    
-    Enfin, créez le groupe de ressources dans votre emplacement souhaité :
-    ```powershell
-    New-AzResourceGroup -Name $rgName -Location $location
-    ```
+1. Sélectionnez **Vérifier + créer**, puis sélectionnez **Créer**.
 
+    >**Remarque** : Attendez que le déploiement se termine avant de passer à la tâche suivante. Le déploiement doit prendre environ 5 minutes.
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour créer les trois réseaux virtuels et quatre machines virtuelles Azure dans celles-ci à l’aide du modèle et des fichiers de paramètres que vous avez chargés :
+    >**Remarque** : Passez en revue les ressources déployées. Il y aura un réseau virtuel avec trois sous-réseaux. Chaque sous-réseau aura une machine virtuelle.
 
-    >**Remarque** : Vous serez invité à fournir un mot de passe d’administrateur.
+## Tâche 2 : Configurer un équilibreur de charge Azure
 
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-06-vms-loop-template.json `
-      -TemplateParameterFile $HOME/az104-06-vms-loop-parameters.json
-   ```
+Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les deux machines virtuelles Azure du réseau virtuel. Les équilibreurs de charge dans Azure fournissent une connectivité de couche 4 entre des ressources, comme des machines virtuelles. La configuration de l’équilibreur de charge inclut une adresse IP frontale pour accepter les connexions, un pool de back-ends et des règles qui définissent la façon dont les connexions doivent traverser l’équilibreur de charge.
 
-    >**Remarque** : Attendez que le déploiement se termine avant de passer à l’étape suivante. Ce processus prend environ 5 minutes.
+## Diagramme de l’architecture – Équilibreur de charge
 
-    >**Remarque** : Si vous avez reçu une erreur indiquant que la taille de machine virtuelle n’est pas disponible, demandez à votre instructeur de l’aide et essayez ces étapes.
-    > 1. Cliquez sur le bouton `{}` dans votre CloudShell, sélectionnez le fichier **az104-06-vms-loop-parameters.json** dans la barre latérale gauche et prenez note de la valeur de paramètre `vmSize`.
-    > 1. Vérifiez l’emplacement dans lequel le groupe de ressources « az104-06-rg1 » est déployé. Vous pouvez exécuter `az group show -n az104-06-rg1 --query location` dans votre CloudShell pour l’obtenir.
-    > 1. Exécutez `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` dans votre CloudShell.
-    > 1. Remplacez la valeur du paramètre `vmSize` par l’une des valeurs retournées par la commande que vous venez d’exécuter. S’il n’y a pas de valeurs retournées, vous devrez peut-être choisir une autre région à déployer. Vous pouvez également choisir un autre nom de famille, comme « Standard_B1s ».
-    > 1. Redéployez maintenant vos modèles en exécutant à nouveau la commande `New-AzResourceGroupDeployment`. Vous pouvez appuyer sur le bouton en haut quelques fois, ce qui amènerait la dernière commande exécutée.
+>**Remarque** : Notez que l’équilibreur de charge effectue une distribution entre deux machines virtuelles dans le même réseau virtuel.
 
-1. Dans le volet Cloud Shell, exécutez ce qui suit pour installer l’extension Network Watcher sur les machines virtuelles Azure déployées à l’étape précédente :
+![Diagramme des tâches du labo.](../media/az104-lab06-lb-architecture.png)
 
-   ```powershell
-   $rgName = 'az104-06-rg1'
-   $location = (Get-AzResourceGroup -ResourceGroupName $rgName).location
-   $vmNames = (Get-AzVM -ResourceGroupName $rgName).Name
+1. Dans le portail Azure, recherchez et sélectionnez `Load balancers` puis, dans le panneau **Équilibreurs de charge**, cliquez sur **+ Créer**.
 
-   foreach ($vmName in $vmNames) {
-     Set-AzVMExtension `
-     -ResourceGroupName $rgName `
-     -Location $location `
-     -VMName $vmName `
-     -Name 'networkWatcherAgent' `
-     -Publisher 'Microsoft.Azure.NetworkWatcher' `
-     -Type 'NetworkWatcherAgentWindows' `
-     -TypeHandlerVersion '1.4'
-   }
-   ```
-
-    >**Remarque** : Attendez que le déploiement se termine avant de passer à l’étape suivante. Ce processus prend environ 5 minutes.
-
-
-
-1. Fermez le volet Cloud Shell.
-
-## Tâche 2 : Configurer une topologie de réseau hub-and-spoke
-
-Dans cette tâche, vous allez configurer le peering local entre les réseaux virtuels que vous avez déployés dans les tâches précédentes afin de créer une topologie de réseau hub and spoke.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Réseaux virtuels**.
-
-1. Passez en revue les réseaux virtuels que vous avez créés dans la tâche précédente.
-
-    >**Remarque** : Le modèle que vous avez utilisé pour le déploiement des trois réseaux virtuels garantit que les plages d’adresses IP des trois réseaux virtuels ne se chevauchent pas.
-
-1. Dans la liste des réseaux virtuels, sélectionnez **az104-06-vnet2**.
-
-1. Dans le panneau **az104-06-vnet2**, sélectionnez **Propriétés**. 
-
-1. Dans le panneau Propriétés **az104-06-vnet2** , enregistrez la valeur de la propriété **ID de ressource**.
-
-1. Revenez à la liste des réseaux virtuels et sélectionnez **az104-06-vnet3**.
-
-1. Dans le panneau **az104-06-vnet3**, sélectionnez **Propriétés**. 
-
-1. Dans le panneau Propriétés **az104-06-vnet3\|** , enregistrez la valeur de la propriété **ID de ressource**.
-
-    >**Remarque** : Vous aurez besoin des valeurs de la propriété ResourceID pour les deux réseaux virtuels plus loin dans cette tâche.
-
-    >**Remarque** : Il s'agit d'une solution de contournement qui résout le problème du portail Azure qui, de tempsen temps, n'affiche pas le réseau virtuel nouvellement approvisionné lors de la création de peerings de réseaux virtuels.
-
-1. Dans la liste des réseaux virtuels, cliquez sur **az104-06-vnet01**.
-
-1. Dans le panneau de réseau virtuel **az104-06-vnet01**, dans la section **Paramètres**, cliquez sur **Peerings**, puis sur **+ Ajouter**.
-
-1. Créez un peering avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) et cliquez sur **Ajouter** :
+1. Créez un équilibreur de charge avec les paramètres suivants (laissez les autres avec leur valeur par défaut), puis cliquez sur **Suivant : Configuration IP front-end** :
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Autorisez « az104-06-vnet01 » à accéder au réseau virtuel appairé | **Vérifiez que la case est cochée (par défaut)** |
-    | Autorisez la passerelle dans « az104-06-vnet01 » à transférer le trafic vers le réseau virtuel appairé | **Vérifiez que la case est cochée** |
-    | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet2_to_az104-06-vnet01** |
-    | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
-    | Je connais mon ID de ressource | enabled |
-    | ID de ressource | La valeur du paramètre resourceID **az104-06-vnet2** que vous avez enregistrée précédemment dans cette tâche. |
-    | Autorisez az104-06-vnet2 à accéder à az104-06-vnet01 | **Vérifiez que la case est cochée (par défaut)** |
-    | Autorisez az104-06-vnet2 à recevoir le trafic transféré à partir d’az104-06-vnet01 | **Vérifiez que la case est cochée** |
-
-    >**Remarque** : Attendez que l’opération se termine.
-
-    >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-06-vnet01 d’az104-06-vnet2 et l’autre d’az104-06-vnet2 d’az104-06-vnet01.
-
-1. Dans le panneau de réseau virtuel **az104-06-vnet01**, dans la section **Paramètres**, cliquez sur **Peerings**, puis sur **+ Ajouter**.
-
-1. Créez un peering avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) et cliquez sur **Ajouter** :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Ce réseau virtuel : nom du lien d’homologation | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Autorisez « az104-06-vnet01 » à accéder au réseau virtuel appairé | **Vérifiez que la case est cochée (par défaut)** |
-    | Autorisez la passerelle dans « az104-06-vnet01 » à transférer le trafic vers le réseau virtuel appairé | **Vérifiez que la case est cochée** |
-    | Réseau virtuel distant : nom du lien d’homologation | **az104-06-vnet3_to_az104-06-vnet01** |
-    | Modèle de déploiement de réseau virtuel | **Gestionnaire des ressources** |
-    | Je connais mon ID de ressource | enabled |
-    | ID de ressource | Valeur du paramètre resourceID **az104-06-vnet3** que vous avez enregistrée précédemment dans cette tâche. |
-    | Autoriser az104-06-vnet3 à accéder à az104-06-vnet01 | **Vérifiez que la case est cochée (par défaut)** |
-    | Autoriser az104-06-vnet3 à recevoir le trafic transféré à partir d’az104-06-vnet01 | **Vérifiez que la case est cochée** |
-
-
-    >**Remarque** : Attendez que l’opération se termine.
-    
-    >**Remarque** : Cette étape établit deux peerings locaux : l’un d’az104-06-vnet01 d’az104-06-vnet3 et l’autre d’az104-06-vnet3 d’az104-06-vnet01. Cette opération termine la configuration de la topologie hub-and-spoke (avec deux réseaux virtuels spoke).
-
-## Tâche 3 : Tester la transitivité du peering de réseaux virtuels
-
-Dans cette tâche, vous allez tester la transitivité d’appairage de réseaux virtuels à l’aide de Network Watcher.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Network Watcher**.
-
-1. Dans le panneau **Network Watcher**, développez la liste des régions Azure et vérifiez que le service est activé dans la région que vous utilisez. 
-
-1. Dans le panneau **Network Watcher**, accédez à la **résolution des problèmes de connexion**.
-
-1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    > **Remarque** : Quelques minutes peuvent être nécessaires avant que le groupe de ressources ne soit listé. Si vous ne souhaitez pas attendre, essayez d’effectuer cette action : supprimez le Network Watcher, créez un Network Watcher, puis réessayez la résolution des problèmes de connexion. 
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Type de source | **Machine virtuelle** |
-    | Machine virtuelle | **az104-06-vm0** |
-    | Destination | **Spécifier manuellement** |
-    | URI, FQDN ou IPv4 | **10.62.0.4** |
-    | Protocol | **TCP** |
-    | Port de destination | **3389** |
-
-    > **Remarque** : **10.62.0.4** représente l’adresse IP privée **d’az104-06-vm2**
-
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
-
-    > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le premier réseau virtuel spoke.
-
-1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Type de source | **Machine virtuelle** |
-    | Machine virtuelle | **az104-06-vm0** |
-    | Destination | **Spécifier manuellement** |
-    | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocol | **TCP** |
-    | Port de destination | **3389** |
-
-    > **Remarque** : **10.63.0.4** représente l’adresse IP privée **d’az104-06-vm3**
-
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Examinez le chemin du réseau et notez que la connexion est directe, sans saut intermédiaire entre les machines virtuelles.
-
-    > **Remarque** : Cela est attendu, étant donné que le réseau virtuel hub est appairé directement avec le deuxième réseau virtuel spoke.
-
-1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, lancez une vérification avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Type de source | **Machine virtuelle** |
-    | Machine virtuelle | **az104-06-vm2** |
-    | Destination | **Spécifier manuellement** |
-    | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocol | **TCP** |
-    | Port de destination | **3389** |
-
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Notez que l’état est **Échec**.
-
-    > **Remarque** : Cela est attendu, étant donné que les deux réseaux virtuels spoke ne sont pas appairés les uns avec les autres (le peering de réseaux virtuels n’est pas transitif).
-
-## Tâche 4 : Configurer le routage dans la topologie hub-and-spoke
-
-Dans cette tâche, vous allez configurer et tester le routage entre les deux réseaux virtuels spoke en activant le transfert IP sur l’interface réseau de la machine virtuelle **az104-06-vm0**, en activant le routage au sein de son système d’exploitation et en configurant des itinéraires définis par l’utilisateur sur le réseau virtuel spoke.
-
-1. Sur le portail Azure, recherchez et sélectionnez **Machines virtuelles**.
-
-1. Dans le panneau **Machines virtuelles**, dans la liste des machines virtuelles, cliquez sur **az104-06-vm0**.
-
-1. Dans le panneau de la machine virtuelle **az104-06-vm0**, dans la section **Paramètres**, cliquez sur **Mise en réseau**.
-
-1. Cliquez sur le lien **az104-06-nic0** en regard de l’étiquette de **l’interface réseau**, puis, dans le panneau d’interface réseau **az104-06-nic0**, dans la section **Paramètres**, cliquez sur **Configurations IP**.
-
-1. Définissez le **transfert IP** sur **Activé** et enregistrez la modification.
-
-   > **Remarque** : Ce paramètre est requis pour qu’**az104-06-vm0** fonctionne en tant que routeur, ce qui acheminera le trafic entre deux réseaux virtuels spoke.
-
-   > **Remarque** : Vous devez maintenant configurer le système d’exploitation de la machine virtuelle **az104-06-vm0** pour prendre en charge le routage.
-
-1. Dans le portail Azure, revenez au panneau de machine virtuelle Azure **az104-06-vm0**, puis cliquez sur **Vue d’ensemble**.
-
-1. Dans le panneau **az104-06-vm0**, dans la section **Opérations**, cliquez sur **Exécuter la commande** et, dans la liste des commandes, cliquez sur **RunPowerShellScript**.
-
-1. Dans le panneau **Exécuter le script de commande**, tapez ce qui suit et cliquez sur **Exécuter** pour installer le rôle d’accès à distance Windows serveur.
-
-   ```powershell
-   Install-WindowsFeature RemoteAccess -IncludeManagementTools
-   ```
-
-   > **Remarque** : Attendez la confirmation que la commande s’est terminée correctement.
-
-1. Dans le panneau **Exécuter le script de commande** , tapez ce qui suit et cliquez sur **Exécuter** pour installer le service de rôle de routage.
-
-   ```powershell
-   Install-WindowsFeature -Name Routing -IncludeManagementTools -IncludeAllSubFeature
-
-   Install-WindowsFeature -Name "RSAT-RemoteAccess-Powershell"
-
-   Install-RemoteAccess -VpnType RoutingOnly
-
-   Get-NetAdapter | Set-NetIPInterface -Forwarding Enabled
-   ```
-
-   > **Remarque** : Attendez la confirmation que la commande s’est terminée correctement.
-
-   > **Remarque** : Vous devez maintenant créer et configurer des itinéraires définis par l’utilisateur sur les réseaux virtuels spoke.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Tables de routage**, puis, dans le panneau **Tables de routage**, cliquez sur **+ Créer**.
-
-1. Créez une table de routage avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Emplacement | nom de la région Azure dans laquelle vous avez créé les réseaux virtuels |
-    | Nom | **az104-06-rt23** |
-    | Propager des itinéraires de passerelle | **Non** |
-
-1. Cliquez sur **Examiner et créer**. Laissez la validation se produire, puis cliquez sur **Créer** à nouveau pour envoyer votre déploiement.
-
-   > **Remarque** : Attendez que la table de routage soit créée. Ce processus prend environ 3 minutes.
-
-1. Cliquez sur **Accéder à la ressource**.
-
-1. Dans le panneau de la table de routage **az104-06-rt23**, dans la section **Paramètres**, cliquez sur **Itinéraires**, puis sur **+ Ajouter**.
-
-1. Ajoutez un nouvel itinéraire avec les paramètres suivants :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom de l’itinéraire | **az104-06-route-vnet2-to-vnet3** |
-    | Destination du préfixe d’adresse | **Adresses IP** |
-    | Plages d’adresses IP/CIDR de destination | **10.63.0.0/20** |
-    | Type de tronçon suivant | **Appliance virtuelle** |
-    | adresse de tronçon suivant | **10.60.0.4** |
-
-1. Cliquez sur **Ajouter**
-
-1. Revenez dans le panneau de la table de routage **az104-06-rt23**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Associer**.
-
-1. Associez la table de routage **az104-06-rt23** au sous-réseau suivant :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Réseau virtuel | **az104-06-vnet2** |
-    | Subnet | **subnet0** |
-
-1. Cliquez sur **Ajouter**
-
-1. Revenez au panneau **Tables de routage**, puis cliquez sur **+ Créer**.
-
-1. Créez une table de routage avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Région | nom de la région Azure dans laquelle vous avez créé les réseaux virtuels |
-    | Nom | **az104-06-rt32** |
-    | Propager des itinéraires de passerelle | **Non** |
-
-1. Cliquez sur Examiner et créer. Laissez la validation se produire, puis appuyez sur Créer à nouveau pour envoyer votre déploiement.
-
-   > **Remarque** : Attendez que la table de routage soit créée. Ce processus prend environ 3 minutes.
-
-1. Cliquez sur **Accéder à la ressource**.
-
-1. Dans le panneau de la table de routage **az104-06-rt32**, dans la section **Paramètres**, cliquez sur **Itinéraires**, puis sur **+ Ajouter**.
-
-1. Ajoutez un nouvel itinéraire avec les paramètres suivants :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nom de l’itinéraire | **az104-06-route-vnet3-to-vnet2** |
-    | Destination du préfixe d’adresse | **Adresses IP** |
-    | Plages d’adresses IP/CIDR de destination | **10.62.0.0/20** |
-    | Type de tronçon suivant | **Appliance virtuelle** |
-    | adresse de tronçon suivant | **10.60.0.4** |
-
-1. Cliquez sur **OK**
-
-1. Revenez dans le panneau de la table de routage **az104-06-rt32**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Associer**.
-
-1. Associez la table de routage **az104-06-rt32** au sous-réseau suivant :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Réseau virtuel | **az104-06-vnet3** |
-    | Subnet | **subnet0** |
-
-1. Cliquez sur **OK**
-
-1. Dans le portail Azure, revenez au panneau **Network Watcher - Résolution des problèmes de connexion**.
-
-1. Dans le panneau **Network Watcher - Résolution des problèmes de connexion**, utilisez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | **az104-06-rg1** |
-    | Type de source | **Machine virtuelle** |
-    | Machine virtuelle | **az104-06-vm2** |
-    | Destination | **Spécifier manuellement** |
-    | URI, FQDN ou IPv4 | **10.63.0.4** |
-    | Protocol | **TCP** |
-    | Port de destination | **3389** |
-
-1. Cliquez sur **Exécuter des tests de diagnostic** et attendez que les résultats de la vérification de connectivité soient retournés. Vérifiez que l’état est **Réussite**. Passez en revue le chemin d’accès réseau et notez que le trafic a été routé via la carte réseau **10.60.0.4**, affectée à la carte réseau **az104-06-nic0**. Si l’état est **Échec**, vous devez arrêter, puis démarrer az104-06-vm0.
-
-    > **Remarque** : Cela est attendu, car le trafic entre les réseaux virtuels spoke est désormais routé via la machine virtuelle située dans le réseau virtuel hub, qui fonctionne comme un routeur.
-
-    > **Remarque** : Vous pouvez utiliser **Network Watcher** pour afficher la topologie du réseau.
-
-## Tâche 5 : Mettre en oeuvre Azure Load Balancer
-
-Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devant les deux machines virtuelles Azure dans le réseau virtuel hub.
-
-1. Dans le portail Azure, recherchez et sélectionnez **Équilibreurs de charge**. Dans le panneau **Équilibreurs de charge**, cliquez sur **+ Créer**.
-
-1. Créez un équilibreur de charge avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) puis cliquez sur **Suivant : Configuration IP front-end** :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | **az104-06-rg4** (si nécessaire, créez-le) |
-    | Nom | **az104-06-lb4** |
-    | Région | nom de la région Azure dans laquelle vous avez déployé toutes les autres ressources dans ce laboratoire |
-    | Référence SKU  | **Standard** |
+    | Abonnement | votre abonnement Azure |
+    | Resource group | **az104-rg6** |
+    | Nom | `az104-lb` |
+    | Région | La **même** région que celle que vous avez déployé les machines virtuelles |
+    | Référence (SKU)  | **Standard** |
     | Type | **Public** |
     | Niveau | **Regional** |
-    
+
+     ![Capture d’écran de la page Créer un équilibreur de charge.](../media/az104-lab06-create-lb1.png)
+
 1. Sous l’onglet **Configuration IP frontale**, cliquez sur **Ajouter une configuration IP frontale** et utilisez les paramètres suivants :  
-     
+
     | Paramètre | Valeur |
     | --- | --- |
-    | Name | **az104-06-fe4** |
+    | Nom | `az104-fe` |
     | Type IP | Adresse IP |
-    | Adresse IP publique | Sélectionnez **Créer** |
-    | Équilibreur de charge de passerelle | None |
-    
-1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**. 
-     
+    | Équilibreur de charge de passerelle | Aucun |
+    | Adresse IP publique | Sélectionnez **Créer nouveau** (utilisez les instructions de l’étape suivante) |
+
+1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**.
+
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-06-pip4** |
-    | Référence SKU | Standard |
+    | Nom | `az104-lbpip` |
+    | Référence (SKU) | Standard |
     | Niveau | Régionale |
     | Affectation | statique |
     | Préférence de routage | **Réseau Microsoft** |
 
-1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis sur **Suivant : Règles de trafic entrant**. 
+    >**Remarque :** La référence SKU Standard fournit une adresse IP statique. Les adresses IP statiques sont affectées à la ressource quand elle est créée et sont libérées lors de la suppression de la ressource.  
+
+1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis cliquez sur **Suivant : Règles de trafic entrant**.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-06-lb4-be1** |
-    | Réseau virtuel | **az104-06-vnet01** |
-    | Configuration d’un pool de back-ends | **Carte d’interface réseau** | 
-    | Version de l’adresse IP | **IPv4** |
+    | Nom | `az104-be` |
+    | Réseau virtuel | **az104-06-vnet1** |
+    | Configuration d’un pool de back-ends | **Carte d’interface réseau** |
     | Cliquer sur **Ajouter** pour ajouter une machine virtuelle |  |
     | az104-06-vm0 | **Cocher la case** |
     | az104-06-vm1 | **Cocher la case** |
 
+1. Si vous avez le temps, passez en revue les autres onglets, puis cliquez sur **Vérifier et créer**. Vérifiez qu’il n’existe aucune erreur de validation, puis cliquez sur **Créer**.
 
-1. Sous l’onglet **Règles de trafic entrant**, cliquez sur **Ajouter une règle d’équilibrage de charge**. Ajoutez une règle d’équilibrage de charge avec les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
+1. Patientez jusqu’à ce que l’équilibreur de charge soit déployé, puis cliquez sur **Accéder à la ressource**.
+
+**Ajouter une règle pour déterminer comment le trafic entrant est distribué**
+
+1. Dans le panneau **Paramètres**, cliquez sur **Règles d’équilibrage de charge**.
+
+1. Sélectionnez **Ajouter une règle d’équilibrage de charge**. Ajoutez une règle d’équilibrage de charge avec les paramètres suivants (laissez les autres valeurs par défaut).  Quand vous configurez la règle, utilisez les icônes d’information pour en savoir plus sur chaque paramètre. Quand vous avez terminé, cliquez sur **Enregistrer**.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-06-lb4-lbrule1** |
+    | Nom | `az104-lbrule` |
     | Version de l’adresse IP | **IPv4** |
-    | Adresse IP du front-end | **az104-06-fe4** |
-    | Pool principal | **az104-06-lb4-be1** |    
-    | Protocol | **TCP** |
-    | Port | **80** |
-    | Port principal | **80** |
+    | Adresse IP du front-end | **az104-fe** |
+    | Pool principal | **az104-be** |
+    | Protocole | **TCP** |
+    | Port | `80` |
+    | Port principal | `80` |
     | Sonde d’intégrité | **Création** |
-    | Nom | **az104-06-lb4-hp1** |
-    | Protocol | **TCP** |
-    | Port | **80** |
-    | Intervalle | **5** |
-    | Fermer la fenêtre de création d’une sonde d’intégrité | **OK** | 
+    | Nom | `az104-hp` |
+    | Protocole | **TCP** |
+    | Port | `80` |
+    | Intervalle | `5` |
+    | Fermer la fenêtre de création d’une sonde d’intégrité | **Save** |
     | Persistance de session | **Aucun** |
-    | Délai d’inactivité (minutes). | **4** |
+    | Délai d’inactivité (minutes). | `4` |
     | Réinitialisation du protocole TCP | **Désactivé** |
     | IP flottante | **Désactivé** |
-    | Traduction d’adresses réseau (SNAT) sources sortante | **Recommandé** |
+    | Traduction d’adresses réseau (SNAT) sources sortante | **Recommended** |
 
-1. Si vous avez le temps, passez en revue les autres onglets, puis cliquez sur **Vérifier et créer**. Vérifiez qu’il n’existe aucune erreur de validation, puis cliquez sur **Créer**. 
-
-1. Patientez jusqu’à ce que l’équilibreur de charge soit déployé, puis cliquez sur **Accéder à la ressource**.  
-
-1. Sélectionnez **Configuration d’adresses IP front-end** dans la page de ressources Load Balancer. Copiez l’adresse IP.
+1. Sélectionnez **Configuration d’adresse IP frontale** dans la page de l’équilibreur de charge. Copiez l’adresse IP publique.
 
 1. Ouvrez un autre onglet de navigateur et accédez à l’adresse IP. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm0** ou **Hello World à partir d’az104-06-vm1**.
 
@@ -487,138 +167,174 @@ Dans cette tâche, vous allez implémenter un équilibreur de charge Azure devan
 
     > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
-## Tâche 6 : Implémenter Azure Application Gateway
+## Tâche 3 : Configurer une passerelle applicative Azure
 
-Dans cette tâche, vous allez implémenter Azure Application Gateway devant les deux machines virtuelles Azure dans les réseaux virtuels spoke.
+Dans cette tâche, vous implémentez une passerelle applicative Azure devant les deux machines virtuelles Azure. Une passerelle applicative fournit l’équilibrage de charge de couche 7, le pare-feu d’applications web (WAF), l’arrêt SSL et le chiffrement de bout en bout pour les ressources définies dans le pool de back-ends. La passerelle applicative route les images vers une machine virtuelle et les vidéos vers l’autre machine virtuelle.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Réseaux virtuels**.
+## Diagramme de l’architecture – Passerelle applicative
 
-1. Dans le panneau **Réseaux virtuels** et, dans la liste des réseaux virtuels, cliquez sur **az104-06-vnet01**.
+>**Remarque** : Cette passerelle applicative fonctionne dans le même réseau virtuel que l’équilibreur de charge. Ce ne sera généralement pas le cas dans un environnement de production classique.
 
-1. Dans le panneau de réseau virtuel **az104-06-vnet01**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**.
+![Diagramme des tâches du labo.](../media/az104-lab06-gw-architecture.png)
 
-1. Ajoutez un sous-réseau avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Dans le portail Azure, recherchez et sélectionnez `Virtual networks`.
+
+1. Dans le panneau **Réseaux virtuels**, dans la liste des réseaux virtuels, cliquez sur **az104-vnet1**.
+
+1. Dans le panneau du réseau virtuel **az104-vnet1**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**.
+
+1. Ajoutez un sous-réseau avec les paramètres suivants (laissez les autres avec leur valeur par défaut).
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **subnet-appgw** |
-    | Plage d’adresses de sous-réseau | **10.60.3.224/27** |
+    | Nom | `subnet-appgw` |
+    | Plage d’adresses de sous-réseau | `10.60.3.224/27` |
 
 1. Cliquez sur **Enregistrer**.
 
-    > **Remarque** : Ce sous-réseau sera utilisé par les instances Azure Application Gateway, que vous allez déployer ultérieurement dans cette tâche. Application Gateway nécessite un sous-réseau dédié de /27 ou de taille supérieure.
+    > **Remarque** : Ce sous-réseau sera utilisé par la passerelle applicative Azure. Application Gateway nécessite un sous-réseau dédié de /27 ou de taille supérieure.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Passerelles d'application**, puis, dans le panneau **Passerelles d'application**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez `Application Gateways` puis, dans le panneau **Passerelles applicatives**, cliquez sur **+ Créer**.
 
 1. Sous l’onglet **Informations de base**, spécifiez les paramètres suivants (laissez les autres valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Resource group | **az104-06-rg5** (créer) |
-    | Nom de passerelle applicative | **az104-06-appgw5** |
-    | Région | nom de la région Azure dans laquelle vous avez déployé toutes les autres ressources dans ce laboratoire |
+    | Abonnement | votre abonnement Azure |
+    | Resource group | `az104-rg6` |
+    | Nom de passerelle applicative | `az104-appgw` |
+    | Région | La **même** région Azure que celle que vous avez utilisée dans la tâche 1 |
     | Niveau | **Standard V2** |
-    | Activer la mise à l’échelle automatique | **Non** |
-    | Nombre d’instances | **2** |
+    | Activer la mise à l’échelle automatique | **Aucun** |
+    | Nombre d’instances minimal | `2` |
     | Zone de disponibilité | **Aucun** |
     | HTTP2 | **Désactivé** |
-    | Réseau virtuel | **az104-06-vnet01** |
-    | Subnet | **subnet-appgw (10.60.3.224/27)** |
+    | Réseau virtuel | **az104-06-vnet1** |
+    | Sous-réseau | **subnet-appgw (10.60.3.224/27)** |
 
-1. Cliquez sur **Suivant : Front-ends >** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**. 
+    ![Capture d’écran du bouton Créer une passerelle applicative.](../media/az104-lab06-create-appgw.png)
+
+1. Cliquez sur **Suivant : Front-ends >** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Type d'adresse IP de front-end | **Public** |
-    | Adresse IP publique| **Ajouter nouveau** | 
-    | Nom | **az104-06-pip5** |
+    | Adresse IP publique| **Ajouter nouveau** |
+    | Nom | `az104-gwpip` |
     | Zone de disponibilité | **Aucun** |
 
+    >**Remarque :** La passerelle applicative peut avoir une adresse IP publique et une adresse IP privée.
+ 
 1. Cliquez sur **Suivant : Back-ends >** , puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | **az104-06-appgw5-be1** |
-    | Ajouter un pool back-end sans cible | **Non** |
-    | Adresse IP ou nom de domaine complet | **10.62.0.4** | 
-    | Adresse IP ou nom de domaine complet | **10.63.0.4** |
+    | Nom | `az104-appgwbe` |
+    | Ajouter un pool back-end sans cible | **Aucun** |
+    | Machine virtuelle | **az104-rg6-nic1 (10.60.1.4)** |
+    | Machine virtuelle | **az104-rg6-nic2 (10.60.2.4)** |
 
-    > **Remarque** : Les cibles représentent les adresses IP privées des machines virtuelles dans les réseaux virtuels spoke **az104-06-vm2** et **az104-06-vm3**.
-
-1. Cliquez sur **Suivant : Configuration >** , puis sur **+ Ajouter une règle de routage**. Spécifiez les paramètres suivants :
+1. Cliquez sur **Ajouter un pool de back-ends**. Il s’agit du pool de back-ends pour les **images**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom de la règle | **az104-06-appgw5-rl1** |
-    | Priorité | **10** |
-    | Nom de l’écouteur | **az104-06-appgw5-rl1l1** |
+    | Nom | `az104-imagebe` |
+    | Ajouter un pool back-end sans cible | **Aucun** |
+    | Machine virtuelle | **az104-rg6-nic1 (10.60.1.4)** |
+
+1. Cliquez sur **Ajouter un pool de back-ends**. Il s’agit du pool de back-ends pour les **vidéos**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
+
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Nom | `az104-videobe` |
+    | Ajouter un pool back-end sans cible | **Aucun** |
+    | Machine virtuelle | **az104-rg6-nic2 (10.60.2.4)** |
+
+1. Sélectionnez **Suivant : Configuration**, puis sur **Ajouter des règles de routage**. Renseignez les informations.
+
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Nom de la règle | `az104-gwrule` |
+    | Priority | `10` |
+    | Nom de l’écouteur | `az104-listener` |
     | Adresse IP du front-end | **Public** |
     | Protocol | **HTTP** |
-    | Port | **80** |
+    | Port | `80` |
     | Type d’écouteur | **De base** |
-    | URL de page d’erreur | **Non** |
 
-1. Basculez vers l’onglet **Cibles de back-end** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter** (deux fois).  
+1. Accédez à l’onglet **Cibles de back-end**. Sélectionnez **Ajouter** une fois les informations de base renseignées.
+
+   | Paramètre | Valeur |
+    | --- | --- |
+    | Cible de back-end | `az104-appgwbe` |
+    | Paramètres du back-end | `az104-http` (créer nouveau) |
+
+   >**Remarque :** Prenez un moment pour lire les informations sur l’**affinité basée sur des cookies** et sur le **drainage de connexion**.
+
+1. Sous **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis ajoutez la deuxième règle.
+
+    **Règle : routage vers le back-end d’images**
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Type cible | **Pool back-end** |
-    | Cible de back-end | **az104-06-appgw5-be1** |
-    | Paramètres du back-end | **Ajouter nouveau** |
-    | Nom des paramètres du back-end | **az104-06-appgw5-http1** |
-    | Protocole de back-end | **HTTP** |
-    | Port principal | **80** |
-    | Paramètres supplémentaires | **utiliser les valeurs par défaut** |
-    | Nom de l’hôte | **utiliser les valeurs par défaut** |
+    | Chemin d’accès | `/image/*` |
+    | Nom de la cible | `images` |
+    | Paramètres du back-end | **az104-http** |
+    | Cible de back-end | `az104-imagebe` |
 
-1. Cliquez sur **Suivant : Balises >** , suivi de **Suivant : Vérifier + créer**, puis sur **Créer**.
+    **Règle : routage vers le back-end de vidéos**
 
-    > **Remarque** : Attendez la création de l’instance Application Gateway. Ceci peut prendre environ 8 minutes.
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Chemin d’accès | `/video/*` |
+    | Nom de la cible | `videos` |
+    | Paramètres du back-end | **az104-http** |
+    | Cible de back-end | `az104-videobe` |
 
-1. Dans le portail Azure, recherchez et sélectionnez **Passerelles d'application**, puis, dans le panneau **Passerelles d'application**, cliquez sur **az104-06-appgw5**.
+1. Sélectionnez **Ajouter** deux fois, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
 
-1. Dans le panneau Application Gateway **az104-06-appgw5**, copiez la valeur de **l’adresse IP publique front-end**.
+1. Sélectionnez **Suivant : Vérifier + créer**, puis sur **Créer**.
 
-1. Démarrez une autre fenêtre de navigateur et naviguez vers l'adresse IP que vous avez identifiée à l'étape précédente.
+    > **Remarque** : Attendez la création de l’instance Application Gateway. Cette opération va prendre environ 5 à 10 minutes. Pendant que vous attendez, vous pouvez examiner quelques-uns des liens de formation auto-rythmées à la fin de cette page.
 
-1. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm2** ou **Hello World à partir d’az104-06-vm3**.
+1. Une fois la passerelle d’application déployée, recherchez et sélectionnez **az104-appgw**.
 
-1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. 
+1. Dans la ressource **Passerelle applicative**, dans la section **Surveillance**, sélectionnez **Intégrité principale**.
 
-    > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
+1. Vérifiez que les deux serveurs du pool de back-ends affichent **Sain**.
 
-    > **Remarque** : Le ciblage des machines virtuelles sur plusieurs réseaux virtuels n'est pas une configuration courante, mais elle vise à illustrer le fait qu’Application Gateway est capable de cibler des machines virtuelles sur plusieurs réseaux virtuels (ainsi que des points d'extrémité dans d'autres régions Azure ou même en dehors d'Azure), contrairement à Azure Load Balancer, qui équilibre la charge entre les machines virtuelles du même réseau virtuel.
+1. Dans le panneau **Vue d’ensemble**, copiez la valeur de **Adresses IP publiques frontales**.
 
-## Nettoyer les ressources
+1. Démarrez une autre fenêtre de navigateur et testez cette URL : `http://<frontend ip address>/image/`.
 
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
+1. Vérifiez que vous êtes dirigé vers le serveur d’images (vm1).
 
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
+1. Démarrez une autre fenêtre de navigateur et testez cette URL : `http://<frontend ip address>/video/`.
 
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
+1. Vérifiez que vous êtes dirigé vers le serveur de vidéos (vm2).
 
-1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
+> **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-06*'
-   ```
+## Nettoyage de vos ressources
 
-1. Supprimez tous les groupes de ressources que vous avez créés dans les labos de ce module en exécutant la commande suivante :
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-06*' | Remove-AzResourceGroup -Force -AsJob
-   ```
++ Dans le portail Azure, sélectionnez le groupe de ressources, sélectionnez **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Avec l’interface CLI, `az group delete --name resourceGroupName`.
+  
+## Points clés
 
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir pour ce labo.
 
-## Révision
++ Azure Load Balancer est un excellent choix pour distribuer le trafic réseau sur plusieurs machines virtuelles au niveau de la couche de transport (couche OSI 4 – TCP et UDP).
++ Les équilibreurs de charge publics sont utilisés pour équilibrer la charge du trafic Internet sur vos machines virtuelles. Un équilibreur de charge interne (ou privé) est utilisé lorsque des adresses IP privées sont nécessaires uniquement au niveau du serveur front-end.
++ L’équilibreur de charge De base est destiné aux applications à petite échelle qui n’ont pas besoin de la haute disponibilité ou de la redondance. L’équilibreur de charge Standard est conçu pour des performances élevées et une latence ultra-faible.
++ Azure Application Gateway est un équilibreur de charge de trafic web (couche OSI 7) qui vous permet de gérer le trafic vers vos applications web.
++ Le niveau Standard d’Application Gateway offre toutes les fonctionnalités L7, notamment l’équilibrage de charge. Le niveau WAF ajoute un pare-feu pour détecter le trafic malveillant.
++ Une passerelle applicative peut prendre des décisions de routage basées sur des attributs supplémentaires d’une requête HTTP, par exemple des en-têtes d’hôte ou de chemin d’URI.
 
-Dans cet exercice, vous avez :
+## En savoir plus grâce à l’apprentissage auto-rythmé
 
-+ Approvisionné l’environnement de labo
-+ Configuré la topologie de réseau hub-and-spoke
-+ Testé la transitivité du peering de réseaux virtuels testée
-+ Configurer le routage dans la topologie hub-and-spoke
-+ Azure Load Balancer implémenté
-+ Azure Application Gateway implémenté
++ [Améliorer la scalabilité et la résilience des applications en utilisant Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Découvrez les différents équilibreurs de charge disponibles dans Azure et comment choisir la solution d’équilibreur de charge Azure la mieux adaptée à vos besoins.
++ [Équilibrer la charge du trafic de votre service web avec Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Améliorez la résilience des applications en répartissant la charge entre plusieurs serveurs, et utilisez le routage basé sur le chemin pour le trafic web direct.
