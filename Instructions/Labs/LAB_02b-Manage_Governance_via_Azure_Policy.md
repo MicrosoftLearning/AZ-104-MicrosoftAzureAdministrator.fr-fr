@@ -28,7 +28,7 @@ L’empreinte cloud de votre organisation a considérablement augmenté l’ann�
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Gérez les verrous des ressources](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Ajoutez un verrou de ressource et effectuez des tests pour confirmer.
   
@@ -131,15 +131,13 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
     | Groupe de ressources | **az104-rg2** |
     | Nom du compte de stockage | *toute combinaison globale unique de 3 à 24 lettres minuscules et chiffres, commençant par une lettre* |
 
-1. Sélectionnez **Vérifier**, puis cliquez sur **Créer** :
+1. Sélectionnez **Vérifier**, puis cliquez sur **Créer**.
 
-1. Une fois le déploiement créé, vous devez voir le message **Échec du déploiement** dans la liste **Notifications** du portail. Dans la liste **Notifications**, accédez à la vue d'ensemble du déploiement et cliquez sur le message **Échec du déploiement. Cliquez ici pour obtenir des détails** pour identifier la raison de l'échec. 
+1. Vous devez recevoir un message indiquant que la **validation a échoué**. Consultez le message pour identifier la raison de l’échec. Vérifiez que le message d’erreur indique que le déploiement de la ressource a été interdit par la stratégie. 
 
     ![Capture d’écran de l’erreur de stratégie non autorisée.](../media/az104-lab02b-policyerror.png) 
 
-    >**Remarque** : Vérifiez que le message d’erreur indique que le déploiement de la ressource a été interdit par la stratégie. 
-
-    >**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise Centre de coûts avec la valeur Par défaut**. Désolé... Nous n’avons pas pu effectuer le déploiement, car le compte de stockage que vous avez tenté de créer n’avait pas de balise nommée **Centre de coûts** avec sa valeur définie sur **Par défaut**.
+>**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise Centre de coûts avec la valeur Par défaut**. Désolé... Nous n’avons pas pu effectuer le déploiement, car le compte de stockage que vous avez tenté de créer n’avait pas de balise nommée **Centre de coûts** avec sa valeur définie sur **Par défaut**.
 
 ## Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 

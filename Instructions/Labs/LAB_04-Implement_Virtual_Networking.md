@@ -24,7 +24,7 @@ Le réseau virtuel **ManufacturingVnet** contient des systèmes pour les opérat
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce laboratoire, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Sécuriser le trafic réseau](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Créer une machine virtuelle, un réseau virtuel et un groupe de sécurité réseau. Ajouter des règles de groupe de sécurité réseau pour autoriser et interdire le trafic.
   
@@ -135,7 +135,7 @@ Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-
 
 ### Apporter des modifications au fichier de paramètres
 
-1. Recherchez le fichier **template.json** exporté dans la tâche précédente. Il doit normalement se trouver dans votre dossier **Téléchargements**.
+1. Recherchez le fichier **parameters.json** exporté dans la tâche précédente. Il doit normalement se trouver dans votre dossier **Téléchargements**.
 
 1. Modifiez le fichier en utilisant l’éditeur de votre choix.
 
@@ -341,9 +341,9 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
 
 Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-+ Dans le portail Azure, sélectionnez le groupe de ressources, sélectionnez **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
-+ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Avec l’interface CLI, `az group delete --name resourceGroupName`.
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
  
 ## Points clés
 
