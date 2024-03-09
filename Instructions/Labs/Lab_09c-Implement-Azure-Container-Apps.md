@@ -4,100 +4,88 @@ lab:
   module: Administer PaaS Compute Options
 ---
 
-# Lab 09c : Implémenter Azure Container Apps
-# Manuel de labo pour l’étudiant
+# Labo 09c – Implémenter Azure Container Apps
+
+## Présentation du labo
+
+Dans ce labo, vous découvrez comment implémenter et déployer Azure Container Apps.
+
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
+
+## Durée estimée : 15 minutes
 
 ## Scénario du labo
-Azure Container Apps vous permet d’exécuter des microservices et des applications conteneurisées sur une plateforme serverless. Avec Container Apps, vous bénéficiez des avantages de l’exécution de conteneurs tout en évitant les soucis de configuration manuelle de l’infrastructure cloud et des orchestrateurs de conteneurs complexes.
 
-## Objectifs
+Votre organisation dispose d’une application web qui s’exécute sur une machine virtuelle dans votre centre de données local. L’organisation souhaite déplacer toutes les applications vers le cloud, mais ne veut pas avoir à gérer un grand nombre de serveurs. Vous décidez d’évaluer Azure Container Apps.
 
-Dans ce labo, nous allons :
-- Tâche 1 : Créer une application conteneur et un environnement
-- Tâche 2 : Déployer l’application conteneur
-- Tâche 3 : Tester et vérifier le déploiement de l’application conteneur
+## Simulations de labo interactives
 
-Commencez par vous connecter au [portail Azure](https://portal.azure.com).
+Il n’existe aucune simulation de laboratoire interactive pour cette rubrique. 
 
-## Durée estimée : 20 minutes
+## Compétences de tâche
 
-## Tâche 1 : Créer une application conteneur et un environnement
+- Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
+- Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
 
-Pour créer votre application conteneur, commencez sur la page d’accueil du portail Azure.
+## Diagramme de l'architecture
 
-1. Recherchez `Container Apps` dans la barre de recherche en haut.
-1. Dans les résultats de la recherche, sélectionnez **Applications conteneur**.
-1. Cliquez sur le bouton **Créer**.
+![Diagramme des tâches.](../media/az104-lab09b-aca-architecture.png)
 
-### Onglet Informations de base
+## Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
 
-Sous l’onglet *Informations de base*, effectuez les actions suivantes.
+Azure Container Apps va plus loin avec le concept de cluster Kubernetes managé et gère l’environnement de clusters et fournit également d’autres services managés en plus du cluster. Contrairement à un cluster Azure Kubernetes, où vous devez toujours gérer le cluster, une instance Azure Container Apps supprime une partie de la difficulté de configurer un cluster Kubernetes.
 
-1. Entrez les valeurs suivantes dans la section *Détails du projet*.
+1. Dans le Portail Azure, recherchez et sélectionnez `Container Apps`.
 
-    | Paramètre | Action |
+1. Dans **Container Apps**, sélectionnez **Créer**.
+
+1. Utilisez les informations suivantes pour remplir les détails sous l’onglet **Informations de base**.*.
+
+    | Setting | Action |
     |---|---|
     | Abonnement | Sélectionnez votre abonnement Azure. |
-    | Resource group | Sélectionnez **Créer**, puis entrez `az104-09c-rg1`. |
-    | Nom de l’application conteneur |  Entrez `my-container-app`. |
+    | Groupe de ressources | `az104-rg9` |
+    | Nom de l’application conteneur |  `my-app` |
+    | Région    | **USA Est** (ou une région disponible près de vous) |
+    | Environnement Container Apps | Conserver la valeur par défaut |
 
-#### Créer un environnement
+1. Sous l’onglet **Conteneur** , vérifiez que l’option **Utiliser l’image de démarrage rapide** est activée et que l’image de démarrage rapide est définie sur **Conteneur Hello World simple**.
 
-Ensuite, créez un environnement pour votre application conteneur.
+1. Sélectionnez **Vérifier et créer**, puis **Créer**.
 
-1. Sélectionnez la région appropriée.
+    >**Remarque :** Attendez que le déploiement de l’application conteneur soit terminé. Cette opération prend quelques minutes. 
+ 
+## Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
 
-    | Paramètre | Valeur |
-    |--|--|
-    | Région | **Votre choix**. |
-
-1. Dans le champ *Créer un environnement Container Apps*, sélectionnez **Créer**.
-1. Dans l’onglet *Informations de base* de la page *Créer un environnement Container Apps*, entrez les valeurs suivantes :
-
-    | Paramètre | Valeur |
-    |--|--|
-    | Nom de l’environnement | Entrez `my-environment`. |
-    | Redondance de zone | Sélectionnez **Désactivé** |
-
-1. Sélectionnez **Supervision** pour créer un espace de travail Log Analytics.
-1. Sélectionnez le lien **Créer** dans le champ *Espace de travail Log Analytics* et entrez les valeurs suivantes.
-
-    | Paramètre | Valeur |
-    |--|--|
-    | Nom | Entrez `my-container-apps-logs` |
-  
-    Le champ *Emplacement* est prérempli avec votre région.
-
-1. Sélectionnez **OK**, puis **Créer**. 
-
-1. Cliquez sur **Suivant : Conteneur**.
-
-1. Cochez la case à côté de **Utiliser l’image de démarrage rapide**.
-
-1. Sélectionnez le bouton **Vérifier et créer** au bas de la page. Cette étape peut prendre quelques minutes. 
-
-    Les paramètres de l’application conteneur sont vérifiés. Si aucune erreur n’est rencontrée, le bouton *Créer* est activé.  
-
-    En cas d’erreur, tout onglet contenant des erreurs est marqué d’un point rouge.  Accédez à l’onglet approprié. Les champs contenant une erreur sont mis en évidence en rouge.  Une fois toutes les erreurs résolues, resélectionnez **Vérifier et créer**.
-
-1. Sélectionnez **Create** (Créer).
-
-    Une page contenant le message *Le déploiement est en cours* s’affiche.  Une fois le déploiement terminé, le message *Votre déploiement est terminé* s’affiche.
-   
-## Tâche 2 : Tester et vérifier le déploiement de l’application conteneur
+Par défaut, l’application conteneur Azure que vous créez accepte le trafic sur le port 80 en utilisant l’exemple d’application Hello World. Azure Container Apps fournit un nom DNS pour l’application. Copiez et accédez à cette URL pour vérifier que l’application est opérationnelle.
 
 1. Sélectionnez **Accéder à la ressource** pour afficher votre nouvelle application conteneur.
 
 1. Sélectionnez le lien en regard d’*URL de l’application* pour afficher votre application.
 
+    ![Capture d’écran de la page de vue d’ensemble d’ACI dans le portail.](../media/az104-lab09b-aca-overview.png)
+
 1. Vérifiez que vous recevez le message **Votre application Azure Container Apps est publiée**.
+   
+## Nettoyage de vos ressources
 
-## Nettoyer les ressources
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-Si vous n’envisagez pas de continuer à utiliser cette application, vous pouvez supprimer l’instance Azure Container Apps et tous les services associés en supprimant le groupe de ressources.
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
-1. Sélectionnez le groupe de ressources **my-container-apps** dans la section *Vue d’ensemble*.
-1. Sélectionnez le bouton **Supprimer un groupe de ressources** en haut de la *Vue d’ensemble* du groupe de ressources.
-1. Entrez le nom du groupe de ressources et confirmez que vous souhaitez supprimer l’application. 
-1. Sélectionnez **Supprimer**.
-1. Le processus de suppression du groupe de ressources peut prendre quelques minutes.
+
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Azure Container Apps (ACA) est une plateforme serverless qui vous permet de gérer moins d’infrastructures et d’économiser des coûts tout en exécutant des applications conteneurisées.
++ Container Apps fournit des informations sur la configuration du serveur, l’orchestration des conteneurs et le déploiement. 
++ Les charges de travail sur ACA sont habituellement des processus de longue durée comme une application web.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Configurer une application conteneur dans Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Permet d’examiner les fonctionnalités et caractéristiques d’Azure Container Apps, puis se concentre sur la création, la configuration, la mise à l’échelle et la gestion d’applications conteneur en tirant parti d’Azure Container Apps.
+     

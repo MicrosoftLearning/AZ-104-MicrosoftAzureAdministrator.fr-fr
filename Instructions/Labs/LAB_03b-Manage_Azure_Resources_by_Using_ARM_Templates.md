@@ -1,133 +1,276 @@
 ---
 lab:
-  title: "Labo\_03b\_: Gérer les ressources Azure en utilisant des modèles ARM"
+  title: "Lab 03\_: Gérer des ressources Azure en utilisant des modèles Azure Resource Manager"
   module: Administer Azure Resources
 ---
 
-# Labo 03b : Gérer les ressources Azure à l’aide de modèles ARM
-# Manuel de labo de l’étudiant
+# Labo 03 : gérer des ressources Azure en utilisant des modèles Azure Resource Manager
 
+## Présentation du labo
+
+Dans ce labo, vous apprenez à automatiser les déploiements de ressources. Vous découvrez plus d’informations sur les modèles Azure Resource Manager et Bicep. Vous découvrez les différentes manières de déployer les modèles. 
+
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
+
+## Durée estimée : 50 minutes
+
+## Simulations de labo interactives
+
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+
++ [Gérez des ressources Azure en utilisant des modèles Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Passez en revue, créez et déployez des disques managés avec un modèle.
+  
++ [Créez une machine virtuelle avec un modèle](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Déployez une machine virtuelle avec des modèles de démarrage rapide.
+  
 ## Scénario du labo
-Maintenant que vous avez exploré les fonctionnalités d’administration Azure de base associées à l’approvisionnement des ressources et à leur organisation en fonction de groupes de ressources à l’aide du portail Azure, vous devez effectuer la tâche équivalente à l’aide des modèles Azure Resource Manager.
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
-
-## Objectifs
-
-Dans ce labo, vous allez :
-
-+ Tâche 1 : Passer en revue un modèle ARM pour le déploiement d’un disque managé Azure
-+ Tâche 2 : Créer un disque managé Azure à l’aide d’un modèle ARM
-+ Tâche 3 : Passer en revue le déploiement basé sur le modèle ARM du disque managé
-
-## Durée estimée : 20 minutes
+Votre équipe souhaite connaître les moyens d’automatiser et de simplifier les déploiements de ressources. Votre organisation cherche comment diminuer la surcharge administrative, réduire les erreurs humaines et augmenter la cohérence.  
 
 ## Diagramme de l'architecture
 
-![image](../media/lab03b.png)
+![Diagramme des tâches.](../media/az104-lab03-architecture.png)
 
-### Instructions
+## Compétences de tâche
 
-## Exercice 1
++ Tâche 1 : créer un modèle Azure Resource Manager.
++ Tâche 2 : modifier un modèle Azure Resource Manager et redéployer le modèle.
++ Tâche 3 : configurer Cloud Shell et déployer un modèle avec Azure PowerShell.
++ Tâche 4 : déployer des modèles Azure avec l’interface CLI. 
++ Tâche 5 : Déployez une ressource en tirant parti d’Azure Bicep.
 
-## Tâche 1 : Passer en revue un modèle ARM pour le déploiement d’un disque managé Azure
+## Tâche 1 : Créer un modèle Azure Resource Manager
 
-1. Connectez-vous au [**portail Azure**](http://portal.azure.com).
+Dans cette tâche, nous allons créer un disque managé dans le Portail Azure. Les disques managés constituent un stockage conçu pour être utilisé avec des machines virtuelles. Une fois le disque déployé, vous allez exporter un modèle qu’il vous sera possible d’utiliser dans d’autres déploiements.
 
-1. Depuis le portail Azure, recherchez et sélectionnez **Groupes de ressources**. 
+1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-1. Dans la liste des groupes de ressources, cliquez sur **az104-03a-rg1**.
+1. Recherchez et sélectionnez `Disks`.
 
-1. Dans le volet du groupe de ressources **az104-03a-rg1**, dans la section **Paramètres**, cliquez sur **Déploiements**.
+1. Dans la page Disques, sélectionnez **Créer**.
 
-1. Dans le panneau **az104-03a-rg1 - Déploiements**, cliquez sur la première entrée dans la liste des déploiements.
-
-1. Dans le volet **Microsoft.ManagedDisk-* XXXXXXXXX* \| Vue d’ensemble**, cliquez sur **Modèle**.
-
-    >**Remarque** : Passez en revue le contenu du modèle et notez que vous avez la possibilité de le **télécharger** sur l’ordinateur local, de l’**ajouter à la bibliothèque** ou de le **déployer** à nouveau.
-
-1. Cliquez sur **Télécharger** et enregistrez le fichier compressé contenant le modèle et les fichiers de paramètres dans le dossier **Téléchargements** sur votre ordinateur de labo.
-
-1. Dans le volet **Microsoft.ManagedDisk-* XXXXXXXXX* \| Modèle**, cliquez sur **Entrées**.
-
-1. Notez la valeur du paramètre d'**emplacement**. Vous en aurez besoin dans la prochaine tâche.
-
-1. Extrayez le contenu du fichier téléchargé dans le dossier **Téléchargements** sur votre ordinateur de labo.
-
-    >**Remarque** : Ces fichiers sont également disponibles en tant que **\\Allfiles\\Labs\\03\\az104-03b-md-template.json** et **\\Allfiles\\Labs\\03\\az104-03b-md-parameters.json**.
+1. Dans la page **Créer un disque managé**, configurez le disque, puis sélectionnez **OK**. 
     
-1. Fermez toutes les fenêtres de l’**Explorateur de fichiers**.
+    | Paramètre | Valeur |
+    | --- | --- |
+    | Abonnement | *votre abonnement* | 
+    | Groupe de ressources | `az104-rg3` (Si nécessaire, sélectionnez **Créer**.)
+    | Nom du disque | `az104-disk1` | 
+    | Région | **USA Est** |
+    | Zone de disponibilité | **Aucune redondance de l’infrastructure requise** | 
+    | Type de source | **Aucun** |
+    | Performances | **HDD Standard** (modifier la taille) |
+    | Taille | **32 Gio** | 
 
-## Tâche 2 : Créer un disque managé Azure à l’aide d’un modèle ARM
+    >**Remarque :** Nous créons un disque managé simple pour vous permettre d’utiliser des modèles. Les disques managés Azure sont des volumes de stockage au niveau du bloc gérés par Azure.
 
-1. Dans le portail Azure, recherchez et sélectionnez **Déployer un modèle personnalisé**.
+1. Cliquez sur **Vérifier + créer**, puis sélectionnez **Créer**.
 
-1. Dans le volet **Déploiement personnalisé**, cliquez sur **Créer votre propre modèle dans l’éditeur**.
+1. Surveillez les notifications (en haut à droite) et, après le déploiement, sélectionnez **Accéder à la ressource**. 
 
-1. Dans le volet **Modifier le modèle**, cliquez sur **Charger le fichier** et chargez le fichier **template.json** que vous avez téléchargé dans la tâche précédente.
+1. Dans le panneau **Automatisation**, sélectionnez **Exporter un modèle**. 
 
-1. Dans le volet de l’éditeur, supprimez les lignes suivantes :
+1. Prenez quelques instants pour passer en revue les fichiers **Modèle** et **Paramètres**.
 
-   ```json
-   "sourceResourceId": {
-       "type": "String"
-   },
-   ```
+1. Cliquez sur **Télécharger** et enregistrez les modèles sur le lecteur local. Cette opération crée un fichier compressé zippé. 
 
-   ```json
-   "hyperVGeneration": {
-       "defaultValue": "V1",
-       "type": "String"
-   },      
-   ```
+1. Utilisez Explorateur de fichiers pour extraire le contenu du fichier téléchargé dans le dossier **Téléchargements** sur votre ordinateur. Remarquez qu’il existe deux fichiers JSON (modèle et paramètres). 
 
-    >**Remarque** : Ces paramètres sont supprimés, car ils ne sont pas applicables au déploiement actuel. Plus particulièrement, les paramètres sourceResourceId, sourceUri, osType et hyperVGeneration s’appliquent à la création d’un disque Azure à partir d’un fichier VHD existant.
+   >**Le saviez-vous ?**  Vous pouvez exporter un groupe de ressources complet ou simplement des ressources spécifiques au sein de ce groupe de ressources.
 
-1. **Enregistrez** les modifications.
+## Tâche 2 : Modifiez un modèle Azure Resource Manager, puis redéployez-le.
 
-1. Dans le volet **Déploiement personnalisé**, cliquez sur **Modifier les paramètres**. 
+Dans cette tâche, vous utilisez le modèle téléchargé pour déployer un nouveau disque managé. Cette tâche explique comment répéter rapidement et facilement des déploiements. 
 
-1. Dans le volet **Modifier les paramètres**, cliquez sur **Charger le fichier** et chargez le fichier **parameters.json** que vous avez téléchargé dans la tâche précédente, puis **enregistrez** les modifications.
+1. Dans le portail Azure, recherchez et sélectionnez `Deploy a custom template`.
 
-1. Dans le volet **Déploiement personnalisé**, spécifiez les paramètres suivants :
+1. Dans le panneau **Déploiement personnalisé**, notez qu’il est possible d’utiliser des **Modèles de démarrage rapide**. Il existe de nombreux modèles intégrés comme illustré dans le menu déroulant. 
+
+1. Au lieu d’utiliser un Démarrage rapide, sélectionnez **Créer votre propre modèle dans l’éditeur**.
+
+1. Dans le panneau **Modifier le modèle**, cliquez sur **Charger le fichier**, puis chargez le fichier **template.json** téléchargé sur le disque local.
+
+1. Au sein du volet de l’éditeur, apportez ces modifications.
+
+    + Remplacez **disks_az104_disk1_name** par `disk_name` (deux emplacements à modifier)
+    + Remplacez **az104_disk1** par `az102_disk2` (un emplacement à modifier)
+
+1. Notez qu’il s’agit d’un disque **Standard**. L’emplacement est **eastus**. La taille du disque est **32 Go**.
+
+1. **Enregistrez** les changements apportés.
+
+1. N’oubliez pas le fichier de paramètres. Sélectionnez **Modifier les paramètres**, cliquez sur **Charger le fichier**, puis chargez le fichier **parameters.json**. 
+
+1. Apportez cette modification pour qu’elle corresponde au fichier du modèle.
+
+    Remplacez **disks_az104_disk1_name** par **disk_name** (un emplacement à modifier)
+
+1. **Enregistrez** les changements apportés. 
+
+1. Terminez les paramètres de déploiement personnalisés :
 
     | Paramètre | Valeur |
     | --- |--- |
-    | Abonnement | *le nom de l’abonnement Azure que vous utilisez dans ce labo* |
-    | Groupe de ressources | le nom d’un **nouveau** groupe de ressources **az104-03b-rg1** |
-    | Région | le nom de n’importe quelle région Azure disponible dans l’abonnement que vous utilisez dans ce labo |
-    | Nom du disque | **az104-03b-disk1** |
-    | Emplacement | la valeur du paramètre d’emplacement que vous avez noté dans la tâche précédente |
-    | Sku | **Standard_LRS** |
-    | Taille de disque en Go | **32** |
-    | Créer une option | **empty** |
-    | Type de jeu de chiffrement de disque | **EncryptionAtRestWithPlatformKey** |
-    | Mode d’authentification d’accès aux données | None |
-    | Stratégie d'accès réseau | **AllowAll** |
-    | Accès réseau public | Désactivé |
+    | Abonnement | *votre abonnement* |
+    | Groupe de ressources | `az104-rg3` |
+    | Région | **(États-Unis) USA Est** |
+    | Disk_name | `az104-disk2` |
 
 1. Sélectionnez **Vérifier + créer**, puis sélectionnez **Créer**.
 
-1. Vérifiez que le déploiement a abouti.
+1. Sélectionnez **Accéder à la ressource**. Vérifiez que **az104-disk2** a été créé.
 
-## Tâche 3 : Passer en revue le déploiement basé sur le modèle ARM du disque managé
+1. Dans le panneau **Vue d’ensemble**, sélectionnez le groupe de ressources, **az104-rg3**. Vous devriez maintenant avoir deux disques.
+   
+1. Dans la section **Paramètres**, cliquez sur **Déploiements**.
 
-1. Depuis le portail Azure, recherchez et sélectionnez **Groupes de ressources**. 
+    >**Remarque :** Toutes les informations sur les déploiements sont documentées dans le groupe de ressources. Il est recommandé de passer en revue les premiers déploiements basés sur un modèle afin de favoriser la réussite avant d’utiliser les modèles pour des opérations à grande échelle.
 
-1. Dans la liste des groupes de ressources, cliquez sur **az104-03b-rg1**.
+1. Sélectionnez un déploiement, puis passez en revue le contenu des panneaux **Entrée** et **Modèle**.
 
-1. Dans le volet du groupe de ressources **az104-03b-rg1**, dans la section **Paramètres**, cliquez sur **Déploiements**.
+## Tâche 3 : Configurez le service Cloud Shell et déployez un modèle avec Azure PowerShell.
 
-1. Dans le panneau **az104-03b-rg1 - Déploiements** ,cliquez sur la première entrée dans la liste des déploiements et passez en revue le contenu des panneaux **Entrée** et **Modèle**.
+Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure PowerShell. Azure Cloud Shell est un terminal interactif, authentifié et accessible par navigateur qui permet de gérer les ressources Azure. Il vous donne la possibilité de choisir l'expérience d'interpréteur de commandes la plus adaptée à votre façon de travailler, qu'il s'agisse de Bash ou de PowerShell. Dans cette tâche, vous utilisez PowerShell pour déployer un modèle. 
 
-## Nettoyer les ressources
+1. Sélectionnez l’icône **Cloud Shell** en haut à droite du Portail Azure. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
-   >**Remarque** : Ne supprimez pas les ressources que vous avez déployées dans ce labo. Vous en aurez besoin dans le labo suivant de ce module.
+   ![Capture d’écran de l’icône Cloud Shell.](../media/az104-lab03-cloudshell-icon.png)
 
-## Révision
+1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**. 
 
-Dans ce labo, vous avez :
+    >**Le saviez-vous ?**  Si vous travaillez principalement avec des systèmes Linux, Bash (interface CLI) semble plus familier. Si vous travaillez principalement avec des systèmes Windows, Azure PowerShell semble plus familier. 
 
-- Passé en revue un modèle ARM pour le déploiement d’un disque managé Azure
-- Créé un disque managé Azure à l’aide d’un modèle ARM
-- Passé en revue le déploiement basé sur le modèle ARM du disque managé
+1. Dans l’écran **Vous n’avez aucun stockage monté**, sélectionnez **Afficher les paramètres avancés**, puis fournissez les informations requises. 
+
+    >**Remarque :** Lorsque vous travaillez avec le service Cloud Shell, un compte de stockage et un partage de fichiers sont nécessaires. 
+
+    | Paramètres | Valeurs |
+    |  -- | -- |
+    | Groupe de ressources | **az104-rg3** |
+    | Compte de stockage (Créer) | `sacloudshell` (doit être unique globalement, comprendre entre 3 et 24 caractères et comporter uniquement des nombres et des lettres en minuscules) |
+    | Partage de fichiers (Créer) | `fs-cloudshell` |
+
+1. Une fois terminé, sélectionnez **Créer un stockage**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
+
+1. Utilisez l’icône **Charger/télécharger des fichiers** pour charger le modèle et le fichier des paramètres à partir du répertoire des téléchargements. Vous devrez charger chaque fichier séparément.
+
+1. Vérifiez que vos fichiers sont disponibles dans le stockage Cloud Shell. 
+
+    ```powershell
+    dir
+    ```
+    >**Remarque** : Le cas échéant, vous pouvez utiliser **cls** pour effacer la fenêtre de commande. Vous pouvez utiliser les touches de direction pour déplacer l’historique des commandes.
+   
+1. Sélectionnez l’icône **Éditeur** (accolades) et accédez au fichier JSON de modèle.
+
+1. Apportez la modification souhaitée. Par exemple, remplacez le nom du disque par **az104-disk3**. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications. 
+
+    >**Remarque** : Vous pouvez cibler le déploiement de votre modèle au niveau d’un groupe de ressources, d’un abonnement, d’un groupe d’administration ou d’un tenant. Les commandes à utiliser diffèrent en fonction de l’étendue du déploiement.
+
+1. Pour un déploiement dans un groupe de ressources, utilisez **New-AzResourceGroupDeployment**.
+
+    ```powershell
+    New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
+    ```
+1. Vérifiez que la commande se termine et que ProvisioningState indique une **Réussite**.
+
+1. Confirmez la création du disque.
+
+   ```powershell
+   Get-AzDisk
+   ```
+   
+## Tâche 4 : Déployez un modèle avec l’interface CLI. 
+
+1. Poursuivez dans **Cloud Shell**, sélectionnez **Bash**. **Confirmez** votre choix.
+
+1. Vérifiez que vos fichiers sont disponibles dans le stockage Cloud Shell. Si vous avez achevé la tâche précédente, vos fichiers de modèle doivent être disponibles. 
+
+    ```sh
+    ls
+    ```
+
+1. Sélectionnez l’icône **Éditeur** (accolades) et accédez au fichier JSON de modèle.
+
+1. Apportez la modification souhaitée. Par exemple, remplacez le nom du disque par **az104-disk4**. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications. 
+
+    >**Remarque** : Vous pouvez cibler le déploiement de votre modèle au niveau d’un groupe de ressources, d’un abonnement, d’un groupe d’administration ou d’un tenant. Les commandes à utiliser diffèrent en fonction de l’étendue du déploiement.
+
+1. Pour un déploiement dans un groupe de ressources, utilisez **az deployment group create**.
+
+    ```sh
+    az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
+    ```
+    
+1. Vérifiez que la commande se termine et que ProvisioningState indique une **Réussite**.
+
+1. Confirmez la création du disque.
+
+     ```sh
+     az disk list --output table
+     ```
+   
+## Tâche 5 : Déployez une ressource en tirant parti d’Azure Bicep.
+
+Dans cette tâche, vous allez utiliser un fichier Bicep pour déployer un disque managé. Bicep est un outil d’automatisation déclaratif qui repose sur des modèles ARM.
+
+1. Continuez à travailler dans le service **Cloud Shell** d’une session **Bash**.
+
+1. Recherchez et téléchargez le fichier **\Allfiles\Lab03\azuredeploydisk.bicep**.
+
+1. **Téléchargez** le fichier Bicep dans Cloud Shell. 
+
+1. Sélectionnez l’icône **Éditeur** (accolades) et accédez au fichier.
+
+1. Prenez une minute pour parcourir le fichier de modèle Bicep. Notez la manière dont la ressource de disque est définie. 
+   
+1. Apportez les modifications suivantes :
+
+    + Remplacez la valeur **managedDiskName** par `Disk4`.
+    + Remplacez la valeur du **nom de référence SKU** par `StandardSSD_LRS`.
+    + Remplacez la valeur de **diskSizeinGiB** par `32`.
+
+1. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications.
+
+1. Déployez maintenant le modèle.
+
+    ```
+    az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
+    ```
+
+1. Confirmez la création du disque.
+
+    ```sh
+    az disk list --output table
+    ```
+
+    >**Remarque :** Vous avez correctement déployé cinq disques managés, chacun d’une manière différente. Bravo !
+
+## Nettoyage de vos ressources
+
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
+
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
+  
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Les modèles Resource Manager vous permettent de déployer, gérer et surveiller toutes les ressources de votre solution en tant que groupe, plutôt que de gérer ces ressources individuellement.
++ Un modèle Azure Resource Manager est un fichier JSON (JavaScript Object Notation) qui vous permet de gérer votre infrastructure de manière déclarative plutôt qu’avec des scripts.
++ Au lieu de passer des paramètres en tant que valeurs inline dans votre modèle, vous pouvez utiliser un fichier JSON distinct qui contient les valeurs des paramètres.
++ Vous pouvez déployer des modèles Azure Resource Manager de différentes façons, notamment le Portail Azure, Azure PowerShell et l’interface CLI.
++ Bicep est une alternative aux modèles Azure Resource Manager. Bicep utilise une syntaxe déclarative pour déployer des ressources Azure. 
+
+Bicep fournit une syntaxe concise, une cohérence des types fiable et une prise en charge de la réutilisation du code. Bicep offre la meilleure expérience de création pour vos solutions d’infrastructure en tant que code dans Azure.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Déployez une infrastructure Azure en utilisant des modèles ARM JSON](https://learn.microsoft.com/training/modules/create-azure-resource-manager-template-vs-code/). Rédigez des modèles Azure Resource Manager JSON (modèles ARM) en utilisant Visual Studio Code pour déployer votre infrastructure de manière cohérente et fiable sur Azure.
++ [Passez en revue les fonctionnalités et les outils d’Azure Cloud Shell](https://learn.microsoft.com/training/modules/review-features-tools-for-azure-cloud-shell/). Fonctionnalités et outils Cloud Shell. 
++ [Gérez des ressources Azure avec Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). Ce module explique comment installer les modules nécessaires à la gestion des services cloud et comment utiliser les commandes PowerShell pour effectuer des tâches administratives simples sur des ressources cloud telles que des machines virtuelles Azure, des abonnements Azure et des comptes de stockage Azure.
++ [Présentation de Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Utilisez Bash pour gérer l’infrastructure informatique.
++ [Créer votre premier modèle Bicep](https://learn.microsoft.com/training/modules/build-first-bicep-template/). Définissez des ressources Azure dans un modèle Bicep. Améliorez la cohérence et la fiabilité de vos déploiements, réduisez l’effort manuel requis et mettez à l’échelle vos déploiements dans différents environnements. Votre modèle sera flexible et réutilisable grâce à l’utilisation de paramètres, de variables, d’expressions et de modules.
+
+

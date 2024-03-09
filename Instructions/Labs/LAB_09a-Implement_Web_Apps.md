@@ -5,69 +5,77 @@ lab:
 ---
 
 # Labo 09a : Implémenter Web Apps
-# Manuel de labo de l’étudiant
+
+
+## Présentation du labo
+
+Dans ce labo, vous allez découvrir les applications web Azure. Vous apprenez à configurer une application web pour afficher une application Hello World dans un référentiel GitHub externe. Vous apprenez à créer un emplacement de préproduction et échanger avec l’emplacement de production. Vous découvrez également la mise à l’échelle automatique pour vous adapter aux changements de demande.
+
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais notez que les étapes sont écrites de façon à utiliser USA Est.
+
+## Durée estimée : 20 minutes
 
 ## Scénario du labo
 
-Vous devez évaluer l’utilisation d’applications web Azure pour héberger les sites web de Contoso, qui sont actuellement hébergés dans les centres de données locaux de l’entreprise. Les sites web s’exécutent sur des serveurs Windows à l’aide de la pile de runtime PHP. Vous devez également déterminer comment implémenter des pratiques DevOps en tirant parti des emplacements de déploiement des applications web Azure.
+Votre organisation s’intéresse aux applications web Azure pour l’hébergement de sites web de votre entreprise. Les sites web sont actuellement hébergés dans un centre de données local. Les sites web s’exécutent sur des serveurs Windows à l’aide de la pile de runtime PHP. Le matériel est proche de sa fin de vie et devra bientôt être remplacé. Votre organisation souhaite éviter les nouveaux coûts matériels à l’aide d’Azure pour héberger les sites web. 
 
-**Remarque :** Une **[simulation de labo interactive](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** est disponible et vous permet de progresser à votre propre rythme. Il peut exister de légères différences entre la simulation interactive et le labo hébergé. Toutefois, les concepts et idées de base présentés sont identiques. 
+## Simulations de labo interactives
 
-## Objectifs
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
-Dans ce labo, vous allez :
-
-+ Tâche 1 : Créer une application web Azure
-+ Tâche 2 : Créer un emplacement de déploiement de préproduction
-+ Tâche 3 : Configurer les paramètres de déploiement de l’application web
-+ Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
-+ Tâche 5 : Remplacer les emplacements de préproduction
-+ Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
-
-## Durée estimée : 30 minutes
++ [Créez une application web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Créez une application Web qui exécute un conteneur Docker.
+    
++ [Implémentez des applications web Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013). Créez une application web Azure, gérez le déploiement et mettez à l’échelle l’application. 
 
 ## Diagramme de l'architecture
 
-![image](../media/lab09a.png)
+![Diagramme des tâches.](../media/az104-lab09a-architecture.png)
 
-### Instructions
+## Compétences de tâche
 
-## Exercice 1
++ Tâche 1 : Créer et configurer une application web Azure.
++ Tâche 2 : Créez et configurez un emplacement de déploiement.
++ Tâche 3 : Configurer les paramètres du déploiement de l’application web.
++ Tâche 4 : Échangez des emplacements de déploiement.
++ Tâche 5 : Configurez et testez la mise à l’échelle automatique de l’application web Azure.
 
-## Tâche 1 : Créer une application web Azure
+## Tâche 1 : Créer et configurer une application web Azure
 
-Dans cette tâche, vous allez créer une application web Azure.
+Dans cette tâche, vous créez une application web Azure. Azure App Services est une solution PaaS (Platform As a Service) pour les applications web, mobiles et autres applications web. Les applications web Azure font partie d’Azure App Services hébergeant la plupart des environnements d’exécution, tels que PHP, Java et .NET. Le plan App Service que vous sélectionnez détermine le calcul, le stockage et les fonctionnalités de l’application web. 
 
-1. Connectez-vous au [**portail Azure**](http://portal.azure.com).
+1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-1. Dans le portail Azure, recherchez et sélectionnez **App Services**, puis, dans le panneau **App Services**, cliquez sur **+ Créer**.
+1. Recherchez et sélectionnez `App services`.
+
+1. Sélectionnez **+ Créer**, dans le menu déroulant **Application web**. Examinez les autres choix. 
 
 1. Sous l’onglet **Informations de base** du panneau **Créer une application web**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
     | Paramètre | Valeur |
     | --- | ---|
-    | Abonnement | le nom de l’abonnement Azure que vous utilisez dans ce labo |
-    | Groupe de ressources | le nom d’un nouveau groupe de ressources **az104-09a-rg1** |
+    | Abonnement | votre abonnement Azure |
+    | Resource group | `az104-rg9` (Si nécessaire, sélectionnez **Créer**) |
     | Nom de l’application web | tout nom global unique |
     | Publier | **Code** |
     | Pile d’exécution | **PHP 8.2** |
     | Système d’exploitation | **Linux** |
-    | Région | le nom d’une région Azure dans laquelle vous pouvez approvisionner des applications web Azure |
-    | Plans tarifaires | acceptez la configuration par défaut |
+    | Région | **USA Est** |
+    | Plans tarifaires | acceptez les valeurs par défaut |
+    | Redondance de zone | acceptez les valeurs par défaut |
 
-1. Cliquez sur **Vérifier + créer**. Sous l’onglet **Vérifier + créer** du panneau **Créer une application web**, vérifiez que la validation a réussi et cliquez sur **Créer**.
+ 1. Cliquez sur **Vérifier et créer**, puis sur **Créer**.
 
     >**Remarque** : Attendez que l’application web soit créée avant de passer à la tâche suivante. Ce processus prend environ une minute.
 
-1. Dans le panneau de déploiement, cliquez sur **Accéder à la ressource**.
+1. Une fois le déploiement terminé, sélectionnez **Accéder à la ressource**.
 
-## Tâche 2 : Créer un emplacement de déploiement de préproduction
+## Tâche 2 : Créer et configurer un emplacement de déploiement
 
-Dans cette tâche, vous allez créer un emplacement de déploiement de transit.
+Dans cette tâche, vous allez créer un emplacement de déploiement de transit. Les emplacements de déploiement vous permettent d’effectuer des tests avant de rendre votre application accessible au public (ou à vos utilisateurs finaux). Une fois que vous avez effectué les tests, vous pouvez échanger l’emplacement du développement ou de préproduction avec l’emplacement de production. De nombreuses organisations utilisent des emplacements pour effectuer des tests de préproduction. En outre, de nombreuses organisations exécutent plusieurs emplacements pour chaque application (par exemple, développement, AQ, test et production).
 
 1. Dans le volet de l’application web nouvellement déployée, cliquez sur le lien **Domaine par défaut** pour afficher la page web par défaut dans un nouvel onglet du navigateur.
 
-1. Fermez le nouvel onglet du navigateur puis, dans le portail Azure, dans la section **Déploiement** du panneau de l’application web, cliquez sur **Emplacements de déploiement**.
+1. Fermez le nouvel onglet du navigateur puis, dans le portail Azure, dans la section **Déploiement** du volet de l’application web, cliquez sur **Emplacements de déploiement**.
 
     >**Remarque** : L’application web, à ce stade, a un emplacement de déploiement unique intitulé **PRODUCTION**.
 
@@ -75,197 +83,113 @@ Dans cette tâche, vous allez créer un emplacement de déploiement de transit.
 
     | Paramètre | Valeur |
     | --- | ---|
-    | Nom | **staging** |
+    | Nom | `staging` |
     | Cloner les paramètres à partir de | **Ne pas cloner les paramètres**|
 
-1. De retour dans le panneau **Emplacements de déploiement** de l’application web, cliquez sur l’entrée représentant l’emplacement de préproduction que vous venez de créer.
+1. Sélectionnez **Ajouter**.
+
+1. De retour dans le volet **Emplacements de déploiement** de l’application web, cliquez sur l’entrée représentant l’emplacement de préproduction que vous venez de créer.
 
     >**Remarque** : Cette opération va ouvrir le panneau affichant les propriétés de l’emplacement de préproduction.
 
 1. Passez en revue le panneau de l’emplacement de préproduction et notez que son URL diffère de celle affectée à l’emplacement de production.
 
-## Tâche 3 : Configurer les paramètres de déploiement de l’application web
+## Tâche 3 : Configurer les paramètres de déploiement d’application web
 
-Dans cette tâche, vous allez configurer les paramètres de déploiement de l’application web.
+Dans cette tâche, vous allez configurer les paramètres de déploiement d’application web. Les paramètres de déploiement autorisent le déploiement continu. Cela garantit que le service d’application dispose de la dernière version de l’application.
 
-1. Dans le panneau de l’emplacement de déploiement de transit, dans la section **Déploiement**, cliquez sur **Centre de déploiement**, puis sélectionnez l’onglet **Paramètres**.
+1. Dans l’emplacement de préproduction, sélectionnez **Centre de déploiement**, puis **Paramètres**.
 
-    >**Remarque :** Vérifiez que vous êtes sur le panneau de l’emplacement de préproduction (plutôt que sur l’emplacement de production).
+    >**Remarque :** Vérifiez que vous êtes sur le volet de l’emplacement de préproduction (au lieu de l’emplacement de production).
     
-1. Sous l’onglet **Paramètres**, dans la liste déroulante **Source**, sélectionnez **Git local**, puis cliquez sur le bouton **Enregistrer**
+1. Dans la liste déroulante **Source**, sélectionnez **Git externe**. Examinez les autres choix. 
 
-1. Dans le volet **Centre de déploiement**, copiez l’entrée **URI clone Git** dans un Bloc-notes.
+1. Dans le champ Référentiel, entrez `https://github.com/Azure-Samples/php-docs-hello-world`
 
-    >**Remarque :** Vous aurez besoin de la valeur de l’URI clone Git dans la prochaine tâche de ce labo.
+1. Dans le champ Branche, entrez `master`.
 
-1. Dans le panneau **Centre de déploiement**, sélectionnez l’onglet **Informations d’identification Git/FTPS local**. Dans la section **Étendue utilisateur**, spécifiez les paramètres suivants, puis cliquez sur **Enregistrer**.
+1. Sélectionnez **Enregistrer**.
 
-    | Paramètre | Valeur |
-    | --- | ---|
-    | Nom d'utilisateur | tout nom global unique (voir la note)  |
-    | Mot de passe | tout mot de passe répondant aux exigences de complexité (voir la note) |
+1. Dans l’emplacement de préproduction, sélectionnez **Vue d’ensemble**.
 
-    >**Note :** copiez ces informations d’identification dans le Bloc-notes. Vous en aurez besoin ultérieurement.
-    
-    >**Note :** ces informations d’identification sont transmises via l’URI. N’incluez pas de caractères spéciaux qui affecteraient l’interprétation de l’URI. Par exemple, @, $, ou #. Un astérisque ou signe plus (au milieu de la chaîne) fonctionne.
-    
-## Tâche 4 : Déployer du code sur l’emplacement de déploiement de transit
+1. Sélectionnez le lien de **domaine par défaut**, puis ouvrez l’URL dans un nouvel onglet. 
 
-Dans cette tâche, vous allez déployer du code sur l’emplacement de déploiement de préproduction.
+1. Vérifiez que l’emplacement de préproduction affiche **Hello World**.
 
-1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
+>**Remarque :** Ce déploiement peut prendre une minute. Veillez à **actualiser** la page de l’application.
 
-1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
+## Tâche 4 : Échanger des emplacements de déploiement
 
-    >**Remarque** : Si c’est la première fois que vous démarrez **Cloud Shell** et que vous voyez le message **Vous n’avez aucun stockage monté**, sélectionnez l’abonnement que vous utilisez dans ce labo, puis sélectionnez **Créer un stockage**.
+Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l’emplacement de production. L’échange d’un emplacement vous permet d’utiliser le code que vous avez testé dans votre emplacement de préproduction et de le déplacer vers la production. Le portail Azure vous demande également si vous devez déplacer d’autres paramètres d’application que vous avez personnalisés pour l’emplacement. L’échange d’emplacements est une tâche courante pour les équipes d’application et les équipes de support d’application, en particulier celles qui déploient des mises à jour d’application de routine et des correctifs de bogues.
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour cloner le référentiel distant contenant le code de l’application web.
+1. Revenez au panneau **Emplacements de déploiements**, puis sélectionnez **Échanger**.
 
-   ```powershell
-   git clone https://github.com/Azure-Samples/php-docs-hello-world
-   ```
+1. Examinez les paramètres par défaut et cliquez sur **Échanger**.
 
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour définir l’emplacement actuel sur le clone que vous venez de créer du référentiel local contenant l’exemple de code d’application web.
+1. Dans le panneau **Vue d’ensemble** de l’application web, sélectionnez le lien **Domaine par défaut** pour afficher la page d’accueil du site web.
 
-   ```powershell
-   Set-Location -Path $HOME/php-docs-hello-world/
-   ```
+1. Vérifiez que la page web de production affiche **Hello World !** .
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour ajouter le Git distant (assurez-vous de remplacer les espaces réservés `[deployment_user_name]` et `[git_clone_uri]` respectivement par la valeur nom d’utilisateur des **Informations d’identification du déploiement** et de l’**URI clone Git** que vous avez identifiée dans la tâche précédente) :
+    >**Remarque :** Copiez l’**URL** de domaine par défaut. Vous en aurez besoin pour le test de charge dans la tâche suivante. 
 
-   ```powershell
-   git remote add [deployment_user_name] [git_clone_uri]
-   ```
+## Tâche 5 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
-    >**Remarque** : La valeur qui suit `git remote add` n’a pas besoin de correspondre au nom d’utilisateur des **Informations d’identification de déploiement**, mais doit être unique
+Dans cette tâche, vous allez configurer la mise à l’échelle automatique de l’application web Azure. La mise à l’échelle automatique vous permet de maintenir des performances optimales pour votre application web lorsque le trafic vers l’application web augmente. Pour déterminer quand l’application doit être mise à l’échelle, vous pouvez surveiller les métriques telles que l’utilisation du processeur, la mémoire ou la bande passante.
 
-1. Dans le volet Cloud Shell, exécutez la commande suivante pour envoyer (en mode push) l’exemple de code d’application web du référentiel local à l’emplacement de déploiement de transit de l’application web Azure (veillez à remplacer l’espace réservé par les valeurs des noms d’utilisateur et des mots de passes ainsi que le nom de l’application des **Informations d’identification de déploiement**, que vous avez identifiée lors de la tâche précédente) :
+1. Dans la section **Paramètres**, sélectionnez **Scale-out (plan App Service)**.
 
-   ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
-   ```
+    >**Remarque :** Vérifiez que vous travaillez sur l’emplacement de production et non sur l’emplacement de préproduction.  
 
-1. Fermez le volet Cloud Shell.
+1. Dans la section **Mise à l’échelle**, sélectionnez **Automatique**. Examinez l’option **Basée sur les règles**. La mise à l’échelle basée sur des règles peut être configurée pour différentes métriques d’application. 
 
-1. Dans le volet emplacement de préproduction, cliquez sur **Vue d’ensemble**, puis cliquez sur le lien **Domaine par défaut** pour afficher la page web par défaut dans un nouvel onglet du navigateur.
+1. Dans le champ **Maximum de rafales**, sélectionnez **2**.
 
-1. Vérifiez que la page du navigateur affiche le message **Hello World !** et fermez le nouvel onglet.
+    ![Capture d’écran de la page de mise à l’échelle automatique.](../media/az104-lab09a-autoscale.png)
 
-## Tâche 5 : Remplacer les emplacements de préproduction
+1. Sélectionnez **Enregistrer**.
 
-Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l’emplacement de production.
+1. Sélectionnez **Diagnostiquer et résoudre les problèmes** (volet de gauche).
 
-1. Revenez au panneau affichant l’emplacement de production de l’application web.
+1. Dans la zone **Test de charge de votre application**, sélectionnez **Créer un test de charge**.
 
-1. Dans la section **Déploiement**, cliquez sur **Emplacements de déploiement**, puis sur l’icône **Permuter** de la barre d’outils.
+    + Sélectionnez **+ Créer** et donnez un **nom** à votre test de charge.  Le nom doit être unique.
+    + Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-1. Dans le panneau **Permuter**, passez en revue les paramètres par défaut, puis cliquez sur **Permuter**.
+1. Attendez que le test de charge soit créé, puis sélectionnez **Accéder à la ressource**.
 
-1. Cliquez sur **Vue d’ensemble** dans le volet emplacement de production de l’application web, puis cliquez sur le lien **Domaine par défaut** pour afficher la page d’accueil du site web dans un nouvel onglet du navigateur.
+1. Dans la **vue d’ensemble** | **Ajouter des requêtes HTTP**, sélectionnez **Créer**.
 
-1. Vérifiez que la page web par défaut a été remplacée par la page **Hello World !** .
+1. Pour l’**URL de test**, collez votre URL de **domaine par défaut**. Vérifiez la mise en forme et assurez-vous qu’elle commence par **https://**.
 
-## Tâche 6 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
+1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-Dans cette tâche, vous allez configurer et tester la mise à l’échelle automatique de l’application web Azure.
+    >**Remarque :** La création du test peut prendre quelques minutes. 
 
-1. Dans le panneau affichant l’emplacement de production de l’application web, dans la section **Paramètres**, cliquez sur **Monter en charge (plan App Service)**.
+1. Passez en revue les résultats des tests, notamment les **utilisateurs virtuels**, le **temps de réponse** et les **requêtes/seconde**.
 
-1. Dans la section **Mise à l’échelle**, sélectionnez l’option **Basé sur des règles**, puis cliquez sur le lien **Gérer la mise à l’échelle basée sur des règles**.
+1. Sélectionnez **Arrêter** pour terminer l’exécution du test.
 
-1. Cliquez sur **Mise à l’échelle automatique personnalisée**.
+## Nettoyage de vos ressources
 
-    >**Remarque** : Vous avez également la possibilité de mettre à l’échelle l’application web manuellement.
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-1. Sélectionnez **Mettre à l’échelle selon une métrique** et cliquez sur **+ Ajouter une règle**.
++ Dans le portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Avec l’interface CLI, `az group delete --name resourceGroupName`.
 
-1. Dans le panneau **Règle de mise à l’échelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
-    | Paramètre | Valeur |
-    | --- |--- |
-    | Source de la métrique | **Ressource actuelle** |
-    | Espace de noms de la métrique | **Métriques standard** |
-    | Nom de métrique | **Pourcentage UC** |
-    | Opérateur | **Supérieur à** |
-    | Seuil de métrique pour déclencher l’action de mise à l'échelle | **10** |
-    | Durée (en minutes) | **1** |
-    | Statistique de fragment de temps | **Maximum** |
-    | Agrégation du temps | **Maximum** |
-    | Opération | **Augmenter le nombre de** |
-    | Nombre d’instances | **1** |
-    | Refroidissement (minutes) | **5** |
 
-    >**Remarque** : Évidemment, ces valeurs ne représentent pas une configuration réaliste, car leur objectif est de déclencher la mise à l’échelle automatique dès que possible, sans période d’attente prolongée.
+## Points clés
 
-1. Cliquez sur **Ajouter** et, dans le panneau de mise à l’échelle du plan App Service, spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
 
-    | Paramètre | Valeur |
-    | --- |--- |
-    | Minimum des limites d’instance | **1** |
-    | Maximum des limites d’instance | **2** |
-    | Limites d’instance par défaut | **1** |
++ Azure App Services vous permet de créer, de déployer et de mettre à l’échelle rapidement des applications web.
++ App Service prend en charge de nombreux environnements de développement, notamment ASP.NET, Java, PHP et Python.
++ Les emplacements de déploiement vous permettent de créer des environnements distincts pour le déploiement et le test de votre application web.
++ Vous pouvez mettre à l’échelle manuellement ou automatiquement une application web pour gérer une demande supplémentaire.
++ Un large éventail d’outils de diagnostic et de test est disponible. 
 
-1. Cliquez sur **Enregistrer**.
+## En savoir plus grâce à l’apprentissage auto-rythmé
 
-    >**Remarque** : Si vous rencontrez une erreur concernant le fournisseur de ressources « microsoft.insights » qui n’est pas inscrit, exécutez `az provider register --namespace 'Microsoft.Insights'` dans votre cloudshell et réessayez d’enregistrer vos règles de mise à l’échelle automatique.
-
-1. Dans le portail Azure, ouvrez **Azure Cloud Shell** en cliquant sur l’icône située en haut à droite du portail Azure.
-
-1. Lorsque vous êtes invité à sélectionner **Bash** ou **PowerShell**, sélectionnez **PowerShell**.
-
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour identifier l’URL de l’application web Azure.
-
-   ```powershell
-   $rgName = 'az104-09a-rg1'
-
-   $webapp = Get-AzWebApp -ResourceGroupName $rgName
-   ```
-
-1. Dans le panneau Cloud Shell, exécutez la commande suivante pour démarrer et exécuter une boucle infinie qui envoie les requêtes HTTP à l’application web :
-
-   ```powershell
-   while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
-   ```
-
-1. Réduisez le volet Cloud Shell (sans le fermer) et, dans le volet de l’application web, dans la section Paramètres, cliquez sur **Effectuer un scale-out (plan App Service)**.
-
-1. Surveillez l’utilisation et le nombre d’instances pendant quelques minutes. 
-
-    >**Remarque** : Il peut être nécessaire de cliquer sur **Actualiser** pour actualiser la page.
-
-1. Une fois que vous avez remarqué que le nombre d’instances est passé à 2, rouvrez le panneau Cloud Shell et terminez le script en appuyant sur **Ctrl+C**.
-
-1. Fermez le volet Cloud Shell.
-
-## Nettoyer les ressources
-
->**Remarque** : N’oubliez pas de supprimer toutes les nouvelles ressources Azure que vous n’utilisez plus. La suppression des ressources inutilisées vous évitera d’encourir des frais inattendus.
-
->**Remarque** :  Ne vous inquiétez pas si les ressources de laboratoire ne peuvent pas être immédiatement supprimées. Parfois, les ressources ont des dépendances et leur suppression prend plus de temps. Il s’agit d’une tâche d’administrateur courante pour surveiller l’utilisation des ressources. Il vous suffit donc de consulter régulièrement vos ressources dans le portail pour voir comment se passe le nettoyage. 
-
-1. Dans le portail Azure, ouvrez la session **PowerShell** dans le volet **Cloud Shell**.
-
-1. Listez tous les groupes de ressources créés dans les labos de ce module en exécutant la commande suivante :
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*'
-   ```
-
-1. Supprimez tous les groupes de ressources que vous avez créés dans les labos de ce module en exécutant la commande suivante :
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Remarque** : La commande s’exécute de façon asynchrone (tel que déterminé par le paramètre -AsJob). Vous pourrez donc exécuter une autre commande PowerShell immédiatement après au cours de la même session PowerShell, mais la suppression effective du groupe de ressources peut prendre quelques minutes.
-
-## Révision
-
-Dans cet exercice, vous avez :
-
-+ Créé une application web Azure
-+ Créé un emplacement de déploiement de préproduction
-+ Configuré les paramètres de déploiement de l’application web
-+ Déployé du code sur l’emplacement de déploiement de transit
-+ Permuté les emplacements de préproduction
-+ Configuré et testé la mise à l’échelle automatique de l’application web Azure
++ [Indexez le déploiement d'une application web pour le test et la restauration en utilisant les emplacements de déploiement de l'App Service](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Utilisez des emplacements de déploiement pour simplifier le déploiement et la restauration d’une application web dans Azure App Service.
++ [Effectuer le scale-up et le scale-out d’une application web App Service pour répondre efficacement à la demande](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Augmentez de façon incrémentielle les ressources disponibles pour répondre à des périodes d’activité accrue, puis réduisez les coûts en diminuant ces ressources quand l’activité baisse.
