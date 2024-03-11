@@ -20,7 +20,7 @@ Votre organisation souhaite découvrir le déploiement et la configuration de ma
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Créez une machine virtuelle dans le portail](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201). Créez une machine virtuelle, connectez et installez le rôle serveur web.
 
@@ -152,7 +152,13 @@ Dans cette tâche, vous allez mettre à l’échelle une machine virtuelle en aj
 
 1. Revenez à la machine virtuelle **az104-vm1**, puis sélectionnez **Disques**.
 
+1. Dans la section **Disque de données**, sélectionnez **Joindre des disques existants**.
+
+1. Dans la liste déroulante **Nom du disque**, sélectionnez **VM1-DISK1**. 
+
 1. Vérifiez que le disque est désormais **SSD Standard**.
+
+1. Sélectionnez **Appliquer** pour enregistrer vos modifications. 
 
     >**Remarque :** Vous avez maintenant créé une machine virtuelle, mis à l’échelle la référence SKU et la taille du disque de données. Dans la tâche suivante, nous utilisons des groupes de machines virtuelles identiques pour automatiser le processus de mise à l’échelle.
 
@@ -408,9 +414,9 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-+ Dans le portail Azure, sélectionnez le groupe de ressources, sélectionnez **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
-+ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Avec l’interface CLI, `az group delete --name resourceGroupName`.
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
 
 ## Points clés
