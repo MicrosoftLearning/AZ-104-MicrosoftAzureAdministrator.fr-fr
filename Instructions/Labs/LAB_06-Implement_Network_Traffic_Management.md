@@ -20,7 +20,7 @@ Votre organisation a un site web public. Vous devez équilibrer la charge des re
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Créer et configurer un équilibreur de charge Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Créer un réseau virtuel, des serveurs back-ends, un équilibreur de charge, puis tester l’équilibreur de charge.
 + [Déployer une passerelle applicative Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Créer une passerelle applicative, créer des machines virtuelles, créer le pool de back-ends et tester la passerelle.
@@ -271,7 +271,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
    >**Remarque :** Prenez un moment pour lire les informations sur l’**affinité basée sur des cookies** et sur le **drainage de connexion**.
 
-1. Sous **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis ajoutez la deuxième règle.
+1. Sous **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis ajoutez la deuxième règle. 
 
     **Règle : routage vers le back-end d’images**
 
@@ -291,7 +291,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Paramètres du back-end | **az104-http** |
     | Cible de back-end | `az104-videobe` |
 
-1. Sélectionnez **Ajouter** deux fois, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
+1. Veillez à **Enregistrer** et à vérifier vos modifications, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
 
 1. Sélectionnez **Suivant : Vérifier + créer**, puis sur **Créer**.
 
@@ -319,9 +319,9 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
 Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-+ Dans le portail Azure, sélectionnez le groupe de ressources, sélectionnez **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
-+ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Avec l’interface CLI, `az group delete --name resourceGroupName`.
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
   
 ## Points clés
 
