@@ -4,7 +4,7 @@
 
 Ce référentiel est destiné aux instructeurs qui animent des cours Microsoft. Si vous êtes en cours, demandez de l’aide à votre instructeur. 
 
-- **[Lien vers les labos (format HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
+- **[Lien vers les labos (format HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator.fr-fr/)**
 - **Êtes-vous un MCT ?** - Consultez notre [Guide de l’utilisateur GitHub pour MCT](https://microsoftlearning.github.io/MCT-User-Guide/)
 - Pour voir un aperçu de ce cours dans un format auto-rythmé, consultez nos **[simulations de labo interactives](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)** . Il peut exister de légères différences entre les simulations interactives et les labos hébergés. Toutefois, les concepts et idées de base présentés sont identiques.
 
