@@ -146,7 +146,7 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
     | Paramètres | Valeurs |
     |  -- | -- |
     | Groupe de ressources | **az104-rg3** |
-    | Compte de stockage (Créer) | `sacloudshell` (doit être unique globalement, comprendre entre 3 et 24 caractères et comporter uniquement des nombres et des lettres en minuscules) |
+    | Compte de stockage (Créer) | *doit être globalement unique, comprendre entre 3 et 24 caractères et comporter uniquement des chiffres et des lettres en minuscules* |
     | Partage de fichiers (Créer) | `fs-cloudshell` |
 
 1. Une fois terminé, sélectionnez **Créer un stockage**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
