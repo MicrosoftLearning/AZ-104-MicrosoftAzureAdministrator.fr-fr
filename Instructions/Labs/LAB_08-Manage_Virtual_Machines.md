@@ -354,8 +354,8 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' 
+    -Size 'Standard_D2s_v3' ` 
+    -Credential (Get-Credential)
     ```
 
 1. Une fois la commande terminée, utilisez **Get-AzVM** pour répertorier les machines virtuelles dans votre groupe de ressources.
@@ -373,7 +373,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
     ```powershell
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8' `
-    -Name 'myPSVM' `
+    -Name 'myPSVM' 
     ```
 
 1. Utilisez **Get-AzVM** avec le paramètre **-Status** pour vérifier que la machine est **désallouée**.
