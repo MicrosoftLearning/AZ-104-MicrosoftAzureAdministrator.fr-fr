@@ -20,7 +20,7 @@ Votre organisation a migré son infrastructure dans Azure. Il est important que 
 
 ## Simulation de labo interactif
 
-Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Implémenter la supervision.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017) Créez un espace de travail Log Analytics et des solutions basées sur l’automatisation Azure. Passez en revue les paramètres de monitoring et de diagnostic pour des machines virtuelles. Passez en revue la fonctionnalité Log Analytics et Azure Monitor. 
 
@@ -41,7 +41,7 @@ Il existe une simulation de labo interactive qui peut vous être utile pour cett
 
 Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée pour tester les scénarios de supervision.
 
-1. Si nécessaire, téléchargez les fichiers du labo **\\Allfiles\\Lab11\\az104-11-vm-template.json** sur votre ordinateur.
+1. Téléchargez les fichiers du labo **\\Allfiles\\Lab11\\az104-11-vm-template.json** sur votre ordinateur.
 
 1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
@@ -63,7 +63,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
     | Resource group| `az104-rg11` (Si nécessaire, sélectionnez **Créer**)
     | Région        | **USA Est**   |
     | Nom d’utilisateur      | `localadmin`   |
-    | Mot de passe      | Fournir mot de passe complexe |
+    | Mot de passe      | Fournir un mot de passe complexe |
     
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
