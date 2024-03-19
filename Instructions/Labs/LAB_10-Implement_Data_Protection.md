@@ -150,7 +150,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
     | Fréquence | **Tous les jours** |
     | Temps | **12 h 00** |
     | Fuseau horaire | nom de votre fuseau horaire local |
-    | Conserver le ou les instantanés de récupération instantanée pour | **12** jour(s) |
+    | Conserver le ou les instantanés de récupération instantanée pour | **2** jour(s) |
 
     ![Capture d’écran de la page de stratégie de sauvegarde.](../media/az104-lab10-backup-policy.png)
 
