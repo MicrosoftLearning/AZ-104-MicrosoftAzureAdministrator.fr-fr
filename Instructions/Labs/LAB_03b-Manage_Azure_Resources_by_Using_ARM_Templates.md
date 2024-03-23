@@ -92,7 +92,7 @@ Dans cette tâche, vous utilisez le modèle téléchargé pour déployer un nouv
 1. Au sein du volet de l’éditeur, apportez ces modifications.
 
     + Remplacez **disks_az104_disk1_name** par `disk_name` (deux emplacements à modifier)
-    + Remplacez **az104_disk1** par `az102_disk2` (un emplacement à modifier)
+    + Remplacez **az104-disk1** par `az104-disk2` (un emplacement à modifier).
 
 1. Notez qu’il s’agit d’un disque **Standard**. L’emplacement est **eastus**. La taille du disque est **32 Go**.
 

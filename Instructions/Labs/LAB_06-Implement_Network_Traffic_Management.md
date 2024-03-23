@@ -179,9 +179,9 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
 1. Dans le portail Azure, recherchez et sélectionnez `Virtual networks`.
 
-1. Dans le panneau **Réseaux virtuels**, dans la liste des réseaux virtuels, cliquez sur **az104-vnet1**.
+1. Dans la liste des réseaux virtuels du panneau **Réseaux virtuels**, cliquez sur **az104-06-vnet1**.
 
-1. Dans le panneau du réseau virtuel **az104-vnet1**, dans la section **Paramètres**, cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**.
+1. Dans la section **Paramètres** du panneau du réseau virtuel **az104-06-vnet1**, cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**.
 
 1. Ajoutez un sous-réseau avec les paramètres suivants (laissez les autres avec leur valeur par défaut).
 
@@ -207,7 +207,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Niveau | **Standard V2** |
     | Activer la mise à l’échelle automatique | **Aucun** |
     | Nombre d’instances minimal | `2` |
-    | Zone de disponibilité | **Aucun** |
+    | Zone de disponibilité | **Zone 1** |
     | HTTP2 | **Désactivé** |
     | Réseau virtuel | **az104-06-vnet1** |
     | Sous-réseau | **subnet-appgw (10.60.3.224/27)** |
@@ -271,7 +271,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
    >**Remarque :** Prenez un moment pour lire les informations sur l’**affinité basée sur des cookies** et sur le **drainage de connexion**.
 
-1. Sous **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis ajoutez la deuxième règle. 
+1. Sous **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis sur **Ajouter** après la deuxième règle. 
 
     **Règle : routage vers le back-end d’images**
 
