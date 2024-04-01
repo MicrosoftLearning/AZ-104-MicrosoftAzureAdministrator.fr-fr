@@ -10,6 +10,9 @@ lab:
 
 Il s’agit du premier d’une série de labos pour les administrateurs Azure. Dans ce labo, vous découvrez les utilisateurs et les groupes. Les utilisateurs et les groupes constituent les blocs de construction de base d’une solution d’identité. 
 
+Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
+
+
 ## Durée estimée : 30 minutes
 
 ## Scénario du labo
@@ -18,7 +21,7 @@ Votre organisation crée un nouvel environnement de labos pour les tests de pré
 
 ## Simulation de labo interactif
 
-Ce labo utilise une simulation de labo interactive. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Ce labo utilise une simulation de labo interactive. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 >**Remarque :** Cette simulation est en cours de mise à jour. Microsoft Entra ID est le nouveau nom d’Azure Active Directory (Azure AD). 
 
