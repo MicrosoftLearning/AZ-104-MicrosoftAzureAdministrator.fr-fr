@@ -22,14 +22,14 @@ Votre organisation dispose d’une application web qui s’exécute sur une mach
 
 Il n’existe aucune simulation de laboratoire interactive pour cette rubrique. 
 
+## Diagramme de l'architecture
+
+![Diagramme des tâches.](../media/az104-lab09b-aca-architecture.png)
+
 ## Compétences de tâche
 
 - Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
 - Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
-
-## Diagramme de l'architecture
-
-![Diagramme des tâches.](../media/az104-lab09b-aca-architecture.png)
 
 ## Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
 
