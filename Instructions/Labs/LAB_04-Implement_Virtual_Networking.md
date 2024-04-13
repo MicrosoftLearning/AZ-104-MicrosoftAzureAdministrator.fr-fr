@@ -115,7 +115,7 @@ Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-
 
 1. Remplacez toutes les occurrences de **CoreServicesVnet** par `ManufacturingVnet`. 
 
-1. Remplacez toutes les occurrences de **10.20.0.0/16** par `10.30.0.0/16`. 
+1. Remplacez toutes les occurrences de **10.20.0.0** par `10.30.0.0`. 
 
 ### Apporter des modifications aux sous-réseaux ManufacturingVnet
 
