@@ -71,8 +71,7 @@ L’organisation prévoit une forte croissance pour les services de base. Dans c
 
     |  **Option**         | **Valeur**            |
     | ------------------ | -------------------- |
-
-    | Espace d’adressage IPv4 | `10.20.0.0/16` (séparez les entrées)    |
+    | Espace d’adressage IPv4 | `10.20.0.0/16` (séparez les entrées)    |
 
 1. Sélectionnez **+ Ajouter un sous-réseau**. Renseignez les informations de nom et d’adresse pour chaque sous-réseau. Veillez à sélectionner **Ajouter** pour chaque nouveau sous-réseau. 
 
