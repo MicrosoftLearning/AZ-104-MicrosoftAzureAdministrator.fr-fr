@@ -77,7 +77,7 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
     | Paramètre | Valeur | 
     | --- | --- |
-    | Nom | `CoreServicesVNet` (Créer) |
+    | Nom | `CoreServicesVnet` (Créer) |
     | Plage d’adresses | `10.0.0.0/16`  |
     | Nom du sous-réseau | `Core` | 
     | Plage d’adresses de sous-réseau | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
 
     | Paramètre | Valeur | 
     | --- | --- |
-    | Nom | `ManufacturingVNet` |
+    | Nom | `ManufacturingVnet` |
     | Plage d’adresses | `172.16.0.0/16`  |
     | Nom du sous-réseau | `Manufacturing` |
     | Plage d’adresses de sous-réseau | `172.16.0.0/24` |
@@ -177,20 +177,20 @@ Dans cette tâche, vous créez un appairage de réseaux virtuels pour activer le
 | --------------------------------------------- | ------------------------------------- |
 | **Ce réseau virtuel**                                       |                                       |
 | Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Autorisez CoreServicesVNet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
-| Autoriser CoreServicesVNet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
-| Autorisez une passerelle dans CoreServicesVNet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
-| Activer CoreServicesVNet pour utiliser la passerelle distante des réseaux virtuels appairés       | Non sélectionné (par défaut)                        |
+| Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
+| Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
+| Autorisez une passerelle dans CoreServicesVnet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
+| Activer CoreServicesVnet pour utiliser la passerelle distante des réseaux virtuels appairés       | Non sélectionné (par défaut)                        |
 | **Réseau virtuel distant**                                   |                                       |
 | Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Modèle de déploiement de réseau virtuel              | **Gestionnaire des ressources**                      |
 | Je connais mon ID de ressource                         | Non sélectionné                          |
 | Abonnement                                  | *votre abonnement*    |
 | Réseau virtuel                               | **ManufacturingVnet**                     |
-| Autoriser ManufacturingVNet à accéder à CoreServicesVNet  | sélectionné (par défaut)                       |
-| Autoriser ManufacturingVNet à recevoir le trafic transféré à partir de CoreServicesVNet | sélectionné                        |
-| Autorisez une passerelle dans CoreServicesVNet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
-| Permettre à ManufacturingVNet d’utiliser la passerelle distante de CoreServicesVNet       | Non sélectionné (par défaut)                        |
+| Autoriser ManufacturingVnet à accéder à CoreServicesVnet  | sélectionné (par défaut)                       |
+| Autoriser ManufacturingVnet à recevoir le trafic transféré à partir de CoreServicesVnet | sélectionné                        |
+| Autorisez une passerelle dans CoreServicesVnet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
+| Permettre à ManufacturingVnet d’utiliser la passerelle distante de CoreServicesVnet       | Non sélectionné (par défaut)                        |
 
 1. Passez en revue vos paramètres, puis sélectionnez **Ajouter**.
 

@@ -263,7 +263,7 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre 
     | Propriété | Valeur    |
     |:---------|:---------|
     | Abonnement | **Sélectionnez votre abonnement** |
-    | Resource group | **az04-rg4** |
+    | Resource group | **az-104-rg4** |
     | Nom | `contoso.com` (s’il est réservé, adaptez le nom) |
     | Région |**USA Est** (passez en revue l’icône d’informations) |
 
@@ -306,7 +306,7 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
     | Propriété | Valeur    |
     |:---------|:---------|
     | Abonnement | **Sélectionnez votre abonnement** |
-    | Resource group | **az04-rg4** |
+    | Resource group | **az-104-rg4** |
     | Nom | `private.contoso.com` (adaptez si vous avez dû renommer) |
     | Région |**USA Est** |
 
