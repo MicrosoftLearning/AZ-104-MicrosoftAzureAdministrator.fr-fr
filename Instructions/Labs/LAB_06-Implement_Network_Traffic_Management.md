@@ -42,7 +42,7 @@ Dans cette tâche, vous allez utiliser un modèle pour déployer un réseau virt
 
 1. Recherchez et sélectionnez `Deploy a custom template`.
 
-1. Dans la page du déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
+1. Sur la page Déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
 
 1. Dans le volet Modifier le modèle, sélectionnez **Charger le fichier**.
 
@@ -128,7 +128,7 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
     | az104-06-vm0 | **Cocher la case** |
     | az104-06-vm1 | **Cocher la case** |
 
-1. Si vous avez le temps, passez en revue les autres onglets, puis cliquez sur **Vérifier et créer**. Vérifiez qu’il n’existe aucune erreur de validation, puis cliquez sur **Créer**.
+1. Si vous avez le temps, vérifiez les autres onglets, puis cliquez sur **Vérifier + créer**. Vérifiez qu’il n’existe aucune erreur de validation, puis cliquez sur **Créer**.
 
 1. Patientez jusqu’à ce que l’équilibreur de charge soit déployé, puis cliquez sur **Accéder à la ressource**.
 
@@ -136,7 +136,7 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
 
 1. Dans le panneau **Paramètres**, cliquez sur **Règles d’équilibrage de charge**.
 
-1. Sélectionnez **Ajouter une règle d’équilibrage de charge**. Ajoutez une règle d’équilibrage de charge avec les paramètres suivants (laissez les autres valeurs par défaut).  Quand vous configurez la règle, utilisez les icônes d’information pour en savoir plus sur chaque paramètre. Quand vous avez terminé, cliquez sur **Enregistrer**.
+1. Sélectionnez **Ajouter**. Ajoutez une règle d’équilibrage de charge avec les paramètres suivants (laissez les autres valeurs par défaut).  Quand vous configurez la règle, utilisez les icônes d’information pour en savoir plus sur chaque paramètre. Quand vous avez terminé, cliquez sur **Enregistrer**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -194,7 +194,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
     > **Remarque** : Ce sous-réseau sera utilisé par la passerelle applicative Azure. Application Gateway nécessite un sous-réseau dédié de /27 ou de taille supérieure.
 
-1. Dans le portail Azure, recherchez et sélectionnez `Application Gateways` puis, dans le panneau **Passerelles applicatives**, cliquez sur **+ Créer**.
+1. Dans le portail Azure, recherchez et sélectionnez `Application gateways` puis, dans le panneau **Passerelles applicatives**, cliquez sur **+ Créer**.
 
 1. Sous l’onglet **Informations de base**, spécifiez les paramètres suivants (laissez les autres valeurs par défaut) :
 
@@ -225,7 +225,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
     >**Remarque :** La passerelle applicative peut avoir une adresse IP publique et une adresse IP privée.
  
-1. Cliquez sur **Suivant : Back-ends >** , puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
+1. Cliquez sur **Suivant : Back-ends >**, puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -250,14 +250,14 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Ajouter un pool back-end sans cible | **Aucun** |
     | Machine virtuelle | **az104-rg6-nic2 (10.60.2.4)** |
 
-1. Sélectionnez **Suivant : Configuration**, puis sur **Ajouter des règles de routage**. Renseignez les informations.
+1. Sélectionnez **Suivant : Configuration**, puis sur **Ajouter une règle de routage**. Renseignez les informations.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom de la règle | `az104-gwrule` |
     | Priority | `10` |
     | Nom de l’écouteur | `az104-listener` |
-    | Adresse IP du front-end | **Public** |
+    | Adresse IP du front-end | **Adresse IPv4 publique** |
     | Protocol | **HTTP** |
     | Port | `80` |
     | Type d’écouteur | **De base** |
@@ -271,7 +271,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
    >**Remarque :** Prenez un moment pour lire les informations sur l’**affinité basée sur des cookies** et sur le **drainage de connexion**.
 
-1. Sous **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis sur **Ajouter** après la deuxième règle. 
+1. Dans la section **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis sur **Ajouter** après la deuxième règle. 
 
     **Règle : routage vers le back-end d’images**
 
