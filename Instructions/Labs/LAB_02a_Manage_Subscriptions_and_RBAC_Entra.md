@@ -157,6 +157,19 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
   
+## Étendre votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
++ Créer deux tables mettant en évidence des commandes PowerShell et CLI importantes pour obtenir des informations sur les abonnements des organisations sur Azure et expliquer chaque commande dans la colonne « Explication ». 
++ Quel est le format du fichier JSON de RBAC Azure ?
++ Quelles sont les étapes de base pour créer un rôle RBAC Azure personnalisé ?
++ Quelle est la différence entre les rôles RBAC Azure et les rôles Microsoft Entra ID ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Sécurisez vos ressources Azure avec le contrôle d’accès en fonction du rôle Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Utilisez Azure RBAC pour gérer l’accès aux ressources dans Azure.
++ [Créez des rôles personnalisés pour des ressources Azure avec le contrôle d’accès en fonction du rôle (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenez la structure des définitions de rôle pour le contrôle d’accès. Identifiez les propriétés de rôle à utiliser pour définir vos autorisations de rôle personnalisées. Créez un rôle Azure personnalisé et attribuez-le à un utilisateur.
+
 ## Points clés
 
 Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
@@ -166,13 +179,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Azure dispose de plusieurs rôles intégrés. Vous pouvez attribuer ces rôles pour contrôler l’accès aux ressources.
 + Vous pouvez créer des rôles ou personnaliser des rôles existants.
 + Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
-+ Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles. 
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Sécurisez vos ressources Azure avec le contrôle d’accès en fonction du rôle Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Utilisez Azure RBAC pour gérer l’accès aux ressources dans Azure.
-+ [Créez des rôles personnalisés pour des ressources Azure avec le contrôle d’accès en fonction du rôle (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenez la structure des définitions de rôle pour le contrôle d’accès. Identifiez les propriétés de rôle à utiliser pour définir vos autorisations de rôle personnalisées. Créez un rôle Azure personnalisé et attribuez-le à un utilisateur.
-
++ Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles.
 
 
 
