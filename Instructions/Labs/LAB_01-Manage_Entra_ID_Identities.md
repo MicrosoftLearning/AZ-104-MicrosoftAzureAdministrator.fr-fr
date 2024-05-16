@@ -144,14 +144,14 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
   
-## Points clés
 
-Félicitations, vous avez terminé le labo. Voici quelques points principaux à retenir pour ce labo :
+## Développer votre apprentissage avec Copilot
 
-+ Un tenant représente votre organisation et vous permet de gérer une instance particulière des services cloud de Microsoft pour vos utilisateurs internes et externes.
-+ Microsoft Entra ID dispose de comptes d’utilisateur et d’invité. Chaque compte d’utilisateur a un niveau d’accès spécifique adapté à l’étendue du travail qu’il doit effectuer.
-+ Les groupes combinent des utilisateurs ou des appareils associés. Il existe deux types de groupe, notamment Sécurité et Microsoft 365.
-+ Vous pouvez attribuer une appartenance à un groupe de manière statique ou dynamique.
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
++ Quelles sont les commandes Azure PowerShell et CLI pour créer un groupe de sécurité nommé Administrateurs informatiques ? Fournissez la page officielle de la référence de commande.  
++ Offrez une stratégie pas à pas pour gérer des utilisateurs et des groupes dans Microsoft Entra ID.
++ Quelles sont les étapes dans le Portail Azure pour créer en bloc des utilisateurs et des groupes ?
++ Fournissez un tableau comparatif des comptes d’utilisateur interne et externe de Microsoft Entra ID. 
 
 
 ## En savoir plus grâce à l’apprentissage auto-rythmé
@@ -161,4 +161,11 @@ Félicitations, vous avez terminé le labo. Voici quelques points principaux à 
 + [Autorisez les utilisateurs à réinitialiser leur mot de passe avec la réinitialisation de mot de passe en libre-service Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Évaluez la réinitialisation de mot de passe en libre-service pour permettre aux utilisateurs de votre organisation de réinitialiser leur mot de passe ou de déverrouiller leurs comptes. Installez, configurez et testez la réinitialisation de mot de passe en libre-service.
 
 
+## Points clés
 
+Félicitations, vous avez terminé le labo. Voici quelques points principaux à retenir pour ce labo :
+
++ Un tenant représente votre organisation et vous permet de gérer une instance particulière des services cloud de Microsoft pour vos utilisateurs internes et externes.
++ Microsoft Entra ID dispose de comptes d’utilisateur et d’invité. Chaque compte d’utilisateur a un niveau d’accès spécifique adapté à l’étendue du travail qu’il doit effectuer.
++ Les groupes combinent des utilisateurs ou des appareils associés. Il existe deux types de groupe, notamment Sécurité et Microsoft 365.
++ Vous pouvez attribuer une appartenance à un groupe de manière statique ou dynamique.

@@ -287,6 +287,18 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
+
++ Comment puis-je utiliser les commandes Azure PowerShell ou Azure CLI pour ajouter un appairage de réseaux virtuels entre vnet1 et vnet2 ?
++ Créez une table mettant en évidence divers outils de surveillance tiers et Azure pris en charge sur Azure. Mettez en évidence le moment où utiliser chaque outil. 
++ Quand puis-je créer une route réseau personnalisée dans Azure ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Distribuez vos services sur des réseaux virtuels Azure et les intégrer en utilisant l’appairage de réseaux virtuels](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Utilisez le peering de réseaux virtuels pour activer la communication entre des réseaux virtuels de façon sécurisée et peu complexe.
++ [Gérez et contrôlez le flux de trafic dans votre déploiement Azure à l’aide de routes](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Découvrez comment contrôler le trafic du réseau virtuel Azure en implémentant des routes personnalisées.
+
 
 ## Points clés
 
@@ -298,8 +310,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Le trafic entre les machines virtuelles des réseaux virtuels appairés utilise l'infrastructure principale de Microsoft.
 + Les routes définies par le système sont automatiquement créées pour chaque sous-réseau d’un réseau virtuel. Les routes définies par l’utilisateur remplacent les routes système par défaut ou s’y ajoutent. 
 + Azure Network Watcher fournit une suite d’outils pour surveiller, diagnostiquer et afficher les journaux d’activité et les métriques des ressources infrastructure as a service Azure.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Distribuez vos services sur des réseaux virtuels Azure et les intégrer en utilisant l’appairage de réseaux virtuels](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Utilisez le peering de réseaux virtuels pour activer la communication entre des réseaux virtuels de façon sécurisée et peu complexe.
-+ [Gérez et contrôlez le flux de trafic dans votre déploiement Azure à l’aide de routes](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Découvrez comment contrôler le trafic du réseau virtuel Azure en implémentant des routes personnalisées.

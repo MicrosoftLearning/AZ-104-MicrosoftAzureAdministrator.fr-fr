@@ -322,7 +322,21 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
-  
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
+
++ Comparez et différenciez le service Azure Load Balancer et Azure Application Gateway.
++ Comment puis-je résoudre des problèmes de connectivité entrante pour Azure Load Balancer ?
++ Quelles sont les étapes de base de la configuration d’Azure Application Gateway ?
++ Créez une table mettant en évidence les solutions d’équilibrage de charge Azure. Incluez ces colonnes : Protocoles pris en charge, équilibrage de charge privé, équilibrage de charge global, stratégies de routage, environnements pris en charge, drainage de connexion, affinité de session, équilibrage de charge de chemin d’accès et hôte, déchargement TLS, accélération de site, sécurité, mise en cache et compression.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Améliorer la scalabilité et la résilience des applications en utilisant Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Découvrez les différents équilibreurs de charge disponibles dans Azure et comment choisir la solution d’équilibreur de charge Azure la mieux adaptée à vos besoins.
++ [Équilibrer la charge du trafic de votre service web avec Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Améliorez la résilience des applications en répartissant la charge entre plusieurs serveurs, et utilisez le routage basé sur le chemin pour le trafic web direct.
+
 ## Points clés
 
 Félicitations, vous avez terminé le labo. Voici les principaux points à retenir pour ce labo.
@@ -333,8 +347,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Azure Application Gateway est un équilibreur de charge de trafic web (couche OSI 7) qui vous permet de gérer le trafic vers vos applications web.
 + Le niveau Standard d’Application Gateway offre toutes les fonctionnalités L7, notamment l’équilibrage de charge. Le niveau WAF ajoute un pare-feu pour détecter le trafic malveillant.
 + Une passerelle applicative peut prendre des décisions de routage basées sur des attributs supplémentaires d’une requête HTTP, par exemple des en-têtes d’hôte ou de chemin d’URI.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Améliorer la scalabilité et la résilience des applications en utilisant Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Découvrez les différents équilibreurs de charge disponibles dans Azure et comment choisir la solution d’équilibreur de charge Azure la mieux adaptée à vos besoins.
-+ [Équilibrer la charge du trafic de votre service web avec Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Améliorez la résilience des applications en répartissant la charge entre plusieurs serveurs, et utilisez le routage basé sur le chemin pour le trafic web direct.
