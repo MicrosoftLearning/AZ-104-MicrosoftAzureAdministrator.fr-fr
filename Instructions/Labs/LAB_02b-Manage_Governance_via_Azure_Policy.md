@@ -238,6 +238,17 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
++ Quelles sont les commandes Azure PowerShell et CLI pour ajouter et supprimer des verrous de ressources sur un groupe de ressources ?
++ Tabulez les différences entre Azure Policy et Azure RBAC, incluez des exemples.
++ Quelles sont les étapes permettant d’appliquer la stratégie Azure et de corriger les ressources qui ne sont pas conformes ?
++ Comment puis-je obtenir un rapport des ressources Azure avec des balises spécifiques ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Concevez une stratégie de gouvernance d’entreprise](https://learn.microsoft.com/training/modules/enterprise-governance/). Utilisez RBAC et Azure Policy pour limiter l’accès à vos solutions Azure et déterminer la méthode qui convient le mieux à vos objectifs de sécurité.
+
 ## Points clés
 
 Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
@@ -246,10 +257,5 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Azure Policy établit des conventions pour les ressources. Les définitions de stratégie décrivent les conditions de la conformité des ressources et l’effet à exécuter si une condition est remplie. Une condition compare un champ ou une valeur de propriété de ressource à une valeur requise. Il existe de nombreuses définitions de stratégie intégrées et vous pouvez personnaliser les stratégies. 
 + Vous utilisez la fonctionnalité de tâche de correction Azure Policy pour rendre des ressources conformes en fonction d’une définition et d’une affectation. Les ressources non conformes à une attribution de définition modify ou deployIfNotExist peuvent être mises en conformité à l’aide d’une tâche de correction.
 + Vous pouvez configurer un verrou de ressource sur un abonnement, un groupe de ressources ou une ressource. Le verrou peut protéger une ressource contre les suppressions et modifications accidentelles des utilisateurs. Le verrou remplace toutes les autorisations que les utilisateurs ont.
-+ Azure Policy est une pratique de sécurité en prédéploiement. Les verrous de ressources et RBAC constituent une pratique de sécurité postérieure au déploiement. 
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Concevez une stratégie de gouvernance d’entreprise](https://learn.microsoft.com/training/modules/enterprise-governance/). Utilisez RBAC et Azure Policy pour limiter l’accès à vos solutions Azure et déterminer la méthode qui convient le mieux à vos objectifs de sécurité.
-  
++ Azure Policy est une pratique de sécurité en prédéploiement. Les verrous de ressources et RBAC constituent une pratique de sécurité postérieure au déploiement.
 

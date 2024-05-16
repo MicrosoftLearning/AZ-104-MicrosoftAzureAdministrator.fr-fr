@@ -95,6 +95,15 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
+
++ Résumez les étapes pour créer et configurer une instance de conteneur Azure.
++ De quelles manières puis-je exécuter un conteneur serverless sur Azure ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Exécuter des images conteneur dans Azure Container Instances](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Découvrez comment Azure Container Instances peut vous aider à déployer rapidement des conteneurs, à définir des variables d’environnement et à spécifier des stratégies de redémarrage de conteneur.
 
 ## Points clés
 
@@ -104,9 +113,5 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + ACI ne nécessite pas l’approvisionnement ou la gestion d’une infrastructure sous-jacente.
 + ACI prend en charge des conteneurs Windows et Linux.
 + Les charges de travail sur ACI sont habituellement démarrées et arrêtées par un type de processus ou de déclencheur et sont généralement de courte durée. 
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Exécuter des images conteneur dans Azure Container Instances](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Découvrez comment Azure Container Instances peut vous aider à déployer rapidement des conteneurs, à définir des variables d’environnement et à spécifier des stratégies de redémarrage de conteneur.
 
     

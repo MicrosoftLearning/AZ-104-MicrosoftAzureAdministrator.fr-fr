@@ -418,6 +418,18 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
+
++ Fournissez les étapes et les commandes Azure CLI pour créer une machine virtuelle Linux. 
++ Examinez vos moyens de mettre à l’échelle des machines virtuelles et d’améliorer les performances.
++ Décrivez les stratégies de gestion du cycle de vie du stockage Azure et comment elles peuvent optimiser les coûts.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Créez une machine virtuelle Windows dans Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Créer une machine virtuelle Windows à partir du portail Azure. Vous connecter à une machine virtuelle Windows en cours d’exécution à l’aide du Bureau à distance
++ [Générer une application évolutive avec des groupes de machines virtuelles identiques](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Utilisez Virtual Machine Scale Sets pour que votre application s’adapte automatiquement aux changements de charge tout en réduisant les coûts.
++ [Se connecter aux machines virtuelles à travers le portail Azure en utilisant Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Déployez Azure Bastion pour vous connecter en toute sécurité aux machines virtuelles Azure directement sur le Portail Azure afin de remplacer efficacement une solution de jumpbox existante, surveiller des sessions distantes en utilisant les journaux de diagnostic et gérer des sessions distantes en déconnectant la session d’un utilisateur.
 
 ## Points clés
 
@@ -429,10 +441,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Les groupes de machines virtuelles identiques Azure vous permettent de créer et de gérer un groupe de machines virtuelles à charge équilibrée.
 + Les machines virtuelles d’un groupe de machines virtuelles identiques sont créées à partir de la même image et de la même configuration.
 + Dans un groupe de machines virtuelles identiques, le nombre d’instances de machine virtuelle peut augmenter ou diminuer automatiquement en fonction de la demande ou d’une planification définie.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Créez une machine virtuelle Windows dans Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Créer une machine virtuelle Windows à partir du portail Azure. Vous connecter à une machine virtuelle Windows en cours d’exécution à l’aide du Bureau à distance
-+ [Générer une application évolutive avec des groupes de machines virtuelles identiques](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Utilisez Virtual Machine Scale Sets pour que votre application s’adapte automatiquement aux changements de charge tout en réduisant les coûts.
-+ [Se connecter aux machines virtuelles à travers le portail Azure en utilisant Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Déployez Azure Bastion pour vous connecter en toute sécurité aux machines virtuelles Azure directement sur le Portail Azure afin de remplacer efficacement une solution de jumpbox existante, surveiller des sessions distantes en utilisant les journaux de diagnostic et gérer des sessions distantes en déconnectant la session d’un utilisateur.
-  
