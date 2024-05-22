@@ -72,7 +72,7 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
 1. Passez en revue le panneau **Vue d’ensemble** et les configurations supplémentaires qui peuvent être modifiées. Il s’agit de paramètres globaux pour le compte de stockage. Notez que le compte de stockage peut être utilisé pour des conteneurs d’objets blob, des partages de fichiers, des files d’attente et des tables.
 
-1. Dans la section **Sécurité + Mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’accès au réseau public est désactivé.
+1. Dans la section **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’accès au réseau public est désactivé.
 
     + Changez le **niveau d’accès public** en **Activé à partir des réseaux virtuels et adresses IP sélectionnés**.
     + Dans la section **Pare-feu**, cochez la case pour **Ajouter l’adresse IP de votre client**.
@@ -182,7 +182,7 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Cliquez sur **+ Partage de fichiers** puis, sous l’onglet **Informations de base**, donnez un nom au partage de fichiers, `share1`. 
 
-1. Notez les options de **Niveau**. Conservez la **Transaction optimisée** par défaut.
+1. Notez les options de **Niveau d’accès**. Conservez la **Transaction optimisée** par défaut.
    
 1. Accédez à l’onglet **Sauvegarde** et vérifiez que la case **Activer la sauvegarde** n’est **pas** cochée. Nous désactivons la sauvegarde pour simplifier la configuration du labo.
 
@@ -245,7 +245,7 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
-## Étendre votre apprentissage avec Copilot
+## Développer votre apprentissage avec Copilot
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 
 + Fournir un script Azure PowerShell pour créer un compte de stockage avec un conteneur d’objets blob. 
