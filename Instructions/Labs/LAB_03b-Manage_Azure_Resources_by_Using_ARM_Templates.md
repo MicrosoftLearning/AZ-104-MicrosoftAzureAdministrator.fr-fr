@@ -139,19 +139,23 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 
     >**Le saviez-vous ?**  Si vous travaillez principalement avec des systèmes Linux, Bash (interface CLI) semble plus familier. Si vous travaillez principalement avec des systèmes Windows, Azure PowerShell semble plus familier. 
 
-1. Dans l’écran **Vous n’avez aucun stockage monté**, sélectionnez **Afficher les paramètres avancés**, puis fournissez les informations requises. 
+1. Dans l’écran **Prise en main**, sélectionnez **Monter le compte de stockage**, puis **Je souhaite créer un compte de stockage**.  
 
-    >**Remarque :** Lorsque vous travaillez avec le service Cloud Shell, un compte de stockage et un partage de fichiers sont nécessaires. 
-
+    >**Remarque :** Pour ce labo, un compte de stockage est requis. Fournissez les informations nécessaires. 
+    
     | Paramètres | Valeurs |
     |  -- | -- |
+    | Abonnement | *sélectionner votre abonnement* |
     | Groupe de ressources | **az104-rg3** |
+    | Région | *sélectionnez votre région* | 
     | Compte de stockage (Créer) | *doit être globalement unique, comprendre entre 3 et 24 caractères et comporter uniquement des chiffres et des lettres en minuscules* |
     | Partage de fichiers (Créer) | `fs-cloudshell` |
 
-1. Une fois terminé, sélectionnez **Créer un stockage**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
+1. Quand vous avez terminé, sélectionnez **Suivant**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
 
 1. Utilisez l’icône **Charger/télécharger des fichiers** pour charger le modèle et le fichier des paramètres à partir du répertoire des téléchargements. Vous devrez charger chaque fichier séparément.
+
+   >**Remarque :** Si, à tout moment, vous êtes invité à **Basculer vers Cloud Shell classique**, faites-le. 
 
 1. Vérifiez que vos fichiers sont disponibles dans le stockage Cloud Shell. 
 

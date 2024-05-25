@@ -343,7 +343,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Utilisez l’icône (en haut à droite) pour lancer une session **Cloud Shell**. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
-1. Veillez à sélectionner **PowerShell**. Si nécessaire, utilisez l’option **Afficher les paramètres avancés** et configurez le stockage du shell.
+1. Veillez à sélectionner **PowerShell**. Si nécessaire, configurez l’espace de stockage shell.
 
 1. Exécutez la commande suivante pour créer une machine virtuelle. Lorsque vous y êtes invité, saisissez un nom d’utilisateur et un mot de passe pour la machine virtuelle. Pendant que vous attendez l’extraction de la référence de commande [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) pour tous les paramètres associés à la création d’une machine virtuelle.
 
@@ -384,7 +384,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Utilisez l’icône (en haut à droite) pour lancer une session **Cloud Shell**. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
-1. Veillez à sélectionner **Bash**. Si nécessaire, utilisez l’option **Afficher les paramètres avancés** et configurez le stockage du shell.
+1. Veillez à sélectionner **Bash**. Si nécessaire, configurez l’espace de stockage shell.
 
 1. Exécutez la commande suivante pour créer une machine virtuelle. Lorsque vous y êtes invité, saisissez un nom d’utilisateur et un mot de passe pour la machine virtuelle. Pendant que vous attendez l’extraction de la référence de commande [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) pour tous les paramètres associés à la création d’une machine virtuelle.
 
