@@ -212,11 +212,11 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Attendez que le réseau virtuel soit déployé, puis sélectionnez **Accéder à la ressource**.
 
-1. Dans la section **Paramètres**, sélectionnez le panneau **Sous-réseaux**.
-    + Sélectionnez le sous-réseau **par défaut**.
-    + Dans la section **Points de terminaison de service**, choisissez **Microsoft.Storage** dans la liste déroulante **Services**.
-    + N’apportez aucune autre modification.    
-    + Veillez à **Enregistrer** vos modifications. 
+1. Dans la section **Paramètres**, sélectionnez le volet **Points de terminaison de service**.
+    + Sélectionnez **Ajouter**. 
+    + Dans la liste déroulante **Services** , sélectionnez **Microsoft.Storage**.
+    + Dans la liste déroulante **Sous-réseaux** vérifiez le sous-réseau **par défaut**.
+    + Cliquez sur **Ajouter** pour enregistrer vos modifications.  
 
 1. Revenez à votre compte de stockage.
 
