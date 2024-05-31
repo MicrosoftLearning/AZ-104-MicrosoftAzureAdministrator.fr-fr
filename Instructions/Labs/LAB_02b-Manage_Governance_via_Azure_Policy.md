@@ -230,6 +230,8 @@ Dans cette tâche, vous configurez et testez un verrou de ressource. Les verrous
 
     ![Capture d’écran du message d’échec de suppression.](../media/az104-lab02b-failuretodelete.png) 
 
+    >**Remarque :** Vous allez devoir supprimer le verrou si vous envisagez de supprimer le groupe de ressources. 
+    
 ## Nettoyage de vos ressources
 
 Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 

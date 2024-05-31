@@ -79,7 +79,7 @@ Dans cette tâche, vous allez créer un emplacement de déploiement de transit. 
 
     >**Remarque** : L’application web, à ce stade, a un emplacement de déploiement unique intitulé **PRODUCTION**.
 
-1. Cliquez sur **+ Ajouter un emplacement**, puis ajoutez un nouvel emplacement avec les paramètres suivants :
+1. Cliquez sur **Ajouter un emplacement**, puis ajoutez un nouvel emplacement avec les paramètres suivants :
 
     | Paramètre | Valeur |
     | --- | ---|

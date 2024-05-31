@@ -49,7 +49,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
 
 1. Connectez-vous au Portail Azure : `https://portal.azure.com`.
 
-1. Recherchez et sélectionnez `Virtual machines`, puis sur le panneau **Machines virtuelles**, cliquez sur **+ Créer**, enfin sélectionnez **+ Machine virtuelle Azure** dans la liste déroulante. Notez vos autres choix.
+1. Recherchez et sélectionnez `Virtual machines`, puis sur le panneau **Machines virtuelles**, cliquez sur **+ Créer**, enfin sélectionnez **Machine virtuelle Azure** dans la liste déroulante. Notez vos autres choix.
 
 1. Sous l’onglet **Informations de base**, dans le menu déroulant **Zone de disponibilité**, cochez la case à côté **Zone 2**. Cette option doit sélectionner la **Zone 1** et la **Zone 2**.
 
@@ -102,7 +102,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Diagnostics de démarrage | **Désactiver** |
+    | Diagnostics de démarrage | **Disable** |
 
 1. Cliquez sur **Suivant : Avancé >**, prenez les valeurs par défaut, puis cliquez sur **Vérifier + créer**.
 
@@ -283,7 +283,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 ### Effectuez un scale-out
 
-1. Sélectionnez **Mise à l’échelle automatique personnalisée**. puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
+1. Sélectionnez **Mise à l’échelle automatique personnalisée**. Puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
 
 1. Nous allons créer une règle qui augmente automatiquement le nombre d’instances de machine virtuelle. Cette règle effectue un scale-out quand la charge moyenne du processeur est supérieure à 70 % sur une période de 10 minutes. Lorsque la règle déclenche l’opération, le nombre d’instances de machine virtuelle est augmenté de 20 %.
 
