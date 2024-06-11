@@ -20,7 +20,7 @@ Votre organisation stocke actuellement des données dans des magasins de donnée
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Créer un stockage blob](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Créer un compte de stockage, gérez le stockage blob et surveillez les activités de stockage. 
   
@@ -72,7 +72,7 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
 1. Passez en revue le panneau **Vue d’ensemble** et les configurations supplémentaires qui peuvent être modifiées. Il s’agit de paramètres globaux pour le compte de stockage. Notez que le compte de stockage peut être utilisé pour des conteneurs d’objets blob, des partages de fichiers, des files d’attente et des tables.
 
-1. Dans la section **Sécurité + Mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’accès au réseau public est désactivé.
+1. Dans la section **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’accès au réseau public est désactivé.
 
     + Changez le **niveau d’accès public** en **Activé à partir des réseaux virtuels et adresses IP sélectionnés**.
     + Dans la section **Pare-feu**, cochez la case pour **Ajouter l’adresse IP de votre client**.
@@ -182,7 +182,7 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Cliquez sur **+ Partage de fichiers** puis, sous l’onglet **Informations de base**, donnez un nom au partage de fichiers, `share1`. 
 
-1. Notez les options de **Niveau**. Conservez la **Transaction optimisée** par défaut.
+1. Notez les options de **Niveau d’accès**. Conservez la **Transaction optimisée** par défaut.
    
 1. Accédez à l’onglet **Sauvegarde** et vérifiez que la case **Activer la sauvegarde** n’est **pas** cochée. Nous désactivons la sauvegarde pour simplifier la configuration du labo.
 
@@ -212,11 +212,11 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Attendez que le réseau virtuel soit déployé, puis sélectionnez **Accéder à la ressource**.
 
-1. Dans la section **Paramètres**, sélectionnez le panneau **Sous-réseaux**.
-    + Sélectionnez le sous-réseau **par défaut**.
-    + Dans la section **Points de terminaison de service**, choisissez **Microsoft.Storage** dans la liste déroulante **Services**.
-    + N’apportez aucune autre modification.    
-    + Veillez à **Enregistrer** vos modifications. 
+1. Dans la section **Paramètres**, sélectionnez le volet **Points de terminaison de service**.
+    + Sélectionnez **Ajouter**. 
+    + Dans la liste déroulante **Services** , sélectionnez **Microsoft.Storage**.
+    + Dans la liste déroulante **Sous-réseaux** vérifiez le sous-réseau **par défaut**.
+    + Cliquez sur **Ajouter** pour enregistrer vos modifications.  
 
 1. Revenez à votre compte de stockage.
 
@@ -241,9 +241,21 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-+ Dans le portail Azure, sélectionnez le groupe de ressources, sélectionnez **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
-+ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Avec l’interface CLI, `az group delete --name resourceGroupName`.
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
+
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
+
++ Fournir un script Azure PowerShell pour créer un compte de stockage avec un conteneur d’objets blob. 
++ Fournir une liste de contrôle que je peux utiliser pour vérifier que mon compte de stockage Azure est sécurisé.
++ Créer un tableau pour comparer les modèles de redondance du stockage Azure.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Optimiser vos coûts avec Stockage Blob Azure.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Découvrez comment optimiser votre coût avec Stockage Blob Azure.
++ [Contrôler l’accès à Stockage Azure avec des signatures d’accès partagé](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Accorder l’accès aux données stockées dans vos comptes de stockage Azure en utilisant des signatures d’accès partagé.
 
 ## Points clés
 
@@ -254,8 +266,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Stockage blob Azure vous permet de stocker de grandes quantités de données non structurées sur la plateforme de stockage de données de Microsoft. Blob signifie Binary Large Object. Il contient des objets tels que des images et des fichiers multimédias.
 + Stockage Azure Files fournit un stockage partagé pour les données structurées. Les données peuvent être organisées dans des dossiers.
 + Le stockage immuable vous permet de stocker des données dans un état WORM (Write Once, Read Many). Les stratégies de stockage immuable peuvent être basées sur le temps ou sur la durée de conservation légale.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Optimiser vos coûts avec Stockage Blob Azure.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Découvrez comment optimiser votre coût avec Stockage Blob Azure.
-+ [Contrôler l’accès à Stockage Azure avec des signatures d’accès partagé](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Accorder l’accès aux données stockées dans vos comptes de stockage Azure en utilisant des signatures d’accès partagé.

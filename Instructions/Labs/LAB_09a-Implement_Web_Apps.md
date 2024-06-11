@@ -21,7 +21,7 @@ Votre organisation s’intéresse aux applications web Azure pour l’hébergeme
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des concepts de base sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Créez une application web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Créez une application Web qui exécute un conteneur Docker.
     
@@ -79,7 +79,7 @@ Dans cette tâche, vous allez créer un emplacement de déploiement de transit. 
 
     >**Remarque** : L’application web, à ce stade, a un emplacement de déploiement unique intitulé **PRODUCTION**.
 
-1. Cliquez sur **+ Ajouter un emplacement**, puis ajoutez un nouvel emplacement avec les paramètres suivants :
+1. Cliquez sur **Ajouter un emplacement**, puis ajoutez un nouvel emplacement avec les paramètres suivants :
 
     | Paramètre | Valeur |
     | --- | ---|
@@ -173,11 +173,20 @@ Dans cette tâche, vous allez configurer la mise à l’échelle automatique de 
 
 Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
 
-+ Dans le portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **entrez le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
-+ Avec Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Avec l’interface CLI, `az group delete --name resourceGroupName`.
++ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
++ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
++ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 
++ Résumez les étapes pour créer et configurer une application web Azure.
++ Quels sont les moyens de mettre à l’échelle dans Azure Web App ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Indexez le déploiement d'une application web pour le test et la restauration en utilisant les emplacements de déploiement de l'App Service](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Utilisez des emplacements de déploiement pour simplifier le déploiement et la restauration d’une application web dans Azure App Service.
++ [Effectuer le scale-up et le scale-out d’une application web App Service pour répondre efficacement à la demande](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Augmentez de façon incrémentielle les ressources disponibles pour répondre à des périodes d’activité accrue, puis réduisez les coûts en diminuant ces ressources quand l’activité baisse.
 
 ## Points clés
 
@@ -188,8 +197,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Les emplacements de déploiement vous permettent de créer des environnements distincts pour le déploiement et le test de votre application web.
 + Vous pouvez mettre à l’échelle manuellement ou automatiquement une application web pour gérer une demande supplémentaire.
 + Un large éventail d’outils de diagnostic et de test est disponible. 
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Indexez le déploiement d'une application web pour le test et la restauration en utilisant les emplacements de déploiement de l'App Service](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Utilisez des emplacements de déploiement pour simplifier le déploiement et la restauration d’une application web dans Azure App Service.
-+ [Effectuer le scale-up et le scale-out d’une application web App Service pour répondre efficacement à la demande](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Augmentez de façon incrémentielle les ressources disponibles pour répondre à des périodes d’activité accrue, puis réduisez les coûts en diminuant ces ressources quand l’activité baisse.

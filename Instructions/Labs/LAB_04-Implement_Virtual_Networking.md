@@ -263,7 +263,7 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre 
     | Propriété | Valeur    |
     |:---------|:---------|
     | Abonnement | **Sélectionnez votre abonnement** |
-    | Resource group | **az04-rg4** |
+    | Resource group | **az-104-rg4** |
     | Nom | `contoso.com` (s’il est réservé, adaptez le nom) |
     | Région |**USA Est** (passez en revue l’icône d’informations) |
 
@@ -306,7 +306,7 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
     | Propriété | Valeur    |
     |:---------|:---------|
     | Abonnement | **Sélectionnez votre abonnement** |
-    | Resource group | **az04-rg4** |
+    | Resource group | **az-104-rg4** |
     | Nom | `private.contoso.com` (adaptez si vous avez dû renommer) |
     | Région |**USA Est** |
 
@@ -343,7 +343,23 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
- 
+
+## Développer votre apprentissage avec Copilot
+
+Copilot peut vous aider à apprendre à utiliser les outils de scripting Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
++ Partagez les 10 meilleures pratiques lorsque vous déployez et configurez un réseau virtuel dans Azure.
++ Comment puis-je utiliser des commandes Azure PowerShell et Azure CLI pour créer un réseau virtuel avec une adresse IP publique et un sous-réseau. 
++ Expliquez des règles de trafic sortant et entrant de groupe de sécurité réseau Azure et comment les utiliser.
++ Quelle est la différence entre les groupes de sécurité réseau Azure et les groupes de sécurité Azure Application ? Partagez des exemples de cas d’utilisation de chacun de ces groupes. 
++ Offrez un guide étape par étape sur la façon de résoudre les problèmes auxquels nous sommes confrontés lors du déploiement d’un réseau sur Azure. Partagez également le processus de réflexion utilisé lors de chaque étape de la résolution des problèmes.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Présentation des réseaux virtuels Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Concevoir et implémenter une infrastructure Azure Networking de base, comme des réseaux virtuels, des adresses IP publiques et privées, DNS, l’appairage de réseaux virtuels, le routage et la traduction NAT de réseau virtuel Azure.
++ [Concevoir un schéma d’adressage IP](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). Identifier les fonctionnalités d’adressage IP privé et public des réseaux virtuels Azure et locaux.
++ [Sécuriser et isoler l’accès aux ressources Azure en utilisant des groupes de sécurité réseau et des points de terminaison de service](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). Les points de terminaison de service et les groupes de sécurité réseau vous permettent de protéger vos machines virtuelles et services Azure contre tout accès réseau non autorisé.
++ [Héberger votre domaine sur Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Créez une zone DNS pour votre nom de domaine. Créez des enregistrements DNS pour mapper le domaine à une adresse IP. Testez si la résolution du nom de domaine aboutit à votre serveur web.
+  
 ## Points clés
 
 Félicitations, vous avez terminé le labo. Voici les principaux points à retenir pour ce labo. 
@@ -354,11 +370,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Un groupe de sécurité réseau contient des règles de sécurité qui autorisent ou interdisent le trafic réseau. Il existe des règles entrantes et sortantes par défaut, que vous pouvez personnaliser en fonction de vos besoins.
 + Les groupes de sécurité d’application sont utilisés pour protéger des groupes de serveurs ayant une fonction commune, comme des serveurs web ou des serveurs de base de données.
 + Azure DNS est un service d’hébergement pour les domaines DNS, qui fournit la résolution des noms. Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public.  Vous pouvez aussi utiliser des zones DNS privées pour affecter des noms DNS à des machines virtuelles dans vos réseaux virtuels Azure.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Présentation des réseaux virtuels Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Concevoir et implémenter une infrastructure Azure Networking de base, comme des réseaux virtuels, des adresses IP publiques et privées, DNS, l’appairage de réseaux virtuels, le routage et la traduction NAT de réseau virtuel Azure.
-+ [Concevoir un schéma d’adressage IP](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). Identifier les fonctionnalités d’adressage IP privé et public des réseaux virtuels Azure et locaux.
-+ [Sécuriser et isoler l’accès aux ressources Azure en utilisant des groupes de sécurité réseau et des points de terminaison de service](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). Les points de terminaison de service et les groupes de sécurité réseau vous permettent de protéger vos machines virtuelles et services Azure contre tout accès réseau non autorisé.
-+ [Héberger votre domaine sur Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Créez une zone DNS pour votre nom de domaine. Créez des enregistrements DNS pour mapper le domaine à une adresse IP. Testez si la résolution du nom de domaine aboutit à votre serveur web.
-  

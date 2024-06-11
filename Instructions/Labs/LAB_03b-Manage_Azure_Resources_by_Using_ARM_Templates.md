@@ -139,19 +139,23 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 
     >**Le saviez-vous ?**  Si vous travaillez principalement avec des systèmes Linux, Bash (interface CLI) semble plus familier. Si vous travaillez principalement avec des systèmes Windows, Azure PowerShell semble plus familier. 
 
-1. Dans l’écran **Vous n’avez aucun stockage monté**, sélectionnez **Afficher les paramètres avancés**, puis fournissez les informations requises. 
+1. Dans l’écran **Prise en main**, sélectionnez **Monter le compte de stockage**, puis **Je souhaite créer un compte de stockage**.  
 
-    >**Remarque :** Lorsque vous travaillez avec le service Cloud Shell, un compte de stockage et un partage de fichiers sont nécessaires. 
-
+    >**Remarque :** Pour ce labo, un compte de stockage est requis. Fournissez les informations nécessaires. 
+    
     | Paramètres | Valeurs |
     |  -- | -- |
+    | Abonnement | *sélectionner votre abonnement* |
     | Groupe de ressources | **az104-rg3** |
+    | Région | *sélectionnez votre région* | 
     | Compte de stockage (Créer) | *doit être globalement unique, comprendre entre 3 et 24 caractères et comporter uniquement des chiffres et des lettres en minuscules* |
     | Partage de fichiers (Créer) | `fs-cloudshell` |
 
-1. Une fois terminé, sélectionnez **Créer un stockage**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
+1. Quand vous avez terminé, sélectionnez **Suivant**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
 
 1. Utilisez l’icône **Charger/télécharger des fichiers** pour charger le modèle et le fichier des paramètres à partir du répertoire des téléchargements. Vous devrez charger chaque fichier séparément.
+
+   >**Remarque :** Si, à tout moment, vous êtes invité à **Basculer vers Cloud Shell classique**, faites-le. 
 
 1. Vérifiez que vos fichiers sont disponibles dans le stockage Cloud Shell. 
 
@@ -252,18 +256,15 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
-  
-## Points clés
 
-Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+## Développer votre apprentissage avec Copilot
 
-+ Les modèles Resource Manager vous permettent de déployer, gérer et surveiller toutes les ressources de votre solution en tant que groupe, plutôt que de gérer ces ressources individuellement.
-+ Un modèle Azure Resource Manager est un fichier JSON (JavaScript Object Notation) qui vous permet de gérer votre infrastructure de manière déclarative plutôt qu’avec des scripts.
-+ Au lieu de passer des paramètres en tant que valeurs inline dans votre modèle, vous pouvez utiliser un fichier JSON distinct qui contient les valeurs des paramètres.
-+ Vous pouvez déployer des modèles Azure Resource Manager de différentes façons, notamment le Portail Azure, Azure PowerShell et l’interface CLI.
-+ Bicep est une alternative aux modèles Azure Resource Manager. Bicep utilise une syntaxe déclarative pour déployer des ressources Azure. 
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 
-Bicep fournit une syntaxe concise, une cohérence des types fiable et une prise en charge de la réutilisation du code. Bicep offre la meilleure expérience de création pour vos solutions d’infrastructure en tant que code dans Azure.
++ Quel est le format du fichier de modèle Azure Resource Manager ? Expliquez chaque composant à l’aide d’exemples. 
++ Comment puis-je utiliser un modèle Azure Resource Manager existant ?
++ Comparez et mettez en contraste les modèles Azure Resource Manager et les modèles Bicep. 
+
 
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
@@ -272,5 +273,16 @@ Bicep fournit une syntaxe concise, une cohérence des types fiable et une prise 
 + [Gérez des ressources Azure avec Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). Ce module explique comment installer les modules nécessaires à la gestion des services cloud et comment utiliser les commandes PowerShell pour effectuer des tâches administratives simples sur des ressources cloud telles que des machines virtuelles Azure, des abonnements Azure et des comptes de stockage Azure.
 + [Présentation de Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Utilisez Bash pour gérer l’infrastructure informatique.
 + [Créer votre premier modèle Bicep](https://learn.microsoft.com/training/modules/build-first-bicep-template/). Définissez des ressources Azure dans un modèle Bicep. Améliorez la cohérence et la fiabilité de vos déploiements, réduisez l’effort manuel requis et mettez à l’échelle vos déploiements dans différents environnements. Votre modèle sera flexible et réutilisable grâce à l’utilisation de paramètres, de variables, d’expressions et de modules.
+
+## Points clés
+
+Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
+
++ Les modèles Resource Manager vous permettent de déployer, gérer et surveiller toutes les ressources de votre solution en tant que groupe, plutôt que de gérer ces ressources individuellement.
++ Un modèle Azure Resource Manager est un fichier JSON (JavaScript Object Notation) qui vous permet de gérer votre infrastructure de manière déclarative plutôt qu’avec des scripts.
++ Au lieu de passer des paramètres en tant que valeurs inline dans votre modèle, vous pouvez utiliser un fichier JSON distinct qui contient les valeurs des paramètres.
++ Vous pouvez déployer des modèles Azure Resource Manager de différentes façons, notamment le Portail Azure, Azure PowerShell et l’interface CLI.
++ Bicep est une alternative aux modèles Azure Resource Manager. Bicep utilise une syntaxe déclarative pour déployer des ressources Azure.
++ Bicep fournit une syntaxe concise, une cohérence des types fiable et une prise en charge de la réutilisation du code. Bicep offre la meilleure expérience de création pour vos solutions d’infrastructure en tant que code dans Azure.
 
 

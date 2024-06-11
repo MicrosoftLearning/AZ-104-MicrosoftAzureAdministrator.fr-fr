@@ -75,6 +75,15 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
+
++ Résumez les étapes pour créer et configurer une application conteneur Azure.
++ Comparez et opposez Azure Container Apps et Azure Kubernetes Service.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Configurer une application conteneur dans Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Permet d’examiner les fonctionnalités et caractéristiques d’Azure Container Apps, puis se concentre sur la création, la configuration, la mise à l’échelle et la gestion d’applications conteneur en tirant parti d’Azure Container Apps.
 
 
 ## Points clés
@@ -85,7 +94,4 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Container Apps fournit des informations sur la configuration du serveur, l’orchestration des conteneurs et le déploiement. 
 + Les charges de travail sur ACA sont habituellement des processus de longue durée comme une application web.
 
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Configurer une application conteneur dans Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Permet d’examiner les fonctionnalités et caractéristiques d’Azure Container Apps, puis se concentre sur la création, la configuration, la mise à l’échelle et la gestion d’applications conteneur en tirant parti d’Azure Container Apps.
      

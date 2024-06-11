@@ -49,7 +49,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
 
 1. Connectez-vous au Portail Azure : `https://portal.azure.com`.
 
-1. Recherchez et sélectionnez `Virtual machines`, puis sur le panneau **Machines virtuelles**, cliquez sur **+ Créer**, enfin sélectionnez **+ Machine virtuelle Azure** dans la liste déroulante. Notez vos autres choix.
+1. Recherchez et sélectionnez `Virtual machines`, puis sur le panneau **Machines virtuelles**, cliquez sur **+ Créer**, enfin sélectionnez **Machine virtuelle Azure** dans la liste déroulante. Notez vos autres choix.
 
 1. Sous l’onglet **Informations de base**, dans le menu déroulant **Zone de disponibilité**, cochez la case à côté **Zone 2**. Cette option doit sélectionner la **Zone 1** et la **Zone 2**.
 
@@ -102,7 +102,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Diagnostics de démarrage | **Désactiver** |
+    | Diagnostics de démarrage | **Disable** |
 
 1. Cliquez sur **Suivant : Avancé >**, prenez les valeurs par défaut, puis cliquez sur **Vérifier + créer**.
 
@@ -283,7 +283,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 ### Effectuez un scale-out
 
-1. Sélectionnez **Mise à l’échelle automatique personnalisée**. puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
+1. Sélectionnez **Mise à l’échelle automatique personnalisée**. Puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
 
 1. Nous allons créer une règle qui augmente automatiquement le nombre d’instances de machine virtuelle. Cette règle effectue un scale-out quand la charge moyenne du processeur est supérieure à 70 % sur une période de 10 minutes. Lorsque la règle déclenche l’opération, le nombre d’instances de machine virtuelle est augmenté de 20 %.
 
@@ -343,7 +343,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Utilisez l’icône (en haut à droite) pour lancer une session **Cloud Shell**. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
-1. Veillez à sélectionner **PowerShell**. Si nécessaire, utilisez l’option **Afficher les paramètres avancés** et configurez le stockage du shell.
+1. Veillez à sélectionner **PowerShell**. Si nécessaire, configurez l’espace de stockage shell.
 
 1. Exécutez la commande suivante pour créer une machine virtuelle. Lorsque vous y êtes invité, saisissez un nom d’utilisateur et un mot de passe pour la machine virtuelle. Pendant que vous attendez l’extraction de la référence de commande [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) pour tous les paramètres associés à la création d’une machine virtuelle.
 
@@ -384,7 +384,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Utilisez l’icône (en haut à droite) pour lancer une session **Cloud Shell**. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
-1. Veillez à sélectionner **Bash**. Si nécessaire, utilisez l’option **Afficher les paramètres avancés** et configurez le stockage du shell.
+1. Veillez à sélectionner **Bash**. Si nécessaire, configurez l’espace de stockage shell.
 
 1. Exécutez la commande suivante pour créer une machine virtuelle. Lorsque vous y êtes invité, saisissez un nom d’utilisateur et un mot de passe pour la machine virtuelle. Pendant que vous attendez l’extraction de la référence de commande [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) pour tous les paramètres associés à la création d’une machine virtuelle.
 
@@ -418,6 +418,18 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
+
++ Fournissez les étapes et les commandes Azure CLI pour créer une machine virtuelle Linux. 
++ Examinez vos moyens de mettre à l’échelle des machines virtuelles et d’améliorer les performances.
++ Décrivez les stratégies de gestion du cycle de vie du stockage Azure et comment elles peuvent optimiser les coûts.
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Créez une machine virtuelle Windows dans Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Créer une machine virtuelle Windows à partir du portail Azure. Vous connecter à une machine virtuelle Windows en cours d’exécution à l’aide du Bureau à distance
++ [Générer une application évolutive avec des groupes de machines virtuelles identiques](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Utilisez Virtual Machine Scale Sets pour que votre application s’adapte automatiquement aux changements de charge tout en réduisant les coûts.
++ [Se connecter aux machines virtuelles à travers le portail Azure en utilisant Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Déployez Azure Bastion pour vous connecter en toute sécurité aux machines virtuelles Azure directement sur le Portail Azure afin de remplacer efficacement une solution de jumpbox existante, surveiller des sessions distantes en utilisant les journaux de diagnostic et gérer des sessions distantes en déconnectant la session d’un utilisateur.
 
 ## Points clés
 
@@ -429,10 +441,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Les groupes de machines virtuelles identiques Azure vous permettent de créer et de gérer un groupe de machines virtuelles à charge équilibrée.
 + Les machines virtuelles d’un groupe de machines virtuelles identiques sont créées à partir de la même image et de la même configuration.
 + Dans un groupe de machines virtuelles identiques, le nombre d’instances de machine virtuelle peut augmenter ou diminuer automatiquement en fonction de la demande ou d’une planification définie.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Créez une machine virtuelle Windows dans Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Créer une machine virtuelle Windows à partir du portail Azure. Vous connecter à une machine virtuelle Windows en cours d’exécution à l’aide du Bureau à distance
-+ [Générer une application évolutive avec des groupes de machines virtuelles identiques](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Utilisez Virtual Machine Scale Sets pour que votre application s’adapte automatiquement aux changements de charge tout en réduisant les coûts.
-+ [Se connecter aux machines virtuelles à travers le portail Azure en utilisant Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Déployez Azure Bastion pour vous connecter en toute sécurité aux machines virtuelles Azure directement sur le Portail Azure afin de remplacer efficacement une solution de jumpbox existante, surveiller des sessions distantes en utilisant les journaux de diagnostic et gérer des sessions distantes en déconnectant la session d’un utilisateur.
-  

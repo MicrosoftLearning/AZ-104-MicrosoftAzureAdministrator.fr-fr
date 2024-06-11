@@ -284,6 +284,18 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces invites.
+
++ Quels produits Sauvegarde Azure prend-il en charge ?
++ Résumez les étapes de sauvegarde et de restauration d’une machine virtuelle Azure avec Sauvegarde Azure.
++ Comment puis-je utiliser Azure PowerShell ou l’interface CLI pour vérifier l’état d’un travail de sauvegarde Azure.
++ Fournissez au moins cinq bonnes pratiques pour la configuration des sauvegardes de machines virtuelles Azure.  
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Protéger vos machines virtuelles en utilisant Sauvegarde Azure](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Utilisez la sauvegarde Azure pour vous aider à protéger des serveurs locaux, des machines virtuelles, un SQL Server, des partages de fichiers Azure et d’autres charges de travail.
++ [Protégez votre infrastructure Azure avec Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Assurez la reprise d’activité de votre infrastructure Azure en personnalisant la réplication, le basculement et la restauration automatique des machines virtuelles Azure avec Azure Site Recovery.
 
 ## Points clés
 
@@ -295,8 +307,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Azure Site Recovery est une solution de récupération d’urgence qui fournit une protection pour vos machines virtuelles et applications.
 + Azure Site Recovery réplique vos charges de travail sur un site secondaire et, en cas de panne ou de sinistre, vous pouvez basculer vers le site secondaire et reprendre vos opérations avec un temps d’arrêt minimal.
 + Un coffre Recovery Services stocke vos données de sauvegarde et réduit la surcharge de gestion.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Protéger vos machines virtuelles en utilisant Sauvegarde Azure](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Utilisez la sauvegarde Azure pour vous aider à protéger des serveurs locaux, des machines virtuelles, un SQL Server, des partages de fichiers Azure et d’autres charges de travail.
-+ [Protégez votre infrastructure Azure avec Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Assurez la reprise d’activité de votre infrastructure Azure en personnalisant la réplication, le basculement et la restauration automatique des machines virtuelles Azure avec Azure Site Recovery.

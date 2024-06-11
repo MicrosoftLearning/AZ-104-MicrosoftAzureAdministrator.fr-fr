@@ -77,7 +77,7 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
     | Paramètre | Valeur | 
     | --- | --- |
-    | Nom | `CoreServicesVNet` (Créer) |
+    | Nom | `CoreServicesVnet` (Créer) |
     | Plage d’adresses | `10.0.0.0/16`  |
     | Nom du sous-réseau | `Core` | 
     | Plage d’adresses de sous-réseau | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
 
     | Paramètre | Valeur | 
     | --- | --- |
-    | Nom | `ManufacturingVNet` |
+    | Nom | `ManufacturingVnet` |
     | Plage d’adresses | `172.16.0.0/16`  |
     | Nom du sous-réseau | `Manufacturing` |
     | Plage d’adresses de sous-réseau | `172.16.0.0/24` |
@@ -177,20 +177,20 @@ Dans cette tâche, vous créez un appairage de réseaux virtuels pour activer le
 | --------------------------------------------- | ------------------------------------- |
 | **Ce réseau virtuel**                                       |                                       |
 | Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Autorisez CoreServicesVNet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
-| Autoriser CoreServicesVNet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
-| Autorisez une passerelle dans CoreServicesVNet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
-| Activer CoreServicesVNet pour utiliser la passerelle distante des réseaux virtuels appairés       | Non sélectionné (par défaut)                        |
+| Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
+| Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
+| Autorisez une passerelle dans CoreServicesVnet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
+| Activer CoreServicesVnet pour utiliser la passerelle distante des réseaux virtuels appairés       | Non sélectionné (par défaut)                        |
 | **Réseau virtuel distant**                                   |                                       |
 | Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Modèle de déploiement de réseau virtuel              | **Gestionnaire des ressources**                      |
 | Je connais mon ID de ressource                         | Non sélectionné                          |
 | Abonnement                                  | *votre abonnement*    |
 | Réseau virtuel                               | **ManufacturingVnet**                     |
-| Autoriser ManufacturingVNet à accéder à CoreServicesVNet  | sélectionné (par défaut)                       |
-| Autoriser ManufacturingVNet à recevoir le trafic transféré à partir de CoreServicesVNet | sélectionné                        |
-| Autorisez une passerelle dans CoreServicesVNet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
-| Permettre à ManufacturingVNet d’utiliser la passerelle distante de CoreServicesVNet       | Non sélectionné (par défaut)                        |
+| Autoriser ManufacturingVnet à accéder à CoreServicesVnet  | sélectionné (par défaut)                       |
+| Autoriser ManufacturingVnet à recevoir le trafic transféré à partir de CoreServicesVnet | sélectionné                        |
+| Autorisez une passerelle dans CoreServicesVnet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
+| Permettre à ManufacturingVnet d’utiliser la passerelle distante de CoreServicesVnet       | Non sélectionné (par défaut)                        |
 
 1. Passez en revue vos paramètres, puis sélectionnez **Ajouter**.
 
@@ -287,6 +287,18 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
 
+## Développer votre apprentissage avec Copilot
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
+
++ Comment puis-je utiliser les commandes Azure PowerShell ou Azure CLI pour ajouter un appairage de réseaux virtuels entre vnet1 et vnet2 ?
++ Créez une table mettant en évidence divers outils de surveillance tiers et Azure pris en charge sur Azure. Mettez en évidence le moment où utiliser chaque outil. 
++ Quand puis-je créer une route réseau personnalisée dans Azure ?
+
+## En savoir plus grâce à l’apprentissage auto-rythmé
+
++ [Distribuez vos services sur des réseaux virtuels Azure et les intégrer en utilisant l’appairage de réseaux virtuels](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Utilisez le peering de réseaux virtuels pour activer la communication entre des réseaux virtuels de façon sécurisée et peu complexe.
++ [Gérez et contrôlez le flux de trafic dans votre déploiement Azure à l’aide de routes](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Découvrez comment contrôler le trafic du réseau virtuel Azure en implémentant des routes personnalisées.
+
 
 ## Points clés
 
@@ -298,8 +310,3 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Le trafic entre les machines virtuelles des réseaux virtuels appairés utilise l'infrastructure principale de Microsoft.
 + Les routes définies par le système sont automatiquement créées pour chaque sous-réseau d’un réseau virtuel. Les routes définies par l’utilisateur remplacent les routes système par défaut ou s’y ajoutent. 
 + Azure Network Watcher fournit une suite d’outils pour surveiller, diagnostiquer et afficher les journaux d’activité et les métriques des ressources infrastructure as a service Azure.
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Distribuez vos services sur des réseaux virtuels Azure et les intégrer en utilisant l’appairage de réseaux virtuels](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Utilisez le peering de réseaux virtuels pour activer la communication entre des réseaux virtuels de façon sécurisée et peu complexe.
-+ [Gérez et contrôlez le flux de trafic dans votre déploiement Azure à l’aide de routes](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Découvrez comment contrôler le trafic du réseau virtuel Azure en implémentant des routes personnalisées.
