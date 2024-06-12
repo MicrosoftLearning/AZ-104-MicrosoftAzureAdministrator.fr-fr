@@ -1,100 +1,95 @@
 ---
 demo:
-  title: "Démonstration 07\_: Administrer Stockage Azure"
-  module: Administer Azure Storage
+    title: 'Demonstration 07: Administer Azure Storage'
+    module: 'Administer Azure Storage'
 ---
 
 
-# 07 - Administrer Stockage Azure
+# 07 - Administer Azure Storage
 
-## Configurer les comptes de stockage
+## Configure Storage Accounts
 
-Dans cette démonstration, nous allons créer un compte de stockage.
+In this demonstration, we will create a storage account.
 
-**Informations de référence** : [Créer un compte de stockage](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
+**Reference**: [Create a storage account](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
 
-1. Utilisez le portail Azure.
+1. Use the Azure portal.
 
-1. Passez en revue l’objectif des comptes de stockage. 
+1. Review the purpose of storage accounts. 
    
-1. Recherchez et sélectionnez **Comptes de stockage**. 
+1. Search for and select **Storage Accounts**. 
  
-1. Créez un compte de stockage de base. 
+1. Create a basic storage account. 
 
-    - Discutez des exigences relatives au nommage d’un compte de stockage et de la nécessité que le nom soit unique dans Azure. 
+	- Discuss the requirements around naming a storage account and the need for the name to be unique in Azure. 
 
-    - Passez en revue les différents types de stockage. Par exemple, à usage général v2. 
+	- Review the different storage kinds. For example, general-purpose v2. 
 
-    - Passez en revue les sélections du niveau d’accès. Par exemple, les niveaux froid et chaud. 
+	- Review the access tier selections. For example, the cool and hot tiers. 
 
-    - D’autres onglets et paramètres seront abordés dans d’autres démonstrations. 
+	- Other tabs and settings will be covered in other demonstrations. 
 
-1. Créez le compte de stockage et attendez que la ressource soit déployée. 
-
-
-## Configurer le Stockage Blob
-
-Dans cette démonstration, vous allez explorer le stockage d’objets blob.
-
-**Remarque :**  Ces étapes nécessitent un compte de stockage.
-
-**Informations de référence** : [Démarrage rapide : Charger, télécharger et lister des objets blob](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
-
-1. Accédez à un compte de stockage dans le portail Azure.
-
-1. Passez en revue l’objectif du stockage d’objets blob. 
-
-1. Créez un conteneur d’objets blob. Passez en revue le niveau d’accès pour le conteneur. Par exemple, privé (pas d’accès anonyme). 
-
-1. Chargez un objet blob dans le conteneur. Quand vous en avez le temps, passez en revue les paramètres avancés. Par exemple, le type d’objet blob et la taille de l’objet blob. 
-
-## Configurer la sécurité du stockage
-
-Dans cette démonstration, nous allons créer une signature d’accès partagé.
-
-**Remarque :**  Cette démonstration nécessite un compte de stockage, un conteneur d’objets blob et un fichier chargé.
-
-**Informations de référence** : [Créer des jetons SAS pour des conteneurs de stockage](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
-
-1. Sélectionnez un objet blob ou un fichier que vous voulez sécuriser. 
-
-1. Générer une signature d’accès partagé (SAS). Passez en revue les autorisations, les dates/heures de début et d’expiration, et les protocoles autorisés.
-
-1. Utilisez l’URL SAS pour être sûr que la ressource s’affiche. 
+1. Create the storage account and wait for the resource to deploy. 
 
 
-## Configurer Azure Files 
+## Configure Blob Storage
 
-Dans cette démonstration, nous allons travailler avec des partages de fichiers et des instantanés.
+In this demonstration, we will explore blob storage.
 
-**Remarque :**  Ces étapes nécessitent un compte de stockage.
+**Note:** These steps require a storage account.
 
-**Informations de référence** : [Démarrage rapide pour la gestion des partages de fichiers Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal)
+**Reference**: [Quickstart: Upload, download, and list blobs](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
 
-1. Passez en revue l’objectif des partages de fichiers. 
+1. Navigate to a storage account in the Azure portal.
 
-1. Accédez à un compte de stockage et cliquez sur **Fichiers**.
+1. Review the purpose of blob storage. 
 
-1. Créer un partage de fichiers. Passez en revue les quotas, le chargement de fichiers et l’ajout de répertoires pour organiser les informations. 
+1. Create a blob container. Review the level of access for the container. For example, private (no anonymous access). 
 
-1. Créez un instantané de partage de fichiers. Expliquez quand utiliser des instantanés et en quoi ils diffèrent des sauvegardes. Quand vous en avez le temps, chargez un fichier, prenez un instantané, supprimez le fichier et restaurez l’instantané.
+1. Upload a blob to the container. As you have time review the advanced settings. For example, blob type and blob size. 
+
+## Configure Storage Security
+
+In this demonstration, we will create a shared access signature.
+
+**Note:** This demonstration requires a storage account, with a blob container, and an uploaded file.
+
+**Reference**: [Create SAS tokens for storage containers](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
+
+1. Select a blob or file that you want to secure. 
+
+1. Generate a shared access signature (SAS). Review the permissions, start and expiry times, and allowed protocols.
+
+1. Use the SAS URL to ensure the resource displays. 
 
 
-## Outils de stockage (facultatif)
+## Configure Azure Files 
 
-Dans cette démonstration, nous allons examiner plusieurs outils courants de Stockage Azure. 
+In this demonstration, we will work with files shares and snapshots.
 
-**Informations de référence** : [Bien démarrer avec l’Explorateur Stockage](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)
+**Note:** These steps require a storage account.
 
-1. Installez l’Explorateur Stockage ou utilisez le navigateur de stockage.
+**Reference**: [Quickstart for managing Azure file shares](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal)
 
-1. Expliquez comment parcourir et créer des ressources de stockage. Par exemple, ajoutez un conteneur d’objets blob. 
+1. Review the purpose of file shares. 
 
-**Informations de référence** : [Copier ou déplacer des données vers Stockage Azure en utilisant AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=/azure/storage/files/toc.json)
+1. Access a storage account and click **Files**.
 
-1. Expliquez quand utiliser AzCopy. Affichez l’aide en utilisant **azcopy /?** .
+1. Create a file share. Review quotas, uploading files, and adding directories to organize the information. 
 
-1. Faites défiler la section **Exemples** vers le bas. Quand vous en avez le temps, essayez un des exemples. 
+1. Create a file share snapshot. Review when to use snapshots and how they are different from backups. As you have time, upload a file, take a snapshot, delete the file, and restore the snapshot.
+
+**Reference**: [Get started with Storage Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)
+
+1. Install the Storage Explorer or use the Storage Browser.
+
+1. Review how to browse and create storage resources. For example, add a blob container. 
+
+**Reference**: [Copy or move data to Azure Storage by using AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=/azure/storage/files/toc.json)
+
+1. Discuss when to use AzCopy. View  the help, **azcopy /?**.
+
+1. Scroll down the **Samples** section. As you have time, try any of the examples. 
     
 
 

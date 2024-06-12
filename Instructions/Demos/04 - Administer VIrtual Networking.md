@@ -1,77 +1,78 @@
 ---
+
 demo:
-  title: "Démonstration 04\_: Administrer les réseaux virtuels"
-  module: Administer Virtual Networking
+    title: 'Demonstration 04: Administer Virtual Networking'
+    module: 'Administer Virtual Networking'
 ---
 
-# 04 - Administrer les réseaux virtuels
+# 04 - Administer Virtual Networking
 
-## Configurer des réseaux virtuels
+## Configure Virtual Networks
 
-Dans cette démonstration, vous allez créer des réseaux virtuels.
+In this demonstration, you will create virtual networks.
 
-**Informations de référence** : [Démarrage rapide : Créer un réseau virtuel - Portail Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+**Reference**: [Quickstart: Create a virtual network - Azure portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
-## Créer un réseau virtuel dans le portail
+## Create a virtual network in the portal
 
-1.  Connectez-vous au portail Azure et recherchez  **Réseaux virtuels**.
+1.  Sign in the to the Azure portal and search for **Virtual Networks**.
 
-1.  Créez un réseau virtuel, en expliquant au fur et à mesure les paramètres de base. Veillez à créer au moins un sous-réseau. 
+1.  Create a virtual network, explaining the basic settings as you go. Ensure at least one subnet is created. 
 
-1.  Vérifiez que votre réseau virtuel a été créé.
+1.  Verify your virtual network was created.
 
-## Configurer des groupes de sécurité réseau
+## Configure Network Security Groups
 
-Dans cette démonstration, vous allez explorer les groupes de sécurité réseau et les points de terminaison de service.
+In this demonstration, you will explore NSGs and service endpoints.
 
-**Informations de référence** : [Restreindre l’accès aux ressources PaaS - Tutoriel - Portail Azure](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources)
+**Reference**: [Restrict access to PaaS resources - tutorial - Azure portal](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources)
 
-**Créer un groupe de sécurité réseau**
+**Create a network security group**
 
-1. Accédez au portail Azure.
+1. Access the Azure Portal.
 
-1. Recherchez et sélectionnez  **Groupes de sécurité réseau**.
+1. Search for and select the **Network Security Groups**.
 
-1. Créez un groupe de sécurité réseau en expliquant les paramètres au fur et à mesure. 
+1. Create a NSG explaining the settings as you go. 
  
-1. Attendez que le nouveau NSG soit déployé.
+1. Wait for the new NSG to deploy.
 
-**Explorer les règles de trafic entrant et sortant**
+**Explore inbound and outbound rules**
 
-1. Sélectionnez votre nouveau NSG.
+1. Select your new NSG.
 
-1. Expliquez comment le groupe de sécurité réseau peut être associé à des sous-réseaux ou à des interfaces réseau.
+1. Discuss how the NSG can be associated with subnets or network interfaces.
 
-1. Expliquez l’objectif des règles de trafic entrant et sortant.  
+1. Discuss the purpose inbound and outbound rules.  
 
-1. Expliquez les règles de trafic entrant et sortant par défaut. 
+1. Review the default inbound and outbound rules. 
 
-1. Créez une nouvelle règle, en expliquant les paramètres au fur et à mesure. Expliquez plus particulièrement la sélection du service (comme HTTPS) et les paramètres de priorité. 
+1. Create a new rule, explaining the settings as you go. Specifically discuss the service selection (like HTTPS) and the priority settings. 
 
-## Configurer Azure DNS
+## Configure Azure DNS
 
-Dans cette démonstration, vous allez explorer Azure DNS.
+In this demonstration, you will explore Azure DNS.
 
-**Informations de référence** : [Tutoriel : Héberger votre domaine et votre sous-domaine - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
+**Reference**: [Tutorial: Host your domain and subdomain - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
 
 
-**Création d’une zone DNS**
+**Create a DNS zone**
 
-1. Accédez au portail Azure.
+1. Access the Azure Portal.
 
-1. Recherchez le service **Zones DNS**.
+1. Search for the **DNS zones** service.
 
-1. Créez une **zone DNS** et expliquez l’objectif de la zone. Pour le nom, vous pouvez utiliser contoso.internal.com.
+1. Create a **DNS zone** and explain the purpose of the zone. For a name you can use contoso.internal.com.
 
-1.  Attendez que la zone DNS soit créée. Il peut être nécessaire  **d’actualiser** la page.
+1.  Wait for the DNS zone to be created. You may need to **Refresh** the page.
 
-**Ajouter un jeu d’enregistrements DNS**
+**Add a DNS record set**
 
-**Informations de référence** : [Tutoriel : Créer un enregistrement d’alias pour référencer un enregistrement de ressource de zone](https://learn.microsoft.com/azure/dns/tutorial-alias-rr)
+**Reference**: [Tutorial: Create an alias record to refer to a zone resource record](https://learn.microsoft.com/azure/dns/tutorial-alias-rr)
 
-1. Une fois votre zone créée, sélectionnez **+Jeu d’enregistrements**.
+1. Once your zone is created, select **+Record Set**.
 
-1. Utilisez la liste déroulante **Type** pour voir les différents types d’enregistrements. Expliquez comment les différents types d’enregistrements sont utilisés. Notez que les informations de l’enregistrement changent à mesure que vous sélectionnez différents types d’enregistrements.
+1. Use the **Type** drop-down to view the different types of records. Review how the different record types are used. Notice how the record information changes as you select different record types.
 
-1. Créez un enregistrement **A** à titre d’exemple. 
+1. Create an **A** record as an example. 
 

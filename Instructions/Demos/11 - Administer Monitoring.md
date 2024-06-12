@@ -1,52 +1,52 @@
 ---
 demo:
-  title: "Démonstration 11\_: Administrer le monitoring"
-  module: Administer Monitoring
+    title: 'Demonstration 11: Administer Monitoring'
+    module: 'Administer Monitoring'
 ---
 
-# 11 - Administrer le monitoring
+# 11 - Administer Monitoring
 
-## Configurer des alertes Azure
+## Configure Azure Alerts
 
-Dans cette démonstration, nous allons créer une règle d’alerte.
+In this demonstration, we will create an alert rule.
 
-**Informations de référence** : [Créer, visualiser et gérer des alertes de métrique en utilisant Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
+**Reference**: [Create, view, and manage Metric Alerts Using Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
 
-**Créer une règle d’alerte**
+**Create an alert rule**
 
-1. Utilisez le portail Azure.
+1. Use the Azure portal.
 
-1. Recherchez et sélectionnez **Superviser**, puis **Alertes**.
+1. Search for and select **Monitor** and then **Alerts**.
 
-1. Sélectionnez une étendue pour la règle d’alerte. Expliquez comment vous pouvez filtrer par abonnement, type de ressource ou emplacement de ressource.
+1. Select a scope for the alert rule. Discuss how You can filter by subscription, resource type, or resource location.
 
-1. Définissez les conditions pour la règle d’alerte. Expliquez comment les signaux définissent ce que vous voulez mesurer. 
+1. Set the conditions for the alert rule. Discuss how signals define what you want to measure. 
 
-1. Définissez les actions pour la règle d’alerte. Passez en revue les groupes d’actions et le type de notifications disponibles. 
+1. Set the actions for the alert rule. Review action groups and the type of notifications that are available. 
 
-1. Définissez les détails pour la règle d’alerte. Passez en revue des détails courants, comme la gravité. 
+1. Set the details for the alert rule. Review common details like severity. 
 
-1. Terminez la configuration de votre alerte et passez en revue les alertes qui ont été déclenchées. 
+1. Finish configuring your alert and review any alerts which have fired. 
 
-## Configurer Log Analytics
+## Configure Log Analytics
 
-Dans cette démonstration, vous allez utiliser le langage de requête Log Analytics.
+In this demonstration, you will work with the Log Analytics query language.
 
-1. Utilisez le portail Azure.
+1. Use the Azure portal.
 
-1. Recherchez et sélectionnez **Superviser**, puis **Journaux**.
+1. Search for and select **Monitor** and then **Logs**.
 
-1. S’il est affiché, fermez l’écran de démarrage.
+1. If shown, close the splash screen.
 
-1. Sélectionnez une étendue et **appliquez** vos modifications. 
+1. Select a scope and **apply** your changes. 
 
-1. Expliquez que les informations de journal sont organisées en tables. Parcourez plusieurs tables.
+1. Review how log information is organized in tables. Browse several of the tables.
 
-1. Accédez à l’onglet **Requêtes**. Sélectionnez une requête, puis **chargez-la dans l’éditeur**. Expliquez combien de requêtes courantes ont déjà été créées.
+1. Move to the **queries** tab. Select a query and **load to editor**. Discuss how many common queries have already been created.
 
-1. Passez brièvement en revue la syntaxe KQL. 
+1. Briefly review the KQL syntax. 
 
-1. Quand vous en avez le temps, expérimentez les **Favoris** et les **Requêtes enregistrées**.
+1. As you have time, experiment with **Favorites** and **Saved Queries**.
 
 
 
