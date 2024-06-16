@@ -354,7 +354,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' ` 
+    -Size 'Standard_D2s_v3' `
     -Credential (Get-Credential)
     ```
 
