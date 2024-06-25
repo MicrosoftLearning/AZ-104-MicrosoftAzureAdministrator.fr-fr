@@ -71,9 +71,9 @@ L’organisation prévoit une forte croissance pour les services de base. Dans c
 
     |  **Option**         | **Valeur**            |
     | ------------------ | -------------------- |
-    | Espace d’adressage IPv4 | `10.20.0.0/16` (séparez les entrées)    |
+    | Espace d’adressage IPv4 | Remplacez l’espace d’adressage IPv4 prérempli par `10.20.0.0/16` (séparez les entrées)  |
 
-1. Sélectionnez **+ Ajouter un sous-réseau**. Renseignez les informations de nom et d’adresse pour chaque sous-réseau. Veillez à sélectionner **Ajouter** pour chaque nouveau sous-réseau. 
+1. Sélectionnez **+ Ajouter un sous-réseau**. Renseignez les informations de nom et d’adresse pour chaque sous-réseau. Veillez à sélectionner **Ajouter** pour chaque nouveau sous-réseau. Veillez à supprimer le sous-réseau par défaut, avant ou après avoir créé les autres sous-réseaux.
 
     | **Sous-réseau**             | **Option**           | **Valeur**              |
     | ---------------------- | -------------------- | ---------------------- |
@@ -346,7 +346,7 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 
 ## Développer votre apprentissage avec Copilot
 
-Copilot peut vous aider à apprendre à utiliser les outils de scripting Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
+Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 + Partagez les 10 meilleures pratiques lorsque vous déployez et configurez un réseau virtuel dans Azure.
 + Comment puis-je utiliser des commandes Azure PowerShell et Azure CLI pour créer un réseau virtuel avec une adresse IP publique et un sous-réseau. 
 + Expliquez des règles de trafic sortant et entrant de groupe de sécurité réseau Azure et comment les utiliser.

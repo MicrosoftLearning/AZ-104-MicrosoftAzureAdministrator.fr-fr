@@ -240,20 +240,13 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Options d’équilibrage de charge | **Équilibreur de charge Azure** |
     | Sélectionnez un équilibreur de charge | **Créer un équilibreur de charge** |
 
-1. Dans la page **Créer un équilibreur de charge**, spécifiez le nom de l’équilibreur de charge et prenez les valeurs par défaut. Cliquez sur **Créer** lorsque vous avez terminé, puis sur **Suivant : Mise à l’échelle >** .
+1. Dans la page **Créer un équilibreur de charge**, spécifiez le nom de l’équilibreur de charge et prenez les valeurs par défaut. Cliquez sur **Créer** lorsque vous avez terminé, puis sur **Suivant : Gestion >**.
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom de l’équilibreur de charge | `vmss-lb` |
 
     >**Remarque :** Interrompez-vous pendant une minute et passez en revue ce que vous avez effectué. À ce stade, vous avez configuré un groupe de machines virtuelles identiques avec des disques et une mise en réseau. Dans la configuration réseau, vous avez créé un groupe de sécurité réseau et autorisé HTTP. Vous avez également créé un équilibreur de charge avec une adresse IP publique.
-
-1. Sous l’onglet **Mise à l’échelle**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres), puis cliquez sur **Suivant : Gestion >**  :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Nombre initial d’instances | `2` |
-    | Stratégie de mise à l’échelle | **Manuel** |
 
 1. Sous l’onglet **Gestion**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
@@ -277,7 +270,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Sélectionnez **Accéder à la ressource** ou recherchez et sélectionnez le groupe identique **vmss1**.
 
-1. Choisissez **Mise à l’échelle** dans le menu à gauche de la fenêtre des groupes identiques.
+1. Choisissez **Disponibilité + mise à l’échelle** dans le menu de gauche, puis **Mise à l’échelle**.
 
 >**Le saviez-vous ?** Vous pouvez effectuer une **Mise à l’échelle manuelle** ou une **Mise à l’échelle automatique**. Dans des groupes identiques avec un petit nombre d’instances de machine virtuelle, l’augmentation ou la diminution du nombre d’instances (mise à l’échelle manuelle) peut être préférable. Dans des groupes identiques avec un grand nombre d’instances de machine virtuelle, la mise à l’échelle basée sur les métriques (mise à l’échelle automatique personnalisée) peut être plus appropriée.
 

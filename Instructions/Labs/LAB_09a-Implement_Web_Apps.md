@@ -106,7 +106,7 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement d’app
 
 1. Dans le champ Référentiel, entrez `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. Dans le champ Branche, entrez `master`.
+1. Dans le champ Branche, entrez `main`.
 
 1. Sélectionnez **Enregistrer**.
 
@@ -159,7 +159,7 @@ Dans cette tâche, vous allez configurer la mise à l’échelle automatique de 
 
 1. Dans la **vue d’ensemble** | **Ajouter des requêtes HTTP**, sélectionnez **Créer**.
 
-1. Pour l’**URL de test**, collez votre URL de **domaine par défaut**. Vérifiez la mise en forme et assurez-vous qu’elle commence par **https://**.
+1. Sous l’onglet **Plan de test**, cliquez sur **Ajouter une demande**. Dans le **champ URL**, collez l’URL de votre **Domaine par défaut**. Vérifiez la mise en forme et assurez-vous qu’elle commence par **https://**.
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
