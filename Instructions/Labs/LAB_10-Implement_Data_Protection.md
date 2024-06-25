@@ -113,11 +113,9 @@ Dans cette tâche, vous allez créer un coffre Recovery Services. Un coffre Reco
     
     >**Le saviez-vous ?** L’option Restauration interrégion vous permet de restaurer des données dans une [région secondaire, appariée à Azure](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore). 
 
-1. Revenez au panneau du coffre Recovery Services, cliquez sur le lien **Mettre à jour** sous l’étiquette **Paramètre de sécurité > Suppression réversible et paramètres de sécurité**.
+1. Sélectionnez le lien **Mettre à jour** sous l’étiquette **Paramètres de sécurité > Suppression réversible et paramètres de sécurité**.
 
 1. Dans le panneau **Paramètres de sécurité**, notez que l’option **Suppression réversible (pour les charges de travail s’exécutant dans Azure)** est **activée**. Notez que la **période de rétention de suppression réversible** est de **14** jours. 
-
-1. Revenez au panneau du coffre Recovery Services, sélectionnez le panneau **Vue d’ensemble**.
 
 >**Le saviez-vous ?** Azure dispose de deux types de coffres : Coffres Recovery Services et coffres de sauvegarde. La principale différence réside dans les sources de données que vous pouvez sauvegarder. Découvrez plus d’informations sur [les différences](https://learn.microsoft.com/answers/questions/405915/what-is-difference-between-recovery-services-vault).
 

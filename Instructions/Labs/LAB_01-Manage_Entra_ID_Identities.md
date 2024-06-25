@@ -122,7 +122,7 @@ Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuve
 
 1. Sélectionnez **Aucun propriétaire sélectionné**.
 
-1. Dans la page **Ajouter des propriétaires**, recherchez et **sélectionnez**-vous en tant que propriétaire. Remarquez que vous pouvez avoir plusieurs propriétaires. 
+1. À la page **Ajouter des propriétaires**, recherchez et **sélectionnez** votre compte (affiché dans le coin supérieur droit) en tant que propriétaire. Remarquez que vous pouvez avoir plusieurs propriétaires. 
 
 1. Choisissez **Aucun membre sélectionné**.
 
