@@ -138,7 +138,7 @@ Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuve
    
 ## Nettoyage de vos ressources
 
-Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. 
+Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. Notez que cela ne supprime pas les utilisateurs ou groupes Entra ID que vous avez créés. 
 
 + Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
