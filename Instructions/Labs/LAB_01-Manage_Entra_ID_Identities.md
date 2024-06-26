@@ -41,6 +41,8 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
 
 1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
+1. Pour passer au portail, sélectionnez **Annuler** sur l’écran de démarrage **Bienvenue dans Azure**. 
+
     >**Remarque :** Le Portail Azure est utilisé dans tous les labos. Si vous débutez sur Azure, recherchez et sélectionnez `Quickstart Center`. Prenez quelques minutes pour regarder la vidéo **Bien démarrer dans le Portail Azure** (en anglais). Même si vous avez déjà utilisé le portail, vous y trouverez quelques conseils et astuces sur la navigation et la personnalisation de l’interface.
     
 1. Recherchez et sélectionnez `Microsoft Entra ID`. Microsoft Entra ID est la solution de gestion des identités et accès cloud d’Azure. Prenez quelques minutes pour vous familiariser avec certaines des fonctionnalités répertoriées dans le volet de gauche. 
@@ -49,7 +51,9 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
 
     >**Le saviez-vous ?** Un tenant est une instance spécifique de Microsoft Entra ID contenant des comptes et des groupes. Selon votre situation, vous pouvez créer d’autres tenants et **Basculer** entre eux. 
 
-1. Revenez à la page **Entra ID** et sélectionnez **Licences**. À partir de cet emplacement, vous pouvez acheter une licence, gérer les licences dont vous disposez et attribuer des licences à des utilisateurs et à des groupes. Sélectionnez **Fonctionnalités sous licence** pour voir ce qui est disponible.
+1. Revenez à la page **Entra ID** en appuyant sur le bouton Précédent dans le navigateur ou en sélectionnant l’option dans le menu de navigation.
+
+1. Sélectionnez **Licences**. À partir de cet emplacement, vous pouvez acheter une licence, gérer les licences dont vous disposez et attribuer des licences à des utilisateurs et à des groupes. Sélectionnez **Fonctionnalités sous licence** pour voir ce qui est disponible.
    
 ### Créer un utilisateur
 
