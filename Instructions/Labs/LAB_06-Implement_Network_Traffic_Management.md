@@ -188,7 +188,8 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | `subnet-appgw` |
-    | Plage d’adresses de sous-réseau | `10.60.3.224/27` |
+    | Adresse de début| `10.60.3.224` |
+    | Taille | `/27` |
 
 1. Cliquez sur **Enregistrer**.
 
@@ -207,7 +208,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Niveau | **Standard V2** |
     | Activer la mise à l’échelle automatique | **Aucun** |
     | Nombre d’instances minimal | `2` |
-    | Zone de disponibilité | **Zone 1** |
+    | Zone de disponibilité | **1** (par défaut) |
     | HTTP2 | **Désactivé** |
     | Réseau virtuel | **az104-06-vnet1** |
     | Sous-réseau | **subnet-appgw (10.60.3.224/27)** |
@@ -231,8 +232,8 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | --- | --- |
     | Nom | `az104-appgwbe` |
     | Ajouter un pool back-end sans cible | **Aucun** |
-    | Machine virtuelle | **az104-rg6-nic1 (10.60.1.4)** |
-    | Machine virtuelle | **az104-rg6-nic2 (10.60.2.4)** |
+    | Machine virtuelle | **az104-06-nic1 (10.60.1.4)** |
+    | Machine virtuelle | **az104-06-nic2 (10.60.2.4)** |
 
 1. Cliquez sur **Ajouter un pool de back-ends**. Il s’agit du pool de back-ends pour les **images**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
@@ -240,7 +241,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | --- | --- |
     | Nom | `az104-imagebe` |
     | Ajouter un pool back-end sans cible | **Aucun** |
-    | Machine virtuelle | **az104-rg6-nic1 (10.60.1.4)** |
+    | Machine virtuelle | **az104-06-nic1 (10.60.1.4)** |
 
 1. Cliquez sur **Ajouter un pool de back-ends**. Il s’agit du pool de back-ends pour les **vidéos**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
@@ -248,7 +249,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | --- | --- |
     | Nom | `az104-videobe` |
     | Ajouter un pool back-end sans cible | **Aucun** |
-    | Machine virtuelle | **az104-rg6-nic2 (10.60.2.4)** |
+    | Machine virtuelle | **az104-06-nic2 (10.60.2.4)** |
 
 1. Sélectionnez **Suivant : Configuration**, puis sur **Ajouter une règle de routage**. Renseignez les informations.
 
