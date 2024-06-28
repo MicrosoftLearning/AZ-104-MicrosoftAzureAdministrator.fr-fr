@@ -106,7 +106,7 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement d’app
 
 1. Dans le champ Référentiel, entrez `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. Dans le champ Branche, entrez `main`.
+1. Dans le champ Branche, entrez `master`.
 
 1. Sélectionnez **Enregistrer**.
 
@@ -124,7 +124,7 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Revenez au panneau **Emplacements de déploiements**, puis sélectionnez **Échanger**.
 
-1. Examinez les paramètres par défaut et cliquez sur **Échanger**.
+1. Examinez les paramètres par défaut et cliquez sur **Commencer l’échange**.
 
 1. Dans le panneau **Vue d’ensemble** de l’application web, sélectionnez le lien **Domaine par défaut** pour afficher la page d’accueil du site web.
 
