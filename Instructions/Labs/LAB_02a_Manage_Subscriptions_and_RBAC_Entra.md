@@ -49,7 +49,7 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Tâche 1 : Implémenter des groupes d’administration
 
-Dans cette tâche, vous allez créer et configurer des groupes d’administration. Vous utilisez des groupes d’administration pour organiser logiquement des abonnements. Les abonnements doivent être segmentés et autoriser RBAC et Azure Policy à être attribués et hérités par d’autres groupes d’administration et abonnements. Par exemple, si votre organisation dispose d’une équipe de support technique dédiée pour l’Europe, vous pouvez organiser des abonnements européens en groupe d’administration pour fournir au personnel de support l’accès à ces abonnements (sans fournir d’accès individuel à tous les abonnements). Dans notre scénario, tous les membres du support technique devront créer une demande de support sur tous les abonnements. 
+Dans cette tâche, vous allez créer et configurer des groupes d’administration. Les groupes d’administration servent à logiquement organiser et segmenter des abonnements. Ils permettent au RBAC et à Azure Policy d’être affectés et hérités par d’autres groupes d’administration et abonnements. Par exemple, si votre organisation dispose d’une équipe de support technique dédiée pour l’Europe, vous pouvez organiser des abonnements européens en groupe d’administration pour fournir au personnel de support l’accès à ces abonnements (sans fournir d’accès individuel à tous les abonnements). Dans notre scénario, tous les membres du support technique devront créer une demande de support sur tous les abonnements. 
 
 1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
@@ -157,7 +157,7 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 + `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
 + `az group delete --name resourceGroupName` en utilisant l’interface CLI.
   
-## Étendre votre apprentissage avec Copilot
+## Développer votre apprentissage avec Copilot
 
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 + Créer deux tables mettant en évidence des commandes PowerShell et CLI importantes pour obtenir des informations sur les abonnements des organisations sur Azure et expliquer chaque commande dans la colonne « Explication ». 

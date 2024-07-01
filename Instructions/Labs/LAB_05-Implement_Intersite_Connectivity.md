@@ -169,38 +169,21 @@ Dans cette tâche, vous créez un appairage de réseaux virtuels pour activer le
 
 1. Dans CoreServicesVnet, sous **Paramètres**, sélectionnez **Peerings**.
 
-1. Sur CoreServicesVnet | Peerings, sélectionnez **+ Ajouter**.
-
-1. Utilisez les informations du tableau suivant pour créer le peering.
+1. Sur CoreServicesVnet | Peerings, sélectionnez **+ Ajouter**. Si elle n’est pas spécifiée, elle prend la valeur par défaut. 
 
 | **Paramètre**                                    | **Valeur**                             |
-| --------------------------------------------- | ------------------------------------- |
-| **Ce réseau virtuel**                                       |                                       |
+| --------------------------------------------- | ------------------------------------- |                                
 | Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
-| Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
-| Autorisez une passerelle dans CoreServicesVnet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
-| Activer CoreServicesVnet pour utiliser la passerelle distante des réseaux virtuels appairés       | Non sélectionné (par défaut)                        |
-| **Réseau virtuel distant**                                   |                                       |
-| Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Modèle de déploiement de réseau virtuel              | **Gestionnaire des ressources**                      |
-| Je connais mon ID de ressource                         | Non sélectionné                          |
-| Abonnement                                  | *votre abonnement*    |
-| Réseau virtuel                               | **ManufacturingVnet**                     |
+| Réseau virtuel    | **ManufacturingVM-net (az104-rg5)**  |
 | Autoriser ManufacturingVnet à accéder à CoreServicesVnet  | sélectionné (par défaut)                       |
 | Autoriser ManufacturingVnet à recevoir le trafic transféré à partir de CoreServicesVnet | sélectionné                        |
-| Autorisez une passerelle dans CoreServicesVnet à transférer le trafic vers le réseau virtuel appairé | Non sélectionné (par défaut) |
-| Permettre à ManufacturingVnet d’utiliser la passerelle distante de CoreServicesVnet       | Non sélectionné (par défaut)                        |
+| Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
+| Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
 
-1. Passez en revue vos paramètres, puis sélectionnez **Ajouter**.
-
-![Capture d’écran de la page de l’appairage.](../media/az104-lab05-peering.png)
-
- 
 1. Dans CoreServicesVnet | Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié. Actualisez la page pour vérifier que l’**État de l’appairage** est **Connecté**.
 
 1. Basculez vers **ManufacturingVnet**, puis vérifiez que l’appairage **ManufacturingVnet-to-CoreServicesVnet** est répertorié. Vérifiez que l’**État de l’appairage** est **Connecté**. Vous devrez peut-être **actualiser** la page. 
-
 
 ## Tâche 5 : Utiliser Azure PowerShell pour tester la connexion entre machines virtuelles
 

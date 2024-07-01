@@ -127,7 +127,7 @@ Dans cette tâche, vous utilisez le modèle téléchargé pour déployer un nouv
 
 1. Sélectionnez un déploiement, puis passez en revue le contenu des panneaux **Entrée** et **Modèle**.
 
-## Tâche 3 : Configurez le service Cloud Shell et déployez un modèle avec Azure PowerShell.
+## Tâche 3 : Configurez le service Cloud Shell et déployez un modèle avec PowerShell 
 
 Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure PowerShell. Azure Cloud Shell est un terminal interactif, authentifié et accessible par navigateur qui permet de gérer les ressources Azure. Il vous donne la possibilité de choisir l'expérience d'interpréteur de commandes la plus adaptée à votre façon de travailler, qu'il s'agisse de Bash ou de PowerShell. Dans cette tâche, vous utilisez PowerShell pour déployer un modèle. 
 
@@ -139,32 +139,28 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 
     >**Le saviez-vous ?**  Si vous travaillez principalement avec des systèmes Linux, Bash (interface CLI) semble plus familier. Si vous travaillez principalement avec des systèmes Windows, Azure PowerShell semble plus familier. 
 
-1. Dans l’écran **Prise en main**, sélectionnez **Monter le compte de stockage**, puis **Je souhaite créer un compte de stockage**.  
+1. Dans l’écran de **prise en main**, sélectionnez **Monter un compte de stockage**, sélectionnez votre **abonnement au compte de stockage**, puis sélectionnez **Appliquer**.
 
-    >**Remarque :** Pour ce labo, un compte de stockage est requis. Fournissez les informations nécessaires. 
+1. Sélectionnez **Je souhaite créer un compte de stockage**, puis **Suivant**. Pour plus d’informations, consultez **Créer un compte de stockage**. 
     
     | Paramètres | Valeurs |
     |  -- | -- |
-    | Abonnement | *sélectionner votre abonnement* |
     | Groupe de ressources | **az104-rg3** |
     | Région | *sélectionnez votre région* | 
     | Compte de stockage (Créer) | *doit être globalement unique, comprendre entre 3 et 24 caractères et comporter uniquement des chiffres et des lettres en minuscules* |
     | Partage de fichiers (Créer) | `fs-cloudshell` |
 
-1. Quand vous avez terminé, sélectionnez **Suivant**. Vous ne devez effectuez cette opération que lors de votre première utilisation de Cloud Shell. L’approvisionnement du stockage prend quelques minutes.
+1. Une fois terminé, sélectionnez **Créer**.
 
-1. Utilisez l’icône **Charger/télécharger des fichiers** pour charger le modèle et le fichier des paramètres à partir du répertoire des téléchargements. Vous devrez charger chaque fichier séparément.
+    >L’approvisionnement du stockage prend quelques minutes.
 
-   >**Remarque :** Si, à tout moment, vous êtes invité à **Basculer vers Cloud Shell classique**, faites-le. 
+1. Sélectionnez **Paramètres** (barre supérieure), puis **Accéder à la version classique**.
 
-1. Vérifiez que vos fichiers sont disponibles dans le stockage Cloud Shell. 
+1. Sélectionnez l’icône **Charger/Télécharger des fichiers** (barre supérieure), puis sélectionnez **Charger**.
 
-    ```powershell
-    dir
-    ```
-    >**Remarque** : Le cas échéant, vous pouvez utiliser **cls** pour effacer la fenêtre de commande. Vous pouvez utiliser les touches de direction pour déplacer l’historique des commandes.
-   
-1. Sélectionnez l’icône **Éditeur** (accolades) et accédez au fichier JSON de modèle.
+1. Chargez les fichiers de modèle et de paramètres à partir du répertoire **Téléchargements**. 
+
+1. Sélectionnez l’icône **Éditeur** (accolades) et accédez au fichier JSON de modèle à gauche dans le volet de navigation.
 
 1. Apportez la modification souhaitée. Par exemple, remplacez le nom du disque par **az104-disk3**. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications. 
 

@@ -103,7 +103,7 @@ Dans cette tâche, vous allez créer un coffre Recovery Services. Un coffre Reco
 
 1. Une fois le déploiement terminé, cliquez sur **Accéder à la ressource**.
 
-1. Dans le volet du coffre Recovery Services, dans la section **Paramètres**, cliquez sur **Propriétés**.
+1. Dans la section **Paramètres**, cliquez sur **Propriétés**.
 
 1. Sélectionnez le lien **Mettre à jour** sous l’étiquette **Configuration de la sauvegarde**.
 
