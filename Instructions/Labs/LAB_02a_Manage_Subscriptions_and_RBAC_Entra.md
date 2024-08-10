@@ -129,7 +129,7 @@ Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles per
 
 1. Dans la liste des autorisations, placez une case à cocher à côté de **Autres : Inscrit le fournisseur de ressources de support**, puis sélectionnez **Ajouter**. Le rôle doit être mis à jour pour inclure cette autorisation en tant que *NotAction*.
 
-    >**Remarque :** Un fournisseur de ressources Azure est un ensemble d’opérations REST qui active une fonctionnalité pour un service Azure spécifique. Nous ne voulons pas que le support technique puisse disposer de cette fonctionnalité. Elle est donc supprimée du rôle cloné. Vous pouvez également supprimer et ajouter d’autres fonctionnalités au nouveau rôle. 
+    >**Remarque :** Un fournisseur de ressources Azure est un ensemble d’opérations REST qui active une fonctionnalité pour un service Azure spécifique. Nous ne voulons pas que le support technique puisse disposer de cette fonctionnalité. Elle est donc supprimée du rôle cloné. 
 
 1. Sous l’onglet **Étendues attribuables**, vérifiez que votre groupe d’administration est répertorié, puis cliquez sur **Suivant**.
 
