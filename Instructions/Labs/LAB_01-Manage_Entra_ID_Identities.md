@@ -19,15 +19,8 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation crée un nouvel environnement de labos pour les tests de préproduction des applications et des services.  Quelques ingénieurs sont embauchés pour gérer l’environnement du labo, notamment les machines virtuelles. Pour permettre aux ingénieurs de s’authentifier en utilisant Microsoft Entra ID, vous êtes chargé de l’approvisionnement des utilisateurs et des groupes. Pour réduire la surcharge administrative, l’appartenance aux groupes doit être mise à jour automatiquement en fonction des descriptions de postes. 
 
-## Simulation de labo interactif
-
-Ce labo utilise une simulation de labo interactive. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
->**Remarque :** Cette simulation est en cours de mise à jour. Microsoft Entra ID est le nouveau nom d’Azure Active Directory (Azure AD). 
-
-+ [Gérez des identités Entra ID](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201). Créez et configurez des utilisateurs et affectez-les à des groupes. Créez un tenant Azure et gérez les comptes d’invité. 
-
 ## Diagramme de l'architecture
+
 ![Diagramme de l’architecture du labo 01.](../media/az104-lab01-architecture.png)
 
 ## Compétences de tâche
