@@ -106,7 +106,7 @@ Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer
     
 ## Tâche 3 : Créez un rôle RBAC personnalisé.
 
-Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles personnalisés font partie intégrante de l’implémentation du principe du privilège minimum d’un environnement. Il est possible que les rôles intégrés aient trop d’autorisations pour votre scénario. Dans cette tâche, nous allons créer un rôle et supprimer les autorisations inutiles. Avez-vous un plan pour gérer des autorisations qui se chevauchent ?
+Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles personnalisés font partie intégrante de l’implémentation du principe du privilège minimum d’un environnement. Il est possible que les rôles intégrés aient trop d’autorisations pour votre scénario. Nous allons également créer un rôle et supprimer les autorisations inutiles. Avez-vous un plan pour gérer des autorisations qui se chevauchent ?
 
 1. Continuez à travailler sur votre groupe d’administration. Sur le panneau **Contrôle d’accès(IAM)**, sélectionnez l’onglet **Vérifier l’accès**.
 
@@ -117,7 +117,7 @@ Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles per
     | Paramètre | Valeur |
     | --- | --- |
     | Nom du rôle personnalisé | `Custom Support Request` |
-    | Description | ``Rôle de contributeur personnalisé pour les demandes de support.` |
+    | Description | `A custom contributor role for support requests.` |
 
 1. Pour les **Autorisations de base**, sélectionnez **Cloner un rôle**. Dans le menu déroulant **Rôle à cloner**, sélectionnez **Contributeur de demande de support**.
 
