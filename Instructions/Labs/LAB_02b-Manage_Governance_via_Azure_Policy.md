@@ -107,7 +107,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     >**Remarque** : Le **Nom de l’attribution** est automatiquement rempli avec le nom de stratégie que vous avez sélectionné, mais vous pouvez le modifier. La **description** est facultative. Notez que vous pouvez désactiver la stratégie à tout moment. 
 
-1. Cliquez deux fois sur **Suivant**, puis définissez **Paramètres** sur les valeurs suivantes :
+1. Cliquez sur **Suivant** et définissez **Paramètres** sur les valeurs suivantes :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -255,7 +255,7 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 Félicitations, vous avez terminé le labo. Voici les principaux points à retenir de ce labo. 
 
-+ Les balises Azure sont des métadonnées qui se composent d’une paire clé-valeur. Les balises décrivent une ressource particulière dans votre environnement. En particulier, le balisage dans Azure vous permet d’étiqueter vos ressources de manière logique.
++ Les balises Azure sont des métadonnées qui se composent d’une paire clé-valeur. Les balises décrivent une ressource particulière dans votre environnement. En particulier, la catégorisation dans Azure vous permet d’étiqueter vos ressources de manière logique.
 + Azure Policy établit des conventions pour les ressources. Les définitions de stratégie décrivent les conditions de la conformité des ressources et l’effet à exécuter si une condition est remplie. Une condition compare un champ ou une valeur de propriété de ressource à une valeur requise. Il existe de nombreuses définitions de stratégie intégrées et vous pouvez personnaliser les stratégies. 
 + Vous utilisez la fonctionnalité de tâche de correction Azure Policy pour rendre des ressources conformes en fonction d’une définition et d’une affectation. Les ressources non conformes à une attribution de définition modify ou deployIfNotExist peuvent être mises en conformité à l’aide d’une tâche de correction.
 + Vous pouvez configurer un verrou de ressource sur un abonnement, un groupe de ressources ou une ressource. Le verrou peut protéger une ressource contre les suppressions et modifications accidentelles des utilisateurs. Le verrou remplace toutes les autorisations que les utilisateurs ont.

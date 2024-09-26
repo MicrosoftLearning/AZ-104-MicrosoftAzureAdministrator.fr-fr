@@ -108,9 +108,9 @@ Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer
 
 Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles personnalisés font partie intégrante de l’implémentation du principe du privilège minimum d’un environnement. Il est possible que les rôles intégrés aient trop d’autorisations pour votre scénario. Nous allons également créer un rôle et supprimer les autorisations inutiles. Avez-vous un plan pour gérer des autorisations qui se chevauchent ?
 
-1. Continuez à travailler sur votre groupe d’administration. Sur le panneau **Contrôle d’accès(IAM)**, sélectionnez l’onglet **Vérifier l’accès**.
+1. Continuez à travailler sur votre groupe d’administration. Accédez au panneau **Contrôle d’accès (IAM)**.
 
-1. Dans la zone **Créer un rôle personnalisé**, sélectionnez **Ajouter**.
+1. Sélectionnez **+ Ajouter** dans le menu déroulant, puis **Ajouter un rôle personnalisé**.
 
 1. Sous l’onglet Informations de base, terminez la configuration.
 
