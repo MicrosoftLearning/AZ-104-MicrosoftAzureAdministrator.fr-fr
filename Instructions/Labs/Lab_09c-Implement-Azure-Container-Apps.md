@@ -47,7 +47,7 @@ Azure Container Apps va plus loin avec le concept de cluster Kubernetes managé 
     | Groupe de ressources | `az104-rg9` |
     | Nom de l’application conteneur |  `my-app` |
     | Région    | **USA Est** (ou une région disponible près de vous) |
-    | Environnement Container Apps | Conserver la valeur par défaut |
+    | Environnement Container Apps | Sélectionnez **Créer nouveau** > Définir le nom de l’environnement sur **my-environment** > **Créer** |
 
 1. Sous l’onglet **Conteneur** , vérifiez que l’option **Utiliser l’image de démarrage rapide** est activée et que l’image de démarrage rapide est définie sur **Conteneur Hello World simple**.
 
