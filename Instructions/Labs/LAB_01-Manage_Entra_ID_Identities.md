@@ -97,7 +97,7 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
 
 Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuvent inclure des comptes d’utilisateur ou des appareils. L’attribution de membres à des groupes s’effectue de deux façons : Statiquement ou dynamiquement. Les groupes statiques nécessitent l’ajout et la suppression manuels de membres par les administrateurs.  Les groupes dynamiques sont mis à jour automatiquement selon les propriétés d’un compte d’utilisateur ou d’un appareil. Par exemple, un poste. 
 
-1. Dans le portail Azure, recherchez et sélectionnez `Groups`.
+1. Dans le portail Azure, recherchez et sélectionnez `Microsoft Entra ID`. Dans le panneau **Gérer**, sélectionnez **Groupes**. 
 
 1. Prenez une minute pour vous familiariser avec les paramètres du groupe dans le volet de gauche.
 
@@ -133,15 +133,6 @@ Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuve
 
 >**Remarque :** Il est possible que vous gériez un grand nombre de groupes. Votre organisation dispose-t-elle d’un plan pour créer des groupes et ajouter des membres ?
    
-## Nettoyage de vos ressources
-
-Si vous travaillez avec **votre propre abonnement**, prenez un moment pour supprimer les ressources du labo. Ceci garantit que les ressources sont libérées et que les coûts sont réduits. Le moyen le plus simple de supprimer les ressources du labo est de supprimer le groupe de ressources du labo. Notez que cela ne supprime pas les utilisateurs ou groupes Entra ID que vous avez créés. 
-
-+ Dans le Portail Azure, sélectionnez le groupe de ressources, **Supprimer le groupe de ressources**, **Entrer le nom du groupe de ressources**, puis cliquez sur **Supprimer**.
-+ `Remove-AzResourceGroup -Name resourceGroupName` en utilisant Azure PowerShell.
-+ `az group delete --name resourceGroupName` en utilisant l’interface CLI.
-  
-
 ## Développer votre apprentissage avec Copilot
 
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
