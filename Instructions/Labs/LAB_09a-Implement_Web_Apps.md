@@ -60,12 +60,14 @@ Dans cette tâche, vous créez une application web Azure. Azure App Services est
     | Pile d’exécution | **PHP 8.2** |
     | Système d’exploitation | **Linux** |
     | Région | **USA Est** |
-    | Plans tarifaires | acceptez les valeurs par défaut |
+    | Plans tarifaires | **Premium V3 P1V3** |
     | Redondance de zone | acceptez les valeurs par défaut |
 
  1. Cliquez sur **Vérifier et créer**, puis sur **Créer**.
 
     >**Remarque** : Attendez que l’application web soit créée avant de passer à la tâche suivante. Ce processus prend environ une minute.
+    
+    >**Remarque** : si le déploiement échoue, passez à une autre région et réessayez. Par exemple, basculez vers **USA Est 2**. 
 
 1. Une fois le déploiement terminé, sélectionnez **Accéder à la ressource**.
 

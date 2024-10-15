@@ -213,8 +213,6 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Réseau virtuel | **az104-06-vnet1** |
     | Sous-réseau | **subnet-appgw (10.60.3.224/27)** |
 
-    ![Capture d’écran du bouton Créer une passerelle applicative.](../media/az104-lab06-create-appgw.png)
-
 1. Cliquez sur **Suivant : Front-ends >** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**.
 
     | Paramètre | Valeur |
@@ -222,7 +220,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Type d'adresse IP de front-end | **Public** |
     | Adresse IP publique| **Ajouter nouveau** |
     | Nom | `az104-gwpip` |
-    | Zone de disponibilité | **Aucun** |
+    | Zone de disponibilité | **1** |
 
     >**Remarque :** La passerelle applicative peut avoir une adresse IP publique et une adresse IP privée.
  
