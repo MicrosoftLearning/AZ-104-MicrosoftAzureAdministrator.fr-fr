@@ -176,7 +176,7 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
 
 1. Dans la page des comptes de stockage, sélectionnez **Créer**.
 
-1. Utilisez les informations suivantes pour définir le compte de stockage, puis sélectionnez **Vérifier**.
+1. Utilisez les informations suivantes pour définir le compte de stockage, puis sélectionnez **Examiner et créer**.
 
     | Paramètres | Valeur |
     | --- | --- | 
@@ -185,13 +185,13 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
     | Nom du compte de stockage  | Fournir un nom globalement unique   |
     | Région                | **USA Est**   |
 
-1. Sous l’onglet Vérifier, sélectionnez **Créer**.
+1. Sélectionnez **Créer**.
 
     >**Remarque** : Attendez la fin du déploiement. Le processus prend environ une minute.
 
 1. Recherchez et sélectionnez votre coffre Recovery Services.
 
-1. Sélectionnez **Paramètres de diagnostic**, puis **Ajouter un paramètre de diagnostic**.
+1. Dans le panneau **Surveillance**, sélectionnez **Paramètres de diagnostic**, puis **Ajouter un paramètre de diagnostic**.
 
 1. Nommez le paramètre `Logs and Metrics to storage`.
 
