@@ -157,7 +157,7 @@ Dans cette tâche, vous déclenchez l’alerte et confirmez l’envoi d’une no
 
 1. Sélectionnez **Supprimer** dans la barre de menus.
 
-1. Cochez la case pour **Appliquer la suppression forcée**. Entrez `delete` pour confirmer, puis sélectionnez **Supprimer**. 
+1. Cochez la case pour **Appliquer la suppression forcée**. Cochez la case en bas confirmant que vous souhaitez supprimer les ressources, puis sélectionnez **Supprimer**. 
 
 1. Dans la barre de titre, sélectionnez l’icône **Notifications** et attendez jusqu’à la suppression correcte de **vm0**.
 
