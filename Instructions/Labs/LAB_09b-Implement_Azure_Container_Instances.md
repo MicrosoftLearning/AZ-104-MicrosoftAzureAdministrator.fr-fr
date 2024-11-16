@@ -61,6 +61,8 @@ Dans cette tâche, vous allez créer une application web simple en tirant parti 
 
     >**Remarque** : Votre conteneur sera accessible au public à l’adresse : dns-name-label.region.azurecontainer.io. Si vous recevez un message d’erreur **Étiquette de nom DNS indisponible**, spécifiez une autre valeur.
 
+1. Cliquez sur **Suivant : Surveillance >** et décochez **Activer les journaux d’instance de conteneur**. 
+
 1. Cliquez sur **Suivant : Avancé >**, vérifiez les paramètres sans apporter de modification.
 
  1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation a réussi, puis cliquez sur **Créer**.
