@@ -326,11 +326,11 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 
-+ Comparez et différenciez le service Azure Load Balancer et Azure Application Gateway.
-+ Comment puis-je résoudre des problèmes de connectivité entrante pour Azure Load Balancer ?
-+ Quelles sont les étapes de base de la configuration d’Azure Application Gateway ?
-+ Créez une table mettant en évidence les solutions d’équilibrage de charge Azure. Incluez ces colonnes : Protocoles pris en charge, équilibrage de charge privé, équilibrage de charge global, stratégies de routage, environnements pris en charge, drainage de connexion, affinité de session, équilibrage de charge de chemin d’accès et hôte, déchargement TLS, accélération de site, sécurité, mise en cache et compression.
-
++ Comparez et différenciez le service Azure Load Balancer et Azure Application Gateway. Aide-moi à décider dans quels scénarios je devrais utiliser chaque produit.
++ Quels outils sont disponibles pour résoudre des problèmes de connexion à un équilibreur de charge Azure ? 
++ Quelles sont les étapes de base de la configuration d’Azure Application Gateway ? Fournis-moi une liste de contrôle générale. 
++ Crée un tableau mettant en évidence les trois solutions d’équilibrage de charge Azure. Pour chaque solution, affiche les protocoles pris en charge, les stratégies de routage, l’affinité de session et le déchargement TLS.
+  
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
 + [Améliorer la scalabilité et la résilience des applications en utilisant Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Découvrez les différents équilibreurs de charge disponibles dans Azure et comment choisir la solution d’équilibreur de charge Azure la mieux adaptée à vos besoins.
@@ -338,7 +338,7 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 ## Points clés
 
-Félicitations, vous avez terminé le labo. Voici les principaux points à retenir pour ce labo.
+Félicitations, vous avez terminé le labo. Voici les points clés de ce labo.
 
 + Azure Load Balancer est un excellent choix pour distribuer le trafic réseau sur plusieurs machines virtuelles au niveau de la couche de transport (couche OSI 4 – TCP et UDP).
 + Les équilibreurs de charge publics sont utilisés pour équilibrer la charge du trafic Internet sur vos machines virtuelles. Un équilibreur de charge interne (ou privé) est utilisé lorsque des adresses IP privées sont nécessaires uniquement au niveau du serveur front-end.
