@@ -316,9 +316,7 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
 
 1. Notez que dans le panneau **Vue d’ensemble**, aucun enregistrement de serveur de noms n’est présent. 
 
-1. Sélectionnez **Paramètres**, puis **Gestion du service DNS**.
-
-1. Sélectionnez **Liens de réseau virtuel** et configurez le lien. 
+1. Sélectionnez **Gestion des DNS**, puis **Liens de réseau virtuel**. Configurez le lien. 
 
     | Propriété | Valeur    |
     |:---------|:---------|
@@ -327,7 +325,7 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
 
 1. Sélectionnez **Créer** et attendez que le lien soit créé. 
 
-1. Dans le panneau **Vue d’ensemble**, sélectionnez **+ Jeu d’enregistrements**. Vous allez maintenant ajouter un enregistrement pour chaque machine virtuelle qui a besoin de la prise en charge de la résolution de noms privés.
+1. Dans le panneau **Gestion des DNS**, sélectionnez **+ Recordsets**. Vous allez maintenant ajouter un enregistrement pour chaque machine virtuelle qui a besoin de la prise en charge de la résolution de noms privés.
 
     | Propriété | Valeur    |
     |:---------|:---------|
