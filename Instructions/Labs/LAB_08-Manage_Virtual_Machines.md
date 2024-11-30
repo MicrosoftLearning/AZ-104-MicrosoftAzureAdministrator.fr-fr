@@ -222,7 +222,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Source | **Any** |
-    | Source port ranges | * |
+    | Plages de ports source | * |
     | Destination | **Any** |
     | Service | **HTTP** |
     | Action | **Autoriser** |
