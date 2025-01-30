@@ -169,7 +169,7 @@ Dans cette tâche, vous allez configurer la mise à l’échelle automatique de 
 
 1. Passez en revue les résultats des tests, notamment les **utilisateurs virtuels**, le **temps de réponse** et les **requêtes/seconde**.
 
-1. Sélectionnez **Arrêter** pour terminer l’exécution du test.
+1. Sélectionnez **Arrêter** pour terminer l’exécution du test. Vous n’avez pas besoin d’attendre que le test soit terminé. 
 
 ## Nettoyage de vos ressources
 
