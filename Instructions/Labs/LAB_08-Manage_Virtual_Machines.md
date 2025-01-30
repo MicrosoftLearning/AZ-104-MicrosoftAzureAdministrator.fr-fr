@@ -32,9 +32,9 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Compétences de tâche
 
-+ Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du Portail Azure.
-+ Tâche 2 : gérer la mise à l’échelle des capacités de calcul et de stockage des machines virtuelles.
-+ Tâche 3 : créer et configurer Azure Virtual Machine Scale Sets.
++ Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du portail Azure.
++ Tâche 2 : gérez la mise à l’échelle des capacités de calcul et de stockage des machines virtuelles.
++ Tâche 3 : créez et configurez Azure Virtual Machine Scale Sets.
 + Tâche 4 : mettre à l’échelle Azure Virtual Machine Scale Sets.
 + Tâche 5 : Créez une machine virtuelle en utilisant Azure PowerShell (option 1).
 + Tâche 6 : Créez une machine virtuelle en utilisant l’interface CLI (option 2).
@@ -183,6 +183,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Zone de disponibilité | **Zones 1, 2, 3** |
     | Mode d’orchestration | **Uniforme** |
     | Type de sécurité | **Standard** |
+    | Options de scaling | **Vérifiez et prenez les valeurs par défaut**. Nous allons changer cela lors de la prochaine tâche. |
     | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Exécuter avec la remise Azure Spot | **Décoché** |
     | Taille | **D2s_v3 standard** |
@@ -203,7 +204,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | `vmss-vnet` |
-    | Plage d’adresses | `10.82.0.0/20` (modifiez ce qui s’y trouve) |
+    | Plage d’adresses | `10.82.0.0/20` (supprimer la plage d’adresses existante) |
     | Nom du sous-réseau | `subnet0` |
     | Plage de sous-réseau | `10.82.0.0/24` |
 
@@ -270,11 +271,11 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Sélectionnez **Accéder à la ressource** ou recherchez et sélectionnez le groupe identique **vmss1**.
 
-1. Choisissez **Disponibilité + mise à l’échelle** dans le menu de gauche, puis **Mise à l’échelle**.
+1. Choisissez **Disponibilité + mise à l’échelle** dans le menu de gauche, puis **Mise à l’échelle**.
 
->**Le saviez-vous ?** Vous pouvez effectuer une **Mise à l’échelle manuelle** ou une **Mise à l’échelle automatique**. Dans des groupes identiques avec un petit nombre d’instances de machine virtuelle, l’augmentation ou la diminution du nombre d’instances (mise à l’échelle manuelle) peut être préférable. Dans des groupes identiques avec un grand nombre d’instances de machine virtuelle, la mise à l’échelle basée sur les métriques (mise à l’échelle automatique personnalisée) peut être plus appropriée.
+    >**Le saviez-vous ?** Vous pouvez effectuer une **Mise à l’échelle manuelle** ou une **Mise à l’échelle automatique**. Dans des groupes identiques avec un petit nombre d’instances de machine virtuelle, l’augmentation ou la diminution du nombre d’instances (mise à l’échelle manuelle) peut être préférable. Dans des groupes identiques avec un grand nombre d’instances de machine virtuelle, la mise à l’échelle basée sur les métriques (mise à l’échelle automatique personnalisée) peut être plus appropriée.
 
-### Effectuez un scale-out
+**Règle de scale-out**
 
 1. Sélectionnez **Mise à l’échelle automatique personnalisée**. Puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
 
@@ -291,13 +292,13 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
     | Statistique de fragment de temps | **Average** |
     | Opération | **Augmenter le pourcentage de** (passer en revue d’autres choix) |
     | Refroidissement (minutes) | **5** |
-    | Percentage | **20** |
+    | Percentage | **50** |
 
     ![Capture d’écran de la page de l’ajout de règle à la mise à l’échelle.](../media/az104-lab08-scale-rule.png)
 
 1. Veillez à **Enregistrer** vos modifications.
 
-### Règle de scale-in
+**Règle de scale-in**
 
 1. Pendant les soirées ou les week-ends, la demande peut diminuer, de sorte qu’il est important de créer une règle de scale-in.
 
@@ -310,11 +311,11 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
     | Opérateur | **Inférieur à** |
     | Seuil | **30** |
     | Opération | **diminuer le pourcentage de** (passer en revue vos autres choix) |
-    | Percentage | **20** |
+    | Percentage | **50** |
 
 1. Veillez à **Enregistrer** vos modifications.
 
-### Définir les limites de l’instance
+**Définir les limites de l’instance**
 
 1. Lorsque vos règles de mise à l’échelle automatique sont appliquées, les limites d’instance veillent à ce que votre scale-out ne dépasse pas le nombre maximal d’instances ou que votre scale-in ne descende pas en dessous du nombre minimal d’instances.
 
