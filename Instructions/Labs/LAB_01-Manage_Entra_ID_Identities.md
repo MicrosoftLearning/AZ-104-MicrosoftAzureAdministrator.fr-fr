@@ -46,7 +46,7 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
 
 1. Revenez à la page **Entra ID** en appuyant sur le bouton Précédent dans le navigateur ou en sélectionnant l’option dans le menu de navigation.
 
-1. Sélectionnez **Licences**. À partir de cet emplacement, vous pouvez acheter une licence, gérer les licences dont vous disposez et attribuer des licences à des utilisateurs et à des groupes. Sélectionnez **Fonctionnalités sous licence** pour voir ce qui est disponible.
+1. Lorsque vous avez le temps, explorez d’autres options telles que **Licences** et **Réinitialisation de mot de passe**.
    
 ### Créer un utilisateur
 
