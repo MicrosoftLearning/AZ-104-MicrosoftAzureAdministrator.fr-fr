@@ -279,7 +279,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Sélectionnez **Mise à l’échelle automatique personnalisée**. Puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
 
-1. Nous allons créer une règle qui augmente automatiquement le nombre d’instances de machine virtuelle. Cette règle effectue un scale-out quand la charge moyenne du processeur est supérieure à 70 % sur une période de 10 minutes. Lorsque la règle déclenche l’opération, le nombre d’instances de machine virtuelle est augmenté de 20 %.
+1. Nous allons créer une règle qui augmente automatiquement le nombre d’instances de machine virtuelle. Cette règle effectue un scale-out quand la charge moyenne du processeur est supérieure à 70 % sur une période de 10 minutes. Lorsque la règle déclenche l’opération, le nombre d’instances de machine virtuelle est augmenté de 50 %.
 
     | Paramètre | Valeur |
     | --- | --- |
