@@ -241,7 +241,7 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
 
 1. Une fois la table de route déployée, sélectionnez **Accéder à la ressource**.
 
-1. Sélectionnez **Routes**, puis **+ Ajouter**. Créez une route de la future appliance virtuelle réseau (NVA) future vers le réseau virtuel CoreServices. 
+1. Sélectionnez **Routes**, puis **+ Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
 
     | Paramètre | Valeur | 
     | --- | --- |
