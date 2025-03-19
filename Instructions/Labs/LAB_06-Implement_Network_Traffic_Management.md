@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Labo\_06\_: Implémenter la gestion du trafic"
+  title: "Labo\_06\_: implémenter la gestion du trafic réseau"
   module: Administer Network Traffic Management
 ---
 
-# Labo 06 : Implémenter la gestion du trafic
+# Labo 06 : implémenter la gestion du trafic réseau
 
 ## Présentation du labo
 
@@ -12,7 +12,7 @@ Dans ce labo, vous découvrez comment configurer et tester un équilibreur de ch
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
 ## Scénario du labo
 
@@ -20,7 +20,7 @@ Votre organisation a un site web public. Vous devez équilibrer la charge des re
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Créer et configurer un équilibreur de charge Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Créer un réseau virtuel, des serveurs back-ends, un équilibreur de charge, puis tester l’équilibreur de charge.
 + [Déployer une passerelle applicative Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Créer une passerelle applicative, créer des machines virtuelles, créer le pool de back-ends et tester la passerelle.
@@ -28,11 +28,11 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Compétences de tâche
 
-+ Tâche 1 : Utiliser un modèle pour provisionner une infrastructure.
-+ Tâche 2 : Configurer un équilibreur de charge Azure.
++ Tâche 1 : Utiliser un modèle pour provisionner une infrastructure.
++ Tâche 2 : Configurer un équilibreur de charge Azure.
 + Tâche 3 : Configurer une passerelle applicative Azure.
 
-## Tâche 1 : Utiliser un modèle pour provisionner une infrastructure
+## Tâche 1 : Utiliser un modèle pour provisionner une infrastructure
 
 Dans cette tâche, vous allez utiliser un modèle pour déployer un réseau virtuel, un groupe de sécurité réseau et deux machines virtuelles.
 
@@ -62,27 +62,27 @@ Dans cette tâche, vous allez utiliser un modèle pour déployer un réseau virt
     | Resource group | `az104-rg6` (Si nécessaire, sélectionnez **Créer nouveau**x) |
     | Mot de passe      | Choisissez un mot de passe sécurisé |
 
-    >**Remarque** : Si vous recevez une erreur indiquant que la taille de la machine virtuelle n’est pas disponible, sélectionnez une référence SKU disponible dans votre abonnement et qui comporte au moins 2 cœurs.
+    >**Remarque** : Si vous recevez une erreur indiquant que la taille de la machine virtuelle n’est pas disponible, sélectionnez une référence SKU disponible dans votre abonnement et qui comporte au moins 2 cœurs.
 
 1. Sélectionnez **Vérifier + créer**, puis sélectionnez **Créer**.
 
-    >**Remarque** : Attendez que le déploiement se termine avant de passer à la tâche suivante. Le déploiement doit prendre environ 5 minutes.
+    >**Remarque** : Attendez que le déploiement se termine avant de passer à la tâche suivante. Le déploiement doit prendre environ 5 minutes.
 
-    >**Remarque** : Passez en revue les ressources déployées. Il y aura un réseau virtuel avec trois sous-réseaux. Chaque sous-réseau aura une machine virtuelle.
+    >**Remarque** : Passez en revue les ressources déployées. Il y aura un réseau virtuel avec trois sous-réseaux. Chaque sous-réseau aura une machine virtuelle.
 
-## Tâche 2 : Configurer un équilibreur de charge Azure
+## Tâche 2 : Configurer un équilibreur de charge Azure
 
 Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les deux machines virtuelles Azure du réseau virtuel. Les équilibreurs de charge dans Azure fournissent une connectivité de couche 4 entre des ressources, comme des machines virtuelles. La configuration de l’équilibreur de charge inclut une adresse IP frontale pour accepter les connexions, un pool de back-ends et des règles qui définissent la façon dont les connexions doivent traverser l’équilibreur de charge.
 
 ## Diagramme de l’architecture – Équilibreur de charge
 
->**Remarque** : Notez que l’équilibreur de charge effectue une distribution entre deux machines virtuelles dans le même réseau virtuel.
+>**Remarque** : Notez que l’équilibreur de charge effectue une distribution entre deux machines virtuelles dans le même réseau virtuel.
 
 ![Diagramme des tâches du labo.](../media/az104-lab06-lb-architecture.png)
 
 1. Dans le portail Azure, recherchez et sélectionnez `Load balancers` puis, dans le panneau **Équilibreurs de charge**, cliquez sur **+ Créer**.
 
-1. Créez un équilibreur de charge avec les paramètres suivants (laissez les autres avec leur valeur par défaut), puis cliquez sur **Suivant : Configuration IP front-end** :
+1. Créez un équilibreur de charge avec les paramètres suivants (laissez les autres avec leur valeur par défaut), puis cliquez sur **Suivant : Configuration IP front-end** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -96,16 +96,16 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
 
      ![Capture d’écran de la page Créer un équilibreur de charge.](../media/az104-lab06-create-lb1.png)
 
-1. Sous l’onglet **Configuration IP frontale**, cliquez sur **Ajouter une configuration IP frontale** et utilisez les paramètres suivants :  
+1. Sous l’onglet **Configuration IP frontale**, cliquez sur **Ajouter une configuration IP frontale** et utilisez les paramètres suivants :  
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | `az104-fe` |
-    | Type IP | Adresse IP |
+    | Type IP | Adresse IP |
     | Équilibreur de charge de passerelle | Aucun |
     | Adresse IP publique | Sélectionnez **Créer nouveau** (utilisez les instructions de l’étape suivante) |
 
-1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**.
+1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -115,7 +115,7 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
     | Affectation | statique |
     | Préférence de routage | **Réseau Microsoft** |
 
-    >**Remarque :** La référence SKU Standard fournit une adresse IP statique. Les adresses IP statiques sont affectées à la ressource quand elle est créée et sont libérées lors de la suppression de la ressource.  
+    >**Remarque :** La référence SKU Standard fournit une adresse IP statique. Les adresses IP statiques sont affectées à la ressource quand elle est créée et sont libérées lors de la suppression de la ressource.  
 
 1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis cliquez sur **Suivant : Règles de trafic entrant**.
 
@@ -155,17 +155,17 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
     | Fermer la fenêtre de création d’une sonde d’intégrité | **Save** |
     | Persistance de session | **Aucun** |
     | Délai d’inactivité (minutes). | `4` |
-    | Réinitialisation du protocole TCP | **Désactivé** |
+    | Réinitialisation du protocole TCP | **Désactivé** |
     | IP flottante | **Désactivé** |
     | Traduction d’adresses réseau (SNAT) sources sortante | **Recommended** |
 
-1. Sélectionnez **Configuration d’adresse IP frontale** dans la page de l’équilibreur de charge. Copiez l’adresse IP publique.
+1. Sélectionnez **Configuration d’adresse IP frontale** dans la page de l’équilibreur de charge. Copiez l’adresse IP publique.
 
-1. Ouvrez un autre onglet de navigateur et accédez à l’adresse IP. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm0** ou **Hello World à partir d’az104-06-vm1**.
+1. Ouvrez un autre onglet de navigateur et accédez à l’adresse IP. Vérifiez que la fenêtre du navigateur affiche le message **Hello World à partir d’az104-06-vm0** ou **Hello World à partir d’az104-06-vm1**.
 
 1. Actualisez la fenêtre pour vérifier que le message passe à l’autre machine virtuelle. Cela montre la rotation de l’équilibreur de charge entre les machines virtuelles.
 
-    > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
+    > **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
 ## Tâche 3 : Configurer une passerelle applicative Azure
 
@@ -173,7 +173,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
 ## Diagramme de l’architecture – Passerelle applicative
 
->**Remarque** : Cette passerelle applicative fonctionne dans le même réseau virtuel que l’équilibreur de charge. Ce ne sera généralement pas le cas dans un environnement de production classique.
+>**Remarque** : Cette passerelle applicative fonctionne dans le même réseau virtuel que l’équilibreur de charge. Ce ne sera généralement pas le cas dans un environnement de production classique.
 
 ![Diagramme des tâches du labo.](../media/az104-lab06-gw-architecture.png)
 
@@ -193,11 +193,11 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
 1. Cliquez sur **Enregistrer**.
 
-    > **Remarque** : Ce sous-réseau sera utilisé par la passerelle applicative Azure. Application Gateway nécessite un sous-réseau dédié de /27 ou de taille supérieure.
+    > **Remarque** : Ce sous-réseau sera utilisé par la passerelle applicative Azure. Application Gateway nécessite un sous-réseau dédié de /27 ou de taille supérieure.
 
 1. Dans le portail Azure, recherchez et sélectionnez `Application gateways` puis, dans le panneau **Passerelles applicatives**, cliquez sur **+ Créer**.
 
-1. Sous l’onglet **Informations de base**, spécifiez les paramètres suivants (laissez les autres valeurs par défaut) :
+1. Sous l’onglet **Informations de base**, spécifiez les paramètres suivants (laissez les autres valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -213,7 +213,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Réseau virtuel | **az104-06-vnet1** |
     | Sous-réseau | **subnet-appgw (10.60.3.224/27)** |
 
-1. Cliquez sur **Suivant : Front-ends >** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**.
+1. Cliquez sur **Suivant : Front-ends >** et spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Lorsque vous avez terminé, cliquez sur **OK**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -222,9 +222,9 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Nom | `az104-gwpip` |
     | Zone de disponibilité | **1** |
 
-    >**Remarque :** La passerelle applicative peut avoir une adresse IP publique et une adresse IP privée.
+    >**Remarque :** La passerelle applicative peut avoir une adresse IP publique et une adresse IP privée.
  
-1. Cliquez sur **Suivant : Back-ends >**, puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
+1. Cliquez sur **Suivant : Back-ends >**, puis sur **Ajouter un pool de back-ends**. Spécifiez les paramètres suivants (laissez les autres valeurs par défaut). Quand vous avez terminé, cliquez sur **Ajouter**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -249,7 +249,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Ajouter un pool back-end sans cible | **Aucun** |
     | Machine virtuelle | **az104-06-nic2 (10.60.2.4)** |
 
-1. Sélectionnez **Suivant : Configuration**, puis sur **Ajouter une règle de routage**. Renseignez les informations.
+1. Sélectionnez **Suivant : Configuration**, puis sur **Ajouter une règle de routage**. Renseignez les informations.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -268,7 +268,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Cible de back-end | `az104-appgwbe` |
     | Paramètres du back-end | `az104-http` (créer nouveau) |
 
-   >**Remarque :** Prenez un moment pour lire les informations sur l’**affinité basée sur des cookies** et sur le **drainage de connexion**.
+   >**Remarque :** Prenez un moment pour lire les informations sur l’**affinité basée sur des cookies** et sur le **drainage de connexion**.
 
 1. Dans la section **Routage basé sur le chemin**, sélectionnez **Ajouter plusieurs cibles pour créer une règle basée sur le chemin**. Vous allez créer deux règles. Cliquez sur **Ajouter** après la première règle, puis sur **Ajouter** après la deuxième règle. 
 
@@ -290,11 +290,11 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Paramètres du back-end | **az104-http** |
     | Cible de back-end | `az104-videobe` |
 
-1. Veillez à **Enregistrer** et à vérifier vos modifications, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
+1. Veillez à **Enregistrer** et à vérifier vos modifications, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
 
-1. Sélectionnez **Suivant : Vérifier + créer**, puis sur **Créer**.
+1. Sélectionnez **Suivant : Vérifier + créer**, puis sur **Créer**.
 
-    > **Remarque** : Attendez la création de l’instance Application Gateway. Cette opération va prendre environ 5 à 10 minutes. Pendant que vous attendez, vous pouvez examiner quelques-uns des liens de formation auto-rythmées à la fin de cette page.
+    > **Remarque** : Attendez la création de l’instance Application Gateway. Cette opération va prendre environ 5 à 10 minutes. Pendant que vous attendez, vous pouvez examiner quelques-uns des liens de formation auto-rythmées à la fin de cette page.
 
 1. Une fois la passerelle d’application déployée, recherchez et sélectionnez **az104-appgw**.
 
@@ -302,7 +302,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
 1. Vérifiez que les deux serveurs du pool de back-ends affichent **Sain**.
 
-1. Dans le panneau **Vue d’ensemble**, copiez la valeur de **Adresses IP publiques frontales**.
+1. Dans le panneau **Vue d’ensemble**, copiez la valeur de **Adresses IP publiques frontales**.
 
 1. Démarrez une autre fenêtre de navigateur et testez cette URL : `http://<frontend ip address>/image/`.
 
@@ -312,7 +312,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
 
 1. Vérifiez que vous êtes dirigé vers le serveur de vidéos (vm2).
 
-> **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
+> **Remarque** : Vous devrez peut être actualiser plusieurs fois ou ouvrir une nouvelle fenêtre de navigateur en mode InPrivate.
 
 ## Nettoyage de vos ressources
 
@@ -327,7 +327,7 @@ Si vous travaillez avec **votre propre abonnement**, prenez un moment pour suppr
 Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Copilot peut également aider dans des domaines non couverts dans le labo ou quand vous avez besoin de plus d’informations. Ouvrez un navigateur Edge et choisissez Copilot (en haut à droite), ou accédez à *copilot.microsoft.com*. Prenez quelques minutes pour essayer ces prompts.
 
 + Comparez et différenciez le service Azure Load Balancer et Azure Application Gateway. Aide-moi à décider dans quels scénarios je devrais utiliser chaque produit.
-+ Quels outils sont disponibles pour résoudre des problèmes de connexion à un équilibreur de charge Azure ? 
++ Quels outils sont disponibles pour résoudre des problèmes de connexion à un équilibreur de charge Azure ? 
 + Quelles sont les étapes de base de la configuration d’Azure Application Gateway ? Fournis-moi une liste de contrôle générale. 
 + Crée un tableau mettant en évidence les trois solutions d’équilibrage de charge Azure. Pour chaque solution, affiche les protocoles pris en charge, les stratégies de routage, l’affinité de session et le déchargement TLS.
   
@@ -341,8 +341,8 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 Félicitations, vous avez terminé le labo. Voici les points clés de ce labo.
 
 + Azure Load Balancer est un excellent choix pour distribuer le trafic réseau sur plusieurs machines virtuelles au niveau de la couche de transport (couche OSI 4 – TCP et UDP).
-+ Les équilibreurs de charge publics sont utilisés pour équilibrer la charge du trafic Internet sur vos machines virtuelles. Un équilibreur de charge interne (ou privé) est utilisé lorsque des adresses IP privées sont nécessaires uniquement au niveau du serveur front-end.
++ Les équilibreurs de charge publics sont utilisés pour équilibrer la charge du trafic Internet sur vos machines virtuelles. Un équilibreur de charge interne (ou privé) est utilisé lorsque des adresses IP privées sont nécessaires uniquement au niveau du serveur front-end.
 + L’équilibreur de charge De base est destiné aux applications à petite échelle qui n’ont pas besoin de la haute disponibilité ou de la redondance. L’équilibreur de charge Standard est conçu pour des performances élevées et une latence ultra-faible.
-+ Azure Application Gateway est un équilibreur de charge de trafic web (couche OSI 7) qui vous permet de gérer le trafic vers vos applications web.
++ Azure Application Gateway est un équilibreur de charge de trafic web (couche OSI 7) qui vous permet de gérer le trafic vers vos applications web.
 + Le niveau Standard d’Application Gateway offre toutes les fonctionnalités L7, notamment l’équilibrage de charge. Le niveau WAF ajoute un pare-feu pour détecter le trafic malveillant.
 + Une passerelle applicative peut prendre des décisions de routage basées sur des attributs supplémentaires d’une requête HTTP, par exemple des en-têtes d’hôte ou de chemin d’URI.
