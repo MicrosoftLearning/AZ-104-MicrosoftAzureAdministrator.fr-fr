@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo\_07\_: Gérer Stockage Azure"
+  title: 'Labo 07 : Gérer Stockage Azure'
   module: Administer Azure Storage
 ---
 
@@ -12,7 +12,7 @@ Dans ce labo, vous découvrez comment créer des comptes de stockage pour des bl
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
 ## Scénario du labo
 
@@ -50,37 +50,39 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
     | --- | --- |
     | Abonnement          | nom de votre abonnement Azure  |
     | Resource group        | **az104-rg7** (créer un nouveau) |
-    | Nom du compte de stockage  | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
+    | Nom du compte de stockage  | Nom global unique comprenant entre 3 et 24 caractères alphanumériques |
     | Région                | **(États-Unis) USA Est**  |
     | Performances           | **Standard** (notez l’option Premium) |
     | Redondance            | **Stockage géoredondant** (notez les autres options)|
     | Permettre l’accès en lecture aux données en cas d’indisponibilité régionale | Activer la case |
 
->**Le saviez-vous ?** Vous devez utiliser le niveau de performances Standard pour la plupart des applications. Utilisez le niveau de performances Premium pour les applications d’entreprise ou hautes performances. 
+    >**Le saviez-vous ?** Vous devez utiliser le niveau de performances Standard pour la plupart des applications. Utilisez le niveau de performances Premium pour les applications d’entreprise ou hautes performances. 
 
 1. Sous l’onglet **Avancé**, utilisez les icônes d’information pour en savoir plus sur les choix. Utilisez les valeurs par défaut. 
 
-1. Sous l’onglet **Mise en réseau**, passez en revue les options disponibles, puis sélectionnez **Désactiver l’accès public et utiliser l’accès privé**.
+1. Dans l’onglet **Réseaux**, dans la section **Accès réseau public**, sélectionnez **Désactiver**. Pour restreindre l’accès entrant tout en autorisant l’accès sortant, sélectionnez Désactiver. 
 
 1. Passez en revue l’onglet **Protection des données**. Notez que la stratégie de rétention pour la suppression réversible est par défaut de 7 jours. Notez que vous pouvez activer le contrôle de version des blobs. Acceptez les valeurs par défaut.
 
 1. Passez en revue l’onglet **Chiffrement**. Notez les options de sécurité supplémentaires. Acceptez les valeurs par défaut.
 
-1. Sous l’onglet **Vérifier**, attendez que le processus de validation se termine, puis sélectionnez **Créer**.
+1. Sélectionnez **Examiner et créer**, attendez que le processus de validation se termine, puis sélectionnez **Créer**.
 
 1. Une fois le compte de stockage déployé, sélectionnez **Accéder à la ressource**.
 
 1. Passez en revue le panneau **Vue d’ensemble** et les configurations supplémentaires qui peuvent être modifiées. Il s’agit de paramètres globaux pour le compte de stockage. Notez que le compte de stockage peut être utilisé pour des conteneurs d’objets blob, des partages de fichiers, des files d’attente et des tables.
 
-1. Dans la section **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’accès au réseau public est désactivé.
+1. Dans le panneau **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’**accès au réseau public** est désactivé.
 
-    + Changez le **niveau d’accès public** en **Activé à partir des réseaux virtuels et adresses IP sélectionnés**.
-    + Dans la section **Pare-feu**, cochez la case pour **Ajouter l’adresse IP de votre client**.
-    + Veillez à **Enregistrer** vos modifications. 
+    + Sélectionnez **Gérer** l’**accès réseau public**.
+    + Modifiez l’**accès réseau public** en **Activé**.
+    + Modifiez l’**action par défaut** en **Activer à partir des réseaux sélectionnés**.
+    + Dans la section **Adresses IP**, sélectionnez **Ajouter votre adresse IP cliente**.
+    + **Enregistrez** les changements apportés.
   
-1. Dans la section **Gestion des données**, affichez le panneau **Redondance**. Notez les informations sur les emplacements de votre centre de données principal et de votre centre de données secondaire.
+1. Dans le panneau **Gestion des données**, sélectionnez **Redondance**. Notez les informations sur les emplacements de votre centre de données principal et de votre centre de données secondaire.
 
-1. Dans la section **Gestion des données**, sélectionnez **Gestion du cycle de vie**, puis **Ajouter une règle**.
+1. Dans le panneau **Gestion des données**, sélectionnez **Gestion du cycle de vie**, puis sélectionnez **Ajouter une règle**.
 
     + **Nommez la règle **`Movetocool`. Notez vos options pour limiter l’étendue de la règle.
     
@@ -98,7 +100,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 1. Continuez dans le portail Azure, en utilisant votre compte de stockage.
 
-1. Dans la section **Stockage des données**, cliquez sur **Conteneurs**. 
+1. Dans le panneau **Stockage des données**, sélectionnez **Conteneurs**. 
 
 1. Cliquez sur **+ Conteneur**, puis sur **Créer un conteneur** avec les paramètres suivants :
 
@@ -162,7 +164,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
     | Heure de début | heure actuelle |
     | Date d'expiration | date de demain |
     | Heure d’expiration | heure actuelle |
-    | Adresses IP autorisées | laisser vide |
+    | Adresses IP autorisées | laisser vide |
 
 1. Cliquez sur **Générer une URL et un jeton SAS**.
 
@@ -178,7 +180,7 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 ### Créer un partage de fichiers et charger un fichier
 
-1. Dans le portail Azure, revenez à votre compte de stockage et, dans la section **Stockage de données**, cliquez sur **Partages de fichiers**.
+1. Dans le portail Azure, revenez à votre compte de stockage, puis dans le panneau **Stockage des données**, cliquez sur **Partages de fichiers**.
 
 1. Cliquez sur **+ Partage de fichiers** puis, sous l’onglet **Informations de base**, donnez un nom au partage de fichiers, `share1`. 
 
@@ -220,9 +222,9 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Revenez à votre compte de stockage.
 
-1. Dans la section **Sécurité + mise en réseau**, sélectionnez le panneau **Mise en réseau**.
+1. Dans le panneau **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**.
 
-1. Sélectionnez **Ajouter un réseau virtuel existant**, sélectionnez **vnet1** et le sous-réseau **par défaut**, puis sélectionnez **Ajouter**.
+1. Sélectionnez **Ajouter un réseau virtuel existant**, puis sélectionnez le réseau **vnet1** et le sous-réseau **default**, puis cliquez sur **Ajouter**.
 
 1. Dans la section **Pare-feu**, **supprimez** l’adresse IP de votre machine. Le trafic autorisé doit provenir seulement du réseau virtuel. 
 
