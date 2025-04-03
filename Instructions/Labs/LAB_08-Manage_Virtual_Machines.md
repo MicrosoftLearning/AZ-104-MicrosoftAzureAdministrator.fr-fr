@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Labo\_08\_: Gérer les machines virtuelles"
+  title: 'Labo 08 : Gérer les machines virtuelles'
   module: Administer Virtual Machines
 ---
 
-# Labo 08 : Gérer des machines virtuelles
+# Labo 08 : Gérer des machines virtuelles
 
 ## Présentation du labo
 
@@ -12,7 +12,7 @@ Dans ce labo, vous créez et comparez des machines virtuelles à des groupes de 
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
 ## Scénario du labo
 
@@ -20,7 +20,7 @@ Votre organisation souhaite découvrir le déploiement et la configuration de ma
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Créez une machine virtuelle dans le portail](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201). Créez une machine virtuelle, connectez et installez le rôle serveur web.
 
@@ -32,18 +32,18 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Compétences de tâche
 
-+ Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du portail Azure.
-+ Tâche 2 : gérez la mise à l’échelle des capacités de calcul et de stockage des machines virtuelles.
-+ Tâche 3 : créez et configurez Azure Virtual Machine Scale Sets.
-+ Tâche 4 : mettre à l’échelle Azure Virtual Machine Scale Sets.
++ Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du portail Azure.
++ Tâche 2 : gérez la mise à l’échelle des capacités de calcul et de stockage des machines virtuelles.
++ Tâche 3 : créez et configurez Azure Virtual Machine Scale Sets.
++ Tâche 4 : mettre à l’échelle Azure Virtual Machine Scale Sets.
 + Tâche 5 : Créez une machine virtuelle en utilisant Azure PowerShell (option 1).
-+ Tâche 6 : Créez une machine virtuelle en utilisant l’interface CLI (option 2).
++ Tâche 6 : Créez une machine virtuelle en utilisant l’interface CLI (option 2).
 
 ## Diagramme d’architecture de machines virtuelles Azure
 
 ![Diagramme des tâches d’architecture de machine virtuelle.](../media/az104-lab08-vm-architecture.png)
 
-## Tâche 1 : Déployez des machines virtuelles Azure résilientes aux zones en utilisant le Portail Azure.
+## Tâche 1 : Déployez des machines virtuelles Azure résilientes aux zones en utilisant le Portail Azure.
 
 Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des zones de disponibilité différentes en utilisant le Portail Azure. Les zones de disponibilité offrent le niveau de contrat SLA le plus élevé de durée de bon fonctionnement pour des machines virtuelles à 99,99 %. Pour obtenir ce contrat SLA, vous devez déployer au moins deux machines virtuelles sur différentes zones de disponibilité.
 
@@ -53,7 +53,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
 
 1. Sous l’onglet **Informations de base**, dans le menu déroulant **Zone de disponibilité**, cochez la case à côté **Zone 2**. Cette option doit sélectionner la **Zone 1** et la **Zone 2**.
 
-    >**Remarque** : Cette opération va déployer deux machines virtuelles dans la région sélectionnée, une dans chaque zone. Vous obtenez le contrat SLA de 99,99 % de durée de bon fonctionnement, car vous avez au moins deux machines virtuelles réparties entre au moins deux zones. Dans le cas où vous n’avez besoin que d’une seule machine virtuelle, il est recommandé de toujours déployer la machine virtuelle vers une autre zone.
+    >**Remarque** : Cette opération va déployer deux machines virtuelles dans la région sélectionnée, une dans chaque zone. Vous obtenez le contrat SLA de 99,99 % de durée de bon fonctionnement, car vous avez au moins deux machines virtuelles réparties entre au moins deux zones. Dans le cas où vous n’avez besoin que d’une seule machine virtuelle, il est recommandé de toujours déployer la machine virtuelle vers une autre zone.
 
 1. Sous l’onglet Informations de base, poursuivez la configuration :
 
@@ -66,17 +66,17 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
     | Options de disponibilité | **Zone de disponibilité** |
     | Zone de disponibilité | **Zone 1, 2** (parcourez la note sur l’utilisation de groupes de machines virtuelles identiques) |
     | Type de sécurité | **Standard** |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
+    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Instance Azure Spot | **non cochée** |
     | Taille | **Standard D2s v3** |
     | Nom d’utilisateur | `localadmin` |
     | Mot de passe | **Choisissez un mot de passe sécurisé** |
     | Aucun port d’entrée public | **Aucun** |
-    | Souhaitez-vous utiliser une licence Windows Server existante ? | **Décoché** |
+    | Souhaitez-vous utiliser une licence Windows Server existante ? | **Décoché** |
 
     ![Capture d’écran de la page de création de machine virtuelle.](../media/az104-lab08-create-vm.png)
 
-1. Cliquez sur **Suivant : Disques >**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Cliquez sur **Suivant : Disques >**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Value |
     | --- | --- |
@@ -84,7 +84,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
     | Supprimer avec la machine virtuelle | **vérifié** (par défaut) |
     | Activer la compatibilité avec les disques Ultra | **Décoché** |
 
-1. Cliquez sur **Suivant : Mise en réseau >** prennent les valeurs par défaut, mais n’offrent aucun équilibreur de charge.
+1. Cliquez sur **Suivant : Mise en réseau >** prennent les valeurs par défaut, mais n’offrent aucun équilibreur de charge.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -92,29 +92,29 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
     | Options d’équilibrage de charge | **Aucun** |
 
 
-1. Cliquez sur **Suivant : Gestion >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Cliquez sur **Suivant : Gestion >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Options d'orchestration de patch | **Orchestré par Azure** |  
 
-1. Cliquez sur **Suivant : Monitoring >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Cliquez sur **Suivant : Monitoring >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Diagnostics de démarrage | **Disable** |
 
-1. Cliquez sur **Suivant : Avancé >**, prenez les valeurs par défaut, puis cliquez sur **Vérifier + créer**.
+1. Cliquez sur **Suivant : Avancé >**, prenez les valeurs par défaut, puis cliquez sur **Vérifier + créer**.
 
 1. Après la validation, cliquez sur **Créer**.
 
-    >**Remarque :** Notez que lors du déploiement de la machine virtuelle, la carte réseau, le disque et l’adresse IP publique (si configurée) sont des ressources managées et créées de manière indépendante.
+    >**Remarque :** Notez que lors du déploiement de la machine virtuelle, la carte réseau, le disque et l’adresse IP publique (si configurée) sont des ressources managées et créées de manière indépendante.
 
 1. Attendez la fin du déploiement, puis sélectionnez **Accéder à la ressource**.
 
-   >**Remarque :** Surveillez les messages de **Notification**.
+   >**Remarque :** Surveillez les messages de **Notification**.
 
-## Tâche 2 : Gérez la mise à l’échelle du calcul et du stockage des machines virtuelles.
+## Tâche 2 : Gérez la mise à l’échelle du calcul et du stockage des machines virtuelles.
 
 Dans cette tâche, vous allez mettre à l’échelle une machine virtuelle en ajustant sa taille à une autre référence SKU. Azure offre une souplesse dans la sélection de la taille de machine virtuelle afin que vous puissiez ajuster une machine virtuelle pendant certaines périodes si elle a besoin d’une allocation supérieure (ou inférieure) de calcul et de mémoire. Ce concept s’étend aux disques, où vous pouvez modifier les performances du disque ou augmenter la capacité allouée.
 
@@ -122,7 +122,7 @@ Dans cette tâche, vous allez mettre à l’échelle une machine virtuelle en aj
 
 1. Définissez la taille de la machine virtuelle sur **DS1_v2**, puis cliquez sur **Redimensionner**. Quand vous y êtes invité, confirmez la modification.
 
-    >**Remarque** : Choisissez une autre taille si **DS1_v2 standard** n’est pas disponible. Le redimensionnement est également appelé mise à l’échelle verticale, scale-up ou scale-down.
+    >**Remarque** : Choisissez une autre taille si **DS1_v2 standard** n’est pas disponible. Le redimensionnement est également appelé mise à l’échelle verticale, scale-up ou scale-down.
 
     ![Capture d’écran du redimensionnement de la machine virtuelle.](../media/az104-lab08-resize-vm.png)
 
@@ -140,11 +140,11 @@ Dans cette tâche, vous allez mettre à l’échelle une machine virtuelle en aj
 
 1. Une fois le disque créé, cliquez sur **Détacher** (si nécessaire, faites défiler vers la droite de l’écran pour afficher l’icône de détachement), puis sur **Appliquer**.
 
-    >**Remarque** : Le détachement supprime le disque de la machine virtuelle, mais il le conserve dans le stockage pour une utilisation ultérieure.
+    >**Remarque** : Le détachement supprime le disque de la machine virtuelle, mais il le conserve dans le stockage pour une utilisation ultérieure.
 
 1. Recherchez et sélectionnez `Disks`. Dans la liste des disques, sélectionnez l’objet **vm1-disk1**.
 
-    >**Remarque :** Le panneau **Vue d’ensemble** fournit également des informations sur les performances et l’utilisation du disque.
+    >**Remarque :** Le panneau **Vue d’ensemble** fournit également des informations sur les performances et l’utilisation du disque.
 
 1. Dans le panneau **Paramètres**, sélectionnez **Taille + performances**.
 
@@ -160,7 +160,7 @@ Dans cette tâche, vous allez mettre à l’échelle une machine virtuelle en aj
 
 1. Sélectionnez **Appliquer** pour enregistrer vos modifications. 
 
-    >**Remarque :** Vous avez maintenant créé une machine virtuelle, mis à l’échelle la référence SKU et la taille du disque de données. Dans la tâche suivante, nous utilisons des groupes de machines virtuelles identiques pour automatiser le processus de mise à l’échelle.
+    >**Remarque :** Vous avez maintenant créé une machine virtuelle, mis à l’échelle la référence SKU et la taille du disque de données. Dans la tâche suivante, nous utilisons des groupes de machines virtuelles identiques pour automatiser le processus de mise à l’échelle.
 
 ## Diagramme de l’architecture des groupes de machines virtuelles identiques Azure
 
@@ -172,7 +172,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Dans le Portail Azure, recherchez et sélectionnez `Virtual machine scale sets`, puis dans le panneau **Groupes de machines virtuelles identiques**, cliquez sur **+ Créer**.
 
-1. Sous l’onglet **Informations de base** du volet **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Spot >** :
+1. Sous l’onglet **Informations de base** du volet **Créer un groupe de machines virtuelles identiques**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres), et cliquez sur **Suivant : Spot >** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -184,14 +184,14 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Mode d’orchestration | **Uniforme** |
     | Type de sécurité | **Standard** |
     | Options de scaling | **Vérifiez et prenez les valeurs par défaut**. Nous allons changer cela lors de la prochaine tâche. |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
+    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Exécuter avec la remise Azure Spot | **Décoché** |
     | Taille | **D2s_v3 standard** |
     | Nom d’utilisateur | `localadmin` |
     | Mot de passe | **Choisissez un mot de passe sécurisé**  |
-    | Vous disposez déjà d’une licence Windows Server ? | **Décoché** |
+    | Vous disposez déjà d’une licence Windows Server ? | **Décoché** |
 
-    >**Remarque** : Pour obtenir la liste des régions Azure qui prennent en charge le déploiement de machines virtuelles Windows vers des zones de disponibilité, consultez [Qu’est-ce que Zones de disponibilité dans Azure ?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
+    >**Remarque** : Pour obtenir la liste des régions Azure qui prennent en charge le déploiement de machines virtuelles Windows vers des zones de disponibilité, consultez [Qu’est-ce que Zones de disponibilité dans Azure ?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
     ![Capture d’écran de la page de création d’un groupe de machines virtuelles identiques. ](../media/az104-lab08-create-vmss.png)
 
@@ -199,7 +199,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Sous l’onglet **Disques**, acceptez les valeurs par défaut et cliquez sur **Suivant : Mise en réseau >**.
 
-1. Dans la page **Mise en réseau**, cliquez sur le lien **Créer un réseau virtuel** sous la zone de texte **Réseau virtuel** et créez un réseau virtuel avec les paramètres suivants (conservez les valeurs par défaut pour les autres).  Lorsque vous avez terminé, sélectionnez **OK**.
+1. Sur la page **Mise en réseau**, sélectionnez le lien **Modifier le réseau virtuel**. Apportez quelques modifications. Lorsque vous avez terminé, sélectionnez **OK**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -212,13 +212,13 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Pour la section **Groupe de sécurité réseau de carte réseau**, sélectionnez **Avancé**, puis cliquez sur **Créer** sous la liste déroulante **Configurer un groupe de sécurité réseau**.
 
-1. Dans le panneau **Créer un groupe de sécurité réseau**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) :
+1. Dans le panneau **Créer un groupe de sécurité réseau**, spécifiez les paramètres suivants (en laissant les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom | **vmss1-nsg** |
 
-1. Cliquez sur **Ajouter une règle de trafic entrant** et ajoutez une règle de sécurité entrante avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
+1. Cliquez sur **Ajouter une règle de trafic entrant** et ajoutez une règle de sécurité entrante avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -247,7 +247,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | --- | --- |
     | Nom de l’équilibreur de charge | `vmss-lb` |
 
-    >**Remarque :** Interrompez-vous pendant une minute et passez en revue ce que vous avez effectué. À ce stade, vous avez configuré un groupe de machines virtuelles identiques avec des disques et une mise en réseau. Dans la configuration réseau, vous avez créé un groupe de sécurité réseau et autorisé HTTP. Vous avez également créé un équilibreur de charge avec une adresse IP publique.
+    >**Remarque :** Interrompez-vous pendant une minute et passez en revue ce que vous avez effectué. À ce stade, vous avez configuré un groupe de machines virtuelles identiques avec des disques et une mise en réseau. Dans la configuration réseau, vous avez créé un groupe de sécurité réseau et autorisé HTTP. Vous avez également créé un équilibreur de charge avec une adresse IP publique.
 
 1. Sous l’onglet **Gestion**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
@@ -255,7 +255,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | --- | --- |
     | Diagnostics de démarrage | **Désactiver** |
 
-1. Cliquez sur **Suivant : Intégrité >**.
+1. Cliquez sur **Suivant : Intégrité >**.
 
 1. Sous l’onglet **Intégrité**, passez en revue les paramètres par défaut sans apporter de modifications, puis cliquez sur **Suivant : Avancé >**.
 
@@ -263,7 +263,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
 
 1. Sous l’onglet **Vérifier + Créer**, vérifiez que la validation a réussi, puis cliquez sur **Créer**.
 
-    >**Remarque** : Attendez que le déploiement du groupe de machines virtuelles identiques soit terminé. Cette opération doit prendre environ 5 minutes. Pendant que vous attendez pour passer en revue la [documentation](https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview).
+    >**Remarque** : Attendez que le déploiement du groupe de machines virtuelles identiques soit terminé. Cette opération doit prendre environ 5 minutes. Pendant que vous attendez pour passer en revue la [documentation](https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview).
 
 ## Tâche 4 : Mettez à l’échelle des groupes de machines virtuelles identiques Azure.
 
@@ -271,7 +271,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Sélectionnez **Accéder à la ressource** ou recherchez et sélectionnez le groupe identique **vmss1**.
 
-1. Choisissez **Disponibilité + mise à l’échelle** dans le menu de gauche, puis **Mise à l’échelle**.
+1. Choisissez **Disponibilité + mise à l’échelle** dans le menu de gauche, puis **Mise à l’échelle**.
 
     >**Le saviez-vous ?** Vous pouvez effectuer une **Mise à l’échelle manuelle** ou une **Mise à l’échelle automatique**. Dans des groupes identiques avec un petit nombre d’instances de machine virtuelle, l’augmentation ou la diminution du nombre d’instances (mise à l’échelle manuelle) peut être préférable. Dans des groupes identiques avec un grand nombre d’instances de machine virtuelle, la mise à l’échelle basée sur les métriques (mise à l’échelle automatique personnalisée) peut être plus appropriée.
 
@@ -279,7 +279,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Sélectionnez **Mise à l’échelle automatique personnalisée**. Puis remplacez le **Mode de mise à l’échelle** par **Mise à l’échelle en fonction de la métrique**. Sélectionnez ensuite **Ajouter une règle**.
 
-1. Nous allons créer une règle qui augmente automatiquement le nombre d’instances de machine virtuelle. Cette règle effectue un scale-out quand la charge moyenne du processeur est supérieure à 70 % sur une période de 10 minutes. Lorsque la règle déclenche l’opération, le nombre d’instances de machine virtuelle est augmenté de 50 %.
+1. Nous allons créer une règle qui augmente automatiquement le nombre d’instances de machine virtuelle. Cette règle effectue un scale-out quand la charge moyenne du processeur est supérieure à 70 % sur une période de 10 minutes. Lorsque la règle déclenche l’opération, le nombre d’instances de machine virtuelle est augmenté de 50 %.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -331,9 +331,9 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
 1. Dans la page **vmss1**, sélectionnez **Instances**. Il s’agit de l’emplacement où vous surveillez le nombre d’instances de machine virtuelle.
 
-    >**Remarque :** Si vous souhaitez utiliser Azure PowerShell pour la création de machines virtuelles, essayez la Tâche 5. Si vous souhaitez utiliser l’interface CLI pour créer des machines virtuelles, essayez la Tâche 6.
+    >**Remarque :** Si vous souhaitez utiliser Azure PowerShell pour la création de machines virtuelles, essayez la Tâche 5. Si vous souhaitez utiliser l’interface CLI pour créer des machines virtuelles, essayez la Tâche 6.
 
-## Tâche 5 : créer une machine virtuelle en utilisant Azure PowerShell (option 1)
+## Tâche 5 : créer une machine virtuelle en utilisant Azure PowerShell (option 1)
 
 1. Utilisez l’icône (en haut à droite) pour lancer une session **Cloud Shell**. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
@@ -374,7 +374,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 
     >**Le saviez-vous ?** Lorsque vous utilisez Azure pour arrêter votre machine virtuelle, l’état est *désalloué*. Cela signifie que les adresses IP publiques non statiques sont publiées et que vous cessez de payer les coûts de calcul pour la machine virtuelle.
 
-## Tâche 6 : Créez une machine virtuelle en utilisant l’interface CLI (option 2).
+## Tâche 6 : Créez une machine virtuelle en utilisant l’interface CLI (option 2).
 
 1. Utilisez l’icône (en haut à droite) pour lancer une session **Cloud Shell**. Vous pouvez également directement accéder à `https://shell.azure.com`.
 
