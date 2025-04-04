@@ -119,7 +119,7 @@ Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles per
     | Nom de rôle personnalisé | `Custom Support Request` |
     | Description | `A custom contributor role for support requests.` |
 
-1. Pour les **Autorisations de base**, sélectionnez **Cloner un rôle**. Dans le menu déroulant **Rôle à cloner**, sélectionnez **Contributeur de demande de support**.
+1. Pour les **Autorisations de base**, sélectionnez **Cloner un rôle**. Dans le menu déroulant **Rôle à cloner**, sélectionnez **Collaborateur de demande de support**.
 
     ![Capture d’écran du clonage de rôle.](../media/az104-lab02a-clone-role.png)
 
