@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo\_11\_: Implémenter le monitoring"
+  title: 'Labo 11 : Implémenter le monitoring'
   module: Administer Monitoring
 ---
 
@@ -12,7 +12,7 @@ Dans ce labo, vous allez découvrir Azure Monitor. Vous apprenez à créer une a
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 40 minutes
+## Durée estimée : 40 minutes
 
 ## Scénario du labo
 
@@ -20,7 +20,7 @@ Votre organisation a migré son infrastructure dans Azure. Il est important que 
 
 ## Simulation de labo interactif
 
-Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Implémenter la supervision.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017) Créez un espace de travail Log Analytics et des solutions basées sur l’automatisation Azure. Passez en revue les paramètres de monitoring et de diagnostic pour des machines virtuelles. Passez en revue la fonctionnalité Log Analytics et Azure Monitor. 
 
@@ -30,14 +30,14 @@ Il existe une simulation de labo interactive qui peut vous être utile pour cett
 
 ## Compétences de tâche
 
-+ Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
-+ Tâche 2 : Créez une alerte.
++ Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
++ Tâche 2 : Créez une alerte.
 + Tâche 3 : Configurez des notifications de groupe d’actions.
 + Tâche 4 : Déclenchez une alerte et confirmez son fonctionnement.
 + Tâche 5 : Configurez une règle de traitement des alertes.
-+ Tâche 6 : Utilisez des requêtes de journal Azure Monitor.
++ Tâche 6 : Utilisez des requêtes de journal Azure Monitor.
 
-## Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
+## Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
 
 Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée pour tester les scénarios de supervision.
 
@@ -85,15 +85,15 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. L’installation et la configuration de l’agent de machine virtuelle prennent quelques minutes. Passez à l’étape suivante. 
    
-## Tâche 2 : Créer une alerte
+## Tâche 2 : Créer une alerte
 
 Dans cette tâche, vous créez une alerte relative à la suppression d’une machine virtuelle. 
 
 1. Continuez sur la page **Surveiller**, sélectionnez **Alertes**. 
 
-1. Sélectionnez **+ Créer**, puis **Règle d’alerte**. 
+1. Sélectionnez **+ Créer**, puis **Règle d’alerte**. 
 
-1. Sélectionnez la zone pour le groupe de ressources, puis **Appliquer**. Cette alerte s’applique à toutes les machines virtuelles du groupe de ressources. Vous pouvez également spécifier une machine en particulier. 
+1. Sélectionnez la zone de l’abonnement, puis **Appliquer**. Cette alerte s’applique à toutes les machines virtuelles de l’abonnement. Vous pouvez également spécifier une machine en particulier. 
 
 1. Sélectionnez l’onglet **Condition**, puis le lien **Afficher tous les signaux**.
 
@@ -109,7 +109,7 @@ Dans cette tâche, vous créez une alerte relative à la suppression d’une mac
 
 Dans cette tâche, si l’alerte est déclenchée, envoyez une notification par e-mail à l’équipe des opérations. 
 
-1. Continuez à travailler sur votre alerte. Sélectionnez **Suivant : Actions**, puis sélectionnez **Créer un groupe d’actions**.
+1. Continuez à travailler sur votre alerte. Sélectionnez **Suivant : Actions**, puis sélectionnez **Créer un groupe d’actions**.
 
     >**Le saviez-vous ?** Vous pouvez ajouter jusqu’à cinq groupes d’actions à une règle d’alerte. Les groupes d’actions sont exécutés simultanément, sans ordre spécifique. Plusieurs règles d’alerte peuvent utiliser le même groupe d’actions. 
 
@@ -125,7 +125,7 @@ Dans cette tâche, si l’alerte est déclenchée, envoyez une notification par 
     | Nom du groupe d’actions | `Alert the operations team` (doit être unique dans le groupe de ressources) |
     | Nom d’affichage | `AlertOpsTeam` |
 
-1. Sélectionnez **Suivant : Notifications**, puis entrez les valeurs suivantes pour chaque paramètre.
+1. Sélectionnez **Suivant : Notifications**, puis entrez les valeurs suivantes pour chaque paramètre.
 
     | Paramètre | Valeur |
     |---------|---------|
@@ -134,8 +134,10 @@ Dans cette tâche, si l’alerte est déclenchée, envoyez une notification par 
 
 1. Sélectionnez **E-mail**, puis dans la zone **E-mail**, entrez votre adresse de messagerie. Cliquez ensuite sur **OK**. 
 
-    >**Remarque :** Vous devriez recevoir une notification par e-mail indiquant que vous avez été ajouté à un groupe d’actions. Il peut y avoir quelques minutes de retard, mais c’est le signe que la règle a été déployée.
+    >**Remarque :** Vous devriez recevoir une notification par e-mail indiquant que vous avez été ajouté à un groupe d’actions. Il peut y avoir quelques minutes de retard, mais c’est le signe que la règle a été déployée.
 
+1. Sélectionnez **Vérifier + créer**, puis **Créer**.
+   
 1. Une fois le groupe d’actions créé, passez à l’onglet **Suivant : Détails**, puis entrez les valeurs suivantes pour chaque paramètre.
 
     | Paramètre | Valeur |
@@ -149,7 +151,7 @@ Dans cette tâche, si l’alerte est déclenchée, envoyez une notification par 
 
 Dans cette tâche, vous déclenchez l’alerte et confirmez l’envoi d’une notification. 
 
->**Remarque :** Si vous supprimez la machine virtuelle avant le déploiement de la règle d’alerte, celle-ci risque de ne pas se déclencher. 
+>**Remarque :** Si vous supprimez la machine virtuelle avant le déploiement de la règle d’alerte, celle-ci risque de ne pas se déclencher. 
 
 1. Dans le portail, recherchez et sélectionnez **Machines virtuelles**.
 
@@ -169,7 +171,7 @@ Dans cette tâche, vous déclenchez l’alerte et confirmez l’envoi d’une no
 
 1. Vous devriez avoir trois alertes détaillées qui ont été générées en supprimant **vm0**.
 
-   >**Remarque :** L’envoi de l’e-mail d’alerte et la mise à jour des alertes dans le portail peut prendre quelques minutes. Si vous ne souhaitez pas attendre, passez à la tâche suivante, puis revenez. 
+   >**Remarque :** L’envoi de l’e-mail d’alerte et la mise à jour des alertes dans le portail peut prendre quelques minutes. Si vous ne souhaitez pas attendre, passez à la tâche suivante, puis revenez. 
 
 1. Sélectionnez le nom de l’une des alertes (par exemple, **la machine virtuelle a été supprimée**). Un volet **Détails sur l’alerte** s’affiche pour présenter plus de détails sur l’événement.
 
@@ -179,14 +181,14 @@ Dans cette tâche, vous créez une règle d’alerte pour supprimer les notifica
 
 1. Continuez dans le panneau **Alertes**, sélectionnez **Règles de traitement des alertes**, puis **+ Créer**. 
    
-1. Sélectionnez votre **groupe de ressources**, puis sélectionnez **Appliquer**.
+1. Sélectionnez votre **abonnement**, puis **Appliquer**.
    
-1. Sélectionnez **Suivant : Paramètres de règle**, puis **Supprimer les notifications**.
+1. Sélectionnez **Suivant : Paramètres de règle**, puis **Supprimer les notifications**.
    
-1. Sélectionnez **Suivant : Planification**.
+1. Sélectionnez **Suivant : Planification**.
    
 1. Par défaut, la règle fonctionne tout le temps, sauf si vous la désactivez ou configurez une planification. Vous allez définir une règle pour supprimer des notifications pendant la maintenance de nuit.
-Entrez ces paramètres pour la planification de la règle de traitement des alertes :
+Entrez ces paramètres pour la planification de la règle de traitement des alertes :
 
     | Paramètre | Valeur |
     |---------|---------|
@@ -197,7 +199,7 @@ Entrez ces paramètres pour la planification de la règle de traitement des aler
 
     ![Capture d’écran de la section de planification d’une règle de traitement des alertes](../media/az104-lab11-alert-processing-rule-schedule.png)
 
-1. Sélectionnez **Suivant : Détails**, puis entrez ces paramètres :
+1. Sélectionnez **Suivant : Détails**, puis entrez ces paramètres :
 
     | Paramètre | Valeur |
     |---------|---------|
@@ -207,17 +209,19 @@ Entrez ces paramètres pour la planification de la règle de traitement des aler
 
 1. Sélectionnez **Vérifier + créer** pour valider votre entrée, puis sélectionnez **Créer**.
 
-## Tâche 6 : Utilisez des requêtes de journal Azure Monitor.
+## Tâche 6 : Utilisez des requêtes de journal Azure Monitor.
 
 Dans cette tâche, vous allez utiliser Azure Monitor pour interroger les données capturées à partir de la machine virtuelle.
 
-1. Dans le Portail Azure, recherchez et sélectionnez le panneau `Monitor`, puis cliquez sur **Journaux**.
+1. Dans le Portail Azure, recherchez et sélectionnez `Monitor`, puis cliquez sur **Journaux**.
 
 1. Si nécessaire, fermez l’écran de démarrage. 
 
-1. Sélectionnez une étendue, votre **groupe de ressources**. Sélectionnez **Appliquer**. 
+1. Si nécessaire, sélectionnez une étendue, votre **Abonnement**. Sélectionnez **Appliquer**. 
 
-1. Sous l’onglet **Requêtes**, sélectionnez **Machine virtuelle** (volet de gauche). 
+1. Sous l’onglet **Requêtes**, sélectionnez **Machine virtuelle** (volet de gauche). Vous devrez peut-être rouvrir le panneau.
+
+    ![Capture d’écran de l’onglet Requêtes.](../media/az104-lab11-queries.png)
 
 1. Passez en revue les requêtes disponibles. **Exécutez** (pointez sur la requête) la requête **Compter les pulsations**.
 

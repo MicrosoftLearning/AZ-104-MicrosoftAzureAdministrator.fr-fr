@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo 02b\_: Gérer la gouvernance via Azure Policy"
+  title: 'Labo 02b : Gérer la gouvernance via Azure Policy'
   module: Administer Governance and Compliance
 ---
 
@@ -12,7 +12,7 @@ Dans ce labo, vous apprenez à implémenter les plans de gouvernance de votre or
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
-## Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
 ## Scénario du labo
 
@@ -28,13 +28,13 @@ L’empreinte cloud de votre organisation a considérablement augmenté l’ann�
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Gérez les verrous des ressources](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Ajoutez un verrou de ressource et effectuez des tests pour confirmer.
   
 + [Créez une stratégie Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Créez une stratégie Azure qui limite l’emplacement des ressources. Créez une ressource et vérifiez l’application de la stratégie. 
 
-+ [Gérez la gouvernance via une stratégie Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Créez et attribuez des balises via le Portail Azure. Créez une stratégie Azure qui exige le balisage. Corrigez les ressources non conformes.
++ [Gérez la gouvernance via une stratégie Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Créez et attribuez des balises via le Portail Azure. Créez une stratégie Azure qui exige le balisage. Corrigez les ressources non conformes.
 
 ## Diagramme de l'architecture
 
@@ -42,12 +42,12 @@ Il existe plusieurs simulations de laboratoire interactives qui peuvent vous êt
 
 ## Compétences de tâche
 
-+ Tâche 1 : Créer et attribuer des étiquettes via le portail Azure.
-+ Tâche 2 : Exécutez un balisage via une stratégie Azure Policy.
++ Tâche 1 : Créer et attribuer des étiquettes via le portail Azure.
++ Tâche 2 : Exécutez un balisage via une stratégie Azure Policy.
 + Tâche 3 : Appliquez un balisage via une stratégie Azure Policy.
 + Tâche 4 : Configurez et testez les verrous d’une ressource. 
 
-## Tâche 1 : Attribuer des balises via le portail Azure
+## Tâche 1 : Attribuer des balises via le portail Azure
 
 Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de ressources Azure via le portail Azure. Les balises constituent un composant essentiel d’une stratégie de gouvernance, comme décrit par l’ensemble Microsoft Well-Architected Framework et Cloud Adoption Framework. Les balises peuvent vous permettre d’identifier rapidement les propriétaires de ressources, les dates de coucher de soleil, les contacts de groupe et d’autres paires nom/valeur que votre organisation juge importants. Pour cette tâche, vous affectez une balise identifiant le rôle de ressource (« Infra » pour « Infrastructure »).
 
@@ -63,18 +63,18 @@ Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de 
     | Nom du groupe ressources | `az104-rg2` |
     | Emplacement | **USA Est** |
 
-    >**Remarque :** Pour chaque labo de ce cours, vous allez créer un groupe de ressources. Cela vous permet de localiser et de gérer rapidement vos ressources de labo. 
+    >**Remarque :** Pour chaque labo de ce cours, vous allez créer un groupe de ressources. Cela vous permet de localiser et de gérer rapidement vos ressources de labo. 
 
-1. Sélectionnez **Suivant : Balises** et créez une étiquette.
+1. Sélectionnez **Suivant** et accédez à l’onglet **Balises**. Fournissez des informations pour une nouvelle balise.
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom | `Cost Center` |
-    | Valeur | `000` |
+    | Nom | Centre de coûts |
+    | Valeur | 000 |
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-## Tâche 2 : Exécutez un balisage via une stratégie Azure Policy.
+## Tâche 2 : Exécutez un balisage via une stratégie Azure Policy.
 
 Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une étiquette et sa valeur sur les ressources* au groupe de ressources et évaluer le résultat. Vous pouvez utiliser Azure Policy pour appliquer une configuration et, dans ce cas, la gouvernance dans vos ressources Azure. 
 
@@ -84,9 +84,9 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     ![Capture d’écran de la définition d’une stratégie.](../media/az104-lab02b-policytags.png)
 
-1. Cliquez sur l’entrée représentant la stratégie intégrée **Exiger une balise et sa valeur sur les ressources**. Prenez le temps de passer la définition. 
+1. Recherchez la stratégie intégrée `Require a tag and its value on resources`. Sélectionnez la stratégie et prenez le temps de passer en revue la définition. 
 
-1. Dans le panneau de définition de la stratégie intégrée **Exiger une étiquette et sa valeur sur les ressources**, cliquez sur **Affecter**.
+1. Sélectionnez **Attribuer une stratégie**.
 
 1. Spécifiez l’**Étendue** en cliquant sur le bouton des points de suspension et en sélectionnant les valeurs suivantes. Cliquez sur **Sélectionner** lorsque vous avez terminé. 
 
@@ -95,17 +95,17 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
     | Abonnement | *votre abonnement* |
     | Groupe de ressources | **az104-rg2** |
 
-    >**Remarque** : Vous pouvez affecter des stratégies au niveau du groupe d’administration, de l’abonnement ou du groupe de ressources. Vous avez également la possibilité de spécifier des exclusions, telles que des abonnements individuels, des groupes de ressources ou des ressources. Dans ce scénario, nous voulons que la balise soit sur toutes les ressources du groupe de ressources.
+    >**Remarque** : Vous pouvez affecter des stratégies au niveau du groupe d’administration, de l’abonnement ou du groupe de ressources. Vous avez également la possibilité de spécifier des exclusions, telles que des abonnements individuels, des groupes de ressources ou des ressources. Dans ce scénario, nous voulons que la balise soit sur toutes les ressources du groupe de ressources.
 
 1. Configurez les propriétés **de base** de l’affectation en spécifiant les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom de l’attribution | `Require Cost Center tag with Default value`|
-    | Description | `Require Cost Center tag with default value for all resources in the resource group`|
+    | Nom de l’attribution | Exiger une balise Centre de coûts et sa valeur sur les ressources |
+    | Description | `Require Cost Center tag and its value on all resources in the resource group`|
     | Application de stratégies | activé |
 
-    >**Remarque** : Le **Nom de l’attribution** est automatiquement rempli avec le nom de stratégie que vous avez sélectionné, mais vous pouvez le modifier. La **description** est facultative. Notez que vous pouvez désactiver la stratégie à tout moment. 
+    >**Remarque** : Le **Nom de l’attribution** est automatiquement rempli avec le nom de stratégie que vous avez sélectionné, mais vous pouvez le modifier. La **description** est facultative. Notez que vous pouvez désactiver la stratégie à tout moment. 
 
 1. Cliquez sur **Suivant** et définissez **Paramètres** sur les valeurs suivantes :
 
@@ -116,13 +116,13 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
 1. Cliquez sur **Suivant** et passez en revue l'onglet **Correction**. Laissez la case **Créer une identité managée** non cochée. 
 
-1. Cliquez sur **Vérifier + créer**, puis cliquez sur **Créer**.
+1. Cliquez sur **Vérifier + créer**, puis cliquez sur **Créer**.
 
-    >**Remarque** : Vous allez maintenant vérifier que la nouvelle attribution de stratégie est en vigueur en essayant de créer un compte Stockage Azure dans le groupe de ressources. Vous allez créer le compte de stockage sans ajouter la balise requise. 
+    >**Remarque** : Vous allez maintenant vérifier que la nouvelle attribution de stratégie est en vigueur en essayant de créer un compte Stockage Azure dans le groupe de ressources. Vous allez créer le compte de stockage sans ajouter la balise requise. 
     
-    >**Remarque** : L’application de la stratégie peut prendre entre 5 et 10 minutes.
+    >**Remarque** : L’application de la stratégie peut prendre entre 5 et 10 minutes.
 
-1. Dans le portail, recherchez et sélectionnez `Storage Account`, puis **+ Créer**. 
+1. Dans le portail, recherchez et sélectionnez `Storage Accounts`, puis **+ Créer**. 
 
 1. Sous l’onglet **Informations de base** du panneau **Créer un compte de stockage**, terminez la configuration.
 
@@ -137,7 +137,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     ![Capture d’écran de l’erreur de stratégie non autorisée.](../media/az104-lab02b-policyerror.png) 
 
->**Remarque** : En cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise Centre de coûts avec la valeur Par défaut**. Désolé... Nous n’avons pas pu effectuer le déploiement, car le compte de stockage que vous avez tenté de créer n’avait pas de balise nommée **Centre de coûts** avec sa valeur définie sur **Par défaut**.
+>**Note** : en cliquant sur l’onglet **Erreur brute**, vous trouverez plus d’informations sur l’erreur, notamment le nom de la définition de rôle **Exiger une balise et sa valeurs sur les ressources**. Désolé... Nous n’avons pas pu effectuer le déploiement, car le compte de stockage que vous avez tenté de créer n’avait pas de balise nommée **Centre de coûts** avec sa valeur définie sur **Par défaut**.
 
 ## Tâche 3 : Appliquer l’étiquetage via une stratégie Azure
 
@@ -147,7 +147,7 @@ Dans cette tâche, nous allons utiliser la nouvelle définition de stratégie po
 
 1. Dans la section **Création**, cliquez sur **Affectations**. 
 
-1. Dans la liste des affectations, cliquez sur l’icône des points de suspension sur la ligne représentant l’affectation de stratégie **Exiger une balise Centre de coûts avec la valeur Par défaut** et utilisez l’élément de menu **Supprimer l’affectation** pour supprimer l’affectation.
+1. Dans la liste des affectations, cliquez sur l’icône avec des points de suspension dans la ligne représentant l’affectation de stratégie **Exiger une balise et sa valeur sur les ressources** et utilisez l’élément de menu **Supprimer l’affectation** pour supprimer l’affectation.
 
 1. Cliquez sur **Affecter une stratégie** et spécifiez **l’étendue** en cliquant sur le bouton Points de suspension et en sélectionnant les valeurs suivantes :
 
@@ -166,32 +166,32 @@ Dans cette tâche, nous allons utiliser la nouvelle définition de stratégie po
     | Description | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Application de stratégies | activé |
 
-1. Cliquez deux fois sur **Suivant**, puis définissez **Paramètres** sur les valeurs suivantes :
+1. Cliquez deux fois sur **Suivant**, puis définissez **Paramètres** sur les valeurs suivantes :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Nom de la balise | `Cost Center` |
 
-1. Cliquez sur **Suivant** et, dans l’onglet **Correction**, configurez les paramètres suivants (et conservez les valeurs par défaut des autres) :
+1. Cliquez sur **Suivant** et, dans l’onglet **Correction**, configurez les paramètres suivants (et conservez les valeurs par défaut des autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Créer une tâche de correction | enabled |
     | Stratégie à corriger | **Hériter d’une étiquette du groupe de ressources en cas d’absence** |
 
-    >**Remarque** : Cette définition de stratégie inclut l’effet **Modifier**. Par conséquent, une identité managée est nécessaire. 
+    >**Remarque** : Cette définition de stratégie inclut l’effet **Modifier**. Par conséquent, une identité managée est nécessaire. 
 
     ![Capture d’écran de la page de correction de la stratégie. ](../media/az104-lab02b-policyremediation.png) 
 
-1. Cliquez sur **Vérifier + créer**, puis cliquez sur **Créer**.
+1. Cliquez sur **Vérifier + créer**, puis cliquez sur **Créer**.
 
-    >**Remarque** : Pour vérifier si la nouvelle affectation de stratégie est en vigueur, vous allez créer un autre compte de stockage Azure dans le même groupe de ressources sans ajouter explicitement la balise requise. 
+    >**Remarque** : Pour vérifier si la nouvelle affectation de stratégie est en vigueur, vous allez créer un autre compte de stockage Azure dans le même groupe de ressources sans ajouter explicitement la balise requise. 
     
-    >**Remarque** : L’application de la stratégie peut prendre entre 5 et 10 minutes.
+    >**Remarque** : L’application de la stratégie peut prendre entre 5 et 10 minutes.
 
-1. Recherchez et sélectionnez `Storage Account`, puis cliquez sur **+ Créer**. 
+1. Recherchez et sélectionnez `Storage Account`, puis cliquez sur **+ Créer**. 
 
-1. Sous l’onglet **Informations de base** du volet **Créer un compte de stockage**, vérifiez que vous utilisez le groupe de ressources auquel la stratégie a été appliquée et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut), puis cliquez sur **Vérifier** :
+1. Sous l’onglet **Informations de base** du volet **Créer un compte de stockage**, vérifiez que vous utilisez le groupe de ressources auquel la stratégie a été appliquée et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut), puis cliquez sur **Vérifier** :
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -230,7 +230,7 @@ Dans cette tâche, vous configurez et testez un verrou de ressource. Les verrous
 
     ![Capture d’écran du message d’échec de suppression.](../media/az104-lab02b-failuretodelete.png) 
 
-    >**Remarque :** Vous allez devoir supprimer le verrou si vous envisagez de supprimer le groupe de ressources. 
+    >**Remarque :** Vous allez devoir supprimer le verrou si vous envisagez de supprimer le groupe de ressources. 
     
 ## Nettoyage de vos ressources
 
