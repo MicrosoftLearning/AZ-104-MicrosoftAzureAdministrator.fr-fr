@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo\_09b\_: Implémenter Azure Container Instances"
+  title: 'Labo 09b : Implémenter Azure Container Instances'
   module: Administer PaaS Compute Options
 ---
 
@@ -12,14 +12,14 @@ Dans ce labo, vous découvrez comment implémenter et déployer Azure Container 
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 15 minutes
+## Durée estimée : 15 minutes
 
 ## Scénario du labo
 
 Votre organisation dispose d’une application web qui s’exécute sur une machine virtuelle dans votre centre de données local. L’organisation souhaite déplacer toutes les applications vers le cloud, mais ne veut pas avoir à gérer un grand nombre de serveurs. Vous décidez d’évaluer Azure Container Instances et Docker. 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Déployez Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Créez, configurez et déployez un conteneur Docker avec Azure Container Instances.
   
@@ -31,10 +31,10 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Compétences de tâche
 
-- Tâche 1 : Déployez une instance Azure Container Instances en utilisant une image Docker.
-- Tâche 2 : Testez et vérifiez le déploiement d’une instance Azure Container Instances.
+- Tâche 1 : Déployez une instance Azure Container Instances en utilisant une image Docker.
+- Tâche 2 : Testez et vérifiez le déploiement d’une instance Azure Container Instances.
 
-## Tâche 1 : Déployer une instance Azure Container Instances en utilisant une image Docker
+## Tâche 1 : Déployer une instance Azure Container Instances en utilisant une image Docker
 
 Dans cette tâche, vous allez créer une application web simple en tirant parti d’une image Docker. Docker est une plateforme qui offre la possibilité d’empaqueter et d’exécuter des applications dans des environnements isolés appelés conteneurs. Azure Container Instances fournit l’environnement Compute pour l’image conteneur.
 
@@ -53,29 +53,29 @@ Dans cette tâche, vous allez créer une application web simple en tirant parti 
     | Source d’image | **Images du guide de démarrage rapide** |
     | Image | **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)** |
 
-1. Cliquez sur **Suivant : Mise en réseau >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
+1. Cliquez sur **Suivant : Mise en réseau >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
     | Paramètre | Valeur |
     | --- | --- |
     | Étiquette du nom DNS | tout nom d’hôte DNS unique valide et global |
 
-    >**Remarque** : Votre conteneur sera accessible au public à l’adresse : dns-name-label.region.azurecontainer.io. Si vous recevez un message d’erreur **Étiquette de nom DNS indisponible**, spécifiez une autre valeur.
+    >**Remarque** : Votre conteneur sera accessible au public à l’adresse : dns-name-label.region.azurecontainer.io. Si vous recevez un message d’erreur **Étiquette de nom DNS indisponible**, spécifiez une autre valeur.
 
-1. Cliquez sur **Suivant : Surveillance >** et décochez **Activer les journaux d’instance de conteneur**. 
+1. Cliquez sur **Suivant : Surveillance >** et décochez **Activer les journaux d’instance de conteneur**. 
 
-1. Cliquez sur **Suivant : Avancé >**, vérifiez les paramètres sans apporter de modification.
+1. Cliquez sur **Suivant : Avancé >**, vérifiez les paramètres sans apporter de modification.
 
- 1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation a réussi, puis cliquez sur **Créer**.
+1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation a réussi, puis cliquez sur **Créer**.
 
-    >**Remarque** : Attendez la fin du déploiement. Ce processus prend environ 2 à 3 minutes.
+    >**Remarque** : Attendez la fin du déploiement. Ce processus prend environ 2 à 3 minutes.
 
-    >**Remarque** : Pendant que vous attendez, regardez l’[exemple de code derrière l’application simple](https://github.com/Azure-Samples/aci-helloworld). Pour afficher le code, parcourez le dossier de l’application \\.
+    >**Remarque** : Pendant que vous attendez, regardez l’[exemple de code derrière l’application simple](https://github.com/Azure-Samples/aci-helloworld). Pour afficher le code, parcourez le dossier de l’application \\.
 
-## Tâche 2 : Testez et vérifiez le déploiement d’une instance Azure Container Instances. 
+## Tâche 2 : Testez et vérifiez le déploiement d’une instance Azure Container Instances. 
 
 Dans cette tâche, vous examinez le déploiement de l’instance de conteneur. Par défaut, Azure Container Instances est accessible sur le port 80. Une fois l’instance déployée, vous pouvez accéder au conteneur en tirant parti du nom DNS que vous avez fourni dans la tâche précédente.
 
-1. Dans le volet de déploiement, cliquez sur le lien **Accéder à la ressource**.
+1. Une fois le déploiement terminé, sélectionnez le lien **Accéder à la ressource**.
 
 1. Dans le volet **Vue d’ensemble** de l’instance de conteneur, vérifiez que l’**État** indiqué est **En cours d’exécution**.
 

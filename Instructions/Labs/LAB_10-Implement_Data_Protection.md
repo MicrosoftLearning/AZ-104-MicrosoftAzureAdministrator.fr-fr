@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Labo\_10 : Implémenter la protection des données"
+  title: 'Labo 10 : Implémenter la protection des données'
   module: Administer Data Protection
 ---
 
-# Labo 10 - Implémenter la protection des données
+# Labo 10 - Implémenter la protection des données
 
 ## Présentation du labo    
 
@@ -12,7 +12,7 @@ Dans ce labo, vous découvrez la sauvegarde et la récupération de machines vir
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est** et **USA Ouest**.
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
 ## Scénario du labo
 
@@ -20,25 +20,25 @@ Votre organisation évalue comment sauvegarder et restaurer des machines virtuel
 
 ## Simulation de labo interactif
 
-Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + **[Sauvegardez des machines virtuelles et des fichiers locaux](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**. Créez un coffre Recovery Services et implémentez une sauvegarde de machines virtuelles Azure. Implémentez une sauvegarde de dossier et de dossier local en utilisant l’agent Microsoft Azure Recovery Services. Les sauvegardes locales se trouvent en dehors de l’étendue de ce labo, mais il peut être utile d’afficher ces étapes. 
 
 ## Compétences de tâche
 
-+ Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
-+ Tâche 2 : Créer et configurer un coffre Recovery Services
++ Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
++ Tâche 2 : Créer et configurer un coffre Recovery Services
 + Tâche 3 : Configurez une sauvegarde au niveau d’une machine virtuelle Azure.
 + Tâche 4 : Surveillez Sauvegarde Azure.
 + Tâche 5 : Activez la réplication de machines virtuelles. 
 
-## Durée estimée : 40 minutes
+## Durée estimée : 40 minutes
 
 ## Diagramme de l'architecture
 
 ![Diagramme des tâches d’architecture.](../media/az104-lab10-architecture.png)
 
-## Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
+## Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
 
 Dans cette tâche, vous allez utiliser un modèle pour déployer une machine virtuelle. Cette machine virtuelle sera utilisée pour tester différents scénarios de sauvegarde.
 
@@ -54,7 +54,7 @@ Dans cette tâche, vous allez utiliser un modèle pour déployer une machine vir
 
 1. Recherchez et sélectionnez le fichier **\\Allfiles\\Lab10\\az104-10-vms-edge-template.json**, puis sélectionnez **Ouvrir**.
 
-   >**Remarque :** Prenez un moment pour passer en revue le modèle. Nous déployons un réseau virtuel et une machine virtuelle afin d’illustrer la sauvegarde et la récupération. 
+   >**Remarque :** Prenez un moment pour passer en revue le modèle. Nous déployons un réseau virtuel et une machine virtuelle afin d’illustrer la sauvegarde et la récupération. 
 
 1. **Enregistrez** les changements apportés.
 
@@ -76,9 +76,9 @@ Dans cette tâche, vous allez utiliser un modèle pour déployer une machine vir
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-    >**Remarque :** Attendez que le modèle soit déployé, puis sélectionnez **Accéder à la ressource**. Vous devez disposer d’une machine virtuelle dans un réseau virtuel. 
+    >**Remarque :** Attendez que le modèle soit déployé, puis sélectionnez **Accéder à la ressource**. Vous devez disposer d’une machine virtuelle dans un réseau virtuel. 
 
-## Tâche 2 : Créer et configurer un coffre Recovery Services
+## Tâche 2 : Créer et configurer un coffre Recovery Services
 
 Dans cette tâche, vous allez créer un coffre Recovery Services. Un coffre Recovery Services offre un stockage pour les données de machine virtuelle. 
 
@@ -93,13 +93,13 @@ Dans cette tâche, vous allez créer un coffre Recovery Services. Un coffre Reco
     | Nom du coffre | `az104-rsv-region1` |
     | Région | **USA Est** |
 
-    >**Remarque** : Vérifiez que vous spécifiez la même région dans laquelle vous avez déployé des machines virtuelles dans la tâche précédente.
+    >**Remarque** : Vérifiez que vous spécifiez la même région dans laquelle vous avez déployé des machines virtuelles dans la tâche précédente.
 
     ![Capture d'écran de la voûte des services de récupération.](../media/az104-lab10-create-rsv.png)
 
-1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation réussit, puis cliquez sur **Créer**.
+1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation réussit, puis cliquez sur **Créer**.
 
-    >**Remarque** : Attendez la fin du déploiement. Le déploiement doit prendre quelques minutes. 
+    >**Remarque** : Attendez la fin du déploiement. Le déploiement doit prendre quelques minutes. 
 
 1. Une fois le déploiement terminé, cliquez sur **Accéder à la ressource**.
 
@@ -109,7 +109,7 @@ Dans cette tâche, vous allez créer un coffre Recovery Services. Un coffre Reco
 
 1. Dans le panneau **Configuration de la sauvegarde** , passez en revue les choix pour le **type de réplication stockage**. Conservez le paramètre **Géoredondant** par défaut et fermez le volet.
 
-    >**Remarque** : Ce paramètre peut être configuré uniquement s’il n’existe aucun élément de sauvegarde existant.
+    >**Remarque** : Ce paramètre peut être configuré uniquement s’il n’existe aucun élément de sauvegarde existant.
     
     >**Le saviez-vous ?** L’option Restauration interrégion vous permet de restaurer des données dans une [région secondaire, appariée à Azure](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore). 
 
@@ -123,15 +123,15 @@ Dans cette tâche, vous allez créer un coffre Recovery Services. Un coffre Reco
 
 Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machine virtuelle Azure. Dans le cadre d’une sauvegarde de machine virtuelle, vous devez définir la stratégie de rétention et de sauvegarde qui s’applique à la sauvegarde. Différentes machines virtuelles peuvent se voir affecter des stratégies de rétention et de sauvegarde différentes.
 
-   >**Remarque** : Avant de commencer cette tâche, assurez-vous que le déploiement que vous avez lancé dans la première tâche de ce laboratoire a réussi.
+   >**Remarque** : Avant de commencer cette tâche, assurez-vous que le déploiement que vous avez lancé dans la première tâche de ce laboratoire a réussi.
 
 1. Dans le volet du coffre Recovery Services, cliquez sur **Vue d’ensemble**, puis sur **+ Sauvegarde**.
 
-1. Dans le panneau **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
+1. Dans le panneau **Objectif de la sauvegarde**, spécifiez les paramètres suivants :
 
     | Paramètres | Valeur |
     | --- | --- |
-    | Où s'exécute votre charge de travail ? | **Azure** (notez vos autres options) |
+    | Où s'exécute votre charge de travail ? | **Azure** (notez vos autres options) |
     | Que souhaitez-vous sauvegarder ? | **Machine virtuelle** (notez vos autres options) |
 
 1. Sélectionnez **Sauvegarder**.
@@ -140,7 +140,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
 1. Dans **Stratégie de sauvegarde**, sélectionnez **Créer une stratégie**.
 
-1. Définissez une nouvelle stratégie de sauvegarde avec les paramètres suivants (laissez les autres avec leur valeur par défaut) :
+1. Définissez une nouvelle stratégie de sauvegarde avec les paramètres suivants (laissez les autres avec leur valeur par défaut) :
 
     | Paramètre | Valeur |
     | ---- | ---- |
@@ -152,21 +152,23 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
 
     ![Capture d’écran de la page de stratégie de sauvegarde.](../media/az104-lab10-backup-policy.png)
 
-1. Cliquez sur **OK** pour créer la stratégie, puis, dans la section **Machines virtuelles**, sélectionnez **Ajouter**.
+1. Cliquez sur **OK** pour créer la stratégie, puis, dans la section **Machines virtuelles**, sélectionnez **Ajouter** (faites défiler vers le bas).
 
 1. Dans le volet **Sélectionner des machines virtuelles**, sélectionnez **az-104-10-vm0**, cliquez sur **OK**, puis, de retour dans le volet **Sauvegarde**, cliquez sur **Activer la sauvegarde**.
 
-    >**Remarque** : Attendez que la sauvegarde soit activée. Cette opération doit prendre environ 2 minutes.
+    >**Remarque** : Attendez que la sauvegarde soit activée. Cette opération doit prendre environ 2 minutes.
 
+1. Une fois le déploiement terminé, sélectionnez **Accéder à la ressource**.
+   
 1. Dans la section **Éléments protégés**, cliquez sur **Éléments de sauvegarde**, puis sur l’entrée de **Machine virtuelle Azure**.
 
 1. Sélectionnez le lien **Afficher les détails** pour **az104-10-vm0**, puis passez en revue les valeurs des entrées **Prévérification de sauvegarde** et **État de la dernière sauvegarde**.
 
-    >**Remarque :** Notez que la sauvegarde est en attente.
+    >**Remarque :** Notez que la sauvegarde est en attente.
     
 1. Sélectionnez **Sauvegarder maintenant**, acceptez la valeur par défaut dans la liste déroulante **Conserver la sauvegarde jusqu’au**, puis cliquez sur **OK**.
 
-    >**Remarque** : N’attendez pas que la sauvegarde se termine. Passez à la tâche suivante.
+    >**Remarque** : N’attendez pas que la sauvegarde se termine. Passez à la tâche suivante.
 
 ## Tâche 4 : Surveillez Sauvegarde Azure.
 
@@ -187,7 +189,7 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
 
 1. Sélectionnez **Créer**.
 
-    >**Remarque** : Attendez la fin du déploiement. Le processus prend environ une minute.
+    >**Remarque** : Attendez la fin du déploiement. Le processus prend environ une minute.
 
 1. Recherchez et sélectionnez votre coffre Recovery Services.
 
@@ -214,7 +216,7 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
 
 1. Recherchez l’opération de sauvegarde de la machine virtuelle **az104-10-vm0**. 
 
-1. Passez en revue les détails du travail de sauvegarde.
+1. **Affichez les détails** (faites défiler vers la droite pour le lien) du travail de sauvegarde.
 
 ## Tâche 5 : Activer la réplication des machines virtuelles
 
@@ -229,11 +231,11 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
     | Nom du coffre | `az104-rsv-region2` |
     | Région | **USA Ouest** |
 
-    >**Remarque** : Vérifiez que vous spécifiez une région **différente** de celle de la machine virtuelle.
+    >**Remarque** : Vérifiez que vous spécifiez une région **différente** de celle de la machine virtuelle.
 
-1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation réussit, puis cliquez sur **Créer**.
+1. Cliquez sur **Vérifier + Créer**, vérifiez que la validation réussit, puis cliquez sur **Créer**.
 
-    >**Remarque** : Attendez la fin du déploiement. Le déploiement doit prendre quelques minutes. 
+    >**Remarque** : Attendez la fin du déploiement. Le déploiement doit prendre quelques minutes. 
 
 1. Recherchez et sélectionnez la machine virtuelle `az104-10-vm0`.
 
@@ -243,24 +245,15 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
 
 1. Sous l’onglet **Informations de base**, notez la **Région cible**.
 
-1. Passez à l’onglet **Paramètres avancés**. Nous avons effectué des sélections de ressources pour vous. Il est important de les examiner. 
+1. Sélectionnez **Suivant : Paramètres avancés**. Les sélections de ressources ont été effectuées pour vous. 
 
-1. Vérifiez vos paramètres d’abonnement, de groupe de ressources de machine virtuelle, de réseau virtuel et de disponibilité (prenez les valeurs par défaut).
+1. Faites défiler vers le bas et **créez** le compte Automation. 
 
-1. Dans **Paramètres de stockage**, sélectionnez **Afficher les détails**.
-
-    | Paramètre | Valeur |
-    | ---- | ---- |
-    | Attrition pour la machine virtuelle | **Attrition normale**  |
-    | Compte de stockage de cache | **(nouveau) xxx**  |
-
-   >**Remarque :** Il est important que ces deux paramètres soient renseignés. Sinon, la validation échoue. Si les valeurs ne sont pas présentes, essayez d’actualiser la page. Si cela ne fonctionne pas, créez un compte de stockage vide, puis revenez à cette page.
-
-1. Dans **Paramètres de réplication**, sélectionnez **Afficher les détails**. Notez que le coffre de vos ressources de récupération dans la région 2 a été automatiquement sélectionné.
+   >**Note :** il est important que les paramètres soient renseignés. Sinon, la validation échoue. 
 
 1. Sélectionnez **Examiner + démarrer la réplication**, puis **Activer la réplication**.
 
-    >**Remarque** : L’activation de la réplication prend entre 10 et 15 minutes. Regardez les messages de notification dans le coin supérieur droit du portail. Pendant que vous attendez, vous pouvez examiner des liens de formation auto-rythmée à la fin de cette page.
+    >**Remarque** : L’activation de la réplication prend entre 10 et 15 minutes. Regardez les messages de notification dans le coin supérieur droit du portail. Pendant que vous attendez, vous pouvez examiner des liens de formation auto-rythmée à la fin de cette page.
     
 1. Une fois la réplication terminée, recherchez et localisez votre coffre Recovery Services, **az104-rsv-region2**. Vous devrez peut-être **actualiser** la page. 
 
@@ -293,7 +286,7 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
 + [Protéger vos machines virtuelles en utilisant Sauvegarde Azure](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Utilisez la sauvegarde Azure pour vous aider à protéger des serveurs locaux, des machines virtuelles, un SQL Server, des partages de fichiers Azure et d’autres charges de travail.
-+ [Protégez votre infrastructure Azure avec Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Assurez la reprise d’activité de votre infrastructure Azure en personnalisant la réplication, le basculement et la restauration automatique des machines virtuelles Azure avec Azure Site Recovery.
++ [Protégez votre infrastructure Azure avec Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Assurez la reprise d’activité de votre infrastructure Azure en personnalisant la réplication, le basculement et la restauration automatique des machines virtuelles Azure avec Azure Site Recovery.
 
 ## Points clés
 

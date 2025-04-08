@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Labo\_09a\_: Implémenter Web Apps"
+  title: 'Labo 09a : Implémenter Web Apps'
   module: Administer PaaS Compute Options
 ---
 
-# Labo 09a : Implémenter Web Apps
+# Labo 09a : Implémenter Web Apps
 
 
 ## Présentation du labo
@@ -13,7 +13,7 @@ Dans ce labo, vous allez découvrir les applications web Azure. Vous apprenez à
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais notez que les étapes sont écrites de façon à utiliser USA Est.
 
-## Durée estimée : 20 minutes
+## Durée estimée : 20 minutes
 
 ## Scénario du labo
 
@@ -21,7 +21,7 @@ Votre organisation s’intéresse aux applications web Azure pour l’hébergeme
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
 
 + [Créez une application web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Créez une application Web qui exécute un conteneur Docker.
     
@@ -33,13 +33,13 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Compétences de tâche
 
-+ Tâche 1 : Créer et configurer une application web Azure.
-+ Tâche 2 : Créez et configurez un emplacement de déploiement.
-+ Tâche 3 : Configurer les paramètres du déploiement de l’application web.
++ Tâche 1 : Créer et configurer une application web Azure.
++ Tâche 2 : Créez et configurez un emplacement de déploiement.
++ Tâche 3 : Configurer les paramètres du déploiement de l’application web.
 + Tâche 4 : Échangez des emplacements de déploiement.
 + Tâche 5 : Configurez et testez la mise à l’échelle automatique de l’application web Azure.
 
-## Tâche 1 : Créer et configurer une application web Azure
+## Tâche 1 : Créer et configurer une application web Azure
 
 Dans cette tâche, vous créez une application web Azure. Azure App Services est une solution PaaS (Platform As a Service) pour les applications web, mobiles et autres applications web. Les applications web Azure font partie d’Azure App Services hébergeant la plupart des environnements d’exécution, tels que PHP, Java et .NET. Le plan App Service que vous sélectionnez détermine le calcul, le stockage et les fonctionnalités de l’application web. 
 
@@ -49,7 +49,7 @@ Dans cette tâche, vous créez une application web Azure. Azure App Services est
 
 1. Sélectionnez **+ Créer**, dans le menu déroulant **Application web**. Examinez les autres choix. 
 
-1. Sous l’onglet **Informations de base** du panneau **Créer une application web**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
+1. Sous l’onglet **Informations de base** du panneau **Créer une application web**, spécifiez les paramètres suivants (laissez les valeurs par défaut des autres paramètres) :
 
     | Paramètre | Valeur |
     | --- | ---|
@@ -60,26 +60,24 @@ Dans cette tâche, vous créez une application web Azure. Azure App Services est
     | Pile d’exécution | **PHP 8.2** |
     | Système d’exploitation | **Linux** |
     | Région | **USA Est** |
-    | Plans tarifaires | **Premium V3 P1V3** |
+    | Plans tarifaires | **Premium V3 P1V3** |
     | Redondance de zone | acceptez les valeurs par défaut |
 
  1. Cliquez sur **Vérifier et créer**, puis sur **Créer**.
 
-    >**Remarque** : Attendez que l’application web soit créée avant de passer à la tâche suivante. Ce processus prend environ une minute.
+    >**Remarque** : Attendez que l’application web soit créée avant de passer à la tâche suivante. Ce processus prend environ une minute.
     
-    >**Remarque** : si le déploiement échoue, passez à une autre région et réessayez. Par exemple, basculez vers **USA Est 2**. 
+    >**Remarque** : si le déploiement échoue, passez à une autre région et réessayez. Cela est dû aux quotas dans différentes régions.  
 
 1. Une fois le déploiement terminé, sélectionnez **Accéder à la ressource**.
 
-## Tâche 2 : Créer et configurer un emplacement de déploiement
+## Tâche 2 : Créer et configurer un emplacement de déploiement
 
 Dans cette tâche, vous allez créer un emplacement de déploiement de transit. Les emplacements de déploiement vous permettent d’effectuer des tests avant de rendre votre application accessible au public (ou à vos utilisateurs finaux). Une fois que vous avez effectué les tests, vous pouvez échanger l’emplacement du développement ou de préproduction avec l’emplacement de production. De nombreuses organisations utilisent des emplacements pour effectuer des tests de préproduction. En outre, de nombreuses organisations exécutent plusieurs emplacements pour chaque application (par exemple, développement, AQ, test et production).
 
 1. Dans le volet de l’application web nouvellement déployée, cliquez sur le lien **Domaine par défaut** pour afficher la page web par défaut dans un nouvel onglet du navigateur.
 
 1. Fermez le nouvel onglet du navigateur puis, dans le portail Azure, dans la section **Déploiement** du volet de l’application web, cliquez sur **Emplacements de déploiement**.
-
-    >**Remarque** : L’application web, à ce stade, a un emplacement de déploiement unique intitulé **PRODUCTION**.
 
 1. Cliquez sur **Ajouter un emplacement**, puis ajoutez un nouvel emplacement avec les paramètres suivants :
 
@@ -88,11 +86,13 @@ Dans cette tâche, vous allez créer un emplacement de déploiement de transit. 
     | Nom | `staging` |
     | Cloner les paramètres à partir de | **Ne pas cloner les paramètres**|
 
-1. Sélectionnez **Ajouter**.
+1. Sélectionnez **Ajouter** pour créer l’emplacement.
 
-1. De retour dans le volet **Emplacements de déploiement** de l’application web, cliquez sur l’entrée représentant l’emplacement de préproduction que vous venez de créer.
+1. Actualisez la page pour afficher les emplacements de production et de préproduction. 
 
-    >**Remarque** : Cette opération va ouvrir le panneau affichant les propriétés de l’emplacement de préproduction.
+1. Sélectionnez l’entrée représentant l’emplacement de préproduction nouvellement créé.
+
+    >**Remarque** : Cette opération va ouvrir le panneau affichant les propriétés de l’emplacement de préproduction.
 
 1. Passez en revue le panneau de l’emplacement de préproduction et notez que son URL diffère de celle affectée à l’emplacement de production.
 
@@ -102,7 +102,7 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement d’app
 
 1. Dans l’emplacement de préproduction, sélectionnez **Centre de déploiement**, puis **Paramètres**.
 
-    >**Remarque :** Vérifiez que vous êtes sur le volet de l’emplacement de préproduction (au lieu de l’emplacement de production).
+    >**Remarque :** Vérifiez que vous êtes sur le volet de l’emplacement de préproduction (au lieu de l’emplacement de production).
     
 1. Dans la liste déroulante **Source**, sélectionnez **Git externe**. Examinez les autres choix. 
 
@@ -116,9 +116,9 @@ Dans cette tâche, vous allez configurer les paramètres de déploiement d’app
 
 1. Sélectionnez le lien de **domaine par défaut**, puis ouvrez l’URL dans un nouvel onglet. 
 
-1. Vérifiez que l’emplacement de préproduction affiche **Hello World**.
+1. Vérifiez que l’emplacement de préproduction affiche **Hello World**. 
 
->**Remarque :** Ce déploiement peut prendre une minute. Veillez à **actualiser** la page de l’application.
+>**Remarque :** Ce déploiement peut prendre une minute. Veillez à **actualiser** la page de l’application.
 
 ## Tâche 4 : Échanger des emplacements de déploiement
 
@@ -126,13 +126,15 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Revenez au panneau **Emplacements de déploiements**, puis sélectionnez **Échanger**.
 
-1. Examinez les paramètres par défaut et cliquez sur **Commencer l’échange**.
+1. Examinez les paramètres par défaut et cliquez sur **Commencer l’échange**. Attendez la notification indiquant que l’échange est terminé.
 
-1. Dans le panneau **Vue d’ensemble** de l’application web, sélectionnez le lien **Domaine par défaut** pour afficher la page d’accueil du site web.
+1. Revenez à la page d’accueil du portail. Vous devez disposer à la fois d’une application web de production et de l’emplacement de préproduction.
 
-1. Vérifiez que la page web de production affiche **Hello World !** .
+1. Sélectionnez l’application web Azure App Service et, dans le panneau **Vue d’ensemble** de l’application web, sélectionnez le lien **Domaine par défaut** pour afficher la page d’accueil du site web.
 
-    >**Remarque :** Copiez l’**URL** de domaine par défaut. Vous en aurez besoin pour le test de charge dans la tâche suivante. 
+1. Vérifiez que la page web de production affiche désormais **Hello World!** .
+
+    >**Remarque :** Copiez l’**URL** de domaine par défaut. Vous en aurez besoin pour le test de charge dans la tâche suivante. 
 
 ## Tâche 5 : Configurer et tester la mise à l’échelle automatique de l’application web Azure
 
@@ -140,7 +142,7 @@ Dans cette tâche, vous allez configurer la mise à l’échelle automatique de 
 
 1. Dans la section **Paramètres**, sélectionnez **Scale-out (plan App Service)**.
 
-    >**Remarque :** Vérifiez que vous travaillez sur l’emplacement de production et non sur l’emplacement de préproduction.  
+    >**Remarque :** Vérifiez que vous travaillez sur l’emplacement de production et non sur l’emplacement de préproduction.  
 
 1. Dans la section **Mise à l’échelle**, sélectionnez **Automatique**. Examinez l’option **Basée sur les règles**. La mise à l’échelle basée sur des règles peut être configurée pour différentes métriques d’application. 
 
@@ -159,15 +161,17 @@ Dans cette tâche, vous allez configurer la mise à l’échelle automatique de 
 
 1. Attendez que le test de charge soit créé, puis sélectionnez **Accéder à la ressource**.
 
-1. Dans la **vue d’ensemble** | **Ajouter des requêtes HTTP**, sélectionnez **Créer**.
+1. Dans **Vue d’ensemble** | **Créer en ajoutant des requêtes HTTP**, sélectionnez **Créer**.
 
-1. Sous l’onglet **Plan de test**, cliquez sur **Ajouter une demande**. Dans le **champ URL**, collez l’URL de votre **Domaine par défaut**. Vérifiez la mise en forme et assurez-vous qu’elle commence par **https://**.
+1. Sous l’onglet **Plan de test**, cliquez sur **Ajouter une demande**. Dans le **champ URL**, collez l’URL de votre **Domaine par défaut**. Vérifiez la mise en forme et assurez-vous qu’elle commence par **https://**. Sélectionnez **Ajouter** pour enregistrer vos changements. 
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-    >**Remarque :** La création du test peut prendre quelques minutes. 
+    >**Remarque :** La création du test peut prendre quelques minutes. Surveillez les notifications.
 
-1. Passez en revue les résultats des tests, notamment les **utilisateurs virtuels**, le **temps de réponse** et les **requêtes/seconde**.
+1. Accédez au test (il est répertorié sur la page d’accueil). 
+
+1. Actualisez et passez en revue les métriques en temps réel, notamment les **utilisateurs virtuels**, le **temps de réponse** et les **requêtes/seconde**.
 
 1. Sélectionnez **Arrêter** pour terminer l’exécution du test. Vous n’avez pas besoin d’attendre que le test soit terminé. 
 
