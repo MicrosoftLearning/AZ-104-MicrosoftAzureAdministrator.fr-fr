@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Labo\_04\_: Implémenter des réseaux virtuels"
+  title: 'Labo 04 : Implémenter des réseaux virtuels'
   module: Implement Virtual Networking
 ---
 
-# Labo 04 : Implémenter des réseaux virtuels
+# Labo 04 : Implémenter des réseaux virtuels
 
 ## Présentation du labo
 
@@ -12,7 +12,7 @@ Ce labo est le premier de trois labos qui sont axés sur la mise en réseau virt
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
 ## Scénario du labo 
 
@@ -24,7 +24,7 @@ Le réseau virtuel **ManufacturingVnet** contient des systèmes pour les opérat
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Sécuriser le trafic réseau](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Créer une machine virtuelle, un réseau virtuel et un groupe de sécurité réseau. Ajouter des règles de groupe de sécurité réseau pour autoriser et interdire le trafic.
   
@@ -44,12 +44,12 @@ Ces réseaux virtuels et ces sous-réseaux sont structurés de manière à prend
 
 ## Compétences de tâche
 
-+ Tâche 1 : Créer un réseau virtuel avec des sous-réseaux en utilisant le portail.
-+ Tâche 2 : Créer un réseau virtuel et des sous-réseaux en utilisant un modèle.
++ Tâche 1 : Créer un réseau virtuel avec des sous-réseaux en utilisant le portail.
++ Tâche 2 : Créer un réseau virtuel et des sous-réseaux en utilisant un modèle.
 + Tâche 3 : Créer et configurer la communication entre un groupe de sécurité d’application et un groupe de sécurité réseau.
 + Tâche 4 : Configurer des zones Azure DNS publiques et privées.
   
-## Tâche 1 : Créer un réseau virtuel avec des sous-réseaux en utilisant le portail
+## Tâche 1 : Créer un réseau virtuel avec des sous-réseaux en utilisant le portail
 
 L’organisation prévoit une forte croissance pour les services de base. Dans cette tâche, vous créez le réseau virtuel et les sous-réseaux associés pour prendre en charge les ressources existantes et la croissance prévue. Dans cette tâche, vous allez utiliser le portail Azure. 
 
@@ -71,7 +71,7 @@ L’organisation prévoit une forte croissance pour les services de base. Dans c
 
     |  **Option**         | **Valeur**            |
     | ------------------ | -------------------- |
-    | Espace d’adressage IPv4 | Remplacez l’espace d’adressage IPv4 prérempli par `10.20.0.0/16` (séparez les entrées)  |
+    | Espace d’adressage IPv4 | Remplacez l’espace d’adressage IPv4 prérempli par `10.20.0.0/16` (séparez les entrées)  |
 
 1. Sélectionnez **+ Ajouter un sous-réseau**. Renseignez les informations de nom et d’adresse pour chaque sous-réseau. Veillez à sélectionner **Ajouter** pour chaque nouveau sous-réseau. Veillez à supprimer le sous-réseau par défaut, avant ou après avoir créé les autres sous-réseaux.
 
@@ -84,7 +84,7 @@ L’organisation prévoit une forte croissance pour les services de base. Dans c
     |                        | Adresse de début     | `10.20.20.0`        |
     |                        | Taille                 | `/24` |
 
-    >**Remarque :** Chaque réseau virtuel doit avoir au moins un sous-réseau. Rappelez-vous que cinq adresses IP seront toujours réservées : prenez donc cela en compte dans votre planification. 
+    >**Remarque :** Chaque réseau virtuel doit avoir au moins un sous-réseau. Rappelez-vous que cinq adresses IP seront toujours réservées : prenez donc cela en compte dans votre planification. 
 
 1. Pour terminer la création de CoreServicesVnet et des sous-réseaux associés, sélectionnez **Vérifier + créer**.
 
@@ -102,7 +102,7 @@ L’organisation prévoit une forte croissance pour les services de base. Dans c
 
 1. Avant de continuer, vérifiez que vous disposez du fichier **template.json**. Vous allez utiliser ce modèle pour créer le réseau manufacturingVnet dans la tâche suivante. 
  
-## Tâche 2 : Créer un réseau virtuel et des sous-réseaux en utilisant un modèle
+## Tâche 2 : Créer un réseau virtuel et des sous-réseaux en utilisant un modèle
 
 Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-réseaux associés. L’organisation prévoit la croissance des bureaux associés à la fabrication : les sous-réseaux sont donc dimensionnés pour la croissance attendue. Pour cette tâche, vous utilisez un modèle pour créer les ressources. 
 
@@ -126,11 +126,11 @@ Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-
 
 1. Changez toutes les occurrences de **10.20.20.0/24** en `10.30.21.0/24`.
 
-1. Passez en revue le fichier et vérifiez que tout est correct.
+1. Passez en revue le fichier et vérifiez que tout est correct. Utilisez le diagramme d’architecture pour les noms de ressources et les adresses IP. 
 
 1. Veillez à **Enregistrer** vos modifications.
 
->**Remarque :** Un fichier de modèle terminé se trouve dans le répertoire des fichiers du labo. 
+>**Remarque :** Un fichier de modèle terminé se trouve dans le répertoire des fichiers du labo. 
 
 ### Apporter des modifications au fichier de paramètres
 
@@ -144,17 +144,23 @@ Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-
    
 ### Déployer le modèle personnalisé
 
-1. Dans le portail, recherchez et sélectionnez **Déployer un modèle personnalisé**.
+1. Dans le portail, recherchez et sélectionnez `Deploy a custom template`.
 
 1. Sélectionnez **Créer votre propre modèle dans l’éditeur**, puis **Charger le fichier**.
 
 1. Sélectionnez le fichier **templates.json** avec vos modifications liées à la fabrication, puis sélectionnez **Enregistrer**.
 
+1. Sélectionnez **Modifier le modèle**, puis **Charger le fichier**.
+
+1. Sélectionnez le fichier **parameters.json** avec vos modifications liées à la fabrication, puis sélectionnez **Enregistrer**.
+
+1. Vérifiez que votre groupe de ressources **az104-rg4** est sélectionné. 
+
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
 1. Attendez que le modèle soit déployé, puis vérifiez (dans le portail) que le réseau virtuel et les sous-réseaux liés à la fabrication ont bien été créés.
 
->**Remarque :** Si vous devez effectuer plusieurs déploiements, il se peut que certaines ressources aient été créées correctement et que le déploiement échoue. Vous pouvez supprimer manuellement ces ressources et réessayer. 
+>**Remarque :** Si vous devez effectuer plusieurs déploiements, il se peut que certaines ressources aient été créées correctement et que le déploiement échoue. Vous pouvez supprimer manuellement ces ressources et réessayer. 
    
 ## Tâche 3 : Créer et configurer la communication entre un groupe de sécurité d’application et un groupe de sécurité réseau
 
@@ -175,7 +181,7 @@ Dans cette tâche, nous créons un groupe de sécurité d’application et un gr
 
 1. Cliquez sur **Vérifier + créer** puis, après la validation, cliquez sur **Créer**.
 
->**Remarque :** à ce stade, vous associeriez l’ASG à une ou plusieurs machines virtuelles. Ces machines seront affectées par la règle NSG entrante que vous créerez dans la tâche suivante.  
+>**Remarque :** à ce stade, vous associeriez l’ASG à une ou plusieurs machines virtuelles. Ces machines seront affectées par la règle NSG entrante que vous créerez dans la tâche suivante.  
 
 ### Créer le groupe de sécurité réseau et l’associer à CoreServicesVnet
 
@@ -254,11 +260,11 @@ Dans cette tâche, vous allez créer et configurer des zones DNS publiques et pr
 
 ### Configurer une zone DNS publique
 
-Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public. Par exemple, si vous avez acheté le nom de domaine contoso.xyz auprès d’un bureau d’enregistrement de noms de domaine, vous pouvez configurer Azure DNS pour héberger le domaine `contoso.com` et résoudre www.contoso.xyz en l’adresse IP de votre serveur web ou de votre application web.
+Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public. Par exemple, si vous avez acheté le nom de domaine contoso.xyz auprès d’un bureau d’enregistrement de noms de domaine, vous pouvez configurer Azure DNS pour héberger le domaine `contoso.com` et résoudre www.contoso.xyz en l’adresse IP de votre serveur web ou de votre application web.
 
 1. Dans le portail, recherchez et sélectionnez `DNS zones`.
 
-1. Sélectionnez **+ Créer**.
+1. Sélectionnez **+ Créer**.
 
 1. Configurez l’onglet **Informations de base**.
 
@@ -275,35 +281,35 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre 
 
 1. Dans le panneau **Vue d’ensemble**, notez les noms des quatre serveurs de noms Azure DNS affectés à la zone. **Copiez** une des adresses de serveur de noms. Vous en aurez besoin à une étape ultérieure. 
   
-1. Sélectionnez **+ Jeu d’enregistrements**. Vous ajoutez un enregistrement de liaison de réseau virtuel pour chaque réseau virtuel qui nécessite la prise en charge de la résolution de noms privés.
+1. Sélectionnez **+ Jeu d’enregistrements**. **Ajoutez** un enregistrement de liaison de réseau virtuel pour chaque réseau virtuel qui nécessite la prise en charge de la résolution de noms privés.
 
     | Propriété | Valeur    |
     |:---------|:---------|
     | Nom | **www** |
     | Type | **A** |
     | TTL | **1** |
-    | Adresse IP | **10.1.1.4** |
+    | Adresse IP | **10.1.1.4** |
 
->**Remarque :**  Dans un scénario réel, vous allez entrer l’adresse IP publique de votre serveur web.
+>**Remarque :**  Dans un scénario réel, vous allez entrer l’adresse IP publique de votre serveur web.
 
-1. Sélectionnez **OK**, puis vérifiez que **contoso.com** a un jeu d’enregistrements A nommé **www**.
+1. Sélectionnez **OK**, puis vérifiez que votre domaine a un jeu d’enregistrements A nommé **www**.
 
-1. Ouvrez une invite de commandes et exécutez la commande suivante :
+1. Ouvrez une invite de commandes et exécutez la commande suivante : Si vous avez modifié le nom de domaine, effectuez un ajustement. 
 
    ```sh
    nslookup www.contoso.com <name server name>
    ```
 1. Vérifiez que le nom d’hôte www.contoso.com est résolu en l’adresse IP que vous avez fournie. Cela confirme que la résolution de noms fonctionne correctement.
 
-### Configurer une zone DNS privée
+### Configurer une zone DNS privée
 
 Une zone DNS privée fournit des services de résolution de noms au sein de réseaux virtuels. Une zone DNS privée est accessible seulement depuis les réseaux virtuels auxquels elle est liée et n’est pas accessible depuis Internet. 
 
 1. Dans le portail, recherchez et sélectionnez `Private dns zones`.
 
-1. Sélectionnez **+ Créer**.
+1. Sélectionnez **+ Créer**.
 
-1. Dans l’onglet **De base** de Créer une zone DNS privée, entrez les informations indiquées dans le tableau ci-dessous :
+1. Dans l’onglet **De base** de Créer une zone DNS privée, entrez les informations indiquées dans le tableau ci-dessous :
 
     | Propriété | Valeur    |
     |:---------|:---------|
@@ -327,16 +333,16 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
 
 1. Sélectionnez **Créer** et attendez que le lien soit créé. 
 
-1. Dans le panneau **Gestion des DNS**, sélectionnez **+ Recordsets**. Vous allez maintenant ajouter un enregistrement pour chaque machine virtuelle qui a besoin de la prise en charge de la résolution de noms privés.
+1. Dans le panneau **Gestion des DNS**, sélectionnez **+ Recordsets**. Vous allez maintenant ajouter un enregistrement pour chaque machine virtuelle qui a besoin de la prise en charge de la résolution de noms privés.
 
     | Propriété | Valeur    |
     |:---------|:---------|
     | Nom | **sensorvm** |
     | Type | **A** |
     | TTL | **1** |
-    | Adresse IP | **10.1.1.4** |
+    | Adresse IP | **10.1.1.4** |
 
- >**Remarque :**  Dans un scénario réel, vous allez entrer l’adresse IP d’une machine virtuelle spécifique liée à la fabrication.
+ >**Remarque :**  Dans un scénario réel, vous allez entrer l’adresse IP d’une machine virtuelle spécifique liée à la fabrication.
 
 ## Nettoyage de vos ressources
 
@@ -368,7 +374,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 
 + Un réseau virtuel est une représentation de votre propre réseau dans le cloud. 
 + Lors de la conception de réseaux virtuels, c’est une bonne pratique que d’éviter le chevauchement des plages d’adresses IP. Ceci va réduire les problèmes et simplifie leur résolution.
-+ Un sous-réseau est une plage d’adresses IP dans votre réseau virtuel. Vous pouvez diviser un réseau virtuel en plusieurs sous-réseaux pour plus de sécurité et une meilleure organisation.
++ Un sous-réseau est une plage d’adresses IP dans votre réseau virtuel. Vous pouvez diviser un réseau virtuel en plusieurs sous-réseaux pour plus de sécurité et une meilleure organisation.
 + Un groupe de sécurité réseau contient des règles de sécurité qui autorisent ou interdisent le trafic réseau. Il existe des règles entrantes et sortantes par défaut, que vous pouvez personnaliser en fonction de vos besoins.
 + Les groupes de sécurité d’application sont utilisés pour protéger des groupes de serveurs ayant une fonction commune, comme des serveurs web ou des serveurs de base de données.
-+ Azure DNS est un service d’hébergement pour les domaines DNS, qui fournit la résolution des noms. Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public.  Vous pouvez aussi utiliser des zones DNS privées pour affecter des noms DNS à des machines virtuelles dans vos réseaux virtuels Azure.
++ Azure DNS est un service d’hébergement pour les domaines DNS, qui fournit la résolution des noms. Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public.  Vous pouvez aussi utiliser des zones DNS privées pour affecter des noms DNS à des machines virtuelles dans vos réseaux virtuels Azure.

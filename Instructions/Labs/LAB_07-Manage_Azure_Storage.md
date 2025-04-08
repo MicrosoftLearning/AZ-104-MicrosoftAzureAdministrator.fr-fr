@@ -146,7 +146,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 1. Sélectionnez votre fichier chargé, puis passez en revue les options, notamment **Télécharger**, **Supprimer**, **Changer le niveau** et **Acquérir le bail**.
 
-1. Copiez l’**URL** du fichier et collez-la dans une nouvelle fenêtre de navigation **InPrivate**.
+1. Copiez l’**URL** du fichier (panneau Propriétés) et collez-la dans une nouvelle fenêtre de navigation **InPrivate**.
 
 1. Un message au format XML indiquant **ResourceNotFound** ou **PublicAccessNotPermitted** doit vous être présenté.
 
