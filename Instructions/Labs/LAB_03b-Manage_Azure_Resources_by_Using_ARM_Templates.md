@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Lab 03\_: Gérer des ressources Azure en utilisant des modèles Azure Resource Manager"
+  title: 'Lab 03 : Gérer des ressources Azure en utilisant des modèles Azure Resource Manager'
   module: Administer Azure Resources
 ---
 
@@ -12,11 +12,11 @@ Dans ce labo, vous apprenez à automatiser les déploiements de ressources. Vous
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Gérez des ressources Azure en utilisant des modèles Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Passez en revue, créez et déployez des disques managés avec un modèle.
   
@@ -32,20 +32,20 @@ Votre équipe souhaite connaître les moyens d’automatiser et de simplifier le
 
 ## Compétences de tâche
 
-+ Tâche 1 : créer un modèle Azure Resource Manager.
-+ Tâche 2 : modifier un modèle Azure Resource Manager et redéployer le modèle.
-+ Tâche 3 : configurer Cloud Shell et déployer un modèle avec Azure PowerShell.
-+ Tâche 4 : déployer des modèles Azure avec l’interface CLI. 
++ Tâche 1 : créer un modèle Azure Resource Manager.
++ Tâche 2 : modifier un modèle Azure Resource Manager et redéployer le modèle.
++ Tâche 3 : configurer Cloud Shell et déployer un modèle avec Azure PowerShell.
++ Tâche 4 : déployer des modèles Azure avec l’interface CLI. 
 + Tâche 5 : Déployez une ressource en tirant parti d’Azure Bicep.
 
-## Tâche 1 : Créer un modèle Azure Resource Manager
+## Tâche 1 : Créer un modèle Azure Resource Manager
 
 Dans cette tâche, nous allons créer un disque managé dans le Portail Azure. Les disques managés constituent un stockage conçu pour être utilisé avec des machines virtuelles. Une fois le disque déployé, vous allez exporter un modèle qu’il vous sera possible d’utiliser dans d’autres déploiements.
 
 1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-1. Recherchez et sélectionnez `Disks`.
-
+1. Recherchez et sélectionnez `Disks`. 
+   
 1. Dans la page Disques, sélectionnez **Créer**.
 
 1. Dans la page **Créer un disque managé**, configurez le disque, puis sélectionnez **OK**. 
@@ -61,7 +61,7 @@ Dans cette tâche, nous allons créer un disque managé dans le Portail Azure. L
     | Performances | **HDD Standard** (modifier la taille) |
     | Taille | **32 Gio** | 
 
-    >**Remarque :** Nous créons un disque managé simple pour vous permettre d’utiliser des modèles. Les disques managés Azure sont des volumes de stockage au niveau du bloc gérés par Azure.
+    >**Remarque :** Nous créons un disque managé simple pour vous permettre d’utiliser des modèles. Les disques managés Azure sont des volumes de stockage au niveau du bloc gérés par Azure.
 
 1. Cliquez sur **Vérifier + créer**, puis sélectionnez **Créer**.
 
@@ -77,7 +77,7 @@ Dans cette tâche, nous allons créer un disque managé dans le Portail Azure. L
 
    >**Le saviez-vous ?**  Vous pouvez exporter un groupe de ressources complet ou simplement des ressources spécifiques au sein de ce groupe de ressources.
 
-## Tâche 2 : Modifiez un modèle Azure Resource Manager, puis redéployez-le.
+## Tâche 2 : Modifiez un modèle Azure Resource Manager, puis redéployez-le.
 
 Dans cette tâche, vous utilisez le modèle téléchargé pour déployer un nouveau disque managé. Cette tâche explique comment répéter rapidement et facilement des déploiements. 
 
@@ -123,7 +123,7 @@ Dans cette tâche, vous utilisez le modèle téléchargé pour déployer un nouv
    
 1. Dans la section **Paramètres**, cliquez sur **Déploiements**.
 
-    >**Remarque :** Toutes les informations sur les déploiements sont documentées dans le groupe de ressources. Il est recommandé de passer en revue les premiers déploiements basés sur un modèle afin de favoriser la réussite avant d’utiliser les modèles pour des opérations à grande échelle.
+    >**Remarque :** Toutes les informations sur les déploiements sont documentées dans le groupe de ressources. Il est recommandé de passer en revue les premiers déploiements basés sur un modèle afin de favoriser la réussite avant d’utiliser les modèles pour des opérations à grande échelle.
 
 1. Sélectionnez un déploiement, puis passez en revue le contenu des panneaux **Entrée** et **Modèle**.
 
@@ -147,7 +147,7 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
     |  -- | -- |
     | Groupe de ressources | **az104-rg3** |
     | Région | *sélectionnez votre région* | 
-    | Compte de stockage (Créer) | *doit être globalement unique, comprendre entre 3 et 24 caractères et comporter uniquement des chiffres et des lettres en minuscules* |
+    | Compte de stockage (Créer) | *doit être globalement unique, comprendre entre 3 et 24 caractères et comporter uniquement des chiffres et des lettres en minuscules* |
     | Partage de fichiers (Créer) | `fs-cloudshell` |
 
 1. Une fois terminé, sélectionnez **Créer**.
@@ -164,7 +164,7 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 
 1. Apportez la modification souhaitée. Par exemple, remplacez le nom du disque par **az104-disk3**. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications. 
 
-    >**Remarque** : Vous pouvez cibler le déploiement de votre modèle au niveau d’un groupe de ressources, d’un abonnement, d’un groupe d’administration ou d’un tenant. Les commandes à utiliser diffèrent en fonction de l’étendue du déploiement.
+    >**Remarque** : Vous pouvez cibler le déploiement de votre modèle au niveau d’un groupe de ressources, d’un abonnement, d’un groupe d’administration ou d’un tenant. Les commandes à utiliser diffèrent en fonction de l’étendue du déploiement.
 
 1. Pour un déploiement dans un groupe de ressources, utilisez **New-AzResourceGroupDeployment**.
 
@@ -193,7 +193,7 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 
 1. Apportez la modification souhaitée. Par exemple, remplacez le nom du disque par **az104-disk4**. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications. 
 
-    >**Remarque** : Vous pouvez cibler le déploiement de votre modèle au niveau d’un groupe de ressources, d’un abonnement, d’un groupe d’administration ou d’un tenant. Les commandes à utiliser diffèrent en fonction de l’étendue du déploiement.
+    >**Remarque** : Vous pouvez cibler le déploiement de votre modèle au niveau d’un groupe de ressources, d’un abonnement, d’un groupe d’administration ou d’un tenant. Les commandes à utiliser diffèrent en fonction de l’étendue du déploiement.
 
 1. Pour un déploiement dans un groupe de ressources, utilisez **az deployment group create**.
 
@@ -213,22 +213,26 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 
 Dans cette tâche, vous allez utiliser un fichier Bicep pour déployer un disque managé. Bicep est un outil d’automatisation déclaratif qui repose sur des modèles ARM.
 
+1. Recherchez le fichier **\Allfiles\Lab03\azuredeploydisk.bicep**.
+
 1. Continuez à travailler dans le service **Cloud Shell** d’une session **Bash**.
 
-1. Recherchez et téléchargez le fichier **\Allfiles\Lab03\azuredeploydisk.bicep**.
+1. Sélectionnez **Gérer les fichiers**, puis **chargez** le fichier Bicep dans Cloud Shell. 
 
-1. **Téléchargez** le fichier Bicep dans Cloud Shell. 
+1. Cliquez sur **Éditeur** et lorsque vous y êtes invité,**confirmez** le basculement vers Classic Cloud Shell.
 
-1. Sélectionnez l’icône **Éditeur** (accolades) et accédez au fichier.
+1. Sélectionner le fichier **azuredeploydisk.bicep** 
 
-1. Prenez une minute pour parcourir le fichier de modèle Bicep. Notez la manière dont la ressource de disque est définie. 
+1. Prenez une minute pour parcourir le modèle de fichier Bicep. Notez la manière dont la ressource de disque est définie. 
    
-1. Apportez les modifications suivantes :
+1. Apportez les modifications suivantes :
 
-    + Remplacez la valeur **managedDiskName** par `Disk4`.
-    + Remplacez la valeur du **nom de référence SKU** par `StandardSSD_LRS`.
-    + Remplacez la valeur de **diskSizeinGiB** par `32`.
+    + Remplacez la valeur **managedDiskName**, ligne 4, par Disk4.
+    + Remplacez la valeur du **nom de la référence SKU**, ligne 26, par StandardSSD_LRS.
+    + Remplacez la valeur **diskSizeinGiB**, ligne 7, par 32.
 
+    >**Note :** un modèle Bicep terminé est disponible dans les fichiers de labo.
+    
 1. Utilisez les touches **Ctrl+S** pour enregistrer vos modifications.
 
 1. Déployez maintenant le modèle.
@@ -243,7 +247,7 @@ Dans cette tâche, vous allez utiliser un fichier Bicep pour déployer un disque
     az disk list --output table
     ```
 
-    >**Remarque :** Vous avez correctement déployé cinq disques managés, chacun d’une manière différente. Bravo !
+    >**Remarque :** Vous avez correctement déployé cinq disques managés, chacun d’une manière différente. Bravo !
 
 ## Nettoyage de vos ressources
 
