@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Lab 09c\_: Implémenter Azure Container Apps"
+  title: 'Lab 09c : Implémenter Azure Container Apps'
   module: Administer PaaS Compute Options
 ---
 
@@ -12,7 +12,7 @@ Dans ce labo, vous découvrez comment implémenter et déployer Azure Container 
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**.
 
-## Durée estimée : 15 minutes
+## Durée estimée : 15 minutes
 
 ## Scénario du labo
 
@@ -28,16 +28,16 @@ Il n’existe aucune simulation de laboratoire interactive pour cette rubrique.
 
 ## Compétences de tâche
 
-- Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
-- Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
+- Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
+- Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
 
-## Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
+## Tâche 1 : Créez et configurez une instance Azure Container Apps et un environnement.
 
 Azure Container Apps va plus loin avec le concept de cluster Kubernetes managé et gère l’environnement de clusters et fournit également d’autres services managés en plus du cluster. Contrairement à un cluster Azure Kubernetes, où vous devez toujours gérer le cluster, une instance Azure Container Apps supprime une partie de la difficulté de configurer un cluster Kubernetes.
 
 1. Dans le Portail Azure, recherchez et sélectionnez `Container Apps`.
 
-1. Dans **Container Apps**, sélectionnez **Créer**.
+1. Sélectionnez **+ Créer**, dans le menu déroulant **Container App**. Examinez les autres choix. 
 
 1. Utilisez les informations suivantes pour remplir les détails sous l’onglet **Informations de base**.*.
 
@@ -46,16 +46,18 @@ Azure Container Apps va plus loin avec le concept de cluster Kubernetes managé 
     | Abonnement | Sélectionnez votre abonnement Azure. |
     | Groupe de ressources | `az104-rg9` |
     | Nom de l’application conteneur |  `my-app` |
-    | Région    | **USA Est** (ou une région disponible près de vous) |
-    | Environnement Container Apps | Sélectionnez **Créer nouveau** > Définir le nom de l’environnement sur **my-environment** > **Créer** |
+    | Région    | **USA Est** (|
+    | Environnement Container Apps | Sélectionnez **Créer nouveau** > Définir le nom de l’environnement sur `my-environment` > **Créer** |
 
-1. Sous l’onglet **Conteneur** , vérifiez que l’option **Utiliser l’image de démarrage rapide** est activée et que l’image de démarrage rapide est définie sur **Conteneur Hello World simple**.
+1. Cliquez sur l’onglet **Suivant : conteneur** et vérifiez que l’option **Utiliser l’image de démarrage rapide** est cochée. Vous devrez peut-être faire défiler vers le haut pour afficher ce paramètre. 
+
+1. Assurez-vous que l’**image de démarrage rapide** est définie sur **conteneur Hello World simple**. Examinez les autres choix. 
 
 1. Sélectionnez **Vérifier et créer**, puis **Créer**.
 
-    >**Remarque :** Attendez que le déploiement de l’application conteneur soit terminé. Cette opération prend quelques minutes. 
+    >**Remarque :** Attendez que le déploiement de l’application conteneur soit terminé. Cette opération prend quelques minutes. 
  
-## Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
+## Tâche 2 : Testez et vérifiez le déploiement de l’instance Azure Container Apps.
 
 Par défaut, l’application conteneur Azure que vous créez accepte le trafic sur le port 80 en utilisant l’exemple d’application Hello World. Azure Container Apps fournit un nom DNS pour l’application. Copiez et accédez à cette URL pour vérifier que l’application est opérationnelle.
 
