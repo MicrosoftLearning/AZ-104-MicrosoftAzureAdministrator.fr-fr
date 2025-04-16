@@ -227,7 +227,7 @@ Dans cette tâche, vous allez utiliser un fichier Bicep pour déployer un disque
    
 1. Apportez les modifications suivantes :
 
-    + Remplacez la valeur **managedDiskName**, ligne 4, par Disk4.
+    + Remplacez la valeur **managedDiskName**, ligne 2, par Disk4.
     + Remplacez la valeur du **nom de la référence SKU**, ligne 26, par StandardSSD_LRS.
     + Remplacez la valeur **diskSizeinGiB**, ligne 7, par 32.
 
