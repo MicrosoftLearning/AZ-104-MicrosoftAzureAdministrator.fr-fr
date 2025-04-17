@@ -120,9 +120,9 @@ Dans cette tâche, vous allez mettre à l’échelle une machine virtuelle en aj
 
 1. Sur la machine virtuelle **az104-vm1**, dans le panneau **Disponibilité + mise à l’échelle**, sélectionnez **Taille**.
 
-1. Définissez la taille de la machine virtuelle sur **DS1_v2**, puis cliquez sur **Redimensionner**. Quand vous y êtes invité, confirmez la modification.
+1. Définissez la taille de la machine virtuelle sur **D2ds_v4**, puis cliquez sur **Redimensionner**. Quand vous y êtes invité, confirmez la modification.
 
-    >**Remarque** : Choisissez une autre taille si **DS1_v2 standard** n’est pas disponible. Le redimensionnement est également appelé mise à l’échelle verticale, scale-up ou scale-down.
+    >**Note** : choisissez une autre taille si **D2ds_v4** n’est pas disponible. Le redimensionnement est également appelé mise à l’échelle verticale, scale-up ou scale-down.
 
     ![Capture d’écran du redimensionnement de la machine virtuelle.](../media/az104-lab08-resize-vm.png)
 
@@ -223,7 +223,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Paramètre | Valeur |
     | --- | --- |
     | Source | **Any** |
-    | Plages de ports source | * |
+    | Source port ranges | * |
     | Destination | **Any** |
     | Service | **HTTP** |
     | Action | **Autoriser** |
