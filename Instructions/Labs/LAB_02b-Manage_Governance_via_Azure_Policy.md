@@ -49,7 +49,7 @@ Il existe plusieurs simulations de laboratoire interactives qui peuvent vous êt
 
 ## Tâche 1 : Attribuer des balises via le portail Azure
 
-Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de ressources Azure via le portail Azure. Les balises constituent un composant essentiel d’une stratégie de gouvernance, comme décrit par l’ensemble Microsoft Well-Architected Framework et Cloud Adoption Framework. Les balises peuvent vous permettre d’identifier rapidement les propriétaires de ressources, les dates de coucher de soleil, les contacts de groupe et d’autres paires nom/valeur que votre organisation juge importants. Pour cette tâche, vous affectez une balise identifiant le rôle de ressource (« Infra » pour « Infrastructure »).
+Dans cette tâche, vous allez créer et affecter une étiquette à un groupe de ressources Azure via le portail Azure. Les balises constituent un composant essentiel d’une stratégie de gouvernance, comme décrit par l’ensemble Microsoft Well-Architected Framework et Cloud Adoption Framework. Les balises peuvent vous permettre d’identifier rapidement les propriétaires de ressources, les dates de coucher de soleil, les contacts de groupe et d’autres paires nom/valeur que votre organisation juge importants. Dans cette tâche, vous attribuez une étiquette identifiant le centre de coûts de la ressource. 
 
 1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
       

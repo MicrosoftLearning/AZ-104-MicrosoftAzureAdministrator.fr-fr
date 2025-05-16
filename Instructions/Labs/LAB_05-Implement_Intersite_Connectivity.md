@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo\_05\_: Implémenter une connectivité intersites"
+  title: 'Labo 05 : Implémenter une connectivité intersites'
   module: Administer Intersite Connectivity
 ---
 
@@ -12,7 +12,7 @@ Dans ce labo, vous explorez la communication entre réseaux virtuels. Vous impl�
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
-## Durée estimée : 50 minutes
+## Durée estimée : 50 minutes
     
 ## Scénario du labo 
 
@@ -20,7 +20,7 @@ Votre organisation segmente les principales applications et services informatiqu
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
+Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
 
 + [Connectez deux réseaux virtuels Azure en utilisant l’appairage de réseaux virtuels global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Testez la connexion entre deux machines virtuelles dans différents réseaux virtuels. Créez une connexion d’appairage de réseaux virtuels et testez à nouveau.
 
@@ -30,18 +30,18 @@ Il existe plusieurs simulations de laboratoire interactives qui peuvent vous êt
 
 ## Diagramme de l'architecture
 
-![Labo 05 – Diagramme d’architecture](../media/az104-lab05-architecture.png)
+![Labo 05 – Diagramme d’architecture](../media/az104-lab05-architecture.png)
 
 ## Compétences de tâche
 
-+ Tâche 1 : Créez une machine virtuelle dans un réseau virtuel.
-+ Tâche 2 : Créez une machine virtuelle dans un autre réseau virtuel.
++ Tâche 1 : Créez une machine virtuelle dans un réseau virtuel.
++ Tâche 2 : Créez une machine virtuelle dans un autre réseau virtuel.
 + Tâche 3 : Utilisez Network Watcher pour tester la connexion entre machines virtuelles. 
 + Tâche 4 : Configurez des appairages de réseaux virtuels entre différents réseaux virtuels.
 + Tâche 5 : Utilisez Azure PowerShell pour tester la connexion entre machines virtuelles.
-+ Tâche 6 : créer un cheminement personnalisé. 
++ Tâche 6 : créer un cheminement personnalisé. 
 
-## Tâche 1 :  Créez un réseau virtuel et une machine virtuelle des principaux services
+## Tâche 1 :  Créez un réseau virtuel et une machine virtuelle des principaux services
 
 Dans cette tâche, vous créez un réseau virtuel des principaux services avec une machine virtuelle. 
 
@@ -69,7 +69,7 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
     ![Capture d’écran de la page de création de machine virtuelle de base. ](../media/az104-lab05-createcorevm.png)
    
-1. Sous l’onglet **Disques**, prenez les valeurs par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
+1. Sous l’onglet **Disques**, prenez les valeurs par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
 
 1. Sous l’onglet **Mise en réseau**, pour Réseau virtuel, sélectionnez **Créer**.
 
@@ -88,9 +88,9 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
 1. Vous n’avez pas besoin d’attendre la création des ressources. Passez à la tâche suivante.
 
-    >**Remarque :** Avez-vous remarqué dans cette tâche que vous avez créé le réseau virtuel lors de la création de la machine virtuelle ? Vous pouvez également créer l’infrastructure de réseau virtuel, puis ajoutez les machines virtuelles. 
+    >**Remarque :** Avez-vous remarqué dans cette tâche que vous avez créé le réseau virtuel lors de la création de la machine virtuelle ? Vous pouvez également créer l’infrastructure de réseau virtuel, puis ajoutez les machines virtuelles. 
 
-## Tâche 2 : Créez une machine virtuelle dans un autre réseau virtuel.
+## Tâche 2 : Créez une machine virtuelle dans un autre réseau virtuel.
 
 Dans cette tâche, vous créez un réseau virtuel de services de fabrication avec une machine virtuelle. 
 
@@ -108,13 +108,13 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
     | Région | **(États-Unis) USA Est** |
     | Type de sécurité | **Standard** |
     | Options de disponibilité | Aucune redondance de l’infrastructure requise |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
+    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Taille | **Standard_DS2_v3** | 
     | Nom d’utilisateur | `localadmin` | 
     | Mot de passe | **Fournir mot de passe complexe** |
     | Aucun port d’entrée public | **Aucun** |
 
-1. Sous l’onglet **Disques**, prenez les valeurs par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
+1. Sous l’onglet **Disques**, prenez les valeurs par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
 
 1. Sous l’onglet Mise en réseau, pour Réseau virtuel, sélectionnez **Créer**.
 
@@ -158,7 +158,7 @@ Dans cette tâche, vous vérifiez que les ressources des réseaux virtuels appai
 
 1. Sélectionnez **Exécuter les tests de diagnostic**.
 
-    >**Remarque** : Le retour des résultats peut prendre quelques minutes. Les sélections d’écran seront grisées pendant la collecte des résultats. Notez que le **Test de connectivité** affiche **Inaccessible**. C’est normal, car les machines virtuelles se trouvent dans des réseaux virtuels différents. 
+    >**Remarque** : Le retour des résultats peut prendre quelques minutes. Les sélections d’écran seront grisées pendant la collecte des résultats. Notez que le **Test de connectivité** affiche **Inaccessible**. C’est normal, car les machines virtuelles se trouvent dans des réseaux virtuels différents. 
 
  
 ## Tâche 4 : Configurer des appairages de réseaux virtuels entre réseaux virtuels
@@ -180,6 +180,8 @@ Dans cette tâche, vous créez un appairage de réseaux virtuels pour activer le
 | Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
 | Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
+
+1. Cliquez sur **Ajouter**.
 
 1. Dans CoreServicesVnet | Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié. Actualisez la page pour vérifier que l’**État de l’appairage** est **Connecté**.
 
@@ -215,13 +217,13 @@ Dans cette tâche, vous testez à nouveau la connexion entre les machines virtue
    
    ![La fenêtre PowerShell avec Test-NetConnection a réussi.](../media/az104-lab05-success.png)
 
-## Tâche 6 : Créer une route personnalisée 
+## Tâche 6 : Créer une route personnalisée 
 
 Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-réseau de périmètre et le sous-réseau des principaux services internes. Une appliance de réseau virtuel est installée dans le sous-réseau des principaux services et tout le trafic doit y être acheminé. 
 
 1. Recherchez pour sélectionner `CoreServicesVnet`.
 
-1. Sélectionnez **Sous-réseaux**, puis **+ Créer**. Veillez à **Enregistrer** vos modifications. 
+1. Cliquez sur **Sous-réseaux**, puis sur **+ Sous-réseau**. Veillez à sélectionner **Ajouter** pour enregistrer vos modifications. 
 
     | Paramètre | Valeur | 
     | --- | --- |
@@ -237,30 +239,32 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
     | Resource group | `az104-rg5`  |
     | Région | **USA Est** |
     | Nom | `rt-CoreServices` |
-    | Propager des itinéraires de passerelle | **Aucun** |
+    | Propager des itinéraires de passerelle | **Non** |
 
-1. Une fois la table de route déployée, sélectionnez **Accéder à la ressource**.
+1. Une fois la table de route déployée, recherchez et sélectionnez **Tables de route**.
+   
+1. Sélectionnez la ressource (et non la case à cocher) **rt-CoreServices**
 
-1. Sélectionnez **Routes**, puis **+ Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
+1. Développez **Paramètres**, puis sélectionnez **Routes**, puis **+ Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
 
     | Paramètre | Valeur | 
     | --- | --- |
     | Nom de l’itinéraire | `PerimetertoCore` |
-    | Type de destination | **Adresses IP** |
+    | Type de destination | **Adresses IP** |
     | Adresses IP de destination | `10.0.0.0/16` (réseau virtuel des principaux services) |
     | Type de tronçon suivant | **Appliance virtuelle** (notez vos autres choix) |
     | adresse de tronçon suivant | `10.0.1.7` (future appliance virtuelle réseau) |
 
-1. Sélectionnez **+ Ajouter** une fois la route terminée. La dernière chose à faire consiste à associer la route au sous-réseau.
+1. Sélectionnez **Ajouter**. La dernière chose à faire consiste à associer la route au sous-réseau.
 
-1. Sélectionnez **Sous-réseaux**, puis **Associer**. Terminez la configuration.
+1. Sélectionnez **Sous-réseaux**, puis **+ Associer**. Terminez la configuration.
 
     | Paramètre | Valeur | 
     | --- | --- |
     | Réseau virtuel | **CoreServicesVnet** |
     | Sous-réseau | **Core** |    
 
->**Remarque** : Vous avez créé une route définie par l’utilisateur pour diriger le trafic de la zone DMZ vers la nouvelle appliance virtuelle réseau.  
+>**Remarque** : Vous avez créé une route définie par l’utilisateur pour diriger le trafic de la zone DMZ vers la nouvelle appliance virtuelle réseau.  
 
 ## Nettoyage de vos ressources
 
