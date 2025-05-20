@@ -102,7 +102,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 1. Dans le panneau **Stockage des données**, sélectionnez **Conteneurs**. 
 
-1. Cliquez sur **+ Conteneur**, puis sur **Créer un conteneur** avec les paramètres suivants :
+1. Cliquez sur **+ Ajouter un conteneur**, puis sur **Créer** un conteneur avec les paramètres suivants :
 
     | Paramètre | Valeur |
     | --- | --- |
