@@ -60,7 +60,7 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
 1. Sous l’onglet **Avancé**, utilisez les icônes d’information pour en savoir plus sur les choix. Utilisez les valeurs par défaut. 
 
-1. Dans l’onglet **Réseaux**, dans la section **Accès réseau public**, sélectionnez **Désactiver**. Pour restreindre l’accès entrant tout en autorisant l’accès sortant, sélectionnez Désactiver. 
+1. Dans l’onglet **Réseaux**, dans la section **Accès réseau**, sélectionnez **Désactiver l’accès public et utiliser l’accès privé**. Pour restreindre l’accès entrant tout en autorisant l’accès sortant, sélectionnez Désactiver. 
 
 1. Passez en revue l’onglet **Protection des données**. Notez que la stratégie de rétention pour la suppression réversible est par défaut de 7 jours. Notez que vous pouvez activer le contrôle de version des blobs. Acceptez les valeurs par défaut.
 
@@ -74,19 +74,17 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
 1. Dans le panneau **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’**accès au réseau public** est désactivé.
 
-    + Sélectionnez **Gérer** l’**accès réseau public**.
-    + Modifiez l’**accès réseau public** en **Activé**.
-    + Modifiez l’**action par défaut** en **Activer à partir des réseaux sélectionnés**.
-    + Dans la section **Adresses IP**, sélectionnez **Ajouter votre adresse IP cliente**.
-    + **Enregistrez** les changements apportés.
+    + Définissez l’**Accès au réseau public** sur **Activé à partir des réseaux virtuels et adresses IP sélectionnés**.
+    + Dans la section **Pare-feu**, cochez la case pour **Ajouter l’adresse IP de votre client**.
+    + Enregistrez les changements apportés.
   
 1. Dans le panneau **Gestion des données**, sélectionnez **Redondance**. Notez les informations sur les emplacements de votre centre de données principal et de votre centre de données secondaire.
 
 1. Dans le panneau **Gestion des données**, sélectionnez **Gestion du cycle de vie**, puis sélectionnez **Ajouter une règle**.
 
-    + **Nommez la règle **`Movetocool`. Notez vos options pour limiter l’étendue de la règle.
+    + **Nommez la règle **`Movetocool`. Notez vos options pour limiter l’étendue de la règle. Sélectionnez **Suivant**. 
     
-    + Sous l’onglet **Objets blob de base**, *si* des objets blob de base ont été modifiés plus de `30 days` auparavant, *alors* **passez au stockage froid**. Notez vos autres choix. 
+    + Sous l’onglet **Objets blob de base**, *si* des objets blob de base ont été modifiés plus de `30 days` auparavant, *alors***passez au stockage froid**. Notez vos autres choix. 
     
     + Notez que vous pouvez configurer d’autres conditions. Sélectionnez **Ajouter** quand vous avez terminé l’exploration.
 
@@ -154,7 +152,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 ### Configurer un accès limité au stockage d’objets blob
 
-1. Sélectionnez votre fichier chargé, puis passez à l’onglet **Générer une signature d’accès partagé**. Vous pouvez également utiliser les points de suspension (...) tout à droite. Spécifiez les paramètres suivants (laissez les autres avec leur valeur par défaut) :
+1. Revenez au fichier que vous avez chargé et sélectionnez les points de suspension (...) à l’extrême droite, puis sélectionnez **Générer une SAP** et spécifiez les paramètres suivants (laissez les autres avec leurs valeurs par défaut) :
 
     | Paramètre | Valeur |
     | --- | --- |

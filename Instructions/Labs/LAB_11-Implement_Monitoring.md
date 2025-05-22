@@ -79,7 +79,7 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. Sélectionnez **Affichage** dans la zone **Insights de machine virtuelle**, puis sélectionnez **Configurer les insights**.
 
-1. Sélectionnez votre machine virtuelle, puis **Activer** (deux fois).
+1. Sélectionnez **Activer** en regard de votre machine virtuelle, puis **Activer dans le panneau Intégration d’Azure Monitor - Insights**.
 
 1. Prenez les valeurs par défaut pour les règles de collecte de données et l’abonnement, puis sélectionnez **Configurer**. 
 
@@ -109,7 +109,7 @@ Dans cette tâche, vous créez une alerte relative à la suppression d’une mac
 
 Dans cette tâche, si l’alerte est déclenchée, envoyez une notification par e-mail à l’équipe des opérations. 
 
-1. Continuez à travailler sur votre alerte. Sélectionnez **Suivant : Actions**, puis sélectionnez **Créer un groupe d’actions**.
+1. Continuez à travailler sur votre alerte. Sélectionnez **Utiliser des groupes d’actions**, puis sélectionnez **Créer un groupe d’actions** dans le panneau **Sélectionner un groupe d’actions**.
 
     >**Le saviez-vous ?** Vous pouvez ajouter jusqu’à cinq groupes d’actions à une règle d’alerte. Les groupes d’actions sont exécutés simultanément, sans ordre spécifique. Plusieurs règles d’alerte peuvent utiliser le même groupe d’actions. 
 
@@ -227,7 +227,7 @@ Dans cette tâche, vous allez utiliser Azure Monitor pour interroger les donnée
 
 1. Vous devriez recevoir un nombre de pulsations pour le moment où la machine virtuelle était en cours d’exécution.
 
-1. Passez en revue la requête. Cette requête utilise la table de *pulsations*. 
+1. Sur le côté droit de l’écran, sélectionnez la liste déroulante en regard du **mode Simple**. Choisissez le **mode KQL**. Passez en revue la requête. Cette requête utilise la table de *pulsations*.
 
 1. Remplacez la requête par celle-ci, puis cliquez sur **Exécuter**. Passez en revue le graphique obtenu. 
 
@@ -238,6 +238,8 @@ Dans cette tâche, vous allez utiliser Azure Monitor pour interroger les donnée
     | summarize avg(Val) by bin(TimeGenerated, 5m), Computer //split up by computer
     | render timechart
    ```
+
+    >**Note :** si la requête ne se colle pas correctement, essayez de la coller dans le Bloc-notes, puis copiez-la et collez-la à nouveau dans le champ de requête.
 
 1. Comme vous avez du temps, passez en revue et exécutez d’autres requêtes. 
 
