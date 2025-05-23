@@ -169,23 +169,23 @@ Dans cette tâche, vous créez un appairage de réseaux virtuels pour activer le
 
 1. Dans CoreServicesVnet, sous **Paramètres**, sélectionnez **Peerings**.
 
-1. Sur CoreServicesVnet | Peerings, sélectionnez **+ Ajouter**. Si elle n’est pas spécifiée, elle prend la valeur par défaut. 
+1. Sur CoreServicesVnet, sous Peerings, sélectionnez **+ Ajouter**. Si elle n’est pas spécifiée, elle prend la valeur par défaut. 
 
-| **Paramètre**                                    | **Valeur**                             |
-| --------------------------------------------- | ------------------------------------- |                                
-| Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Réseau virtuel    | **ManufacturingVM-net (az104-rg5)**  |
-| Autoriser ManufacturingVnet à accéder à CoreServicesVnet  | sélectionné (par défaut)                       |
-| Autoriser ManufacturingVnet à recevoir le trafic transféré à partir de CoreServicesVnet | sélectionné                        |
-| Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut)                       |
-| Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné                       |
+    | **Paramètre**                                    | **Valeur**                             |
+    | --------------------------------------------- | ------------------------------------- |                                
+    | Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | Réseau virtuel    | **ManufacturingVM-net (az104-rg5)**  |
+    | Autoriser ManufacturingVnet à accéder à CoreServicesVnet  | sélectionné (par défaut) |
+    | Autoriser ManufacturingVnet à recevoir le trafic transféré à partir de CoreServicesVnet | sélectionné  |
+    | Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
+    | Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut) |
+    | Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné |
 
-1. Cliquez sur **Ajouter**.
+4. Cliquez sur **Ajouter**.
 
-1. Dans CoreServicesVnet | Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié. Actualisez la page pour vérifier que l’**État de l’appairage** est **Connecté**.
+5. Dans CoreServicesVnet, sous Peerings, vérifiez que le peering **CoreServicesVnet-ManufacturingVnet** est répertorié. Actualisez la page pour vérifier que l’**État de l’appairage** est **Connecté**.
 
-1. Basculez vers **ManufacturingVnet**, puis vérifiez que l’appairage **ManufacturingVnet-to-CoreServicesVnet** est répertorié. Vérifiez que l’**État de l’appairage** est **Connecté**. Vous devrez peut-être **actualiser** la page. 
+6. Basculez vers **ManufacturingVnet**, puis vérifiez que l’appairage **ManufacturingVnet-to-CoreServicesVnet** est répertorié. Vérifiez que l’**État de l’appairage** est **Connecté**. Vous devrez peut-être **actualiser** la page. 
 
 ## Tâche 5 : Utiliser Azure PowerShell pour tester la connexion entre machines virtuelles
 
@@ -231,7 +231,7 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
     | Plage d’adresses de sous-réseau | `10.0.1.0/24`  |
 
    
-1. Dans le portail Azure, recherchez et sélectionnez `Route tables`, puis **Créer**. 
+1. Dans le Portail Azure, recherchez et sélectionnez `Route tables`, sélectionnez **Examiner et créer**, puis sélectionnez **Créer**. 
 
     | Paramètre | Valeur | 
     | --- | --- |
@@ -245,7 +245,7 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
    
 1. Sélectionnez la ressource (et non la case à cocher) **rt-CoreServices**
 
-1. Développez **Paramètres**, puis sélectionnez **Routes**, puis **+ Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
+1. Développez **Paramètres**, puis sélectionnez **Itinéraires**, puis **Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
 
     | Paramètre | Valeur | 
     | --- | --- |

@@ -130,6 +130,8 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Revenez à la page d’accueil du portail. Vous devez disposer à la fois d’une application web de production et de l’emplacement de préproduction.
 
+1. Recherchez `App Services` et sélectionnez votre application web Azure App Service. Vous êtes alors renvoyé à l’emplacement de déploiement de production.
+
 1. Sélectionnez l’application web Azure App Service et, dans le panneau **Vue d’ensemble** de l’application web, sélectionnez le lien **Domaine par défaut** pour afficher la page d’accueil du site web.
 
 1. Vérifiez que la page web de production affiche désormais **Hello World!** .

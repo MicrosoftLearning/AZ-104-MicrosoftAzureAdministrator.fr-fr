@@ -241,8 +241,6 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
 
 1. Dans le panneau **Sauvegarde + Récupération d’urgence**, sélectionnez **Récupération d’urgence**. 
 
-1. Sélectionnez **Activer la réplication**.
-
 1. Sous l’onglet **Informations de base**, notez la **Région cible**.
 
 1. Sélectionnez **Suivant : Paramètres avancés**. Les sélections de ressources ont été effectuées pour vous. 

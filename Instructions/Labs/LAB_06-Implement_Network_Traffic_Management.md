@@ -34,7 +34,7 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Tâche 1 : Utiliser un modèle pour provisionner une infrastructure
 
-Dans cette tâche, vous allez utiliser un modèle pour déployer un réseau virtuel, un groupe de sécurité réseau et deux machines virtuelles.
+Dans cette tâche, vous allez utiliser un modèle pour déployer un réseau virtuel, un groupe de sécurité réseau et trois machines virtuelles.
 
 1. Téléchargez les fichiers du labo **\\Allfiles\\Lab06** (modèles et paramètres).
 
@@ -105,7 +105,7 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
     | Équilibreur de charge de passerelle | Aucun |
     | Adresse IP publique | Sélectionnez **Créer nouveau** (utilisez les instructions de l’étape suivante) |
 
-1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **OK** et sur **Ajouter**. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**.
+1. Dans la fenêtre contextuelle **Ajouter une adresse IP publique**, utilisez les paramètres suivants avant de cliquer sur **Enregistrer** deux fois. Quand vous avez terminé, cliquez sur **Suivant : Pools de back-ends**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -117,7 +117,7 @@ Dans cette tâche, vous implémentez un équilibreur de charge Azure devant les 
 
     >**Remarque :** La référence SKU Standard fournit une adresse IP statique. Les adresses IP statiques sont affectées à la ressource quand elle est créée et sont libérées lors de la suppression de la ressource.  
 
-1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **+ Ajouter** (deux fois), puis cliquez sur **Suivant : Règles de trafic entrant**.
+1. Sous l’onglet **Pools de back-ends**, cliquez sur **Ajouter un pool de back-ends** avec les paramètres suivants (laissez les autres valeurs par défaut). Cliquez sur **Ajouter**, puis sur **Enregistrer**. Cliquez sur **Suivant : Règles de trafic entrant**.
 
     | Paramètre | Valeur |
     | --- | --- |
@@ -189,9 +189,9 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | --- | --- |
     | Nom | `subnet-appgw` |
     | Adresse de début| `10.60.3.224` |
-    | Taille | `/27` |
+    | Taille | `/27` - Vérifier que l’adresse **** de départ est toujours **10.63.3.224**|
 
-1. Cliquez sur **Enregistrer**.
+1. Cliquez sur **Ajouter**
 
     > **Remarque** : Ce sous-réseau sera utilisé par la passerelle applicative Azure. Application Gateway nécessite un sous-réseau dédié de /27 ou de taille supérieure.
 
@@ -206,9 +206,8 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Nom de passerelle applicative | `az104-appgw` |
     | Région | La **même** région Azure que celle que vous avez utilisée dans la tâche 1 |
     | Niveau | **Standard V2** |
-    | Activer la mise à l’échelle automatique | **Aucun** |
-    | Nombre d’instances minimal | `2` |
-    | Zone de disponibilité | **1** (par défaut) |
+    | Activer la mise à l’échelle automatique | **Non** |
+    | Nombre d’instances | `2` |
     | HTTP2 | **Désactivé** |
     | Réseau virtuel | **az104-06-vnet1** |
     | Sous-réseau | **subnet-appgw (10.60.3.224/27)** |
@@ -290,7 +289,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | Paramètres du back-end | **az104-http** |
     | Cible de back-end | `az104-videobe` |
 
-1. Veillez à **Enregistrer** et à vérifier vos modifications, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
+1. Veillez à vérifier vos modifications, puis sélectionnez **Suivant : Étiquettes >**. Aucune modification n’est requise.
 
 1. Sélectionnez **Suivant : Vérifier + créer**, puis sur **Créer**.
 
