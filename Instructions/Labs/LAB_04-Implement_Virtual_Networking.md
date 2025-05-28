@@ -150,7 +150,7 @@ Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-
 
 1. Sélectionnez le fichier **templates.json** avec vos modifications liées à la fabrication, puis sélectionnez **Enregistrer**.
 
-1. Sélectionnez **Modifier les paramètres**, puis **Charger le fichier**.
+1. Sélectionnez **Modifier les paramètres**, puis **fichier de chargement**.
 
 1. Sélectionnez le fichier **parameters.json** avec vos modifications liées à la fabrication, puis sélectionnez **Enregistrer**.
 
@@ -281,7 +281,7 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre d
 
 1. Dans le panneau **Vue d’ensemble**, notez les noms des quatre serveurs de noms Azure DNS affectés à la zone. **Copiez** une des adresses de serveur de noms. Vous en aurez besoin à une étape ultérieure. 
   
-1. Développez le panneau **Gestion DNS** et sélectionnez **+ Jeu d’enregistrements**. Ajoutez un enregistrement de liaison de réseau virtuel pour chaque réseau virtuel qui nécessite la prise en charge de la résolution de noms privés.
+1. Développez le panneau **Gestion DNS** et sélectionnez **+ Ensemble d’enregistrements**.
 
     | Propriété | Valeur    |
     |:---------|:---------|
@@ -324,7 +324,7 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
 
 1. Notez que dans le panneau **Vue d’ensemble**, aucun enregistrement de serveur de noms n’est présent. 
 
-1. Développez le panneau **Gestion DNS** et sélectionnez **+ Liens de réseau virtuel**. Configurez le lien. 
+1. Développez le panneau **Gestion DNS**, puis sélectionnez **Liens de réseau virtuel**. Configurez le lien. 
 
     | Propriété | Valeur    |
     |:---------|:---------|
