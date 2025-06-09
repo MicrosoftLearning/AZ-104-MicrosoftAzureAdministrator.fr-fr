@@ -204,7 +204,6 @@ Dans cette tâche, vous allez déployer un compte de stockage Azure. Vous allez 
     - **Extension Données d’alerte de sauvegarde Azure**
     - **Travaux Azure Site Recovery**
     - **Événements Azure Site Recovery**
-    - **Intégrité**
 
 1. Dans les détails de destination, placez une coche à côté de **Archiver dans un compte de stockage**.
 

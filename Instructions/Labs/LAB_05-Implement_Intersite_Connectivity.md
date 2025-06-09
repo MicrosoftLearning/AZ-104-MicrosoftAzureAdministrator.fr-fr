@@ -228,10 +228,12 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
     | Paramètre | Valeur | 
     | --- | --- |
     | Nom | `perimeter` |
-    | Plage d’adresses de sous-réseau | `10.0.1.0/24`  |
+    | Adresse de début | `10.0.1.0/24`  |
 
    
-1. Dans le Portail Azure, recherchez et sélectionnez `Route tables`, sélectionnez **Examiner et créer**, puis sélectionnez **Créer**. 
+1. Dans le portail Azure, recherchez et sélectionnez `Route tables`, sélectionnez  **+ Créer**.
+
+1. Saisissez les informations suivantes, sélectionnez **Examiner et créer**, puis sélectionnez **Créer**. 
 
     | Paramètre | Valeur | 
     | --- | --- |

@@ -166,7 +166,7 @@ Dans cette tâche, nous allons utiliser la nouvelle définition de stratégie po
     | Description | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Application de stratégies | activé |
 
-1. Cliquez deux fois sur **Suivant**, puis définissez **Paramètres** sur les valeurs suivantes :
+1. Cliquez sur **Suivant** et définissez **Paramètres** sur les valeurs suivantes :
 
     | Paramètre | Valeur |
     | --- | --- |
