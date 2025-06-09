@@ -150,7 +150,7 @@ Dans cette tâche, vous créez le réseau virtuel ManufacturingVnet et les sous-
 
 1. Sélectionnez le fichier **templates.json** avec vos modifications liées à la fabrication, puis sélectionnez **Enregistrer**.
 
-1. Sélectionnez **Modifier les paramètres**, puis **fichier de chargement**.
+1. Sélectionnez **Modifier les paramètres**, puis **Charger le fichier**.
 
 1. Sélectionnez le fichier **parameters.json** avec vos modifications liées à la fabrication, puis sélectionnez **Enregistrer**.
 
@@ -281,7 +281,7 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre d
 
 1. Dans le panneau **Vue d’ensemble**, notez les noms des quatre serveurs de noms Azure DNS affectés à la zone. **Copiez** une des adresses de serveur de noms. Vous en aurez besoin à une étape ultérieure. 
   
-1. Développez le panneau **Gestion DNS** et sélectionnez **+ Ensemble d’enregistrements**.
+1. Développez le panneau **Gestion DNS** et sélectionnez **Recordsets**. Cliquez sur **+Ajouter**. 
 
     | Propriété | Valeur    |
     |:---------|:---------|
@@ -292,7 +292,7 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre d
 
 >**Remarque :**  Dans un scénario réel, vous allez entrer l’adresse IP publique de votre serveur web.
 
-1. Sélectionnez **OK**, puis vérifiez que votre domaine a un jeu d’enregistrements A nommé **www**.
+1. Sélectionnez **Ajouter** et vérifiez que votre domaine possède un enregistrement A nommé **www**.
 
 1. Ouvrez une invite de commandes et exécutez la commande suivante : Si vous avez modifié le nom de domaine, effectuez un ajustement. 
 
@@ -324,7 +324,7 @@ Une zone DNS privée fournit des services de résolution de noms au sein de rés
 
 1. Notez que dans le panneau **Vue d’ensemble**, aucun enregistrement de serveur de noms n’est présent. 
 
-1. Développez le panneau **Gestion DNS**, puis sélectionnez **Liens de réseau virtuel**. Configurez le lien. 
+1. Développez le panneau **Gestion DNS** et sélectionnez **+ Liens de réseau virtuel**. Configurez le lien. 
 
     | Propriété | Valeur    |
     |:---------|:---------|

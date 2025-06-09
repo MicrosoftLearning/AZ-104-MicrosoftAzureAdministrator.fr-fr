@@ -189,7 +189,7 @@ Dans cette tâche, vous implémentez une passerelle applicative Azure devant les
     | --- | --- |
     | Nom | `subnet-appgw` |
     | Adresse de début| `10.60.3.224` |
-    | Taille | `/27` - Vérifier que l’adresse **** de départ est toujours **10.63.3.224**|
+    | Taille | `/27` - Vérifiez que l’**adresse de départ** est toujours **10.60.3.224**.|
 
 1. Cliquez sur **Ajouter**
 
