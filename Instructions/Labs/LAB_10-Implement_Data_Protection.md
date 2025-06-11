@@ -18,11 +18,9 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation évalue comment sauvegarder et restaurer des machines virtuelles Azure à partir d’une perte de données accidentelle ou malveillante. En outre, l’organisation souhaite explorer l’utilisation d’Azure Site Recovery pour des scénarios de récupération d’urgence. 
 
-## Simulation de labo interactif
+## Simulations de labo interactives
 
-Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
-+ **[Sauvegardez des machines virtuelles et des fichiers locaux](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**. Créez un coffre Recovery Services et implémentez une sauvegarde de machines virtuelles Azure. Implémentez une sauvegarde de dossier et de dossier local en utilisant l’agent Microsoft Azure Recovery Services. Les sauvegardes locales se trouvent en dehors de l’étendue de ce labo, mais il peut être utile d’afficher ces étapes. 
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Compétences de tâche
 

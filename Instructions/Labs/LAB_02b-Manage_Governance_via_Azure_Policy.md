@@ -28,13 +28,7 @@ L’empreinte cloud de votre organisation a considérablement augmenté l’ann�
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
-
-+ [Gérez les verrous des ressources](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Ajoutez un verrou de ressource et effectuez des tests pour confirmer.
-  
-+ [Créez une stratégie Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Créez une stratégie Azure qui limite l’emplacement des ressources. Créez une ressource et vérifiez l’application de la stratégie. 
-
-+ [Gérez la gouvernance via une stratégie Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Créez et attribuez des balises via le Portail Azure. Créez une stratégie Azure qui exige le balisage. Corrigez les ressources non conformes.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 

@@ -20,13 +20,7 @@ Votre organisation segmente les principales applications et services informatiqu
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
-
-+ [Connectez deux réseaux virtuels Azure en utilisant l’appairage de réseaux virtuels global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Testez la connexion entre deux machines virtuelles dans différents réseaux virtuels. Créez une connexion d’appairage de réseaux virtuels et testez à nouveau.
-
-+ [Configurez le monitoring pour des réseaux virtuels](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/). Découvrez comment utiliser le Moniteur de connexion Azure Network Watcher, les journaux de flux, les diagnostics NSG et la capture de paquets pour surveiller la connectivité de vos ressources réseau Azure IaaS.
-
-+ [Implémentez une connectivité intersite](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209). Exécutez un modèle pour créer une infrastructure de réseau virtuel avec plusieurs machines virtuelles. Configurez des appairages de réseaux virtuels et testez les connexions. 
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 

@@ -20,11 +20,7 @@ Votre organisation a un site web public. Vous devez équilibrer la charge des re
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
-+ [Créer et configurer un équilibreur de charge Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Créer un réseau virtuel, des serveurs back-ends, un équilibreur de charge, puis tester l’équilibreur de charge.
-+ [Déployer une passerelle applicative Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Créer une passerelle applicative, créer des machines virtuelles, créer le pool de back-ends et tester la passerelle.
-+ [Implémenter la gestion du trafic](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010). Implémenter un réseau hub-and-spoke complet, y compris les machines virtuelles, les réseaux virtuels, le peering, l’équilibreur de charge et la passerelle applicative.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Compétences de tâche
 

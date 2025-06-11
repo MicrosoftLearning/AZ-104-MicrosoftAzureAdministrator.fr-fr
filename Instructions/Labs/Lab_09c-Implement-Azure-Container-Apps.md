@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation dispose d’une application web qui s’exécute sur une machine virtuelle dans votre centre de données local. L’organisation souhaite déplacer toutes les applications vers le cloud, mais ne veut pas avoir à gérer un grand nombre de serveurs. Vous décidez d’évaluer Azure Container Apps.
 
-## Simulations de labo interactives
-
-Il n’existe aucune simulation de laboratoire interactive pour cette rubrique. 
-
 ## Diagramme de l'architecture
 
 ![Diagramme des tâches.](../media/az104-lab09b-aca-architecture.png)

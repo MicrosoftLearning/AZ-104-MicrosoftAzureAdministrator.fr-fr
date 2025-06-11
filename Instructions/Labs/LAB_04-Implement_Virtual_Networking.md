@@ -24,15 +24,7 @@ Le réseau virtuel **ManufacturingVnet** contient des systèmes pour les opérat
 
 ## Simulations de labo interactives
 
-Il existe plusieurs simulations de laboratoire interactives qui peuvent vous être utiles pour ce sujet. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
-
-+ [Sécuriser le trafic réseau](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Créer une machine virtuelle, un réseau virtuel et un groupe de sécurité réseau. Ajouter des règles de groupe de sécurité réseau pour autoriser et interdire le trafic.
-  
-+ [Créer un réseau virtuel simple](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%204). Créer un réseau virtuel avec deux machines virtuelles. Démontrer que les machines virtuelles peuvent communiquer. 
-
-+ [Concevoir et implémenter un réseau virtuel dans Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure). Créer un groupe de ressources et créer des réseaux virtuels avec des sous-réseaux.  
-
-+ [Implémenter la mise en réseau virtuelle](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208). Créer et configurer un réseau virtuel, déployer des machines virtuelles, configurer des groupes de sécurité réseau et configurer Azure DNS.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 

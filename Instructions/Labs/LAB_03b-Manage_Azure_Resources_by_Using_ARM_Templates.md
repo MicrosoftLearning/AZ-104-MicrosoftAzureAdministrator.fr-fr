@@ -16,13 +16,9 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
-
-+ [Gérez des ressources Azure en utilisant des modèles Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Passez en revue, créez et déployez des disques managés avec un modèle.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
   
-+ [Créez une machine virtuelle avec un modèle](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Déployez une machine virtuelle avec des modèles de démarrage rapide.
-  
-## Scénario du labo
+## Scénario de labo
 
 Votre équipe souhaite connaître les moyens d’automatiser et de simplifier les déploiements de ressources. Votre organisation cherche comment diminuer la surcharge administrative, réduire les erreurs humaines et augmenter la cohérence.  
 

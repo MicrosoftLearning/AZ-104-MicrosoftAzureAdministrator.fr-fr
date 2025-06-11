@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Labo 02a\_: Gérer les abonnements et RBAC"
+  title: 'Labo 02a : Gérer les abonnements et RBAC'
   module: Administer Governance and Compliance
 ---
 
@@ -12,7 +12,7 @@ Dans ce labo, vous découvrez le contrôle d’accès en fonction du rôle. Vous
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
-## Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
 ## Scénario du labo
 
@@ -28,13 +28,7 @@ Pour simplifier la gestion des ressources Azure dans votre organisation, vous ê
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
-
-+ [Gérez l’accès avec RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Attribuez un rôle intégré à un utilisateur et surveillez les journaux d’activité. 
-
-+ [Gérez les abonnements et RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202). Implémentez un groupe d’administration, puis créez et attribuez un rôle RBAC personnalisé.
-
-+ [Ouvrez une demande de support](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022). Passez en revue les options du plan de support, puis créez et surveillez une demande de support, technique ou de facturation.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 
@@ -42,12 +36,12 @@ Il existe des simulations de labo interactives qui peuvent vous être utiles pou
 
 ## Compétences de tâche
 
-+ Tâche 1 : Implémentez des groupes d’administration.
-+ Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
++ Tâche 1 : Implémentez des groupes d’administration.
++ Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
 + Tâche 3 : Créez un rôle RBAC personnalisé.
 + Tâche 4 : Surveillez des attributions de rôle avec le journal d’activité.
 
-## Tâche 1 : Implémenter des groupes d’administration
+## Tâche 1 : Implémenter des groupes d’administration
 
 Dans cette tâche, vous allez créer et configurer des groupes d’administration. Les groupes d’administration servent à logiquement organiser et segmenter des abonnements. Ils permettent au RBAC et à Azure Policy d’être affectés et hérités par d’autres groupes d’administration et abonnements. Par exemple, si votre organisation dispose d’une équipe de support technique dédiée pour l’Europe, vous pouvez organiser des abonnements européens en groupe d’administration pour fournir au personnel de support l’accès à ces abonnements (sans fournir d’accès individuel à tous les abonnements). Dans notre scénario, tous les membres du support technique devront créer une demande de support sur tous les abonnements. 
 
@@ -72,9 +66,9 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
 1. **Actualisez** la page du groupe d’administration pour veiller à ce que votre nouveau groupe d’administration s’affiche. Cela peut prendre une minute. 
 
-   >**Remarque :** Avez-vous remarqué le groupe d’administration racine ? Le groupe d’administration racine est intégré à la hiérarchie et contient tous les groupes d’administration et abonnements. Il permet d’appliquer des stratégies globales et des affectations de rôles Azure au niveau de l’annuaire. Une fois le groupe d’administration créé, vous devez ajouter tous les abonnements qui doivent être inclus dans le groupe. 
+   >**Remarque :** Avez-vous remarqué le groupe d’administration racine ? Le groupe d’administration racine est intégré à la hiérarchie et contient tous les groupes d’administration et abonnements. Il permet d’appliquer des stratégies globales et des affectations de rôles Azure au niveau de l’annuaire. Une fois le groupe d’administration créé, vous devez ajouter tous les abonnements qui doivent être inclus dans le groupe. 
 
-## Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
+## Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
 
 Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer le rôle Contributeur de machine virtuelle à un membre du support technique. Azure propose un grand nombre de [rôles intégrés](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
@@ -92,7 +86,7 @@ Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer
 
 1. Sous l’onglet **Membres**, **Sélectionner des membres**.
 
-    >**Remarque :** L’étape suivante attribue le rôle au groupe du **support technique**. Si vous ne disposez pas de groupe de support technique, prenez une minute pour le créer.
+    >**Remarque :** L’étape suivante attribue le rôle au groupe du **support technique**. Si vous ne disposez pas de groupe de support technique, prenez une minute pour le créer.
 
 1. Recherchez et sélectionnez le groupe `helpdesk`. Cliquez sur **Sélectionner**. 
 
@@ -100,7 +94,7 @@ Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer
 
 1. Passez au panneau **Contrôle d’accès (IAM)**. Sous l’onglet **Attributions de rôles**, vérifiez que le groupe de **support technique** a le rôle **Contributeur de machine virtuelle**. 
 
-    >**Remarque :** En tant que meilleure pratique, attribuez toujours des rôles à des groupes et non à des personnes. 
+    >**Remarque :** En tant que meilleure pratique, attribuez toujours des rôles à des groupes et non à des personnes. 
 
     >**Le saviez-vous ?** Il est possible que cette attribution ne vous accorde aucun privilège supplémentaire. Si vous avez déjà le rôle Propriétaire, ce rôle inclut toutes les autorisations associées au rôle Contributeur de machine virtuelle.
     
@@ -129,7 +123,7 @@ Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles per
 
 1. Dans la liste des autorisations, placez une case à cocher à côté de **Autres : Inscrit le fournisseur de ressources de support**, puis sélectionnez **Ajouter**. Le rôle doit être mis à jour pour inclure cette autorisation en tant que *NotAction*.
 
-    >**Remarque :** Un fournisseur de ressources Azure est un ensemble d’opérations REST qui active une fonctionnalité pour un service Azure spécifique. Nous ne voulons pas que le support technique puisse disposer de cette fonctionnalité. Elle est donc supprimée du rôle cloné. 
+    >**Remarque :** Un fournisseur de ressources Azure est un ensemble d’opérations REST qui active une fonctionnalité pour un service Azure spécifique. Nous ne voulons pas que le support technique puisse disposer de cette fonctionnalité. Elle est donc supprimée du rôle cloné. 
 
 1. Sous l’onglet **Étendues attribuables**, vérifiez que votre groupe d’administration est répertorié, puis cliquez sur **Suivant**.
 
@@ -137,7 +131,7 @@ Dans cette tâche, vous allez créer un rôle RBAC personnalisé. Les rôles per
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer**.
 
-    >**Remarque :** À ce stade, vous avez créé un rôle personnalisé et vous l’avez affecté au groupe d’administration.  
+    >**Remarque :** À ce stade, vous avez créé un rôle personnalisé et vous l’avez affecté au groupe d’administration.  
 
 ## Tâche 4 : Surveillez des attributions de rôle avec le journal d’activité.
 
