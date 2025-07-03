@@ -18,13 +18,12 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation a migré son infrastructure dans Azure. Il est important que les Administrateurs soient avertis de toute modification importante de l’infrastructure. Vous envisagez d’examiner les fonctionnalités d’Azure Monitor, y compris Log Analytics.
 
-## Simulation de labo interactif
+## Simulations de labo interactives
 
-Il existe une simulation de labo interactive qui peut vous être utile pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
-+ [Implémenter la supervision.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017) Créez un espace de travail Log Analytics et des solutions basées sur l’automatisation Azure. Passez en revue les paramètres de monitoring et de diagnostic pour des machines virtuelles. Passez en revue la fonctionnalité Log Analytics et Azure Monitor. 
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
+
 
 ![Diagramme des tâches d’architecture](../media/az104-lab11-architecture.png)
 

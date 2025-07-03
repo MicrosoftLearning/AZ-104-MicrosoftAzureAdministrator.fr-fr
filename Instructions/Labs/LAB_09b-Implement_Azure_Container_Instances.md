@@ -17,13 +17,10 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 ## Scénario du labo
 
 Votre organisation dispose d’une application web qui s’exécute sur une machine virtuelle dans votre centre de données local. L’organisation souhaite déplacer toutes les applications vers le cloud, mais ne veut pas avoir à gérer un grand nombre de serveurs. Vous décidez d’évaluer Azure Container Instances et Docker. 
+
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
-+ [Déployez Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Créez, configurez et déployez un conteneur Docker avec Azure Container Instances.
-  
-+ [Implémentez Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Déployez une image Docker en utilisant Azure Container Instances. 
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 

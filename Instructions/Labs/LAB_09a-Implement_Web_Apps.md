@@ -21,11 +21,7 @@ Votre organisation s’intéresse aux applications web Azure pour l’hébergeme
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
-+ [Créez une application web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Créez une application Web qui exécute un conteneur Docker.
-    
-+ [Implémentez des applications web Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013). Créez une application web Azure, gérez le déploiement et mettez à l’échelle l’application. 
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 

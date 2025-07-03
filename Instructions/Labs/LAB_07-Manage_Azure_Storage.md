@@ -20,11 +20,7 @@ Votre organisation stocke actuellement des données dans des magasins de donnée
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire. 
-
-+ [Créer un stockage blob](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Créer un compte de stockage, gérez le stockage blob et surveillez les activités de stockage. 
-  
-+ [Gérer Stockage Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011). Créer un compte de stockage et passer en revue la configuration. Gère les conteneurs d’objets blob de stockage. Configurer la mise en réseau du stockage. 
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Diagramme de l'architecture
 

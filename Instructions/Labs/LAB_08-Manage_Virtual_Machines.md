@@ -20,15 +20,7 @@ Votre organisation souhaite découvrir le déploiement et la configuration de ma
 
 ## Simulations de labo interactives
 
-Il existe des simulations de labo interactives qui peuvent vous être utiles pour cette rubrique. La simulation vous permet de parcourir un scénario similaire, à votre propre rythme. Il existe des différences entre la simulation interactive et ce labo, mais bon nombre des principaux concepts sont les mêmes. Un abonnement Azure n’est pas nécessaire.
-
-+ [Créez une machine virtuelle dans le portail](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201). Créez une machine virtuelle, connectez et installez le rôle serveur web.
-
-+ [Déployez une machine virtuelle avec un modèle](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Explorez la galerie QuickStart (Démarrage rapide) et localisez un modèle de machine virtuelle. Déployez le modèle et vérifiez le déploiement.
-
-+ [Créez une machine virtuelle avec PowerShell](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2010). Utilisez Azure PowerShell pour déployer une machine virtuelle. Examinez les suggestions d’Azure Advisor.
-
-+ [Créez une machine virtuelle avec l’interface CLI](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2011). Utilisez l’interface CLI pour déployer une machine virtuelle. Examinez les suggestions d’Azure Advisor.
+>**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
 
 ## Compétences de tâche
 
