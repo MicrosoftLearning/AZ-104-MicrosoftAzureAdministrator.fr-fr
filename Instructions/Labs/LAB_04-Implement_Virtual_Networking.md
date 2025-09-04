@@ -179,6 +179,8 @@ Dans cette tâche, nous créons un groupe de sécurité d’application et un gr
 
 1. Dans le portail Azure, recherchez et sélectionnez `Network security groups`.
 
+>**Remarque :** Vous pouvez également trouver cette ressource à l’aide du menu du portail Azure (icône en haut à gauche). Sélectionnez **Créer une ressource**, puis dans le volet **Mise en réseau**, sélectionnez **Groupe de sécurité réseau**. 
+
 1. Sélectionnez **+ Créer**, puis fournissez les informations sous l’onglet **Informations de base**. 
 
     | Paramètre | Valeur |
@@ -239,11 +241,11 @@ Dans cette tâche, nous créons un groupe de sécurité d’application et un gr
     | Destination | **Balise du service** |
     | Identification de destination | **Internet** |
     | Service | **Personnalisée** |
-    | Plages de ports de destination | **8080** |
+    | Plages de ports de destination | `*` |
     | Protocol | **Any** |
     | Action | **Deny** |
     | Priority | **4096** |
-    | Nom | **DenyAnyCustom8080Outbound** |
+    | Nom | `DenyInternetOutbound` |
 
 
 ## Tâche 4 : Configurer des zones Azure DNS publiques et privées
@@ -273,7 +275,7 @@ Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre d
 
 1. Dans le panneau **Vue d’ensemble**, notez les noms des quatre serveurs de noms Azure DNS affectés à la zone. **Copiez** une des adresses de serveur de noms. Vous en aurez besoin à une étape ultérieure. 
   
-1. Développez le panneau **Gestion DNS** et sélectionnez **Recordsets**. Cliquez sur **+Ajouter**. 
+1. Développez le panneau **Gestion DNS** et sélectionnez **Recordsets**. Cliquez sur **+ Ajouter**. 
 
     | Propriété | Valeur    |
     |:---------|:---------|
@@ -370,3 +372,5 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Un groupe de sécurité réseau contient des règles de sécurité qui autorisent ou interdisent le trafic réseau. Il existe des règles entrantes et sortantes par défaut, que vous pouvez personnaliser en fonction de vos besoins.
 + Les groupes de sécurité d’application sont utilisés pour protéger des groupes de serveurs ayant une fonction commune, comme des serveurs web ou des serveurs de base de données.
 + Azure DNS est un service d’hébergement pour les domaines DNS, qui fournit la résolution des noms. Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public.  Vous pouvez aussi utiliser des zones DNS privées pour affecter des noms DNS à des machines virtuelles dans vos réseaux virtuels Azure.
+
+
