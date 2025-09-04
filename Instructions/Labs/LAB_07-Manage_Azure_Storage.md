@@ -56,7 +56,7 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
 1. Sous l’onglet **Avancé**, utilisez les icônes d’information pour en savoir plus sur les choix. Utilisez les valeurs par défaut. 
 
-1. Dans l’onglet **Réseaux**, dans la section **Accès réseau**, sélectionnez **Désactiver l’accès public et utiliser l’accès privé**. Pour restreindre l’accès entrant tout en autorisant l’accès sortant, sélectionnez Désactiver. 
+1. Dans l’onglet **Réseaux**, dans la section **Accès réseau public**, sélectionnez **Désactiver**. Pour restreindre l’accès entrant tout en autorisant l’accès sortant, sélectionnez Désactiver. 
 
 1. Passez en revue l’onglet **Protection des données**. Notez que la stratégie de rétention pour la suppression réversible est par défaut de 7 jours. Notez que vous pouvez activer le contrôle de version des blobs. Acceptez les valeurs par défaut.
 
@@ -70,8 +70,9 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
 1. Dans le panneau **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**. Notez que l’**accès au réseau public** est désactivé.
 
-    + Définissez l’**Accès au réseau public** sur **Activé à partir des réseaux virtuels et adresses IP sélectionnés**.
-    + Dans la section **Pare-feu**, cochez la case pour **Ajouter l’adresse IP de votre client**.
+    + Sélectionnez **Gérer** et modifiez le paramètre **Accès au réseau public** sur **Activé**. 
+    + Modifiez le paramètre **Étendue de l’accès au réseau public** en **Activer à partir des réseaux sélectionnés**.
+    + Dans la section **Adresses IPv4**, sélectionnez **Ajouter l’adresse IPv4 de votre client**.
     + Enregistrez les changements apportés.
   
 1. Dans le panneau **Gestion des données**, sélectionnez **Redondance**. Notez les informations sur les emplacements de votre centre de données principal et de votre centre de données secondaire.
@@ -80,7 +81,7 @@ Dans cette tâche, vous allez créer et configurer un compte de stockage. Le com
 
     + **Nommez la règle **`Movetocool`. Notez vos options pour limiter l’étendue de la règle. Sélectionnez **Suivant**. 
     
-    + Sous l’onglet **Objets blob de base**, *si* des objets blob de base ont été modifiés plus de `30 days` auparavant, *alors***passez au stockage froid**. Notez vos autres choix. 
+    + Sur la page **Ajouter une règle**, *si* les blobs de base ont été modifiés pour la dernière fois il y a plus de `30` jours *, alors* **passez au stockage sporadique**. Notez vos autres choix. 
     
     + Notez que vous pouvez configurer d’autres conditions. Sélectionnez **Ajouter** quand vous avez terminé l’exploration.
 
@@ -138,9 +139,9 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 1. Vérifiez que vous avez un nouveau dossier et que votre fichier a été chargé. 
 
-1. Sélectionnez votre fichier chargé, puis passez en revue les options, notamment **Télécharger**, **Supprimer**, **Changer le niveau** et **Acquérir le bail**.
+1. Sélectionnez votre fichier à télécharger et passez en revue les options représentées par les points de suspension (...), notamment **Télécharger**, **Supprimer**, **Modifier le niveau** et **Acquérir le bail**.
 
-1. Copiez l’**URL** du fichier (panneau Propriétés) et collez-la dans une nouvelle fenêtre de navigation **InPrivate**.
+1. Copiez le fichier **URL** (Paramètres --> Onglet Propriétés) et collez-le dans une nouvelle fenêtre de navigation **Inprivate**.
 
 1. Un message au format XML indiquant **ResourceNotFound** ou **PublicAccessNotPermitted** doit vous être présenté.
 
@@ -200,7 +201,7 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 ### Restreindre l’accès réseau au compte de stockage
 
-1. Dans le portail, recherchez et sélectionnez **Réseaux virtuels**.
+1. Dans le portail, recherchez et sélectionnez `Virtual networks`.
 
 1. Sélectionnez **+ Créer**. Sélectionnez votre groupe de ressources. Donnez un **nom** au réseau virtuel, `vnet1`.
 
@@ -218,9 +219,13 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Dans le panneau **Sécurité + mise en réseau**, sélectionnez **Mise en réseau**.
 
-1. Sélectionnez **Ajouter un réseau virtuel existant**, puis sélectionnez le réseau **vnet1** et le sous-réseau **default**, puis cliquez sur **Ajouter**.
+1. Sous **Accès au réseau public**, sélectionnez **Gérer**. 
 
-1. Dans la section **Pare-feu**, **supprimez** l’adresse IP de votre machine. Le trafic autorisé doit provenir seulement du réseau virtuel. 
+1. Sélectionnez **Ajouter un réseau virtuel**, puis **Ajouter un réseau existant**.
+
+1. Sélectionnez **vnet1** et le sous-réseau **par défaut**, puis cliquez sur **Ajouter**.
+
+1. Dans la section **Adresses IPv4**, **Supprimez** l’adresse IP de votre machine. Le trafic autorisé doit provenir seulement du réseau virtuel. 
 
 1. Veillez à **Enregistrer** vos modifications.
 
@@ -228,7 +233,7 @@ Dans cette tâche, vous allez créer et configurer des partages des fichiers Azu
 
 1. Sélectionnez le **navigateur de stockage**, puis **actualisez** la page. Accédez au contenu de votre partage de fichiers ou de votre blob.  
 
-    >**Remarque :** Vous devez recevoir un message *Vous n’êtes pas autorisé à effectuer cette opération.*. Vous ne vous connectez pas à partir du réseau virtuel. Quelques minutes peuvent être nécessaires pour que ceci soit pris en compte.
+    >**Remarque :** Vous devez recevoir un message *Vous n’êtes pas autorisé à effectuer cette opération.*. Vous ne vous connectez pas à partir du réseau virtuel. Quelques minutes peuvent être nécessaires pour que ceci soit pris en compte. Vous pouvez toujours afficher le partage de fichiers, mais pas les fichiers ou les blobs dans le compte de stockage. 
 
 
 ![Capture d’écran d’un accès non autorisé.](../media/az104-lab07-notauthorized.png)
@@ -250,8 +255,8 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
-+ [Optimiser vos coûts avec Stockage Blob Azure.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Découvrez comment optimiser votre coût avec Stockage Blob Azure.
-+ [Contrôler l’accès à Stockage Azure avec des signatures d’accès partagé](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Accorder l’accès aux données stockées dans vos comptes de stockage Azure en utilisant des signatures d’accès partagé.
++ [Créer un compte de stockage Azure](https://learn.microsoft.com/training/modules/create-azure-storage-account/) Créez un compte de Stockage Azure avec les options adéquates pour les besoins de votre entreprise.
++ [Gérez le cycle de vie du stockage Blob Azure](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle). Apprenez à gérer la disponibilité des données tout au long du cycle de vie du stockage Blob Azure.
 
 ## Points clés
 

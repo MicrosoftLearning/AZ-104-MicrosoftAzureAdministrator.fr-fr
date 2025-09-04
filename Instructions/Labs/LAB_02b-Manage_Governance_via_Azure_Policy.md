@@ -36,9 +36,9 @@ L’empreinte cloud de votre organisation a considérablement augmenté l’ann�
 
 ## Compétences de tâche
 
-+ Tâche 1 : Créer et attribuer des étiquettes via le portail Azure.
-+ Tâche 2 : Exécutez un balisage via une stratégie Azure Policy.
-+ Tâche 3 : Appliquez un balisage via une stratégie Azure Policy.
++ Tâche 1 : créer et attribuer des balises via le Portail Azure.
++ Tâche 2 : appliquer une catégorisation par le biais d’une Azure Policy.
++ Tâche 3 : appliquer une catégorisation par le biais d’une Azure Policy.
 + Tâche 4 : Configurez et testez les verrous d’une ressource. 
 
 ## Tâche 1 : Attribuer des balises via le portail Azure
@@ -240,10 +240,6 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 + Tabulez les différences entre Azure Policy et Azure RBAC, incluez des exemples.
 + Quelles sont les étapes permettant d’appliquer la stratégie Azure et de corriger les ressources qui ne sont pas conformes ?
 + Comment puis-je obtenir un rapport des ressources Azure avec des balises spécifiques ?
-
-## En savoir plus grâce à l’apprentissage auto-rythmé
-
-+ [Concevez une stratégie de gouvernance d’entreprise](https://learn.microsoft.com/training/modules/enterprise-governance/). Utilisez RBAC et Azure Policy pour limiter l’accès à vos solutions Azure et déterminer la méthode qui convient le mieux à vos objectifs de sécurité.
 
 ## Points clés
 

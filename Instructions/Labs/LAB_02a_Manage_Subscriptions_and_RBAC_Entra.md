@@ -37,8 +37,8 @@ Pour simplifier la gestion des ressources Azure dans votre organisation, vous ê
 ## Compétences de tâche
 
 + Tâche 1 : Implémentez des groupes d’administration.
-+ Tâche 2 : Passez en revue et attribuez un rôle Azure intégré.
-+ Tâche 3 : Créez un rôle RBAC personnalisé.
++ Tâche 2 : passer en revue et attribuer un rôle Azure intégré.
++ Tâche 3 : créer un rôle RBAC personnalisé.
 + Tâche 4 : Surveillez des attributions de rôle avec le journal d’activité.
 
 ## Tâche 1 : Implémenter des groupes d’administration
@@ -162,7 +162,6 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
 + [Sécurisez vos ressources Azure avec le contrôle d’accès en fonction du rôle Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Utilisez Azure RBAC pour gérer l’accès aux ressources dans Azure.
-+ [Créez des rôles personnalisés pour des ressources Azure avec le contrôle d’accès en fonction du rôle (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenez la structure des définitions de rôle pour le contrôle d’accès. Identifiez les propriétés de rôle à utiliser pour définir vos autorisations de rôle personnalisées. Créez un rôle Azure personnalisé et attribuez-le à un utilisateur.
 
 ## Points clés
 
@@ -174,6 +173,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Vous pouvez créer des rôles ou personnaliser des rôles existants.
 + Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
 + Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles.
+
 
 
 
