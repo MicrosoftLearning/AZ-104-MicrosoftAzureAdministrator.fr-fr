@@ -257,6 +257,7 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 + [Créer un compte de stockage Azure](https://learn.microsoft.com/training/modules/create-azure-storage-account/) Créez un compte de Stockage Azure avec les options adéquates pour les besoins de votre entreprise.
 + [Gérez le cycle de vie du stockage Blob Azure](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle). Apprenez à gérer la disponibilité des données tout au long du cycle de vie du stockage Blob Azure.
++ [Optimiser vos coûts avec Stockage Blob Azure.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Découvrez comment optimiser votre coût avec Stockage Blob Azure.
 
 ## Points clés
 
