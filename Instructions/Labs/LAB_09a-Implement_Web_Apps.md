@@ -138,9 +138,9 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 Dans cette tâche, vous allez configurer la mise à l’échelle automatique de l’application web Azure. La mise à l’échelle automatique vous permet de maintenir des performances optimales pour votre application web lorsque le trafic vers l’application web augmente. Pour déterminer quand l’application doit être mise à l’échelle, vous pouvez surveiller les métriques telles que l’utilisation du processeur, la mémoire ou la bande passante.
 
-1. Dans la section **Paramètres**, sélectionnez **Scale-out (plan App Service)**.
+1. Dans le volet gauche, dans la section **plan App Service**, sélectionnez **Effectuer un scale-out**.
 
-    >**Remarque :** Vérifiez que vous travaillez sur l’emplacement de production et non sur l’emplacement de préproduction.  
+    >**Remarque :** Vérifiez que vous travaillez sur l’emplacement de production et non sur l’emplacement de préproduction.  
 
 1. Dans la section **Mise à l’échelle**, sélectionnez **Automatique**. Examinez l’option **Basée sur les règles**. La mise à l’échelle basée sur des règles peut être configurée pour différentes métriques d’application. 
 
