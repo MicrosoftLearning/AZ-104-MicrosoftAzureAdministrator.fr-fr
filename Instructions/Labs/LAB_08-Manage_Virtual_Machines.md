@@ -24,9 +24,9 @@ Votre organisation souhaite découvrir le déploiement et la configuration de ma
 
 ## Compétences de tâche
 
-+ Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du portail Azure.
-+ Tâche 2 : gérez la mise à l’échelle des capacités de calcul et de stockage des machines virtuelles.
-+ Tâche 3 : créez et configurez Azure Virtual Machine Scale Sets.
++ Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du portail Azure.
++ Tâche 2 : gérez la mise à l’échelle des capacités de calcul et de stockage des machines virtuelles.
++ Tâche 3 : créez et configurez Azure Virtual Machine Scale Sets.
 + Tâche 4 : mettre à l’échelle Azure Virtual Machine Scale Sets.
 + Tâche 5 : Créez une machine virtuelle en utilisant Azure PowerShell (option 1).
 + Tâche 6 : Créez une machine virtuelle en utilisant l’interface CLI (option 2).
@@ -70,7 +70,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
 
 1. Cliquez sur **Suivant : Disques >**, spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
-    | Paramètre | Value |
+    | Paramètre | Valeur |
     | --- | --- |
     | Type de disque du système d’exploitation | **SSD Premium** |
     | Supprimer avec la machine virtuelle | **vérifié** (par défaut) |
@@ -381,7 +381,7 @@ Dans cette tâche, vous mettez à l’échelle le groupe de machines virtuelles 
 1. Une fois la commande terminée, utilisez **az vm show** pour vérifier la création de votre machine.
 
     ```sh
-    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details
+    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details --output table
     ```
 
 1. Vérifiez que l’état **powerState** est **Exécution de la machine virtuelle**.

@@ -172,7 +172,7 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 1. Confirmez la création du disque.
 
    ```powershell
-   Get-AzDisk
+   Get-AzDisk | ft
    ```
    
 ## Tâche 4 : Déployez un modèle avec l’interface CLI. 
