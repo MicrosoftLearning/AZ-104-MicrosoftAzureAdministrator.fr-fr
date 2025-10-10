@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Lab\_01\_: Gérer les identités Microsoft\_Entra\_ID"
+  title: 'Lab 01 : Gérer les identités Microsoft Entra ID'
   module: Administer Identity
 ---
 
-# Lab 01 - Gérer les identités Microsoft Entra ID
+# Lab 01 - Gérer les identités Microsoft Entra ID
 
 ## Présentation du labo
 
@@ -13,7 +13,7 @@ Il s’agit du premier d’une série de labos pour les administrateurs Azure. D
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
 
-## Durée estimée : 30 minutes
+## Durée estimée : 30 minutes
 
 ## Scénario du labo
 
@@ -25,10 +25,10 @@ Votre organisation crée un nouvel environnement de labos pour les tests de pré
 
 ## Compétences de tâche
 
-+ Tâche 1 : Créez et configurez des comptes d’utilisateur.
-+ Tâche 2 : Créez des groupes et ajoutez-y des membres.
++ Tâche 1 : Créez et configurez des comptes d’utilisateur.
++ Tâche 2 : Créez des groupes et ajoutez-y des membres.
 
-## Tâche 1 : Créer et configurer des comptes d’utilisateur
+## Tâche 1 : Créer et configurer des comptes d’utilisateur
 
 Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. Les comptes d’utilisateur stockent les données utilisateur telles que le nom, le service, l’emplacement et les informations sur le contact.
 
@@ -36,7 +36,7 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
 
 1. Pour passer au portail, sélectionnez **Annuler** sur l’écran de démarrage **Bienvenue dans Azure**. 
 
-    >**Remarque :** Le Portail Azure est utilisé dans tous les labos. Si vous débutez sur Azure, recherchez et sélectionnez `Quickstart Center`. Prenez quelques minutes pour regarder la vidéo **Bien démarrer dans le Portail Azure** (en anglais). Même si vous avez déjà utilisé le portail, vous y trouverez quelques conseils et astuces sur la navigation et la personnalisation de l’interface.
+    >**Remarque :** Le Portail Azure est utilisé dans tous les labos. Si vous débutez sur Azure, recherchez et sélectionnez `Quickstart Center`. Prenez quelques minutes pour regarder la vidéo **Bien démarrer dans le Portail Azure** (en anglais). Même si vous avez déjà utilisé le portail, vous y trouverez quelques conseils et astuces sur la navigation et la personnalisation de l’interface.
     
 1. Recherchez et sélectionnez `Microsoft Entra ID`. Microsoft Entra ID est la solution de gestion des identités et accès cloud d’Azure. Prenez quelques minutes pour vous familiariser avec certaines des fonctionnalités répertoriées dans le volet de gauche. 
 
@@ -50,7 +50,7 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
    
 ### Créer un utilisateur
 
-1. Sélectionnez **Utilisateurs**, puis dans la liste déroulante **Nouvel utilisateur**, sélectionnez **Créer un utilisateur**. 
+1. Dans le volet **Gérer**, sélectionnez **Utilisateurs** ; puis, dans le menu déroulant **Nouvel utilisateur**, sélectionnez **Créer un nouvel utilisateur**. 
 
 1. Créez un utilisateur avec les paramètres suivants (laissez les autres avec leurs valeurs par défaut). Sous l’onglet **Propriétés**, notez tous les types d’informations que vous pouvez inclure dans le compte d’utilisateur. 
 
@@ -91,9 +91,9 @@ Dans cette tâche, vous allez créer et configurer des comptes d’utilisateur. 
 
 1. **Actualisez la page** et confirmez la création de l’utilisateur invité. Vous devriez recevoir l’e-mail d’invitation sous peu. 
 
-    >**Remarque :** Il est peu probable que vous effectuiez la création de comptes d’utilisateur de manière individuelle. Savez-vous comment votre organisation prévoit de créer et de gérer des comptes d’utilisateur ?
+    >**Remarque :** Il est peu probable que vous effectuiez la création de comptes d’utilisateur de manière individuelle. Savez-vous comment votre organisation prévoit de créer et de gérer des comptes d’utilisateur ?
     
-## Tâche 2 : Créer des groupes et y ajoutez des membres
+## Tâche 2 : Créer des groupes et y ajoutez des membres
 
 Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuvent inclure des comptes d’utilisateur ou des appareils. L’attribution de membres à des groupes s’effectue de deux façons : Statiquement ou dynamiquement. Les groupes statiques nécessitent l’ajout et la suppression manuels de membres par les administrateurs.  Les groupes dynamiques sont mis à jour automatiquement selon les propriétés d’un compte d’utilisateur ou d’un appareil. Par exemple, un poste. 
 
@@ -113,7 +113,7 @@ Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuve
     | Description du groupe | `Administrators that manage the IT lab` |
     | Type d’appartenance | **Affecté** |
 
-    >**Remarque** : Une licence Entra ID Premium P1 ou P2 est requise pour une appartenance dynamique. Si d’autres **Types d’appartenance** sont disponibles, les options s’affichent dans la liste déroulante. 
+    >**Remarque** : Une licence Entra ID Premium P1 ou P2 est requise pour une appartenance dynamique. Si d’autres **Types d’appartenance** sont disponibles, les options s’affichent dans la liste déroulante. 
     
     ![Capture d’écran de la création d’un groupe attribué.](../media/az104-lab01-create-assigned-group.png)
 
@@ -131,7 +131,7 @@ Dans cette tâche, vous créez un compte de groupe. Les comptes de groupes peuve
 
 1. Sélectionnez le nouveau groupe et passez en revue les informations sur les **Membres** et **Propriétaires**.
 
->**Remarque :** Il est possible que vous gériez un grand nombre de groupes. Votre organisation dispose-t-elle d’un plan pour créer des groupes et ajouter des membres ?
+>**Remarque :** Il est possible que vous gériez un grand nombre de groupes. Votre organisation dispose-t-elle d’un plan pour créer des groupes et ajouter des membres ?
    
 ## Développer votre apprentissage avec Copilot
 
@@ -144,7 +144,7 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 ## En savoir plus grâce à l’apprentissage auto-rythmé
 
-+ [Maîtrisez Microsoft Entra ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/). Comparez Microsoft Entra ID à Active Directory DS, découvrez Microsoft Entra ID P1 et P2 et explorez Microsoft Entra Domain Services pour gérer les appareils et applications joints à un domaine dans le cloud.
++ [Maîtrisez Microsoft Entra ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/). Comparez Microsoft Entra ID à Active Directory DS, découvrez Microsoft Entra ID P1 et P2 et explorez Microsoft Entra Domain Services pour gérer les appareils et applications joints à un domaine dans le cloud.
 + [Créez des utilisateurs et des groupes Azure dans Microsoft Entra ID](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Créez des utilisateurs dans Microsoft Entra ID. Découvrez les différents types de groupes. Créez un groupe et ajoutez-y des membres. Gérez les comptes Invité B2B.
 + [Autorisez les utilisateurs à réinitialiser leur mot de passe avec la réinitialisation de mot de passe en libre-service Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Évaluez la réinitialisation de mot de passe en libre-service pour permettre aux utilisateurs de votre organisation de réinitialiser leur mot de passe ou de déverrouiller leurs comptes. Installez, configurez et testez la réinitialisation de mot de passe en libre-service.
 
@@ -157,3 +157,4 @@ Félicitations, vous avez terminé le labo. Voici quelques points principaux à 
 + Microsoft Entra ID dispose de comptes d’utilisateur et d’invité. Chaque compte d’utilisateur a un niveau d’accès spécifique adapté à l’étendue du travail qu’il doit effectuer.
 + Les groupes combinent des utilisateurs ou des appareils associés. Il existe deux types de groupe, notamment Sécurité et Microsoft 365.
 + Vous pouvez attribuer une appartenance à un groupe de manière statique ou dynamique.
+

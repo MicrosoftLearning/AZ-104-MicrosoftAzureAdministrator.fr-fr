@@ -98,7 +98,7 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
     | --- | --- |
     | Abonnement |  *votre abonnement* |
     | Resource group |  `az104-rg5` |
-    | Nom de la machine virtuelle |    `ManufacturingVM` |
+    | Nom de l’ordinateur virtuel |    `ManufacturingVM` |
     | Région | **(États-Unis) USA Est** |
     | Type de sécurité | **Standard** |
     | Options de disponibilité | Aucune redondance de l’infrastructure requise |
@@ -213,7 +213,7 @@ Dans cette tâche, vous testez à nouveau la connexion entre les machines virtue
 
 ## Tâche 6 : Créer une route personnalisée 
 
-Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-réseau de périmètre et le sous-réseau des principaux services internes. Une appliance de réseau virtuel est installée dans le sous-réseau des principaux services et tout le trafic doit y être acheminé. 
+Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-réseau de périmètre et le sous-réseau des principaux services internes. Un commutateur virtuel sera installé dans le sous-réseau périphérique et tout le trafic devra y être acheminé. 
 
 1. Recherchez pour sélectionner `CoreServicesVnet`.
 
