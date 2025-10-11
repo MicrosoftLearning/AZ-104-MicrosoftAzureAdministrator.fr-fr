@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation évalue comment sauvegarder et restaurer des machines virtuelles Azure à partir d’une perte de données accidentelle ou malveillante. En outre, l’organisation souhaite explorer l’utilisation d’Azure Site Recovery pour des scénarios de récupération d’urgence. 
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Compétences de tâche
 
 + Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.

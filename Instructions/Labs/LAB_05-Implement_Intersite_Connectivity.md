@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation segmente les principales applications et services informatiques (tels que les services DNS et de sécurité) d’autres parties de l’entreprise, notamment votre service de fabrication. Toutefois, dans certains scénarios, les applications et les services dans la zone principale doivent communiquer avec des applications et des services dans la zone de fabrication. Dans ce labo, vous configurez la connectivité entre les zones segmentées. Il s’agit d’un scénario courant pour séparer la production du développement ou séparer une filiale d’une autre.  
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Labo 05 – Diagramme d’architecture](../media/az104-lab05-architecture.png)

@@ -26,10 +26,6 @@ L’empreinte cloud de votre organisation a considérablement augmenté l’ann�
 
 - utiliser des verrous de ressources pour protéger des ressources configurées
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Diagramme de l’architecture d’une tâche.](../media/az104-lab02b-architecture.png)

@@ -18,12 +18,7 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation a migré son infrastructure dans Azure. Il est important que les Administrateurs soient avertis de toute modification importante de l’infrastructure. Vous envisagez d’examiner les fonctionnalités d’Azure Monitor, y compris Log Analytics.
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
-
 
 ![Diagramme des tâches d’architecture](../media/az104-lab11-architecture.png)
 

@@ -25,11 +25,6 @@ Pour simplifier la gestion des ressources Azure dans votre organisation, vous ê
     - Créer et gérer des machines virtuelles
     - Créer des tickets de demande de support (ne pas inclure l’ajout de fournisseurs Azure)
 
-
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Diagramme des tâches de labo.](../media/az104-lab02a-architecture.png)
@@ -173,6 +168,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Vous pouvez créer des rôles ou personnaliser des rôles existants.
 + Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
 + Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles.
+
 
 
 

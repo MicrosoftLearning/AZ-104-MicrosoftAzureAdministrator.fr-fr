@@ -19,10 +19,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation s’intéresse aux applications web Azure pour l’hébergement de sites web de votre entreprise. Les sites web sont actuellement hébergés dans un centre de données local. Les sites web s’exécutent sur des serveurs Windows à l’aide de la pile de runtime PHP. Le matériel est proche de sa fin de vie et devra bientôt être remplacé. Votre organisation souhaite éviter les nouveaux coûts matériels à l’aide d’Azure pour héberger les sites web. 
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Diagramme des tâches.](../media/az104-lab09a-architecture.png)
