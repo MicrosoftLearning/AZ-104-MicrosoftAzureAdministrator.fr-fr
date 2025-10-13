@@ -91,7 +91,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom de l’attribution | Exiger une balise Centre de coûts et sa valeur sur les ressources |
+    | Nom de l’attribution | `Require Cost Center tag and its value on resources` |
     | Description | `Require Cost Center tag and its value on all resources in the resource group`|
     | Application de stratégies | activé |
 

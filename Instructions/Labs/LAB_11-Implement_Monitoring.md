@@ -41,9 +41,9 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. Dans le Portail Azure, recherchez et sélectionnez `Deploy a custom template`.
 
-1. Dans la page du déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
+1. Sur la page Déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
 
-1. Sur la page de modification du modèle, sélectionnez **Charger le fichier**.
+1. Dans le volet Modifier le modèle, sélectionnez **Charger le fichier**.
 
 1. Recherchez et sélectionnez le fichier **\\Allfiles\\Lab11\\az104-11-vm-template.json**, puis sélectionnez **Ouvrir**.
 

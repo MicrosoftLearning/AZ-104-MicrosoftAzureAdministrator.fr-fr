@@ -42,9 +42,9 @@ Dans cette tâche, vous allez utiliser un modèle pour déployer une machine vir
 
 1. Recherchez et sélectionnez `Deploy a custom template`.
 
-1. Dans la page du déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
+1. Sur la page Déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
 
-1. Sur la page de modification du modèle, sélectionnez **Charger le fichier**.
+1. Dans le volet Modifier le modèle, sélectionnez **Charger le fichier**.
 
 1. Recherchez et sélectionnez le fichier **\\Allfiles\\Lab10\\az104-10-vms-edge-template.json**, puis sélectionnez **Ouvrir**.
 
