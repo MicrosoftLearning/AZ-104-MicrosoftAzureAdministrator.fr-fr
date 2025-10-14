@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # AZ-104 : administrateur Microsoft Azure
 
 ## Bienvenue
@@ -18,7 +10,7 @@ Ce référentiel est destiné aux instructeurs qui animent des cours Microsoft. 
 
 ## Problème de sécurité - Avril 2023
 
-À compter de maintenant, le mot de passe d’administrateur sera supprimé des fichiers de paramètres de modèle JSON. Cela signifie que les étudiants devront fournir un mot de passe lors du déploiement du modèle. Cela affecte les labos 4, 5, 6, 7, 10 et 11.  Les instructions concernant les labos seront modifiées pour refléter ce changement. 
+À compter de maintenant, le mot de passe d’administrateur sera supprimé des fichiers de paramètres de modèle JSON. Cela signifie que les étudiants devront fournir un mot de passe lors du déploiement du modèle. Cela concerne les labos 4, 5, 6, 7, 10 et 11.  Les instructions concernant les labos seront modifiées pour refléter ce changement. 
 
 ## Que faisons-nous ?
 
@@ -36,7 +28,7 @@ Ce référentiel est destiné aux instructeurs qui animent des cours Microsoft. 
 
 ## Comment puis-je contribuer ?
 
-- L’instructeur MCT peut soumettre une demande de tirage (pull request) au code ou au contenu dans GitHub. Microsoft et l’auteur du cours trieront et incluront alors le contenu et les modifications du code de labo en fonction des besoins.
+- L’instructeur MCT peut soumettre une demande de tirage (pull request) au code ou au contenu dans le référentiel GitHub. Microsoft et l’auteur du cours trieront et incluront alors le contenu et les modifications du code de labo en fonction des besoins.
 
 - Vous pouvez soumettre des bogues, des changements, des améliorations et des idées.  Vous avez découvert une nouvelle fonctionnalité Azure avant nous ?  Envoyez une nouvelle démonstration !
 

@@ -120,7 +120,7 @@ Dans cette tâche, vous allez remplacer l’emplacement de préproduction par l�
 
 1. Examinez les paramètres par défaut et cliquez sur **Commencer l’échange**. Attendez la notification indiquant que l’échange est terminé.
 
-1. Revenez à la page d’accueil du portail. Vous devez disposer à la fois d’une application web de production et de l’emplacement de préproduction.
+1. Revenez à la page d’accueil du portail. Vous devez disposer à la fois de l’application web de production et de l’emplacement de préproduction.
 
 1. Recherchez `App Services` et sélectionnez votre application web Azure App Service. Vous êtes alors renvoyé à l’emplacement de déploiement de production.
 

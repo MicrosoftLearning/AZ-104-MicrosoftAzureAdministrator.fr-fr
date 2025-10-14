@@ -137,7 +137,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 1. Sélectionnez votre fichier à télécharger et passez en revue les options représentées par les points de suspension (...), notamment **Télécharger**, **Supprimer**, **Modifier le niveau** et **Acquérir le bail**.
 
-1. Copiez le fichier **URL** (Paramètres --> Onglet Propriétés) et collez-le dans une nouvelle fenêtre de navigation **Inprivate**.
+1. Copiez le fichier **URL** (Paramètres --> Panneau Propriétés) et collez-le dans une nouvelle fenêtre de navigation **InPrivate**.
 
 1. Un message au format XML indiquant **ResourceNotFound** ou **PublicAccessNotPermitted** doit vous être présenté.
 
