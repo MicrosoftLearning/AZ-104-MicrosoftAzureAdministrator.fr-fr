@@ -26,10 +26,6 @@ L’empreinte cloud de votre organisation a considérablement augmenté l’ann�
 
 - utiliser des verrous de ressources pour protéger des ressources configurées
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Diagramme de l’architecture d’une tâche.](../media/az104-lab02b-architecture.png)
@@ -95,7 +91,7 @@ Dans cette tâche, vous allez affecter la stratégie intégrée *Exiger une éti
 
     | Paramètre | Valeur |
     | --- | --- |
-    | Nom de l’attribution | Exiger une balise Centre de coûts et sa valeur sur les ressources |
+    | Nom de l’attribution | `Require Cost Center tag and its value on resources` |
     | Description | `Require Cost Center tag and its value on all resources in the resource group`|
     | Application de stratégies | activé |
 

@@ -18,14 +18,10 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation a un site web public. Vous devez équilibrer la charge des requêtes publiques entrantes sur différentes machines virtuelles. Vous devez également fournir des images et des vidéos depuis différentes machines virtuelles. Vous prévoyez d’implémenter un équilibreur de charge Azure et une passerelle applicative Azure. Toutes les ressources se trouvent dans la même région.
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Compétences de tâche
 
 + Tâche 1 : Utiliser un modèle pour provisionner une infrastructure.
-+ Tâche 2 : Configurer un équilibreur de charge Azure.
++ Tâche 2 : configurer Azure Load Balancer.
 + Tâche 3 : Configurer une passerelle applicative Azure.
 
 ## Tâche 1 : Utiliser un modèle pour provisionner une infrastructure

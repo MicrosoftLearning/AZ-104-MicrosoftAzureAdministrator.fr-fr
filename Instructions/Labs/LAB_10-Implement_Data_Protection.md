@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation évalue comment sauvegarder et restaurer des machines virtuelles Azure à partir d’une perte de données accidentelle ou malveillante. En outre, l’organisation souhaite explorer l’utilisation d’Azure Site Recovery pour des scénarios de récupération d’urgence. 
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Compétences de tâche
 
 + Tâche 1 : Utilisez un modèle pour approvisionner une infrastructure.
@@ -46,9 +42,9 @@ Dans cette tâche, vous allez utiliser un modèle pour déployer une machine vir
 
 1. Recherchez et sélectionnez `Deploy a custom template`.
 
-1. Dans la page du déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
+1. Sur la page Déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
 
-1. Sur la page de modification du modèle, sélectionnez **Charger le fichier**.
+1. Dans le volet Modifier le modèle, sélectionnez **Charger le fichier**.
 
 1. Recherchez et sélectionnez le fichier **\\Allfiles\\Lab10\\az104-10-vms-edge-template.json**, puis sélectionnez **Ouvrir**.
 

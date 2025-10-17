@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation stocke actuellement des données dans des magasins de données locaux. La plupart de ces fichiers ne sont pas consultés fréquemment. Vous voulez réduire le coût du stockage en plaçant les fichiers qui ne sont pas consultés fréquemment dans des niveaux de stockage moins chers. Vous voulez également explorer différents mécanismes de protection offerts par le Stockage Azure, notamment l’accès réseau, l’authentification, l’autorisation et la réplication. Enfin, vous voulez déterminer dans quelle mesure Azure Files est adapté à l’hébergement de vos partages de fichiers locaux.
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Diagramme des tâches.](../media/az104-lab07-architecture.png)
@@ -141,7 +137,7 @@ Dans cette tâche, vous allez créer un conteneur d’objets blob et charger une
 
 1. Sélectionnez votre fichier à télécharger et passez en revue les options représentées par les points de suspension (...), notamment **Télécharger**, **Supprimer**, **Modifier le niveau** et **Acquérir le bail**.
 
-1. Copiez le fichier **URL** (Paramètres --> Onglet Propriétés) et collez-le dans une nouvelle fenêtre de navigation **Inprivate**.
+1. Copiez le fichier **URL** (Paramètres --> Panneau Propriétés) et collez-le dans une nouvelle fenêtre de navigation **InPrivate**.
 
 1. Un message au format XML indiquant **ResourceNotFound** ou **PublicAccessNotPermitted** doit vous être présenté.
 
@@ -257,7 +253,6 @@ Copilot peut vous aider à apprendre à utiliser les outils de script Azure. Cop
 
 + [Créer un compte de stockage Azure](https://learn.microsoft.com/training/modules/create-azure-storage-account/) Créez un compte de Stockage Azure avec les options adéquates pour les besoins de votre entreprise.
 + [Gérez le cycle de vie du stockage Blob Azure](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle). Apprenez à gérer la disponibilité des données tout au long du cycle de vie du stockage Blob Azure.
-+ [Optimiser vos coûts avec Stockage Blob Azure.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Découvrez comment optimiser votre coût avec Stockage Blob Azure.
 
 ## Points clés
 

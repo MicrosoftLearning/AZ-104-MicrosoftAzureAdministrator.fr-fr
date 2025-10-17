@@ -14,10 +14,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 ## Durée estimée : 50 minutes
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-  
 ## Scénario de labo
 
 Votre équipe souhaite connaître les moyens d’automatiser et de simplifier les déploiements de ressources. Votre organisation cherche comment diminuer la surcharge administrative, réduire les erreurs humaines et augmenter la cohérence.  

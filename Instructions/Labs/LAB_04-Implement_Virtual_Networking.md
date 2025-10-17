@@ -22,10 +22,6 @@ Le réseau virtuel **CoreServicesVnet** compte le plus grand nombre de ressource
 
 Le réseau virtuel **ManufacturingVnet** contient des systèmes pour les opérations du site de fabrication. L’organisation prévoit un grand nombre d’appareils connectés internes à partir desquels ses systèmes pourront récupérer des données. 
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Configuration réseau](../media/az104-lab04-architecture.png)
@@ -372,6 +368,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Un groupe de sécurité réseau contient des règles de sécurité qui autorisent ou interdisent le trafic réseau. Il existe des règles entrantes et sortantes par défaut, que vous pouvez personnaliser en fonction de vos besoins.
 + Les groupes de sécurité d’application sont utilisés pour protéger des groupes de serveurs ayant une fonction commune, comme des serveurs web ou des serveurs de base de données.
 + Azure DNS est un service d’hébergement pour les domaines DNS, qui fournit la résolution des noms. Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public.  Vous pouvez aussi utiliser des zones DNS privées pour affecter des noms DNS à des machines virtuelles dans vos réseaux virtuels Azure.
+
 
 
 

@@ -18,12 +18,7 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation a migré son infrastructure dans Azure. Il est important que les Administrateurs soient avertis de toute modification importante de l’infrastructure. Vous envisagez d’examiner les fonctionnalités d’Azure Monitor, y compris Log Analytics.
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
-
 
 ![Diagramme des tâches d’architecture](../media/az104-lab11-architecture.png)
 
@@ -46,9 +41,9 @@ Dans cette tâche, vous allez déployer une machine virtuelle qui sera utilisée
 
 1. Dans le Portail Azure, recherchez et sélectionnez `Deploy a custom template`.
 
-1. Dans la page du déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
+1. Sur la page Déploiement personnalisé, sélectionnez **Créer votre propre modèle dans l’éditeur**.
 
-1. Sur la page de modification du modèle, sélectionnez **Charger le fichier**.
+1. Dans le volet Modifier le modèle, sélectionnez **Charger le fichier**.
 
 1. Recherchez et sélectionnez le fichier **\\Allfiles\\Lab11\\az104-11-vm-template.json**, puis sélectionnez **Ouvrir**.
 

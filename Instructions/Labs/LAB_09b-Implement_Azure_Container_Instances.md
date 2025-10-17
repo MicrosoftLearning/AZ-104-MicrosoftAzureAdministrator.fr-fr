@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation dispose d’une application web qui s’exécute sur une machine virtuelle dans votre centre de données local. L’organisation souhaite déplacer toutes les applications vers le cloud, mais ne veut pas avoir à gérer un grand nombre de serveurs. Vous décidez d’évaluer Azure Container Instances et Docker. 
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Diagramme de l'architecture
 
 ![Diagramme des tâches.](../media/az104-lab09b-aci-architecture.png)
@@ -43,7 +39,7 @@ Dans cette tâche, vous allez créer une application web simple en tirant parti 
 
     | Paramètre | Valeur |
     | ---- | ---- |
-    | Abonnement | Sélectionnez votre abonnement Azure. |
+    | Abonnement | Sélectionner votre abonnement Azure |
     | Groupe de ressources | `az104-rg9` (Si nécessaire, sélectionnez **Créer**) |
     | Nom du conteneur | `az104-c1` |
     | Région | **USA Est** (ou une région disponible près de vous)|

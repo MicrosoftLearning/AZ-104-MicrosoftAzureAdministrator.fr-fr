@@ -18,10 +18,6 @@ Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecte
 
 Votre organisation souhaite découvrir le déploiement et la configuration de machines virtuelles Azure. Vous implémentez d’abord une machine virtuelle Azure avec une mise à l’échelle manuelle. Ensuite, vous implémentez un groupe de machines virtuelles identiques et explorez la mise à l’échelle automatique.
 
-## Simulations de labo interactives
-
->**Note** : les simulations de labo qui ont été fournies précédemment ont été supprimées.
-
 ## Compétences de tâche
 
 + Tâche 1 : déployer des machines virtuelles Azure résilientes à l’aide du portail Azure.
