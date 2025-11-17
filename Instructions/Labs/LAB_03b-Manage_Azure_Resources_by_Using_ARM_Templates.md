@@ -198,7 +198,7 @@ Dans cette tâche, vous travaillez avec le service Azure Cloud Shell et Azure Po
 1. Confirmez la création du disque.
 
      ```sh
-     az disk list --output table
+     az disk list --resource-group az104-rg3 --output table
      ```
    
 ## Tâche 5 : Déployez une ressource en tirant parti d’Azure Bicep.
@@ -234,7 +234,7 @@ Dans cette tâche, vous allez utiliser un fichier Bicep pour déployer un disque
 1. Confirmez la création du disque.
 
     ```sh
-    az disk list --output table
+    az disk list --resource-group az104-rg3 --output table
     ```
 
     >**Remarque :** Vous avez correctement déployé cinq disques managés, chacun d’une manière différente. Bravo !
