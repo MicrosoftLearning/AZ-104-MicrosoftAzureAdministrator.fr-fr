@@ -126,7 +126,7 @@ Dans cette tâche, vous allez implémenter une sauvegarde au niveau de la machin
     | Paramètres | Valeur |
     | --- | --- |
     | Où s'exécute votre charge de travail ? | **Azure** (notez vos autres options) |
-    | Que souhaitez-vous sauvegarder ? | **Machine virtuelle** (notez vos autres options) |
+    | Que souhaitez-vous sauvegarder ? | **Machine virtuelle** (notez vos autres options)|
 
 1. Sélectionnez **Sauvegarder**.
 

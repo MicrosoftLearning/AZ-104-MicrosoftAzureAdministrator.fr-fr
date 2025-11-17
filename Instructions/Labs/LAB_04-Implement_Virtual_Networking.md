@@ -61,7 +61,9 @@ L’organisation prévoit une forte croissance pour les services de base. Dans c
     | ------------------ | -------------------- |
     | Espace d’adressage IPv4 | Remplacez l’espace d’adressage IPv4 prérempli par `10.20.0.0/16` (séparez les entrées)  |
 
-1. Sélectionnez **+ Ajouter un sous-réseau**. Renseignez les informations de nom et d’adresse pour chaque sous-réseau. Veillez à sélectionner **Ajouter** pour chaque nouveau sous-réseau. Veillez à supprimer le sous-réseau par défaut, avant ou après avoir créé les autres sous-réseaux.
+1. Sélectionnez **+ Ajouter un sous-réseau**. Renseignez les informations de nom et d’adresse pour chaque sous-réseau. Veillez à sélectionner **Ajouter** pour chaque nouveau sous-réseau. 
+
+    >**Remarque :** Veillez à supprimer le sous-réseau par défaut, avant ou après avoir créé les autres sous-réseaux.
 
     | **Sous-réseau**             | **Option**           | **Valeur**              |
     | ---------------------- | -------------------- | ---------------------- |
@@ -226,7 +228,7 @@ Dans cette tâche, nous créons un groupe de sécurité d’application et un gr
 
 1. Après avoir créé votre règle de groupe de sécurité réseau de trafic entrant, sélectionnez **Règles de sécurité de trafic sortant**es. 
 
-1. Notez la règle **AllowInternetOutboundRule**. Notez également que la règle ne peut pas être supprimée et que la priorité est 65001.
+1. Notez la règle **AllowInternetOutBound**. Notez également que la règle ne peut pas être supprimée et que la priorité est 65001.
 
 1. Sélectionnez **+ Ajouter**, puis configurez une règle de trafic sortant qui refuse l’accès à Internet. Quand vous avez terminé, sélectionnez **Ajouter**.
 
@@ -368,6 +370,8 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Un groupe de sécurité réseau contient des règles de sécurité qui autorisent ou interdisent le trafic réseau. Il existe des règles entrantes et sortantes par défaut, que vous pouvez personnaliser en fonction de vos besoins.
 + Les groupes de sécurité d’application sont utilisés pour protéger des groupes de serveurs ayant une fonction commune, comme des serveurs web ou des serveurs de base de données.
 + Azure DNS est un service d’hébergement pour les domaines DNS, qui fournit la résolution des noms. Vous pouvez configurer Azure DNS pour résoudre les noms d’hôtes dans votre domaine public.  Vous pouvez aussi utiliser des zones DNS privées pour affecter des noms DNS à des machines virtuelles dans vos réseaux virtuels Azure.
+
+
 
 
 

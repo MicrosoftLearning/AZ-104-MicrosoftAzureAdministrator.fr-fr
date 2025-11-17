@@ -54,7 +54,7 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
     | Options de disponibilité | **Zone de disponibilité** |
     | Zone de disponibilité | **Zone 1, 2** (parcourez la note sur l’utilisation de groupes de machines virtuelles identiques) |
     | Type de sécurité | **Standard** |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
+    | Image (Voir toutes les images) | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Instance Azure Spot | **non cochée** |
     | Taille | **Standard D2s v3** |
     | Nom d’utilisateur | `localadmin` |
@@ -172,7 +172,7 @@ Dans cette tâche, vous allez déployer un groupe de machines virtuelles identiq
     | Mode d’orchestration | **Uniforme** |
     | Type de sécurité | **Standard** |
     | Options de scaling | **Vérifiez et prenez les valeurs par défaut**. Nous allons changer cela lors de la prochaine tâche. |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
+    | Image (Voir toutes les images) | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Exécuter avec la remise Azure Spot | **Décoché** |
     | Taille | **D2s_v3 standard** |
     | Nom d’utilisateur | `localadmin` |
