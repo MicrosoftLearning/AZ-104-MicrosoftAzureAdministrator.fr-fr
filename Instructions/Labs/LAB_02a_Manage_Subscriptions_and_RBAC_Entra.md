@@ -46,7 +46,7 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
 1. Dans le panneau **Gérer**, sélectionnez **Propriétés**.
 
-1. Passez en revue la zone **Gestion de l’accès pour les ressources Azure**. Vérifiez que vous pouvez gérer l’accès à tous les abonnements Azure et à tous les groupes d’administration de ce tenant.
+1. Passez en revue la zone **Gestion de l’accès pour les ressources Azure**. Notez/lisez que vous pouvez gérer l’accès à tous les abonnements Azure et groupes de gestion dans le locataire.
    
 1. Recherchez et sélectionnez **Groupes d’administration**.
 
@@ -168,6 +168,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Vous pouvez créer des rôles ou personnaliser des rôles existants.
 + Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
 + Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles.
+
 
 
 
