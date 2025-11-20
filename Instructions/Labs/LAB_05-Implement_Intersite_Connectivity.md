@@ -39,9 +39,9 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
 1. Recherchez et sélectionnez `Virtual Machines`.
 
-1. Sur la page des machines virtuelles, sélectionnez **Créer**, puis **Machine virtuelle Azure**.
+1. Depuis la page des machines virtuelles, sélectionnez **Créer**, puis **Machine virtuelle**.
 
-1. Sous l’onglet Informations de base, utilisez les informations suivantes pour remplir le formulaire, puis sélectionnez **Suivant : Disques >**. Si un paramètre n’est pas spécifié, laissez la valeur par défaut.
+1. Dans l’onglet Informations de base, utilisez les informations suivantes pour remplir le formulaire, puis sélectionnez **Suivant : Disques >**. Si un paramètre n’est pas spécifié, laissez la valeur par défaut.
  
     | Paramètre | Valeur | 
     | --- | --- |
@@ -49,9 +49,9 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
     | Resource group |  `az104-rg5` (si nécessaire, **Créez-en un**. )
     | Nom de la machine virtuelle |    `CoreServicesVM` |
     | Région | **(États-Unis) USA Est** |
-    | Options de disponibilité | Aucune redondance de l’infrastructure requise |
+    | Options de disponibilité | Aucune redondance d’infrastructure requise |
     | Type de sécurité | **Standard** |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** (notez vos autres choix) |
+    | Image (Voir toutes les images) | **Windows Server 2019 Datacenter : x64 Gen2** (notez vos autres choix) |
     | Taille | **Standard_DS2_v3** |
     | Nom d’utilisateur | `localadmin` | 
     | Mot de passe | **Fournir mot de passe complexe** |
@@ -59,7 +59,7 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
     ![Capture d’écran de la page de création de machine virtuelle de base. ](../media/az104-lab05-createcorevm.png)
    
-1. Sous l’onglet **Disques**, prenez les valeurs par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
+1. Dans l’onglet **Disques**, conservez les paramètres par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
 
 1. Sous l’onglet **Mise en réseau**, pour Réseau virtuel, sélectionnez **Créer**.
 
@@ -67,14 +67,14 @@ Dans cette tâche, vous créez un réseau virtuel des principaux services avec u
 
     | Paramètre | Valeur | 
     | --- | --- |
-    | Nom | `CoreServicesVnet` (Créer) |
+    | Nom | `CoreServicesVnet` (Créer ou modifier) |
     | Plage d’adresses | `10.0.0.0/16`  |
     | Nom du sous-réseau | `Core` | 
     | Plage d’adresses de sous-réseau | `10.0.0.0/24` |
 
-1. Sélectionnez l’onglet **Supervision**. Pour Diagnostics de démarrage, sélectionnez **Désactiver**.
+1. Sélectionnez l’onglet **Supervision**. Pour les diagnostics de démarrage, sélectionnez **Désactiver**.
 
-1. Sélectionnez **Vérifier + créer**, puis **Créer**.
+1. Sélectionnez **Examiner + créer**, puis sélectionnez **Créer**.
 
 1. Vous n’avez pas besoin d’attendre la création des ressources. Passez à la tâche suivante.
 
@@ -86,9 +86,9 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
 
 1. Dans le Portail Azure, recherchez et accédez à **Machines virtuelles**.
 
-1. Sur la page des machines virtuelles, sélectionnez **Créer**, puis **Machine virtuelle Azure**.
+1. Depuis la page des machines virtuelles, sélectionnez **Créer**, puis **Machine virtuelle**.
 
-1. Sous l’onglet Informations de base, utilisez les informations suivantes pour remplir le formulaire, puis sélectionnez **Suivant : Disques >**. Si un paramètre n’est pas spécifié, laissez la valeur par défaut.
+1. Dans l’onglet Informations de base, utilisez les informations suivantes pour remplir le formulaire, puis sélectionnez **Suivant : Disques >**. Si un paramètre n’est pas spécifié, laissez la valeur par défaut.
  
     | Paramètre | Valeur | 
     | --- | --- |
@@ -97,14 +97,14 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
     | Nom de l’ordinateur virtuel |    `ManufacturingVM` |
     | Région | **(États-Unis) USA Est** |
     | Type de sécurité | **Standard** |
-    | Options de disponibilité | Aucune redondance de l’infrastructure requise |
-    | Image | **Windows Server 2019 Datacenter : x64 Gen2** |
+    | Options de disponibilité | Aucune redondance d’infrastructure requise |
+    | Image (Voir toutes les images) | **Windows Server 2019 Datacenter : x64 Gen2** |
     | Taille | **Standard_DS2_v3** | 
     | Nom d’utilisateur | `localadmin` | 
     | Mot de passe | **Fournir mot de passe complexe** |
-    | Aucun port d’entrée public | **Aucun** |
+    | Aucun port d’entrée public | **Aucun(e)** |
 
-1. Sous l’onglet **Disques**, prenez les valeurs par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
+1. Dans l’onglet **Disques**, conservez les paramètres par défaut, puis sélectionnez **Suivant : Mise en réseau >**.
 
 1. Sous l’onglet Mise en réseau, pour Réseau virtuel, sélectionnez **Créer**.
 
@@ -119,7 +119,7 @@ Dans cette tâche, vous créez un réseau virtuel de services de fabrication ave
 
 1. Sélectionnez l’onglet **Supervision**. Pour Diagnostics de démarrage, sélectionnez **Désactiver**.
 
-1. Sélectionnez **Vérifier + créer**, puis **Créer**.
+1. Sélectionnez **Examiner + créer**, puis sélectionnez **Créer**.
 
 ## Tâche 3 : Utilisez Network Watcher pour tester la connexion entre machines virtuelles. 
 
@@ -136,7 +136,7 @@ Dans cette tâche, vous vérifiez que les ressources des réseaux virtuels appai
     | --- | --- |
     | Type de source           | **Machine virtuelle**   |
     | Machine virtuelle       | **CoreServicesVM**    | 
-    | Type de destination      | **Machine virtuelle**   |
+    | Type de destination      | **Sélectionner une machine virtuelle**   |
     | Machine virtuelle       | **ManufacturingVM**   | 
     | Version d’IP préférée  | **Les deux**              | 
     | Protocole              | **TCP**               |
@@ -162,14 +162,14 @@ Dans cette tâche, vous créez un appairage de réseaux virtuels pour activer le
 1. Sur CoreServicesVnet, sous Peerings, sélectionnez **+ Ajouter**. Si elle n’est pas spécifiée, elle prend la valeur par défaut. 
 
     | **Paramètre**                                    | **Valeur**                             |
-    | --------------------------------------------- | ------------------------------------- |                                
-    | Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
-    | Réseau virtuel    | **ManufacturingVM-net (az104-rg5)**  |
-    | Autoriser ManufacturingVnet à accéder à CoreServicesVnet  | sélectionné (par défaut) |
-    | Autoriser ManufacturingVnet à recevoir le trafic transféré à partir de CoreServicesVnet | sélectionné  |
+    | --------------------------------------------- | ------------------------------------- |
     | Nom du lien de peering                             | `ManufacturingVnet-to-CoreServicesVnet` |
-    | Autoriser CoreServicesVnet à accéder au réseau virtuel appairé            | sélectionné (par défaut) |
-    | Autoriser CoreServicesVnet à recevoir le trafic transféré à partir du réseau virtuel appairé | sélectionné |
+    | Réseau virtuel    | **ManufacturingVnet (az104-rg5)**  |
+    | Autoriser « CoreServicesVnet » à accéder à « ManufacturingVnet »            | sélectionné (par défaut) |
+    | Autoriser « CoreServicesVnet » à recevoir le trafic transféré à partir de « ManufacturingVnet » | sélectionné |
+    | Nom du lien de peering                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | Autoriser « ManufacturingVnet » à accéder à « CoreServicesVnet »  | sélectionné (par défaut) |
+    | Autorisez « ManufacturingVnet » à recevoir le trafic transféré depuis « CoreServicesVnet » | sélectionné  |
 
 4. Cliquez sur **Ajouter**.
 
@@ -200,7 +200,7 @@ Dans cette tâche, vous testez à nouveau la connexion entre les machines virtue
     ```Powershell
     Test-NetConnection <CoreServicesVM private IP address> -port 3389
     ```
-1. Le délai d’expiration du script peut prendre quelques minutes. Le haut de la page montre un message d’information *Exécution de script en cours.*
+1. Le délai d’expiration du script peut prendre quelques minutes. Le haut de la page affiche un message d’information *Exécution du script en cours...*
 
    
 1. La connexion de test doit réussir car l’appairage a été configuré. Le nom de votre ordinateur et l’adresse distante dans ce graphique peuvent être différents. 
@@ -223,7 +223,7 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
    
 1. Dans le portail Azure, recherchez et sélectionnez `Route tables`, sélectionnez  **+ Créer**.
 
-1. Saisissez les informations suivantes, sélectionnez **Examiner et créer**, puis sélectionnez **Créer**. 
+1. Entrez les informations suivantes, sélectionnez **Passer en revue + créer**, puis sélectionnez **Créer**. 
 
     | Paramètre | Valeur | 
     | --- | --- |
@@ -237,7 +237,7 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
    
 1. Sélectionnez la ressource (et non la case à cocher) **rt-CoreServices**
 
-1. Développez **Paramètres**, puis sélectionnez **Itinéraires**, puis **Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
+1. Développez **Paramètres**, puis sélectionnez **Routes**, puis **+ Ajouter**. Créez une route à partir d’une future appliance virtuelle réseau (NVA) vers le réseau virtuel CoreServices. 
 
     | Paramètre | Valeur | 
     | --- | --- |
@@ -253,7 +253,7 @@ Dans cette tâche, vous souhaitez contrôler le trafic réseau entre le sous-ré
 
     | Paramètre | Valeur | 
     | --- | --- |
-    | Réseau virtuel | **CoreServicesVnet** |
+    | Réseau virtuel | **CoreServicesVnet (az104-rg5)** |
     | Sous-réseau | **Core** |    
 
 >**Remarque** : Vous avez créé une route définie par l’utilisateur pour diriger le trafic de la zone DMZ vers la nouvelle appliance virtuelle réseau.  

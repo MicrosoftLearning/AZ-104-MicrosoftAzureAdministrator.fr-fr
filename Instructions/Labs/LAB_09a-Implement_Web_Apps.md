@@ -37,7 +37,7 @@ Dans cette tâche, vous créez une application web Azure. Azure App Services est
 
 1. Connectez-vous au **portail Azure** - `https://portal.azure.com`.
 
-1. Recherchez et sélectionnez `App services`.
+1. Recherchez et sélectionnez `App Services`.
 
 1. Sélectionnez **+ Créer**, dans le menu déroulant **Application web**. Examinez les autres choix. 
 
@@ -144,9 +144,9 @@ Dans cette tâche, vous allez configurer la mise à l’échelle automatique de 
 
     ![Capture d’écran de la page de mise à l’échelle automatique.](../media/az104-lab09a-autoscale.png)
 
-1. Sélectionnez **Enregistrer**.
+1. Cliquez sur **Enregistrer**.
 
-1. Sélectionnez **Diagnostiquer et résoudre les problèmes** (volet de gauche).
+1. Sélectionnez **Diagnostiquer et résoudre les problèmes** (volet gauche de la page principale de l’application web).
 
 1. Dans la zone **Test de charge de votre application**, sélectionnez **Créer un test de charge**.
 
