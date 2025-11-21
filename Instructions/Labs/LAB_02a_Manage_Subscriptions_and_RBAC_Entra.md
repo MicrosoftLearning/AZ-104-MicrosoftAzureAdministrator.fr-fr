@@ -67,6 +67,8 @@ Dans cette tâche, vous allez créer et configurer des groupes d’administratio
 
 Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer le rôle Contributeur de machine virtuelle à un membre du support technique. Azure propose un grand nombre de [rôles intégrés](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
+>**Remarque :** Dans les étapes suivantes, vous allez attribuer le rôle au groupe de **support technique**. Si vous ne disposez pas de groupe de support technique, prenez une minute pour le créer.
+
 1. Sélectionnez le groupe d’administration **az104-mg1**.
 
 1. Sélectionnez le panneau **Contrôle d’accès (IAM)**, puis l’onglet **Rôles**.
@@ -77,11 +79,9 @@ Dans cette tâche, vous allez passer en revue les rôles intégrés et attribuer
 
 1. Sur le panneau **Ajouter une attribution de rôle**, recherchez et sélectionnez le rôle **Contributeur de machine virtuelle**. Le rôle de contributeur de machine virtuelle permet de gérer des machines virtuelles, mais pas d’accéder à leur système d’exploitation ni de gérer le réseau virtuel et le compte de stockage auxquels ils sont connectés. Il constitue un bon rôle pour le support technique. Cliquez sur **Suivant**.
 
-    >**Le saviez-vous ?** À l’origine, Azure fournissait uniquement le modèle de déploiement **Classique**. Il a été remplacé par le modèle de déploiement **Azure Resource Manager**. En tant que meilleure pratique, n’utilisez aucune ressource classique. 
+    >**Le saviez-vous ?** À l’origine, Azure fournissait uniquement le modèle de déploiement **Classique**. Il a été remplacé par le modèle de déploiement **Azure Resource Manager**. En tant que meilleure pratique, n’utilisez aucune ressource classique.
 
 1. Sous l’onglet **Membres**, **Sélectionner des membres**.
-
-    >**Remarque :** L’étape suivante attribue le rôle au groupe du **support technique**. Si vous ne disposez pas de groupe de support technique, prenez une minute pour le créer.
 
 1. Recherchez et sélectionnez le groupe `helpdesk`. Cliquez sur **Sélectionner**. 
 
@@ -168,6 +168,8 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Vous pouvez créer des rôles ou personnaliser des rôles existants.
 + Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
 + Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles.
+
+
 
 
 

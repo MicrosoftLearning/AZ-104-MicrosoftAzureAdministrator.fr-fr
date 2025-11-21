@@ -77,14 +77,10 @@ Dans cette tâche, vous allez déployer deux machines virtuelles Azure dans des 
     | Paramètre | Valeur |
     | --- | --- |
     | Supprimer une adresse IP publique et une carte réseau une fois la machine virtuelle supprimée | **Activée** |
-    | Options d’équilibrage de charge | **Aucun** |
+    | Options d’équilibrage de charge | **Aucun(e)** |
 
 
-1. Cliquez sur **Suivant : Gestion >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
-
-    | Paramètre | Valeur |
-    | --- | --- |
-    | Options d'orchestration de patch | **Orchestré par Azure** |  
+1. Cliquez sur **Suivant : Gestion >** et passer en revue les paramètres. N’apportez aucune modification. 
 
 1. Cliquez sur **Suivant : Monitoring >**, puis spécifiez les paramètres suivants (conservez les valeurs par défaut pour les autres) :
 
