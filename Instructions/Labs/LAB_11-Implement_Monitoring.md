@@ -207,7 +207,7 @@ Entrez ces paramètres pour la planification de la règle de traitement des aler
 
 Dans cette tâche, vous allez utiliser Azure Monitor pour interroger les données capturées à partir de la machine virtuelle.
 
-    >**Note:** It can take 15-30 minutes for data to appear. Concentrate on the method and types of queries, rather than the results. 
+   >**Remarque :** Ce n’est pas grave si les données n’apparaissent pas. Concentrez-vous sur les étapes permettant de passer en revue les informations de surveillance, y compris les requêtes de journal préconfigurées et personnalisées. 
 
 1. Dans le Portail Azure, recherchez et sélectionnez `Monitor`, puis cliquez sur **Journaux**.
 
