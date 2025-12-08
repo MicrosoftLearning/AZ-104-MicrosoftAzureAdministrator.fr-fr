@@ -12,9 +12,9 @@ Dans ce labo, vous découvrez le contrôle d’accès en fonction du rôle. Vous
 
 Ce labo nécessite un abonnement Azure. Le type de votre abonnement peut affecter la disponibilité des fonctionnalités dans ce labo. Vous pouvez changer la région, mais les étapes sont écrites de façon à utiliser **USA Est**. 
 
-## Durée estimée : 30 minutes
+## Durée estimée : 20 minutes
 
-## Scénario du labo
+## Scénario de labo
 
 Pour simplifier la gestion des ressources Azure dans votre organisation, vous êtes chargé d’implémenter les fonctionnalités suivantes :
 
@@ -168,6 +168,7 @@ Félicitations, vous avez terminé le labo. Voici les principaux points à reten
 + Vous pouvez créer des rôles ou personnaliser des rôles existants.
 + Les rôles sont définis dans un fichier au format JSON et incluent *Actions*, *NotActions* et *AssignableScopes*.
 + Vous pouvez utiliser le journal d’activité pour surveiller les attributions de rôles.
+
 
 
 
